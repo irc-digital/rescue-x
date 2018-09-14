@@ -1,0 +1,7 @@
+name: EF Hero (text with links)
+type: module
+description: 'Hero that is headline, slug and description and a couple of optional links.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef_heroes

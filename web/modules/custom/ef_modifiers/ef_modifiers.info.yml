@@ -1,0 +1,7 @@
+name: EF Embeddable modifiers
+type: module
+description: 'Modifiers that allow classes to be added when embeddable content is embedded.'
+package: EF Core
+core: 8.x
+dependencies:
+  - ef

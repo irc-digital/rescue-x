@@ -1,0 +1,109 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple_image_link.field_sil_hide_entry
+    - field.field.paragraph.simple_image_link.field_sil_image
+    - field.field.paragraph.simple_image_link.field_sil_link
+    - field.field.paragraph.simple_image_link.field_sil_title
+    - paragraphs.paragraphs_type.simple_image_link
+  module:
+    - ds
+    - link
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_teaser_simple_image_link
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      teaser_simple_image_link_url:
+        - field_sil_link
+      teaser_simple_image_link_image_source_set:
+        - 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_srcset'
+      teaser_simple_image_link_image_sizes:
+        - 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_sizes'
+      teaser_simple_image_link_image_fallback:
+        - 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_fallback_uri'
+      teaser_simple_image_link_image_alt:
+        - 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_alt'
+      teaser_simple_image_link_title:
+        - field_sil_title
+    fields:
+      'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_srcset':
+        plugin_id: 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_srcset'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: simple_image_link_teaser_desaturated
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_sizes':
+        plugin_id: 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_sizes'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: simple_image_link_teaser_desaturated
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_fallback_uri':
+        plugin_id: 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_fallback_uri'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: simple_image_link_teaser_desaturated
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_alt':
+        plugin_id: 'media_image_attributes_field:paragraph_simple_image_link_field_sil_image_alt'
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: cPHqRspqNyv6k2oy3l7ldCtodkg4NKPH2TLiwjj4Ba0
+id: paragraph.simple_image_link.default
+targetEntityType: paragraph
+bundle: simple_image_link
+mode: default
+content:
+  field_sil_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: link
+    region: teaser_simple_image_link_url
+  field_sil_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_simple_image_link_title
+hidden:
+  field_sil_hide_entry: true
+  field_sil_image: true

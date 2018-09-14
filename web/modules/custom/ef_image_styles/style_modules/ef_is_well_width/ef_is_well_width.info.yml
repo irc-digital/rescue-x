@@ -1,0 +1,7 @@
+name: "EF Image styles: Well width (13x9)"
+type: module
+description: 'Well width image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

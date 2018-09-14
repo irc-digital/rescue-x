@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image_link_boxes
+id: image_link_box
+label: 'Image link box'
+icon_uuid: null
+description: 'The image link box teaser'
+behavior_plugins: {  }

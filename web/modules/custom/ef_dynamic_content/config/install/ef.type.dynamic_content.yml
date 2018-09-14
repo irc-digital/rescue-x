@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_dynamic_content
+id: dynamic_content
+label: 'News and features'
+description: 'An embeddable that lists newsie-type content'
+exclude_from_embeddable_overview_quick_add_list: true
+dependent_embeddable: true

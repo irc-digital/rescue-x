@@ -1,0 +1,7 @@
+name: "EF Image styles: Super widescreen (21x9)"
+type: module
+description: 'Super widescreen image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

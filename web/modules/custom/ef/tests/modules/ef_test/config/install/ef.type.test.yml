@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_test
+id: test
+label: 'Test'
+description: 'Embeddable type used for kernel tests'

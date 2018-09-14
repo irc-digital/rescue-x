@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+  enforced:
+    module:
+      - ef
+id: paragraph.variation_1
+label: 'Variation 1'
+targetEntityType: paragraph
+cache: true

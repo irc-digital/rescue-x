@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_hero_text_with_links_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToHeroEmbeddableField('hero_text_with_links');
+}
+
+function ef_hero_text_with_links_uninstall () {
+  ef_delete_all ('embeddable', 'hero_text_with_links');
+}

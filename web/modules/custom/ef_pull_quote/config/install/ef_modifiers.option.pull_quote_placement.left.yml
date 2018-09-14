@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_pull_quote
+id: pull_quote_placement.left
+label: Left
+class_name: left
+target_embeddable_modifier: pull_quote_placement
+weight: -10

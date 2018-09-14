@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_is_mega_widescreen
+label: 'Mega widescreen (30:9)'
+id: mega_widescreen_30x9
+description: ''
+aspect_ratio: '30:9'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

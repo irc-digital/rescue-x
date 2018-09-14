@@ -1,0 +1,8 @@
+name: "EF Responsive image styles: Teasers"
+type: module
+description: 'Highlighted teaser, standard teaser, low-key etc'
+package: EF Responsive image styles
+core: 8.x
+dependencies:
+  - ef_image_styles
+  - ef_is_widescreen

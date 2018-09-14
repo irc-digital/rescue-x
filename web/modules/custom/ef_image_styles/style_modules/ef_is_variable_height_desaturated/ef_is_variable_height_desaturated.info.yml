@@ -1,0 +1,8 @@
+name: "EF Image styles: Variable height (desaturated)"
+type: module
+description: 'Black and white variable height images'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_is_variable_height
+  - image_effects

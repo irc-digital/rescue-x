@@ -1,0 +1,22 @@
+entity.embeddable_type.collection:
+  title: 'Embeddable types'
+  description: 'Create and manage fields, forms, and display settings for your embeddable content.'
+  route_name:  entity.embeddable_type.collection
+  parent: system.admin_structure
+
+entity.embeddable.settings:
+  title: Settings
+  description: Settings that apply to all embeddable types
+  route_name: entity.embeddable.settings
+  parent: entity.embeddable_type.collection
+
+entity.embeddable.add_page:
+  title: 'Add embeddable content'
+  route_name: entity.embeddable.add_page
+  parent: system.admin_content
+
+entity.embeddable.collection:
+  title: 'List embeddable content'
+  description: 'List of embeddable content'
+  route_name: entity.embeddable.collection
+  parent: system.admin_content

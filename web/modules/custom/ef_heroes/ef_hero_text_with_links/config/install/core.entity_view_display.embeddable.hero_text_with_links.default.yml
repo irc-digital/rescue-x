@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.hero_text_with_links
+    - field.field.embeddable.hero_text_with_links.field_displayed_title
+    - field.field.embeddable.hero_text_with_links.field_hero_description
+    - field.field.embeddable.hero_text_with_links.field_hero_links
+    - field.field.embeddable.hero_text_with_links.field_hero_slug
+  module:
+    - ds
+    - ef
+    - ef_icon_library
+    - text
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_hero_text_with_links
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      hero_text_with_links_headline:
+        - field_displayed_title
+      hero_text_with_links_slug:
+        - field_hero_slug
+      hero_text_with_links_description:
+        - field_hero_description
+      hero_text_with_links_links:
+        - field_hero_links
+_core:
+  default_config_hash: ZS-aK8W_U3dyMUL6I2slryrev5Wi_SOdejjAdOGszxw
+id: embeddable.hero_text_with_links.default
+targetEntityType: embeddable
+bundle: hero_text_with_links
+mode: default
+content:
+  field_displayed_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: hero_text_with_links_headline
+  field_hero_description:
+    type: text_default
+    weight: 2
+    region: hero_text_with_links_description
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_links:
+    type: link_icon
+    weight: 3
+    region: hero_text_with_links_links
+    label: hidden
+    settings:
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_hero_slug:
+    type: string
+    weight: 1
+    region: hero_text_with_links_slug
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

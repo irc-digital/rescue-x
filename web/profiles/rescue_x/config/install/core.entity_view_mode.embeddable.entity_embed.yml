@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+id: embeddable.entity_embed
+label: 'Entity embed'
+targetEntityType: embeddable
+cache: true

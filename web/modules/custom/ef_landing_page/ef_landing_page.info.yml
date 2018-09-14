@@ -1,0 +1,9 @@
+name: EF Landing page
+type: module
+description: 'Provides a landing page content type.'
+package: EF Content
+core: 8.x
+dependencies:
+  - ef
+  - ef_modifiers
+  - ef_patterns

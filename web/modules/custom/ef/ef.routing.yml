@@ -1,0 +1,132 @@
+entity.embeddable_type.collection:
+  path: '/admin/structure/embeddable'
+  defaults:
+    _entity_list: 'embeddable_type'
+    _title: 'Embeddable types'
+  requirements:
+    _permission: 'administer embeddable content'
+
+embeddable.type_add:
+  path: '/admin/structure/embeddable_type/add'
+  defaults:
+    _entity_form: 'embeddable_type.add'
+    _title: 'Add embeddable type'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable.settings:
+  path: 'admin/structure/embeddable/settings'
+  defaults:
+    _form: '\Drupal\ef\Form\EmbeddableSettingsForm'
+    _title: 'Embeddable'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable.collection:
+  path: '/admin/content/embeddable'
+  defaults:
+    _entity_list: 'embeddable'
+    _title: 'Embeddable types'
+  requirements:
+    _permission: 'access embeddable content overview'
+
+entity.embeddable.canonical:
+  path: '/embeddable/{embeddable}'
+  defaults:
+    _entity_view: 'embeddable'
+    _title: 'Embeddable'
+  requirements:
+    _entity_access: 'embeddable.view_canonical'
+
+entity.embeddable.add_page:
+  path: '/embeddable/add'
+  defaults:
+    _title: 'Add embeddable'
+    _controller: '\Drupal\ef\Controller\EmbeddableController::addPage'
+  requirements:
+    _permission: 'access embeddable content overview'
+  options:
+    _admin_route: TRUE
+
+entity.embeddable.edit_form:
+  path: '/embeddable/{embeddable}/edit'
+  defaults:
+    _entity_form: embeddable.edit
+    _title: 'Edit embeddable'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_access: embeddable.update
+    embeddable: \d+
+
+entity.embeddable.add:
+  path: '/embeddable/add/{embeddable_type}'
+  defaults:
+    _controller: '\Drupal\ef\Controller\EmbeddableController::addEmbeddable'
+    _title_callback: '\Drupal\ef\Controller\EmbeddableController::addPageTitle'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_create_access: 'embeddable:{embeddable_type}'
+
+entity.embeddable.delete_form:
+  path: '/embeddable/{embeddable}/delete'
+  defaults:
+    _entity_form: embeddable.delete
+    _title: 'Delete embeddable'
+  requirements:
+    _entity_access: embeddable.delete
+  options:
+    _admin_route: TRUE
+
+entity.embeddable.revision:
+  path: '/embeddable/{embeddable}/revisions/{embeddable_revision}/view'
+  defaults:
+    _controller: '\Drupal\Core\Entity\Controller\EntityViewController::viewRevision'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  options:
+    parameters:
+      embeddable:
+        type: entity:embeddable
+      embeddable_revision:
+        type: entity_revision:embeddable
+  requirements:
+    _access_embeddable_revision: 'view'
+    embeddable: \d+
+
+entity.embeddable.version_history:
+  path: '/embeddable/{embeddable}/revisions'
+  defaults:
+    _title: 'Revisions'
+    _controller: '\Drupal\ef\Controller\EmbeddableController::revisionOverview'
+  requirements:
+    _access_embeddable_revision: 'view'
+    embeddable: \d+
+  options:
+    _admin_route: TRUE
+
+my_form:
+ path: '/myform'
+ defaults:
+   _title: 'Sample form'
+   _form: '\Drupal\ef\Form\SampleForm'
+ requirements:
+   _permission: 'access content'
+ options:
+   _admin_route: TRUE
+
+my_test:
+ path: '/mytest'
+ defaults:
+   _title: 'Test page'
+   _controller: '\Drupal\ef\Controller\EmbeddableController::testPage'
+ requirements:
+   _permission: 'access content'
+
+generate_uuid:
+  path: '/generate-uuid'
+  defaults:
+    _title: 'Generate UUID'
+    _controller: '\Drupal\ef\Controller\EmbeddableController::generateUuid'
+  requirements:
+    _permission: 'access content'

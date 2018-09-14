@@ -1,0 +1,8 @@
+name: EF Image (partial image width, portrait)
+type: module
+description: 'Provides a partial width portrait image variation for the image embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef_image
+  - ef_is_portrait

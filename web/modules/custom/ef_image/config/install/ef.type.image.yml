@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: image
+label: Image
+description: "Wrapper around the media type's image bundle to allow images to appear where embeddable content can."
+exclude_from_embeddable_overview_quick_add_list: false
+dependent_embeddable: true
+only_dependent_embeddable: true

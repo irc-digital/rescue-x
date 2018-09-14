@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: box_color.green
+label: Green
+class_name: green
+target_embeddable_modifier: box_color
+weight: -10

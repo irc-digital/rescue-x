@@ -1,0 +1,9 @@
+name: EF Demo data
+type: module
+description: 'Provides some sample stuff to make it easier to recycle the framework.'
+package: EF Demo
+core: 8.x
+dependencies:
+  - ef
+  - ef_article
+  - ef_special

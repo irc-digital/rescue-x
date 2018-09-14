@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_partial_image_width_square
+id: media.image_partial_width_square
+label: 'Image partial width, square'
+targetEntityType: media
+cache: true

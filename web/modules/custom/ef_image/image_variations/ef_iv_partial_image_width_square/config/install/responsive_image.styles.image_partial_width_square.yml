@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1x1_1280px_wide
+    - image.style.square_1x1_2000px_wide
+    - image.style.square_1x1_400px_wide
+    - image.style.square_1x1_640px_wide
+  enforced:
+    module:
+      - ef_iv_partial_image_width_square
+id: image_partial_width_square
+label: 'Image partial width, square'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 640px) 500px,100vw'
+      sizes_image_styles:
+        - square_1x1_1280px_wide
+        - square_1x1_2000px_wide
+        - square_1x1_400px_wide
+        - square_1x1_640px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: square_1x1_640px_wide

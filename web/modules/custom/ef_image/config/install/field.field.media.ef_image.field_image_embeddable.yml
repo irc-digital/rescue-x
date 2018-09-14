@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.image
+    - field.storage.media.field_image_embeddable
+    - media.type.ef_image
+  module:
+    - ef
+  enforced:
+    module:
+      - ef_image
+id: media.ef_image.field_image_embeddable
+field_name: field_image_embeddable
+entity_type: media
+bundle: ef_image
+label: 'Image embeddable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:embeddable'
+  dependent_embeddable: true
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  view_mode_option: set_by_editor
+  default_header_title: ''
+  editable_header_title: false
+  editable_header_description: false
+field_type: entity_reference_embeddable

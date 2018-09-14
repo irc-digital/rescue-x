@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.variable_height
+  module:
+    - crop
+name: variable_height_150px_wide
+label: 'Variable height 150px wide'
+effects:
+  8bab9d77-2787-46ae-8f41-5334e951317b:
+    uuid: 8bab9d77-2787-46ae-8f41-5334e951317b
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: variable_height
+  3566b7ee-9b1c-4ea8-9166-8f839ede7374:
+    uuid: 3566b7ee-9b1c-4ea8-9166-8f839ede7374
+    id: image_scale
+    weight: -9
+    data:
+      width: 150
+      height: null
+      upscale: true

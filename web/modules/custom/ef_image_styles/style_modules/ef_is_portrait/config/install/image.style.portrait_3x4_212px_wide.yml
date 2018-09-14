@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.portrait_3x4
+  module:
+    - crop
+name: portrait_3x4_212px_wide
+label: 'Portrait (3:4) 212px wide'
+effects:
+  87e665fd-6d44-4484-aec1-71405c29b6e8:
+    uuid: 87e665fd-6d44-4484-aec1-71405c29b6e8
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: portrait_3x4
+  d286106e-e04e-43f7-8864-58b81c2e986c:
+    uuid: d286106e-e04e-43f7-8864-58b81c2e986c
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 212
+      height: 283

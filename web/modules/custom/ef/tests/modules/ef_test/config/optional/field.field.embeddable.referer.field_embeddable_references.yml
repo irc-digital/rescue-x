@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.referer
+    - ef.type.test
+    - field.storage.embeddable.field_embeddable_references
+  module:
+    - ef
+  enforced:
+    module:
+      - ef_test
+id: embeddable.referer.field_embeddable_references
+field_name: field_embeddable_references
+entity_type: embeddable
+bundle: referer
+label: 'Embeddable references'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:embeddable'
+  handler_settings:
+    target_bundles:
+      test: test
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  default_header_title: ''
+  editable_header_title: false
+  editable_header_description: false
+  view_mode_option: 'set_by_editor'
+  dependent_embeddable: false
+field_type: entity_reference_embeddable

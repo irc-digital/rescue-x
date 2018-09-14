@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_image_inset
+id: media.image_inset
+label: 'Image inset'
+targetEntityType: media
+cache: true

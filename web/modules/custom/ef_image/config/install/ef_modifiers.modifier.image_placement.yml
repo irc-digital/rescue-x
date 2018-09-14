@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: image_placement
+label: Image placement (left, right)
+weight: -9
+class_name: image-placement
+editorial_name: Image placement
+description: ''
+tooltip: ''
+promote: false
+default_option: image_placement.left

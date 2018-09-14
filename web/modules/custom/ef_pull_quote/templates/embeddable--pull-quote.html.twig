@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present an embeddable entity.
+ *
+ * This template is used when viewing a registered embeddable's page,
+ * e.g., /admin/content/embeddable)/123. 123 being the embeddable's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.title'.
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_embeddable()
+ */
+#}
+<div{{ attributes }} data-what="div inside pull quote template">
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

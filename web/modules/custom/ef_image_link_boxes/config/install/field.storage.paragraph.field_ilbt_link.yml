@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+  enforced:
+    module:
+      - ef_image_link_boxes
+id: paragraph.field_ilbt_link
+field_name: field_ilbt_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

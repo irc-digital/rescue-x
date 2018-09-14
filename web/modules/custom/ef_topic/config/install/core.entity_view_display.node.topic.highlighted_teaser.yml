@@ -1,0 +1,140 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlighted_teaser
+    - field.field.node.topic.body
+    - field.field.node.topic.field_call_to_action_text
+    - field.field.node.topic.field_hero_image
+    - field.field.node.topic.field_news_and_features
+    - field.field.node.topic.field_slug
+    - node.type.topic
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_teaser_highlighted
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      teaser_highlighted_url:
+        - content_url
+      teaser_highlighted_image_alt:
+        - 'media_image_attributes_field:node_topic_field_hero_image_alt'
+      teaser_highlighted_image_fallback:
+        - 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
+      teaser_highlighted_image_sizes:
+        - 'media_image_attributes_field:node_topic_field_hero_image_sizes'
+      teaser_highlighted_image_source_set:
+        - 'media_image_attributes_field:node_topic_field_hero_image_srcset'
+      teaser_highlighted_cta:
+        - 'fallback_to_placeholder:node_topic_field_call_to_action_text_placeholder_fallback'
+      teaser_highlighted_title:
+        - node_title
+      teaser_highlighted_summary:
+        - body
+      teaser_highlighted_slug:
+        - field_slug
+    fields:
+      content_url:
+        plugin_id: content_url
+        weight: 0
+        label: hidden
+        formatter: default
+      'fallback_to_placeholder:node_topic_field_call_to_action_text_placeholder_fallback':
+        plugin_id: 'fallback_to_placeholder:node_topic_field_call_to_action_text_placeholder_fallback'
+        weight: 0
+        label: hidden
+        formatter: default
+      'media_image_attributes_field:node_topic_field_hero_image_srcset':
+        plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_srcset'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_highlighted
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_topic_field_hero_image_sizes':
+        plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_sizes'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_highlighted
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_topic_field_hero_image_fallback_uri':
+        plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_highlighted
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_topic_field_hero_image_alt':
+        plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_alt'
+        weight: 0
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: ''
+          class: ''
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
+_core:
+  default_config_hash: TXSQAkd4rhd9c43yc9L63t4Q33wpkxws_rO9NVhnKug
+id: node.topic.highlighted_teaser
+targetEntityType: node
+bundle: topic
+mode: highlighted_teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 300
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: teaser_highlighted_summary
+  field_slug:
+    weight: 103
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_highlighted_slug
+hidden:
+  field_call_to_action_text: true
+  field_hero_image: true
+  field_news_and_features: true
+  langcode: true
+  links: true

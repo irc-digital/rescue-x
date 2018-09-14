@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.variable_height
+  module:
+    - crop
+name: variable_height_desaturated_450px_wide
+label: 'Variable height (desaturated) 450px wide'
+effects:
+  ba75ca2b-4904-40b0-8abd-e4bea3e48beb:
+    uuid: ba75ca2b-4904-40b0-8abd-e4bea3e48beb
+    id: image_desaturate
+    weight: -8
+    data: {  }
+  f7c405c4-a332-46c4-88c0-058423b40b00:
+    uuid: f7c405c4-a332-46c4-88c0-058423b40b00
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: variable_height
+  3036579b-e584-49d8-8175-cc13d1ffd240:
+    uuid: 3036579b-e584-49d8-8175-cc13d1ffd240
+    id: image_scale
+    weight: -9
+    data:
+      width: 450
+      height: null
+      upscale: true

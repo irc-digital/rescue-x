@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef
+id: media.thumbnails
+label: Thumbnails
+targetEntityType: media
+cache: true

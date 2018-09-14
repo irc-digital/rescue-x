@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\ef\EmbeddableInterface;
+
+/**
+ * Implements hook_entity_view_alter
+ *
+ * Images are a bit unusual in that we actually end up rendering the media image
+ * entity - that is where the pattern is attached. We need to transmit the
+ * editorial options (like section heading) down to the media entity.
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ */
+function ef_image_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->getEntityTypeId() == 'embeddable' && $entity->bundle() == 'image') {
+    if (isset($build['parent_id']) && isset($build['#embeddable_reference_options'])) {
+      $build['parent_id']['#embeddable_reference_options'] = $build['#embeddable_reference_options'];
+    }
+  }
+}
+
+/**
+ * Implements hook_dependent_embeddable_generate_BUNDLE_alter().
+ */
+function ef_image_dependent_embeddable_presave_image_alter(EmbeddableInterface $dependent_embeddable, ContentEntityInterface $parent_entity) {
+  $dependent_embeddable->setTitle($parent_entity->label());
+}

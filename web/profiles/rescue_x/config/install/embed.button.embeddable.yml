@@ -1,0 +1,13 @@
+langcode: en
+status: true
+label: Embeddable
+id: embeddable
+type_id: entity
+type_settings:
+  entity_type: embeddable
+  bundles: {  }
+  display_plugins:
+    - 'entity_reference_embeddable_entity_display:entity_reference_embeddable_view'
+  entity_browser: 'embeddable_entity_browser'
+  entity_browser_settings: null
+icon_uuid: null

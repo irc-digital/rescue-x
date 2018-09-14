@@ -1,0 +1,11 @@
+langcode: en
+status: true
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef
+id: embeddable.ef_variation_4
+label: 'EF Variation 4'
+targetEntityType: embeddable
+cache: true

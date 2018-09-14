@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_hero_text_with_links
+id: hero_text_with_links
+label: 'Hero: text with links'
+description: 'The simple hero with slug, title and description, along with the option for a couple of links.'

@@ -1,0 +1,89 @@
+.view-embeddable-entity-browser .view-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    overflow: hidden;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+}
+
+.view-embeddable-entity-browser .views-exposed-form .form--inline {
+    display: flex;
+}
+
+.view-embeddable-entity-browser .views-exposed-form .form-actions {
+    position: relative;
+    top: 16px;
+}
+
+.view-embeddable-entity-browser .views-row {
+    position: relative;
+    border: 1px solid #d1d1d1;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: .2s;
+}
+
+.view-embeddable-entity-browser .views-row img {
+    vertical-align: bottom;
+    width: 100%;
+    height: auto;
+}
+
+.view-embeddable-entity-browser .views-row:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: transparent url("/core/misc/icons/73b355/check.svg") no-repeat center center;
+    background-size: 0;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.view-embeddable-entity-browser .views-row.checked:after {
+    background-size: 80px 80px;
+}
+
+.view-embeddable-entity-browser .views-row img::selection {
+    background: transparent;
+}
+
+.view-embeddable-entity-browser .views-row .entity-browser-select {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.view-embeddable-entity-browser .embeddable-info {
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.8);
+    padding: 5px 10px;
+    color: white;
+    text-align: left;
+}
+
+.view-embeddable-entity-browser .embeddable-info span {
+    display: none; /* we can use this spot if we do end up with per embeddable icons */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    //isplay: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    width: 18px;
+    background-size: 16px 16px;
+    margin-right: 4px;
+}
+
+.view-embeddable-entity-browser .rendered-embeddable {
+    line-height: 200px;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+}

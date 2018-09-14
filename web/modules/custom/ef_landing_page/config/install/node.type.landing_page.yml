@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - ef_landing_page
+name: 'Landing page'
+type: landing_page
+description: 'Use landing pages to build a list of embeddable content. Useful for gateway pages and the homepage.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

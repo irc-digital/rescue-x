@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.portrait_3x4_1280px_wide
+    - image.style.portrait_3x4_1920px_wide
+    - image.style.portrait_3x4_2400px_wide
+    - image.style.portrait_3x4_928px_wide
+  enforced:
+    module:
+      - ef_iv_partial_image_width_portrait
+id: image_partial_width_portrait
+label: 'Image partial width, portrait'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw'
+      sizes_image_styles:
+        - portrait_3x4_1280px_wide
+        - portrait_3x4_1920px_wide
+        - portrait_3x4_2400px_wide
+        - portrait_3x4_928px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: portrait_3x4_928px_wide

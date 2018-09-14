@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_image_well_width
+id: media.image_well_width
+label: 'Image well width'
+targetEntityType: media
+cache: true

@@ -1,0 +1,62 @@
+ef_modifiers.*:
+  type: config_entity
+  label: 'Embeddable modifier config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+      type: integer
+      label: 'Weight of the modifier'
+    class_name:
+      type: string
+      label: 'Class name'
+    editorial_name:
+      type: label
+      label: 'Editorial name'
+    description:
+      type: label
+      label: 'Description'
+    tooltip:
+      type: label
+      label: 'Tooltip'
+    promote:
+      type: boolean
+      label: 'Apply modifier to container'
+    default_option:
+      type: string
+      label: 'Default option'
+
+ef_modifiers.option.*:
+  type: config_entity
+  label: 'Embeddable modifier option config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    class_name:
+      type: string
+      label: 'Class name'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+      type: integer
+      label: 'Weight of the option within the modifier'
+    target_embeddable_modifier:
+      type: string
+      label: 'Target embeddable modifier'
+
+embeddable_option.configuration.embeddable_modifier_options:
+  type: mapping
+  label: 'View mode embeddable modifiers settings'
+  mapping:
+    enabled_modifiers:
+      type: sequence
+      label: 'Enabled modifiers'
+      sequence:
+        type: string
+        label: 'Modifier'

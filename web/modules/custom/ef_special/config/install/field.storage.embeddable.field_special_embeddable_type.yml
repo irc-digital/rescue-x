@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_special
+id: embeddable.field_special_embeddable_type
+field_name: field_special_embeddable_type
+entity_type: embeddable
+type: field_special_embeddable
+settings: {  }
+module: ef_special
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

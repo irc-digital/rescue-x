@@ -1,0 +1,6 @@
+entity.embeddable_modifier.collection:
+  title: Embeddable modifiers
+  description: 'Create and manage embeddable modifiers.'
+  route_name:  entity.embeddable_modifier.collection
+  parent: system.admin_config_content
+

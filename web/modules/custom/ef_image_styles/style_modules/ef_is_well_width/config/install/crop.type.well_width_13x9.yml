@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_is_well_width
+label: 'Well width (13:9)'
+id: well_width_13x9
+description: ''
+aspect_ratio: '13:9'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

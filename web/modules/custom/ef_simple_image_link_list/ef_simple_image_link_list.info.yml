@@ -1,0 +1,12 @@
+name: EF Simple image link list
+type: module
+description: 'Provides a list style revolving around an image.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - paragraphs
+  - ef_modifiers
+  - ef_patterns
+  - ef_is_variable_height
+  - ef_is_variable_height_desaturated

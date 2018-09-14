@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ilbt_image
+    - media.type.ef_image
+    - paragraphs.paragraphs_type.image_link_box
+id: paragraph.image_link_box.field_ilbt_image
+field_name: field_ilbt_image
+entity_type: paragraph
+bundle: image_link_box
+label: Image
+description: 'The image to be used for your box. Will be partially covered by the link text and blurb.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ef_image: ef_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

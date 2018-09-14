@@ -1,0 +1,8 @@
+name: EF Image (image inset)
+type: module
+description: 'Provides an image inset variation for the image embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef_image
+  - ef_is_variable_height

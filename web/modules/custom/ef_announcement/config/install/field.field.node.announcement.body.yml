@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.announcement
+  module:
+    - text
+_core:
+  default_config_hash: V5xqeC3WqpHF4hbxGWsQv0Ae6SscIRiA7UAirXZkYeU
+id: node.announcement.body
+field_name: body
+entity_type: node
+bundle: announcement
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

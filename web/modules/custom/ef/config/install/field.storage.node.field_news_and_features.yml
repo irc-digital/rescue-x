@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - ef
+id: node.field_news_and_features
+field_name: field_news_and_features
+entity_type: node
+type: entity_reference_embeddable
+settings:
+  target_type: embeddable
+module: ef
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,4 @@
+services:
+  ef_dynamic_content.dynamic_content_view_modifier:
+    class: Drupal\ef_dynamic_content\DynamicContentViewModifier
+    arguments: ['@module_handler']

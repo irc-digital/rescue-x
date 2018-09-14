@@ -1,0 +1,33 @@
+administer embeddable content:
+  title: 'Administer embeddable content'
+  restrict access: true
+
+access embeddable content overview:
+  title: 'Access embeddable content overview page'
+
+create all embeddable content:
+  title: 'Create all embeddable content'
+
+edit all embeddable content:
+  title: 'Edit all embeddable content'
+
+delete all embeddable content:
+  title: 'Delete all embeddable content'
+
+view embeddable content in test mode:
+  title: 'Can view embeddable content when it is in test mode'
+
+view all embeddable revisions:
+  title: 'View all embeddable revisions'
+  description: 'To view a revision, you also need permission to view the embeddable item.'
+
+revert all embeddable revisions:
+  title: 'Revert all embeddable revisions'
+  description: 'To revert a revision, you also need permission to edit the embeddable item.'
+
+delete all embeddable revisions:
+  title: 'Delete all embeddable revisions'
+  description: 'To delete a revision, you also need permission to delete the embeddable item.'
+
+permission_callbacks:
+  - Drupal\ef\EmbeddablePermissions::embeddableTypePermissions

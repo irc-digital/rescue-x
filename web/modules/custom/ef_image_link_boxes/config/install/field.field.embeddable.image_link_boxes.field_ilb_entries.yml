@@ -1,0 +1,34 @@
+status: true
+dependencies:
+  config:
+    - ef.type.image_link_boxes
+    - field.storage.embeddable.field_ilb_entries
+    - paragraphs.paragraphs_type.image_link_box
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: vmDATkp4DOi-bVx27ZOpe-DzzdRhyyBFqDXGepRO4BM
+id: embeddable.image_link_boxes.field_ilb_entries
+field_name: field_ilb_entries
+entity_type: embeddable
+bundle: image_link_boxes
+label: Entries
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_link_box: image_link_box
+    target_bundles_drag_drop:
+      image_link_box:
+        enabled: true
+        weight: 3
+      simple_image_link:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

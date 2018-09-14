@@ -1,0 +1,11 @@
+name: EF Image link boxes
+type: module
+description: 'Image link boxes embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - paragraphs
+  - ef_modifiers
+  - ef_patterns
+  - ef_is_landscape
