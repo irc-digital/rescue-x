@@ -1,0 +1,7 @@
+{
+  "patches": {
+    "drupal/ui_patterns": {
+      "Drupal UI Patterns fix.": "https://patch-diff.githubusercontent.com/raw/nuvoleweb/ui_patterns/pull/206.patch"
+    }
+  }
+}
