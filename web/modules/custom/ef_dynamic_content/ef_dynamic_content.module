@@ -1,0 +1,64 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\ef_dynamic_content\DynamicContentViewModifier;
+
+/**
+ * Implements hook_embeddable_views_field_info().
+ */
+function ef_dynamic_content_embeddable_views_field_info () {
+  $views_field_info[] = [
+    'id' => 'dynamic_content_view',
+    'embeddable' => 'dynamic_content',
+    'label' => 'Dynamic content view',
+    'view' => [
+      'name' => 'dynamic_content',
+      'display' => 'dynamic_content',
+      'arguments' => [
+        'embeddable_count_option' => 5,
+        'embeddable_sticky_option' => NULL,
+      ],
+    ],
+  ];
+
+  return $views_field_info;
+}
+
+/**
+ * Implements hook_views_pre_build().
+ *
+ * @param ViewExecutable $view
+ *
+ */
+function ef_dynamic_content_views_pre_build(ViewExecutable $view) {
+  if($view->id() == 'dynamic_content' && $view->current_display == 'dynamic_content'){
+    \Drupal::service('ef_dynamic_content.dynamic_content_view_modifier')
+      ->addContextualFilter($view)
+      ->addTypeFilter($view);
+  }
+}
+
+/**
+ * Implements hook_views_post_build().
+ *
+ * @param ViewExecutable $view
+ */
+function ef_dynamic_content_views_post_build(ViewExecutable $view) {
+  if($view->id() == 'dynamic_content' && $view->current_display == 'dynamic_content'){
+    \Drupal::service('ef_dynamic_content.dynamic_content_view_modifier')
+      ->ensureStickItemAtTopOfList($view);
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * @param ViewExecutable $view
+ *
+ */
+function ef_dynamic_content_views_pre_render(ViewExecutable $view) {
+  if($view->id() == 'dynamic_content' && $view->current_display == 'dynamic_content'){
+    \Drupal::service('ef_dynamic_content.dynamic_content_view_modifier')
+      ->ensureRenderingOddNumberOfItems($view);
+  }
+}

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: background_color_3.transparent
+label: Left
+class_name: transparent
+target_embeddable_modifier: background_color_3
+weight: -10

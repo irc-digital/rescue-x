@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.hero_text_only
+    - field.field.embeddable.hero_text_only.field_displayed_title
+    - field.field.embeddable.hero_text_only.field_hero_description
+    - field.field.embeddable.hero_text_only.field_hero_slug
+  module:
+    - ds
+    - ef
+    - text
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_hero_text_only
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      hero_text_only_slug:
+        - field_hero_slug
+      hero_text_only_headline:
+        - field_displayed_title
+      hero_text_only_description:
+        - field_hero_description
+_core:
+  default_config_hash: HZEsx1xqWEDDmZmtPJQTXd9MdMoIpBLDQWqA2C9VVEU
+id: embeddable.hero_text_only.default
+targetEntityType: embeddable
+bundle: hero_text_only
+mode: default
+content:
+  field_displayed_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: hero_text_only_headline
+  field_hero_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: hero_text_only_description
+  field_hero_slug:
+    type: string
+    weight: 0
+    region: hero_text_only_slug
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

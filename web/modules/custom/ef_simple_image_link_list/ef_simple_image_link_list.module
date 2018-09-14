@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Remove any items marked by the editor as hidden
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
+function ef_simple_image_link_list_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getEntityTypeId() == 'embeddable' && $entity->bundle() == 'simple_image_link_list' && isset($build['field_sill_entries'])) {
+    foreach (\Drupal\Core\Render\Element::children($build['field_sill_entries']) as $id) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = $build['field_sill_entries'][$id]['#paragraph'];
+      if ($paragraph->field_sil_hide_entry->value) {
+        unset($build['field_sill_entries'][$id]);
+      }
+    }
+  }
+}

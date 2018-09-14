@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_landing_page_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('landing_page');
+}
+
+function ef_landing_page_uninstall () {
+  ef_delete_all ('node', 'landing_page');
+}

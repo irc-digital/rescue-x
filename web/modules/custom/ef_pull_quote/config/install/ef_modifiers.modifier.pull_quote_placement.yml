@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_pull_quote
+id: pull_quote_placement
+label: Pull quote placement
+weight: -9
+class_name: placement
+editorial_name: Pull quote placement
+description: ''
+tooltip: ''
+promote: false
+default_option: pull_quote_placement.full-width

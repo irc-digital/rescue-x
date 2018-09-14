@@ -1,0 +1,6 @@
+services:
+  ef_patterns.special_pattern_fields_manager:
+    class: Drupal\ef_patterns\SpecialPatternFieldsManager
+  ef_patterns.patterns_helper:
+    class: Drupal\ef_patterns\PatternsHelper
+    arguments: ['@plugin.manager.ui_patterns']

@@ -1,0 +1,8 @@
+name: EF Image (image well width, variable height)
+type: module
+description: 'Provides a variable height well width variation for the image embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef_image
+  - ef_is_well_width

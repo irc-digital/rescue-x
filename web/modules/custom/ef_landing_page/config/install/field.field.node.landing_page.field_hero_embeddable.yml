@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_embeddable
+    - node.type.landing_page
+  module:
+    - ef
+_core:
+  default_config_hash: KtXkuBSR-v0T0Jjy43XTViaBgQrDsgolYxz-LUD-mBA
+id: node.landing_page.field_hero_embeddable
+field_name: field_hero_embeddable
+entity_type: node
+bundle: landing_page
+label: 'Hero embeddable'
+description: 'The hero embeddable field may be used to place a hero in the top spot on the page. This spot is a little different to the others in that it usually sits behind the site navigation. Only a subset of embeddable types are suitable for use in this spot.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:embeddable'
+  dependent_embeddable: false
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  view_mode_option: set_by_editor
+  default_header_title: ''
+  editable_header_title: false
+  editable_header_description: false
+field_type: entity_reference_embeddable

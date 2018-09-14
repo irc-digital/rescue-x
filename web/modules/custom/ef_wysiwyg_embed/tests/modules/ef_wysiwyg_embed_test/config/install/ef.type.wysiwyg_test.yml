@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_wysiwyg_embed_test
+id: wysiwyg_test
+label: 'Test embeddable type'
+description: 'Embeddable type for testing the wysiwyg embed module'

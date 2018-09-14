@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_pull_quote
+id: pull_quote_placement.full-width
+label: Full widtth
+class_name: full-width
+target_embeddable_modifier: pull_quote_placement
+weight: 0

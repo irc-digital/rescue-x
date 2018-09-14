@@ -1,0 +1,8 @@
+name: EF Special
+type: module
+description: 'Provides the base functionality to support the special embeddable plugin system'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ds

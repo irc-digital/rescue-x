@@ -1,0 +1,7 @@
+name: EF News and features
+type: module
+description: 'Provides a dynamic news content embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef

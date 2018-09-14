@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.announcement.body
+    - node.type.announcement
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_hero_article
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      hero_article_headline:
+        - node_title
+      hero_article_published:
+        - node_post_date
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 0
+        label: hidden
+        formatter: ds_post_date_long_date_only
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.announcement.hero
+targetEntityType: node
+bundle: announcement
+mode: hero
+content: {  }
+hidden:
+  body: true
+  langcode: true
+  links: true

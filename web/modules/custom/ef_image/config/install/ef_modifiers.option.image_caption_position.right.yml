@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: image_caption_position.right
+label: Right
+class_name: right
+target_embeddable_modifier: image_caption_position
+weight: -5

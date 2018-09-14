@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square_1x1
+  module:
+    - crop
+name: square_1x1_200px_wide
+label: 'Square (1:1) 200px wide'
+effects:
+  c8a02d01-2493-4afe-be9f-ce3ff078cd48:
+    uuid: c8a02d01-2493-4afe-be9f-ce3ff078cd48
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square_1x1
+  c05a76c9-824e-4bc1-9151-7e1c882f63c1:
+    uuid: c05a76c9-824e-4bc1-9151-7e1c882f63c1
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 200
+      height: 200

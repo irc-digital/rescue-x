@@ -1,0 +1,40 @@
+#entity.embeddable.settings:
+#  title: Settings
+#  route_name: entity.embeddable.settings
+#  base_route: entity.embeddable.settings
+entity.embeddable.view:
+  title: 'View'
+  route_name: entity.embeddable.canonical
+  base_route: entity.embeddable.canonical
+
+entity.embeddable.edit_form:
+  title: 'Edit'
+  route_name: entity.embeddable.edit_form
+  base_route: entity.embeddable.canonical
+
+entity.embeddable.delete_form:
+  title: 'Delete'
+  route_name: entity.embeddable.delete_form
+  base_route: entity.embeddable.canonical
+  weight: 10
+
+entity.embeddable.version_history:
+  route_name: entity.embeddable.version_history
+  base_route: entity.embeddable.canonical
+  title: 'Revisions'
+  weight: 20
+
+entity.embeddable.collection:
+  title: 'Embeddable content'
+  route_name: entity.embeddable.collection
+  base_route: system.admin_content
+
+entity.embeddable_type.collection:
+  title: 'Embeddable types'
+  route_name: entity.embeddable_type.collection
+  base_route: entity.embeddable_type.collection
+
+entity.embeddable.settings:
+  title: 'Settings'
+  route_name: entity.embeddable.settings
+  base_route: entity.embeddable_type.collection

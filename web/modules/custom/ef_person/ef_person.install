@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_person_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('person');
+}
+
+function ef_person_uninstall () {
+  ef_delete_all ('node', 'person');
+}

@@ -1,0 +1,8 @@
+name: EF Highlight
+type: module
+description: 'Provides a highlight embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

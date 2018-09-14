@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.wysiwyg_test
+  module:
+    - ef
+    - ef_wysiwyg_embed
+  enforced:
+    module:
+      - ef_wysiwyg_embed_test
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      wysiwyg: '0'
+id: embeddable.wysiwyg_test.ef_variation_1
+targetEntityType: embeddable
+bundle: wysiwyg_test
+mode: ef_variation_1

@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.dynamic_content
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: true
+        plugin: embeddable_count_option
+        configuration:
+          permitted_values: '1,3,5,7,9'
+          default_value: 5
+      embeddable_sticky_option:
+        enabled: true
+        plugin: embeddable_sticky_option
+        configuration:
+          entity_type: node
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_news_and_features
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      news_and_features_content:
+        - 'embeddable_views_field:dynamic_content_view'
+    fields:
+      'embeddable_views_field:dynamic_content_view':
+        plugin_id: 'embeddable_views_field:dynamic_content_view'
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: VHDNWKPWngJS9inVmDAZoSCsfgNRwN3wFSTvpXMuff4
+id: embeddable.dynamic_content.default
+targetEntityType: embeddable
+bundle: dynamic_content
+mode: default
+content: {  }
+hidden:
+  changed: true
+  created: true
+  dynamic_content_view_field: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

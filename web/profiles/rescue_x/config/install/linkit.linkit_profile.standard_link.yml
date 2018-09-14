@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: standard_link
+label: 'Standard link'
+description: 'The default linkit profile used by our WYSIYWYG editors'
+attributes:
+  target:
+    id: target
+    weight: 0
+    settings:
+      widget_type: simple_checkbox
+matchers:
+  6b7b2b6f-c72d-41b0-9acb-a96db85bbefe:
+    uuid: 6b7b2b6f-c72d-41b0-9acb-a96db85bbefe
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: false
+      include_unpublished: false

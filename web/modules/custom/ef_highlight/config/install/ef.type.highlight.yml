@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_highlight
+id: highlight
+label: 'Highlight'
+description: 'Embeddable type that can be used to provide highlight functionality'
+exclude_from_embeddable_overview_quick_add_list: false
+dependent_embeddable: true

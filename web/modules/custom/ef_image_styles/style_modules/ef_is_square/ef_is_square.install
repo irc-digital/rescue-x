@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_is_square_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addCropToMediaImageForm('square_1x1');
+}
+
+function ef_is_square_uninstall () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->removeCropFromMediaImageForm('square_1x1');
+}

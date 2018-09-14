@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_simple_image_link_list
+id: simple_image_link
+label: 'Simple image link'
+icon_uuid: null
+description: 'A simple image link is a teaser type commonly used by the simple image link list embeddable. Is the newer implementation of the partners embeddable items. '
+behavior_plugins: {  }

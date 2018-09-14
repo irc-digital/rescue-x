@@ -1,0 +1,12 @@
+#edit-embeddable-reference-options fieldset.embeddable-reference-options-config-wrapper {
+    border-width: 0;
+    border-left-width: 5px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+fieldset#edit-embeddable-reference-options > legend .fieldset-legend {
+    letter-spacing: 0;
+    text-transform: none;
+}

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_is_fat_portrait
+label: 'Fat portrait (6:7)'
+id: fat_portrait_6x7
+description: ''
+aspect_ratio: '6:7'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

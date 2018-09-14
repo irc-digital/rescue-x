@@ -1,0 +1,11 @@
+embeddable_modifier_option.entry_add:
+  route_name: embeddable_modifier_option.entry_add
+  title: 'Add option'
+  appears_on:
+    - entity.embeddable_modifier.edit_form
+
+entity.embeddable_modifier.add_form:
+  route_name: 'entity.embeddable_modifier.add_form'
+  title: 'Add embeddable modifier'
+  appears_on:
+    - entity.embeddable_modifier.collection

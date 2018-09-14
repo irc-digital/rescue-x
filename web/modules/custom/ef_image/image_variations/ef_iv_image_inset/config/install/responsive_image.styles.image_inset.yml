@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.inset_variable_height_1280px_wide
+    - image.style.inset_variable_height_1920px_wide
+    - image.style.inset_variable_height_248px_wide
+    - image.style.inset_variable_height_556px_wide
+  enforced:
+    module:
+      - ef_iv_image_inset
+id: image_inset
+label: 'Image inset'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 950px) 448px, (min-width: 640px) 378px, 100vw'
+      sizes_image_styles:
+        - inset_variable_height_1280px_wide
+        - inset_variable_height_1920px_wide
+        - inset_variable_height_248px_wide
+        - inset_variable_height_556px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: inset_variable_height_248px_wide

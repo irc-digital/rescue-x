@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.landing_page
+  enforced:
+    module:
+      - ef_landing_page
+  module:
+    - text
+_core:
+  default_config_hash: boF7Ja18DfEh7OU3S7lFuC7VlSrf0Mx8rfj67rSM4YY
+id: node.landing_page.body
+field_name: body
+entity_type: node
+bundle: landing_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

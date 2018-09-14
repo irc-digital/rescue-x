@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.rich_text
+    - field.field.embeddable.rich_text.field_ef_rt_text
+  module:
+    - ef
+    - text
+    - user
+third_party_settings:
+  ef:
+    editor_friendly_name: ''
+    view_mode_visibility:
+      field: '0'
+      wysiwyg: '0'
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+id: embeddable.rich_text.default
+targetEntityType: embeddable
+bundle: rich_text
+mode: default
+content:
+  changed:
+    label: hidden
+    type: timestamp
+    weight: 2
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  created:
+    label: hidden
+    type: timestamp
+    weight: 1
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_ef_rt_text:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  parent_id: true

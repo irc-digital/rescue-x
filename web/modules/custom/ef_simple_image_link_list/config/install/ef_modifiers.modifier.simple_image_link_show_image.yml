@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_simple_image_link_list
+id: simple_image_link_show_image
+label: "Show images/logos on simple link teasers"
+weight: -9
+class_name: display-images
+editorial_name: "Show images/logos"
+description: ''
+tooltip: ''
+promote: false
+default_option: simple_image_link_show_image.always

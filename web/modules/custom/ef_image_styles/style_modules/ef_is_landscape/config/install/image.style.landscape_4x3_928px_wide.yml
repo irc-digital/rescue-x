@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.landscape_4x3
+  module:
+    - crop
+name: landscape_4x3_928px_wide
+label: 'Landscape (4:3) 928px wide'
+effects:
+  af12899d-9922-41db-ad97-98e6142afbee:
+    uuid: af12899d-9922-41db-ad97-98e6142afbee
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: landscape_4x3
+  28e2c8b1-109e-4863-b1ba-0f92b5f3c981:
+    uuid: 28e2c8b1-109e-4863-b1ba-0f92b5f3c981
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 928
+      height: 696

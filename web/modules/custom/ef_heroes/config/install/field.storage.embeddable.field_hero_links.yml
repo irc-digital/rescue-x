@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - ef_icon_library
+  enforced:
+    module:
+      - ef_heroes
+id: embeddable.field_hero_links
+field_name: field_hero_links
+entity_type: embeddable
+type: link_icon
+settings: {  }
+module: ef_icon_library
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

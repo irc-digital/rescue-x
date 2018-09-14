@@ -1,0 +1,133 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.body
+    - field.field.node.article.field_call_to_action_text
+    - field.field.node.article.field_contributors
+    - field.field.node.article.field_hero_credit
+    - field.field.node.article.field_highlights
+    - field.field.node.article.field_slug
+    - field.field.node.article.field_subtitle
+    - field.field.node.article.field_teaser_image
+    - field.field.node.article.field_topics
+    - node.type.article
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_teaser_standard
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      teaser_standard_url:
+        - content_url
+      teaser_standard_cta:
+        - 'fallback_to_placeholder:node_article_field_call_to_action_text_placeholder_fallback'
+      teaser_standard_image_source_set:
+        - 'media_image_attributes_field:node_article_field_teaser_image_srcset'
+      teaser_standard_image_sizes:
+        - 'media_image_attributes_field:node_article_field_teaser_image_sizes'
+      teaser_standard_image_fallback:
+        - 'media_image_attributes_field:node_article_field_teaser_image_fallback_uri'
+      teaser_standard_image_alt:
+        - 'media_image_attributes_field:node_article_field_teaser_image_alt'
+      teaser_standard_slug:
+        - field_slug
+      teaser_standard_title:
+        - node_title
+    fields:
+      content_url:
+        plugin_id: content_url
+        weight: 0
+        label: hidden
+        formatter: default
+      'fallback_to_placeholder:node_article_field_call_to_action_text_placeholder_fallback':
+        plugin_id: 'fallback_to_placeholder:node_article_field_call_to_action_text_placeholder_fallback'
+        weight: 0
+        label: hidden
+        formatter: default
+      'media_image_attributes_field:node_article_field_teaser_image_srcset':
+        plugin_id: 'media_image_attributes_field:node_article_field_teaser_image_srcset'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_standard
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_article_field_teaser_image_sizes':
+        plugin_id: 'media_image_attributes_field:node_article_field_teaser_image_sizes'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_standard
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_article_field_teaser_image_fallback_uri':
+        plugin_id: 'media_image_attributes_field:node_article_field_teaser_image_fallback_uri'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_standard
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:node_article_field_teaser_image_alt':
+        plugin_id: 'media_image_attributes_field:node_article_field_teaser_image_alt'
+        weight: 0
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: ''
+          class: ''
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
+_core:
+  default_config_hash: Pj6fPRzBoF_zN0nuhbO941kyWy06havqXHBW1yqTXwM
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  field_slug:
+    type: string
+    weight: 1
+    region: teaser_standard_slug
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_call_to_action_text: true
+  field_contributors: true
+  field_hero_credit: true
+  field_highlights: true
+  field_subtitle: true
+  field_teaser_image: true
+  field_topics: true
+  langcode: true
+  links: true

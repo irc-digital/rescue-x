@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.well_width_13x9
+  module:
+    - crop
+name: well_width_13x9_1920px_wide
+label: 'Well width (13:9) 1920px wide'
+effects:
+  b282050d-220e-46c7-9068-54ca73ea86e7:
+    uuid: b282050d-220e-46c7-9068-54ca73ea86e7
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: well_width_13x9
+  fd4d5b0f-4abf-439f-9754-eb160912d9c1:
+    uuid: fd4d5b0f-4abf-439f-9754-eb160912d9c1
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 1329

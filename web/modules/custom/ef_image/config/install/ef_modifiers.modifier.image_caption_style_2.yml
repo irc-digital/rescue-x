@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: image_caption_style_2
+label: Image caption style (standard, box)
+weight: -9
+class_name: caption-style-2
+editorial_name: Caption style
+description: ''
+tooltip: ''
+promote: false
+default_option: image_caption_style_2.standard

@@ -1,0 +1,38 @@
+.embedding-options-element .form-radios .form-type-radio{
+  display: inline;
+  margin-right: 5px;
+}
+
+.embedding-options-element .form-radios .form-type-radio label{
+  display: inline-block;
+  color: #000;
+  border: 1px solid #c5c5c5;
+  background: #f6f6f6;
+  border-radius: 3px;
+}
+
+.embedding-options-element .form-radios .form-type-radio label:hover{
+  border: 1px solid #cccccc;
+  background: #ededed;
+}
+
+.embedding-options-element .form-radios .form-type-radio label.ui-state-active{
+  background: #ededed;
+}
+
+.embedding-options-element .form-radios .form-type-radio label .ui-checkboxradio-icon {
+  display: inline-block;
+  background-image: none;
+  background-color: #fff;
+  color: #808080;
+}
+
+.embedding-options-element .embeddable-subform .form-item{
+  margin-top: 10px;
+}
+
+.embedding-options-element .embeddable-subform .edit-embeddable-button {
+  float: right;
+  position: relative;
+  top: -44px;
+}

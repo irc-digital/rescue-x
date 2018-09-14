@@ -1,0 +1,22 @@
+ef_image_styles.small:
+  label: small
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+    - 3x
+ef_image_styles.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 40.063em) and (max-width: 64em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+ef_image_styles.large:
+  label: wide
+  mediaQuery: 'all and (min-width: 64.063em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x

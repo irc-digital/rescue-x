@@ -1,0 +1,7 @@
+name: "EF Image styles: Landscape (4x3)"
+type: module
+description: 'Landscaope (4x3) image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

@@ -1,0 +1,20 @@
+{
+  "name": "drupal/ef",
+  "description": "Embeddable framework.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/sandbox/andythornton/2961505",
+  "authors": [
+    {
+      "name": "Russ Bomhof",
+      "homepage": "https://www.drupal.org/u/rbomhof",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Andrew Thornton",
+      "homepage": "https://certification.acquia.com/user/1270732",
+      "role": "Co-maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev"
+}

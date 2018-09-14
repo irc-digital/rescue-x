@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.fat_portrait_6x7
+  module:
+    - crop
+name: fat_portrait_6x7_320px_wide
+label: 'Fat portrait (6:7) 320px wide'
+effects:
+  d6e2415f-f397-44db-8cc3-dae68f2fa207:
+    uuid: d6e2415f-f397-44db-8cc3-dae68f2fa207
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: fat_portrait_6x7
+  8224c19a-6070-472e-9b43-9ebb78e27e88:
+    uuid: 8224c19a-6070-472e-9b43-9ebb78e27e88
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 320
+      height: 373

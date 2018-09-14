@@ -1,0 +1,7 @@
+name: "EF Image styles: Variable height"
+type: module
+description: 'Variable height image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

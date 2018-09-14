@@ -1,0 +1,7 @@
+name: "EF Image styles: Portrait (3x4)"
+type: module
+description: 'Portrait image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

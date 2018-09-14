@@ -1,0 +1,79 @@
+name: Rescue X
+type: profile
+description: "Profile for Rescue X sites."
+version: VERSION
+core: 8.x
+dependencies:
+  - node
+  - admin_toolbar
+  - block
+  - menu_link_content
+  - breakpoint
+  - ckeditor
+  - datetime
+  - datetime_range
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_ui
+  - file
+  - filter
+  - image
+  - config_translation
+  - content_translation
+  - layout_discovery
+  - language
+  - link
+  - locale
+  - linkit
+  - tweetext
+  - media
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - responsive_image
+  - search
+  - shortcut
+  - syslog
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - token
+  - toolbar
+  - admin_toolbar_tools
+  - update
+  - user
+  - chosen
+  - chosen_field
+  - views
+  - views_ui
+  - ds
+  - ds_extras
+  - ui_patterns
+  - ui_patterns_library
+  - ui_patterns_ds
+  - ui_patterns_field_group
+  - ui_patterns_layouts
+  - pathauto
+  - components
+  - crop
+  - field_group
+  - image_widget_crop
+  - entity_embed
+  - ef
+  - ef_modifiers
+  - ef_patterns
+  - ef_wysiwyg_embed
+  - ef_icon_library
+  - ef_image_styles
+  - entity_browser
+  - media_entity_browser
+  - entity_browser_entity_form
+themes:
+  - stable
+  - x
+  - seven
+

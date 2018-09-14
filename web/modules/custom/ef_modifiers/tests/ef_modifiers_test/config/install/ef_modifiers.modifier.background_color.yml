@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: background_color
+label: 'Background color'
+weight: 0
+class_name: background-color
+editorial_name: 'Background color editorial name'
+description: 'What color should the Background be?'
+tooltip: 'Background tooltip'
+promote: false
+default_option: background_color.white

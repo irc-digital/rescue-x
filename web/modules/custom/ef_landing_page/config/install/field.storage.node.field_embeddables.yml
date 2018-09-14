@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - node
+  enforced:
+    module:
+      - ef_landing_page
+id: node.field_embeddables
+field_name: field_embeddables
+entity_type: node
+type: entity_reference_embeddable
+settings:
+  target_type: embeddable
+module: ef
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

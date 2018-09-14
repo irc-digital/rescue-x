@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.hero_text_with_links
+    - field.storage.embeddable.field_displayed_title
+_core:
+  default_config_hash: 3sPGiSAAoMvRYZnHQ8ojENS7mzQzOwHv6S2kzrvkGlo
+id: embeddable.hero_text_with_links.field_displayed_title
+field_name: field_displayed_title
+entity_type: embeddable
+bundle: hero_text_with_links
+label: Headline
+description: 'The title displayed to the visitor.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

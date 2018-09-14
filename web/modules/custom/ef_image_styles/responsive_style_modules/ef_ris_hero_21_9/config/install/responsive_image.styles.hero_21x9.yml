@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1x1_1280px_wide
+    - image.style.square_1x1_2000px_wide
+    - image.style.square_1x1_640px_wide
+    - image.style.super_widescreen_21x9_1925px_wide
+    - image.style.super_widescreen_21x9_2058px_wide
+    - image.style.super_widescreen_21x9_3850px_wide
+  enforced:
+    module:
+      - ef_ris_hero_21_9
+id: hero_21x9
+label: 'Hero (21x9)'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: super_widescreen_21x9_2058px_wide
+  -
+    breakpoint_id: ef_image_styles.large
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: super_widescreen_21x9_3850px_wide
+  -
+    breakpoint_id: ef_image_styles.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: super_widescreen_21x9_1925px_wide
+  -
+    breakpoint_id: ef_image_styles.medium
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: super_widescreen_21x9_2058px_wide
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: square_1x1_640px_wide
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: square_1x1_1280px_wide
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 3x
+    image_mapping_type: image_style
+    image_mapping: square_1x1_2000px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: square_1x1_640px_wide

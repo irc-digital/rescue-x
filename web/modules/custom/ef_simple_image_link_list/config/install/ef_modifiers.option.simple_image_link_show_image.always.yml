@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_simple_image_link_list
+id: simple_image_link_show_image.always
+label: Always
+class_name: always
+target_embeddable_modifier: simple_image_link_show_image
+weight: 15
