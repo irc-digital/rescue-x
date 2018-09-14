@@ -1,0 +1,8 @@
+@import '../../../scss/variables';
+
+$two-column-list-column-gutter: $standard-gutter;
+$two-column-list-row-gutter: 3 * $standard-gutter;
+$two-column-list-stacked-margin-bottom: $standard-gutter * 3;
+$two-column-list-plus-separators-vertical-rhythm-relative-to: $h3-font-size;
+
+// end of file

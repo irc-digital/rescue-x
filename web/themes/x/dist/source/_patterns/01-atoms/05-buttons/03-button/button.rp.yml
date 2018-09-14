@@ -1,0 +1,10 @@
+button:
+  label: Button
+  description: Todo
+  use: "@atoms/05-buttons/03-button/button.twig"
+  fields:
+    button_content:
+      type: text
+      label: "Button label"
+      description: Button text
+      preview: "Click me"

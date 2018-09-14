@@ -1,0 +1,10 @@
+@import 'rplc-top-stories.variables';
+
+.rplc-top-stories {
+  &__content {
+    @include standard-row;
+  }
+}
+
+
+// end of file

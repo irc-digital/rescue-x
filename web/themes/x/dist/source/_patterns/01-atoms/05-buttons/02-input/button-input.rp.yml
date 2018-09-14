@@ -1,0 +1,10 @@
+button_input:
+  label: Button (HTML input tag)
+  description: Todo
+  use: "@atoms/05-buttons/02-input/button-input.twig"
+  fields:
+    button_content:
+      type: text
+      label: "Button label"
+      description: Button text
+      preview: "Click me"

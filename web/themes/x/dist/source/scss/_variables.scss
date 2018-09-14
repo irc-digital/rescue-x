@@ -1,0 +1,155 @@
+@import 'helpers/rem';
+@import 'variables.private';
+
+// public variables
+
+// colors
+$white: #fff;
+$very-light-gray: #f6f6f6;
+$light-gray: #e9e9e9;
+$gray: #d1d1d1;
+$dark-gray: #666;
+$very-dark-gray: #383838;
+$black: #000;
+$red: #ee2d14;
+$alert: $red;
+$private-irc-yellow: #fdc513;
+$primary-color: $private-irc-yellow;
+$standard-overlay-treatment: rgba(0, 0, 0, .5);
+
+// font weights
+$strong: 700;
+
+//#FFD960
+//#FFD44B
+
+
+$standard-gutter: 1rem;
+$standard-horizontal-margin-accounting-for-gutters: 2 * $standard-gutter;
+$private-row-gutter: $standard-gutter; // kept distinct from the standard gutter as i can see this changing to 2rem
+$well-width-inner: rem(1208px);
+$max-row-width: $well-width-inner + ($standard-gutter * 2);
+
+$smallest-desktop-size: $max-row-width;
+$smallest-desktop-size-less-gutters: $well-width-inner - rem(1px);
+$smallest-laptop-size: rem(1024px);
+$smallest-tablet-size: rem(768px);
+$smallest-phablet-size: rem(641px);
+
+// The default font family.
+$base-font-family: akzidenz-grotesk, Arial, sans-serif;
+
+$body-background-color: $very-light-gray;
+
+// mixins
+// only create for really ubiquitous stuff
+// a rule-of-thumb would be 'does this feel like boilerplating' - if so, consider a mixin
+
+//
+// standard-row mixin
+//
+// Useful when an element needs to fit into our well.
+//
+// Note: We've inherited using padding rather than margin for the breathing space from rescue.org
+//
+@mixin standard-row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-row-width;
+  padding-left: $private-row-gutter;
+  padding-right: $private-row-gutter;
+}
+
+//
+// breakpoint mixin
+//
+// A mixin to help with our most common media queries
+//
+// accepts:  desktop, laptop, tablet and phablet.
+//
+// mobile is not an option as our SCSS should be mobile-first
+//
+// you are encouraged to write your own media queries when you need to
+// do work outside of these common targets. if possible, use these variables when you
+// need to target a device in the broadest sense:
+//
+//    $smallest_phablet_size (start  of phablet)
+//    $smallest_tablet_size (start of tablet)
+//    $smallest_laptop_size (start of laptop)
+//    $smallest_desktop_size-width (start of desktop)
+//
+//
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media only screen and (min-width: #{$smallest-desktop-size}) { @content ; }
+  } @else if $point == laptop {
+    @media only screen and (min-width: #{$smallest-laptop-size}) { @content ; }
+  } @else if $point == tablet {
+    @media only screen and (min-width: #{$smallest-tablet-size}) { @content ; }
+  } @else if $point == phablet {
+    @media only screen and (min-width: #{$smallest-phablet-size})  { @content ; }
+  }
+}
+
+//
+// Vertical Rhythm
+//
+// TAKEN FROM https://github.com/JohnAlbin/normalize-scss
+//
+// This is the minimal amount of code needed to create vertical rhythm in our
+// CSS. If you are looking for a robust solution, look at the excellent Typey
+// library. @see https://github.com/jptaranto/typey
+
+@function normalize-rhythm($value, $relative-to: $base-font-size, $unit: $base-unit) {
+  @if unit($value) != px {
+    @error 'The normalize vertical-rhythm module only supports px inputs. The typey library is better.';
+  }
+  @if $unit == rem {
+    @return ($value / $base-font-size) * 1rem;
+  } @else if $unit == em {
+    @return ($value / $relative-to) * 1em;
+  } @else { // $unit == px
+    @return $value;
+  }
+}
+
+@mixin normalize-font-size($value, $relative-to: $base-font-size) {
+  @if unit($value) != 'px' {
+    @error 'normalize-font-size() only supports px inputs. The typey library is better.';
+  }
+  font-size: normalize-rhythm($value, $relative-to);
+}
+
+@mixin normalize-rhythm($property, $values, $relative-to: $base-font-size) {
+  $value-list: $values;
+  $sep: space;
+  @if type-of($values) == 'list' {
+    $sep: list-separator($values);
+  } @else {
+    $value-list: append((), $values);
+  }
+
+  $normalized-values: ();
+  @each $value in $value-list {
+    @if unitless($value) and $value != 0 {
+      $value: $value * normalize-rhythm($base-line-height, $relative-to);
+    }
+    $normalized-values: append($normalized-values, $value, $sep);
+  }
+  #{$property}: $normalized-values;
+}
+
+@mixin normalize-margin($values, $relative-to: $base-font-size) {
+  @include normalize-rhythm(margin, $values, $relative-to);
+}
+
+@mixin normalize-line-height($font-size, $min-line-padding: 2px) {
+  $lines: ceil($font-size / $base-line-height);
+  // If lines are cramped include some extra leading.
+  @if ($lines * $base-line-height - $font-size) < ($min-line-padding * 2) {
+    $lines: $lines + 1;
+  }
+  @include normalize-rhythm(line-height, $lines, $font-size);
+}
+
+// end of file

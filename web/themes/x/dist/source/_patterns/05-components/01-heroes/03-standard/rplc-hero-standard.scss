@@ -1,0 +1,19 @@
+@import 'rplc-hero-standard.variables';
+
+.rplc-hero-standard {
+  $self: &;
+
+  &__link-wrapper {
+    text-decoration: none;
+  }
+
+  &__description {
+    // TODO temp until we can common core styles
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: -.1px;
+    line-height: 1.6;
+  }
+}
+
+// end of file

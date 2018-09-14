@@ -1,0 +1,14 @@
+@import 'rplm-contributors.variables';
+
+.rplm-contributors {
+
+  display: grid;
+  grid-row-gap: $contributors-grid-row-gap;
+  grid-template-columns: 1fr;
+
+  @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$hero-layout-1-largest-medium-device-size}) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// end of file

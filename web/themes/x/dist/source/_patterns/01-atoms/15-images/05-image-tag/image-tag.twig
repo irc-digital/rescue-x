@@ -1,0 +1,6 @@
+<img class='rpla-image-tag{% for image_tag_modifier in image_tag_modifiers %} rpla-image-tag--{{ image_tag_modifier }}{% endfor %}'
+     src="{{ image_tag_source }}"
+     {% if alt %} alt="{{ image_tag_alt }}"{% endif %}
+     {% if image_width %} width="{{ image_tag_width }}"{% endif %}
+     {% if image_height %} height="{{ image_tag_height }}"{% endif %}
+/>

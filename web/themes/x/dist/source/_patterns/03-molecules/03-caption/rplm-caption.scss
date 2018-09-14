@@ -1,0 +1,10 @@
+@import 'rplm-caption.variables';
+
+.rplm-caption {
+  background-color: $caption-default-background-color;
+  color: $caption-default-text-color;
+  padding: $standard-gutter/2 $standard-gutter $standard-gutter;
+}
+
+// end of file
+

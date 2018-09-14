@@ -1,0 +1,41 @@
+@import 'rpll-hero-layout-2.variables';
+
+.rpll-hero-layout-2 {
+  $self: &;
+
+  background-color: $hero-2-text-area-text-background;
+
+  @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+    background-color: transparent;
+  }
+
+  &__outer-text-wrapper {
+    color: $white;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+    position: relative;
+
+    #{$self}__outer-text-wrapper {
+      background-color: $hero-2-text-area-overlay-treatment;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    #{$self}__text-wrapper {
+      @include standard-row;
+      display: grid;
+      grid-column-gap: $hero-2-text-column-gap;
+      grid-template-areas: 'primary' 'secondary';
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+
+// end of file

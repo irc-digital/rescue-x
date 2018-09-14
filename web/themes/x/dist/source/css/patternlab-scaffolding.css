@@ -1,0 +1,152 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be our production CSS.
+ */
+.sg-pattern-example > .rpll-two-column-list,
+.sg-pattern-example > .rpll-four-column-list,
+.sg-pattern-example > .rpll-three-column-list,
+body > .rpll-two-column-list,
+body > .rpll-four-column-list,
+body > .rpll-three-column-list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 77.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.rplc-teaser-simple-image-link {
+  max-width: 16.5625rem; }
+
+@media only screen and (min-width: 77.5rem) {
+  .rplc-teaser-standard, .rplc-teaser-minimal {
+    max-width: 36.875rem; } }
+
+@media only screen and (min-width: 77.5rem) {
+  .rplc-teaser-highlighted {
+    max-width: 75.4375rem; } }
+
+@media only screen and (min-width: 75.4375rem) {
+  .rplc-teaser-image-link-box {
+    max-width: 24.5rem; } }
+
+#sg-patterns {
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  max-width: 100%;
+  padding: 0; }
+
+.sg-subtype, .sg-pattern > * {
+  padding-left: .5rem !important;
+  padding-right: .5rem !important; }
+
+#components-image-window-width > .sg-pattern-example,
+#components-hero-article > .sg-pattern-example,
+#components-hero-standard > .sg-pattern-example,
+#components-hero-landing-page > .sg-pattern-example,
+#components-hero-landing-page-crisis-watch > .sg-pattern-example,
+#components-hero-text-only > .sg-pattern-example,
+#layouts-hero-layout-1 > .sg-pattern-example,
+#layouts-hero-layout-2 > .sg-pattern-example,
+#layouts-hero-layout-1-simpler > .sg-pattern-example {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+#atoms-social-share-standard {
+  background-color: #fff; }
+
+.patternlab-faux-hero-image-21-9 {
+  height: 100vw;
+  line-height: 100vw;
+  width: 100%; }
+  @media only screen and (min-width: 40.0625rem) {
+    .patternlab-faux-hero-image-21-9 {
+      line-height: calc(100vw / ( 21 / 9 ));
+      height: calc(100vw / ( 21 / 9 )); } }
+
+.patternlab-faux-hero-image-16-9 {
+  height: 100vw;
+  line-height: 100vw;
+  width: 100%; }
+  @media only screen and (min-width: 40.0625rem) {
+    .patternlab-faux-hero-image-16-9 {
+      line-height: calc(100vw / ( 16 / 9 ));
+      height: calc(100vw / ( 16 / 9 )); } }
+
+.patternlab-faux-hero-2-text {
+  background-color: #000;
+  border: 4px dashed #333;
+  height: 200px;
+  line-height: 200px;
+  text-align: center; }
+  @media only screen and (min-width: 61.3125rem) {
+    .patternlab-faux-hero-2-text {
+      background-color: transparent; } }
+
+.demo-animate {
+  background: #ddd;
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer; }
+
+.sg-colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important; }
+
+.sg-colors li {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  padding: 0.3em;
+  margin: 0 0.5em 0.5em 0;
+  min-width: 5em;
+  max-width: 14em;
+  border: 1px solid #ddd;
+  border-radius: 8px; }
+
+.sg-swatch {
+  display: block;
+  height: 4em;
+  margin-bottom: 0.3em;
+  border-radius: 5px; }
+
+.sg-label {
+  font-size: 90%;
+  line-height: 1; }
+
+#patternlab-screen-size {
+  background: #fdc513;
+  font-weight: bold;
+  opacity: 0.5;
+  padding: 0.25rem 1rem;
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  z-index: 5; }
+  #patternlab-screen-size::before {
+    content: 'mobile'; }
+  @media only screen and (min-width: 40.0625rem) {
+    #patternlab-screen-size::before {
+      content: 'phablet'; } }
+  @media only screen and (min-width: 48rem) {
+    #patternlab-screen-size::before {
+      content: 'tablet'; } }
+  @media only screen and (min-width: 64rem) {
+    #patternlab-screen-size::before {
+      content: 'laptop'; } }
+  @media only screen and (min-width: 77.5rem) {
+    #patternlab-screen-size::before {
+      content: 'desktop'; } }
+
+.sg-tabs-panel {
+  min-height: 20em !important; }
+
+/*# sourceMappingURL=patternlab-scaffolding.css.map */

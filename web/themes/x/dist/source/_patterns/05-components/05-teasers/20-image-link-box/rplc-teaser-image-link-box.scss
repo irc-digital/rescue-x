@@ -1,0 +1,99 @@
+@import 'rplc-teaser-image-link-box.variables';
+
+.rplc-teaser-image-link-box {
+  $self: &;
+
+  height: 100%;
+
+  &__wrapper-link {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  &__inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  &__title {
+    background: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%2F%3E%3C%2Fsvg%3E') right center no-repeat;
+    //letter-spacing: -1.25px; // todo when we figure out letter spacing etc
+  }
+
+  &__caption-wrapper {
+    background-color: $white;
+    border-bottom: $teaser-image-link-box-caption-bottom-border-size solid $teaser-image-link-box-default-decoration-color;
+    color: $black;
+    //line-height: 1.2; // todo when we figure out line heights etc
+    margin: 0 auto $teaser-image-link-box-caption-eats-in;
+    overflow: hidden;
+    padding: 1.25rem 2.0625rem;
+    position: relative;
+    top: $teaser-image-link-box-caption-eats-in;
+    width: calc(100% - #{$teaser-image-link-box-caption-total-horizontal-margin});
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $teaser-image-link-box-text-area-max-width;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  &:hover {
+    #{ $self }__caption-wrapper {
+      background-color: $teaser-image-link-box-default-decoration-color;
+    }
+
+    #{ $self }__title {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E');
+    }
+  }
+
+  &--style-alert {
+    #{ $self }__caption-wrapper {
+      border-bottom-color: $teaser-image-link-box-alert-decoration-color;
+    }
+
+    &:hover {
+      #{ $self }__caption-wrapper {
+        background-color: $teaser-image-link-box-alert-decoration-color;
+        color: $white;
+      }
+    }
+  }
+
+  @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$smallest-desktop-size-less-gutters}) {
+    &__text-wrapper {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+      //width: 100%;
+    }
+
+    &__caption-wrapper {
+      height: $teaser-image-link-box-caption-height-tablet;
+      position: static;
+      width: 100%;
+    }
+
+    &__image-wrapper {
+      flex: 0 0 $teaser-image-link-box-image-width-tablet;
+    }
+
+    &__inner-wrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+}
+
+// end of file

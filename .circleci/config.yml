@@ -1,4 +1,4 @@
-# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs  
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
@@ -53,7 +53,8 @@ jobs:
                 # Set TERMINUS_ENV and related environment variables.
                 # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
                 name: environment
-                command: /build-tools-ci/scripts/set-environment
+                # command: /build-tools-ci/scripts/set-environment
+                command: ./.circleci/scripts/irc/set-environment
 
             - run:
                 name: run composer install to get the vendor directory
@@ -93,41 +94,63 @@ jobs:
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: dependencies
-                command: /build-tools-ci/scripts/set-environment
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment 
+                name: Set Pantheon environment
+                # command: /build-tools-ci/scripts/set-environment
+                command: ./.circleci/scripts/irc/set-environment
 
             - run:
-                name: install dev dependencies, build assets, etc.
+                name: Prepare Pantheon environment
                 command: ./.circleci/scripts/pantheon/01-prepare
 
             - run:
-                name: build assets
+                name: Build assets
                 command: composer -n build-assets
 
             - run:
-                name: prepare database for site-under test
+                name: Push to IRC monthly branch
+                command: ./.circleci/scripts/pantheon/02a-push-to-irc-monthly-branch
+
+            - run:
+                name: Prepare database for site-under test
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
+
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
-            - run:
-                name: run composer install again to get dev dependencies
-                command: composer install
+            # - run:
+                # name: run composer install again to get dev dependencies
+                # command: composer install
+
+#            - run:
+#                name: Run functional tests with Behat
+#                command: ./tests/scripts/run-behat
+
+#            - run:
+#                name: Install additional dependencies
+#                command: ./.circleci/scripts/irc/install-additional-dependencies
+#
+#            - run:
+#                name: Backstop visual regression test
+#                command: ./.circleci/scripts/irc/backstop-visual-regression-test
+#
+#            - run:
+#                name: Save Backstop report as an artifact
+#                command: ./.circleci/scripts/irc/save-backstop-report
+#                when: on_fail
+#
+#            - store_artifacts:
+#                path: /tmp/artifacts
 
             - run:
-                name: run functional tests with Behat
-                command: ./tests/scripts/run-behat
-
-            - run:
-                name: post-test actions
+                name: Post-test actions
                 command: ./.circleci/scripts/pantheon/03-post-test
 
             - run:
-                name: handle merge to master (if needed)
+                name: Handle merge to master (if needed)
                 command: ./.circleci/scripts/pantheon/04-merge-master
 
             - run:
-                name: remove transient test fixtures
+                name: Remove transient test fixtures
                 command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
 
 workflows:
@@ -135,6 +158,6 @@ workflows:
   build_and_test:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
-      - build
-      # Build deploy and test on target platform
+      # - build
+      # Build deploy and test on Pantheon
       - build_deploy_and_test

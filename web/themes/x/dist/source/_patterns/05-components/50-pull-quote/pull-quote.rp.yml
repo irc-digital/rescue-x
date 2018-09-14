@@ -1,0 +1,16 @@
+pull_quote:
+  label: Pull quote
+  description: A pull quote (TODO)
+  use: "@components/50-pull-quote/pull-quote.twig"
+  section: TRUE
+  fields:
+    pull_quote_text:
+      type: text
+      label: "Pull quote text"
+      description: "The text of the pull quote"
+      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+  libraries:
+    - pull_quote_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-pull-quote.css: {}

@@ -1,0 +1,48 @@
+{#
+/**
+ * Available variables:
+ *     contributor_prefix                       - Text that comes before the contributor, usign to chain entries in a list. Will be translated.
+ *     contributor_name                         - The name of the contributor
+ *     contributor_title                        - The contributors role or title
+ *     contributor_responsive_image_source_set  - The source set of the photo of the contributor. If this is left blank then a default image is used
+ *     contributor_responsive_image_sizes       - The sizes media query for the images
+ *     contributor_responsive_image_alt         - The alt attributor for the contributor image
+ *     contributor_social                       - Links to their social accounts. This is an associative array:
+ *        key                       - The social site key, used to generate the svg icon
+ *        value                     - The URL of the contributor's social media account
+ * Available blocks:
+ * - none
+ */
+#}
+{% set contributor_first_in_list = contributor_first_in_list ? contributor_first_in_list : FALSE %}
+<figure class="rplm-contributor">
+  {% if contributor_responsive_image_source_set %}
+    <div class="rplm-contributor__image-wrapper">
+      {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
+            responsive_image_source_set: contributor_responsive_image_source_set,
+            responsive_image_sizes: contributor_responsive_image_sizes,
+            responsive_image_fallback: contributor_responsive_image_fallback,
+            responsive_image_alt: contributor_responsive_image_alt
+          } only %}
+    </div>
+  {% else %}
+    <div class="rplm-contributor__image-wrapper rplm-contributor__image-wrapper--default-image">
+      {% include '@atoms/15-images/20-icon/icon.twig' with {
+            icon_name: 'person',
+          } only %}
+    </div>
+  {% endif %}
+  <div class="rplm-contributor__byline">
+    {% if contributor_prefix %}<span class="rplm-contributor__prefix">{{ contributor_prefix }}</span>{% endif %}
+    <span class="rplc-contributor__name">{{ contributor_name }}</span>
+    {% for social_site, social_link in contributor_social %}
+    <a class="rplm-contributor__social-link" href="{{ social_link }}">
+      {% include '@atoms/15-images/20-icon/icon.twig' with {
+        icon_name: social_site,
+      } only %}
+    </a>
+    {% endfor %}
+    <div class="rplm-contributor__title">{{ contributor_title }}</div>
+  </div>
+</figure>
+

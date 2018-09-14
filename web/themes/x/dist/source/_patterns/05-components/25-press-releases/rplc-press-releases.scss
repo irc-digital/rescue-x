@@ -1,0 +1,10 @@
+@import 'rplc-press-releases.variables';
+
+.rplc-press-releases {
+  &__content {
+    @include standard-row;
+  }
+}
+
+
+// end of file

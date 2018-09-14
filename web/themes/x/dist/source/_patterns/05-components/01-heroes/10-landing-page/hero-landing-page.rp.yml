@@ -1,0 +1,63 @@
+landing_page:
+  label: Hero (landing page style)
+  description: A common hero used on topic, country and USP pages
+  use: "@components/01-heroes/10-landing-page/hero-landing-page.twig"
+  fields:
+    hero_landing_page_headline:
+      type: text
+      label: "Headline"
+      description: "The title of the hero"
+      preview: "Suspendisse"
+    hero_landing_page_slug:
+      type: text
+      label: "Slug"
+      description: "Slug"
+      preview: "Syria crisis"
+    hero_landing_page_crisis_watch:
+      type: boolean
+      label: "In crisis"
+      description: "Should the hero indicate that the subject matter is in crisis mode?"
+      preview: TRUE
+    hero_landing_page_art_directed_image_sources:
+      type: array
+      label: "Image sources"
+      description: "Image sources"
+      preview:
+        - source_set:
+          - "https://placem.at/places?w=640&h=640&random=herolandingpage 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=herolandingpage 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=herolandingpage 3x"
+          media: "only screen and (max-width: 40em)"
+        - source_set:
+          - "https://placem.at/places?w=1024&h=576&random=herolandingpage 1x"
+          - "https://placem.at/places?w=2048&h=1152&random=herolandingpage 2x"
+          media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+        - source_set:
+          - "https://placem.at/places?w=1920&h=1080&random=herolandingpage 1x"
+          - "https://placem.at/places?w=3840&h=2160&random=herolandingpage 2x"
+          media: "only screen and (min-width: 64.063em)"
+    hero_landing_page_art_directed_image_fallback:
+      type: string
+      label: 'Image fallback'
+      description: "Image alt attribute"
+      preview: "https://placem.at/places?w=1920&h=1080&random=herolandingpage"
+    hero_landing_page_art_directed_image_alt:
+      type: string
+      label: 'Image alt attribute'
+      description: 'Image alt attribute'
+      preview: "A nice image"
+    hero_landing_page_social_share:
+      type: text
+      label: "Social share"
+      description: "Rendered social share"
+  libraries:
+    - hero_landing_page_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-landing-page.css: {}
+    - crisis_watch_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-crisis-watch.css: {}
+
+

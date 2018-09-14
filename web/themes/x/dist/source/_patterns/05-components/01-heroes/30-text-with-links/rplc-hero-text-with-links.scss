@@ -1,0 +1,28 @@
+@import 'rplc-hero-text-with-links.variables';
+
+.rplc-hero-text-with-links {
+  $self: &;
+
+  @include standard-row;
+
+  &__link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: #{$hero-text-with-links-large-size}) {
+    #{$self}__description-links-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #{$self}__link-list {
+      flex-shrink: 0;
+      margin-left: 100px; // temp - need to work on this @todo
+    }
+
+  }
+}
+
+// end of file

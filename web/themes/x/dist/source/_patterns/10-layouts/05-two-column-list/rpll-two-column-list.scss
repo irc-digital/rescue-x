@@ -1,0 +1,58 @@
+@import 'rpll-two-column-list.variables';
+
+.rpll-two-column-list {
+  $self: &;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  @include breakpoint(desktop) {
+    display: grid;
+    grid-column-gap: $two-column-list-column-gutter;
+    grid-row-gap: $two-column-list-row-gutter;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__item {
+    margin-bottom: $two-column-list-stacked-margin-bottom;
+
+    @include breakpoint(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--highlighted {
+    #{ $self }__item {
+      &:nth-child(1) {
+        @include breakpoint(desktop) {
+          grid-column-end: 3;
+          grid-column-start: 1;
+        }
+      }
+    }
+  }
+
+  &--plus-separators {
+    @include breakpoint(tablet) { // hold the grid longer when we are doing this version
+      display: grid;
+      grid-column-gap: $two-column-list-column-gutter;
+      grid-row-gap: 0;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #{ $self }__item {
+      @include normalize-rhythm(padding, 1 0, $two-column-list-plus-separators-vertical-rhythm-relative-to);
+      border-bottom: 1px solid $gray;
+      margin-bottom: 0;
+
+      @include breakpoint(tablet) {
+        &:nth-child(1),
+        &:nth-child(2) {
+          border-top: 1px solid $gray;
+        }
+      }
+    }
+  }
+}
+
+// end of file

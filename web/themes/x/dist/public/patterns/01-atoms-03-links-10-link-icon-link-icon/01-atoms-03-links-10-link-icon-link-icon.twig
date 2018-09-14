@@ -1,0 +1,16 @@
+{#
+/**
+ * Available variables:
+ * - link_icon_name - icon name
+ * - link_icon_text - text
+ *
+ * Available blocks:
+ * - none
+ */
+#}
+<a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}">
+  <svg class="rpla-link-icon__icon rpla-link-icon__icon--{{ link_icon_name }}">
+    <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#rpl-svg-{{ link_icon_name }}'></use></svg>
+  </svg>
+  <span class="rpla-link-icon__text">{{ link_icon_text }}</span>
+</a>

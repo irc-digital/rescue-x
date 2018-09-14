@@ -1,0 +1,36 @@
+@import 'rplm-section-heading.variables';
+
+.rplm-section-heading {
+  $self: &;
+
+  @include standard-row;
+
+  &__title {
+    border-left: $section-heading-left-border-width solid $primary-color;
+    display: inline-block;
+    font-size: $section-heading-title-font-size;
+    font-weight: $section-heading-title-font-weight;
+    letter-spacing: -1.2px;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    padding-left: $section-heading-title-left-padding;
+    padding-top: 10px;
+  }
+
+  &__icon {
+    display: inline-block;
+    fill: $black;
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+  }
+
+  &--inverse {
+    #{ $self }__title {
+      border-color: $section-heading-inverse-left-border-color;
+    }
+  }
+}
+
+// end of file
+

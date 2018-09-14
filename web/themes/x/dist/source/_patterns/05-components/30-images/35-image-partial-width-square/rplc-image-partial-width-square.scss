@@ -1,0 +1,25 @@
+@import 'rplc-image-partial-width-square.variables';
+
+.rplc-image-partial-width-square {
+  &__content {
+    @include standard-row;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  &__caption-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $image-partial-width-square-caption-mobile-max-width;
+    position: relative;
+    top: $image-partial-width-square-caption-mobile-top;
+  }
+
+  // todo: modifiers
+  //  &--caption-position-right {
+  //  }
+}
+
+// end of file

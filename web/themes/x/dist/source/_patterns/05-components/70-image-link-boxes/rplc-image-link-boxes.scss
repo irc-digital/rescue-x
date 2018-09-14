@@ -1,0 +1,10 @@
+@import 'rplc-image-link-boxes.variables';
+
+.rplc-image-link-boxes {
+  &__content {
+    @include standard-row;
+  }
+}
+
+
+// end of file

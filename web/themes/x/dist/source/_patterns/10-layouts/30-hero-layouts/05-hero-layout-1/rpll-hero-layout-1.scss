@@ -1,0 +1,122 @@
+@import 'rpll-hero-layout-1.variables';
+
+.rpll-hero-layout-1 {
+  $self: &;
+
+  &__inner-content-wrapper {
+    @include standard-row;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  &__text-wrapper {
+    background-color: $white;
+    display: grid;
+    grid-row-gap: $standard-gutter;
+    grid-template-areas: 'primary_1' 'primary_2' 'secondary_1' 'secondary_2';
+    grid-template-columns: 1fr;
+    padding: 30px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__primary-1 {
+    grid-area: primary_1;
+  }
+
+  &__primary-2 {
+    grid-area: primary_2;
+  }
+
+  &__secondary-1 {
+    grid-area: secondary_1;
+  }
+
+  &__secondary-2 {
+    border-top: 1px solid $black;
+    grid-area: secondary_2;
+    padding-top: $standard-gutter;
+  }
+
+  &--no-second-blocks {
+    #{$self}__text-wrapper {
+      grid-template-areas: 'primary_1' 'secondary_1';
+    }
+  }
+
+  @include breakpoint(phablet) {
+    &__text-wrapper {
+      grid-column-gap: $standard-gutter;
+      grid-template-areas: 'primary_1 primary_1' 'primary_2 secondary_1' 'secondary_2 secondary_2';
+      grid-template-columns: 1fr 1fr;
+
+    }
+
+    &--no-second-blocks {
+      #{$self}__text-wrapper {
+        grid-template-areas: 'primary_1' 'secondary_1';
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  // modifiers
+  &--has-image {
+    #{$self}__text-wrapper {
+      margin-top: $hero-text-wrapper-eats-in;
+    }
+
+    @include breakpoint(phablet) {
+      #{$self}__text-wrapper {
+        margin-top: $hero-text-wrapper-eats-in-phablet;
+      }
+    }
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      #{$self}__text-wrapper {
+        margin-top: $hero-text-wrapper-eats-in-desktop;
+      }
+    }
+  }
+
+  @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+    &__text-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 530px;
+    }
+
+    &__primary-1,
+    &__primary-2 {
+      margin-right: 2 * $standard-gutter;
+      width: 66%;
+    }
+
+    &__secondary-1,
+    &__secondary-2 {
+      width: 32%;
+    }
+
+    &__primary-1,
+    &__secondary-1 {
+      margin-bottom: $standard-gutter;
+    }
+
+    &__secondary-2 {
+      border-width: 0;
+      padding-top: 0;
+    }
+
+    &--no-second-blocks {
+      #{$self}__text-wrapper {
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+
+// end of file

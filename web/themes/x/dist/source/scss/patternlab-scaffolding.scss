@@ -1,0 +1,202 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be our production CSS.
+ */
+
+@import 'variables';
+
+@import '../_patterns/10-layouts/30-hero-layouts/10-hero-layout-2/rpll-hero-layout-2.shared.variables';
+
+//
+// rescue styles only for PatternLab
+//
+// This allows us to make some thing look reasonable in PatternLab when they are being demoed "out of their natural
+// habitat" so to speak. These style do not get used in a production environment, so use sparingly and document them
+// in the appropriate twig and .md files
+//
+.sg-pattern-example > .rpll-two-column-list,
+.sg-pattern-example > .rpll-four-column-list,
+.sg-pattern-example > .rpll-three-column-list,
+body > .rpll-two-column-list,
+body > .rpll-four-column-list,
+body > .rpll-three-column-list {
+  @include standard-row;
+}
+
+.rplc-teaser-simple-image-link {
+  max-width: rem(265px);
+}
+
+.rplc-teaser-standard, .rplc-teaser-minimal {
+  @include breakpoint(desktop) {
+    max-width: rem(590px);
+  }
+}
+
+.rplc-teaser-highlighted {
+  @include breakpoint(desktop) {
+    max-width: $smallest-desktop-size-less-gutters;
+  }
+}
+
+.rplc-teaser-image-link-box {
+  @media only screen and (min-width: #{$smallest-desktop-size-less-gutters}) {
+    max-width: rem(392px);
+  }
+}
+
+// PatternLab stuff
+#sg-patterns {
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  max-width: 100%;
+  padding: 0;
+}
+
+// make all patterns have some padding left and right (to make it look nice) ...
+.sg-subtype, .sg-pattern > * {
+  padding-left: .5rem !important;
+  padding-right: .5rem !important;
+}
+
+// ... except for the ones that are supposed to go window width
+#components-image-window-width,
+#components-hero-article,
+#components-hero-standard,
+#components-hero-landing-page,
+#components-hero-landing-page-crisis-watch,
+#components-hero-text-only,
+#layouts-hero-layout-1,
+#layouts-hero-layout-2,
+#layouts-hero-layout-1-simpler {
+  & > .sg-pattern-example {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+#atoms-social-share-standard {
+  background-color: $white;
+}
+
+// style to make a responsive div for the hero layouts
+.patternlab-faux-hero-image-21-9 {
+  height: 100vw;
+  line-height: 100vw;
+  width: 100%;
+
+  @include breakpoint(phablet) {
+    line-height: calc(100vw / ( 21 / 9 ));
+    height: calc(100vw / ( 21 / 9 ));
+  }
+}
+
+.patternlab-faux-hero-image-16-9 {
+  height: 100vw;
+  line-height: 100vw;
+  width: 100%;
+
+  @include breakpoint(phablet) {
+    line-height: calc(100vw / ( 16 / 9 ));
+    height: calc(100vw / ( 16 / 9 ));
+  }
+}
+
+.patternlab-faux-hero-2-text {
+  background-color: $black;
+  border: 4px dashed #333;
+  height:200px;
+  line-height: 200px;
+  text-align:center;
+
+  @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+    background-color: transparent;
+  }
+}
+
+.demo-animate {
+  background: #ddd;
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sg-colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.sg-colors li {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0.3em;
+  margin: 0 0.5em 0.5em 0;
+  min-width: 5em;
+  max-width: 14em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.sg-swatch {
+  display: block;
+  height: 4em;
+  margin-bottom: 0.3em;
+  border-radius: 5px;
+}
+
+.sg-label {
+  font-size: 90%;
+  line-height: 1;
+}
+
+#patternlab-screen-size {
+  background: $primary-color;
+  font-weight: bold;
+  opacity: 0.5;
+  padding: $standard-gutter/4 $standard-gutter;
+  position: fixed;
+  right: $standard-gutter * 2;
+  top: $standard-gutter;
+  z-index: 5;
+
+  &::before {
+    content: 'mobile';
+  }
+
+  @include breakpoint(phablet) {
+    &::before {
+      content: 'phablet';
+    }
+  }
+
+  @include breakpoint(tablet) {
+    &::before {
+      content: 'tablet';
+    }
+  }
+
+  @include breakpoint(laptop) {
+    &::before {
+      content: 'laptop';
+    }
+  }
+
+  @include breakpoint(desktop) {
+    &::before {
+      content: 'desktop';
+    }
+  }
+}
+
+.sg-tabs-panel {
+  min-height: 20em !important;
+}

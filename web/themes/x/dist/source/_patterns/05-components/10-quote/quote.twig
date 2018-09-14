@@ -1,0 +1,39 @@
+{#
+/**
+ * Available variables:
+ * - quote_section_heading_title - Standard heading title field
+ * - quote_section_heading_description - Standard heading description field
+ * - quote_text - The quote itself
+ * - quote_attribution - Who said this quote?
+ * - quote_attribution_role - What role or subtitle should accompany the person who said the quote
+ * - quote_cta - The call to action presented at the bottom of the quote
+ * - quote_url - Where the visitor is taken when the click on the CTA
+ * - quote_image - The images associated with the quote
+ *
+ * Available blocks:
+ * - none
+ */
+#}
+<div class="rplc-quote{% for quote_modifier in quote_modifiers %} rplc-quote--{{ quote_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: quote_section_heading_title,
+    section_heading_description: quote_section_heading_description,
+    section_heading_icon: quote_section_heading_icon,
+  } only %}
+  <div class="rplc-quote__content">
+    <div class="rplc-quote__image-wrapper">
+      <img class="rplc-quote__image" src="{{ quote_image }}">
+    </div>
+    <div class="rplc-quote__text-wrapper">
+      <blockquote class="rplc-quote__quote">
+        <p class="rplc-quote__quote-text">{{ quote_text }}</p>
+        <cite class="rplc-quote__attribution">
+          <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
+          <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
+        </cite>
+      </blockquote>
+
+      <a href="{{ quote_url }}" class="rplc-quote__link">{{ quote_cta }}</a>
+    </div>
+  </div>
+</div>

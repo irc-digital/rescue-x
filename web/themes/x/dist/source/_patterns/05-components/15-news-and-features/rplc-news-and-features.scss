@@ -1,0 +1,9 @@
+@import 'rplc-news-and-features.variables';
+
+.rplc-news-and-features {
+  &__content {
+    @include standard-row;
+  }
+}
+
+// end of file

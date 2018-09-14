@@ -1,0 +1,12 @@
+@import 'rpla-link-icon.variables';
+
+.rpla-link-icon {
+  $self: &;
+
+  text-decoration: none;
+
+  &__icon {
+    height: 24px; // temp
+    width: 24px; // temp
+  }
+}

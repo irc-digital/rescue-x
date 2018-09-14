@@ -1,0 +1,84 @@
+news_and_features_section_heading_title: "News and features"
+news_and_features_section_heading_description: "This is the news and feature description"
+news_and_features_content:
+  - include():
+      pattern: "components-teaser-highlighted"
+      with:
+        teaser_highlighted_url: "#"
+        teaser_highlighted_slug: "Faker.words(2,true)"
+        teaser_highlighted_title: "Faker.sentence(7,true)"
+        teaser_highlighted_summary: "Faker.paragraph(3,true)"
+        teaser_highlighted_cta: "Read article"
+        teaser_highlighted_image_source_set:
+          - "https://placem.at/places?w=208&h=117&random=nandf1 208w"
+          - "https://placem.at/places?w=528&h=297&random=nandf1 528w"
+          - "https://placem.at/places?w=1024&h=576&random=nandf1 1024w"
+          - "https://placem.at/places?w=1280&h=720&random=nandf1 1280w"
+        teaser_highlighted_image_sizes: "(min-width: 1208px) 720px, 100vw"
+        teaser_highlighted_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf1"
+        teaser_highlighted_image_alt: "Faker.words(4, true)"
+      only: true
+  - include():
+      pattern: "components-teaser-standard"
+      with:
+        teaser_standard_url: "#"
+        teaser_standard_slug: "Faker.words(2,true)"
+        teaser_standard_title: "Faker.sentence(7,true)"
+        teaser_standard_cta: "Watch video"
+        teaser_standard_image_source_set:
+          - "https://placem.at/places?w=208&h=117&random=nandf2 208w"
+          - "https://placem.at/places?w=528&h=297&random=nandf2 528w"
+          - "https://placem.at/places?w=1024&h=576&random=nandf2 1024w"
+          - "https://placem.at/places?w=1280&h=720&random=nandf2 1280w"
+        teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+        teaser_standard_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf2"
+        teaser_standard_image_alt: "Faker.words(4, true)"
+      only: true
+  - include():
+      pattern: "components-teaser-standard"
+      with:
+        teaser_standard_url: "#"
+        teaser_standard_slug: "Faker.words(2,true)"
+        teaser_standard_title: "Faker.sentence(7,true)"
+        teaser_standard_cta: "Learn more"
+        teaser_standard_image_source_set:
+          - "https://placem.at/places?w=208&h=117&random=nandf3 208w"
+          - "https://placem.at/places?w=528&h=297&random=nandf3 528w"
+          - "https://placem.at/places?w=1024&h=576&random=nandf3 1024w"
+          - "https://placem.at/places?w=1280&h=720&random=nandf3 1280w"
+        teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+        teaser_standard_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf3"
+        teaser_standard_image_alt: "Faker.words(4, true)"
+      only: true
+  - include():
+      pattern: "components-teaser-standard"
+      with:
+        teaser_standard_url: "#"
+        teaser_standard_slug: "Faker.words(2,true)"
+        teaser_standard_title: "Faker.sentence(7,true)"
+        teaser_standard_cta: "Read article"
+        teaser_standard_image_source_set:
+          - "https://placem.at/places?w=208&h=117&random=nandf4 208w"
+          - "https://placem.at/places?w=528&h=297&random=nandf4 528w"
+          - "https://placem.at/places?w=1024&h=576&random=nandf4 1024w"
+          - "https://placem.at/places?w=1280&h=720&random=nandf3 1280w"
+        teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+        teaser_standard_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf4"
+        teaser_standard_image_alt: "Faker.words(4, true)"
+      only: true
+  - include():
+      pattern: "components-teaser-standard"
+      with:
+        teaser_standard_url: "#"
+        teaser_standard_slug: "Faker.words(2,true)"
+        teaser_standard_title: "Faker.sentence(7,true)"
+        teaser_standard_cta: "Read article"
+        teaser_standard_image_source_set:
+          - "https://placem.at/places?w=208&h=117&random=nandf5 208w"
+          - "https://placem.at/places?w=528&h=297&random=nandf5 528w"
+          - "https://placem.at/places?w=1024&h=576&random=nandf5 1024w"
+          - "https://placem.at/places?w=1280&h=720&random=nandf5 1280w"
+        teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+        teaser_standard_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf5"
+        teaser_standard_image_alt: "Faker.words(4, true)"
+      only: true

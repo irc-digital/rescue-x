@@ -1,0 +1,18 @@
+{#
+/**
+ * Available variables:
+ *
+ *
+ * Available blocks:
+ */
+#}
+<header class="rplc-hero-text-only{% for hero_text_only_modifier in hero_text_only_modifiers %} rplc-hero-text-only--{{ hero_text_only_modifier }}{% endfor %}">
+  <div class="rplc-hero-text-only__content">
+    <div class="rplc-hero-text-only__slug-wrapper">
+      <h6 class="rplc-hero-text-only__slug">{{ hero_text_only_slug }}</h6>
+    </div>
+    {% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_text_only_headline} %}
+    <div class="rplc-hero-text-only__description">{{ hero_text_only_description }}</div>
+  </div>
+</header>
+

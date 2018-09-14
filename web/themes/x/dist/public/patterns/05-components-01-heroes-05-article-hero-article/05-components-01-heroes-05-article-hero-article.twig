@@ -1,0 +1,44 @@
+{#
+/**
+ * Available variables:
+ *
+ *
+ * Available blocks:
+ */
+#}
+{% set layout_modifiers = hero_article_art_directed_image_sources is not empty ? ['has-image'] : ['no-image'] %}
+<header class="rplc-hero-article{% for hero_article_modifier in hero_article_modifiers %} rplc-hero-article--{{ hero_article_modifier }}{% endfor %}">
+  <div class="rplc-hero-article__content">
+    {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
+      {% if hero_article_art_directed_image_sources is not empty %}
+        {% block hero_layout_1_image_block %}
+          {% include '@atoms/15-images/15-art-directed-image/art-directed-image.twig' with {
+            art_directed_image_fallback: hero_article_art_directed_image_fallback,
+            art_directed_image_sources: hero_article_art_directed_image_sources,
+            art_directed_image_alt: hero_article_art_directed_image_alt
+          } only %}
+        {% endblock %}
+      {% endif %}
+      {% block hero_layout_1_primary_1_block %}
+        {% if hero_article_slug %}
+          <div class="rplc-hero-article__slug-wrapper">
+            <h6 class="rplc-hero-article__slug">{{ hero_article_slug }}</h6>
+          </div>
+        {% endif %}
+        {% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_article_headline} %}
+        {% if hero_article_description %}<h2 class="rplc-hero-article__description">{{ hero_article_description }}</h2>{% endif %}
+      {% endblock %}
+      {% block hero_layout_1_primary_2_block %}
+        <div class="rplc-hero-article__published">{{ hero_article_published }}</div>
+        {% if hero_article_last_updated and hero_article_last_updated != hero_article_published %}<div class="rplc-hero-article__updated">{{ "Last updated:" | trans }} {{ hero_article_last_updated }}</div>{% endif %}
+        {% if hero_article_photographer %}<div class="rplc-hero-article__photographer">{{ "Photo:" | trans }} {{ hero_article_photographer }}</div>{% endif %}
+      {% endblock %}
+      {% block hero_layout_1_secondary_1_block %}
+        {{ hero_article_social_share }}
+      {% endblock %}
+      {% block hero_layout_1_secondary_2_block %}
+        {{ hero_article_contributors }}
+      {% endblock %}
+    {% endembed %}
+  </div>
+</header>

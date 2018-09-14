@@ -1,0 +1,26 @@
+@import 'rplc-teaser-minimal.variables';
+
+.rplc-teaser-minimal {
+  $self: &;
+
+  &__wrapper-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    margin-top: 0;
+    order: 10;
+  }
+
+  &--title-first {
+    #{ $self }__title {
+      order: 0;
+    }
+  }
+}
+
+
+// end of file

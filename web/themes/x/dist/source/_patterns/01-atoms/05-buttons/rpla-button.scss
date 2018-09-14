@@ -1,0 +1,20 @@
+@import 'rpla-button.variables';
+
+.rpla-button {
+  $self: &;
+
+  background-color: $button-background-color;
+  display: inline-flex;
+  text-decoration: none;
+
+  &__icon {
+    height: 24px; // temp
+    width: 24px; // temp
+  }
+
+  &--icon-position-before {
+    #{$self}__text {
+      order: 2;
+    }
+  }
+}

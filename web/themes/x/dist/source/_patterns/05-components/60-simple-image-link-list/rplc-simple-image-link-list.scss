@@ -1,0 +1,20 @@
+@import 'rplc-simple-image-link-list.variables';
+
+.rplc-simple-image-link-list {
+  &__content {
+    @include standard-row;
+  }
+
+  // MODIFIERS - IF NEITHER PRESENT THEN IMAGES SHOULD ALWAYS BE SHOWN
+  // I THINK WE MIGHT HAVE TO VIOLATE THE SINGLE SOURCE OF TRUTH PRINCIPLE
+  // TO GET THIS WORKING
+  //  &--display-images-not-on-mobile {
+  //  }
+
+  //  &--display-images-never {
+  //  }
+
+}
+
+// end of file
+

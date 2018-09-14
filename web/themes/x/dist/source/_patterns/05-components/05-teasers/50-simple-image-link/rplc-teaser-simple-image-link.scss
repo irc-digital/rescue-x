@@ -1,0 +1,40 @@
+@import 'rplc-teaser-simple-image-link.variables';
+
+.rplc-teaser-simple-image-link {
+  $self: &;
+
+  &__wrapper-link {
+    text-decoration: none;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+    max-width: 150px;
+    overflow: hidden;
+  }
+
+  &__text-wrapper {
+    text-align: center;
+  }
+
+  &--display-images-not-on-mobile {
+    #{ $self }__image-wrapper {
+      display: none;
+
+      @include breakpoint(phablet) {
+        display: block;
+      }
+    }
+  }
+
+  &--display-images-never {
+    #{ $self }__image-wrapper {
+      display: none;
+    }
+  }
+}
+
+// end of file

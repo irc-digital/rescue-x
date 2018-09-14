@@ -1,0 +1,22 @@
+@import 'rpll-four-column-list.variables';
+
+.rpll-four-column-list {
+  $self: &;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  @include breakpoint(desktop) {
+    display: grid;
+    grid-column-gap: $four-column-list-column-gutter;
+    grid-row-gap: $four-column-list-row-gutter;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__item {
+    border-bottom: 1px solid $gray;
+    padding-bottom: $four-column-list-item-margin-bottom;
+  }
+}
+
+// end of file

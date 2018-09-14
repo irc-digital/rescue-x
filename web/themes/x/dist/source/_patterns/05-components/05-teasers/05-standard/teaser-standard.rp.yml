@@ -1,0 +1,54 @@
+teaser_standard:
+  label: Teaser (standard)
+  description: The standard teaser (todo)
+  use: "@components/05-teasers/05-standard/teaser-standard.twig"
+  fields:
+    teaser_standard_url:
+      type: url
+      label: URL
+      description: The URL of the resource being teased
+      preview: "#"
+    teaser_standard_slug:
+      type: text
+      label: Slug
+      description: The slug
+      preview: "Slugface"
+    teaser_standard_title:
+      type: text
+      label: Title
+      description: The title
+      preview: "Test title"
+    teaser_standard_cta:
+      type: text
+      label: Call to action
+      description: The call to action text
+      preview: "Read me"
+    teaser_standard_image_source_set:
+       type: array
+       label: "Image source set"
+       description: "The set of images used for the responsive picture"
+       preview:
+        - "https://placem.at/places?w=208&h=117&random=teaserstandardimage 208w"
+        - "https://placem.at/places?w=528&h=297&random=teaserstandardimage 528w"
+        - "https://placem.at/places?w=1024&h=576&random=teaserstandardimage 1024w"
+        - "https://placem.at/places?w=1280&h=720&random=teaserstandardimage 1280w"
+    teaser_standard_image_sizes:
+      type: text
+      label: "Image sizes"
+      description:  "The media query for the image sizes"
+      preview: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+    teaser_standard_image_fallback:
+      type: url
+      label: "Image fallback"
+      description: "Fallback image if the browser does not support responsive images"
+      preview: "https://placem.at/places?w=1024&h=576&random=teaserstandardimage"
+    teaser_standard_image_alt:
+      type: text
+      label: "Image alt attribute"
+      description: "Image alt attribute"
+      preview: "Maecenas tempus"
+  libraries:
+    - teaser_standard_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-standard.css: {}

@@ -1,0 +1,18 @@
+@import 'rplc-teaser-highlighted.variables';
+
+.rplc-teaser-highlighted {
+
+  &__wrapper-link {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__text-wrapper {
+    background-color: $teaser-highlighted-text-section-background;
+    padding: $teaser-highlighted-text-section-padding;
+  }
+}
+
+// end of file
+

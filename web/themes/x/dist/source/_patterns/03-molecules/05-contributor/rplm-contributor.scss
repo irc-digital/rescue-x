@@ -1,0 +1,46 @@
+@import 'rplm-contributor.variables';
+
+.rplm-contributor {
+
+  display: flex;
+  margin: 0;
+
+  &__image-wrapper {
+    border-radius: 100%;
+    height: $contributor-photo-width-height-mobile;
+    overflow: hidden;
+    width: $contributor-photo-width-height-mobile;
+  }
+
+  &__image-wrapper--default-image {
+    background-color: $contributor-photo-background-color;
+    padding: $contributor-photo-width-height-mobile / 6;
+  }
+
+  &__name {
+    font-weight: $strong;
+  }
+
+  &__byline {
+    margin-left: $contributor-byline-left-margin;
+  }
+
+  &__social-link {
+    display: inline-block;
+    height: rem(16px);
+    width: rem(16px);
+  }
+
+  @include breakpoint(tablet) {
+    &__image-wrapper {
+      height: $contributor-photo-width-height-larger;
+      width: $contributor-photo-width-height-larger;
+    }
+
+    &__image-wrapper--default-image {
+      padding: $contributor-photo-width-height-larger / 6;
+    }
+  }
+}
+
+// end of file
