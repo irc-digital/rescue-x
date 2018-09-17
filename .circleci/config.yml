@@ -117,9 +117,9 @@ jobs:
 
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
-           - run:
-               name: run composer install again to get dev dependencies
-               command: composer install
+            # - run:
+                # name: run composer install again to get dev dependencies
+                # command: composer install
 
             - run:
                 name: Run functional tests with Behat
