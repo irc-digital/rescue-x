@@ -118,28 +118,28 @@ jobs:
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
             - run:
-               name: run composer install again to get dev dependencies
+               name: Dev dependencies
                command: composer install
 
             - run:
                 name: Run functional tests with Behat
                 command: ./tests/scripts/run-behat
 
-#            - run:
-#                name: Install additional dependencies
-#                command: ./.circleci/scripts/irc/install-additional-dependencies
-#
-#            - run:
-#                name: Backstop visual regression test
-#                command: ./.circleci/scripts/irc/backstop-visual-regression-test
-#
-#            - run:
-#                name: Save Backstop report as an artifact
-#                command: ./.circleci/scripts/irc/save-backstop-report
-#                when: on_fail
-#
-#            - store_artifacts:
-#                path: /tmp/artifacts
+            - run:
+                name: Install additional dependencies
+                command: ./.circleci/scripts/irc/install-additional-dependencies
+
+            - run:
+                name: Backstop visual regression test
+                command: ./.circleci/scripts/irc/backstop-visual-regression-test
+
+            - run:
+                name: Save Backstop report as an artifact
+                command: ./.circleci/scripts/irc/save-backstop-report
+                when: on_fail
+
+            - store_artifacts:
+                path: /tmp/artifacts
 
             - run:
                 name: Post-test actions
