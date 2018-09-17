@@ -80,7 +80,7 @@ for (var i = 0; i < arrayLength; i++) {
         'url': 'http://' + args.env + '/?p=components-' + pattern,
         'referenceUrl': 'http://' + args.env + '/?p=components-' + pattern,
         'readyEvent': null,
-        'delay': 500,
+        'delay': 1000,
         'misMatchThreshold' : .1,
         'onReadyScript' : null,
         'onBeforeScript' : null,
