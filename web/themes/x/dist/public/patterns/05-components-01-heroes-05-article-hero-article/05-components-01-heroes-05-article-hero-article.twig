@@ -8,7 +8,7 @@
 #}
 {% set layout_modifiers = hero_article_art_directed_image_sources is not empty ? ['has-image'] : ['no-image'] %}
 <header class="rplc-hero-article{% for hero_article_modifier in hero_article_modifiers %} rplc-hero-article--{{ hero_article_modifier }}{% endfor %}">
-  <div class="rplc-hero-article__content">
+  <div class="rplc-hero-article__content asdf asdf">
     {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% if hero_article_art_directed_image_sources is not empty %}
         {% block hero_layout_1_image_block %}
