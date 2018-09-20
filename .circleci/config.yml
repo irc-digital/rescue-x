@@ -119,7 +119,7 @@ jobs:
 
 #            - run:
 #               name: Dev dependencies
-#               command: composer install 
+#               command: composer install
 #
 #            - run:
 #                name: Run functional tests with Behat
