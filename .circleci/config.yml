@@ -1,4 +1,4 @@
-# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs  
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
@@ -94,7 +94,7 @@ jobs:
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment 
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
                 name: Set Pantheon environment
                 # command: /build-tools-ci/scripts/set-environment
                 command: ./.circleci/scripts/irc/set-environment
