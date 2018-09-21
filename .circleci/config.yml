@@ -1,4 +1,4 @@
-# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs  
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
@@ -26,7 +26,7 @@ defaults: &defaults
     #======================================================================================================================================
     # Circle CI 2.0 does not yet expand environment variables so they have to be manually EXPORTed
     # Once environment variables can be expanded the variables below can be uncommented and the EXPORTs in set-up-globals.sh can be removed
-    # See: https://discuss.circleci.com/t/unclear-how-to-work-with-user-variables-circleci-provided-env-variables/12810/11
+    # See:   https://discuss.circleci.com/t/unclear-how-to-work-with-user-variables-circleci-provided-env-variables/12810/11
     # See: https://discuss.circleci.com/t/environment-variable-expansion-in-working-directory/11322
     # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
     #======================================================================================================================================
@@ -94,7 +94,7 @@ jobs:
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment 
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
                 name: Set Pantheon environment
                 # command: /build-tools-ci/scripts/set-environment
                 command: ./.circleci/scripts/irc/set-environment
@@ -117,14 +117,14 @@ jobs:
 
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
-            # - run:
-                # name: run composer install again to get dev dependencies
-                # command: composer install
-
+#            - run:
+#               name: Dev dependencies
+#               command: composer install
+#
 #            - run:
 #                name: Run functional tests with Behat
 #                command: ./tests/scripts/run-behat
-
+#
 #            - run:
 #                name: Install additional dependencies
 #                command: ./.circleci/scripts/irc/install-additional-dependencies

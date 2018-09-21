@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-#
+# 
 # This script prepares the site-under-test by cloning the database from
 # an existing site.
 #
