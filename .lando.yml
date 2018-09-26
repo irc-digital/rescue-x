@@ -14,6 +14,8 @@ services:
         # Latest version of node and other puppeteer dependencies
         # are included in this Docker container
         image: internationalrescuecommittee/irc-lando-build
+        environment:
+          PHP_IDE_CONFIG: "serverName=appserver"
     # Install puppeteer as we do not want to commit
     # massive chromium files in our project repo
     run_as_root:
