@@ -5,6 +5,8 @@ config:
   site: rescue-x
   id: c8430b75-4272-4aca-bfcd-206b12279315
 services:
+  database:
+    portforward: 3307
   appserver:
     xdebug: true
     overrides:
