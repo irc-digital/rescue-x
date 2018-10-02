@@ -12,17 +12,17 @@
     font-size: 20px;
     height: auto;
     margin: 45px auto 0;
-    position: relative;
-    padding: 65px 16px 40px 25px; }
+    padding: 65px 16px 40px 25px;
+    position: relative; }
     @media only screen and (min-width: 40.0625rem) {
       .rplc-pull-quote__text-wrapper {
         padding: 15px 20px 20px 25px; } }
   .rplc-pull-quote__text {
     font-size: 20px;
     font-style: italic;
+    font-weight: 100;
     letter-spacing: .17px;
     line-height: 1.35;
-    font-weight: 100;
     position: relative; }
     @media only screen and (min-width: 40.0625rem) {
       .rplc-pull-quote__text {

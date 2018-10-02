@@ -3,11 +3,11 @@
 // if no modifier is used the quote should be full width
 .rplc-pull-quote {
   $self: &;
-  
+
   background-color: $pull-quote-background-color;
   margin-top: 45px;
   width: 100%;
-  
+
   &__content {
     @include standard-row;
   }
@@ -16,9 +16,9 @@
     font-size: 20px;
     height: auto;
     margin: 45px auto 0;
-    position: relative;
     padding: 65px 16px 40px 25px;
-    
+    position: relative;
+
     @include breakpoint(phablet) {
       padding: 15px 20px 20px 25px;
     }
@@ -27,11 +27,11 @@
   &__text {
     font-size: 20px;
     font-style: italic;
+    font-weight: 100;
     letter-spacing: .17px;
     line-height: 1.35;
-    font-weight: 100;
     position: relative;
-    
+
     @include breakpoint(phablet) {
       font-size: 28px;
       padding-left: 87px;
@@ -67,31 +67,26 @@
     // outer div to full width and standard row to content, whit bg on text-wrapper bq
     //white bg on wrapper for float and on outer for full width
     //margins on blockquote
-    
     #{ $self }__text-wrapper {
-
       background-color: $pull-quote-background-color;
       margin: 0;
-  
+
       @include breakpoint(phablet) {
         max-width: 450px;
-      } 
+      }
 
       // @include breakpoint(desktop) {
       //   max-width: 550px;
-      // } 
+      // }
     }
-
-    
   }
 
   &--placement-left {
 
     @include breakpoint(phablet) {
-      
       #{ $self }__text-wrapper {
         float: left;
-        margin-right: 45px;        
+        margin-right: 45px;
       }
     }
     // @include breakpoint(desktop) {
@@ -117,7 +112,7 @@
   }
 
   &--background-transparent {
-    background-color: rgba(1, 1, 5, 0);
+    background-color: $pull-quote-transparent-background-color;
   }
 }
 

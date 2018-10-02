@@ -5,6 +5,8 @@ config:
   site: rescue-x
   id: c8430b75-4272-4aca-bfcd-206b12279315
 services:
+  database:
+    portforward: 3307
   appserver:
     xdebug: true
     overrides:
@@ -12,6 +14,8 @@ services:
         # Latest version of node and other puppeteer dependencies
         # are included in this Docker container
         image: internationalrescuecommittee/irc-lando-build
+        environment:
+          PHP_IDE_CONFIG: "serverName=appserver"
     # Install puppeteer as we do not want to commit
     # massive chromium files in our project repo
     run_as_root:

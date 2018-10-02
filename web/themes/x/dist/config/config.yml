@@ -46,3 +46,4 @@ plugins:
     faker:
         enabled: true
         locale: en_US
+        setUniqueResults: 666
