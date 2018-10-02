@@ -7,7 +7,7 @@ set -eo pipefail
 # an existing site.
 #
 # Use EITHER this script OR the re-install-new script; do not run both.
-# 
+#  
 
 # Create a new multidev site to test on
 terminus -n env:wake "$TERMINUS_SITE.dev"
