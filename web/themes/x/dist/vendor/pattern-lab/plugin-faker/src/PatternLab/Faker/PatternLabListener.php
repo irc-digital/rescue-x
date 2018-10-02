@@ -37,6 +37,7 @@ class PatternLabListener extends \PatternLab\Listener {
     
     // set-up Faker
     $this->faker = \Faker\Factory::create($locale);
+    $this->faker->seed(1234);
     $this->faker->addProvider(new \Faker\Provider\Color($this->faker));
     $this->faker->addProvider(new \Faker\Provider\Payment($this->faker));
     $this->faker->addProvider(new \Faker\Provider\DateTime($this->faker));
