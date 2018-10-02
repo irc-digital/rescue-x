@@ -1,3 +1,4 @@
 node_modules/puppeteer/
 backstop_data/html_report/
 backstop_data/bitmaps_test/
+dist/public/latest-change.txt
