@@ -168,9 +168,9 @@ gulp.task('patternlab:generate:variables', function () {
       .pipe(jsonToYaml())
       .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns'))
 
-  del.sync([
-    config.patternLab.dir + '/source/_patterns/**/*.json'
-  ]);
+  // del.sync([
+  //   config.patternLab.dir + '/source/_patterns/**/*.json'
+  // ]);
 
   // del([config.patternLab.dir + '/source/**/*.json'], {dryRun: true}).then(paths => {
   //   console.log('Files and folders that would be deleted:\n', paths.join('\n'));
