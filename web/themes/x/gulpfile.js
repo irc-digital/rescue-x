@@ -76,6 +76,8 @@ var fs = require('fs');
 var rtl = require('postcss-rtl');
 var tap = require('gulp-tap');
 var argv = require('yargs').argv;
+var export_sass = require('node-sass-export');
+var jsonToYaml = require('gulp-json-to-yaml');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -146,6 +148,35 @@ gulp.task('patternlab:generate', function () {
   return run('php ' + config.patternLab.dir + '/core/console --generate').exec();
 });
 
+
+/**
+ * We turn some SCSS variables into JSON arrays so that PatternLab can use them
+ * to more dynamically geneate some stuff (e.g. like color palettes)
+ */
+gulp.task('patternlab:generate:variables', function () {
+   gulp.src(config.patternLab.dir + '/source/scss/x.tier-1.scss',)
+      .pipe(sass(
+          {
+            functions: export_sass('.')
+          }
+      ))
+      .on('error', function (e) {
+        console.log(e);
+      });
+
+  gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
+      .pipe(jsonToYaml())
+      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns'))
+
+  del.sync([
+    config.patternLab.dir + '/source/_patterns/**/*.json'
+  ]);
+
+  // del([config.patternLab.dir + '/source/**/*.json'], {dryRun: true}).then(paths => {
+  //   console.log('Files and folders that would be deleted:\n', paths.join('\n'));
+  // });
+
+});
 
 
 /**
@@ -246,7 +277,7 @@ gulp.task('svgs-change', function () {
  * Task sequence to run when Sass files have changed.
  */
 gulp.task('sass-change', function () {
-  runSequence(['build:styles', 'lint:styles'], 'build:copy-css');
+  runSequence(['build:styles', 'patternlab:generate:variables', 'lint:styles'], 'build:copy-css');
 });
 
 // Watch Files For Changes
