@@ -39,8 +39,7 @@ $font-size: (
   xxxl: 4rem,  // 64px
 );
 // generates a JSON array of font sizes to be used by PatternLab
-$font-size: export('dist/source/_patterns/01-atoms/01-global/05-font-size.json', $font-size);
-
+$font-size: export('dist/source/_patterns/01-atoms/01-global/05-font-size.json', $font-size, (prefix: '{ "font-size":', suffix: '}'));
 
 //
 // Letter spacing
@@ -51,7 +50,7 @@ $letter-spacing: (
   airy: .125em,
 );
 // generates a JSON array of font sizes to be used by PatternLab
-$letter-spacing: export('dist/source/_patterns/01-atoms/01-global/10-letter-spacing.json', $letter-spacing);
+$letter-spacing: export('dist/source/_patterns/01-atoms/01-global/10-letter-spacing.json', $letter-spacing, (prefix: '{ "letter-spacing":', suffix: '}'));
 
 //
 // Line height
@@ -62,7 +61,7 @@ $line-height: (
   airy: 1.5,
 );
 // generates a JSON array of font sizes to be used by PatternLab
-$line-height: export('dist/source/_patterns/01-atoms/01-global/15-line-height.json', $line-height);
+$line-height: export('dist/source/_patterns/01-atoms/01-global/15-line-height.json', $line-height, (prefix: '{ "line-height":', suffix: '}'));
 
 //
 // Font weight
@@ -73,7 +72,7 @@ $font-weight: (
   bold: 700,
 );
 // generates a JSON array of font sizes to be used by PatternLab
-$font-weight: export('dist/source/_patterns/01-atoms/01-global/20-font-weight.json', $font-weight);
+$font-weight: export('dist/source/_patterns/01-atoms/01-global/20-font-weight.json', $font-weight, (prefix: '{ "font-weight":', suffix: '}'));
 
 p {
   background-color: map-get($color-brand, primary);

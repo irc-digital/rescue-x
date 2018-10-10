@@ -78,6 +78,7 @@ var tap = require('gulp-tap');
 var argv = require('yargs').argv;
 var export_sass = require('node-sass-export');
 var jsonToYaml = require('gulp-json-to-yaml');
+var clean = require('gulp-clean');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -154,19 +155,9 @@ gulp.task('patternlab:generate', function () {
  * to more dynamically geneate some stuff (e.g. like color palettes)
  */
 gulp.task('patternlab:generate:variables', function () {
-   gulp.src(config.patternLab.dir + '/source/scss/x.tier-1.scss',)
-      .pipe(sass(
-          {
-            functions: export_sass('.')
-          }
-      ))
-      .on('error', function (e) {
-        console.log(e);
-      });
+  runSequence('patternlab:generate:variables_as_json', 'patternlab:generate:variables_as_yml');
 
-  gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
-      .pipe(jsonToYaml())
-      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns'))
+
 
   // del.sync([
   //   config.patternLab.dir + '/source/_patterns/**/*.json'
@@ -178,6 +169,24 @@ gulp.task('patternlab:generate:variables', function () {
 
 });
 
+gulp.task('patternlab:generate:variables_as_json', function () {
+  return gulp.src(config.patternLab.dir + '/source/scss/x.tier-1.scss',)
+      .pipe(sass(
+          {
+            functions: export_sass('.')
+          }
+      ))
+      .on('error', function (e) {
+        console.log(e);
+      });
+});
+
+gulp.task('patternlab:generate:variables_as_yml', function () {
+  gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
+      .pipe(clean()) // deletes the json files
+      .pipe(jsonToYaml())
+      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns'))
+});
 
 /**
  * Backstop task runners
