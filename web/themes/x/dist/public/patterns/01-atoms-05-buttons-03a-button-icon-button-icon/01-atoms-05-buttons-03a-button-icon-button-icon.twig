@@ -1,0 +1,25 @@
+{#
+/**
+ * Available variables:
+ * - button_content - the content of the button (typically text)
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+{% set button_icon_modifiers = button_icon_modifiers ?: [] %}
+{% if button_icon_name is not empty %}
+  {% set button_icon_position = 'icon-position-' ~ (button_icon_position ? button_icon_position : 'after') %}
+  {% set button_icon_modifiers = button_icon_modifiers | merge(['with-icon', button_icon_position]) %}
+{% endif %}
+{% embed '@atoms/05-buttons/03-button/button.twig' with { button_modifiers: button_icon_modifiers, button_content: button_text } %}
+  {% if button_icon_name is not empty %}
+    {% block button_content_block %}
+      <span class="rpla-button__text">{{ button_text }}</span>
+      <svg class="rpla-button__icon rpla-button__icon--{{ button_icon_name }}">
+        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#rpl-svg-{{ button_icon_name }}'></use></svg>
+      </svg>
+    {% endblock %}
+  {% endif %}
+{% endembed %}

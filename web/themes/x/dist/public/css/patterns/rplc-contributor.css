@@ -1,0 +1,29 @@
+.rplc-contributor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0; }
+  .rplc-contributor__image-wrapper {
+    border-radius: 100%;
+    height: 3rem;
+    overflow: hidden;
+    width: 3rem; }
+  .rplc-contributor__image-wrapper--default-image {
+    background-color: #fdc513;
+    padding: 0.5rem; }
+  .rplc-contributor__name {
+    font-weight: 700; }
+  .rplc-contributor__byline {
+    margin-left: 1rem; }
+  .rplc-contributor__social-link {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem; }
+  @media only screen and (min-width: 48rem) {
+    .rplc-contributor__image-wrapper {
+      height: 4.5rem;
+      width: 4.5rem; }
+    .rplc-contributor__image-wrapper--default-image {
+      padding: 0.75rem; } }
+
+/*# sourceMappingURL=rplc-contributor.css.map */

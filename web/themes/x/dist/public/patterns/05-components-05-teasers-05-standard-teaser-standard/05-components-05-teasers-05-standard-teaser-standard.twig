@@ -1,0 +1,35 @@
+{#
+/**
+ * Available variables:
+ * - teaser_standard_url - The URL of the resource being teased
+ * - teaser_standard_slug - Slug
+ * - teaser_standard_title - Title
+ * - teaser_standard_cta - Call to action text
+ *
+ * Available blocks:
+ * - teaser_image_block
+ * - teaser_text_block
+ */
+#}
+<div class="rplc-teaser-standard">
+  <a href="{{ teaser_standard_url }}" class="rplc-teaser-standard__wrapper-link">
+    <div class="rplc-teaser-standard__image-wrapper">
+    {% block teaser_image_block %}
+      {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
+        responsive_image_source_set: teaser_standard_image_source_set,
+        responsive_image_sizes: teaser_standard_image_sizes,
+        responsive_image_fallback: teaser_standard_image_fallback,
+        responsive_image_alt: teaser_standard_image_alt
+      } only %}
+    {% endblock teaser_image_block %}
+    </div>
+    <div class="rplc-teaser-standard__text-wrapper">
+    {% block teaser_text_block %}
+      <div class="rplc-teaser-standard__slug">{{ teaser_standard_slug }}</div>
+      <h3 class="rplc-teaser-standard__title">{{ teaser_standard_title }}</h3>
+      <div class="rplc-teaser-standard__summary">{{ teaser_standard_summary }}</div>
+      <div class="rplc-teaser-standard__cta">{{ teaser_standard_cta }}</div>
+    {% endblock teaser_text_block %}
+    </div>
+  </a>
+</div>

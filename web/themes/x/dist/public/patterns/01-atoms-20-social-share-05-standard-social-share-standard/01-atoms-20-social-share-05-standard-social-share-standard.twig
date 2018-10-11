@@ -1,0 +1,17 @@
+{#
+/**
+ * Available variables:
+ *
+ * Available blocks:
+ * - none
+ */
+#}
+<div class="rpla-social-share-standard">
+  {% for social_share_standard_site in social_share_standard_sites %}
+    <a class="rpla-social-share-standard__link" href="#">
+      {% include '@atoms/15-images/20-icon/icon.twig' with {
+        icon_name: social_share_standard_site.icon_name,
+      } only %}
+    </a>
+  {% endfor %}
+</div>
