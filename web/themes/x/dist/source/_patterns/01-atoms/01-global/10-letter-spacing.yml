@@ -1,4 +1,4 @@
-letter-spacing:
+letter_spacing:
   compact: '-0.0625em'
   cozy: 0
   airy: 0.125em

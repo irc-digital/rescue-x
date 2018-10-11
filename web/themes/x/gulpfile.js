@@ -185,6 +185,7 @@ gulp.task('patternlab:generate:variables_as_yml', function () {
   gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
       .pipe(clean()) // deletes the json files
       .pipe(jsonToYaml())
+      .pipe(rename({extname: '.yml'}))
       .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns'))
 });
 
