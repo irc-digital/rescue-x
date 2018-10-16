@@ -1,3 +1,21 @@
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
 .rplm-contributors {
   display: grid;
   grid-row-gap: 2rem;

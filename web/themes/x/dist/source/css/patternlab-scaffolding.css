@@ -3,6 +3,24 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be our production CSS.
  */
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
 .sg-pattern-example > .rpll-three-column-list,
@@ -74,6 +92,7 @@ body > .rpll-three-column-list {
       height: calc(100vw / ( 16 / 9 )); } }
 
 .patternlab-faux-hero-2-text {
+  background-color: #000;
   border: 4px dashed #333;
   height: 200px;
   line-height: 200px;

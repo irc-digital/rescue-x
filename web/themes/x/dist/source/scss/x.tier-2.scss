@@ -10,7 +10,7 @@
   @include letter-spacing('standard');
   @include line-height('m');
 
-  @media only screen and (min-width: 641px) {
+  @include breakpoint(phablet) {
     @include font-size('m-1');
     @include line-height('m-1');
   }
@@ -22,7 +22,7 @@
   @include letter-spacing('compact');
   @include line-height('s-1');
 
-  @media only screen and (min-width: 641px) {
+  @include breakpoint(phablet) {
     @include font-size('l-1');
   }
 }

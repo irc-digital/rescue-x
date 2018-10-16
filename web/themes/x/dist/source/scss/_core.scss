@@ -1,27 +1,11 @@
-@import 'helpers/rem';
+@import 'abstract/rem';
 @import 'abstract/mixins';
 @import 'x.tier-1';
 @import 'x.tier-2';
 
 // public variables
 
-// colors
-// THESE ARE ALL DEPRECATED - WILL REPLACE THEM LATER
-//$white: map-get($color-neutral, 'white');
-//$very-light-gray: map-get($color-neutral, 'very-light-gray');
-//$light-gray: map-get($color-neutral, 'light-gray');
-//$gray: map-get($color-neutral, 'gray');
-//$dark-gray: map-get($color-neutral, 'dark-gray');
-//$very-dark-gray: map-get($color-neutral, 'very-dark-gray');
-//$black: map-get($color-neutral, 'black');
-//$red: map-get($color-utility, 'alert');
-//$alert: $red;
-//$private-irc-yellow: map-get($color-brand, 'primary');
-//get-brand-color(): $private-irc-yellow;
 $standard-overlay-treatment: rgba(0, 0, 0, .5);
-
-// font weights
-$strong: map-get($font-weight, 'bold');
 
 $standard-gutter: 1rem;
 $standard-horizontal-margin-accounting-for-gutters: 2 * $standard-gutter;
@@ -39,6 +23,9 @@ $smallest-phablet-size: rem(641px);
 $base-font-family: $font-family-sans-serif;
 
 $body-background-color: get-neutral-color('very-light-gray');
+
+@import 'base/base';
+
 
 
 // end of file

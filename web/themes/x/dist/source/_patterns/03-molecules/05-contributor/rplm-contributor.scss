@@ -18,7 +18,7 @@
   }
 
   &__name {
-    font-weight: $strong;
+    @include font-weight('bold');
   }
 
   &__byline {

@@ -2,7 +2,25 @@ body {
   font-size: 1.125rem;
   letter-spacing: -0.01em;
   line-height: 1.6; }
-  @media only screen and (min-width: 641px) {
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
     body {
       font-size: 1.25rem;
       line-height: 1.75; } }
@@ -21,11 +39,29 @@ body {
         -ms-flex-order: 2;
             order: 2; }
 
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
 .rpla-link-icon {
   text-decoration: none; }
   .rpla-link-icon__icon {
     height: 24px;
     width: 24px; }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
 
 .rpla-responsive-title--short {
   font-size: 3.75rem;
@@ -46,9 +82,27 @@ body {
   font-size: 2.25rem;
   line-height: 1.2; }
 
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
 .rpla-icon {
   height: 100%;
   width: 100%; }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
 
 .rpla-social-share-standard__link {
   border: 1px solid #e9e9e9;
@@ -58,6 +112,15 @@ body {
   margin-right: 0.5rem;
   padding: 0.9375rem;
   width: 3rem; }
+
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
 
 .rplm-section-heading {
   margin-left: auto;
@@ -75,7 +138,7 @@ body {
     padding-bottom: 10px;
     padding-left: 24px;
     padding-top: 10px; }
-    @media only screen and (min-width: 641px) {
+    @media only screen and (min-width: 40.0625rem) {
       .rplm-section-heading__title {
         font-size: 2.25rem; } }
   .rplm-section-heading__icon {

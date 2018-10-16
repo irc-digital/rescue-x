@@ -1,3 +1,12 @@
+body {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.6; }
+  @media only screen and (min-width: 40.0625rem) {
+    body {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+
 .rplm-section-heading {
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +23,7 @@
     padding-bottom: 10px;
     padding-left: 24px;
     padding-top: 10px; }
-    @media only screen and (min-width: 641px) {
+    @media only screen and (min-width: 40.0625rem) {
       .rplm-section-heading__title {
         font-size: 2.25rem; } }
   .rplm-section-heading__icon {
