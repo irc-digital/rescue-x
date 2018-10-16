@@ -6,8 +6,7 @@
 // This file is, essentially, a bunch of enumerations and represent the very core building blocks of the visual system.
 //
 // The enumerations are deliberately a little obfuscates to avoid direct array access. Access should all go through
-// the specific accessor function or mixin provided for each.
-//
+// the specific accessor function and/or mixin provided for each.
 //
 //
 
@@ -29,30 +28,31 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
 // Colors
 //
 
-// private function containing brand colors
-@function xxx-private-bc() {
-  // sass-lint:disable-block indentation
-  @return (
-    'primary': #fdc513,
-    'primary-tint-1': #ffd44b,
-    'primary-tint-2': #ffd960,
-  );
-}
-
 //
 // Function to get a brand color
 //
 @function get-brand-color($option: 'primary') {
-  @return safe-map-get(xxx-private-bc(), $option);
+  $brand-colors: (
+    'primary': #fdc513,
+    'primary-tint-1': #ffd44b,
+    'primary-tint-2': #ffd960,
+  );
+
+  @if $option != 'all' {
+    @return safe-map-get($brand-colors, $option);
+  } @else {
+    @return $brand-colors;
+  }
 }
 
 // generates a JSON array of brand colors to be used by PatternLab
-$xxx-bc: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', xxx-private-bc(), (prefix: '{ "color_brand":', suffix: '}'));
+$xxx-bc: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', get-brand-color('all'), (prefix: '{ "color_brand":', suffix: '}'));
 
-// private function containing neutral colors
-@function xxx-private-nc() {
-  // sass-lint:disable-block no-color-keywords indentation
-  @return (
+//
+// Function to get a neutral color
+//
+@function get-neutral-color($option: 'gray') {
+  $neutral-colors: (
     'white': #fff,
     'very-light-gray': #f6f6f6,
     'light-gray': #e9e9e9,
@@ -61,129 +61,139 @@ $xxx-bc: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', x
     'very-dark-gray': #383838,
     'black': #000,
   );
+  @if $option != 'all' {
+    @return safe-map-get($neutral-colors, $option);
+  } @else {
+    @return $neutral-colors;
+  }
 }
 
-//
-// Function to get a neutral color
-//
-@function get-neutral-color($option: 'gray') {
-  @return safe-map-get(xxx-private-nc(), $option);
-}
 // generates a JSON array of neutral colors to be used by PatternLab
-$xxx-nc: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', xxx-private-nc(), (prefix: '{ "color_neutral":', suffix: '}'));
-
-// private function containing utility colors
-@function xxx-private-uc() {
-  // sass-lint:disable-block indentation
-  @return (
-    'alert': #ee2d14,
-  );
-}
+$xxx-nc: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', get-neutral-color('all'), (prefix: '{ "color_neutral":', suffix: '}'));
 
 //
 // Function to get a utility color
 //
 @function get-utility-color($option: 'alert') {
-  @return safe-map-get(xxx-private-uc(), $option);
+  $utility-colors: (
+    'alert': #ee2d14,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($utility-colors, $option);
+  } @else {
+    @return $utility-colors;
+  }
 }
 // generates a JSON array of utility colors to be used by PatternLab
-$xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', xxx-private-uc(), (prefix: '{ "color_utility":', suffix: '}'));
+$xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', get-utility-color('all'), (prefix: '{ "color_utility":', suffix: '}'));
 
 
 //
 // Font size
 //
 
-// private function containing font sizes
-@function xxx-private-fs() {
-  // sass-lint:disable-block indentation
-  @return (
+// Function to get a font size value from its array entry key
+@function get-font-size($option: 'm') {
+  $font-sizes: (
     'm': rem(18px),
     'm-1': rem(20px),
     'l': rem(26px),
     'l-1': rem(36px),
   );
+  @if $option != 'all' {
+    @return safe-map-get($font-sizes, $option);
+  } @else {
+    @return $font-sizes;
+  }
 }
 
 //
 // Font size mixin
 //
 @mixin font-size($option: 'm') {
-  // sass-lint:disable-block empty-args
-  font-size: safe-map-get(xxx-private-fs(), $option);
+  font-size: get-font-size($option);
 }
 
 // generates a JSON array of font sizes to be used by PatternLab
-$xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json', xxx-private-fs(), (prefix: '{ "font_size":', suffix: '}'));
+$xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json', get-font-size('all'), (prefix: '{ "font_size":', suffix: '}'));
 
 //
 // Line height
 //
 
-// private function containing line heights
-@function xxx-private-lh() {
-  // sass-lint:disable-block indentation
-  @return (
+// Function to get a line height value from its array entry key
+@function get-line-height($option: 'm') {
+  $line-heights: (
     's': 1,
     's-1': 1.2,
     'm': 1.6,
     'm-1': 1.75,
   );
+  @if $option != 'all' {
+    @return safe-map-get($line-heights, $option);
+  } @else {
+    @return $line-heights;
+  }
 }
 
 //
 // Line height mixin
 //
 @mixin line-height($option: 'm') {
-  // sass-lint:disable-block empty-args
-  line-height: safe-map-get(xxx-private-lh(), $option);
+  line-height: get-line-height($option);
 }
 
 // generates a JSON array of line heights to be used by PatternLab
-$xxx-lh: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.json', xxx-private-lh(), (prefix: '{ "line_height":', suffix: '}'));
+$xxx-lh: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.json', get-line-height('all'), (prefix: '{ "line_height":', suffix: '}'));
 
 //
 // Letter spacing
 //
 
-// private function containing letter spacings
-@function xxx-private-ls() {
-  // sass-lint:disable-block indentation
-  @return (
+// Function to get a letter spacing value from its array entry key
+@function get-letter-spacing($option: 'm') {
+  $letter-spacings: (
     'compact': -.03em,
     'standard': -.01em,
   );
+  @if $option != 'all' {
+    @return safe-map-get($letter-spacings, $option);
+  } @else {
+    @return $letter-spacings;
+  }
 }
 
 @mixin letter-spacing($option: 'standard') {
-  // sass-lint:disable-block empty-args
-  letter-spacing: safe-map-get(xxx-private-ls(), $option);
+  letter-spacing: get-letter-spacing($option);
 }
 
 // generates a JSON array of letter spacing to be used by PatternLab
-$xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', xxx-private-ls(), (prefix: '{ "letter_spacing":', suffix: '}'));
+$xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', get-letter-spacing('all'), (prefix: '{ "letter_spacing":', suffix: '}'));
 
 //
 // Font weight
 //
 
-// private function containing font sizes
-@function xxx-private-fw() {
-  // sass-lint:disable-block indentation
-  @return (
+// Function to get a font weight value from its array entry key
+@function get-font-weight($option: 'm') {
+  $font-weights: (
     'light': 300,
     'normal': 400,
     'bold': 700,
   );
+  @if $option != 'all' {
+    @return safe-map-get($font-weights, $option);
+  } @else {
+    @return $font-weights;
+  }
 }
 
 @mixin font-weight($option: 'normal') {
-  // sass-lint:disable-block empty-args
-  font-weight: safe-map-get(xxx-private-fw(), $option);
+  font-weight: get-font-weight($option);
 }
 
 // generates a JSON array of font sizes to be used by PatternLab
-$xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', xxx-private-fw(), (prefix: '{ "font_weight":', suffix: '}'));
+$xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
 
 
 // end of file
