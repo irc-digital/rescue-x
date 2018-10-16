@@ -1,28 +1,26 @@
 @import 'helpers/rem';
 @import 'variables.private';
+@import 'x.tier-1';
 
 // public variables
 
 // colors
-$white: #fff;
-$very-light-gray: #f6f6f6;
-$light-gray: #e9e9e9;
-$gray: #d1d1d1;
-$dark-gray: #666;
-$very-dark-gray: #383838;
-$black: #000;
-$red: #ee2d14;
+// THESE ARE ALL DEPRECATED - WILL REPLACE THEM LATER
+$white: map-get($color-neutral, 'white');
+$very-light-gray: map-get($color-neutral, 'very-light-gray');
+$light-gray: map-get($color-neutral, 'light-gray');
+$gray: map-get($color-neutral, 'gray');
+$dark-gray: map-get($color-neutral, 'dark-gray');
+$very-dark-gray: map-get($color-neutral, 'very-dark-gray');
+$black: map-get($color-neutral, 'black');
+$red: map-get($color-utility, 'alert');
 $alert: $red;
-$private-irc-yellow: #fdc513;
+$private-irc-yellow: map-get($color-brand, 'primary');
 $primary-color: $private-irc-yellow;
 $standard-overlay-treatment: rgba(0, 0, 0, .5);
 
 // font weights
-$strong: 700;
-
-//#FFD960
-//#FFD44B
-
+$strong: map-get($font-weight, 'bold');
 
 $standard-gutter: 1rem;
 $standard-horizontal-margin-accounting-for-gutters: 2 * $standard-gutter;
@@ -37,7 +35,7 @@ $smallest-tablet-size: rem(768px);
 $smallest-phablet-size: rem(641px);
 
 // The default font family.
-$base-font-family: akzidenz-grotesk, Arial, sans-serif;
+$base-font-family: $font-family-sans-serif;
 
 $body-background-color: $very-light-gray;
 

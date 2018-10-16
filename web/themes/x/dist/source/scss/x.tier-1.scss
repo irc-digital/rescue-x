@@ -3,29 +3,40 @@
 //
 
 //
+// Font family
+//
+$font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
+
+//
 // Colors
 //
+$irc-yellow: #fdc513;
+$irc-yellow-tint-1: #ffd44b;
+$irc-yellow-tint-2: #ffd960;
+
 $color-brand: (
-  primary: #fdc513,
-  primary-highlight-1: #ffd44b,
-  primary-highlight-2: #ffd960,
+  primary: $irc-yellow,
+  primary-highlight-1: $irc-yellow-tint-1,
+  primary-highlight-2: $irc-yellow-tint-2,
 );
 $color-brand-x: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', $color-brand, (prefix: '{ "color_brand":', suffix: '}'));
 
 // sass-lint:disable no-color-keywords
 $color-neutral: (
   'white': #fff,
-  very-light-gray: #f6f6f6,
-  light-gray: #e9e9e9,
+  'very-light-gray': #f6f6f6,
+  'light-gray': #e9e9e9,
   'gray': #d1d1d1,
-  dark-gray: #666,
-  very-dark-gray: #383838,
+  'dark-gray': #666,
+  'very-dark-gray': #383838,
   'black': #000,
 );
 $color-neutral-x: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', $color-neutral, (prefix: '{ "color_neutral":', suffix: '}'));
 
+$red: #ee2d14;
+
 $color-utility: (
-  alert: #ee2d14,
+  alert: $red,
 );
 $color-utility-x: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', $color-utility, (prefix: '{ "color_utility":', suffix: '}'));
 
@@ -33,38 +44,35 @@ $color-utility-x: export('dist/source/_patterns/00-subatoms/05-color/color-utili
 // Font size
 //
 $font-size: (
-  xs: .75rem, // 12px
-  s: .85rem,  // 13.6px
-  m: 1rem,     // 16px
-  l: 1.5rem,   // 24px
-  xl: 2rem,    // 32px
-  xxl: 3rem,   // 48px
-  xxxl: 4rem,  // 64px
+  m: 1.125rem, // 18px
+  m-1: 1.25rem, // 20px
+  l: 1.625rem,  // 26px
+  l-1: 2.25rem,  // 36px
 );
 // generates a JSON array of font sizes to be used by PatternLab
 $font-size-x: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json', $font-size, (prefix: '{ "font_size":', suffix: '}'));
 
 //
-// Letter spacing
-//
-$letter-spacing: (
-  compact: -.0625em,
-  cozy: 0,
-  airy: .125em,
-);
-// generates a JSON array of font sizes to be used by PatternLab
-$letter-spacing-x: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', $letter-spacing, (prefix: '{ "letter_spacing":', suffix: '}'));
-
-//
 // Line height
 //
 $line-height: (
-  compact: 1.1,
-  cozy: 1.25,
-  airy: 1.5,
+  s: 1,
+  s-1: 1.2,
+  m: 1.6,
+  m-1: 1.75,
 );
 // generates a JSON array of font sizes to be used by PatternLab
 $line-height-x: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.json', $line-height, (prefix: '{ "line_height":', suffix: '}'));
+
+//
+// Letter spacing
+//
+$letter-spacing: (
+  compact: -.03em,
+  standard: -.01em,
+);
+// generates a JSON array of font sizes to be used by PatternLab
+$letter-spacing-x: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', $letter-spacing, (prefix: '{ "letter_spacing":', suffix: '}'));
 
 //
 // Font weight

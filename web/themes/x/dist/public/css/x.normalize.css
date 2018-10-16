@@ -12,7 +12,7 @@
  */
 html {
   /* Change the default font family in all browsers (opinionated). */
-  font-family: akzidenz-grotesk, Arial, sans-serif;
+  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.5em;
   /* 1 */
@@ -306,7 +306,7 @@ select,
 textarea {
   line-height: 1.5em;
   /* 1 */
-  font-family: akzidenz-grotesk, Arial, sans-serif;
+  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif;
   /* 1 */
   font-size: 100%;
   /* 1 */

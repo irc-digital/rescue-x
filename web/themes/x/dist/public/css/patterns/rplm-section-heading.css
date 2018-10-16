@@ -5,15 +5,18 @@
   padding-left: 1rem;
   padding-right: 1rem; }
   .rplm-section-heading__title {
+    font-size: 1.625rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
     border-left: 6px solid #fdc513;
     display: inline-block;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -1.2px;
-    line-height: 1.2;
     padding-bottom: 10px;
     padding-left: 24px;
     padding-top: 10px; }
+    @media only screen and (min-width: 641px) {
+      .rplm-section-heading__title {
+        font-size: 2.25rem; } }
   .rplm-section-heading__icon {
     display: inline-block;
     fill: #000;

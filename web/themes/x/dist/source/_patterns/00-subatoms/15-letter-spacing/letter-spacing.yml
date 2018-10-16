@@ -1,4 +1,3 @@
 letter_spacing:
-  compact: '-0.0625em'
-  cozy: 0
-  airy: 0.125em
+  compact: '-0.03em'
+  standard: '-0.01em'
