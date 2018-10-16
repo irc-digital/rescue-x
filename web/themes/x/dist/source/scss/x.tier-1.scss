@@ -18,6 +18,10 @@ $color-brand: (
 );
 $color-brand-x: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', $color-brand, (prefix: '{ "color_brand":', suffix: '}'));
 
+@function get-brand-color($option: 'primary') {
+  @return map-get($color-brand, $option);
+}
+
 // sass-lint:disable no-color-keywords
 $color-neutral: (
   'white': #fff,
@@ -30,10 +34,18 @@ $color-neutral: (
 );
 $color-neutral-x: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', $color-neutral, (prefix: '{ "color_neutral":', suffix: '}'));
 
+@function get-neutral-color($option: 'gray') {
+  @return map-get($color-neutral, $option);
+}
+
 $color-utility: (
   alert: #ee2d14,
 );
 $color-utility-x: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', $color-utility, (prefix: '{ "color_utility":', suffix: '}'));
+
+@function get-utility-color($option: 'alert') {
+  @return map-get($color-utility, $option);
+}
 
 //
 // Font size
@@ -47,6 +59,10 @@ $font-size: (
 // generates a JSON array of font sizes to be used by PatternLab
 $font-size-x: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json', $font-size, (prefix: '{ "font_size":', suffix: '}'));
 
+@mixin font-size($option: 'm') {
+  font-size: map-get($font-size, $option);
+}
+
 //
 // Line height
 //
@@ -59,6 +75,10 @@ $line-height: (
 // generates a JSON array of font sizes to be used by PatternLab
 $line-height-x: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.json', $line-height, (prefix: '{ "line_height":', suffix: '}'));
 
+@mixin line-height($option: 'm') {
+  line-height: map-get($line-height, $option);
+}
+
 //
 // Letter spacing
 //
@@ -68,6 +88,10 @@ $letter-spacing: (
 );
 // generates a JSON array of font sizes to be used by PatternLab
 $letter-spacing-x: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', $letter-spacing, (prefix: '{ "letter_spacing":', suffix: '}'));
+
+@mixin letter-spacing($option: 'standard') {
+  letter-spacing: map-get($letter-spacing, $option);
+}
 
 //
 // Font weight
@@ -80,4 +104,9 @@ $font-weight: (
 // generates a JSON array of font sizes to be used by PatternLab
 $font-weight-x: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', $font-weight, (prefix: '{ "font_weight":', suffix: '}'));
 
+@mixin font-weight($option: 'normal') {
+  font-weight: map-get($font-weight, $option);
+}
+
 // end of file
+
