@@ -14,7 +14,7 @@
   }
 
   &__item {
-    border-bottom: 1px solid neutral-color('gray');
+    border-bottom: 1px solid get-neutral-color('gray');
     padding-bottom: $four-column-list-item-margin-bottom;
   }
 }

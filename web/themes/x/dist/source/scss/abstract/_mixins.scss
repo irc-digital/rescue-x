@@ -48,15 +48,15 @@
   }
 }
 
-@function brand-color($option: 'primary') {
+@function get-brand-color($option: 'primary') {
   @return map-get($color-brand, $option);
 }
 
-@function neutral-color($option: 'gray') {
+@function get-neutral-color($option: 'gray') {
   @return map-get($color-neutral, $option);
 }
 
-@function utility-color($option: 'alert') {
+@function get-utility-color($option: 'alert') {
   @return map-get($color-utility, $option);
 }
 

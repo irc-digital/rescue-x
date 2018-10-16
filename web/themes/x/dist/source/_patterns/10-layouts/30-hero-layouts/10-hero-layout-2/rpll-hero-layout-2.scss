@@ -10,7 +10,7 @@
   }
 
   &__outer-text-wrapper {
-    color: neutral-color('white');
+    color: get-neutral-color('white');
   }
 
   &__image-wrapper {

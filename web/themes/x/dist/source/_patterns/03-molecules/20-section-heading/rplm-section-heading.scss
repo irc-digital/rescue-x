@@ -7,7 +7,7 @@
 
   &__title {
     @include typography-heading-large;
-    border-left: $section-heading-left-border-width solid brand-color();
+    border-left: $section-heading-left-border-width solid get-brand-color();
     display: inline-block;
     padding-bottom: 10px;
     padding-left: $section-heading-title-left-padding;
@@ -16,7 +16,7 @@
 
   &__icon {
     display: inline-block;
-    fill: neutral-color('black');
+    fill: get-neutral-color('black');
     height: 32px;
     margin-right: 24px;
     width: 32px;

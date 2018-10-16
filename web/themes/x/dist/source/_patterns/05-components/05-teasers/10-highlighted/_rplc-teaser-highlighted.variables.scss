@@ -1,6 +1,6 @@
 @import '../../../../scss/core';
 
-$teaser-highlighted-text-section-background: brand-color();
+$teaser-highlighted-text-section-background: get-brand-color();
 $teaser-highlighted-text-section-padding: 36px;
 
 // end of file

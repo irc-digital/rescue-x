@@ -2,7 +2,7 @@
 
 $contributor-photo-width-height-mobile: rem(48px);
 $contributor-photo-width-height-larger: rem(72px);
-$contributor-photo-background-color: brand-color();
+$contributor-photo-background-color: get-brand-color();
 $contributor-byline-left-margin: $standard-gutter;
 
 // end of file

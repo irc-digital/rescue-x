@@ -46,7 +46,7 @@
   }
 
   &__text-wrapper {
-    background-color: neutral-color('white');
+    background-color: get-neutral-color('white');
     height: auto;
     left: auto;
     margin: 25px auto 0;

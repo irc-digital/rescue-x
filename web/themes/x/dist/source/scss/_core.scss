@@ -17,7 +17,7 @@
 //$red: map-get($color-utility, 'alert');
 //$alert: $red;
 //$private-irc-yellow: map-get($color-brand, 'primary');
-//brand-color(): $private-irc-yellow;
+//get-brand-color(): $private-irc-yellow;
 $standard-overlay-treatment: rgba(0, 0, 0, .5);
 
 // font weights
@@ -38,7 +38,7 @@ $smallest-phablet-size: rem(641px);
 // The default font family.
 $base-font-family: $font-family-sans-serif;
 
-$body-background-color: neutral-color('very-light-gray');
+$body-background-color: get-neutral-color('very-light-gray');
 
 
 // end of file

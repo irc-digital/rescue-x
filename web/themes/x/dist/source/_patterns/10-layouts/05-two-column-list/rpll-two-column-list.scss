@@ -41,13 +41,13 @@
     }
 
     #{ $self }__item {
-      border-bottom: 1px solid neutral-color('gray');
+      border-bottom: 1px solid get-neutral-color('gray');
       margin-bottom: 0;
 
       @include breakpoint(tablet) {
         &:nth-child(1),
         &:nth-child(2) {
-          border-top: 1px solid neutral-color('gray');
+          border-top: 1px solid get-neutral-color('gray');
         }
       }
     }
