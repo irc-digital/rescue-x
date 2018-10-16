@@ -1,0 +1,44 @@
+@import 'helpers/rem';
+@import 'abstract/mixins';
+@import 'x.tier-1';
+@import 'x.tier-2';
+
+// public variables
+
+// colors
+// THESE ARE ALL DEPRECATED - WILL REPLACE THEM LATER
+$white: map-get($color-neutral, 'white');
+$very-light-gray: map-get($color-neutral, 'very-light-gray');
+$light-gray: map-get($color-neutral, 'light-gray');
+$gray: map-get($color-neutral, 'gray');
+$dark-gray: map-get($color-neutral, 'dark-gray');
+$very-dark-gray: map-get($color-neutral, 'very-dark-gray');
+$black: map-get($color-neutral, 'black');
+$red: map-get($color-utility, 'alert');
+$alert: $red;
+$private-irc-yellow: map-get($color-brand, 'primary');
+$primary-color: $private-irc-yellow;
+$standard-overlay-treatment: rgba(0, 0, 0, .5);
+
+// font weights
+$strong: map-get($font-weight, 'bold');
+
+$standard-gutter: 1rem;
+$standard-horizontal-margin-accounting-for-gutters: 2 * $standard-gutter;
+$private-row-gutter: $standard-gutter; // kept distinct from the standard gutter as i can see this changing to 2rem
+$well-width-inner: rem(1208px);
+$max-row-width: $well-width-inner + ($standard-gutter * 2);
+
+$smallest-desktop-size: $max-row-width;
+$smallest-desktop-size-less-gutters: $well-width-inner - rem(1px);
+$smallest-laptop-size: rem(1024px);
+$smallest-tablet-size: rem(768px);
+$smallest-phablet-size: rem(641px);
+
+// The default font family.
+$base-font-family: $font-family-sans-serif;
+
+$body-background-color: $very-light-gray;
+
+
+// end of file

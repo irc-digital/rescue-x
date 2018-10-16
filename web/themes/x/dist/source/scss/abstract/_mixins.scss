@@ -1,0 +1,51 @@
+// mixins
+// only create for really ubiquitous stuff
+// a rule-of-thumb would be 'does this feel like boilerplating' - if so, consider a mixin
+
+//
+// standard-row mixin
+//
+// Useful when an element needs to fit into our well.
+//
+// Note: We've inherited using padding rather than margin for the breathing space from rescue.org
+//
+@mixin standard-row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-row-width;
+  padding-left: $private-row-gutter;
+  padding-right: $private-row-gutter;
+}
+
+//
+// breakpoint mixin
+//
+// A mixin to help with our most common media queries
+//
+// accepts:  desktop, laptop, tablet and phablet.
+//
+// mobile is not an option as our SCSS should be mobile-first
+//
+// you are encouraged to write your own media queries when you need to
+// do work outside of these common targets. if possible, use these variables when you
+// need to target a device in the broadest sense:
+//
+//    $smallest_phablet_size (start  of phablet)
+//    $smallest_tablet_size (start of tablet)
+//    $smallest_laptop_size (start of laptop)
+//    $smallest_desktop_size-width (start of desktop)
+//
+//
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media only screen and (min-width: #{$smallest-desktop-size}) { @content ; }
+  } @else if $point == laptop {
+    @media only screen and (min-width: #{$smallest-laptop-size}) { @content ; }
+  } @else if $point == tablet {
+    @media only screen and (min-width: #{$smallest-tablet-size}) { @content ; }
+  } @else if $point == phablet {
+    @media only screen and (min-width: #{$smallest-phablet-size})  { @content ; }
+  }
+}
+
+// end of file

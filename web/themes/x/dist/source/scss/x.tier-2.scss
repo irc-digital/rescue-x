@@ -3,6 +3,7 @@
 //
 
 @import 'x.tier-1';
+@import 'abstract/mixins';
 
 @mixin typography-body {
   font-size: map-get($font-size, 'm');

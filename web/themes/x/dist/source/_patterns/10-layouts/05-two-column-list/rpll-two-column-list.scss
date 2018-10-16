@@ -41,7 +41,6 @@
     }
 
     #{ $self }__item {
-      @include normalize-rhythm(padding, 1 0, $two-column-list-plus-separators-vertical-rhythm-relative-to);
       border-bottom: 1px solid $gray;
       margin-bottom: 0;
 
