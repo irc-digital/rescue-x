@@ -23,9 +23,9 @@
   }
 
   &__caption-wrapper {
-    background-color: $white;
+    background-color: neutral-color('white');
     border-bottom: $teaser-image-link-box-caption-bottom-border-size solid $teaser-image-link-box-default-decoration-color;
-    color: $black;
+    color: neutral-color('black');
     //line-height: 1.2; // todo when we figure out line heights etc
     margin: 0 auto $teaser-image-link-box-caption-eats-in;
     overflow: hidden;
@@ -65,7 +65,7 @@
     &:hover {
       #{ $self }__caption-wrapper {
         background-color: $teaser-image-link-box-alert-decoration-color;
-        color: $white;
+        color: neutral-color('white');
       }
     }
   }

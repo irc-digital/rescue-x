@@ -1,7 +1,7 @@
 @import '../../../scss/core';
 
-$caption-default-text-color: $black;
-$caption-default-background-color: $primary-color;
+$caption-default-text-color: neutral-color('black');
+$caption-default-background-color: brand-color();
 
 // end of file
 

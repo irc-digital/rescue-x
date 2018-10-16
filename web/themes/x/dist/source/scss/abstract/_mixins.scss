@@ -48,4 +48,32 @@
   }
 }
 
+@function brand-color($option: 'primary') {
+  @return map-get($color-brand, $option);
+}
+
+@function neutral-color($option: 'gray') {
+  @return map-get($color-neutral, $option);
+}
+
+@function utility-color($option: 'alert') {
+  @return map-get($color-utility, $option);
+}
+
+@mixin font-size($option: 'm') {
+  font-size: map-get($font-size, $option);
+}
+
+@mixin letter-spacing($option: 'standard') {
+  letter-spacing: map-get($letter-spacing, $option);
+}
+
+@mixin font-weight($option: 'normal') {
+  font-weight: map-get($font-weight, $option);
+}
+
+@mixin line-height($option: 'm') {
+  line-height: map-get($line-height, $option);
+}
+
 // end of file

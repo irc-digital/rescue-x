@@ -1,9 +1,9 @@
 @import 'rplm-crisis-watch.variables';
 
 .rplm-crisis-watch {
-  color: $alert;
+  color: utility-color('alert');
   display: flex;
-  stroke: $alert;
+  stroke: utility-color('alert');
 
   &__icon-wrapper {
     height: 26px;

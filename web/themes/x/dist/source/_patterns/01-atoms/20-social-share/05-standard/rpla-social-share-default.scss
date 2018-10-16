@@ -2,7 +2,7 @@
 
 .rpla-social-share-standard {
   &__link {
-    border: 1px solid $light-gray;
+    border: 1px solid neutral-color('light-gray');
     border-radius: 100%;
     display: inline-block;
     height: $social-share-standard-width-height;

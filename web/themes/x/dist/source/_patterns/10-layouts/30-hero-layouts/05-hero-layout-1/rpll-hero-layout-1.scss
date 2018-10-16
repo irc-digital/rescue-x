@@ -12,7 +12,7 @@
   }
 
   &__text-wrapper {
-    background-color: $white;
+    background-color: neutral-color('white');
     display: grid;
     grid-row-gap: $standard-gutter;
     grid-template-areas: 'primary_1' 'primary_2' 'secondary_1' 'secondary_2';
@@ -35,7 +35,7 @@
   }
 
   &__secondary-2 {
-    border-top: 1px solid $black;
+    border-top: 1px solid neutral-color('black');
     grid-area: secondary_2;
     padding-top: $standard-gutter;
   }

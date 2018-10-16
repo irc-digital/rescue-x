@@ -1,4 +1,4 @@
 color_brand:
   primary: 'rgb(253, 197, 19)'
-  primary-highlight-1: 'rgb(255, 212, 75)'
-  primary-highlight-2: 'rgb(255, 217, 96)'
+  primary-tint-1: 'rgb(255, 212, 75)'
+  primary-tint-2: 'rgb(255, 217, 96)'

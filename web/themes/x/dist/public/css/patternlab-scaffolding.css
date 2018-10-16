@@ -74,7 +74,6 @@ body > .rpll-three-column-list {
       height: calc(100vw / ( 16 / 9 )); } }
 
 .patternlab-faux-hero-2-text {
-  background-color: #000;
   border: 4px dashed #333;
   height: 200px;
   line-height: 200px;

@@ -3,7 +3,7 @@
 .rplc-hero-text-only {
   $self: &;
 
-  background-color: $primary-color;
+  background-color: brand-color();
 
   &__content {
     @include standard-row;

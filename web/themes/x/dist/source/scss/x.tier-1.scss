@@ -10,14 +10,11 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
 //
 // Colors
 //
-$irc-yellow: #fdc513;
-$irc-yellow-tint-1: #ffd44b;
-$irc-yellow-tint-2: #ffd960;
 
 $color-brand: (
-  primary: $irc-yellow,
-  primary-highlight-1: $irc-yellow-tint-1,
-  primary-highlight-2: $irc-yellow-tint-2,
+  primary: #fdc513,
+  primary-tint-1: #ffd44b,
+  primary-tint-2: #ffd960,
 );
 $color-brand-x: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', $color-brand, (prefix: '{ "color_brand":', suffix: '}'));
 
@@ -33,10 +30,8 @@ $color-neutral: (
 );
 $color-neutral-x: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', $color-neutral, (prefix: '{ "color_neutral":', suffix: '}'));
 
-$red: #ee2d14;
-
 $color-utility: (
-  alert: $red,
+  alert: #ee2d14,
 );
 $color-utility-x: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', $color-utility, (prefix: '{ "color_utility":', suffix: '}'));
 

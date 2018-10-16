@@ -1,7 +1,7 @@
 @import '../../../../scss/core';
 
-$teaser-image-link-box-default-decoration-color: $primary-color;
-$teaser-image-link-box-alert-decoration-color: $red;
+$teaser-image-link-box-default-decoration-color: brand-color();
+$teaser-image-link-box-alert-decoration-color: utility-color('alert');
 $teaser-image-link-box-caption-bottom-border-size: rem(6px);
 $teaser-image-link-box-caption-total-horizontal-margin: $standard-horizontal-margin-accounting-for-gutters;
 $teaser-image-link-box-caption-eats-in: -4rem;

@@ -6,24 +6,24 @@
 @import 'abstract/mixins';
 
 @mixin typography-body {
-  font-size: map-get($font-size, 'm');
-  letter-spacing: map-get($letter-spacing, 'standard');
-  line-height: map-get($line-height, 'm');
+  @include font-size('m');
+  @include letter-spacing('standard');
+  @include line-height('m');
 
   @media only screen and (min-width: 641px) {
-    font-size: map-get($font-size, 'm-1');
-    line-height: map-get($line-height, 'm-1');
+    @include font-size('m-1');
+    @include line-height('m-1');
   }
 }
 
 @mixin typography-heading-large {
-  font-size: map-get($font-size, 'l');
-  font-weight: map-get($font-weight, 'bold');
-  letter-spacing: map-get($letter-spacing, 'compact');
-  line-height: map-get($line-height, 's-1');
+  @include font-size('l');
+  @include font-weight('bold');
+  @include letter-spacing('compact');
+  @include line-height('s-1');
 
   @media only screen and (min-width: 641px) {
-    font-size: map-get($font-size, 'l-1');
+    @include font-size('l-1');
   }
 }
 
