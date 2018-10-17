@@ -1,27 +1,2 @@
-html {
-  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif; }
-
-body {
-  font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.6;
-  color: #000; }
-  @media only screen and (min-width: 40.0625rem) {
-    body {
-      font-size: 1.25rem;
-      line-height: 1.75; } }
-
-a {
-  color: #000; }
-
-.rplc-hero-landing-page__title-crisis-wrapper {
-  display: table; }
-
-.rplc-hero-landing-page__title-wrapper {
-  display: table-cell; }
-
-.rplc-hero-landing-page__crisis-watch-wrapper {
-  display: table-cell; }
-
+.rplc-hero-landing-page__title-crisis-wrapper{display:table}.rplc-hero-landing-page__title-wrapper{display:table-cell}.rplc-hero-landing-page__crisis-watch-wrapper{display:table-cell}
 /*# sourceMappingURL=rplc-hero-landing-page.css.map */

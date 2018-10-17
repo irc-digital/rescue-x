@@ -22,6 +22,7 @@ config.patternLab = {
 };
 
 config.styles = {
+  max_file_size: '30000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
   input_combined: [
     config.patternLab.dir + '/source/scss/**/*.scss',
   ],
@@ -56,29 +57,30 @@ config.svgs = {
   inline: 'images/inline'
 };
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sassLint = require('gulp-sass-lint');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var browserSync = require('browser-sync').create();
-var runSequence = require('run-sequence');
-var sourcemaps = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
-var run = require('gulp-run');
-var del = require('del');
-var log = require('fancy-log');
-var svgmin = require('gulp-svgmin');
-var svgstore = require('gulp-svgstore');
-var cheerio = require('gulp-cheerio');
-var fs = require('fs');
-var rtl = require('postcss-rtl');
-var tap = require('gulp-tap');
-var argv = require('yargs').argv;
-var export_sass = require('node-sass-export');
-var jsonToYaml = require('gulp-json-to-yaml');
-var clean = require('gulp-clean');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const browserSync = require('browser-sync').create();
+const runSequence = require('run-sequence');
+const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
+const run = require('gulp-run');
+const del = require('del');
+const log = require('fancy-log');
+const svgmin = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
+const cheerio = require('gulp-cheerio');
+const fs = require('fs');
+const rtl = require('postcss-rtl');
+const tap = require('gulp-tap');
+const argv = require('yargs').argv;
+const export_sass = require('node-sass-export');
+const jsonToYaml = require('gulp-json-to-yaml');
+const clean = require('gulp-clean');
+const warn_size = require('gulp-warn-size');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -119,7 +121,9 @@ function build_styles (source_files, destination_subfolder = '') {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(postCSSProcessors))
-      // .pipe(cleanCSS({compatibility: 'ie8'}))
+      .pipe(cleanCSS({compatibility: 'ie8'}))
+      .pipe(warn_size(config.styles.max_file_size))
+      .on('error', () => process.exit(1))
       .pipe(sourcemaps.write('./'))
       .pipe(rename({dirname: destination_subfolder}))
       .pipe(gulp.dest(config.styles.output))

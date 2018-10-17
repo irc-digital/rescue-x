@@ -1,27 +1,2 @@
-html {
-  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif; }
-
-body {
-  font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.6;
-  color: #000; }
-  @media only screen and (min-width: 40.0625rem) {
-    body {
-      font-size: 1.25rem;
-      line-height: 1.75; } }
-
-a {
-  color: #000; }
-
-.rplc-hero-standard__link-wrapper {
-  text-decoration: none; }
-
-.rplc-hero-standard__description {
-  font-size: 20px;
-  font-weight: 100;
-  letter-spacing: -.1px;
-  line-height: 1.6; }
-
+.rplc-hero-standard__link-wrapper{text-decoration:none}.rplc-hero-standard__description{font-size:20px;font-weight:100;letter-spacing:-.1px;line-height:1.6}
 /*# sourceMappingURL=rplc-hero-standard.css.map */
