@@ -1,7 +1,16 @@
 @import '../x.tier-2';
 
+html {
+  font-family: $font-family-sans-serif;
+}
+
 body {
   @include typography-body;
+  color: get-neutral-color('black');
+}
+
+a {
+  color: get-neutral-color('black');
 }
 
 // end of file

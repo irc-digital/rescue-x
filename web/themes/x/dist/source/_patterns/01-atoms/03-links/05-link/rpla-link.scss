@@ -1,0 +1,14 @@
+@import 'rpla-link.variables';
+
+.rpla-link {
+  @include typography-link-standard;
+
+  &:hover {
+    background-color: get-brand-color();
+  }
+
+  &--size-large {
+    @include typography-link-standard-large;
+  }
+
+}

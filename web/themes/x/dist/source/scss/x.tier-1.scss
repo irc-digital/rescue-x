@@ -97,7 +97,7 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
   $font-sizes: (
     'm': rem(18px),
     'm-1': rem(20px),
-    'l': rem(26px),
+    'l': rem(24px),
     'l-1': rem(36px),
   );
   @if $option != 'all' {

@@ -1,7 +1,9 @@
 @import 'rpla-paragraph.variables';
 
-//.rpla-paragraph {
-//
-//}
+.rpla-paragraph {
+  &--lead {
+    @include typography-paragraph-large;
+  }
+}
 
 // end of file

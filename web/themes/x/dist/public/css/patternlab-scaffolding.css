@@ -3,23 +3,39 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be our production CSS.
  */
+html {
+  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif; }
+
 body {
   font-size: 1.125rem;
+  font-weight: 300;
   letter-spacing: -0.01em;
-  line-height: 1.6; }
+  line-height: 1.6;
+  color: #000; }
   @media only screen and (min-width: 40.0625rem) {
     body {
       font-size: 1.25rem;
       line-height: 1.75; } }
 
+a {
+  color: #000; }
+
+html {
+  font-family: akzidenz-grotesk, Arial, Helvetica, sans-serif; }
+
 body {
   font-size: 1.125rem;
+  font-weight: 300;
   letter-spacing: -0.01em;
-  line-height: 1.6; }
+  line-height: 1.6;
+  color: #000; }
   @media only screen and (min-width: 40.0625rem) {
     body {
       font-size: 1.25rem;
       line-height: 1.75; } }
+
+a {
+  color: #000; }
 
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
