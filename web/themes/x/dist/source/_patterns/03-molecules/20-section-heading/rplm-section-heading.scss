@@ -6,7 +6,7 @@
   @include standard-row;
 
   &__title {
-    @include typography-heading-large;
+    @include typography-heading-extra-large;
     border-left: $section-heading-left-border-width solid get-brand-color();
     display: inline-block;
     padding-bottom: 10px;

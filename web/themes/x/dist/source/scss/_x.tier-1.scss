@@ -97,11 +97,12 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
   $font-sizes: (
     'xxs': rem(12px),
     'xs': rem(14px),
-    's': rem(18px),
+    's': rem(16px),
     'm': rem(18px),
     'ml': rem(20px),
     'l': rem(24px),
-    'xl': rem(36px),
+    'xl': rem(28px),
+    'xxl': rem(36px),
   );
   @if $option != 'all' {
     @return safe-map-get($font-sizes, $option);

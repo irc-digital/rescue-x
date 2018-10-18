@@ -2,6 +2,19 @@
 
 .rplc-teaser-highlighted {
 
+  &__title {
+    @include typography-heading-large;
+  }
+
+  &__summary {
+    @include typography-text-small;
+  }
+
+  &__cta {
+    @include typography-link-inverse;
+    display: inline-block;
+  }
+
   &__wrapper-link {
     align-items: center;
     display: flex;

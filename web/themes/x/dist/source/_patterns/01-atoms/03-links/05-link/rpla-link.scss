@@ -3,12 +3,16 @@
 .rpla-link {
   $self: &;
 
-  &:not(#{ $self }--style-alert) {
+  &:not([class*='rpla-link--style']) {
     @include typography-link-standard;
   }
 
   &--style-alert {
     @include typography-link-alert;
+  }
+
+  &--style-inverse {
+    @include typography-link-inverse;
   }
 
   &--size-small {

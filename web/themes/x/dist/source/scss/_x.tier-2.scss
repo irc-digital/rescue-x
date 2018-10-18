@@ -17,6 +17,15 @@
   }
 }
 
+@mixin typography-text-small {
+  @include font-size('s');
+  @include font-weight('light');
+
+  @include breakpoint(phablet) {
+    @include font-size('m');
+  }
+}
+
 @mixin typography-text-large {
   @include font-size('ml');
 
@@ -44,6 +53,15 @@
   }
 }
 
+@mixin typography-link-inverse {
+  @include font-weight('bold');
+  border-bottom: 2px solid get-neutral-color('white');
+
+  &:hover {
+    background-color: get-neutral-color('white');
+  }
+}
+
 @mixin typography-link-small {
   @include font-size('xs');
 
@@ -53,13 +71,23 @@
 }
 
 @mixin typography-heading-large {
+  @include font-size('xl');
+  @include letter-spacing('compact');
+  @include line-height('s-1');
+
+  @include breakpoint(phablet) {
+    @include font-size('xxl');
+  }
+}
+
+@mixin typography-heading-extra-large {
   @include font-size('l');
   @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s-1');
 
   @include breakpoint(phablet) {
-    @include font-size('xl');
+    @include font-size('xxl');
   }
 }
 

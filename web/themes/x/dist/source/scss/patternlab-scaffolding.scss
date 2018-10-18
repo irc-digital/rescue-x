@@ -115,6 +115,10 @@ body > .rpll-three-column-list {
   }
 }
 
+*[id*='atoms-link-(inverse)'] {
+  background-color: get-brand-color();
+}
+
 .demo-animate {
   background: #ddd;
   padding: 1em;
