@@ -38,6 +38,7 @@
 @mixin typography-link-standard {
   @include font-weight('bold');
   border-bottom: 2px solid get-brand-color();
+  display: inline;
 
   &:hover {
     background-color: get-brand-color();
@@ -47,6 +48,7 @@
 @mixin typography-link-alert {
   @include font-weight('bold');
   border-bottom: 2px solid get-utility-color('alert');
+  display: inline;
 
   &:hover {
     color: get-utility-color('alert');
@@ -56,6 +58,7 @@
 @mixin typography-link-inverse {
   @include font-weight('bold');
   border-bottom: 2px solid get-neutral-color('white');
+  display: inline;
 
   &:hover {
     background-color: get-neutral-color('white');
