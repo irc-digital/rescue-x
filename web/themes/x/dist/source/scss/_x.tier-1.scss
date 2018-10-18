@@ -95,10 +95,13 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
 // Function to get a font size value from its array entry key
 @function get-font-size($option: 'm') {
   $font-sizes: (
+    'xxs': rem(12px),
+    'xs': rem(14px),
+    's': rem(18px),
     'm': rem(18px),
-    'm-1': rem(20px),
+    'ml': rem(20px),
     'l': rem(24px),
-    'l-1': rem(36px),
+    'xl': rem(36px),
   );
   @if $option != 'all' {
     @return safe-map-get($font-sizes, $option);

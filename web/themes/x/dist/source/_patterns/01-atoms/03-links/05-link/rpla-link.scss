@@ -1,9 +1,17 @@
 @import 'rpla-link.variables';
 
 .rpla-link {
-  @include typography-link-standard;
+  $self: &;
 
-  &:hover {
-    background-color: get-brand-color();
+  &:not(#{ $self }--style-alert) {
+    @include typography-link-standard;
+  }
+
+  &--style-alert {
+    @include typography-link-alert;
+  }
+
+  &--size-small {
+    @include typography-link-small;
   }
 }

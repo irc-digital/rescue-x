@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  @include typography-body;
+  @include typography-text-standard;
   color: get-neutral-color('black');
 }
 

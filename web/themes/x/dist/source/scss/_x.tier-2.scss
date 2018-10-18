@@ -5,20 +5,20 @@
 @import 'x.tier-1';
 @import 'abstract/mixins';
 
-@mixin typography-body {
+@mixin typography-text-standard {
   @include font-size('m');
   @include font-weight('light');
   @include letter-spacing('standard');
   @include line-height('m');
 
   @include breakpoint(phablet) {
-    @include font-size('m-1');
+    @include font-size('ml');
     @include line-height('m-1');
   }
 }
 
-@mixin typography-paragraph-large {
-  @include font-size('m-1');
+@mixin typography-text-large {
+  @include font-size('ml');
 
   @include breakpoint(phablet) {
     @include font-size('l');
@@ -29,6 +29,27 @@
 @mixin typography-link-standard {
   @include font-weight('bold');
   border-bottom: 2px solid get-brand-color();
+
+  &:hover {
+    background-color: get-brand-color();
+  }
+}
+
+@mixin typography-link-alert {
+  @include font-weight('bold');
+  border-bottom: 2px solid get-utility-color('alert');
+
+  &:hover {
+    color: get-utility-color('alert');
+  }
+}
+
+@mixin typography-link-small {
+  @include font-size('xs');
+
+  @include breakpoint(phablet) {
+    @include font-size('s');
+  }
 }
 
 @mixin typography-heading-large {
@@ -38,7 +59,7 @@
   @include line-height('s-1');
 
   @include breakpoint(phablet) {
-    @include font-size('l-1');
+    @include font-size('xl');
   }
 }
 
