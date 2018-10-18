@@ -5,15 +5,11 @@
 @import 'x.tier-1';
 @import 'abstract/mixins';
 
-@mixin typography-text-standard {
-  @include font-size('m');
-  @include font-weight('light');
-  @include letter-spacing('standard');
-  @include line-height('m');
+@mixin typography-text-extra-small {
+  @include font-size('xs');
 
   @include breakpoint(phablet) {
-    @include font-size('ml');
-    @include line-height('m-1');
+    @include font-size('s');
   }
 }
 
@@ -26,6 +22,26 @@
   }
 }
 
+@mixin typography-text-small-to-medium-large {
+  @include font-size('s');
+
+  @include breakpoint(phablet) {
+    @include font-size('ml');
+  }
+}
+
+@mixin typography-text-standard {
+  @include font-size('m');
+  @include font-weight('light');
+  @include letter-spacing('standard');
+  @include line-height('m');
+
+  @include breakpoint(phablet) {
+    @include font-size('ml');
+    @include line-height('m-1');
+  }
+}
+
 @mixin typography-text-large {
   @include font-size('ml');
 
@@ -35,13 +51,17 @@
   }
 }
 
+@mixin typography-link-standard-hover {
+  background-color: get-brand-color();
+}
+
 @mixin typography-link-standard {
   @include font-weight('bold');
   border-bottom: 2px solid get-brand-color();
   display: inline;
 
   &:hover {
-    background-color: get-brand-color();
+    @include typography-link-standard-hover;
   }
 }
 
@@ -55,26 +75,36 @@
   }
 }
 
+@mixin typography-link-inverse-hover {
+  background-color: get-neutral-color('white');
+}
+
 @mixin typography-link-inverse {
   @include font-weight('bold');
   border-bottom: 2px solid get-neutral-color('white');
   display: inline;
 
   &:hover {
-    background-color: get-neutral-color('white');
+    @include typography-link-inverse-hover;
   }
 }
 
-@mixin typography-link-small {
-  @include font-size('xs');
+// Medium large on mobile, Extra large on bigger devices
+@mixin typography-heading-medium-large {
+  @include font-size('ml');
+  @include font-weight('bold');
+  @include letter-spacing('compact');
+  @include line-height('s-1');
 
   @include breakpoint(phablet) {
-    @include font-size('s');
+    @include font-size('xl');
   }
 }
 
+// Large on mobile, Extra extra large on bigger devices
 @mixin typography-heading-large {
-  @include font-size('xl');
+  @include font-size('l');
+  @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s-1');
 
@@ -83,8 +113,9 @@
   }
 }
 
+// Extra large on mobile, Extra extra large on bigger devices
 @mixin typography-heading-extra-large {
-  @include font-size('l');
+  @include font-size('xl');
   @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s-1');

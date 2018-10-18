@@ -15,7 +15,7 @@
     @include typography-link-inverse;
   }
 
-  &--size-small {
-    @include typography-link-small;
+  &--size-extra-small {
+    @include typography-text-extra-small;
   }
 }

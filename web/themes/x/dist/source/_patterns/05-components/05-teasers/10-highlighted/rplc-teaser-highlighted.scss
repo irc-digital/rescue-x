@@ -1,9 +1,10 @@
 @import 'rplc-teaser-highlighted.variables';
 
 .rplc-teaser-highlighted {
+  $self: &;
 
   &__title {
-    @include typography-heading-large;
+    @include typography-heading-extra-large;
   }
 
   &__summary {
@@ -14,10 +15,19 @@
     @include typography-link-inverse;
   }
 
+  &__slug {
+    @include typography-text-extra-small;
+  }
+
   &__wrapper-link {
     align-items: center;
     display: flex;
-    text-decoration: none;
+
+    &:hover {
+      #{ $self }__cta {
+        @include typography-link-inverse-hover;
+      }
+    }
   }
 
   &__text-wrapper {

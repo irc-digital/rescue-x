@@ -1,9 +1,27 @@
 @import 'rplc-teaser-standard.variables';
 
 .rplc-teaser-standard {
+  $self: &;
+
+  &__title {
+    @include typography-heading-medium-large;
+  }
+
+  &__slug {
+    @include typography-text-extra-small;
+  }
+
+  &__cta {
+    @include typography-link-standard;
+    @include typography-text-small-to-medium-large;
+  }
 
   &__wrapper-link {
-    text-decoration: none;
+    &:hover {
+      #{ $self }__cta {
+        @include typography-link-standard-hover;
+      }
+    }
   }
 
   &__image-wrapper {
