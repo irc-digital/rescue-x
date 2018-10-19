@@ -5,6 +5,10 @@
 @import 'x.tier-1';
 @import 'abstract/mixins';
 
+@function is-not-in-list ($list, $value) {
+  @return index($list, $value) == null;
+}
+
 @mixin typography-text-extra-small {
   @include font-size('xs');
 
@@ -13,20 +17,28 @@
   }
 }
 
-@mixin typography-text-small {
-  @include font-size('s');
+//
+// Small text mixin. Outputs with a small (s) font size on mobile and a medium  on other devices
+//
+// The responds arguments allows some control over the up-sizing on non-mobile devices.
+// Options:
+//    m   Default value, up-sized to medium
+//    ml  Up-sizes to medium-large on non-mobile devices
+//    s   Prevents up-sizing by maintaining small font size on all devices
+//
+@mixin typography-text-small ($responds: 'm') {
+  @if is-not-in-list(('m', 'ml', 's'), $responds) {
+    @error '#{$responds} is not a legitimate parameter';
+  }
+
+  $mobile-font-size: 's';
+  @include font-size($mobile-font-size);
   @include font-weight('light');
 
-  @include breakpoint(phablet) {
-    @include font-size('m');
-  }
-}
-
-@mixin typography-text-small-to-medium-large {
-  @include font-size('s');
-
-  @include breakpoint(phablet) {
-    @include font-size('ml');
+  @if $responds != $mobile-font-size {
+    @include breakpoint(phablet) {
+      @include font-size($responds);
+    }
   }
 }
 
@@ -42,7 +54,7 @@
   }
 }
 
-@mixin typography-text-large {
+@mixin typography-text-large ($responds: 'l') {
   @include font-size('ml');
 
   @include breakpoint(phablet) {
@@ -90,14 +102,27 @@
 }
 
 // Medium large on mobile, Extra large on bigger devices
-@mixin typography-heading-medium-large {
-  @include font-size('ml');
+//
+// The responds arguments allows some control over the up-sizing on non-mobile devices.
+// Options:
+//    xl   Default value, up-sized to extra large
+//    ml   Prevents up-sizing by maintaining medium-large on all devices
+//
+@mixin typography-heading-medium-large ($responds: 'xl') {
+  @if is-not-in-list(('xl', 'ml'), $responds) {
+    @error '#{$responds} is not a legitimate parameter';
+  }
+
+  $mobile-font-size: 'ml';
+  @include font-size($mobile-font-size);
   @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s-1');
 
-  @include breakpoint(phablet) {
-    @include font-size('xl');
+  @if $responds != $mobile-font-size {
+    @include breakpoint(phablet) {
+      @include font-size($responds);
+    }
   }
 }
 

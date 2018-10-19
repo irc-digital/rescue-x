@@ -12,8 +12,8 @@
   }
 
   &__cta {
+    @include typography-text-small('ml');
     @include typography-link-standard;
-    @include typography-text-small-to-medium-large;
   }
 
   &__wrapper-link {
