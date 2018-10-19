@@ -1,5 +1,9 @@
 font_size:
+  xxs: rem(12px)
+  xs: rem(14px)
+  s: rem(16px)
   m: rem(18px)
-  m-1: rem(20px)
+  ml: rem(20px)
   l: rem(24px)
-  l-1: rem(36px)
+  xl: rem(28px)
+  xxl: rem(36px)

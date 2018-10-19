@@ -1,0 +1,4 @@
+typography_text_small:
+  m: 'Default value, up-sized to medium'
+  ml: Up-sizes to medium-large on non-mobile devices
+  s: Prevents up-sizing by maintaining small font size on all devices

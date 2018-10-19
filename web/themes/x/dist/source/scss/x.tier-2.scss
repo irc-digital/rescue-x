@@ -17,6 +17,20 @@
   }
 }
 
+@function xxx-tts-params ($option: 'keys') {
+  $typography-text-small-params: (
+    'm': 'Default value, up-sized to medium',
+    'ml': 'Up-sizes to medium-large on non-mobile devices',
+    's': 'Prevents up-sizing by maintaining small font size on all devices',
+  );
+
+  @if $option != 'all' {
+    @return map-keys($typography-text-small-params);
+  } @else {
+    @return $typography-text-small-params;
+  }
+}
+
 //
 // Small text mixin. Outputs with a small (s) font size on mobile and a medium  on other devices
 //
@@ -27,7 +41,7 @@
 //    s   Prevents up-sizing by maintaining small font size on all devices
 //
 @mixin typography-text-small ($responds: 'm') {
-  @if is-not-in-list(('m', 'ml', 's'), $responds) {
+  @if is-not-in-list(xxx-tts-params(), $responds) { // sass-lint:disable-line empty-args
     @error '#{$responds} is not a legitimate parameter';
   }
 
@@ -41,6 +55,9 @@
     }
   }
 }
+// generates a JSON array of typography-text-small paarameters to be used by PatternLab
+$xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-text-small.json', xxx-tts-params('all'), (prefix: '{ "typography_text_small":', suffix: '}'));
+
 
 @mixin typography-text-standard {
   @include font-size('m');
