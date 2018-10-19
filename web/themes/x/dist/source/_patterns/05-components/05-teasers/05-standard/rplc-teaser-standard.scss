@@ -40,6 +40,7 @@
 
   &__text-wrapper {
     background-color: $teaser-standard-text-section-background;
+    flex: 1;
     margin: $teaser-standard-text-section-eats-in $teaser-standard-text-section-horizontal-margin 0;
     padding: $teaser-standard-text-section-padding-mobile;
     position: relative;
