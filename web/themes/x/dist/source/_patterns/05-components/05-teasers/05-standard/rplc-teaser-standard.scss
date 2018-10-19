@@ -3,8 +3,13 @@
 .rplc-teaser-standard {
   $self: &;
 
-  //display: flex;
-  //flex-direction: column;
+  height: 100%;
+
+  &__wrapper-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   &__title {
     @include typography-heading-medium-large;

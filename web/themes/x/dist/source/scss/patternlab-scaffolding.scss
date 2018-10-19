@@ -28,7 +28,14 @@ body > .rpll-three-column-list {
   max-width: rem(265px);
 }
 
+//
+// 1) Dodges around oddity related to responsive image handling when we are outside of a legit container (grid)
+//
 .rplc-teaser-standard, .rplc-teaser-minimal {
+  img {
+    width: 100%; // 1
+  }
+
   @include breakpoint(desktop) {
     max-width: rem(590px);
   }
@@ -56,8 +63,8 @@ body > .rpll-three-column-list {
 
 // make all patterns have some padding left and right (to make it look nice) ...
 .sg-subtype, .sg-pattern > * {
-  padding-left: .5rem !important;
-  padding-right: .5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 
 // ... except for the ones that are supposed to go window width
