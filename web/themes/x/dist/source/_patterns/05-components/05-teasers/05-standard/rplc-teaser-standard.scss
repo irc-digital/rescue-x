@@ -13,6 +13,7 @@
 
   &__title {
     @include typography-heading-medium-large;
+    flex: 1;
     margin-bottom: get-spacing();
   }
 
@@ -24,6 +25,7 @@
     @include typography-text-small('ml');
     @include typography-link-standard;
     margin-bottom: get-spacing('s');
+    align-self: flex-start;
   }
 
   &__wrapper-link {
@@ -40,7 +42,9 @@
 
   &__text-wrapper {
     background-color: $teaser-standard-text-section-background;
+    display: flex;
     flex: 1;
+    flex-direction: column;
     margin: $teaser-standard-text-section-eats-in $teaser-standard-text-section-horizontal-margin 0;
     padding: $teaser-standard-text-section-padding-mobile;
     position: relative;
