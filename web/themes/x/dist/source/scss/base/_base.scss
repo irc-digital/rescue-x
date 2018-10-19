@@ -6,8 +6,8 @@ html {
 
 body {
   @include typography-text-standard;
+  background-color: get-neutral-color('very-light-gray');
   color: get-neutral-color('black');
-  background-color: #f6f6f6; // TODO
 }
 
 a {
