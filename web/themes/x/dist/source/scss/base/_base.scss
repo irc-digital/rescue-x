@@ -14,4 +14,13 @@ a {
   color: get-neutral-color('black');
 }
 
+//
+// Responsive image styling
+// 1) Allows for images to flex with varying screen size
+//
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 // end of file

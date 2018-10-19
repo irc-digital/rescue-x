@@ -3,8 +3,12 @@
 .rplc-teaser-standard {
   $self: &;
 
+  //display: flex;
+  //flex-direction: column;
+
   &__title {
     @include typography-heading-medium-large;
+    margin-bottom: get-spacing();
   }
 
   &__slug {
@@ -14,6 +18,7 @@
   &__cta {
     @include typography-text-small('ml');
     @include typography-link-standard;
+    margin-bottom: get-spacing('s');
   }
 
   &__wrapper-link {
@@ -31,9 +36,13 @@
   &__text-wrapper {
     background-color: $teaser-standard-text-section-background;
     margin: $teaser-standard-text-section-eats-in $teaser-standard-text-section-horizontal-margin 0;
-    padding: $teaser-standard-text-section-padding;
+    padding: $teaser-standard-text-section-padding-mobile;
     position: relative;
     z-index: 2;
+
+    @include breakpoint(phablet) {
+      padding: $teaser-standard-text-section-padding-large;
+    }
   }
 }
 
