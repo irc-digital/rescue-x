@@ -200,6 +200,23 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
 // generates a JSON array of font sizes to be used by PatternLab
 $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
 
+// Function to get a spacing value from its array entry key
+@function get-spacing($option: 'm') {
+  // don't panic - these get converted to rem when they are returned
+  $space-unit: 1rem;
+  $spacings: (
+    's': $space-unit / 2, // 8px
+    'm': $space-unit,  // 16px
+    'l': 2 * $space-unit, // 32px
+    'xl': 3 * $space-unit, // 48px
+  );
+  @if $option != 'all' {
+    @return safe-map-get($spacings, $option);
+  } @else {
+    @return $spacings;
+  }
+}
+
 
 // end of file
 

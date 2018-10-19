@@ -1,11 +1,9 @@
 @import '../../../../scss/core';
 
 $teaser-standard-text-section-background: get-neutral-color('white');
-$teaser-standard-text-section-horizontal-margin: 1rem;
-$teaser-standard-text-section-eats-in: -51px;
-$teaser-standard-text-section-height: 240px;
-$teaser-standard-text-section-vertical-padding: $standard-gutter * 2;
-$teaser-standard-text-section-horizontal-padding: $standard-gutter * 2.5;
+$teaser-standard-text-section-horizontal-margin: get-spacing();
+$teaser-standard-text-section-eats-in: -#{get-spacing('xl')};
+$teaser-standard-text-section-padding: get-spacing('l');
 
 // end of file
 

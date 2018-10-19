@@ -30,9 +30,8 @@
 
   &__text-wrapper {
     background-color: $teaser-standard-text-section-background;
-    height: $teaser-standard-text-section-height;
     margin: $teaser-standard-text-section-eats-in $teaser-standard-text-section-horizontal-margin 0;
-    padding: $teaser-standard-text-section-vertical-padding $teaser-standard-text-section-horizontal-padding;
+    padding: $teaser-standard-text-section-padding;
     position: relative;
     z-index: 2;
   }
