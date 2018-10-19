@@ -204,3 +204,28 @@ body > .rpll-three-column-list {
 .sg-tabs-panel {
   min-height: 20em !important;
 }
+
+.xxx-typography-text-extra-small {
+  @include typography-text-extra-small;
+}
+
+.xxx-typography-text-small {
+  @include typography-text-small;
+}
+
+.xxx-typography-text-small-s {
+  @include typography-text-small('s');
+}
+
+.xxx-typography-text-small-ml {
+  @include typography-text-small('ml');
+}
+
+.xxx-typography-link-standard {
+  @include typography-link-standard;
+}
+
+.xxx-typography-text-large {
+  @include typography-text-large;
+}
+

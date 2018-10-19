@@ -1,0 +1,40 @@
+      <div><p>This mixin outputs small (<code>s</code>) font-sized text on mobile devices and, by default, scales up to medium (<code>m</code>) on larger devices.</p></div>
+    <p><strong>Usage:</strong></p>
+  <p>
+    <code>@include typography-text-small;</code>
+  </p>
+      <p>This mixin accepts arguments, as outlined below:</p>
+    <table>
+      <thead>
+      <tr>
+        <th style='padding-right:2rem;'>Parameter</th>
+        <th style='text-align:left;padding-right:2rem;'>Purpose</th>
+        <th style='text-align:left;'>Usage</th>
+      </tr>
+      </thead>
+      <tbody>
+              <tr>
+          <td style='padding-right:2rem;'>m</td>
+          <td style='padding-right:2rem;'>Default value, up-sized to medium</td>
+          <td><code>@include typography-text-small;</code></td>
+        </tr>
+              <tr>
+          <td style='padding-right:2rem;'>ml</td>
+          <td style='padding-right:2rem;'>Up-sizes to medium-large on non-mobile devices</td>
+          <td><code>@include typography-text-small('ml');</code></td>
+        </tr>
+              <tr>
+          <td style='padding-right:2rem;'>s</td>
+          <td style='padding-right:2rem;'>Prevents up-sizing by maintaining small font size on all devices</td>
+          <td><code>@include typography-text-small('s');</code></td>
+        </tr>
+            </tbody>
+    </table>
+    <p><strong>Examples:</strong></p>
+                            <p><ul>Default usage</ul></p>
+        <div class="xxx-typography-text-small">The output from this mixin looks like this.</div>
+                        <p><ul>Using <code>ml</code></ul></p>
+        <div class="xxx-typography-text-small-ml">The output from this mixin looks like this.</div>
+                        <p><ul>Using <code>s</code></ul></p>
+        <div class="xxx-typography-text-small-s">The output from this mixin looks like this.</div>
+            

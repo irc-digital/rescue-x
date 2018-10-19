@@ -17,6 +17,7 @@
   }
 }
 
+// internal function for small text mixin parameters
 @function xxx-tts-params ($option: 'keys') {
   $typography-text-small-params: (
     'm': 'Default value, up-sized to medium',
