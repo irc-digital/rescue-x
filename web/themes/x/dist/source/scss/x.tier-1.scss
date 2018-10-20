@@ -203,7 +203,7 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
 // Function to get a spacing value from its array entry key
 @function get-spacing($option: 'm') {
   // don't panic - these get converted to rem when they are returned
-  $space-unit: 1rem;
+  $space-unit: 16px;
   $spacings: (
     's': $space-unit / 2, // 8px
     'm': $space-unit,  // 16px
@@ -211,11 +211,13 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
     'xl': 3 * $space-unit, // 48px
   );
   @if $option != 'all' {
-    @return safe-map-get($spacings, $option);
+    @return rem(safe-map-get($spacings, $option));
   } @else {
     @return $spacings;
   }
 }
+// generates a JSON array of spacing to be used by PatternLab
+$xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', get-spacing('all'), (prefix: '{ "spacing":', suffix: '}'));
 
 
 // end of file

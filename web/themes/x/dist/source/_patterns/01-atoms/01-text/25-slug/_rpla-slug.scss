@@ -1,0 +1,8 @@
+@import 'rpla-slug.variables';
+
+.rpla-slug {
+  @include typography-text-extra-small;
+  margin-bottom: $slug-margin-bottom;
+}
+
+// end of file

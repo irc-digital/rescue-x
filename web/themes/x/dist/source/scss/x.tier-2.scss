@@ -21,8 +21,8 @@
 @function xxx-tts-params ($option: 'keys') {
   $typography-text-small-params: (
     'm': 'Default value, up-sized to medium',
-    'ml': 'Up-sizes to medium-large on non-mobile devices',
-    's': 'Prevents up-sizing by maintaining small font size on all devices',
+    //'ml': 'Up-sizes to medium-large on non-mobile devices',
+    //'s': 'Prevents up-sizing by maintaining small font size on all devices',
   );
 
   @if $option != 'all' {

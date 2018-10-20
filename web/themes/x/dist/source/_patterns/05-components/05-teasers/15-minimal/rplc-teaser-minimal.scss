@@ -10,7 +10,7 @@
   }
 
   &__slug {
-    @include typography-text-small('s');
+    @include typography-text-extra-small;
   }
 
   &__title {
