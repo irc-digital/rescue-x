@@ -1,2 +1,71 @@
-.rplc-pull-quote{background-color:#fff;margin-top:45px;width:100%}.rplc-pull-quote__content{margin-left:auto;margin-right:auto;max-width:77.5rem;padding-left:1rem;padding-right:1rem}.rplc-pull-quote__text-wrapper{font-size:20px;height:auto;margin:45px auto 0;padding:65px 16px 40px 25px;position:relative}@media only screen and (min-width:40.0625rem){.rplc-pull-quote__text-wrapper{padding:15px 20px 20px 25px}}.rplc-pull-quote__text{font-size:20px;font-style:italic;font-weight:100;letter-spacing:.17px;line-height:1.35;position:relative}@media only screen and (min-width:40.0625rem){.rplc-pull-quote__text{font-size:28px;padding-left:87px}}@media only screen and (min-width:48rem){.rplc-pull-quote__text{margin-left:0}}.rplc-pull-quote__text::before{background:url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M11.8%2048.3V33c0-10.8%205.3-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H11.8zm23.8%200V33c0-10.8%205.4-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H35.6z%22%20fill%3D%22%23fdc513%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E) no-repeat center center;background-size:65px;content:'';display:block;height:50px;left:-5px;position:absolute;top:-60px;width:50px}@media only screen and (min-width:40.0625rem){.rplc-pull-quote__text::before{background-size:85px;height:80px;top:-10px;width:80px}}.rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper,.rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper{background-color:#fff;margin:0}@media only screen and (min-width:40.0625rem){.rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper,.rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper{max-width:450px}}@media only screen and (min-width:40.0625rem){.rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper{float:left;margin-right:45px}}@media only screen and (min-width:40.0625rem){.rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper{float:right;margin-left:45px}}@media only screen and (min-width:40.0625rem) and (min-width:77.5rem){.rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper{margin-right:-90px}}.rplc-pull-quote--background-transparent{background-color:rgba(1,1,5,0)}
+.rplc-pull-quote {
+  background-color: #fff;
+  margin-top: 45px;
+  width: 100%; }
+  .rplc-pull-quote__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 77.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  .rplc-pull-quote__text-wrapper {
+    font-size: 20px;
+    height: auto;
+    margin: 45px auto 0;
+    padding: 65px 16px 40px 25px;
+    position: relative; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-pull-quote__text-wrapper {
+        padding: 15px 20px 20px 25px; } }
+  .rplc-pull-quote__text {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: .17px;
+    line-height: 1.35;
+    position: relative; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-pull-quote__text {
+        font-size: 28px;
+        padding-left: 87px; } }
+    @media only screen and (min-width: 48rem) {
+      .rplc-pull-quote__text {
+        margin-left: 0; } }
+    .rplc-pull-quote__text::before {
+      background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M11.8%2048.3V33c0-10.8%205.3-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H11.8zm23.8%200V33c0-10.8%205.4-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H35.6z%22%20fill%3D%22%23fdc513%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E") no-repeat center center;
+      background-size: 65px;
+      content: '';
+      display: block;
+      height: 50px;
+      left: -5px;
+      position: absolute;
+      top: -60px;
+      width: 50px; }
+      @media only screen and (min-width: 40.0625rem) {
+        .rplc-pull-quote__text::before {
+          background-size: 85px;
+          height: 80px;
+          top: -10px;
+          width: 80px; } }
+  .rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper, .rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper {
+    background-color: #fff;
+    margin: 0; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper, .rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper {
+        max-width: 450px; } }
+  @media only screen and (min-width: 40.0625rem) {
+    .rplc-pull-quote--placement-left .rplc-pull-quote__text-wrapper {
+      float: left;
+      margin-right: 45px; } }
+  @media only screen and (min-width: 40.0625rem) {
+    .rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper {
+      float: right;
+      margin-left: 45px; } }
+
+@media only screen and (min-width: 40.0625rem) and (min-width: 77.5rem) {
+  .rplc-pull-quote--placement-right .rplc-pull-quote__text-wrapper {
+    margin-right: -90px; } }
+  .rplc-pull-quote--background-transparent {
+    background-color: rgba(1, 1, 5, 0); }
+
 /*# sourceMappingURL=rplc-pull-quote.css.map */
