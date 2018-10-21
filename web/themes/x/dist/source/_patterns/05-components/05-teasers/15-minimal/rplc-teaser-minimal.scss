@@ -9,12 +9,7 @@
     text-decoration: none;
   }
 
-  &__slug {
-    @include typography-text-extra-small;
-  }
-
   &__title {
-    @include typography-heading-medium;
     order: 10;
   }
 

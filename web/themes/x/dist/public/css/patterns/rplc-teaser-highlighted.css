@@ -22,7 +22,8 @@
     background-color: #fff; }
 
 .rplc-teaser-highlighted__slug {
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.2; }
   @media only screen and (min-width: 40.0625rem) {
     .rplc-teaser-highlighted__slug {
       font-size: 1rem; } }

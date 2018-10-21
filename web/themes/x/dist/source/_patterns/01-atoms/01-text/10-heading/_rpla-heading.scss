@@ -1,0 +1,24 @@
+@import 'rpla-heading.variables';
+
+.rpla-heading {
+
+  &,
+  &--medium-large {
+    @include typography-heading-medium;
+    margin-bottom: get-spacing('s');
+  }
+
+  &--medium-large {
+    @include typography-heading-medium-large;
+  }
+
+  &--large {
+    @include typography-heading-large;
+  }
+
+  &--extra-large {
+    @include typography-heading-extra-large;
+  }
+}
+
+// end of file

@@ -156,7 +156,8 @@ body > .rpll-three-column-list {
   min-height: 20em !important; }
 
 .xxx-typography-text-extra-small {
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.2; }
   @media only screen and (min-width: 40.0625rem) {
     .xxx-typography-text-extra-small {
       font-size: 1rem; } }

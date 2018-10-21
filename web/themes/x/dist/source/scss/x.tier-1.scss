@@ -205,7 +205,7 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
   // don't panic - these get converted to rem when they are returned
   $space-unit: 16px;
   $spacings: (
-    'xs': $space-unit / 4, // 8px
+    'xs': $space-unit / 4, // 4px
     's': $space-unit / 2, // 8px
     'm': $space-unit,  // 16px
     'l': 2 * $space-unit, // 32px

@@ -79,8 +79,46 @@ img {
       font-size: 1.5rem;
       line-height: 1.6; } }
 
+.rpla-heading, .rpla-heading--medium-large {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-heading, .rpla-heading--medium-large {
+      font-size: 1.25rem; } }
+
+.rpla-heading--medium-large {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-heading--medium-large {
+      font-size: 1.75rem; } }
+
+.rpla-heading--large {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-heading--large {
+      font-size: 2.25rem; } }
+
+.rpla-heading--extra-large {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-heading--extra-large {
+      font-size: 2.25rem; } }
+
 .rpla-slug {
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.2; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-slug {
       font-size: 1rem; } }
@@ -135,7 +173,8 @@ img {
     background-color: #fff; }
 
 .rpla-link--size-extra-small {
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.2; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-link--size-extra-small {
       font-size: 1rem; } }
@@ -570,7 +609,8 @@ img {
     background-color: #fff; }
 
 .rplc-teaser-highlighted__slug {
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  line-height: 1.2; }
   @media only screen and (min-width: 40.0625rem) {
     .rplc-teaser-highlighted__slug {
       font-size: 1rem; } }
@@ -599,23 +639,10 @@ img {
           flex-direction: column;
   text-decoration: none; }
 
-.rplc-teaser-minimal__slug {
-  font-size: 0.875rem; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rplc-teaser-minimal__slug {
-      font-size: 1rem; } }
-
 .rplc-teaser-minimal__title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
   -webkit-box-ordinal-group: 11;
       -ms-flex-order: 10;
           order: 10; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rplc-teaser-minimal__title {
-      font-size: 1.25rem; } }
 
 .rplc-teaser-minimal--title-first .rplc-teaser-minimal__title {
   -webkit-box-ordinal-group: 1;
