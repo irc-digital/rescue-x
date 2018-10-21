@@ -6,9 +6,7 @@
   height: 100%;
 
   &__title {
-    @include typography-heading-medium-large;
     flex: 1;
-    margin-bottom: $teaser-standard-title-margin-bottom;
   }
 
   &__cta {

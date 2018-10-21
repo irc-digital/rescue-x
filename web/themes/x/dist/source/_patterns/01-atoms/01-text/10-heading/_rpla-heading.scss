@@ -2,14 +2,14 @@
 
 .rpla-heading {
 
-  &,
-  &--medium-large {
+  &--medium {
     @include typography-heading-medium;
     margin-bottom: get-spacing('s');
   }
 
   &--medium-large {
     @include typography-heading-medium-large;
+    margin-bottom: get-spacing();
   }
 
   &--large {
