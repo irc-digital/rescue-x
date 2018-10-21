@@ -98,8 +98,6 @@ img {
         margin-left: 1rem;
         padding-left: 1rem;
         padding-right: 1rem; } }
-  .rpla-slug--spacing-tight:not(:last-child) {
-    margin-bottom: 0.25rem; }
 
 .rpla-button {
   background-color: #fdc513;

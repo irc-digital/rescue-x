@@ -26,12 +26,6 @@
       padding-right: $slug-sub-spacing;
     }
   }
-
-  &--spacing-tight {
-    &:not(:last-child) {
-      margin-bottom: $slug-margin-bottom-tight;
-    }
-  }
 }
 
 // end of file
