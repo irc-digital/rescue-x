@@ -119,28 +119,27 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-// Medium large on mobile, Extra large on bigger devices
-//
-// The responds arguments allows some control over the up-sizing on non-mobile devices.
-// Options:
-//    xl   Default value, up-sized to extra large
-//    ml   Prevents up-sizing by maintaining medium-large on all devices
-//
-@mixin typography-heading-medium-large ($responds: 'xl') {
-  @if is-not-in-list(('xl', 'ml'), $responds) {
-    @error '#{$responds} is not a legitimate parameter';
-  }
-
-  $mobile-font-size: 'ml';
-  @include font-size($mobile-font-size);
+// Medium  on mobile, Medium large on bigger devices
+@mixin typography-heading-medium {
+  @include font-size('m');
   @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s-1');
 
-  @if $responds != $mobile-font-size {
-    @include breakpoint(phablet) {
-      @include font-size($responds);
-    }
+  @include breakpoint(phablet) {
+    @include font-size('ml');
+  }
+}
+
+// Medium large on mobile, Extra large on bigger devices
+@mixin typography-heading-medium-large  {
+  @include font-size('ml');
+  @include font-weight('bold');
+  @include letter-spacing('compact');
+  @include line-height('s-1');
+
+  @include breakpoint(phablet) {
+    @include font-size('xl');
   }
 }
 

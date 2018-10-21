@@ -14,13 +14,13 @@
   }
 
   &__title {
-    @include typography-heading-medium-large('ml');
+    @include typography-heading-medium;
     order: 10;
   }
 
   &--title-first {
     #{ $self }__title {
-      order: -1;
+      order: 0;
     }
   }
 }

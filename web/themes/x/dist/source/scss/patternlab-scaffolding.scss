@@ -220,14 +220,6 @@ body > .rpll-three-column-list {
   @include typography-text-small;
 }
 
-//.xxx-typography-text-small-s {
-//  @include typography-text-small('s');
-//}
-//
-//.xxx-typography-text-small-ml {
-//  @include typography-text-small('ml');
-//}
-
 .xxx-typography-link-standard {
   @include typography-link-standard;
 }
@@ -236,3 +228,18 @@ body > .rpll-three-column-list {
   @include typography-text-large;
 }
 
+.xxx-typography-heading-medium {
+  @include typography-heading-medium;
+}
+
+.xxx-typography-heading-medium-large {
+  @include typography-heading-medium-large;
+}
+
+.xxx-typography-heading-large {
+  @include typography-heading-large;
+}
+
+.xxx-typography-heading-extra-large {
+  @include typography-heading-extra-large;
+}
