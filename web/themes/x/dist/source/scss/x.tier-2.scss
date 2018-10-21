@@ -50,6 +50,7 @@
   $mobile-font-size: 's';
   @include font-size($mobile-font-size);
   @include font-weight('light');
+  @include line-height('s-1');
 
   @if $responds != $mobile-font-size {
     @include breakpoint(phablet) {

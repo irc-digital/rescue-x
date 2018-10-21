@@ -14,7 +14,7 @@ news_and_features_content:
           - "https://placem.at/places?w=528&h=297&random=nandf1 528w"
           - "https://placem.at/places?w=1024&h=576&random=nandf1 1024w"
           - "https://placem.at/places?w=1280&h=720&random=nandf1 1280w"
-        teaser_highlighted_image_sizes: "(min-width: 1208px) 720px, 100vw"
+        teaser_highlighted_image_sizes: "(min-width: 1208px) 976px, 100vw"
         teaser_highlighted_image_fallback: "https://placem.at/places?w=1024&h=576&random=nandf1"
         teaser_highlighted_image_alt: "Faker.words(4, true)"
       only: true

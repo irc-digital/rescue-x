@@ -14,6 +14,11 @@
     @include typography-link-standard;
     align-self: flex-start;
     margin-bottom: $teaser-standard-cta-margin-bottom;
+
+    @include breakpoint(phablet) {
+      @include typography-text-standard;
+      @include typography-link-standard;
+    }
   }
 
   &__wrapper-link {

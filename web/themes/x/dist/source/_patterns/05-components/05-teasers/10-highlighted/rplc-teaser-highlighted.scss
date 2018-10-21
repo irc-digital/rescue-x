@@ -3,26 +3,20 @@
 .rplc-teaser-highlighted {
   $self: &;
 
-  &__title {
-    @include typography-heading-extra-large;
-  }
-
   &__summary {
     @include typography-text-small;
+    margin-bottom: get-spacing('l');
   }
 
   &__cta {
     @include typography-link-inverse;
   }
 
-  &__slug {
-    @include typography-text-extra-small;
+  &__image-wrapper {
+    line-height: 0;
   }
 
   &__wrapper-link {
-    align-items: center;
-    display: flex;
-
     &:hover {
       #{ $self }__cta {
         @include typography-link-inverse-hover;
@@ -32,9 +26,35 @@
 
   &__text-wrapper {
     background-color: $teaser-highlighted-text-section-background;
-    padding: $teaser-highlighted-text-section-padding;
-  }
-}
+    margin: $teaser-highlighted-text-section-eats-in $teaser-highlighted-text-section-horizontal-margin 0;
+    padding: $teaser-highlighted-text-section-padding-mobile;
+    position: relative;
+    z-index: 2;
 
+    @include breakpoint(phablet) {
+      padding: $teaser-highlighted-text-section-padding-large;
+    }
+  }
+
+  @media only screen and (min-width: #{$well-width-inner}) {
+    &__wrapper-link {
+      align-items: center;
+      display: flex;
+    }
+
+    &__text-wrapper {
+      margin-left: -186px;
+      margin-right: 0;
+      margin-top: 0;
+      width: 424px;
+    }
+
+    &__image-wrapper {
+      width: 976px;
+    }
+
+  }
+
+}
 // end of file
 

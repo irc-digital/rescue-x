@@ -18,6 +18,7 @@
 
   &--extra-large {
     @include typography-heading-extra-large;
+    margin-bottom: get-spacing('s');
   }
 }
 

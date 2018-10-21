@@ -112,7 +112,8 @@ img {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2; }
+  line-height: 1.2;
+  margin-bottom: 0.5rem; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-heading--extra-large {
       font-size: 2.25rem; } }
@@ -534,6 +535,7 @@ img {
   .rplc-teaser-standard__cta {
     font-size: 1rem;
     font-weight: 300;
+    line-height: 1.2;
     font-weight: 700;
     border-bottom: 2px solid #fdc513;
     display: inline;
@@ -545,6 +547,22 @@ img {
         font-size: 1.125rem; } }
     .rplc-teaser-standard__cta:hover {
       background-color: #fdc513; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-teaser-standard__cta {
+        font-size: 1.125rem;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        line-height: 1.6;
+        font-weight: 700;
+        border-bottom: 2px solid #fdc513;
+        display: inline; } }
+  @media only screen and (min-width: 40.0625rem) and (min-width: 40.0625rem) {
+    .rplc-teaser-standard__cta {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+    @media only screen and (min-width: 40.0625rem) {
+        .rplc-teaser-standard__cta:hover {
+          background-color: #fdc513; } }
   .rplc-teaser-standard__wrapper-link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -578,18 +596,11 @@ img {
       .rplc-teaser-standard__text-wrapper {
         padding: 2rem; } }
 
-.rplc-teaser-highlighted__title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rplc-teaser-highlighted__title {
-      font-size: 2.25rem; } }
-
 .rplc-teaser-highlighted__summary {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 2rem; }
   @media only screen and (min-width: 40.0625rem) {
     .rplc-teaser-highlighted__summary {
       font-size: 1.125rem; } }
@@ -601,26 +612,37 @@ img {
   .rplc-teaser-highlighted__cta:hover {
     background-color: #fff; }
 
-.rplc-teaser-highlighted__slug {
-  font-size: 0.875rem;
-  line-height: 1.2; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rplc-teaser-highlighted__slug {
-      font-size: 1rem; } }
+.rplc-teaser-highlighted__image-wrapper {
+  line-height: 0; }
 
-.rplc-teaser-highlighted__wrapper-link {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .rplc-teaser-highlighted__wrapper-link:hover .rplc-teaser-highlighted__cta {
-    background-color: #fff; }
+.rplc-teaser-highlighted__wrapper-link:hover .rplc-teaser-highlighted__cta {
+  background-color: #fff; }
 
 .rplc-teaser-highlighted__text-wrapper {
   background-color: #fdc513;
-  padding: 36px; }
+  margin: -2rem 1rem 0;
+  padding: 1rem;
+  position: relative;
+  z-index: 2; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rplc-teaser-highlighted__text-wrapper {
+      padding: 2rem; } }
+
+@media only screen and (min-width: 75.5rem) {
+  .rplc-teaser-highlighted__wrapper-link {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .rplc-teaser-highlighted__text-wrapper {
+    margin-left: -186px;
+    margin-right: 0;
+    margin-top: 0;
+    width: 424px; }
+  .rplc-teaser-highlighted__image-wrapper {
+    width: 976px; } }
 
 .rplc-teaser-minimal__wrapper-link {
   display: -webkit-box;
@@ -844,12 +866,13 @@ img {
           top: -1px;
           width: 80px; } }
 
-.rplc-news-and-features__content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 77.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem; }
+@media only screen and (min-width: 75.5rem) {
+  .rplc-news-and-features__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 77.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem; } }
 
 .rplc-top-stories__content {
   margin-left: auto;
