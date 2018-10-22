@@ -241,13 +241,23 @@ p {
     line-height: 1.2;
     border-left: 6px solid #fdc513;
     display: inline-block;
-    padding-bottom: 10px;
+    max-width: 75%;
+    padding-bottom: 0.5rem;
     padding-left: 24px;
-    padding-top: 10px; }
+    padding-top: 0.5rem; }
     @media only screen and (min-width: 40.0625rem) {
       .rplm-section-heading__title {
         font-size: 2.25rem; } }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplm-section-heading__title {
+        max-width: 85%; } }
   .rplm-section-heading__title-icon-wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-bottom: 1rem; }
     @media only screen and (min-width: 40.0625rem) {
       .rplm-section-heading__title-icon-wrapper {

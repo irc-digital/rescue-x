@@ -5,16 +5,27 @@
 
   @include standard-row;
 
+
+  //
+  // 1) Ensures that the icon does not get too squished
+  //
   &__title {
     @include typography-heading-large;
     border-left: $section-heading-left-border-width solid get-brand-color();
     display: inline-block;
-    padding-bottom: 10px;
+    max-width: 75%; // 1
+    padding-bottom: get-spacing('s');
     padding-left: $section-heading-title-left-padding;
-    padding-top: 10px;
+    padding-top: get-spacing('s');
+
+    @include breakpoint(phablet) {
+      max-width: 85%;
+    }
   }
 
   &__title-icon-wrapper {
+    align-items: center;
+    display: flex;
     margin-bottom: get-spacing();
 
     @include breakpoint(phablet) {

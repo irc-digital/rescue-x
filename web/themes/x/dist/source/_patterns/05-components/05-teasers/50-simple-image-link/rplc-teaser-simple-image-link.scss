@@ -32,6 +32,12 @@
   }
 
   &--display-images-not-on-mobile {
+    height: auto;
+
+    @include breakpoint(phablet) {
+      height: 260px;
+    }
+
     #{ $self }__image-wrapper {
       display: none;
 
@@ -42,6 +48,8 @@
   }
 
   &--display-images-never {
+    height: auto;
+
     #{ $self }__image-wrapper {
       display: none;
     }

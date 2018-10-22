@@ -1,6 +1,6 @@
 simple_image_link_list_section_heading_title: 'Faker.words(5,true)'
 simple_image_link_list_section_heading_description: 'Faker.sentences(3,true)'
-simple_image_link_list_section_heading_icon: 'bullhorn'
+simple_image_link_list_section_heading_icon: 'heart'
 simple_image_link_list_content:
   - include():
       pattern: "components-teaser-simple-image-link"
