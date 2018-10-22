@@ -1,13 +1,9 @@
 @import 'rplc-news-and-features.variables';
 
 .rplc-news-and-features {
-
-  @media only screen and (min-width: #{$well-width-inner}) {
-    &__content {
-      @include standard-row;
-    }
+  &__content {
+    @include standard-row;
   }
-
 }
 
 // end of file

@@ -11,7 +11,7 @@
 
 @mixin typography-text-extra-small {
   @include font-size('xs');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @include breakpoint(phablet) {
     @include font-size('s');
@@ -50,7 +50,7 @@
   $mobile-font-size: 's';
   @include font-size($mobile-font-size);
   @include font-weight('light');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @if $responds != $mobile-font-size {
     @include breakpoint(phablet) {
@@ -70,7 +70,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 
   @include breakpoint(phablet) {
     @include font-size('ml');
-    @include line-height('m-1');
+    @include line-height('l');
   }
 }
 
@@ -126,7 +126,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include font-size('m');
   @include font-weight('bold');
   @include letter-spacing('compact');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @include breakpoint(phablet) {
     @include font-size('ml');
@@ -138,7 +138,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include font-size('ml');
   @include font-weight('bold');
   @include letter-spacing('compact');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @include breakpoint(phablet) {
     @include font-size('xl');
@@ -150,7 +150,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include font-size('l');
   @include font-weight('bold');
   @include letter-spacing('compact');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @include breakpoint(phablet) {
     @include font-size('xxl');
@@ -162,7 +162,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include font-size('xl');
   @include font-weight('bold');
   @include letter-spacing('compact');
-  @include line-height('s-1');
+  @include line-height('s');
 
   @include breakpoint(phablet) {
     @include font-size('xxl');

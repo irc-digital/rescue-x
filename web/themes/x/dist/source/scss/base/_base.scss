@@ -23,4 +23,8 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin-bottom: get-spacing('ml');
+}
+
 // end of file

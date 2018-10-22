@@ -48,6 +48,7 @@ body > .rpll-three-column-list {
 #components-hero-standard > .sg-pattern-example,
 #components-hero-landing-page > .sg-pattern-example,
 #components-hero-landing-page-crisis-watch > .sg-pattern-example,
+#components-news-and-features > .sg-pattern-example,
 #components-hero-text-only > .sg-pattern-example,
 #layouts-hero-layout-1 > .sg-pattern-example,
 #layouts-hero-layout-2 > .sg-pattern-example,
@@ -57,6 +58,9 @@ body > .rpll-three-column-list {
 
 #atoms-social-share-standard {
   background-color: #fff; }
+
+#molecules-section-heading-inverse {
+  background-color: #fdc513; }
 
 .patternlab-faux-hero-image-21-9 {
   height: 100vw;

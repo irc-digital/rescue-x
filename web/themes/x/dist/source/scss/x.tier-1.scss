@@ -129,10 +129,10 @@ $xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json',
 // Function to get a line height value from its array entry key
 @function get-line-height($option: 'm') {
   $line-heights: (
-    's': 1,
-    's-1': 1.2,
+    'xs': 1,
+    's': 1.2,
     'm': 1.6,
-    'm-1': 1.75,
+    'l': 1.75,
   );
   @if $option != 'all' {
     @return safe-map-get($line-heights, $option);
@@ -208,6 +208,7 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
     'xs': $space-unit / 4, // 4px
     's': $space-unit / 2, // 8px
     'm': $space-unit,  // 16px
+    'ml': 1.5 * $space-unit, // 24px
     'l': 2 * $space-unit, // 32px
     'xl': 3 * $space-unit, // 48px
   );

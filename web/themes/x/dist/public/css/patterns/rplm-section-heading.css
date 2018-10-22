@@ -17,6 +17,13 @@
     @media only screen and (min-width: 40.0625rem) {
       .rplm-section-heading__title {
         font-size: 2.25rem; } }
+  .rplm-section-heading__title-icon-wrapper {
+    margin-bottom: 1rem; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplm-section-heading__title-icon-wrapper {
+        margin-bottom: 1.5rem; } }
+  .rplm-section-heading__description {
+    line-height: 1.6; }
   .rplm-section-heading__icon {
     display: inline-block;
     fill: #000;
