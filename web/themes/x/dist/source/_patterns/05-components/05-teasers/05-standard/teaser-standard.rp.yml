@@ -36,7 +36,7 @@ teaser_standard:
       type: text
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+      preview: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), (min-width: 320px) calc(100vw - 2rem), 320px"
     teaser_standard_image_fallback:
       type: url
       label: "Image fallback"

@@ -16,7 +16,23 @@
             flex-direction: column;
     margin: 0; }
   .rplc-teaser-image-link-box__title {
-    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%2F%3E%3C%2Fsvg%3E") right center no-repeat; }
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%2F%3E%3C%2Fsvg%3E") right center no-repeat;
+    margin-bottom: 1rem;
+    padding-right: 1rem; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-teaser-image-link-box__title {
+        font-size: 1.25rem; } }
+  .rplc-teaser-image-link-box__summary {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-teaser-image-link-box__summary {
+        font-size: 1.125rem; } }
   .rplc-teaser-image-link-box__caption-wrapper {
     background-color: #fff;
     border-bottom: 0.375rem solid #fdc513;

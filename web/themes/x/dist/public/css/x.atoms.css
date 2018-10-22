@@ -59,7 +59,9 @@ body {
   letter-spacing: -0.01em;
   line-height: 1.6;
   background-color: #f6f6f6;
-  color: #000; }
+  color: #000;
+  min-width: 20rem;
+  width: 100%; }
   @media only screen and (min-width: 40.0625rem) {
     body {
       font-size: 1.25rem;

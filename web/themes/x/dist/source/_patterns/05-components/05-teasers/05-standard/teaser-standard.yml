@@ -7,6 +7,6 @@ teaser_standard_image_source_set:
   - "https://placem.at/places?w=528&h=297&random=teaserstandardimage 528w"
   - "https://placem.at/places?w=1024&h=576&random=teaserstandardimage 1024w"
   - "https://placem.at/places?w=1280&h=720&random=teaserstandardimage 1280w"
-teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)"
+teaser_standard_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), (min-width: 320px) calc(100vw - 2rem), 320px"
 teaser_standard_image_fallback: "https://placem.at/places?w=1024&h=576&random=teaserstandardimage"
 teaser_standard_image_alt: "Faker.words(4, true)"
