@@ -9,6 +9,15 @@
   @return index($list, $value) == null;
 }
 
+@mixin typography-text-extra-extra-small {
+  @include font-size('xxs');
+  @include line-height('xs');
+
+  @include breakpoint(phablet) {
+    @include font-size('xs');
+  }
+}
+
 @mixin typography-text-extra-small {
   @include font-size('xs');
   @include line-height('s');

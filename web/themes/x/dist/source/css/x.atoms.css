@@ -75,48 +75,24 @@ img {
   height: auto;
   max-width: 100%; }
 
-p {
+.rpla-paragraph {
   margin-bottom: 1rem;
   max-width: 53.125rem; }
   @media only screen and (min-width: 40.0625rem) {
-    p {
+    .rpla-paragraph {
       margin-bottom: 1.5rem; } }
-
-ul {
-  font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.6;
-  list-style: none; }
-  @media only screen and (min-width: 40.0625rem) {
-    ul {
-      font-size: 1.25rem;
-      line-height: 1.75; } }
-  ul li {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    text-indent: -.85em; }
-    ul li::before {
-      font-size: 1.5rem;
-      color: #fdc513;
-      content: '• ';
-      font-family: Arial;
-      left: -1rem;
-      position: relative;
-      top: 3px; }
-
-.rpla-paragraph--lead {
-  font-size: 1.25rem; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rpla-paragraph--lead {
-      font-size: 1.5rem;
-      line-height: 1.6; } }
+  .rpla-paragraph--lead {
+    font-size: 1.25rem; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rpla-paragraph--lead {
+        font-size: 1.5rem;
+        line-height: 1.6; } }
 
 .rpla-heading--medium {
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 0.5rem; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-heading--medium {
@@ -126,7 +102,7 @@ ul {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 1rem; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-heading--medium-large {
@@ -136,7 +112,7 @@ ul {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2; }
+  line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-heading--large {
       font-size: 2.25rem; } }
@@ -145,15 +121,15 @@ ul {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 0.5rem; }
+  line-height: 1.4;
+  margin-bottom: 1rem; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-heading--extra-large {
       font-size: 2.25rem; } }
 
 .rpla-slug {
   font-size: 0.875rem;
-  line-height: 1.2; }
+  line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-slug {
       font-size: 1rem; } }
@@ -214,7 +190,7 @@ ul {
 
 .rpla-link--size-extra-small {
   font-size: 0.875rem;
-  line-height: 1.2; }
+  line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-link--size-extra-small {
       font-size: 1rem; } }
@@ -225,13 +201,35 @@ ul {
     height: 24px;
     width: 24px; }
 
-.rpla-unordered-list--small {
-  font-size: 1rem;
+.rpla-unordered-list {
+  font-size: 1.125rem;
   font-weight: 300;
-  line-height: 1.2; }
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  list-style: none; }
   @media only screen and (min-width: 40.0625rem) {
-    .rpla-unordered-list--small {
-      font-size: 1.125rem; } }
+    .rpla-unordered-list {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+  .rpla-unordered-list--small {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rpla-unordered-list--small {
+        font-size: 1.125rem; } }
+  .rpla-unordered-list__item {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    text-indent: -.85em; }
+    .rpla-unordered-list__item::before {
+      font-size: 1.5rem;
+      color: #fdc513;
+      content: '• ';
+      font-family: Arial;
+      left: -1rem;
+      position: relative;
+      top: 3px; }
 
 .rpla-responsive-title--short {
   font-size: 3.75rem;
@@ -275,7 +273,7 @@ ul {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    line-height: 1.2;
+    line-height: 1.4;
     border-left: 6px solid #fdc513;
     display: inline-block;
     max-width: 75%;

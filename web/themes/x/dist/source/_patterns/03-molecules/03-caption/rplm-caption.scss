@@ -3,7 +3,16 @@
 .rplm-caption {
   background-color: $caption-default-background-color;
   color: $caption-default-text-color;
-  padding: get-spacing()/2 get-spacing() get-spacing();
+  padding: get-spacing('ml');
+
+  &__text {
+    @include typography-text-small;
+    margin-bottom: get-spacing();
+  }
+
+  &__credit {
+    @include typography-text-extra-extra-small;
+  }
 }
 
 // end of file

@@ -1,6 +1,13 @@
 @import 'rpla-paragraph.variables';
 
 .rpla-paragraph {
+  margin-bottom: get-spacing();
+  max-width: $max-text-width;
+
+  @include breakpoint(phablet) {
+    margin-bottom: get-spacing('ml');
+  }
+
   &--lead {
     @include typography-text-large;
   }

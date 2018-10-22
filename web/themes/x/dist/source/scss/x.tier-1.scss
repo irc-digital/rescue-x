@@ -130,7 +130,7 @@ $xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json',
 @function get-line-height($option: 'm') {
   $line-heights: (
     'xs': 1,
-    's': 1.2,
+    's': 1.4,
     'm': 1.6,
     'l': 1.75,
   );
