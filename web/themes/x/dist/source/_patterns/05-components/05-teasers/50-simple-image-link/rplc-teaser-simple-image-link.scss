@@ -3,6 +3,11 @@
 .rplc-teaser-simple-image-link {
   $self: &;
 
+  display: flex;
+  flex-direction: column;
+  height: 260px;
+  justify-content: flex-end;
+
   &__wrapper-link {
     text-decoration: none;
   }
@@ -14,6 +19,12 @@
     max-height: 150px;
     max-width: 150px;
     overflow: hidden;
+  }
+
+  &__title {
+    @include font-weight('bold');
+    margin-bottom: get-spacing('l');
+    margin-top: get-spacing('l');
   }
 
   &__text-wrapper {

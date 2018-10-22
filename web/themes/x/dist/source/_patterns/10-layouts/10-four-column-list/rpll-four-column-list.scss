@@ -6,10 +6,14 @@
   list-style-type: none;
   padding-left: 0;
 
-  @include breakpoint(desktop) {
+  @include breakpoint(phablet) {
     display: grid;
     grid-column-gap: $four-column-list-column-gutter;
     grid-row-gap: $four-column-list-row-gutter;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include breakpoint(laptop) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
