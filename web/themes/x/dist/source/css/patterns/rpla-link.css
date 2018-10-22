@@ -1,9 +1,14 @@
-.rpla-link:not([class*='rpla-link--style']) {
+.rpla-link:not([class*='rpla-link--style-']):not(.rpla-link--hover-effect-none) {
   font-weight: 700;
   border-bottom: 2px solid #fdc513;
   display: inline; }
-  .rpla-link:not([class*='rpla-link--style']):hover {
+  .rpla-link:not([class*='rpla-link--style-']):not(.rpla-link--hover-effect-none):hover {
     background-color: #fdc513; }
+
+.rpla-link:not([class*='rpla-link--style-']).rpla-link--hover-effect-none {
+  font-weight: 700;
+  border-bottom: 2px solid #fdc513;
+  display: inline; }
 
 .rpla-link--style-alert {
   font-weight: 700;

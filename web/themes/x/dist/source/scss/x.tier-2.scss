@@ -87,13 +87,15 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   background-color: get-brand-color();
 }
 
-@mixin typography-link-standard {
+@mixin typography-link-standard ($has-hover-effect: true) {
   @include font-weight('bold');
-  border-bottom: 2px solid get-brand-color();
+  border-bottom: 2px solid get-brand-color('primary');
   display: inline;
 
-  &:hover {
-    @include typography-link-standard-hover;
+  @if $has-hover-effect {
+    &:hover {
+      @include typography-link-standard-hover;
+    }
   }
 }
 

@@ -3,8 +3,22 @@
 .rpla-link {
   $self: &;
 
-  &:not([class*='rpla-link--style']) {
-    @include typography-link-standard;
+  //
+  // 1) We need this style of selector because we are trying to do a wildcard check for any class containing rpla-link--style-
+  //
+  &:not([class*='rpla-link--style-']) { // 1)
+    //
+    // 1) Ensures that we get the default hover effect only when the hover effect is not turned off
+    // 2) Ensures we get no hover effect is we are the no-hover effect option.
+    //
+    &:not(#{$self}--hover-effect-none) {
+      @include typography-link-standard; // 1
+    }
+
+    &#{$self}--hover-effect-none {
+      @include typography-link-standard (false); // 2
+    }
+
   }
 
   &--style-alert {

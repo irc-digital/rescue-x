@@ -186,12 +186,17 @@ ul {
         -ms-flex-order: 2;
             order: 2; }
 
-.rpla-link:not([class*='rpla-link--style']) {
+.rpla-link:not([class*='rpla-link--style-']):not(.rpla-link--hover-effect-none) {
   font-weight: 700;
   border-bottom: 2px solid #fdc513;
   display: inline; }
-  .rpla-link:not([class*='rpla-link--style']):hover {
+  .rpla-link:not([class*='rpla-link--style-']):not(.rpla-link--hover-effect-none):hover {
     background-color: #fdc513; }
+
+.rpla-link:not([class*='rpla-link--style-']).rpla-link--hover-effect-none {
+  font-weight: 700;
+  border-bottom: 2px solid #fdc513;
+  display: inline; }
 
 .rpla-link--style-alert {
   font-weight: 700;
@@ -1185,6 +1190,12 @@ ul {
   max-width: 77.5rem;
   padding-left: 1rem;
   padding-right: 1rem; }
+
+.rplc-highlight__header {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase; }
 
 .rplc-highlight__list-wrapper {
   color: #666; }
