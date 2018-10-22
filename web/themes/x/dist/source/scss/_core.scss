@@ -7,11 +7,8 @@
 
 $standard-overlay-treatment: rgba(0, 0, 0, .5);
 
-$standard-gutter: 1rem;
-$standard-horizontal-margin-accounting-for-gutters: 2 * $standard-gutter;
-$private-row-gutter: $standard-gutter; // kept distinct from the standard gutter as i can see this changing to 2rem
 $well-width-inner: rem(1208px);
-$max-row-width: $well-width-inner + ($standard-gutter * 2);
+$max-row-width: $well-width-inner + (get-spacing() * 2);
 
 $smallest-desktop-size: $max-row-width;
 $smallest-desktop-size-less-gutters: $well-width-inner - rem(1px);

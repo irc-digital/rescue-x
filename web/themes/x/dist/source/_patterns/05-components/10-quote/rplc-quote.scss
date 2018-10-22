@@ -54,7 +54,7 @@
     padding: 59px 17px 17px;
     position: relative;
     top: -28px;
-    width: calc(100vw - #{$standard-gutter});
+    width: calc(100vw - #{get-spacing()});
 
     @include breakpoint(phablet) {
       left: 18vw;

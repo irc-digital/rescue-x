@@ -3,7 +3,7 @@
 $teaser-image-link-box-default-decoration-color: get-brand-color();
 $teaser-image-link-box-alert-decoration-color: get-utility-color('alert');
 $teaser-image-link-box-caption-bottom-border-size: rem(6px);
-$teaser-image-link-box-caption-total-horizontal-margin: $standard-horizontal-margin-accounting-for-gutters;
+$teaser-image-link-box-caption-total-horizontal-margin: 2 * get-spacing();
 $teaser-image-link-box-caption-eats-in: -4rem;
 $teaser-image-link-box-text-area-max-width: rem(376px);
 $teaser-image-link-box-image-width-tablet: rem(288px);

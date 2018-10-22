@@ -3,7 +3,7 @@
 .rplm-caption {
   background-color: $caption-default-background-color;
   color: $caption-default-text-color;
-  padding: $standard-gutter/2 $standard-gutter $standard-gutter;
+  padding: get-spacing()/2 get-spacing() get-spacing();
 }
 
 // end of file

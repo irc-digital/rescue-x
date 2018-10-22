@@ -1,7 +1,7 @@
 @import '../../../scss/core';
 
-$two-column-list-column-gutter: $standard-gutter;
-$two-column-list-row-gutter: 3 * $standard-gutter;
-$two-column-list-stacked-margin-bottom: $standard-gutter * 3;
+$two-column-list-column-gutter: get-spacing();
+$two-column-list-row-gutter: 3 * get-spacing();
+$two-column-list-stacked-margin-bottom: get-spacing() * 3;
 
 // end of file

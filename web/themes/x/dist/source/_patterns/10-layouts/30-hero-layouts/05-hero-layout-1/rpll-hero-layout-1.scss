@@ -14,7 +14,7 @@
   &__text-wrapper {
     background-color: get-neutral-color('white');
     display: grid;
-    grid-row-gap: $standard-gutter;
+    grid-row-gap: get-spacing();
     grid-template-areas: 'primary_1' 'primary_2' 'secondary_1' 'secondary_2';
     grid-template-columns: 1fr;
     padding: 30px;
@@ -37,7 +37,7 @@
   &__secondary-2 {
     border-top: 1px solid get-neutral-color('black');
     grid-area: secondary_2;
-    padding-top: $standard-gutter;
+    padding-top: get-spacing();
   }
 
   &--no-second-blocks {
@@ -48,7 +48,7 @@
 
   @include breakpoint(phablet) {
     &__text-wrapper {
-      grid-column-gap: $standard-gutter;
+      grid-column-gap: get-spacing('m');
       grid-template-areas: 'primary_1 primary_1' 'primary_2 secondary_1' 'secondary_2 secondary_2';
       grid-template-columns: 1fr 1fr;
 
@@ -91,7 +91,7 @@
 
     &__primary-1,
     &__primary-2 {
-      margin-right: 2 * $standard-gutter;
+      margin-right: 2 * get-spacing();
       width: 66%;
     }
 
@@ -102,7 +102,7 @@
 
     &__primary-1,
     &__secondary-1 {
-      margin-bottom: $standard-gutter;
+      margin-bottom: get-spacing();
     }
 
     &__secondary-2 {

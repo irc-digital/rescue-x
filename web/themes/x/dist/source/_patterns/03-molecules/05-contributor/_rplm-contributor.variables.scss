@@ -3,7 +3,7 @@
 $contributor-photo-width-height-mobile: rem(48px);
 $contributor-photo-width-height-larger: rem(72px);
 $contributor-photo-background-color: get-brand-color();
-$contributor-byline-left-margin: $standard-gutter;
+$contributor-byline-left-margin: get-spacing();
 
 // end of file
 

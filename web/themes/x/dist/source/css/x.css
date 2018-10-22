@@ -73,7 +73,10 @@ img {
   max-width: 100%; }
 
 p {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1rem; }
+  @media only screen and (min-width: 40.0625rem) {
+    p {
+      margin-bottom: 1.5rem; } }
 
 .rpla-paragraph--lead {
   font-size: 1.25rem; }

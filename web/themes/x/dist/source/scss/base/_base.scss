@@ -24,7 +24,11 @@ img {
 }
 
 p {
-  margin-bottom: get-spacing('ml');
+  margin-bottom: get-spacing();
+
+  @include breakpoint(phablet) {
+    margin-bottom: get-spacing('ml');
+  }
 }
 
 // end of file

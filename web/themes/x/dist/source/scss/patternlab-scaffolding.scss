@@ -178,10 +178,10 @@ body > .rpll-three-column-list {
   background: get-brand-color();
   font-weight: bold;
   opacity: 0.5;
-  padding: $standard-gutter/4 $standard-gutter;
+  padding: get-spacing('xs') get-spacing();
   position: fixed;
-  right: $standard-gutter * 2;
-  top: $standard-gutter;
+  right: get-spacing() * 2;
+  top: get-spacing();
   z-index: 5;
 
   &::before {
