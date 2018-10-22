@@ -34,4 +34,25 @@ p {
   }
 }
 
+ul {
+  @include typography-text-standard;
+  list-style: none;
+
+  li {
+    margin-bottom: get-spacing();
+    padding-left: get-spacing('l');
+    text-indent: -.85em;
+
+    &::before {
+      @include font-size('l');
+      color: get-brand-color();
+      content: '• ';
+      font-family: Arial;
+      left: -#{get-spacing()};
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
 // end of file

@@ -1,0 +1,10 @@
+@import 'rpla-unordered-list.variables';
+
+.rpla-unordered-list {
+
+  &--small {
+    @include typography-text-small;
+  }
+}
+
+// end of file

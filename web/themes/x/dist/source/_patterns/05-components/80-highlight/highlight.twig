@@ -10,14 +10,18 @@
 <aside class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}">
   <div class="rplc-highlight__content">
     <h5 class="rplc-highlight__header">{{ "Highlights" | trans }}</h5>
-    <ul class="rplc-highlight__list">
-      {% for highlight_list_item in highlight_list_content %}
-        <li class="rplc-highlight__list-item">{{ highlight_list_item }}</li>
-      {% endfor %}
-    </ul>
+    <div class="rplc-highlight__list-wrapper">
+      {% include '@atoms/10-lists/05-unordered/unordered-list.twig' with {
+        unordered_list_items: highlight_list_content,
+        unordered_list_modifiers: ['small']
+      } only %}
+    </div>
     {% if highlight_link_url %}
     <a href="{{ highlight_link_url }}" class="rplc-highlight__link">{{ highlight_link_text }}</a>
     {% endif %}
   </div>
 </aside>
+
+
+
 {% endif %}

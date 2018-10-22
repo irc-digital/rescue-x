@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -80,6 +81,29 @@ p {
   @media only screen and (min-width: 40.0625rem) {
     p {
       margin-bottom: 1.5rem; } }
+
+ul {
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  list-style: none; }
+  @media only screen and (min-width: 40.0625rem) {
+    ul {
+      font-size: 1.25rem;
+      line-height: 1.75; } }
+  ul li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    text-indent: -.85em; }
+    ul li::before {
+      font-size: 1.5rem;
+      color: #fdc513;
+      content: '• ';
+      font-family: Arial;
+      left: -1rem;
+      position: relative;
+      top: 3px; }
 
 .rpla-paragraph--lead {
   font-size: 1.25rem; }
@@ -195,6 +219,14 @@ p {
   .rpla-link-icon__icon {
     height: 24px;
     width: 24px; }
+
+.rpla-unordered-list--small {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-unordered-list--small {
+      font-size: 1.125rem; } }
 
 .rpla-responsive-title--short {
   font-size: 3.75rem;

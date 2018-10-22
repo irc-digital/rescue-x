@@ -1,7 +1,10 @@
 @import 'rplc-highlight.variables';
 
-//.rplc-highlight {
-//
-//}
+.rplc-highlight {
+
+  &__list-wrapper {
+    color: get-neutral-color('dark-gray');
+  }
+}
 
 // end of file
