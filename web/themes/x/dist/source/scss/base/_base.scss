@@ -25,6 +25,7 @@ img {
 
 p {
   margin-bottom: get-spacing();
+  max-width: $max-text-width;
 
   @include breakpoint(phablet) {
     margin-bottom: get-spacing('ml');
