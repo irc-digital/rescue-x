@@ -1,20 +1,14 @@
 @import 'rplc-image-partial-width-portrait.variables';
+@import '../rplc-images.shared';
 
 .rplc-image-partial-width-portrait {
-  &__content {
-    @include standard-row;
-  }
 
   &__image-wrapper {
     line-height: 0;
   }
 
   &__caption-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $image-partial-width-portrait-caption-mobile-max-width;
-    position: relative;
-    top: $image-partial-width-portrait-caption-mobile-top;
+    @include image-mobile-caption-shared;
   }
 
   // todo: modifiers
