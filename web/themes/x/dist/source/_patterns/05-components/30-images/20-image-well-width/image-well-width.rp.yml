@@ -17,12 +17,12 @@ image_well_width:
       type: string
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw"
+      preview: "(min-width: 1208px) 1208px,(min-width: 321px) 100vw, 320px"
     image_well_width_responsive_image_fallback:
       type: string
       label: "Image fallback"
       description: "Fallback image if the browser does not support responsive images"
-      preview: "https://placem.at/places?w=640&h=443&random=wellwidth 640w"
+      preview: "https://placem.at/places?w=640&h=443&random=wellwidth"
     image_well_width_responsive_image_alt:
       type: string
       label: "Image alt attribute"

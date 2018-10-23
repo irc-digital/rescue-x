@@ -1,6 +1,6 @@
 @import '../../../../scss/core';
 
-$image-well-width-caption-mobile-max-width: rem(376px);
-$image-well-width-caption-mobile-top: -1rem;
+$image-well-width-caption-mobile-top: -#{get-spacing()};
+$image-well-width-caption-larger-device-top: -#{get-spacing('xxl')};
 
 // end of file

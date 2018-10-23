@@ -211,6 +211,7 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
     'ml': 1.5 * $space-unit, // 24px
     'l': 2 * $space-unit, // 32px
     'xl': 3 * $space-unit, // 48px
+    'xxl': 4 * $space-unit, // 64px
   );
   @if $option != 'all' {
     @return rem(safe-map-get($spacings, $option));
