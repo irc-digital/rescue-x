@@ -21,14 +21,9 @@
   }
 
   &__caption-wrapper {
-    @include image-mobile-caption-shared;
+    @include image-caption-treatment-common;
 
     @include breakpoint(phablet) {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      position: absolute;
-      top: 0;
       width: 35.5vw;
     }
   }

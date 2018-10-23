@@ -3,7 +3,7 @@ image_partial_width_portrait_responsive_image_source_set:
   - "https://placem.at/places?w=1280&h=1707&random=partialwidthportrait 1280w"
   - "https://placem.at/places?w=1920&h=2560&random=partialwidthportrait 1920w"
   - "https://placem.at/places?w=2400&h=3200&random=partialwidthportrait 2400w"
-image_partial_width_portrait_responsive_image_sizes: "(min-width: 1208px) 819px,(min-width: 641px) 70vw,(min-width: 321px) 100vw,320px"
+image_partial_width_portrait_responsive_image_sizes: "(min-width: 641px) 600px,(min-width: 321px) 100vw,320px"
 image_partial_width_portrait_responsive_image_fallback: "https://placem.at/places?w=928&h=600&random=partialwidthportrait"
 image_partial_width_portrait_responsive_image_alt: "Faker.words(5,true)"
 image_partial_width_portrait_caption_text: "Faker.paragraph(4, true)"

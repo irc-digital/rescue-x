@@ -25,7 +25,9 @@
         display: flex;
         height: 100%;
         position: absolute;
-        top: 0;
+        top: 0; } }
+    @media only screen and (min-width: 40.0625rem) {
+      .rplc-image-partial-width-landscape__caption-wrapper {
         width: 35.5vw; } }
   @media only screen and (min-width: 40.0625rem) {
     .rplc-image-partial-width-landscape--caption-right .rplc-image-partial-width-landscape__caption-wrapper {
