@@ -156,6 +156,15 @@ img {
         margin-left: 1rem;
         padding-left: 1rem;
         padding-right: 1rem; } }
+  .rpla-slug--size-large {
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.6; }
+    @media only screen and (min-width: 40.0625rem) {
+      .rpla-slug--size-large {
+        font-size: 1.25rem;
+        line-height: 1.75; } }
 
 .rpla-button {
   background-color: #fdc513;
@@ -241,24 +250,26 @@ img {
       position: relative;
       top: 3px; }
 
-.rpla-responsive-title--short {
-  font-size: 3.75rem;
-  line-height: 1.2; }
-
-.rpla-responsive-title--medium {
-  font-size: 3.25rem; }
-
-.rpla-responsive-title--long {
-  font-size: 3.25rem;
-  line-height: 1.1; }
-
-.rpla-responsive-title--very-long {
-  font-size: 2.5rem;
-  line-height: 1.1; }
-
-.rpla-responsive-title--super-long {
-  font-size: 2.25rem;
-  line-height: 1.2; }
+.rpla-responsive-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  margin-bottom: 1rem; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rpla-responsive-title {
+      font-size: 2.25rem; } }
+  @media only screen and (min-width: 981px) {
+    .rpla-responsive-title {
+      line-height: 1.2; }
+      .rpla-responsive-title--short {
+        font-size: 3.75rem; }
+      .rpla-responsive-title--medium, .rpla-responsive-title--long {
+        font-size: 3.25rem; }
+      .rpla-responsive-title--very-long {
+        font-size: 2.75rem; }
+      .rpla-responsive-title--super-long {
+        font-size: 2.25rem; } }
 
 .rpla-icon {
   height: 100%;

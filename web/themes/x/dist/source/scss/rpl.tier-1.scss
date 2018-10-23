@@ -104,6 +104,9 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
     'l': 24px,
     'xl': 28px,
     'xxl': 36px,
+    'xxxl': 44px,
+    'xxxxl': 52px,
+    'xxxxxl': 60px,
   );
   @if $option != 'all' {
     @return rem(safe-map-get($font-sizes, $option));
@@ -129,7 +132,8 @@ $xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json',
 // Function to get a line height value from its array entry key
 @function get-line-height($option: 'm') {
   $line-heights: (
-    'xs': 1,
+    'xxs': 1,
+    'xs': 1.2,
     's': 1.4,
     'm': 1.6,
     'l': 1.75,

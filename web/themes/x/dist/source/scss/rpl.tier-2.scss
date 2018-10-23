@@ -12,7 +12,7 @@
 @mixin typography-text-extra-extra-small {
   @include font-size('xxs');
   @include font-weight('light');
-  @include line-height('xs');
+  @include line-height('xxs');
 
   @include breakpoint(phablet) {
     @include font-size('xs');

@@ -26,6 +26,10 @@
       padding-right: $slug-sub-spacing;
     }
   }
+
+  &--size-large {
+    @include typography-text-standard;
+  }
 }
 
 // end of file

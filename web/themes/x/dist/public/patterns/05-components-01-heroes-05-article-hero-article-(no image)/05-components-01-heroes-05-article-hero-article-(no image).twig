@@ -22,15 +22,17 @@
       {% block hero_layout_1_primary_1_block %}
         {% if hero_article_slug %}
           <div class="rplc-hero-article__slug-wrapper">
-            <h6 class="rplc-hero-article__slug">{{ hero_article_slug }}</h6>
+            <h6 class="rpla-slug rpla-slug--size-large">{{ hero_article_slug }}</h6>
           </div>
         {% endif %}
         {% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_article_headline} %}
-        {% if hero_article_description %}<h2 class="rplc-hero-article__description">{{ hero_article_description }}</h2>{% endif %}
+        {% if hero_article_description %}<h2 class="rpla-paragraph">{{ hero_article_description }}</h2>{% endif %}
       {% endblock %}
       {% block hero_layout_1_primary_2_block %}
+        <div class="rplc-hero-article__dates-wrapper">
         <div class="rplc-hero-article__published">{{ hero_article_published }}</div>
         {% if hero_article_last_updated and hero_article_last_updated != hero_article_published %}<div class="rplc-hero-article__updated">{{ "Last updated:" | trans }} {{ hero_article_last_updated }}</div>{% endif %}
+        </div>
         {% if hero_article_photographer %}<div class="rplc-hero-article__photographer">{{ "Photo:" | trans }} {{ hero_article_photographer }}</div>{% endif %}
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}

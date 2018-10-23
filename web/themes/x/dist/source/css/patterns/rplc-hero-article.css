@@ -1,7 +1,9 @@
-.rplc-hero-article__description {
-  font-size: 20px;
-  font-weight: 100;
-  letter-spacing: -.1px;
-  line-height: 1.6; }
+.rplc-hero-article__published, .rplc-hero-article__updated, .rplc-hero-article__photographer {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.4; }
+
+.rplc-hero-article__dates-wrapper {
+  margin-bottom: 1.5rem; }
 
 /*# sourceMappingURL=rplc-hero-article.css.map */

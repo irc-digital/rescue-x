@@ -3,12 +3,16 @@
 .rplc-hero-article {
   $self: &;
 
-  &__description {
-    // TODO temp until we can common core styles
-    font-size: 20px;
-    font-weight: 100;
-    letter-spacing: -.1px;
-    line-height: 1.6;
+  &__published,
+  &__updated,
+  &__photographer {
+    @include font-size('xs');
+    @include font-weight('light');
+    @include line-height('s');
+  }
+
+  &__dates-wrapper {
+    margin-bottom: get-spacing('ml');
   }
 }
 
