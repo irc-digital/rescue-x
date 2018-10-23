@@ -19,10 +19,18 @@
 
   &__name {
     @include font-weight('bold');
+    display: inline-block;
+    margin-bottom: $contributor-byline-author-spacing;
+  }
+
+  &__prefix {
+    display: inline-block;
+    margin-bottom: $contributor-byline-author-spacing;
   }
 
   &__byline {
     @include font-size('s');
+    @include line-height('s');
     margin-left: $contributor-byline-left-margin;
   }
 
@@ -34,6 +42,7 @@
 
   @include breakpoint(tablet) {
     &__image-wrapper {
+      flex-shrink: 0;
       height: $contributor-photo-width-height-larger;
       width: $contributor-photo-width-height-larger;
     }

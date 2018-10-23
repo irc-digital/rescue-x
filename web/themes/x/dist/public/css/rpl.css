@@ -552,9 +552,15 @@ img {
     background-color: #fdc513;
     padding: 0.5rem; }
   .rplm-contributor__name {
-    font-weight: 700; }
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5rem; }
+  .rplm-contributor__prefix {
+    display: inline-block;
+    margin-bottom: 0.5rem; }
   .rplm-contributor__byline {
     font-size: 1rem;
+    line-height: 1.4;
     margin-left: 1rem; }
   .rplm-contributor__social-link {
     display: inline-block;
@@ -562,6 +568,8 @@ img {
     width: 1rem; }
   @media only screen and (min-width: 48rem) {
     .rplm-contributor__image-wrapper {
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
       height: 4.5rem;
       width: 4.5rem; }
     .rplm-contributor__image-wrapper--default-image {
