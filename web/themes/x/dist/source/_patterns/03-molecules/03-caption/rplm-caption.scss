@@ -20,6 +20,10 @@
 
 
   &--style-low-key {
+    #{$self}__text-wrapper {
+      @include line-height('s');
+    }
+
     #{$self}__text,
     #{$self}__credit {
       @include typography-text-extra-small;

@@ -18,6 +18,9 @@
       .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__credit {
         font-size: 0.875rem; } }
 
+.rplm-caption--style-low-key .rplm-caption__text-wrapper {
+  line-height: 1.4; }
+
 .rplm-caption--style-low-key .rplm-caption__text,
 .rplm-caption--style-low-key .rplm-caption__credit {
   font-size: 0.875rem;
