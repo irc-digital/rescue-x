@@ -2,4 +2,4 @@ global-styling:
   version: 1.x
   css:
     component:
-      dist/public/css/x.css: { }
+      dist/public/css/rpl.css: { }

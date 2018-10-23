@@ -2,7 +2,7 @@
 // Tier 2 variables
 //
 
-@import 'x.tier-1';
+@import 'rpl.tier-1';
 @import 'abstract/mixins';
 
 @function is-not-in-list ($list, $value) {
