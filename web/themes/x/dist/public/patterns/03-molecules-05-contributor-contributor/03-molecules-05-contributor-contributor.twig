@@ -34,7 +34,7 @@
   {% endif %}
   <div class="rplm-contributor__byline">
     {% if contributor_prefix %}<span class="rplm-contributor__prefix">{{ contributor_prefix }}</span>{% endif %}
-    <span class="rplc-contributor__name">{{ contributor_name }}</span>
+    <span class="rplm-contributor__name">{{ contributor_name }}</span>
     {% for social_site, social_link in contributor_social %}
     <a class="rplm-contributor__social-link" href="{{ social_link }}">
       {% include '@atoms/15-images/20-icon/icon.twig' with {

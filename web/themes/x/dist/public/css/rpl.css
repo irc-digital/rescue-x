@@ -554,6 +554,7 @@ img {
   .rplm-contributor__name {
     font-weight: 700; }
   .rplm-contributor__byline {
+    font-size: 1rem;
     margin-left: 1rem; }
   .rplm-contributor__social-link {
     display: inline-block;
