@@ -41,7 +41,7 @@ teaser_highlighted:
       type: text
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 976px, (min-width: 320px) calc(100vw - 2rem), 320px"
+      preview: "(min-width: 1208px) 976px, (min-width: 321px) calc(100vw - 2rem), 320px"
     teaser_highlighted_image_fallback:
       type: url
       label: "Image fallback"

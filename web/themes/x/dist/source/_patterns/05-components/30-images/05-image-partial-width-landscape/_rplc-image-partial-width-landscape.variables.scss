@@ -1,6 +1,6 @@
 @import '../../../../scss/core';
 
 $image-partial-width-landscape-caption-mobile-max-width: rem(376px);
-$image-partial-width-landscape-caption-mobile-top: -1rem;
+$image-partial-width-landscape-caption-mobile-top: -#{get-spacing()};
 
 // end of file
