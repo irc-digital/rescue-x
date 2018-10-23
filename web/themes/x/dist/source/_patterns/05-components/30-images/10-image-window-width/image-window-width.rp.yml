@@ -17,7 +17,7 @@ image_window_width:
       type: string
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw"
+      preview: "(min-width: 321px) 100vw, 320px"
     image_window_width_responsive_image_fallback:
       type: string
       label: "Image fallback"

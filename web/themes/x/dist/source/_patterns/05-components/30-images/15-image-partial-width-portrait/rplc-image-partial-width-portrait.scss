@@ -1,5 +1,5 @@
-@import 'rplc-image-partial-width-portrait.variables';
 @import '../rplc-images.shared';
+@import 'rplc-image-partial-width-portrait.variables';
 
 .rplc-image-partial-width-portrait {
   $self: &;
@@ -11,7 +11,7 @@
   &__content {
     position: relative;
   }
-  
+
   &__image-wrapper {
     line-height: 0;
 
@@ -21,7 +21,7 @@
   }
 
   &__caption-wrapper {
-    @include image-caption-treatment-common;
+    @include image-caption-common-treatment-fixed;
 
     @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{rem(900px)}) {
       width: 41.5vw;
