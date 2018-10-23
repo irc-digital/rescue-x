@@ -1,17 +1,31 @@
 @import 'rplm-caption.variables';
 
 .rplm-caption {
-  background-color: $caption-default-background-color;
-  color: $caption-default-text-color;
-  padding: get-spacing('ml');
+  $self: &;
 
-  &__text {
-    @include typography-text-small;
-    margin-bottom: get-spacing();
+  &:not(&--style-low-key) {
+    background-color: $caption-default-background-color;
+    color: $caption-default-text-color;
+    padding: get-spacing('ml');
+
+    #{$self}__text {
+      @include typography-text-small;
+      margin-bottom: get-spacing();
+    }
+
+    #{$self}__credit {
+      @include typography-text-extra-extra-small;
+    }
   }
 
-  &__credit {
-    @include typography-text-extra-extra-small;
+
+  &--style-low-key {
+    #{$self}__text,
+    #{$self}__credit {
+      @include typography-text-extra-small;
+      color: get-neutral-color('dark-gray');
+      display: inline;
+    }
   }
 }
 

@@ -9,4 +9,4 @@ image_well_width_responsive_image_alt: "Faker.words(5,true)"
 image_well_width_caption_text: "Faker.paragraph(4, true)"
 image_well_width_caption_credit: "Faker.name()"
 image_well_width_modifiers:
-  - 'caption-low-key'
+  - 'caption-style-low-key'

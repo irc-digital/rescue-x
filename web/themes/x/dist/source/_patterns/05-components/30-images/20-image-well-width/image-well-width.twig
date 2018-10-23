@@ -1,3 +1,7 @@
+{% set caption_modifier = [] %}
+{% if 'caption-style-low-key' in image_well_width_modifiers %}
+  {% set caption_modifier = caption_modifier|merge(['style-low-key']) %}
+{% endif %}
 <div class="rplc-image-well-width{% for image_well_width_modifier in image_well_width_modifiers %} rplc-image-well-width--{{ image_well_width_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: image_well_width_section_heading_title,
@@ -17,7 +21,11 @@
       {% include '@molecules/03-caption/caption.twig' with {
         caption_text: image_well_width_caption_text,
         caption_credit: image_well_width_caption_credit,
+        caption_modifiers: caption_modifier,
       } only %}
     </div>
   </figure>
 </div>
+
+
+

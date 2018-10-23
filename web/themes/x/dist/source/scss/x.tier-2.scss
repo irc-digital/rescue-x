@@ -11,6 +11,7 @@
 
 @mixin typography-text-extra-extra-small {
   @include font-size('xxs');
+  @include font-weight('light');
   @include line-height('xs');
 
   @include breakpoint(phablet) {
@@ -20,6 +21,7 @@
 
 @mixin typography-text-extra-small {
   @include font-size('xs');
+  @include font-weight('light');
   @include line-height('s');
 
   @include breakpoint(phablet) {

@@ -129,6 +129,7 @@ img {
 
 .rpla-slug {
   font-size: 0.875rem;
+  font-weight: 300;
   line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-slug {
@@ -190,6 +191,7 @@ img {
 
 .rpla-link--size-extra-small {
   font-size: 0.875rem;
+  font-weight: 300;
   line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-link--size-extra-small {
@@ -482,24 +484,37 @@ img {
         grid-template-areas: 'primary' 'secondary';
         grid-template-columns: 1fr 1fr; } }
 
-.rplm-caption {
+.rplm-caption:not(.rplm-caption--style-low-key) {
   background-color: #fdc513;
   color: #000;
   padding: 1.5rem; }
-  .rplm-caption__text {
+  .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__text {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.4;
     margin-bottom: 1rem; }
     @media only screen and (min-width: 40.0625rem) {
-      .rplm-caption__text {
+      .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__text {
         font-size: 1.125rem; } }
-  .rplm-caption__credit {
+  .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__credit {
     font-size: 0.75rem;
+    font-weight: 300;
     line-height: 1; }
     @media only screen and (min-width: 40.0625rem) {
-      .rplm-caption__credit {
+      .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__credit {
         font-size: 0.875rem; } }
+
+.rplm-caption--style-low-key .rplm-caption__text,
+.rplm-caption--style-low-key .rplm-caption__credit {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #666;
+  display: inline; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rplm-caption--style-low-key .rplm-caption__text,
+    .rplm-caption--style-low-key .rplm-caption__credit {
+      font-size: 1rem; } }
 
 .rplm-contributor {
   display: -webkit-box;
@@ -1101,7 +1116,7 @@ img {
   max-width: 75.5rem; }
   .rplc-image-well-width__image-wrapper {
     line-height: 0; }
-  .rplc-image-well-width__caption-wrapper {
+  .rplc-image-well-width:not(.rplc-image-well-width--caption-style-low-key) .rplc-image-well-width__caption-wrapper {
     margin-left: auto;
     margin-right: auto;
     max-width: 54rem;
@@ -1110,7 +1125,7 @@ img {
     top: -1rem;
     width: calc(100vw - 2rem); }
     @media only screen and (min-width: 40.0625rem) {
-      .rplc-image-well-width__caption-wrapper {
+      .rplc-image-well-width:not(.rplc-image-well-width--caption-style-low-key) .rplc-image-well-width__caption-wrapper {
         top: -4rem;
         width: calc(100vw - 8rem); } }
 

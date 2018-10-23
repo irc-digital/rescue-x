@@ -1,4 +1,4 @@
-<div class="rplm-caption">
+<div class="rplm-caption{% for caption_modifier in caption_modifiers %} rplm-caption--{{ caption_modifier }}{% endfor %}">
   <div class="rplm-caption__text-wrapper">
     <p class="rplm-caption__text">{{ caption_text }}</p>
 {% if caption_credit %}

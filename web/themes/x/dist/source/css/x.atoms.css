@@ -129,6 +129,7 @@ img {
 
 .rpla-slug {
   font-size: 0.875rem;
+  font-weight: 300;
   line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-slug {
@@ -190,6 +191,7 @@ img {
 
 .rpla-link--size-extra-small {
   font-size: 0.875rem;
+  font-weight: 300;
   line-height: 1.4; }
   @media only screen and (min-width: 40.0625rem) {
     .rpla-link--size-extra-small {

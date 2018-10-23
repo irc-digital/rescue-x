@@ -1,20 +1,33 @@
-.rplm-caption {
+.rplm-caption:not(.rplm-caption--style-low-key) {
   background-color: #fdc513;
   color: #000;
   padding: 1.5rem; }
-  .rplm-caption__text {
+  .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__text {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.4;
     margin-bottom: 1rem; }
     @media only screen and (min-width: 40.0625rem) {
-      .rplm-caption__text {
+      .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__text {
         font-size: 1.125rem; } }
-  .rplm-caption__credit {
+  .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__credit {
     font-size: 0.75rem;
+    font-weight: 300;
     line-height: 1; }
     @media only screen and (min-width: 40.0625rem) {
-      .rplm-caption__credit {
+      .rplm-caption:not(.rplm-caption--style-low-key) .rplm-caption__credit {
         font-size: 0.875rem; } }
+
+.rplm-caption--style-low-key .rplm-caption__text,
+.rplm-caption--style-low-key .rplm-caption__credit {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #666;
+  display: inline; }
+  @media only screen and (min-width: 40.0625rem) {
+    .rplm-caption--style-low-key .rplm-caption__text,
+    .rplm-caption--style-low-key .rplm-caption__credit {
+      font-size: 1rem; } }
 
 /*# sourceMappingURL=rplm-caption.css.map */
