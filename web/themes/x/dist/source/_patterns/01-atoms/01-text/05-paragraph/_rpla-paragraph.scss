@@ -1,6 +1,7 @@
 @import 'rpla-paragraph.variables';
 
 .rpla-paragraph {
+  @include typography-text-standard;
   margin-bottom: get-spacing();
   max-width: $max-text-width;
 
