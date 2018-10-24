@@ -42,7 +42,7 @@ quote:
       type: string
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 641px) 328px,(min-width: 321px) 100vw,320px"
+      preview: "(min-width: 641px) 328px,(min-width: 321px) calc(100vw - 2rem),320px"
     quote_responsive_image_fallback:
       type: string
       label: "Image fallback"
