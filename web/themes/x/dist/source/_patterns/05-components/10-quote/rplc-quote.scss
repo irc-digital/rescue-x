@@ -10,7 +10,6 @@
     @include standard-row;
   }
 
-  // TODO: Should this be a full layout if it is only used for the quote embeddable?
   &__image-text-wrapper {
     display: flex;
     flex-direction: column;
@@ -36,8 +35,7 @@
       top: $quote-text-section-pushed-down-phablet;
     }
     @include breakpoint(laptop) {
-      padding: $quote-text-section-padding-laptop;
-      padding-left: $quote-text-section-padding-left-laptop;
+      padding: $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-left-laptop;
       top: $quote-text-section-pushed-down-laptop;
     }
   }
