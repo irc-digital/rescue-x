@@ -9,6 +9,7 @@
   &__content {
     @include standard-row;
   }
+  // TODO: Should this really be a full layout if it is only used for the quote embeddable?
   &__image-text-wrapper {
     display: flex;
     flex-direction: column;
@@ -34,6 +35,19 @@
     @include breakpoint(laptop) {
       top: $quote-text-section-pushed-down-laptop;
     }
+  }
+  // TODO: Should this be its own atom? We don't really have any other examples.
+  &__quote-text {
+    @include typography-text-standard;
+    font-style: italic;
+  }
+
+  &__attributed-person {
+    @include font-weight('bold');
+  }
+
+  &__attributed-person-role {
+    @include typography-text-extra-small;
   }
   //min-height: 460px;
   //@include breakpoint(phablet) {

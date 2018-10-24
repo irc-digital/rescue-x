@@ -17,13 +17,15 @@
       <div class="rplc-quote__text-wrapper">
         <blockquote class="rplc-quote__quote">
           <p class="rplc-quote__quote-text">{{ quote_text }}</p>
-          <cite class="rplc-quote__attribution">
+          <div class="rplc-quote__attribution">
             <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
             <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
-          </cite>
+          </div>
         </blockquote>
-
-        <a href="{{ quote_url }}" class="rplc-quote__link">{{ quote_cta }}</a>
+        {% include '@atoms/03-links/05-link/link.twig' with {
+          link_url: quote_url,
+          link_text: quote_cta,
+        } only %}
       </div>
     </div>
   </div>
