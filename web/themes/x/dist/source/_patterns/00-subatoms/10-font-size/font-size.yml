@@ -7,3 +7,6 @@ font_size:
   l: 24px
   xl: 28px
   xxl: 36px
+  xxxl: 44px
+  xxxxl: 52px
+  xxxxxl: 60px

@@ -174,7 +174,7 @@ gulp.task('patternlab:generate:variables', function () {
 });
 
 gulp.task('patternlab:generate:variables_as_json', function () {
-  return gulp.src(config.patternLab.dir + '/source/scss/x.tier-*.scss')
+  return gulp.src(config.patternLab.dir + '/source/scss/rpl.tier-*.scss')
       .pipe(sass(
           {
             functions: export_sass('.')

@@ -201,6 +201,9 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
   font-weight: get-font-weight($option);
 }
 
+// generates a JSON array of font sizes to be used by PatternLab
+$xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
+
 //
 // Font style
 //
@@ -223,8 +226,8 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
   font-style: get-font-style($option);
 }
 
-// generates a JSON array of font sizes to be used by PatternLab
-$xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
+// generates a JSON array of font style to be used by PatternLab
+$xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.json', get-font-weight('all'), (prefix: '{ "font_style":', suffix: '}'));
 
 // Function to get a spacing value from its array entry key
 @function get-spacing($option: 'm') {
