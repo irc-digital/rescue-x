@@ -29,11 +29,13 @@
     padding: $quote-text-section-padding-mobile;
     position: relative;
     z-index: 2;
+
     @include breakpoint(phablet) {
       left: $quote-text-section-eats-in-phablet;
       margin: 0;
       top: $quote-text-section-pushed-down-phablet;
     }
+
     @include breakpoint(laptop) {
       padding: $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-left-laptop;
       top: $quote-text-section-pushed-down-laptop;
@@ -51,6 +53,7 @@
       height: $quote-icon-size-mobile;
       margin-left: $quote-icon-offset-left-mobile;
       width: $quote-icon-size-mobile;
+
       @include breakpoint(laptop) {
         background-size: $quote-icon-size-laptop;
         height: $quote-icon-size-laptop;
@@ -59,12 +62,12 @@
         top: $quote-icon-offset-top-laptop;
         width: $quote-icon-size-laptop;
       }
-      }
+    }
   }
 
   &__quote-text {
     @include typography-text-standard;
-    font-style: italic;
+    @include font-style('italic');
     margin-bottom: $quote-text-margin-mobile;
   }
 

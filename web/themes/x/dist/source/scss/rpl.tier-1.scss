@@ -160,7 +160,7 @@ $xxx-lh: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.js
 //
 
 // Function to get a letter spacing value from its array entry key
-@function get-letter-spacing($option: 'm') {
+@function get-letter-spacing($option: 'standard') {
   $letter-spacings: (
     'compact': -.03em,
     'standard': -.01em,
@@ -184,7 +184,7 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
 //
 
 // Function to get a font weight value from its array entry key
-@function get-font-weight($option: 'm') {
+@function get-font-weight($option: 'normal') {
   $font-weights: (
     'light': 300,
     'normal': 400,
@@ -199,6 +199,28 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
 
 @mixin font-weight($option: 'normal') {
   font-weight: get-font-weight($option);
+}
+
+//
+// Font style
+//
+
+// Function to get a font style value
+@function get-font-style($option: 'normal') {
+  $font-styles: (
+    'normal': 'normal',
+    'italic': 'italic',
+    'oblique': 'oblique',
+  );
+  @if $option != 'all' {
+    @return safe-map-get($font-styles, $option);
+  } @else {
+    @return $font-styles;
+  }
+}
+
+@mixin font-style($option: 'normal') {
+  font-style: get-font-style($option);
 }
 
 // generates a JSON array of font sizes to be used by PatternLab

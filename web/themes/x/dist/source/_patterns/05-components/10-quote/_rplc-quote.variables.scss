@@ -7,7 +7,7 @@ $quote-text-section-padding-laptop: get-spacing('xl');
 $quote-text-section-pushed-down-phablet: get-spacing('xl');
 $quote-text-section-pushed-down-laptop: get-spacing('xxl');
 $quote-text-section-eats-in-phablet: -#{get-spacing('xl')};
-$quote-margin-mobile: get-spacing(l);
+$quote-margin-mobile: get-spacing('l');
 $quote-text-margin-mobile: get-spacing();
 $quote-text-attributed-person-margin-mobile: get-spacing('xs');
 $quote-text-font-style: 'italic';
