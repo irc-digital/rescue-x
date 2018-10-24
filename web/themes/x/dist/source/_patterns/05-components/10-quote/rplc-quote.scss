@@ -24,7 +24,8 @@
   &__text-wrapper {
     background-color: $quote-text-section-background;
     margin: $quote-text-section-eats-in $quote-text-section-horizontal-margin 0;
-    padding: $quote-text-section-padding-mobile;
+    min-height: 32px;
+    padding: $quote-text-section-padding;
     position: relative;
     z-index: 2;
     @include breakpoint(phablet) {
@@ -36,14 +37,19 @@
       top: $quote-text-section-pushed-down-laptop;
     }
   }
+  &__quote {
+    margin-bottom: $quote-margin-mobile;
+  }
   // TODO: Should this be its own atom? We don't really have any other examples.
   &__quote-text {
     @include typography-text-standard;
     font-style: italic;
+    margin-bottom: $quote-text-margin-mobile;
   }
 
   &__attributed-person {
     @include font-weight('bold');
+    margin-bottom: $quote-text-attributed-person-margin-mobile;
   }
 
   &__attributed-person-role {

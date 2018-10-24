@@ -1,8 +1,8 @@
-quote_text: "This is a critical year to address and improve some of the fundamental ways of how the aid community operates."
-quote_attribution: "A. Person"
-quote_attribution_role: "Senior vice president of at the International Rescue Committee"
+quote_text: "[This grant] is a transformational investment that will bring hope and opportunity to a generation of refugee children ... IRC’s partnership with Sesame is an incredible validation of our determination to put education center-stage in humanitarian settings."
+quote_attribution: "David Miliband"
+quote_attribution_role: "President and CEO of the International Rescue Committee"
 quote_url: '#'
-quote_cta: "Follow #RescueAid for new ideas about revitalizing aid."
+quote_cta: "Learn more"
 quote_section_heading_title: "Quote embeddable"
 quote_section_heading_description: "Doloribus qui dolorem molestias explicabo nulla amet ad."
 quote_responsive_image_source_set:
@@ -11,7 +11,7 @@ quote_responsive_image_source_set:
   - "https://placem.at/places?w=1280&h=1280&random=quote 1280w"
   - "https://placem.at/places?w=1920&h=1920&random=quote 1920w"
 quote_responsive_image_sizes: "(min-width: 641px) 328px,(min-width: 321px) 100vw,320px"
-quote_responsive_image_fallback: "https://placem.at/places?w=800&h=600&random=quote"
+quote_responsive_image_fallback: "https://placem.at/places?w=800&h=800&random=quote"
 quote_responsive_image_alt: "Faker.words(5,true)"
 quote_caption_text: "Faker.paragraph(4, true)"
 quote_caption_credit: "Faker.name()"
