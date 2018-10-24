@@ -29,11 +29,30 @@ quote:
       label: "URL"
       description: "#"
       preview: "Where the visitor is taken when the click on the quote link"
-    quote_image:
-      type: url
-      label: "Quote image"
-      description: "Path to image"
-      preview: "https://placem.at/person?w=328&h=328&random=1"
+    quote_responsive_image_source_set:
+      type: array
+      label: "Image source set"
+      description: "The set of images used for the responsive picture"
+      preview:
+        - "https://placem.at/places?w=328&h=328&random=quote 328w"
+        - "https://placem.at/places?w=640&h=640&random=quote 640w"
+        - "https://placem.at/places?w=1280&h=1280&random=quote 1280w"
+        - "https://placem.at/places?w=1920&h=1920&random=quote 1920w"
+    quote_responsive_image_sizes:
+      type: string
+      label: "Image sizes"
+      description:  "The media query for the image sizes"
+      preview: "(min-width: 641px) 328px,(min-width: 321px) 100vw,320px"
+    quote_responsive_image_fallback:
+      type: string
+      label: "Image fallback"
+      description: "Fallback image if the browser does not support responsive images"
+      preview: "https://placem.at/places?w=640&h=640&random=quote 640w"
+    quote_responsive_image_alt:
+      type: string
+      label: "Image alt attribute"
+      description: "Image alt attribute"
+      preview: "Alt value"
   libraries:
     - quote_library:
        css:
