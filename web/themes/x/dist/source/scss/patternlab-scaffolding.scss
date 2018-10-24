@@ -24,6 +24,13 @@ body > .rpll-three-column-list {
   @include standard-row;
 }
 
+//
+// 1) Hack for Pattern Lab to make the highlight teaser look right when it is view entirely standalone 
+//
+body > .rplc-teaser-highlighted .rpla-responsive-image {
+  width: 100% // 1)
+}
+
 .rplc-teaser-simple-image-link {
   max-width: rem(640px);
 }

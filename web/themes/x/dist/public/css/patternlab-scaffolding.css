@@ -15,6 +15,9 @@ body > .rpll-three-column-list {
   padding-left: 1rem;
   padding-right: 1rem; }
 
+body > .rplc-teaser-highlighted .rpla-responsive-image {
+  width: 100%; }
+
 .rplc-teaser-simple-image-link {
   max-width: 40rem; }
 
