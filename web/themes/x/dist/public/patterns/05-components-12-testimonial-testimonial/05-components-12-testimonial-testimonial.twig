@@ -1,0 +1,11 @@
+<div class="rplc-testimonial{% for testimonial_modifier in testimonial_modifiers %} rplc-testimonial--{{ testimonial_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: testimonial_section_heading_title,
+    section_heading_description: testimonial_section_heading_description,
+    section_heading_icon: testimonial_section_heading_icon,
+  } only %}
+  <div class="rplc-testimonial__content">
+  </div>
+</div>
+
+

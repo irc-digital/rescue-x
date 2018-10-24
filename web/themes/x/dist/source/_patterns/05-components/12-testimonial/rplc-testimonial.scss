@@ -1,0 +1,12 @@
+@import 'rplc-testimonial.variables';
+
+.rplc-testimonial {
+  $self: &;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(1080px);
+
+  &__content {
+    @include standard-row;
+  }
+}

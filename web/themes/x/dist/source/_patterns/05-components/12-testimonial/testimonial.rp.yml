@@ -1,0 +1,16 @@
+quote:
+  label: Testimonial
+  description: A testimonial
+  use: "@components/12-testimonial/testimonial.twig"
+  section: TRUE
+  fields:
+    testimonial_text:
+      type: text
+      label: "Testimonial text"
+      description: "The main text of the testimonial"
+      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+  libraries:
+    - quote_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-testimonial.css: {}
