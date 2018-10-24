@@ -10,6 +10,7 @@ $quote-text-section-eats-in-phablet: -#{get-spacing('xl')};
 $quote-margin-mobile: get-spacing(l);
 $quote-text-margin-mobile: get-spacing();
 $quote-text-attributed-person-margin-mobile: get-spacing('xs');
+$quote-text-font-style: 'italic';
 
 // Positioning of quote icon will not fit within our spacing system
 // without adding too many values. These are specific to this element, unfortunately.

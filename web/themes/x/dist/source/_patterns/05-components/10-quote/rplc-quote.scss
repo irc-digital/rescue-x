@@ -1,7 +1,6 @@
 @import 'rplc-quote.variables';
 
 .rplc-quote {
-  // TODO: Is this still the right pattern?
   $self: &;
   margin-left: auto;
   margin-right: auto;
@@ -11,7 +10,7 @@
     @include standard-row;
   }
 
-  // TODO: Should this really be a full layout if it is only used for the quote embeddable?
+  // TODO: Should this be a full layout if it is only used for the quote embeddable?
   &__image-text-wrapper {
     display: flex;
     flex-direction: column;
@@ -65,7 +64,6 @@
       }
   }
 
-  // TODO: Should this be its own atom? We don't really have any other examples.
   &__quote-text {
     @include typography-text-standard;
     font-style: italic;
