@@ -1,17 +1,2 @@
-.rpll-four-column-list {
-  list-style-type: none;
-  padding-left: 0; }
-  @media only screen and (min-width: 40.0625rem) {
-    .rpll-four-column-list {
-      display: grid;
-      grid-column-gap: 1rem;
-      grid-row-gap: 3rem;
-      grid-template-columns: 1fr 1fr 1fr; } }
-  @media only screen and (min-width: 64rem) {
-    .rpll-four-column-list {
-      grid-template-columns: 1fr 1fr 1fr 1fr; } }
-  .rpll-four-column-list__item {
-    border-bottom: 1px solid #d1d1d1;
-    padding-bottom: 1.5rem; }
-
+.rpll-four-column-list{list-style-type:none;padding-left:0}@media only screen and (min-width:40.0625rem){.rpll-four-column-list{display:grid;grid-column-gap:1rem;grid-row-gap:3rem;grid-template-columns:1fr 1fr 1fr}}@media only screen and (min-width:64rem){.rpll-four-column-list{grid-template-columns:1fr 1fr 1fr 1fr}}.rpll-four-column-list__item{border-bottom:1px solid #d1d1d1;padding-bottom:1.5rem}
 /*# sourceMappingURL=rpll-four-column-list.css.map */

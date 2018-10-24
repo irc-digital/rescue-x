@@ -1,11 +1,2 @@
-.rplm-crisis-watch {
-  color: #ee2d14;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  stroke: #ee2d14; }
-  .rplm-crisis-watch__icon-wrapper {
-    height: 26px;
-    width: 26px; }
-
+.rplm-crisis-watch{color:#ee2d14;display:-webkit-box;display:-ms-flexbox;display:flex;stroke:#ee2d14}.rplm-crisis-watch__icon-wrapper{height:26px;width:26px}
 /*# sourceMappingURL=rplm-crisis-watch.css.map */
