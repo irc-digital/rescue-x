@@ -8,7 +8,6 @@
 
   &__content {
     @include standard-row;
-    // TODO: This seems wrong. How to deal with full-width elements?
     background-color: get-neutral-color('light-gray');
     @include breakpoint(laptop) {
       background-color: transparent;
@@ -18,7 +17,6 @@
   &__wrapper {
     background-color: get-neutral-color('light-gray');
     padding: $testimonial-wrapper-padding-vertical-mobile 0;
-    // TODO: How best to line the header up with the section heading molecule?
     @include breakpoint(phablet) {
       padding: $testimonial-wrapper-padding-vertical-phablet $testimonial-wrapper-padding-horizontal-phablet;
     }
@@ -81,7 +79,10 @@
   }
 
   &__link-wrapper {
+    align-items: flex-start;
+    display: flex;
     @include breakpoint(laptop) {
+      justify-content: flex-end;
       width: $testimonial-link-wrapper-width-laptop;
     }
   }
