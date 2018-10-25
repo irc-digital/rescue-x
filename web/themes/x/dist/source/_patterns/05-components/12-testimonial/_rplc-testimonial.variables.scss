@@ -3,8 +3,7 @@ $testimonial-wrapper-padding-horizontal-mobile: get-spacing('m');
 $testimonial-wrapper-padding-vertical-mobile: get-spacing('ml');
 $testimonial-wrapper-padding-vertical-phablet: get-spacing('xl');
 
-// TODO: This garbage attempts to line the header of this component up with the section heading molecule
-$testimonial-wrapper-padding-horizontal-phablet: 30px;
+$testimonial-wrapper-padding-horizontal-phablet: get-spacing('l');
 
 $testimonial-title-margin: get-spacing();
 $testimonial-quote-text-margin-mobile: get-spacing();
