@@ -8,21 +8,25 @@
     <div class="rplc-testimonial__wrapper">
       <h3 class="rplc-testimonial__title">{{ testimonial_title }}</h3>
       <div class="rplc-testimonial__quote-wrapper">
-        <blockquote class="rplc-testimonial__quote">
-          <p class="rplc-testimonial__quote-text">{{ testimonial_quote_text }}</p>
-          {#<div class="rplc-testimonial__attribution">#}
-            {#<div class="rplc-testimonial__attributed-person">{{ quote_attribution }}</div>#}
-            {#<div class="rplc-testimonial__attributed-person-role">{{ quote_attribution_role }}</div>#}
-          {#</div>#}
-          {#{% include '@molecules/05-contributor/contributor.twig' with {#}
-            {#link_url: testimonial_url,#}
-            {#link_text: testimonial_cta,#}
-          {#} only %}#}
-        </blockquote>
+        <div class="rplc-testimonial__quote-text-wrapper">
+          <blockquote class="rplc-testimonial__quote">
+            <p class="rplc-testimonial__quote-text">{{ testimonial_quote_text }}</p>
+            {#<div class="rplc-testimonial__attribution">#}
+              {#<div class="rplc-testimonial__attributed-person">{{ quote_attribution }}</div>#}
+              {#<div class="rplc-testimonial__attributed-person-role">{{ quote_attribution_role }}</div>#}
+            {#</div>#}
+            {#{% include '@molecules/05-contributor/contributor.twig' with {#}
+              {#link_url: testimonial_url,#}
+              {#link_text: testimonial_cta,#}
+            {#} only %}#}
+          </blockquote>
+        </div>
+        <div class="rplc-testimonial__link-wrapper">
         {% include '@atoms/03-links/05-link/link.twig' with {
           link_url: testimonial_url,
           link_text: testimonial_cta,
         } only %}
+        </div>
       </div>
   </div>
   </div>
