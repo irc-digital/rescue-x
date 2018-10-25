@@ -11,14 +11,13 @@
         <div class="rplc-testimonial__quote-text-wrapper">
           <blockquote class="rplc-testimonial__quote">
             <p class="rplc-testimonial__quote-text">{{ testimonial_quote_text }}</p>
-            {#<div class="rplc-testimonial__attribution">#}
-              {#<div class="rplc-testimonial__attributed-person">{{ quote_attribution }}</div>#}
-              {#<div class="rplc-testimonial__attributed-person-role">{{ quote_attribution_role }}</div>#}
-            {#</div>#}
-            {#{% include '@molecules/05-contributor/contributor.twig' with {#}
-              {#link_url: testimonial_url,#}
-              {#link_text: testimonial_cta,#}
-            {#} only %}#}
+            {% include '@molecules/05-contributor/contributor.twig' with {
+              contributor_name: testimonial_name,
+              contributor_title: testimonial_title,
+              contributor_responsive_image_source_set: testimonial_responsive_image_source_set,
+              contributor_responsive_image_sizes: testimonial_responsive_image_sizes,
+              contributor_responsive_image_alt: testimonial_responsive_image_alt,
+            } only %}
           </blockquote>
         </div>
         <div class="rplc-testimonial__link-wrapper">
