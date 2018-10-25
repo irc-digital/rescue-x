@@ -182,4 +182,16 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
+// Extra large light on mobile, Extra extra large on bigger devices (light)
+@mixin typography-heading-extra-large-light {
+  @include font-size('xl');
+  @include font-weight('light');
+  @include letter-spacing();
+  @include line-height('xs');
+
+  @include breakpoint(phablet) {
+    @include font-size('xxl');
+  }
+}
+
 // end of file

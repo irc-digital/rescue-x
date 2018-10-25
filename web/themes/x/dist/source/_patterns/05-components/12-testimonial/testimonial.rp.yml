@@ -4,13 +4,28 @@ quote:
   use: "@components/12-testimonial/testimonial.twig"
   section: TRUE
   fields:
-    testimonial_text:
+    testimonial_title:
       type: text
-      label: "Testimonial text"
-      description: "The main text of the testimonial"
+      label: "Testimonial title"
+      description: "Header above the testimonial quote"
       preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+    testimonial_quote_text:
+      type: text
+      label: "Testimonial quote text"
+      description: "The main text of the testimonial, which is a quote"
+      preview: "Cras varius. Duis lobortis massa imperdiet quam. Nulla consequat massa quis enim. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Praesent egestas tristique nibh."
+    testimonial_cta:
+      type: text
+      label: "Call to action"
+      description: "The call to action presented at the bottom of the testimonial"
+      preview: "Learn more"
+    testimonial_url:
+      type: url
+      label: "URL"
+      description: "#"
+      preview: "Where the visitor is taken when the click on the testimonial link"
   libraries:
-    - quote_library:
+    - testimonial_library:
        css:
          theme:
            dist/public/css/patterns/rplc-testimonial.css: {}

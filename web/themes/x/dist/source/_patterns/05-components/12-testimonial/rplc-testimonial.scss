@@ -8,5 +8,21 @@
 
   &__content {
     @include standard-row;
+    // TODO: This seems wrong. How to deal with full-width elements?
+    background-color: get-neutral-color('light-gray');
+    @include breakpoint(laptop) {
+      background-color: transparent;
+    }
   }
+
+  &__wrapper {
+    background-color: get-neutral-color('light-gray');
+    padding: $testimonial-wrapper-padding-vertical-mobile $testimonial-wrapper-padding-horizontal-mobile;
+  }
+
+  &__title {
+    @include typography-heading-extra-large-light;
+    margin-bottom: $testimonial-title-margin;
+  }
+
 }

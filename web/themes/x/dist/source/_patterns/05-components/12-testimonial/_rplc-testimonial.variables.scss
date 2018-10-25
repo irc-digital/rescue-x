@@ -1,3 +1,5 @@
 @import '../../../scss/core';
-
+$testimonial-wrapper-padding-horizontal-mobile: get-spacing('m');
+$testimonial-wrapper-padding-vertical-mobile: get-spacing('ml');
+$testimonial-title-margin: get-spacing();
 // end of file
