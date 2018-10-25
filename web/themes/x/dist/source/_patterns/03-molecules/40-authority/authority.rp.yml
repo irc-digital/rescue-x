@@ -1,0 +1,10 @@
+authority:
+  label: Authority
+  description: A list of sources
+  use: "@molecules/40-authority/authority.twig"
+  fields:
+  libraries:
+    - authority_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-authority.css: {}
