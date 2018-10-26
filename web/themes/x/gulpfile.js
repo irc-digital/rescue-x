@@ -321,7 +321,7 @@ gulp.task('sass-change', function () {
 // Watch Files For Changes
 gulp.task('watch', function() {
 
-  runSequence('patterns-change', 'sass-change', 'bs:reload');
+  runSequence('patterns-change', 'svgs-change', 'sass-change', 'bs:reload');
 
   if (config.browserSync.proxy.target) {
     browserSync.init({
