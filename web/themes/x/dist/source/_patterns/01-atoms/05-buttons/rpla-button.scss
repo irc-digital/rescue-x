@@ -2,10 +2,7 @@
 
 .rpla-button {
   $self: &;
-
-  background-color: $button-background-color;
-  display: inline-flex;
-  text-decoration: none;
+  @include button;
 
   &__icon {
     height: 24px; // temp
