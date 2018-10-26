@@ -2,7 +2,10 @@
 
 .rplm-authority {
   background-color: $authority-background-color;
-  padding: $authority-padding;
+  padding: $authority-padding 0;
+  @include breakpoint(phablet) {
+    padding: $authority-padding-phablet;
+  }
 
   &__wrapper {
     display: flex;
