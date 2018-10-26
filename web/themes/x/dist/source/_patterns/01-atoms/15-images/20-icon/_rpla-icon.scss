@@ -3,6 +3,17 @@
 .rpla-icon {
   height: 100%;
   width: 100%;
+
+  &--IRC-arrow {
+    fill: get-brand-color();
+  }
+
+  &--work {
+    circle {
+      fill: get-brand-color();
+    }
+  }
+
 }
 
 // end of file
