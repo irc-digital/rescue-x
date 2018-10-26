@@ -5,7 +5,7 @@
   $self: &;
 
   background-color: $pull-quote-background-color;
-  margin-top: 45px;
+  margin-top: get-spacing('xl');
   width: 100%;
 
   &__content {
@@ -13,7 +13,7 @@
   }
 
   &__text-wrapper {
-    font-size: 20px;
+    //font-size: 20px;
     height: auto;
     margin: 45px auto 0;
     padding: 65px 16px 40px 25px;
@@ -25,15 +25,14 @@
   }
 
   &__text {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 100;
-    letter-spacing: .17px;
-    line-height: 1.35;
+    @include typography-heading-medium-large;
+    @include font-style('italic');
+    //font-weight: 100;
+    //letter-spacing: .17px;
+    //line-height: 1.35;
     position: relative;
 
     @include breakpoint(phablet) {
-      font-size: 28px;
       padding-left: 87px;
     }
 
@@ -112,7 +111,7 @@
   }
 
   &--background-transparent {
-    background-color: $pull-quote-transparent-background-color;
+    background-color: transparent;
   }
 }
 

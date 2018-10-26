@@ -149,7 +149,6 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 // Medium large on mobile, Extra large on bigger devices
 @mixin typography-heading-medium-large  {
   @include font-size('ml');
-  @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('s');
 
