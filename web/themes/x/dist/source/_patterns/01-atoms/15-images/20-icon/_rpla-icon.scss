@@ -9,9 +9,7 @@
   }
 
   &--work {
-    circle {
-      fill: get-brand-color();
-    }
+    color: get-brand-color();
   }
 
 }
