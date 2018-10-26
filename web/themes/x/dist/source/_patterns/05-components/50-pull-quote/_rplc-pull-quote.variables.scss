@@ -1,5 +1,9 @@
 @import '../../../scss/core';
 
 $pull-quote-background-color: get-neutral-color('white');
+$pull-quote-icon-size: (
+  'mobile': rem(50px),
+  'phablet': rem(80px),
+);
 
 // end of file
