@@ -9,7 +9,8 @@ $testimonial-title-margin: get-spacing();
 $testimonial-quote-text-margin-mobile: get-spacing();
 $testimonial-quote-text-wrapper-width-laptop: 75%;
 $testimonial-link-wrapper-width-laptop: 25%;
-
+$testimonial-quote-margin-mobile: get-spacing();
+$testimonial-quote-margin-phablet: get-spacing('xl');
 $testimonial-quote-wrapper-padding-mobile: get-spacing('xl');
 $testimonial-quote-wrapper-padding-phablet: get-spacing('xxxl');
 $testimonial-quote-offset-left-laptop: get-spacing('xxxl');
