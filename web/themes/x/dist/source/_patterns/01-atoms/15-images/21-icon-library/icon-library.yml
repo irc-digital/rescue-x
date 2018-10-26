@@ -1,5 +1,4 @@
 icon_library:
-  - IRC-arrow
   - bullhorn
   - careers
   - caret-down
@@ -21,6 +20,7 @@ icon_library:
   - heart
   - home
   - instagram
+  - irc-arrow
   - less
   - linkedIn
   - login
