@@ -6,4 +6,13 @@ $pull-quote-icon-size: (
   'phablet': rem(80px),
 );
 
+//
+// 1) The top padding on mobile is based off of the icon size, so that icon ends up sitting on a white background
+//
+$pull-quote-text-padding: (
+  'mobile': safe-map-get($pull-quote-icon-size, 'mobile') + get-spacing() get-spacing('ml') get-spacing('l'), // 1
+  'phablet': get-spacing('ml'),
+);
+
 // end of file
+

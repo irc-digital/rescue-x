@@ -5,7 +5,7 @@
   $self: &;
 
   background-color: $pull-quote-background-color;
-  margin-top: get-spacing('xl');
+  margin-top: $embeddable-top-margin;
   width: 100%;
 
   &__content {
@@ -15,25 +15,26 @@
   &__text-wrapper {
     //font-size: 20px;
     height: auto;
-    margin: 45px auto 0;
-    padding: 65px 16px 40px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: safe-map-get($pull-quote-text-padding, 'mobile');
     position: relative;
 
     @include breakpoint(phablet) {
-      padding: 15px 20px 20px 25px;
+      padding: safe-map-get($pull-quote-text-padding, 'phablet');
     }
   }
 
   &__text {
     @include typography-heading-medium-large;
     @include font-style('italic');
-    //font-weight: 100;
-    //letter-spacing: .17px;
-    //line-height: 1.35;
     position: relative;
 
+    //
+    // 1) the left padding of the qupte is based around the size of the quote icon
+    //
     @include breakpoint(phablet) {
-      padding-left: safe-map-get($pull-quote-icon-size, 'phablet') + get-spacing('s');
+      padding-left: safe-map-get($pull-quote-icon-size, 'phablet') + get-spacing('s'); // 1
     }
 
     @include breakpoint(tablet) {
