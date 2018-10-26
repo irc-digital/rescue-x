@@ -253,6 +253,9 @@ gulp.task('build:svgs', ['clean:svgs'], function () {
               .pipe(rename({prefix: 'rpl-svg-'}))
               .pipe(svgmin())
               .pipe(svgstore({inlineSvg: true}))
+              .pipe(cheerio(function ($, file) {
+                $('symbol').addClass($('symbol').attr('id'));
+              }, { decodeEntities: false }))
               .pipe(rename({ basename: file.relative, extname: '', prefix: 'symbol-'}))
               .pipe(cheerio(function ($, file) {
                 $('svg').replaceWith($('svg').children());
@@ -263,6 +266,9 @@ gulp.task('build:svgs', ['clean:svgs'], function () {
       .pipe(svgmin())
       .pipe(svgstore({inlineSvg: true}))
       .pipe(rename(config.svgs.output_filename))
+      .pipe(cheerio(function ($, file) {
+        $('symbol').each(function (index, element) { $(this).addClass($(this).attr('id')) });
+      }, { decodeEntities: false }))
       .pipe(gulp.dest(config.svgs.output));
 });
 
