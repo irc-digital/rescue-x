@@ -18,8 +18,8 @@
   &__message {
     @include typography-text-small(ml);
     @include breakpoint(phablet) {
-      width: 75%;
       margin-bottom: 0;
+      width: 75%;
     }
     color: $authority-message-color;
     margin-bottom: $authority-message-margin;
@@ -27,8 +27,8 @@
 
   &__sources {
     @include breakpoint(phablet) {
-      width: 25%;
       margin-left: $authority-sources-margin;
+      width: 25%;
     }
     // Temporary styles until we figure out SVG files
     align-items: center;
