@@ -10,6 +10,7 @@ var config = {};
 config.patternLab = {
   dir: './dist',
   patternDir: './dist/source/_patterns',
+  iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
   metaDir: './dist/source/_meta/',
   headFilename: '_00-head.twig',
@@ -273,6 +274,18 @@ gulp.task('build:svgs', ['clean:svgs'], function () {
 });
 
 /**
+ * Generate a YML file so that PatternLab can display all the icons in our library
+ */
+gulp.task('patternlab:generate-icon-library-yml', function () {
+  fs.writeFileSync(config.patternLab.iconLibraryDataFile, "icon_library:\n");
+
+  return gulp.src(config.svgs.input)
+      .pipe(tap(function (file, t) {
+        fs.appendFileSync(config.patternLab.iconLibraryDataFile, '  - ' + file.relative.substring(0, file.relative.length - 4) + "\n");
+      }));
+});
+
+/**
  * Insert SVG file into PatternLab header
  */
 gulp.task('patternlab:grab-svgs', function () {
@@ -295,7 +308,7 @@ gulp.task('patterns-change', function () {
  * Task sequence to run when SVG files have changed
  */
 gulp.task('svgs-change', function () {
-  runSequence('build:svgs', 'patternlab:grab-svgs');
+  runSequence('build:svgs', 'patternlab:grab-svgs', 'patternlab:generate-icon-library-yml');
 });
 
 /**

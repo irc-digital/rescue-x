@@ -158,6 +158,25 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   cursor: pointer;
 }
 
+.patternlab-icon-library {
+  list-style: none;
+  margin-top: 3rem;
+}
+
+.patternlab-icon-library-icon-wrapper {
+  float:left;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 256px;
+}
+
+.patternlab-icon-library-icon {
+  margin-left: auto;
+  margin-right: auto;
+  width:64px;
+  height:64px;
+}
+
 .sg-colors {
   display: -webkit-box;
   display: -ms-flexbox;
