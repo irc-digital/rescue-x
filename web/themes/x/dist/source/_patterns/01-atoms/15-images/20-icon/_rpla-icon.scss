@@ -4,12 +4,23 @@
   height: 100%;
   width: 100%;
 
-  &--irc-arrow {
+  &--fill-branded {
     fill: get-brand-color();
   }
 
-  &--work {
-    color: get-brand-color();
+  &--fill-alert {
+    fill: get-utility-color('alert');
+  }
+
+  //
+  // 1) We are using currentColor in the SVG file, so we have to set the color, rather than, say, the fill
+  //
+  &--work,
+  &--respond,
+  &--resettle,
+  &--efficiency,
+  &--serve {
+    color: get-brand-color(); // 1
   }
 
 }
