@@ -194,13 +194,4 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-@mixin button {
-  @include font-size;
-  @include font-weight('bold');
-  background-color: get-brand-color();
-  display: inline-flex;
-  padding: get-spacing() get-spacing('l');
-  text-transform: uppercase;
-}
-
 // end of file

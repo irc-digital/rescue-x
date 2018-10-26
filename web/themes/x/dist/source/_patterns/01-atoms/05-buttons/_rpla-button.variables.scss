@@ -1,1 +1,7 @@
 @import '../../../scss/core';
+
+$button-background-color: get-brand-color();
+$button-padding-vertical: get-spacing();
+$button-padding-horizontal: get-spacing('l');
+$button-font-size: get-font-size();
+$button-font-weight: get-font-weight('bold');
