@@ -87,4 +87,12 @@
     }
   }
 
+  &__authority-wrapper {
+    @include standard-row;
+    background-color: $testimonial-authority-color;
+    @include breakpoint(laptop) {
+      background-color: inherit;
+    }
+  }
+
 }

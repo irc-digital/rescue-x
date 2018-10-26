@@ -16,6 +16,8 @@ $testimonial-quote-offset-left-laptop: get-spacing('xxxl');
 
 $testimonial-quote-text-wrapper-offset-laptop: 10%;
 
+$testimonial-authority-color: get-neutral-color('very-dark-gray');
+
 // Positioning of quote icon will not fit within our spacing system
 // without adding too many values. These are specific to this element, unfortunately.
 $testimonial-quote-icon-size-mobile: 4.0625rem; //65px

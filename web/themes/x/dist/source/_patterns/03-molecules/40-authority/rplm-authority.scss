@@ -2,24 +2,39 @@
 
 .rplm-authority {
   background-color: $authority-background-color;
-  padding: $authority-padding;
+  padding: $authority-padding 0;
+  @include breakpoint(phablet) {
+    padding: $authority-padding-phablet;
+  }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
+    @include breakpoint(phablet) {
+      flex-direction: row;
+    }
   }
 
   &__message {
     @include typography-text-small(ml);
-    color: $authority-message-color;
     @include breakpoint(phablet) {
       width: 75%;
+      margin-bottom: 0;
     }
+    color: $authority-message-color;
+    margin-bottom: $authority-message-margin;
   }
 
   &__sources {
     @include breakpoint(phablet) {
       width: 25%;
+      margin-left: $authority-sources-margin;
     }
+    // Temporary styles until we figure out SVG files
+    align-items: center;
+    background-color: get-neutral-color();
+    display: flex;
+    height: 100px;
+    justify-content: center;
   }
 }
