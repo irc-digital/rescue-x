@@ -10,11 +10,16 @@
   }
 
   &__message {
+    @include typography-text-small(ml);
     color: $authority-message-color;
-    width: 75%;
+    @include breakpoint(phablet) {
+      width: 75%;
+    }
   }
 
   &__sources {
-    width: 25%;
+    @include breakpoint(phablet) {
+      width: 25%;
+    }
   }
 }

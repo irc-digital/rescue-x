@@ -1,2 +1,3 @@
 typography_text_small:
   m: 'Default value, up-sized to medium'
+  ml: Up-sizes to medium-large on non-mobile devices
