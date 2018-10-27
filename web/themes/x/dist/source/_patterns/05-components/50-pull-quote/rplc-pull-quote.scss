@@ -9,11 +9,12 @@
   width: 100%;
 
   &__content {
-    //@include standard-row;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $well-width-inner;
   }
 
   &__text-wrapper {
-    //font-size: 20px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -26,12 +27,12 @@
   }
 
   &__text {
-    @include typography-heading-medium-large;
+    @include typography-text-large;
     @include font-style('italic');
     position: relative;
 
     //
-    // 1) the left padding of the qupte is based around the size of the quote icon
+    // 1) the left padding of the quote maek is based around the size of the quote icon
     //
     @include breakpoint(phablet) {
       padding-left: safe-map-get($pull-quote-icon-size, 'phablet') + get-spacing('s'); // 1
@@ -39,6 +40,10 @@
 
     @include breakpoint(tablet) {
       margin-left: 0;
+    }
+
+    @media only screen and (min-width: #{$pull-quote-large-screen-breakpoint}) {
+      padding-left: safe-map-get($pull-quote-icon-size, 'desktop') + get-spacing('s');
     }
 
     &::before {
@@ -58,6 +63,12 @@
         top: -10px;
         width: safe-map-get($pull-quote-icon-size, 'phablet');
       }
+
+      @media only screen and (min-width: #{$pull-quote-large-screen-breakpoint}) {
+        background-size: safe-map-get($pull-quote-icon-size, 'desktop');
+        height: safe-map-get($pull-quote-icon-size, 'desktop');
+        width: safe-map-get($pull-quote-icon-size, 'desktop');
+      }
     }
   }
 
@@ -72,12 +83,12 @@
       margin: 0;
 
       @include breakpoint(phablet) {
-        max-width: 450px;
+        max-width: rem(450px);
       }
 
-      // @include breakpoint(desktop) {
-      //   max-width: 550px;
-      // }
+      @media only screen and (min-width: #{$pull-quote-large-screen-breakpoint}) {
+        max-width: rem(550px);
+      }
     }
   }
 
@@ -86,14 +97,9 @@
     @include breakpoint(phablet) {
       #{ $self }__text-wrapper {
         float: left;
-        margin-right: get-spacing('xl');
+        margin-right: rem(140px);
       }
     }
-    // @include breakpoint(desktop) {
-    //   #{ $self }__text-wrapper {
-    //      margin-left: -90px;
-    //   }
-    // }
   }
 
   &--placement-right {
@@ -105,7 +111,7 @@
       }
       @include breakpoint(desktop) {
         #{ $self }__text-wrapper {
-          margin-right: -90px;
+          margin-left: -#{rem(90px)};
         }
     }
     }

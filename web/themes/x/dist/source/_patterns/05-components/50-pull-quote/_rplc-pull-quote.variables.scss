@@ -4,7 +4,10 @@ $pull-quote-background-color: get-neutral-color('white');
 $pull-quote-icon-size: (
   'mobile': rem(50px),
   'phablet': rem(80px),
+  'desktop': rem(96px),
 );
+
+$pull-quote-large-screen-breakpoint: rem(950px);
 
 //
 // 1) The top padding on mobile is based off of the icon size, so that icon ends up sitting on a white background
