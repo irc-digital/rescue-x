@@ -2,6 +2,12 @@
 
 .rplc-highlight {
 
+  &__show-hide {
+    @include breakpoint(phablet) {
+      pointer-events: none;
+    }
+  }
+
   &__header {
     @include font-size('xs');
     @include font-weight('bold');
