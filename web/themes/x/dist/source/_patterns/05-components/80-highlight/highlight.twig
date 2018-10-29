@@ -7,7 +7,7 @@
  */
 #}
 {% if highlight_list_content %}
-<aside class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}">
+<aside class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}" data-rpl-state="collapsed">
   <div class="rplc-highlight__content">
     <a href="#" class="rplc-highlight__show-hide">
       <h5 class="rplc-highlight__header">{{ "Highlights" | trans }}</h5>
@@ -17,10 +17,11 @@
         unordered_list_items: highlight_list_content,
         unordered_list_modifiers: ['small']
       } only %}
+
+      {% if highlight_link_url %}
+        <a href="{{ highlight_link_url }}" class="rpla-link rpla-link--hover-effect-none rpla-link--size-extra-small">{{ highlight_link_text }}</a>
+      {% endif %}
     </div>
-    {% if highlight_link_url %}
-    <a href="{{ highlight_link_url }}" class="rpla-link rpla-link--hover-effect-none rpla-link--size-extra-small">{{ highlight_link_text }}</a>
-    {% endif %}
   </div>
 </aside>
 
