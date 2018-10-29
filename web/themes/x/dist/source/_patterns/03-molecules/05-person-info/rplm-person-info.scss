@@ -1,6 +1,6 @@
-@import 'rplm-contributor.variables';
+@import 'rplm-person-info.variables';
 
-.rplm-contributor {
+.rplm-person-info {
   $self: &;
 
   align-items: center;
@@ -10,31 +10,31 @@
   &__image-wrapper {
     border-radius: 100%;
     flex-shrink: 0;
-    height: $contributor-photo-size;
+    height: $person-info-photo-size;
     overflow: hidden;
-    width: $contributor-photo-size;
+    width: $person-info-photo-size;
   }
 
   &__image-wrapper--default-image {
-    background-color: $contributor-photo-background-color;
-    padding: $contributor-photo-size / 6;
+    background-color: $person-info-photo-background-color;
+    padding: $person-info-photo-size / 6;
   }
 
   &__name {
     @include font-weight('bold');
     display: inline-block;
-    margin-bottom: $contributor-byline-author-spacing;
+    margin-bottom: $person-info-byline-author-spacing;
   }
 
   &__prefix {
     display: inline-block;
-    margin-bottom: $contributor-byline-author-spacing;
+    margin-bottom: $person-info-byline-author-spacing;
   }
 
   &__byline {
     @include font-size('s');
     @include line-height('s');
-    margin-left: $contributor-byline-left-margin;
+    margin-left: $person-info-byline-left-margin;
   }
 
   &__social-link {
@@ -45,16 +45,16 @@
 
   &--small {
     #{ $self }__image-wrapper {
-      height: $contributor-photo-size-small;
-      width: $contributor-photo-size-small;
+      height: $person-info-photo-size-small;
+      width: $person-info-photo-size-small;
       @include breakpoint(tablet) {
-        height: $contributor-photo-size;
-        width: $contributor-photo-size;
+        height: $person-info-photo-size;
+        width: $person-info-photo-size;
       }
     }
 
     #{ $self }__image-wrapper--default-image {
-      padding: $contributor-photo-size-small / 6;
+      padding: $person-info-photo-size-small / 6;
     }
   }
 }

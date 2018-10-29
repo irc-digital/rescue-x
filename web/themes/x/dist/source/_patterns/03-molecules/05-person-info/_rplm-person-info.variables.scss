@@ -1,0 +1,10 @@
+@import '../../../scss/core';
+
+$person-info-photo-size: rem(72px);
+$person-info-photo-size-small: rem(48px);
+$person-info-photo-background-color: get-brand-color();
+$person-info-byline-left-margin: get-spacing();
+$person-info-byline-author-spacing: get-spacing('s');
+
+// end of file
+
