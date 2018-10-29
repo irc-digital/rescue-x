@@ -1,12 +1,13 @@
 @import 'rplm-contributor.variables';
 
 .rplm-contributor {
-
+  align-items: center;
   display: flex;
   margin: 0;
 
   &__image-wrapper {
     border-radius: 100%;
+    flex-shrink: 0;
     height: $contributor-photo-width-height-mobile;
     overflow: hidden;
     width: $contributor-photo-width-height-mobile;
@@ -42,7 +43,6 @@
 
   @include breakpoint(tablet) {
     &__image-wrapper {
-      flex-shrink: 0;
       height: $contributor-photo-width-height-larger;
       width: $contributor-photo-width-height-larger;
     }
