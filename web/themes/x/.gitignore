@@ -4,4 +4,5 @@ backstop_data/bitmaps_test/
 dist/public/latest-change.txt
 dist/public/
 dist/source/css/
+dist/source/js/
 dist/svg/

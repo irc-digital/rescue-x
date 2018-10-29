@@ -12,7 +12,6 @@ config.patternLab = {
   patternDir: './dist/source/_patterns',
   iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
-  publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
   headFilename: '_00-head.twig',
   watchFiles: [
@@ -45,6 +44,7 @@ config.javascript = {
     '../../core/misc/drupal.js',
     '../../core/misc/drupal.init.js',
   ],
+  jsDir: config.patternLab.dir + '/source/js',
 };
 
 config.browserSync = {
@@ -149,7 +149,7 @@ function build_styles (source_files, destination_subfolder = '') {
  */
 gulp.task('build:javascript:drupal-copy', function () {
    gulp.src(config.javascript.drupalDependencies)
-      .pipe(gulp.dest(config.patternLab.publicJsDir))
+      .pipe(gulp.dest(config.javascript.jsDir))
       .pipe(browserSync.stream());
 });
 
@@ -162,7 +162,7 @@ gulp.task('build:javascript', function () {
  */
 gulp.task('clean:javascript', function () {
   del.sync([
-    config.patternLab.publicJsDir
+    config.javascript.jsDir
   ]);
 
 });
