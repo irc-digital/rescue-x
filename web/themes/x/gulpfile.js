@@ -12,6 +12,7 @@ config.patternLab = {
   patternDir: './dist/source/_patterns',
   iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
+  publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
   headFilename: '_00-head.twig',
   footFilename: '_01-foot.twig',
@@ -150,13 +151,22 @@ function build_styles (source_files, destination_subfolder = '') {
  * solutions - so it will have to suffice for a bit.
  */
 gulp.task('build:javascript:drupal-copy', function () {
-   gulp.src(config.javascript.drupalDependencies)
+   return gulp.src(config.javascript.drupalDependencies)
       .pipe(gulp.dest(config.javascript.jsDir))
       .pipe(browserSync.stream());
 });
 
+/**
+ * Copies javascript files to Pattern Lab's public dir.
+ */
+gulp.task('build:copy-javascript', function () {
+  return gulp.src(config.javascript.jsDir + '/**/*.js')
+      .pipe(gulp.dest(config.patternLab.publicJsDir))
+      .pipe(browserSync.stream());
+});
+
 gulp.task('build:javascript', function () {
-  runSequence('build:javascript:drupal-copy', 'patternlab:javascript');
+  runSequence('build:javascript:drupal-copy', 'patternlab:javascript', 'build:copy-javascript');
 });
 
 /**
@@ -165,6 +175,10 @@ gulp.task('build:javascript', function () {
 gulp.task('clean:javascript', function () {
   del.sync([
     config.javascript.jsDir
+  ]);
+
+  del.sync([
+    config.patternLab.publicJsDir
   ]);
 
 });
@@ -343,7 +357,7 @@ gulp.task('patternlab:javascript', function () {
       .pipe(replace(/<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">(.*?)<\/div>/g, function(match, p1, offset, string) {
         var output = '<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">';
         for (var full_path_idx in config.javascript.drupalDependencies) {
-          full_path = config.javascript.drupalDependencies[full_path_idx];
+          var full_path = config.javascript.drupalDependencies[full_path_idx];
           var split_out = full_path.split('/');
           var file_name = split_out[split_out.length - 1];
           output += '<script src="../../js/' + file_name + '"></script>';
