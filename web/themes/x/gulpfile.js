@@ -93,6 +93,7 @@ const export_sass = require('node-sass-export');
 const jsonToYaml = require('gulp-json-to-yaml');
 const clean = require('gulp-clean');
 const warn_size = require('gulp-warn-size');
+const replace = require('gulp-replace');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -339,20 +340,31 @@ gulp.task('patternlab:grab-svgs', function () {
  */
 gulp.task('patternlab:javascript', function () {
   return gulp.src(config.patternLab.metaDir + config.patternLab.footFilename)
-      .pipe(cheerio(function ($, file) {
-        var output = '';
+      .pipe(replace(/<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">(.*?)<\/div>/g, function(match, p1, offset, string) {
+        var output = '<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">';
         for (var full_path_idx in config.javascript.drupalDependencies) {
           full_path = config.javascript.drupalDependencies[full_path_idx];
           var split_out = full_path.split('/');
           var file_name = split_out[split_out.length - 1];
           output += '<script src="../../js/' + file_name + '"></script>';
         }
-        $('#do-not-replace-see-gulpfile').empty().append(output);
-      }, { decodeEntities: false }))
+        output += '</div>';
+        return output;
+      }))
       .pipe(gulp.dest(config.patternLab.metaDir));
 });
 
-
+// .pipe(cheerio(function ($, file) {
+//
+//   var output = '';
+//   for (var full_path_idx in config.javascript.drupalDependencies) {
+//     full_path = config.javascript.drupalDependencies[full_path_idx];
+//     var split_out = full_path.split('/');
+//     var file_name = split_out[split_out.length - 1];
+//     output += '<script src="../../js/' + file_name + '"></script>';
+//   }
+//   $('#do-not-replace-see-gulpfile').empty().append(output);
+// }, { decodeEntities: false }))
 
 /**
  * Task sequence to run when pattern files have changed.
