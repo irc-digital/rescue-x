@@ -46,6 +46,9 @@ config.javascript = {
     '../../core/misc/drupal.js',
     '../../core/misc/drupal.init.js',
   ],
+  pattern_javascript: [
+    config.patternLab.patternDir + '/**/*.js',
+  ],
   jsDir: config.patternLab.dir + '/source/js',
 };
 
@@ -152,8 +155,16 @@ function build_styles (source_files, destination_subfolder = '') {
  */
 gulp.task('build:javascript:drupal-copy', function () {
    return gulp.src(config.javascript.drupalDependencies)
-      .pipe(gulp.dest(config.javascript.jsDir))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest(config.javascript.jsDir + '/' + 'core'));
+});
+
+/**
+ * This task copies any js files from the pattern folder into our js source folder*
+ */
+gulp.task('build:javascript:pattern-copy', function () {
+  return gulp.src(config.javascript.pattern_javascript)
+      .pipe(rename({dirname: './'}))
+      .pipe(gulp.dest(config.javascript.jsDir + '/' + 'patterns'))
 });
 
 /**
@@ -161,12 +172,12 @@ gulp.task('build:javascript:drupal-copy', function () {
  */
 gulp.task('build:copy-javascript', function () {
   return gulp.src(config.javascript.jsDir + '/**/*.js')
-      .pipe(gulp.dest(config.patternLab.publicJsDir))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest(config.patternLab.publicJsDir));
 });
 
+
 gulp.task('build:javascript', function () {
-  runSequence('build:javascript:drupal-copy', 'patternlab:javascript', 'build:copy-javascript');
+  runSequence('build:javascript:drupal-copy', 'build:javascript:pattern-copy', 'patternlab:javascript', 'build:copy-javascript');
 });
 
 /**
@@ -360,9 +371,14 @@ gulp.task('patternlab:javascript', function () {
           var full_path = config.javascript.drupalDependencies[full_path_idx];
           var split_out = full_path.split('/');
           var file_name = split_out[split_out.length - 1];
-          output += '<script src="../../js/' + file_name + '"></script>';
+          output += '<script src="../../js/core/' + file_name + '"></script>';
         }
+        fs.readdirSync(config.javascript.jsDir + '/patterns').forEach(file => {
+          output += '<script src="../../js/patterns/' + file + '"></script>';
+        });
+
         output += '</div>';
+
         return output;
       }))
       .pipe(gulp.dest(config.patternLab.metaDir));
@@ -401,6 +417,10 @@ gulp.task('sass-change', function () {
   runSequence(['build:styles', 'patternlab:generate:variables', 'lint:styles'], 'build:copy-css');
 });
 
+gulp.task('javascript-change', function () {
+  runSequence('build:javascript', 'bs:reload');
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
 
@@ -423,6 +443,7 @@ gulp.task('watch', function() {
   gulp.watch(config.styles.watchFiles, ['sass-change']);
   gulp.watch(config.patternLab.watchFiles, ['patterns-change']);
   gulp.watch(config.svgs.input, ['svgs-change']);
+  gulp.watch(config.javascript.pattern_javascript, ['javascript-change']);
 });
 
 gulp.task('clean', ['clean:styles','clean:javascript', 'clean:svgs']);
