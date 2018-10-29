@@ -1,9 +1,0 @@
-{ "color_neutral":{
-  "white": "rgb(255, 255, 255)",
-  "very-light-gray": "rgb(246, 246, 246)",
-  "light-gray": "rgb(233, 233, 233)",
-  "gray": "rgb(209, 209, 209)",
-  "dark-gray": "rgb(102, 102, 102)",
-  "very-dark-gray": "rgb(56, 56, 56)",
-  "black": "rgb(0, 0, 0)"
-}}
