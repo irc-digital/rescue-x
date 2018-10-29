@@ -2,6 +2,8 @@ contributors_list:
   - include():
       pattern: "molecules-contributor"
       with:
+        contributor_modifiers:
+          - "small"
         contributor_prefix: "by"
         contributor_name: "Randy Hornton"
         contributor_title: "Bounty Hunter"
@@ -12,6 +14,8 @@ contributors_list:
   - include():
       pattern: "molecules-contributor"
       with:
+        contributor_modifiers:
+          - "small"
         contributor_prefix: "and"
         contributor_name: "Buzz Romhof"
         contributor_title: "The Big Boss, International Rescue Committee "

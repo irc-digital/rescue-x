@@ -1,6 +1,8 @@
 @import 'rplm-contributor.variables';
 
 .rplm-contributor {
+  $self: &;
+
   align-items: center;
   display: flex;
   margin: 0;
@@ -8,14 +10,14 @@
   &__image-wrapper {
     border-radius: 100%;
     flex-shrink: 0;
-    height: $contributor-photo-width-height-mobile;
+    height: $contributor-photo-size;
     overflow: hidden;
-    width: $contributor-photo-width-height-mobile;
+    width: $contributor-photo-size;
   }
 
   &__image-wrapper--default-image {
     background-color: $contributor-photo-background-color;
-    padding: $contributor-photo-width-height-mobile / 6;
+    padding: $contributor-photo-size / 6;
   }
 
   &__name {
@@ -41,14 +43,18 @@
     width: rem(16px);
   }
 
-  @include breakpoint(tablet) {
-    &__image-wrapper {
-      height: $contributor-photo-width-height-larger;
-      width: $contributor-photo-width-height-larger;
+  &--small {
+    #{ $self }__image-wrapper {
+      height: $contributor-photo-size-small;
+      width: $contributor-photo-size-small;
+      @include breakpoint(tablet) {
+        height: $contributor-photo-size;
+        width: $contributor-photo-size;
+      }
     }
 
-    &__image-wrapper--default-image {
-      padding: $contributor-photo-width-height-larger / 6;
+    #{ $self }__image-wrapper--default-image {
+      padding: $contributor-photo-size-small / 6;
     }
   }
 }
