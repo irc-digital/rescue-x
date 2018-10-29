@@ -12,6 +12,7 @@ config.patternLab = {
   patternDir: './dist/source/_patterns',
   iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
+  publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
   headFilename: '_00-head.twig',
   watchFiles: [
@@ -35,6 +36,15 @@ config.styles = {
     config.patternLab.dir + '/source/scss/**/*.scss',
     config.patternLab.patternDir + '/**/*.scss',
   ]
+};
+
+config.javascript = {
+  drupalDependencies: [
+    '../../core/assets/vendor/domready/ready.min.js',
+    '../../core/assets/vendor/jquery/jquery.min.js',
+    '../../core/misc/drupal.js',
+    '../../core/misc/drupal.init.js',
+  ],
 };
 
 config.browserSync = {
@@ -130,6 +140,32 @@ function build_styles (source_files, destination_subfolder = '') {
       .pipe(gulp.dest(config.styles.output))
       .pipe(browserSync.stream({match: '**/*.css'}));
 }
+
+/**
+ * This task copies some Drupal files that our PL needs. This is a bit of a hack.
+ *
+ * However, this is done both by Forum One and Mediacurrent in their decoupled
+ * solutions - so it will have to suffice for a bit.
+ */
+gulp.task('build:javascript:drupal-copy', function () {
+   gulp.src(config.javascript.drupalDependencies)
+      .pipe(gulp.dest(config.patternLab.publicJsDir))
+      .pipe(browserSync.stream());
+});
+
+gulp.task('build:javascript', function () {
+  runSequence('build:javascript:drupal-copy');
+});
+
+/**
+ * Removes the css files
+ */
+gulp.task('clean:javascript', function () {
+  del.sync([
+    config.patternLab.publicJsDir
+  ]);
+
+});
 
 /**
  * Calls Browsersync reload.
@@ -321,7 +357,7 @@ gulp.task('sass-change', function () {
 // Watch Files For Changes
 gulp.task('watch', function() {
 
-  runSequence('patterns-change', 'svgs-change', 'sass-change', 'bs:reload');
+  runSequence('patterns-change', 'svgs-change', 'sass-change', 'build:javascript', 'bs:reload');
 
   if (config.browserSync.proxy.target) {
     browserSync.init({
@@ -342,7 +378,7 @@ gulp.task('watch', function() {
   gulp.watch(config.svgs.input, ['svgs-change']);
 });
 
-gulp.task('clean', ['clean:styles','clean:svgs']);
+gulp.task('clean', ['clean:styles','clean:javascript', 'clean:svgs']);
 
 // Default Task
 gulp.task('default', ['watch']);
