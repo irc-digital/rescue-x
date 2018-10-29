@@ -14,6 +14,7 @@ config.patternLab = {
   publicCssDir: './dist/public/css',
   metaDir: './dist/source/_meta/',
   headFilename: '_00-head.twig',
+  footFilename: '_01-foot.twig',
   watchFiles: [
     './dist/source/_patterns/**/*.twig',
     './dist/source/_patterns/**/*.json',
@@ -154,7 +155,7 @@ gulp.task('build:javascript:drupal-copy', function () {
 });
 
 gulp.task('build:javascript', function () {
-  runSequence('build:javascript:drupal-copy');
+  runSequence('build:javascript:drupal-copy', 'patternlab:javascript');
 });
 
 /**
@@ -332,6 +333,26 @@ gulp.task('patternlab:grab-svgs', function () {
       }, { decodeEntities: false }))
       .pipe(gulp.dest(config.patternLab.metaDir));
 });
+
+/**
+ * Insert JS files into PatternLab footer
+ */
+gulp.task('patternlab:javascript', function () {
+  return gulp.src(config.patternLab.metaDir + config.patternLab.footFilename)
+      .pipe(cheerio(function ($, file) {
+        var output = '';
+        for (var full_path_idx in config.javascript.drupalDependencies) {
+          full_path = config.javascript.drupalDependencies[full_path_idx];
+          var split_out = full_path.split('/');
+          var file_name = split_out[split_out.length - 1];
+          output += '<script src="../../js/' + file_name + '"></script>';
+        }
+        $('#do-not-replace-see-gulpfile').empty().append(output);
+      }, { decodeEntities: false }))
+      .pipe(gulp.dest(config.patternLab.metaDir));
+});
+
+
 
 /**
  * Task sequence to run when pattern files have changed.
