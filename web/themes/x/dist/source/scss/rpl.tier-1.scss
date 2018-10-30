@@ -107,6 +107,7 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
     'xxxl': 44px,
     'xxxxl': 52px,
     'xxxxxl': 60px,
+    'xxxxxxl': 72px,
   );
   @if $option != 'all' {
     @return rem(safe-map-get($font-sizes, $option));
