@@ -5,11 +5,15 @@ $testimonial-wrapper-padding-horizontal-phablet: get-spacing('l');
 
 $testimonial-title-margin: get-spacing();
 
-$testimonial-quote-text-margin-mobile: get-spacing();
-$testimonial-quote-text-margin-tablet: get-spacing('l');
+$testimonial-quote-text-margin: (
+  'mobile': get-spacing(),
+  'tablet': get-spacing('l')
+);
 
-$testimonial-quote-margin-mobile: get-spacing();
-$testimonial-quote-margin-tablet: get-spacing('l');
+$testimonial-quote-margin: (
+  'mobile': get-spacing(),
+  'tablet': get-spacing('l')
+);
 
 $testimonial-authority-color: get-neutral-color('very-dark-gray');
 

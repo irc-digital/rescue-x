@@ -30,11 +30,11 @@
   }
 
   &__quote {
-    margin-bottom: $testimonial-quote-margin-mobile;
+    margin-bottom: safe-map-get($testimonial-quote-margin, 'mobile');
     position: relative;
 
     @include breakpoint(tablet) {
-      margin-bottom: $testimonial-quote-margin-tablet;
+      margin-bottom: safe-map-get($testimonial-quote-margin, 'tablet');
     }
 
     @include breakpoint(laptop) {
@@ -45,10 +45,10 @@
   &__quote-text {
     @include typography-text-standard;
     @include font-style('italic');
-    margin-bottom: $testimonial-quote-text-margin-mobile;
+    margin-bottom: safe-map-get($testimonial-quote-text-margin, 'mobile');
 
     @include breakpoint(tablet) {
-      margin-bottom: $testimonial-quote-text-margin-tablet;
+      margin-bottom: safe-map-get($testimonial-quote-text-margin, 'tablet');
     }
   }
 
