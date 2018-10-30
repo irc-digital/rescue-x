@@ -106,7 +106,7 @@
     @include standard-row;
     background-color: $testimonial-authority-color;
 
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
       background-color: inherit;
     }
   }
