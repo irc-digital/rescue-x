@@ -16,11 +16,11 @@
   }
 
   &__wrapper {
-    background-color: get-neutral-color('light-gray');
-    padding: $testimonial-wrapper-padding-vertical-mobile 0;
+    padding: safe-map-get($testimonial-wrapper-padding, 'mobile');
 
-    @include breakpoint(phablet) {
-      padding: $testimonial-wrapper-padding-vertical-phablet $testimonial-wrapper-padding-horizontal-phablet;
+    @include breakpoint(tablet) {
+      padding: safe-map-get($testimonial-wrapper-padding, 'tablet');
+      background-color: get-neutral-color('light-gray');
     }
   }
 

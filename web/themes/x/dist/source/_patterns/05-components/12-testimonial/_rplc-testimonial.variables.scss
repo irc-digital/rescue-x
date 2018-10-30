@@ -1,7 +1,9 @@
 @import '../../../scss/core';
-$testimonial-wrapper-padding-vertical-mobile: get-spacing('ml');
-$testimonial-wrapper-padding-vertical-phablet: get-spacing('xl');
-$testimonial-wrapper-padding-horizontal-phablet: get-spacing('l');
+
+$testimonial-wrapper-padding: (
+  'mobile': get-spacing('ml') 0,
+  'tablet': get-spacing('xl') get-spacing('l')
+);
 
 $testimonial-title-margin: get-spacing();
 
