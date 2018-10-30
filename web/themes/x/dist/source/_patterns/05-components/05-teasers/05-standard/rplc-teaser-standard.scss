@@ -43,12 +43,12 @@
     flex: 1;
     flex-direction: column;
     margin: $teaser-standard-text-section-eats-in $teaser-standard-text-section-horizontal-margin 0;
-    padding: $teaser-standard-text-section-padding-mobile;
+    padding: safe-map-get($teaser-standard-text-section-padding, 'mobile');
     position: relative;
     z-index: 2;
 
     @include breakpoint(phablet) {
-      padding: $teaser-standard-text-section-padding-large;
+      padding: safe-map-get($teaser-standard-text-section-padding, 'phablet');
     }
   }
 }

@@ -1,7 +1,11 @@
 @import '../../../../scss/core';
 
-$teaser-image-link-box-default-decoration-color: get-brand-color();
-$teaser-image-link-box-alert-decoration-color: get-utility-color('alert');
+$teaser-image-link-box-decoration-color: (
+  'default': get-brand-color(),
+  'alert': get-utility-color('alert'),
+);
+
+$teaser-image-medium-device-media-query: only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$smallest-desktop-size-less-gutters});
 $teaser-image-link-box-caption-bottom-border-size: rem(6px);
 $teaser-image-link-box-caption-total-horizontal-margin: 2 * get-spacing();
 $teaser-image-link-box-caption-eats-in: -4rem;

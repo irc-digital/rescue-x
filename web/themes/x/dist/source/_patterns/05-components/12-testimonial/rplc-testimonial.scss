@@ -19,8 +19,8 @@
     padding: safe-map-get($testimonial-wrapper-padding, 'mobile');
 
     @include breakpoint(tablet) {
-      padding: safe-map-get($testimonial-wrapper-padding, 'tablet');
       background-color: get-neutral-color('light-gray');
+      padding: safe-map-get($testimonial-wrapper-padding, 'tablet');
     }
   }
 
