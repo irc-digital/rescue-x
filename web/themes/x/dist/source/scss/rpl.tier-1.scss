@@ -211,9 +211,9 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
 // Function to get a font style value
 @function get-font-style($option: 'normal') {
   $font-styles: (
-    'normal': 'normal',
-    'italic': 'italic',
-    'oblique': 'oblique',
+    'normal': normal,
+    'italic': italic,
+    'oblique': oblique,
   );
   @if $option != 'all' {
     @return safe-map-get($font-styles, $option);

@@ -2,18 +2,20 @@
 
 $pull-quote-background-color: get-neutral-color('white');
 $pull-quote-icon-size: (
-  'mobile': rem(50px),
-  'phablet': rem(80px),
-  'desktop': rem(96px),
+  'mobile': rem(40px),
+  'phablet': rem(48px),
+  'desktop': rem(72px),
+);
+
+$pull-quote-icon-right-margin: (
+  'phablet': get-spacing('m'),
+  'desktop': get-spacing('ml')
 );
 
 $pull-quote-large-screen-breakpoint: rem(950px);
 
-//
-// 1) The top padding on mobile is based off of the icon size, so that icon ends up sitting on a white background
-//
 $pull-quote-text-padding: (
-  'mobile': safe-map-get($pull-quote-icon-size, 'mobile') + get-spacing() get-spacing('ml') get-spacing('l'), // 1
+  'mobile': get-spacing('l') get-spacing('ml'),
   'phablet': get-spacing('ml'),
 );
 

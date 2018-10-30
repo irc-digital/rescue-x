@@ -14,6 +14,12 @@
 <div class="rplc-pull-quote{% for pull_quote_modifier in pull_quote_modifiers %} rplc-pull-quote--{{ pull_quote_modifier }}{% endfor %}">
   <div class="rplc-pull-quote__content">
       <blockquote class="rplc-pull-quote__text-wrapper">
+        <div class="rplc-pull-quote__icon-wrapper">
+          {% include '@atoms/15-images/20-icon/icon.twig' with {
+            icon_name: 'quote-mark',
+            icon_modifiers: ['fill-branded']
+          } only %}
+        </div>
         <p class="rplc-pull-quote__text">{{ pull_quote_text }}</p>
       </blockquote>
   </div>
