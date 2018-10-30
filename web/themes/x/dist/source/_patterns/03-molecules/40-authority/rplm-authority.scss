@@ -3,8 +3,8 @@
 .rplm-authority {
   background-color: $authority-background-color;
   padding: $authority-padding 0;
-  @include breakpoint(phablet) {
-    padding: $authority-padding-phablet;
+  @include breakpoint(tablet) {
+    padding: $authority-padding-tablet;
   }
 
   &__wrapper {
