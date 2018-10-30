@@ -6,7 +6,7 @@
 
   &[data-rpl-state='expanded'] {
     #{$self}__show-hide {
-
+      // sass-lint:disable-block nesting-depth
       &::before {
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNOCAwQzMuNTkgMCAwIDMuNTkgMCA4czMuNTkgOCA4IDggOC0zLjU5IDgtOC0zLjU5LTgtOC04em0wIDE0LjRjLTMuNTMgMC02LjQtMi44Ny02LjQtNi40UzQuNDcgMS42IDggMS42czYuNCAyLjg3IDYuNCA2LjQtMi44NyA2LjQtNi40IDYuNHoiLz48cGF0aCBkPSJNMTAuNzMgNy41SDUuMjdjLS41IDAtLjkwOC0uMDAyLS45MDguNXMuNDA4LjUuOTEuNWg1LjQ1NmMuNTAzIDAgLjkxLjAwMi45MS0uNXMtLjQwOC0uNS0uOTEtLjV6Ii8+PC9zdmc+');
       }
