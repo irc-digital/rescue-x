@@ -33,7 +33,7 @@ teaser_image_link_box:
       type: text
       label: "Image sizes"
       description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 392px, (min-width: 640px) 288px, calc(100vw - 16px)"
+      preview: "(min-width: 1208px) 392px, (min-width: 641px) 288px, (min-width: 321px) calc(100vw - 1rem), 320px"
     teaser_image_link_box_image_fallback:
       type: url
       label: "Image fallback"

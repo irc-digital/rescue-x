@@ -5,6 +5,16 @@
 
   height: 100%;
 
+  &:hover {
+    #{ $self }__caption-wrapper {
+      background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
+    }
+
+    #{ $self }__title {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E');
+    }
+  }
+
   &__wrapper-link {
     display: flex;
     height: 100%;
@@ -31,17 +41,16 @@
   }
 
   &__summary {
-    @include typography-text-small;
+    @include typography-text-standard;
   }
 
   &__caption-wrapper {
     background-color: get-neutral-color('white');
     border-bottom: $teaser-image-link-box-caption-bottom-border-size solid safe-map-get($teaser-image-link-box-decoration-color, 'default');
     color: get-neutral-color('black');
-    //line-height: 1.2; // todo when we figure out line heights etc
     margin: 0 auto $teaser-image-link-box-caption-eats-in;
     overflow: hidden;
-    padding: 1.25rem 2.0625rem;
+    padding: get-spacing('ml') get-spacing('l');
     position: relative;
     top: $teaser-image-link-box-caption-eats-in;
     width: calc(100% - #{$teaser-image-link-box-caption-total-horizontal-margin});
@@ -72,16 +81,6 @@
 
     @media #{$teaser-image-medium-device-media-query} {
       flex: 0 0 $teaser-image-link-box-image-width-tablet;
-    }
-  }
-
-  &:hover {
-    #{ $self }__caption-wrapper {
-      background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
-    }
-
-    #{ $self }__title {
-      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E');
     }
   }
 
