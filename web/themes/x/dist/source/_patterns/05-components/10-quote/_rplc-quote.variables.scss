@@ -1,23 +1,33 @@
 @import '../../../scss/core';
+
 $quote-text-section-background: get-neutral-color('white');
 $quote-text-section-horizontal-margin: get-spacing();
-$quote-text-section-eats-in: -#{get-spacing('xl')};
-$quote-text-section-padding-mobile: get-spacing();
-$quote-text-section-padding-laptop: get-spacing('xl');
-$quote-text-section-pushed-down-phablet: get-spacing('xl');
-$quote-text-section-pushed-down-laptop: get-spacing('xxl');
-$quote-text-section-eats-in-phablet: -#{get-spacing('xl')};
-$quote-margin-mobile: get-spacing('l');
-$quote-text-margin-mobile: get-spacing();
-$quote-text-attributed-person-margin-mobile: get-spacing('xs');
-$quote-text-font-style: 'italic';
 
-// Positioning of quote icon will not fit within our spacing system
-// without adding too many values. These are specific to this element, unfortunately.
-$quote-text-section-padding-left-laptop: 8.125rem; //130px
-$quote-icon-size-mobile: 4.0625rem; //65px
-$quote-icon-size-laptop: 5.3125rem; //85px
-$quote-icon-offset-top-laptop: 2.5rem; //40px
-$quote-icon-offset-left-laptop: 2.125rem; //34px
-$quote-icon-offset-left-mobile: -.625rem; //-10px
+$quote-text-section-eats-in: (
+  'mobile': -#{get-spacing('xl')},
+  'phablet': -#{get-spacing('xl')},
+);
+
+$quote-text-section-padding: (
+  'mobile': get-spacing(),
+  'phablet': get-spacing('l'),
+  'laptop': get-spacing('xl'),
+);
+
+$quote-text-section-pushed-down: (
+  'phablet': get-spacing('xl'),
+  'laptop': get-spacing('xxl'),
+);
+
+
+$quote-margin: get-spacing('l');
+$quote-text-margin: get-spacing();
+$quote-text-attributed-person-margin: get-spacing('xs');
+
+$quote-icon-size: (
+  'phablet': rem(48px),
+  'laptop': rem(64px)
+);
+
+
 // end of file

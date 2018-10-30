@@ -14,18 +14,29 @@
           responsive_image_alt: quote_responsive_image_alt
         } only %}
       </div>
+
       <div class="rplc-quote__text-wrapper">
-        <blockquote class="rplc-quote__quote">
-          <p class="rplc-quote__quote-text">{{ quote_text }}</p>
-          <div class="rplc-quote__attribution">
-            <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
-            <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
-          </div>
-        </blockquote>
-        {% include '@atoms/03-links/05-link/link.twig' with {
-          link_url: quote_url,
-          link_text: quote_cta,
-        } only %}
+        <div class="rplc-quote__icon-wrapper">
+          {% include '@atoms/15-images/20-icon/icon.twig' with {
+            icon_name: 'quote-mark',
+            icon_modifiers: ['fill-branded']
+          } only %}
+        </div>
+        <div class="rplc-quote__text-inner-wrapper">
+          <blockquote class="rplc-quote__quote">
+            <p class="rplc-quote__quote-text">{{ quote_text }}</p>
+            <div class="rplc-quote__attribution">
+              <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
+              <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
+            </div>
+          </blockquote>
+
+          {% include '@atoms/03-links/05-link/link.twig' with {
+            link_url: quote_url,
+            link_text: quote_cta,
+          } only %}
+        </div>
+
       </div>
     </div>
   </div>

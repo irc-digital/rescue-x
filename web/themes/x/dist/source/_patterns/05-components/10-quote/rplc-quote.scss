@@ -2,6 +2,7 @@
 
 .rplc-quote {
   $self: &;
+
   margin-left: auto;
   margin-right: auto;
   max-width: rem(1080px);
@@ -13,6 +14,7 @@
   &__image-text-wrapper {
     display: flex;
     flex-direction: column;
+
     @include breakpoint(phablet) {
       flex-direction: row;
       justify-content: flex-start;
@@ -23,57 +25,56 @@
     flex-shrink: 0;
   }
 
+  &__icon-wrapper {
+    align-self: flex-start;
+    flex-shrink: 0;
+    height: safe-map-get($quote-icon-size, 'phablet');
+    margin-bottom: get-spacing();
+    width: safe-map-get($quote-icon-size, 'phablet');
+
+    @include breakpoint(laptop) {
+      height: safe-map-get($quote-icon-size, 'laptop');
+      margin-right: get-spacing('l');
+      width: safe-map-get($quote-icon-size, 'laptop');
+    }
+  }
+
   &__text-wrapper {
     background-color: $quote-text-section-background;
-    margin: $quote-text-section-eats-in $quote-text-section-horizontal-margin 0;
-    padding: $quote-text-section-padding-mobile;
+    display: flex;
+    flex-direction: column;
+    margin: safe-map-get($quote-text-section-eats-in, 'mobile') $quote-text-section-horizontal-margin 0;
+    padding: safe-map-get($quote-text-section-padding, 'mobile');
     position: relative;
     z-index: 2;
 
     @include breakpoint(phablet) {
-      left: $quote-text-section-eats-in-phablet;
+      left: safe-map-get($quote-text-section-eats-in, 'phablet');
       margin: 0;
-      top: $quote-text-section-pushed-down-phablet;
+      padding: safe-map-get($quote-text-section-padding, 'phablet');
+      top: safe-map-get($quote-text-section-pushed-down, 'phablet');
     }
 
     @include breakpoint(laptop) {
-      padding: $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-laptop $quote-text-section-padding-left-laptop;
-      top: $quote-text-section-pushed-down-laptop;
+      flex-direction: row;
+      padding: safe-map-get($quote-text-section-padding, 'laptop');
+      top: safe-map-get($quote-text-section-pushed-down, 'laptop');
     }
   }
 
   &__quote {
-    margin-bottom: $quote-margin-mobile;
-
-    &::before {
-      background: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M11.8%2048.3V33c0-10.8%205.3-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H11.8zm23.8%200V33c0-10.8%205.4-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H35.6z%22%20fill%3D%22%23fdc513%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E') no-repeat center center;
-      background-size: $quote-icon-size-mobile;
-      content: '';
-      display: block;
-      height: $quote-icon-size-mobile;
-      margin-left: $quote-icon-offset-left-mobile;
-      width: $quote-icon-size-mobile;
-
-      @include breakpoint(laptop) {
-        background-size: $quote-icon-size-laptop;
-        height: $quote-icon-size-laptop;
-        left: $quote-icon-offset-left-laptop;
-        position: absolute;
-        top: $quote-icon-offset-top-laptop;
-        width: $quote-icon-size-laptop;
-      }
-    }
+    margin-bottom: $quote-margin;
   }
 
   &__quote-text {
     @include typography-text-standard;
     @include font-style('italic');
-    margin-bottom: $quote-text-margin-mobile;
+    margin-bottom: $quote-text-margin;
   }
 
   &__attributed-person {
     @include font-weight('bold');
-    margin-bottom: $quote-text-attributed-person-margin-mobile;
+    margin-bottom: $quote-text-attributed-person-margin;
   }
 
   &__attributed-person-role {
