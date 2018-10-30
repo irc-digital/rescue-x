@@ -5,7 +5,7 @@
 
   display: flex;
   flex-direction: column;
-  height: 260px;
+  height: $teaser-simple-image-link-height;
   justify-content: flex-end;
 
   &__wrapper-link {
@@ -35,7 +35,7 @@
     height: auto;
 
     @include breakpoint(phablet) {
-      height: 260px;
+      height: $teaser-simple-image-link-height;
     }
 
     #{ $self }__image-wrapper {
