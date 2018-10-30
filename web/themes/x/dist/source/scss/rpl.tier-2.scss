@@ -174,7 +174,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include font-size('xl');
   @include font-weight('bold');
   @include letter-spacing('compact');
-  @include line-height('s');
+  @include line-height('xs');
 
   @include breakpoint(phablet) {
     @include font-size('xxl');
