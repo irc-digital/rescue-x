@@ -8,6 +8,12 @@
     <div class="rplc-testimonial__wrapper">
       <h3 class="rplc-testimonial__title">{{ testimonial_title }}</h3>
       <div class="rplc-testimonial__quote-wrapper">
+        <div class="rplc-testimonial__quote-mark-wrapper">
+          {% include '@atoms/15-images/20-icon/icon.twig' with {
+            icon_name: 'quote-mark',
+            icon_modifiers: ['fill-branded']
+          } only %}
+        </div>
         <div class="rplc-testimonial__quote-text-wrapper">
           <blockquote class="rplc-testimonial__quote">
             <p class="rplc-testimonial__quote-text">{{ testimonial_quote_text }}</p>

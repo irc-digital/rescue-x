@@ -31,32 +31,12 @@
     margin-bottom: $testimonial-quote-margin-mobile;
     position: relative;
 
-    &::before {
-      background: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M11.8%2048.3V33c0-10.8%205.3-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H11.8zm23.8%200V33c0-10.8%205.4-18.5%2016.3-20.1v7.3c-5.6%201.7-6.4%205.5-6.5%2010.8h6.5v17.3H35.6z%22%20fill%3D%22%23fdc513%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E') no-repeat center center;
-      background-size: $testimonial-quote-icon-size-mobile;
-      content: '';
-      display: block;
-      height: $testimonial-quote-icon-size-mobile;
-      left: $testimonial-quote-icon-offset-left-mobile;
-      position: absolute;
-      top: $testimonial-quote-icon-offset-top-mobile;
-      width: $testimonial-quote-icon-size-mobile;
-
-      @include breakpoint(phablet) {
-        background-size: $testimonial-quote-icon-size-phablet;
-        height: $testimonial-quote-icon-size-phablet;
-        left: $testimonial-quote-icon-offset-left-phablet;
-        width: $testimonial-quote-icon-size-phablet;
-      }
-    }
-
-    @include breakpoint(phablet) {
-      margin-bottom: $testimonial-quote-margin-phablet;
+    @include breakpoint(tablet) {
+      margin-bottom: $testimonial-quote-margin-tablet;
     }
 
     @include breakpoint(laptop) {
       margin-bottom: 0;
-      margin-left: $testimonial-quote-offset-left-laptop;
     }
   }
 
@@ -64,33 +44,57 @@
     @include typography-text-standard;
     @include font-style('italic');
     margin-bottom: $testimonial-quote-text-margin-mobile;
+
+    @include breakpoint(tablet) {
+      margin-bottom: $testimonial-quote-text-margin-tablet;
+    }
   }
 
   &__quote-wrapper {
+    align-items: flex-start;
     display: flex;
-    flex-direction: column;
-    padding-left: $testimonial-quote-wrapper-padding-mobile;
-    @include breakpoint(phablet) {
-      padding-left: $testimonial-quote-wrapper-padding-phablet;
-    }
+    flex-direction: row;
+    flex-wrap: wrap;
     @include breakpoint(laptop) {
-      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__quote-mark-wrapper {
+    height: safe-map-get($testimonial-quote-icon-size, 'mobile');
+    margin-right: safe-map-get($testimonial-quote-icon-right-margin, 'mobile');
+    width: safe-map-get($testimonial-quote-icon-size, 'mobile');
+
+    @include breakpoint(tablet) {
+      height: safe-map-get($testimonial-quote-icon-size, 'tablet');
+      margin-right: safe-map-get($testimonial-quote-icon-right-margin, 'tablet');
+      width: safe-map-get($testimonial-quote-icon-size, 'tablet');
     }
   }
 
   &__quote-text-wrapper {
+    width: safe-map-get($testimonial-quote-text-wrapper-width, 'mobile');
+
+    @include breakpoint(tablet) {
+      width: safe-map-get($testimonial-quote-text-wrapper-width, 'tablet');
+    }
+
     @include breakpoint(laptop) {
-      margin-left: $testimonial-quote-text-wrapper-offset-laptop;
-      width: $testimonial-quote-text-wrapper-width-laptop;
+      margin-right: $testimonial-quote-text-wrapper-right-margin;
+      width: safe-map-get($testimonial-quote-text-wrapper-width, 'laptop');
     }
   }
 
   &__link-wrapper {
     align-items: flex-start;
     display: flex;
+    margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'mobile');
+    @include breakpoint(tablet) {
+      margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'tablet');
+    }
     @include breakpoint(laptop) {
       justify-content: flex-end;
-      width: $testimonial-link-wrapper-width-laptop;
+      margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'laptop');
     }
   }
 

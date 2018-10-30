@@ -1,30 +1,39 @@
 @import '../../../scss/core';
-$testimonial-wrapper-padding-horizontal-mobile: get-spacing('m');
 $testimonial-wrapper-padding-vertical-mobile: get-spacing('ml');
 $testimonial-wrapper-padding-vertical-phablet: get-spacing('xl');
-
 $testimonial-wrapper-padding-horizontal-phablet: get-spacing('l');
 
 $testimonial-title-margin: get-spacing();
-$testimonial-quote-text-margin-mobile: get-spacing();
-$testimonial-quote-text-wrapper-width-laptop: 75%;
-$testimonial-link-wrapper-width-laptop: 25%;
-$testimonial-quote-margin-mobile: get-spacing();
-$testimonial-quote-margin-phablet: get-spacing('xl');
-$testimonial-quote-wrapper-padding-mobile: get-spacing('xl');
-$testimonial-quote-wrapper-padding-phablet: get-spacing('xxxl');
-$testimonial-quote-offset-left-laptop: get-spacing('xxxl');
 
-$testimonial-quote-text-wrapper-offset-laptop: 10%;
+$testimonial-quote-text-margin-mobile: get-spacing();
+$testimonial-quote-text-margin-tablet: get-spacing('l');
+
+$testimonial-quote-margin-mobile: get-spacing();
+$testimonial-quote-margin-tablet: get-spacing('l');
 
 $testimonial-authority-color: get-neutral-color('very-dark-gray');
 
-// Positioning of quote icon will not fit within our spacing system
-// without adding too many values. These are specific to this element, unfortunately.
-$testimonial-quote-icon-size-mobile: 4.0625rem; //65px
-$testimonial-quote-icon-offset-left-mobile: -4.063rem;
-$testimonial-quote-icon-offset-top-mobile: -.4375rem; //-7px
-$testimonial-quote-icon-size-phablet: 5.3125rem; //85px
-$testimonial-quote-icon-offset-left-phablet: -5.625rem; //-90px
+$testimonial-quote-icon-size: (
+  'mobile': rem(40px),
+  'tablet': rem(72px),
+);
 
-// end of file
+$testimonial-quote-icon-right-margin: (
+  'mobile': get-spacing('m'),
+  'tablet': get-spacing('l')
+);
+
+$testimonial-quote-text-wrapper-width: (
+  'mobile': calc(100% - #{safe-map-get($testimonial-quote-icon-size, 'mobile') + safe-map-get($testimonial-quote-icon-right-margin, 'mobile')}),
+  'tablet': calc(100% - #{safe-map-get($testimonial-quote-icon-size, 'tablet') + safe-map-get($testimonial-quote-icon-right-margin, 'tablet')}),
+  'laptop': 50%
+);
+
+$testimonial-link-wrapper-left-margin: (
+  'mobile': calc(#{safe-map-get($testimonial-quote-icon-size, 'mobile') + safe-map-get($testimonial-quote-icon-right-margin, 'mobile')}),
+  'tablet': calc(#{safe-map-get($testimonial-quote-icon-size, 'tablet') + safe-map-get($testimonial-quote-icon-right-margin, 'tablet')}),
+  'laptop': 0
+);
+
+$testimonial-quote-text-wrapper-right-margin: calc(#{safe-map-get($testimonial-quote-icon-right-margin, 'tablet') * 2})
+
