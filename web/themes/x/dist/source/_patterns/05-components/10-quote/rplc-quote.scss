@@ -34,7 +34,7 @@
 
     @include breakpoint(laptop) {
       height: safe-map-get($quote-icon-size, 'laptop');
-      margin-right: 32px;
+      margin-right: get-spacing('l')
       width: safe-map-get($quote-icon-size, 'laptop');
     }
   }
