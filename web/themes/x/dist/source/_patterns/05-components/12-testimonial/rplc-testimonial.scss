@@ -10,7 +10,7 @@
     @include standard-row;
     background-color: get-neutral-color('light-gray');
 
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
       background-color: transparent;
     }
   }
