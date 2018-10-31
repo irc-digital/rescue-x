@@ -17,11 +17,19 @@
   padding-right: get-spacing();
 }
 
-@mixin standard-vertical-spacing {
-  margin-bottom: safe-map-get($standard-vertical-spacing, 'mobile');
+@mixin vertical-spacing ($airy: false) {
+  $spacing: 'standard';
+
+  @if $airy {
+    $spacing: 'airy';
+  }
+
+  $spacing-map: safe-map-get($vertical-spacing, $spacing);
+
+  margin-bottom: safe-map-get($spacing-map, 'mobile');
 
   @include breakpoint(phablet) {
-    margin-bottom: safe-map-get($standard-vertical-spacing, 'phablet');
+    margin-bottom: safe-map-get($spacing-map, 'phablet');
   }
 }
 

@@ -6,7 +6,11 @@ article_page_hero:
 article_page_content:
   join():
     - include():
-        pattern: "components-highlight"
+        pattern: "layouts-aside"
+        with:
+          aside_content:
+            include():
+              pattern: "components-highlight"
     - include():
         pattern: "atoms-paragraph"
         with:

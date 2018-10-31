@@ -24,9 +24,15 @@ $body-background-color: get-neutral-color('very-light-gray');
 $max-text-width: rem(850px);
 $minimum-size-width: rem(320px);
 
-$standard-vertical-spacing: (
-  'mobile': get-spacing(),
-  'phablet':  get-spacing('ml'),
+$vertical-spacing: (
+  'standard': (
+    'mobile': get-spacing(),
+    'phablet':  get-spacing('ml'),
+  ),
+  'airy': (
+    'mobile': get-spacing('ml'),
+    'phablet':  get-spacing('l'),
+  ),
 );
 
 // NOT 100% SURE ABOUT THIS YET

@@ -3,6 +3,8 @@
 .rplc-hero-article {
   $self: &;
 
+  @include vertical-spacing(true);
+
   &__published,
   &__updated,
   &__photographer {
