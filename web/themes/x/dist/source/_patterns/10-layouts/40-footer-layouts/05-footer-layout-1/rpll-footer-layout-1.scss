@@ -10,8 +10,8 @@
     @include standard-row;
 
     //
-    // 1) two column grid on tablet but
-    // 2) final section spans the full width and therefore becomes its own row
+    // 1) two column grid on tablet but ...
+    // 2) .. final section spans the full width and therefore becomes its own row
     // 3) once we get to larger device we layout as three columns and ensure the last column lays out naturally
     @include breakpoint(phablet) {
       display: grid;
@@ -21,7 +21,7 @@
     }
 
     @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr; // 3
     }
   }
 
