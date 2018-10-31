@@ -17,7 +17,7 @@
   padding-right: get-spacing();
 }
 
-@mixin vertical-spacing ($airy: false) {
+@mixin standard-vertical-spacing ($airy: false) {
   $spacing: 'standard';
 
   @if $airy {
@@ -30,6 +30,17 @@
 
   @include breakpoint(phablet) {
     margin-bottom: safe-map-get($spacing-map, 'phablet');
+  }
+}
+
+@mixin standard-vertical-padding () {
+
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
+
+  @include breakpoint(phablet) {
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('l');
   }
 }
 

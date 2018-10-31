@@ -2,7 +2,7 @@
 @import 'rplc-image-window-width.variables';
 
 .rplc-image-window-width {
-  @include vertical-spacing;
+  @include standard-vertical-spacing;
 
   &__image-wrapper {
     line-height: 0;

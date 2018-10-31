@@ -2,7 +2,7 @@
 
 .rpla-paragraph {
   @include typography-text-standard;
-  @include vertical-spacing;
+  @include standard-vertical-spacing;
   max-width: $max-text-width;
 
   &--lead {
