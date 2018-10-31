@@ -14,7 +14,9 @@
     // 3) once we get to larger device we layout as three columns and ensure the last column lays out naturally
     @include breakpoint(phablet) {
       display: grid;
+      grid-column-gap: get-spacing();
       grid-template-columns: 1fr 1fr; // 1
+      grid-row-gap: get-spacing();
     }
 
     @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
