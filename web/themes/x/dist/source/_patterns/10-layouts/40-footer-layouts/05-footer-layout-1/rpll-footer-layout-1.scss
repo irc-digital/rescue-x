@@ -7,15 +7,28 @@
   &__inner-content-wrapper {
     @include standard-row;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include breakpoint(phablet) {
+      flex-direction: row;
+    }
   }
 
-  &__section-1,
-  &__section-2,
+  // Force third column to a new line. Oh boy.
   &__section-3 {
-    flex-grow: 1;
+    @include breakpoint(phablet) {
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(laptop) {
+      display: block;
+      flex-basis: auto;
+    }
   }
 }
-
 
 // end of file
