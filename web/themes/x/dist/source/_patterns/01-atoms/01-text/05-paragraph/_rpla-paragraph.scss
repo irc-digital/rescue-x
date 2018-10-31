@@ -12,6 +12,19 @@
   &--lead {
     @include typography-text-large;
   }
+
+  &--body {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 90vw;
+    z-index: 1;
+
+    @media only screen and (min-width: #{rem(951px)}) {
+      left: -105px;
+      width: 650px;
+    }
+  }
 }
 
 // end of file
