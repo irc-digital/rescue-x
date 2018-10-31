@@ -33,7 +33,7 @@
   }
 }
 
-@mixin standard-vertical-padding () {
+@mixin standard-vertical-padding {
 
   padding-bottom: get-spacing('m');
   padding-top: get-spacing('m');

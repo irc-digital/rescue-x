@@ -26,14 +26,23 @@
   }
 
   &__section {
-    &:last-child {
-      grid-column-end: 3; // 2
-      grid-column-start: 1; // 2
+    //
+    // 4) This is controlling the final section so that it inlines on phablet
+    //
+    @include breakpoint(phablet) {
+      &:last-child {
+        display: grid; // 4
+        grid-column-end: 3; // 2
+        grid-column-start: 1; // 2
+        grid-template-columns: 1fr 1fr; // 4
 
-      @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
-        grid-column-start: 3; // 3
+        @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
+          display: block;
+          grid-column-start: 3; // 3
+        }
       }
     }
+
   }
 }
 
