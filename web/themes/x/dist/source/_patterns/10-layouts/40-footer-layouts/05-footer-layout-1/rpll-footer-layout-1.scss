@@ -1,0 +1,11 @@
+@import 'rpll-footer-layout-1.variables';
+
+.rpll-footer-layout-1 {
+  $self: &;
+
+  display: flex;
+  flex-direction: row;
+}
+
+
+// end of file
