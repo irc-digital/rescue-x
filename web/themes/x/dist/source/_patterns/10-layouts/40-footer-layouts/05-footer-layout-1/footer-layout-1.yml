@@ -1,4 +1,3 @@
 footer_layout_1_section_1: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 1</div>"
 footer_layout_1_section_2: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 2</div>"
-footer_layout_1_section_3_a: "<div style='height:125px; line-height: 125px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 3 (A)</div>"
-footer_layout_1_section_3_b: "<div style='height:125px; line-height: 125px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 3 (B)</div>"
+footer_layout_1_section_3: "<div style='height:125px; line-height: 125px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 3 (A)</div><div style='height:125px; line-height: 125px; text-align:center; background-color: #ffffff; border: 4px dashed #333;'>SECTION 3 (B)</div>"
