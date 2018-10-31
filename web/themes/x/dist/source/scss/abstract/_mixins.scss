@@ -17,6 +17,14 @@
   padding-right: get-spacing();
 }
 
+@mixin standard-vertical-spacing {
+  margin-bottom: safe-map-get($standard-vertical-spacing, 'mobile');
+
+  @include breakpoint(phablet) {
+    margin-bottom: safe-map-get($standard-vertical-spacing, 'phablet');
+  }
+}
+
 //
 // breakpoint mixin
 //

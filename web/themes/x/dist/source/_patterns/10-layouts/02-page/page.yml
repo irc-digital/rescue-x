@@ -1,4 +1,5 @@
 page_header: "<div style='height:200px; background-color: #d7d7d7; border: 4px dashed #333;'>HEADER</div>"
 page_navigation: "<div style='height:200px; background-color: #d7d7d7; border: 4px dashed #333;'>NAVIGATION</div>"
+page_hero: "<div style='height:200px; background-color: #d7d7d7; border: 4px dashed #333;'>HERO</div>"
 page_content: "<div style='height:200px; background-color: #d7d7d7; border: 4px dashed #333;'>CONTENT</div>"
 page_footer: "<div style='height:200px; background-color: #d7d7d7; border: 4px dashed #333;'>FOOTER</div>"

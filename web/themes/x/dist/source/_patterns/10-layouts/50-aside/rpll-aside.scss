@@ -1,0 +1,28 @@
+@import 'rpll-aside.variables';
+
+.rpll-aside {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(1080px);
+  width: $max-row-width;
+  z-index: 2;
+
+  &__inner-wrapper {
+    border-left: 2px solid $aside-separator-border-color;
+    float: right;
+    margin-bottom: $aside-margin-bottom;
+    margin-left: get-spacing();
+    max-width: $aside-width;
+    padding-bottom: get-spacing();
+    padding-left: get-spacing('l');
+    padding-top: get-spacing();
+    width: $aside-width;
+
+    @media only screen and (min-width: #{rem(950px)}) {
+      margin-left: 0;
+    }
+  }
+
+}
+
+// end of file

@@ -1,9 +1,12 @@
 article_page_header: "Hello"
 article_page_navigation: "Hello"
+article_page_hero:
+  include():
+    pattern: "components-hero-article"
 article_page_content:
   join():
     - include():
-        pattern: "components-hero-article"
+        pattern: "components-highlight"
     - include():
         pattern: "atoms-paragraph"
         with:
