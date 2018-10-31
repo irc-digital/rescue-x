@@ -1,3 +1,6 @@
 @import '../../../../scss/core';
 
+$image-partial-width-portrait-medium-screen-maximum: rem(900px);
+$image-partial-width-portrait-large-screen-minimum: $image-partial-width-portrait-medium-screen-maximum + rem(1px);
+
 // end of file

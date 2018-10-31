@@ -14,7 +14,7 @@
 
   &:not(&--caption-style-low-key) {
     #{$self}__caption-wrapper {
-      @include image-caption-common-treatment-fluid;
+      @include image-caption-common-treatment;
     }
   }
 

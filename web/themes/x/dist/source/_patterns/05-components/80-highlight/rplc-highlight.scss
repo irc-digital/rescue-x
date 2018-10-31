@@ -3,7 +3,6 @@
 .rplc-highlight {
   $self: &;
 
-
   &[data-rpl-state='expanded'] {
     #{$self}__show-hide {
       // sass-lint:disable-block nesting-depth
@@ -63,6 +62,11 @@
 
       &::before {
         content: none;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: default;
       }
     }
   }

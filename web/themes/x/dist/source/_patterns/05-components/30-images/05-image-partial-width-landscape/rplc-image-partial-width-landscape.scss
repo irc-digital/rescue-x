@@ -21,7 +21,7 @@
   }
 
   &__caption-wrapper {
-    @include image-caption-common-treatment-fixed;
+    @include image-caption-common-treatment(true);
 
     @include breakpoint(phablet) {
       width: 35.5vw;

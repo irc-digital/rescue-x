@@ -1,7 +1,13 @@
 @import '../../../scss/core';
 
-$person-info-photo-size: rem(72px);
-$person-info-photo-size-small: rem(48px);
+$person-info-photo-size: (
+  'default': rem(72px),
+  'small': rem(48px),
+);
+// this is a magic number that ensures there is enough padding around the icon regardless of the size choice
+// otherwise the circle effect chops some of the image out
+$person-info-photo-padding-divisor: 6;
+
 $person-info-photo-background-color: get-brand-color();
 $person-info-byline-left-margin: get-spacing();
 $person-info-byline-author-spacing: get-spacing('s');

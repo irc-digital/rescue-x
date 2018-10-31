@@ -54,10 +54,6 @@
 
   &--placement-left,
   &--placement-right {
-    // drop standard row and floats down a level on to content*
-    // outer div to full width and standard row to content, whit bg on text-wrapper bq
-    //white bg on wrapper for float and on outer for full width
-    //margins on blockquote
     #{ $self }__text-wrapper {
       background-color: $pull-quote-background-color;
       margin: 0;

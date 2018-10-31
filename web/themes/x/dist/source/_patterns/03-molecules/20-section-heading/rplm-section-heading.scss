@@ -5,7 +5,6 @@
 
   @include standard-row;
 
-
   //
   // 1) Ensures that the icon does not get too squished
   //
@@ -40,9 +39,9 @@
   &__icon {
     display: inline-block;
     fill: get-neutral-color('black');
-    height: 32px;
-    margin-right: 24px;
-    width: 32px;
+    height: $section-heading-icon-size;
+    margin-right: get-spacing('ml');
+    width: $section-heading-icon-size;
   }
 
   &--inverse {
