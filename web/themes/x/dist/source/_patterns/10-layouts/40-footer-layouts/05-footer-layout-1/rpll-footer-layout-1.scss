@@ -3,8 +3,17 @@
 .rpll-footer-layout-1 {
   $self: &;
 
-  display: flex;
-  flex-direction: row;
+  &__inner-content-wrapper {
+    @include standard-row;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__section-1,
+  &__section-2,
+  &__section-3 {
+    flex-grow: 1;
+  }
 }
 
 
