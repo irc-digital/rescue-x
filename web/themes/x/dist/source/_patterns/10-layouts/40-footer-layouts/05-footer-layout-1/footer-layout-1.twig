@@ -1,38 +1,40 @@
 <div class="rpll-footer-layout-1{% for footer_layout_1_modifier in footer_layout_1_modifiers %} rpll-footer-layout-1--{{ footer_layout_1_modifier }}{% endfor %}">
-  <div class="rpll-footer-layout-1__section-1">
-    <div class="rpll-footer-layout-1__section-1-top">
-      {% block footer_layout_1_section_1_top_block %}
-        {{ footer_layout_1_section_1_top }}
-      {% endblock %}
+  <div class="rpll-footer-layout-1__inner-content-wrapper">
+    <div class="rpll-footer-layout-1__section-1">
+      <div class="rpll-footer-layout-1__section-1-top">
+        {% block footer_layout_1_section_1_top_block %}
+          {{ footer_layout_1_section_1_top }}
+        {% endblock %}
+      </div>
+      <div class="rpll-footer-layout-1__section-1-bottom">
+        {% block footer_layout_1_section_1_bottom_block %}
+          {{ footer_layout_1_section_1_bottom }}
+        {% endblock %}
+      </div>
     </div>
-    <div class="rpll-footer-layout-1__section-1-bottom">
-      {% block footer_layout_1_section_1_bottom_block %}
-        {{ footer_layout_1_section_1_bottom }}
-      {% endblock %}
+    <div class="rpll-footer-layout-1__section-2">
+      <div class="rpll-footer-layout-1__section-2-top">
+        {% block footer_layout_1_section_2_top_block %}
+          {{ footer_layout_1_section_2_top }}
+        {% endblock %}
+      </div>
+      <div class="rpll-footer-layout-1__section-2-bottom">
+        {% block footer_layout_1_section_2_bottom_block %}
+          {{ footer_layout_1_section_2_bottom }}
+        {% endblock %}
+      </div>
     </div>
-  </div>
-  <div class="rpll-footer-layout-1__section-2">
-    <div class="rpll-footer-layout-1__section-2-top">
-      {% block footer_layout_1_section_2_top_block %}
-        {{ footer_layout_1_section_2_top }}
-      {% endblock %}
-    </div>
-    <div class="rpll-footer-layout-1__section-2-bottom">
-      {% block footer_layout_1_section_2_bottom_block %}
-        {{ footer_layout_1_section_2_bottom }}
-      {% endblock %}
-    </div>
-  </div>
-  <div class="rpll-footer-layout-1__section-3">
-    <div class="rpll-footer-layout-1__section-3-top">
-      {% block footer_layout_1_section_3_top_block %}
-        {{ footer_layout_1_section_3_top }}
-      {% endblock %}
-    </div>
-    <div class="rpll-footer-layout-1__section-3-bottom">
-      {% block footer_layout_1_section_3_bottom_block %}
-        {{ footer_layout_1_section_3_bottom }}
-      {% endblock %}
+    <div class="rpll-footer-layout-1__section-3">
+      <div class="rpll-footer-layout-1__section-3-top">
+        {% block footer_layout_1_section_3_top_block %}
+          {{ footer_layout_1_section_3_top }}
+        {% endblock %}
+      </div>
+      <div class="rpll-footer-layout-1__section-3-bottom">
+        {% block footer_layout_1_section_3_bottom_block %}
+          {{ footer_layout_1_section_3_bottom }}
+        {% endblock %}
+      </div>
     </div>
   </div>
 </div>
