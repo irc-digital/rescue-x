@@ -1,0 +1,6 @@
+footer_layout_1_section_1_top: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 1 TOP</div>"
+footer_layout_1_section_1_bottom: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 1 BOTTOM</div>"
+footer_layout_1_section_2_top: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 2 TOP</div>"
+footer_layout_1_section_2_bottom: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 2 BOTTOM</div>"
+footer_layout_1_section_3_top: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 3 TOP</div>"
+footer_layout_1_section_3_bottom: "<div style='height:250px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECTION 3 BOTTOM</div>"
