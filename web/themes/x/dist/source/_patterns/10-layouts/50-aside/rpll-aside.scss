@@ -15,11 +15,11 @@
       border-left: 2px solid $aside-separator-border-color;
       float: right;
       margin-bottom: $aside-margin-bottom;
-      margin-left: get-spacing();
+      margin-left: get-spacing('m');
       max-width: $aside-width;
-      padding-bottom: get-spacing();
+      padding-bottom: $aside-top-bottom-spacing;
       padding-left: get-spacing('l');
-      padding-top: get-spacing();
+      padding-top: $aside-top-bottom-spacing;
       width: $aside-width;
 
       @media only screen and (min-width: #{rem(950px)}) {
