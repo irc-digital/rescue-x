@@ -5,5 +5,20 @@ article_page_content:
     - include():
         pattern: "components-hero-article"
     - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - lead
+    - include():
+        pattern: "atoms-paragraph"
+    - include():
+        pattern: "atoms-paragraph"
+    - include():
         pattern: "components-pull-quote"
+    - include():
+        pattern: "atoms-paragraph"
+    - include():
+        pattern: "atoms-paragraph"
+    - include():
+        pattern: "atoms-paragraph"
 article_page_footer: "Hello"
