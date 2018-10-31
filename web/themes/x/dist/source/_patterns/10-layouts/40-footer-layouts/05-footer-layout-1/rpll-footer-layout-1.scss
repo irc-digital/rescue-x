@@ -3,6 +3,7 @@
 .rpll-footer-layout-1 {
   $self: &;
 
+  background-color: get-neutral-color('light-gray');
   &__inner-content-wrapper {
     @include standard-row;
     display: flex;
