@@ -120,6 +120,13 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
+@mixin typography-link-utility {
+  @include font-size('xxs');
+  @include font-weight('normal');
+  display: inline;
+  text-decoration: underline;
+}
+
 @mixin typography-link-inverse-hover {
   background-color: get-neutral-color('white');
 }

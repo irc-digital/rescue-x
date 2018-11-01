@@ -29,6 +29,10 @@
     @include typography-link-inverse;
   }
 
+  &--style-utility {
+    @include typography-link-utility;
+  }
+
   &--size-extra-small {
     @include typography-text-extra-small;
   }
