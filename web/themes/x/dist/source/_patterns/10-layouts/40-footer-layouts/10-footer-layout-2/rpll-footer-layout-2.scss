@@ -1,0 +1,31 @@
+@import 'rpll-footer-layout-2.variables';
+
+.rpll-footer-layout-2 {
+  $self: &;
+
+  @include standard-vertical-padding;
+  background-color: get-neutral-color('black');
+
+  &__inner-content-wrapper {
+    @include standard-row;
+
+    @include breakpoint(laptop) {
+      display: grid;
+      grid-column-gap: get-spacing('m');
+      grid-row-gap: get-spacing('m');
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  &__section {
+    &:first-child {
+      border-bottom: 1px solid get-neutral-color('very-dark-gray');
+      @include breakpoint(laptop) {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+// end of file
