@@ -1,0 +1,7 @@
+efficiency:
+  - name: 'Program services'
+    percentage: '89%'
+  - name: 'Management & general'
+    percentage: '7%'
+  - name: 'Fundraising'
+    percentage: '4%'

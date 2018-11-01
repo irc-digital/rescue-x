@@ -1,2 +1,15 @@
 <div class="rplc-efficiency">
+  <div class="rplc-efficiency__content">
+    <h6 class="rplc-efficiency__title">{{ "Our efficiency" | trans }}</h6>
+    <div class="rplc-efficiency__icon-text-wrapper">
+      <div class="rplc-efficiency__icon-wrapper">
+        {% include '@atoms/15-images/20-icon/icon.twig' with { icon_name: 'efficiency' } only %}
+      </div>
+      <ul class="rplc-efficiency__list">
+        <li class="rplc-efficiency__list-item rplc-efficiency__list-item--first"><span class="rplc-efficiency__percentage">{{ efficiency[0].percentage }}</span> {{ efficiency[0].name }}</li>
+        <li class="rplc-efficiency__list-item rplc-efficiency__list-item--second"><span class="rplc-efficiency__percentage">{{ efficiency[1].percentage }}</span> {{ efficiency[1].name }}</li>
+        <li class="rplc-efficiency__list-item rplc-efficiency__list-item--third"><span class="rplc-efficiency__percentage">{{ efficiency[2].percentage }}</span> {{ efficiency[2].name }}</li>
+      </ul>
+    </div>
+  </div>
 </div>
