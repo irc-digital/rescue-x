@@ -22,7 +22,7 @@ hero_article_last_updated: "August 5, 2018"
 hero_article_photographer: "Faker.name()"
 hero_article_social_share:
   include():
-    pattern: "atoms-social-share-standard"
+    pattern: "molecules-social-share"
 hero_article_contributors:
   include():
     pattern: "molecules-contributors"
