@@ -2,7 +2,7 @@
 
 .rplm-social-share {
   // TODO: Perhaps these styles should be an icon variation?
-  .rpla-social-share-standard__link {
+  &__link {
     border: 1px solid get-neutral-color('light-gray');
     border-radius: 100%;
     display: inline-block;
