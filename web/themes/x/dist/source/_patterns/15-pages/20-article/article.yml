@@ -61,4 +61,7 @@ article_page_content:
         with:
           text_modifiers:
             - body
-article_page_footer: "Hello"
+article_page_footer:
+  join():
+    - include():
+        pattern: "layouts-footer-layout-1"
