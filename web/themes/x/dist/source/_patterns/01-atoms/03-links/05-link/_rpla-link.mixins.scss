@@ -1,0 +1,32 @@
+@import '../../../../scss/core';
+
+@mixin typography-link-inverse-hover {
+  background-color: get-neutral-color('white');
+}
+
+@mixin typography-link-inverse {
+  @include font-weight('bold');
+  @include hover {
+    @include typography-link-inverse-hover;
+  }
+  border-bottom: 2px solid get-neutral-color('white');
+  display: inline;
+}
+
+@mixin typography-link-alert {
+  @include font-weight('bold');
+  @include hover {
+    color: get-utility-color('alert');
+  }
+  border-bottom: 2px solid get-utility-color('alert');
+  display: inline;
+}
+
+@mixin typography-link-utility {
+  @include font-size('xxs');
+  @include font-weight('normal');
+  display: inline;
+  text-decoration: underline;
+}
+
+// end of file

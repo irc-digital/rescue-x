@@ -8,10 +8,6 @@
     margin-bottom: get-spacing('l');
   }
 
-  &__cta {
-    @include typography-link-inverse;
-  }
-
   &__image-wrapper {
     line-height: 0;
 
@@ -21,12 +17,6 @@
   }
 
   &__wrapper-link {
-    @include hover {
-      #{ $self }__cta {
-        @include typography-link-inverse-hover;
-      }
-    }
-
     @media only screen and (min-width: #{$well-width-inner}) {
       align-items: center;
       display: flex;

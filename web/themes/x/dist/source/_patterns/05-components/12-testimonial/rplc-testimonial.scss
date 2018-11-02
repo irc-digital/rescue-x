@@ -23,7 +23,7 @@
 
   &__title {
     @include typography-heading-extra-large-light;
-    margin-bottom: $testimonial-title-margin;
+    @include typography-vertical-spacing('compact');
   }
 
   &__quote {

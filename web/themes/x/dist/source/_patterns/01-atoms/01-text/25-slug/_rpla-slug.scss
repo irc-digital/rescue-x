@@ -6,7 +6,7 @@
   @include typography-text-extra-small;
 
   &:not(:last-child) {
-    margin-bottom: $slug-margin-bottom;
+    @include typography-vertical-spacing('compact');
   }
 
   &__slug {

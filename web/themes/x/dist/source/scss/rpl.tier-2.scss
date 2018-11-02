@@ -110,35 +110,6 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-@mixin typography-link-alert {
-  @include font-weight('bold');
-  @include hover {
-    color: get-utility-color('alert');
-  }
-  border-bottom: 2px solid get-utility-color('alert');
-  display: inline;
-}
-
-@mixin typography-link-utility {
-  @include font-size('xxs');
-  @include font-weight('normal');
-  display: inline;
-  text-decoration: underline;
-}
-
-@mixin typography-link-inverse-hover {
-  background-color: get-neutral-color('white');
-}
-
-@mixin typography-link-inverse {
-  @include font-weight('bold');
-  @include hover {
-    @include typography-link-inverse-hover;
-  }
-  border-bottom: 2px solid get-neutral-color('white');
-  display: inline;
-}
-
 // Medium  on mobile, Medium large on bigger devices
 @mixin typography-heading-medium {
   @include font-size('m');
@@ -198,10 +169,20 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-@mixin hover {
-  &:hover,
-  &:focus {
-    @content;
+@mixin hover ($target: '&') {
+  @if $target == '&' {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  } @else {
+    // sass-lint:disable-block force-pseudo-nesting
+    &:hover,
+    &:focus,
+    [#{$target}]:hover &,
+    [#{$target}]:focus & {
+      @content;
+    }
   }
 }
 

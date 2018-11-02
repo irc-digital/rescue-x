@@ -2,24 +2,26 @@
 
 .rpla-heading {
 
+  @include font-weight('bold');
+  @include typography-vertical-spacing;
+
   &--medium {
     @include typography-heading-medium;
-    margin-bottom: get-spacing('s');
   }
 
   &--medium-large {
     @include typography-heading-medium-large;
-    margin-bottom: get-spacing();
   }
 
   &--large {
     // TODO SOME MARGIN FOR THIS ONE
     @include typography-heading-large;
+    @include typography-vertical-spacing('compact');
   }
 
   &--extra-large {
     @include typography-heading-extra-large;
-    margin-bottom: get-spacing();
+    @include typography-vertical-spacing('compact');
   }
 }
 

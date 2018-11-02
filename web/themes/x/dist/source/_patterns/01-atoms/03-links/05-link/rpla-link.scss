@@ -1,4 +1,5 @@
 @import 'rpla-link.variables';
+@import 'rpla-link.mixins';
 
 .rpla-link {
   $self: &;
@@ -38,3 +39,7 @@
   }
 
 }
+
+// end of file
+
+

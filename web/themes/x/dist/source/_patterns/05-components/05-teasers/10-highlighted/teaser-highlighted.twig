@@ -13,7 +13,7 @@
  */
 #}
 <div class="rplc-teaser-highlighted">
-  <a href="{{ teaser_highlighted_url }}" class="rplc-teaser-highlighted__wrapper-link">
+  <a href="{{ teaser_highlighted_url }}" class="rplc-teaser-highlighted__wrapper-link" data-rpla-link-hover-target>
     <div class="rplc-teaser-highlighted__image-wrapper">
     {% block teaser_image_block %}
       {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
@@ -29,7 +29,11 @@
       <div class="rpla-slug">{{ teaser_highlighted_slug }}</div>
       <h3 class="rpla-heading rpla-heading--extra-large">{{ teaser_highlighted_title }}</h3>
       <div class="rplc-teaser-highlighted__summary">{{ teaser_highlighted_summary }}</div>
-      <div class="rplc-teaser-highlighted__cta">{{ teaser_highlighted_cta }}</div>
+      {% include '@atoms/03-links/05-link/link.twig' with {
+        link_text: teaser_highlighted_cta,
+        link_tag: 'div',
+        link_modifiers: ['style-inverse'],
+      } only %}
     {% endblock teaser_text_block %}
     </div>
   </a>
