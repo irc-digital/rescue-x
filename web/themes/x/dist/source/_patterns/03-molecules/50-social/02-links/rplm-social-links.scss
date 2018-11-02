@@ -1,0 +1,15 @@
+@import 'rplm-social-links.variables';
+
+.rplm-social-links {
+  &__link {
+    display: inline-block;
+    height: $social-link-size;
+    width: $social-link-size;
+
+    &:not(:last-child) {
+      margin-right: $social-link-spacing;
+    }
+  }
+}
+
+// end of file

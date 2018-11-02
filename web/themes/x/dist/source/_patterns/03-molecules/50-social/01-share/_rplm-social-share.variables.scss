@@ -1,8 +1,9 @@
 @import '../../../../scss/core';
 
-$social-share-standard-width-height: rem(48px);
-$social-share-standard-gutter: get-spacing() / 2;
-$social-share-standard-padding-around-icon: rem(15px);
+$social-share-size: rem(48px);
+$social-share-gutter: get-spacing() / 2;
+$social-share-padding-around-icon: rem(15px);
+$social-share-line-height: 1rem;
 
 // end of file
 
