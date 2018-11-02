@@ -104,7 +104,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   display: inline;
 
   @if $has-hover-effect {
-    &:hover {
+    @include hover {
       @include typography-link-standard-hover;
     }
   }
@@ -112,12 +112,11 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 
 @mixin typography-link-alert {
   @include font-weight('bold');
-  border-bottom: 2px solid get-utility-color('alert');
-  display: inline;
-
-  &:hover {
+  @include hover {
     color: get-utility-color('alert');
   }
+  border-bottom: 2px solid get-utility-color('alert');
+  display: inline;
 }
 
 @mixin typography-link-utility {
@@ -133,12 +132,11 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 
 @mixin typography-link-inverse {
   @include font-weight('bold');
-  border-bottom: 2px solid get-neutral-color('white');
-  display: inline;
-
-  &:hover {
+  @include hover {
     @include typography-link-inverse-hover;
   }
+  border-bottom: 2px solid get-neutral-color('white');
+  display: inline;
 }
 
 // Medium  on mobile, Medium large on bigger devices
@@ -197,6 +195,13 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 
   @include breakpoint(tablet) {
     @include font-size('xxl');
+  }
+}
+
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
   }
 }
 

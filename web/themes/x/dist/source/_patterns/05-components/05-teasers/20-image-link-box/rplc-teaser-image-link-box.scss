@@ -3,9 +3,7 @@
 .rplc-teaser-image-link-box {
   $self: &;
 
-  height: 100%;
-
-  &:hover {
+  @include hover {
     #{ $self }__caption-wrapper {
       background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
     }
@@ -14,6 +12,8 @@
       background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228.529%22%20height%3D%2213%22%20viewBox%3D%220%200%208.529%2013%22%3E%3Cpath%20d%3D%22M2.03%200L0%202.03%204.47%206.5%200%2010.97%202.03%2013l6.5-6.5%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E');
     }
   }
+
+  height: 100%;
 
   &__wrapper-link {
     display: flex;
@@ -83,15 +83,15 @@
   }
 
   &--style-alert {
-    #{ $self }__caption-wrapper {
-      border-bottom-color: safe-map-get($teaser-image-link-box-decoration-color, 'alert');
-    }
-
-    &:hover {
+    @include hover {
       #{ $self }__caption-wrapper {
         background-color: safe-map-get($teaser-image-link-box-decoration-color, 'alert');
         color: get-neutral-color('white');
       }
+    }
+
+    #{ $self }__caption-wrapper {
+      border-bottom-color: safe-map-get($teaser-image-link-box-decoration-color, 'alert');
     }
   }
 

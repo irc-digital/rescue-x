@@ -1,15 +1,15 @@
 @import 'rplm-social-share.variables';
 
 .rplm-social-share {
-  // TODO: Perhaps these styles should be an icon variation?
   &__link {
     border: 1px solid get-neutral-color('light-gray');
     border-radius: 100%;
     display: inline-block;
-    height: $social-share-standard-width-height;
-    margin-right: $social-share-standard-gutter;
-    padding: $social-share-standard-padding-around-icon;
-    width: $social-share-standard-width-height;
+    height: $social-share-size;
+    line-height: $social-share-line-height;
+    margin-right: $social-share-gutter;
+    padding: $social-share-padding-around-icon;
+    width: $social-share-size;
   }
 }
 
