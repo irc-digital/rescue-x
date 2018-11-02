@@ -56,6 +56,10 @@
 
     #{ $self }__image-wrapper--default-image {
       padding: safe-map-get($person-info-photo-size, 'small') / $person-info-photo-padding-divisor;
+
+      @include breakpoint(tablet) {
+        padding: safe-map-get($person-info-photo-size, 'default') / $person-info-photo-padding-divisor;
+      }
     }
   }
 }
