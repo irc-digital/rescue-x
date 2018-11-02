@@ -69,5 +69,8 @@ article_page_footer:
           footer_layout_1_section_2:
             include():
               pattern: "components-efficiency"
+          footer_layout_1_section_3:
+            include():
+              pattern: "molecules-social-links"
     - include():
         pattern: "layouts-footer-layout-2"

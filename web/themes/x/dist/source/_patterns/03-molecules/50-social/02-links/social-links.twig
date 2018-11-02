@@ -10,6 +10,7 @@
  */
 #}
 <div class="rplm-social-links">
+  <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
   {% for social_site, social_link in social_links %}
   <a class="rplm-social-links__link" href="{{ social_link }}">
     {% include '@atoms/15-images/20-icon/icon.twig' with {
