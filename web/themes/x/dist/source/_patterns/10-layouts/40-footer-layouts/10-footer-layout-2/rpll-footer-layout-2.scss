@@ -20,6 +20,7 @@
   &__section {
     &:first-child {
       border-bottom: 1px solid get-neutral-color('very-dark-gray');
+      
       @include breakpoint(laptop) {
         border-bottom: 0;
       }
