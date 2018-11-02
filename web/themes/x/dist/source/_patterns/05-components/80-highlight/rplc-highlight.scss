@@ -64,8 +64,7 @@
         content: none;
       }
 
-      &:hover,
-      &:focus {
+      @include hover {
         cursor: default;
       }
     }

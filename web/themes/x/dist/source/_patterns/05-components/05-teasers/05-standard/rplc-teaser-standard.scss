@@ -22,15 +22,14 @@
   }
 
   &__wrapper-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-    &:hover {
+    @include hover {
       #{ $self }__cta {
         @include typography-link-standard-hover;
       }
     }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__image-wrapper {
