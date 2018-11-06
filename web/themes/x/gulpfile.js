@@ -25,7 +25,7 @@ config.patternLab = {
 };
 
 config.styles = {
-  max_file_size: '45000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
+  max_file_size: '46000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
   input_combined: [
     config.patternLab.dir + '/source/scss/**/*.scss',
   ],
