@@ -17,13 +17,13 @@
       <tr>
         <td class="sg-buttons-type-row-label">With icon after</td>
         {% for size in button_sizes %}
-          <td class="sg-buttons-type-row-cell">{% include '@atoms/05-buttons/button.twig' with { button_text: 'Donate now', button_icon_name: 'bullhorn', button_modifiers: [type, size] } only %}</td>
+          <td class="sg-buttons-type-row-cell">{% include '@atoms/05-buttons/button.twig' with { button_text: 'Donate now', button_icon_name: 'caret-right', button_modifiers: [type, size] } only %}</td>
         {% endfor %}
       </tr>
       <tr>
         <td class="sg-buttons-type-row-label">With icon before</td>
         {% for size in button_sizes %}
-          <td class="sg-buttons-type-row-cell">{% include '@atoms/05-buttons/button.twig' with { button_text: 'Donate now', button_icon_name: 'bullhorn', button_modifiers: ['icon-position-before', type, size] } only %}</td>
+          <td class="sg-buttons-type-row-cell">{% include '@atoms/05-buttons/button.twig' with { button_text: 'Donate now', button_icon_name: 'caret-right', button_modifiers: ['icon-position-before', type, size] } only %}</td>
         {% endfor %}
       </tr>
     </table>
