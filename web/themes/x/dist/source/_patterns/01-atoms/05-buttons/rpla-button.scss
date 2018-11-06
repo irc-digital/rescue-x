@@ -36,8 +36,8 @@
 
   &--icon-position-before {
     #{$self}__icon-wrapper {
-      order: -1;
       margin-right: $button-icon-gap;
+      order: -1;
     }
   }
 
@@ -46,7 +46,7 @@
       margin-left: $button-icon-gap;
     }
   }
-  
+
 }
 
 // end of file
