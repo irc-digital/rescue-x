@@ -16,8 +16,8 @@
     padding: get-spacing('m') get-spacing('l');
 
     .rpla-button__icon-wrapper {
-      height: rem(32px);
-      width: rem(32px);
+      height: rem(24px);
+      width: rem(24px);
     }
   } @else if $size == 'l' {
     @include font-size('l');

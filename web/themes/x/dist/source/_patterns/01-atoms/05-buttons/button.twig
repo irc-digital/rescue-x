@@ -42,15 +42,13 @@
 {% endif %}
 
 <{{ button_tag }}{% if button_href is not empty %} href={{  button_href }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}">
+  <span class="rpla-button__text">{{ button_text }}</span>
   {% if button_icon_name is not empty %}
-    <span class="rpla-button__text">{{ button_text }}</span>
     <div class="rpla-button__icon-wrapper">
     {% include '@atoms/15-images/20-icon/icon.twig' with {
       icon_name: button_icon_name,
     } only %}
     </div>
-  {% else %}
-    {{ button_text }}
   {% endif %}
 </{{ button_tag }}>
 

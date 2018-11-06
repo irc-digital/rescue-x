@@ -260,7 +260,6 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 .sg-buttons-type-label {
   @include typography-heading-medium;
   text-align: left;
-  text-transform: capitalize;
 }
 
 .sg-buttons-hot-container {
@@ -281,6 +280,11 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 .sg-buttons-type-row-cell {
   padding-right: get-spacing('m');
   padding-bottom: get-spacing('m');
+}
+
+.sg-buttons-constraining-button-demo {
+  width: 200px;
+  height: 100px;
 }
 
 .xxx-typography-text-extra-small {
