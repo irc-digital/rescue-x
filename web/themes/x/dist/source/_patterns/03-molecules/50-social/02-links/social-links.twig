@@ -9,13 +9,14 @@
  * - none
  */
 #}
-<div class="rplm-social-links">
+<div class="rplm-social-links{% for social_links_modifier in social_links_modifiers %} rplm-social-links--{{ social_links_modifier }}{% endfor %}">
   <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
   {% for social_site, social_link in social_links %}
-  <a class="rplm-social-links__link" href="{{ social_link }}">
-    {% include '@atoms/15-images/20-icon/icon.twig' with {
-      icon_name: social_site,
-    } only %}
-  </a>
+    <a class="rplm-social-links__link" href="{{ social_link }}">
+      {% include '@atoms/15-images/20-icon/icon.twig' with {
+        icon_name: social_site,
+        icon_modifiers: social_link_icon_modifiers,
+      } only %}
+    </a>
   {% endfor %}
 </div>
