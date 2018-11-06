@@ -1,6 +1,7 @@
 @import 'rpla-icon.variables';
 
 .rpla-icon {
+  fill: currentColor;
   height: 100%;
   width: 100%;
 
@@ -21,6 +22,7 @@
   &--efficiency,
   &--serve {
     color: get-brand-color(); // 1
+    fill: get-neutral-color('black');
   }
 
 }

@@ -1,0 +1,53 @@
+
+{% set button_modifiers = button_modifiers ?: [] %}
+
+{% if button_tag is empty %}
+  {% set button_tag = 'button' %}
+{% endif %}
+
+{#
+ # Ensure we have a default size
+#}
+{% set has_size = false %}
+{% for button_modifier in button_modifiers %}
+  {% if button_modifier starts with 'size-' %}
+    {% set has_size = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_size %}
+  {% set button_modifiers = button_modifiers | merge(['size-medium']) %}
+{% endif %}
+
+{#
+ # Ensure we have a type size
+#}
+{% set has_type = false %}
+{% for button_modifier in button_modifiers %}
+  {% if button_modifier starts with 'type-' %}
+    {% set has_type = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_type %}
+  {% set button_modifiers = button_modifiers | merge(['type-primary']) %}
+{% endif %}
+
+{% if button_icon_name is not empty %}
+  {% set button_icon_position = 'icon-position-' ~ (button_icon_position ? button_icon_position : 'after') %}
+  {% set button_modifiers = button_modifiers | merge(['with-icon', button_icon_position]) %}
+{% endif %}
+
+<{{ button_tag }} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}">
+  {% if button_icon_name is not empty %}
+    <span class="rpla-button__text">{{ button_text }}</span>
+    <div class="rpla-button__icon-wrapper">
+    {% include '@atoms/15-images/20-icon/icon.twig' with {
+      icon_name: button_icon_name,
+    } only %}
+    </div>
+  {% else %}
+    {{ button_text }}
+  {% endif %}
+</{{ button_tag }}>
+

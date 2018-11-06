@@ -1,0 +1,58 @@
+
+@mixin button-size ($size: 'm') {
+  @include font-weight('bold');
+  line-height: 1;
+
+  @if $size == 's' {
+    @include font-size('s');
+    padding: get-spacing('m') get-spacing('l');
+
+    .rpla-button__icon-wrapper {
+      height: rem(16px);
+      margin-left: get-spacing('s');
+      width: rem(16px);
+    }
+  } @else if $size == 'm' {
+    @include font-size('m');
+    padding: get-spacing('m') get-spacing('l');
+
+    .rpla-button__icon-wrapper {
+      height: rem(32px);
+      margin-left: get-spacing('m');
+      width: rem(32px);
+    }
+  } @else if $size == 'l' {
+    @include font-size('l');
+    padding: get-spacing('m') get-spacing('l');
+
+    .rpla-button__icon-wrapper {
+      height: rem(32px);
+      margin-left: get-spacing('m');
+      width: rem(32px);
+    }
+  } @else {
+    @error '#{$size} is not a support size of the button-size mixin';
+  }
+
+}
+
+@mixin button-type ($type: 'primary') {
+  @if $type == 'primary' {
+    @include hover {
+      background-color: get-brand-color('primary-tint-1');
+    }
+
+    background-color: get-brand-color('primary');
+  } @else if $type == 'secondary' {
+    @include hover {
+      color: get-neutral-color('white');
+    }
+
+    background-color: get-neutral-color('black');
+    color: get-brand-color('primary');
+  } @else {
+    @error '#{$type} is not a support type of the button-type mixin';
+  }
+}
+
+// end of file
