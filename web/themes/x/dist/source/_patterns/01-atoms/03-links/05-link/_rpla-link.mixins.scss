@@ -2,6 +2,7 @@
 
 @mixin typography-link-inverse-hover {
   background-color: get-neutral-color('white');
+  box-shadow: 0 0 0 .2em get-neutral-color('white');
 }
 
 @mixin typography-link-inverse {
@@ -9,6 +10,7 @@
   @include hover ('data-rpla-link-hover-target') {
     @include typography-link-inverse-hover;
   }
+
   border-bottom: 2px solid get-neutral-color('white');
   display: inline;
 }
@@ -18,6 +20,7 @@
   @include hover {
     color: get-utility-color('alert');
   }
+
   border-bottom: 2px solid get-utility-color('alert');
   display: inline;
 }
