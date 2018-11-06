@@ -77,3 +77,12 @@ article_page_footer:
               pattern: "molecules-social-links"
     - include():
         pattern: "layouts-footer-layout-2"
+        with:
+          footer_layout_2_section_1:
+            include():
+              pattern: "atoms-utility-text"
+              with:
+                utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+          footer_layout_2_section_2:
+            include():
+              pattern: "atoms-utility-text"
