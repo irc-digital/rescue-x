@@ -13,6 +13,10 @@
     fill: get-utility-color('alert');
   }
 
+  &--fill-inverse {
+    fill: get-neutral-color('white');
+  }
+
   //
   // 1) We are using currentColor in the SVG file, so we have to set the color, rather than, say, the fill
   //

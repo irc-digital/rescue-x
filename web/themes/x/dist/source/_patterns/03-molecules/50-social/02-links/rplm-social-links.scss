@@ -1,6 +1,8 @@
 @import 'rplm-social-links.variables';
 
 .rplm-social-links {
+  $self: &;
+
   &__title {
     @include typography-text-small;
     @include standard-vertical-spacing;
@@ -13,6 +15,17 @@
 
     &:not(:last-child) {
       margin-right: $social-link-spacing;
+    }
+  }
+
+  &--size-small {
+    #{$self}__link {
+      height: $social-link-size-small;
+      width: $social-link-size-small;
+
+      &:not(:last-child) {
+        margin-right: $social-link-spacing-small;
+      }
     }
   }
 }
