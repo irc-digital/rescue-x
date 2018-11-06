@@ -1,8 +1,7 @@
 @import '../../../../scss/core';
 
 @mixin typography-link-inverse-hover {
-  background-color: get-neutral-color('white');
-  box-shadow: 0 0 0 .2em get-neutral-color('white');
+  @include typography-link-hover (get-neutral-color('white'));
 }
 
 @mixin typography-link-inverse {
