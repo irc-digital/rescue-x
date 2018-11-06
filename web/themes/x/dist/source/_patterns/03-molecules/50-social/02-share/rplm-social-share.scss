@@ -1,7 +1,12 @@
 @import 'rplm-social-share.variables';
+@import '../01-links/rplm-social-links.mixin';
 
 .rplm-social-share {
   &__link {
+    @include hover {
+      @include social-hover;
+    }
+
     border: 1px solid get-neutral-color('light-gray');
     border-radius: 100%;
     display: inline-block;

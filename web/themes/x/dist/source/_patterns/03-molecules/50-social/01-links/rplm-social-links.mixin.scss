@@ -1,0 +1,29 @@
+@mixin social-hover {
+  .rpla-icon {
+    &--twitter {
+      fill: get-social-color('twitter');
+    }
+
+    &--facebook {
+      fill: get-social-color('facebook');
+    }
+
+    &--instagram {
+      fill: get-social-color('instagram');
+    }
+
+    &--youtube {
+      fill: get-social-color('youtube');
+    }
+
+    &--linkedIn {
+      fill: get-social-color('linkedin');
+    }
+
+    &--mail {
+      fill: get-social-color('mail');
+    }
+  }
+}
+
+// end of file

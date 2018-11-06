@@ -1,4 +1,5 @@
 @import 'rplm-social-links.variables';
+@import 'rplm-social-links.mixin';
 
 .rplm-social-links {
   $self: &;
@@ -9,6 +10,10 @@
   }
 
   &__link {
+    @include hover {
+      @include social-hover;
+    }
+
     display: inline-block;
     height: $social-link-size;
     width: $social-link-size;

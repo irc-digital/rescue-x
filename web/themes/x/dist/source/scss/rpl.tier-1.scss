@@ -84,6 +84,26 @@ $xxx-nc: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json',
     @return $utility-colors;
   }
 }
+
+//
+// Function to get a social media color
+//
+@function get-social-color($option: 'standard') {
+  $social-colors: (
+    'twitter': #00aced,
+    'facebook': #3b5998,
+    'instagram': #125688,
+    'youtube': #cc181e,
+    'linkedin': #007bb6,
+    'mail': get-brand-color(),
+  );
+  @if $option != 'all' {
+    @return safe-map-get($social-colors, $option);
+  } @else {
+    @return $social-colors;
+  }
+}
+
 // generates a JSON array of utility colors to be used by PatternLab
 $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', get-utility-color('all'), (prefix: '{ "color_utility":', suffix: '}'));
 
