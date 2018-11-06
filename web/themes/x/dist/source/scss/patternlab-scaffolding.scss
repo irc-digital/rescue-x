@@ -257,6 +257,25 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   min-height: 20em !important;
 }
 
+.sg-buttons-type-label {
+  @include typography-heading-medium;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.sg-buttons-type {
+  margin-bottom: get-spacing('xl');
+}
+
+.sg-buttons-type-row-label {
+  padding-right: get-spacing();
+}
+
+.sg-buttons-type-row-cell {
+  padding-right: get-spacing('s');
+  padding-bottom: get-spacing('s');
+}
+
 .xxx-typography-text-extra-small {
   @include typography-text-extra-small;
 }

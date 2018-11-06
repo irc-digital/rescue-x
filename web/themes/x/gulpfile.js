@@ -98,6 +98,7 @@ const jsonToYaml = require('gulp-json-to-yaml');
 const clean = require('gulp-clean');
 const warn_size = require('gulp-warn-size');
 const replace = require('gulp-replace');
+var concat = require('gulp-concat');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -223,7 +224,7 @@ gulp.task('patternlab:generate', function () {
  * to more dynamically geneate some stuff (e.g. like color palettes)
  */
 gulp.task('patternlab:generate:variables', function () {
-  runSequence('patternlab:generate:variables_as_json', 'patternlab:generate:variables_as_yml');
+  runSequence('patternlab:generate:variables_as_json', 'patternlab:generate:variables_as_yml', 'patternlab:generate:concatenate_button_examples');
 
 
 
@@ -237,8 +238,17 @@ gulp.task('patternlab:generate:variables', function () {
 
 });
 
+gulp.task('patternlab:generate:concatenate_button_examples', function () {
+  fs.writeFileSync(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/button-examples.yml', "");
+
+  return gulp.src(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/*.yml')
+      .pipe(clean())
+      .pipe(concat('button-examples.yml', {newLine: ''}))
+      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/'));
+});
+
 gulp.task('patternlab:generate:variables_as_json', function () {
-  return gulp.src(config.patternLab.dir + '/source/scss/rpl.tier-*.scss')
+  return gulp.src([config.patternLab.dir + '/source/scss/rpl.tier-*.scss', config.patternLab.dir + '/source/_patterns/01-atoms/05-buttons/rpla-button.mixin.scss'])
       .pipe(sass(
           {
             functions: export_sass('.')
@@ -250,7 +260,7 @@ gulp.task('patternlab:generate:variables_as_json', function () {
 });
 
 gulp.task('patternlab:generate:variables_as_yml', function () {
-  gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
+  return gulp.src(config.patternLab.dir + '/source/_patterns/**/*.json')
       .pipe(clean()) // deletes the json files
       .pipe(jsonToYaml())
       .pipe(rename({extname: '.yml'}))
