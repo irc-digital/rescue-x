@@ -6,7 +6,7 @@
 
 @mixin typography-link-inverse {
   @include font-weight('bold');
-  @include hover {
+  @include hover ('data-rpla-link-hover-target') {
     @include typography-link-inverse-hover;
   }
   border-bottom: 2px solid get-neutral-color('white');

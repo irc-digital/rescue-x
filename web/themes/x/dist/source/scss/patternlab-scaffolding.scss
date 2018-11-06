@@ -263,6 +263,13 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   text-transform: capitalize;
 }
 
+.sg-buttons-hot-container {
+  background-color: get-neutral-color('white');
+  display: block;
+  max-width: 500px;
+  padding: get-spacing('l');
+}
+
 .sg-buttons-type {
   margin-bottom: get-spacing('xl');
 }

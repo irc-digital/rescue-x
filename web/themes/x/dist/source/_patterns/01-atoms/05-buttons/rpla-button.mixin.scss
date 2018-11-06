@@ -37,20 +37,20 @@ $xxx-bs: export('dist/source/_patterns/01-atoms/06-button-examples/button-exampl
 
 @mixin button-type ($type: 'primary') {
   @if $type == 'primary' {
-    @include hover {
+    @include hover('data-rpla-link-hover-target') {
       background-color: get-brand-color('primary-tint-1');
     }
 
     background-color: get-brand-color('primary');
   } @else if $type == 'secondary' {
-    @include hover {
+    @include hover('data-rpla-link-hover-target') {
       color: get-neutral-color('white');
     }
 
     background-color: get-neutral-color('black');
     color: get-brand-color('primary');
   } @else if $type == 'tertiary' {
-    @include hover {
+    @include hover('data-rpla-link-hover-target') {
       background-color: get-neutral-color('light-gray');
     }
 
@@ -62,6 +62,5 @@ $xxx-bs: export('dist/source/_patterns/01-atoms/06-button-examples/button-exampl
 }
 
 $xxx-bt: export('dist/source/_patterns/01-atoms/06-button-examples/button-examples-types.json', ('type-primary', 'type-secondary', 'type-tertiary'), (prefix: '{ "button_types":', suffix: '}'));
-
 
 // end of file
