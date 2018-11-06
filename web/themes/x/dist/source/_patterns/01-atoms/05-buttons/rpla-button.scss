@@ -1,5 +1,6 @@
 @import 'rpla-button.variables';
 @import 'rpla-button.mixin';
+@import 'rpla-button.variables';
 
 .rpla-button {
   $self: &;
@@ -8,12 +9,6 @@
   border: 0;
   display: inline-flex;
   text-decoration: none;
-
-  &--icon-position-before {
-    #{$self}__text {
-      order: 2;
-    }
-  }
 
   &--size-small {
     @include button-size('s');
@@ -38,6 +33,20 @@
   &--type-tertiary {
     @include button-type('tertiary');
   }
+
+  &--icon-position-before {
+    #{$self}__icon-wrapper {
+      order: -1;
+      margin-right: $button-icon-gap;
+    }
+  }
+
+  &--icon-position-after {
+    #{$self}__icon-wrapper {
+      margin-left: $button-icon-gap;
+    }
+  }
+  
 }
 
 // end of file

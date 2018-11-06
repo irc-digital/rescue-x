@@ -9,7 +9,6 @@
 
     .rpla-button__icon-wrapper {
       height: rem(16px);
-      margin-left: get-spacing('s');
       width: rem(16px);
     }
   } @else if $size == 'm' {
@@ -18,7 +17,6 @@
 
     .rpla-button__icon-wrapper {
       height: rem(32px);
-      margin-left: get-spacing('m');
       width: rem(32px);
     }
   } @else if $size == 'l' {
@@ -27,7 +25,6 @@
 
     .rpla-button__icon-wrapper {
       height: rem(32px);
-      margin-left: get-spacing('m');
       width: rem(32px);
     }
   } @else {
