@@ -38,6 +38,9 @@
   }
 
   &__social-link {
+    @include hover {
+      @include social-hover;
+    }
     display: inline-block;
     height: rem(16px);
     width: rem(16px);
