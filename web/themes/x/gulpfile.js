@@ -134,14 +134,15 @@ gulp.task('build:styles:individual', function () {
   return build_styles (config.styles.input_individual, 'patterns');
 });
 
-function build_styles (source_files, destination_subfolder = '') {
+function build_styles (source_files, destination_subfolder) {
+    destination_subfolder = (typeof destination_subfolder !== 'undefined') ? destination_subfolder : '';
   return gulp.src(source_files)
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(postCSSProcessors))
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(warn_size(config.styles.max_file_size))
-      .on('error', () => process.exit(1))
+      .on('error', function() { process.exit(1);})
       .pipe(sourcemaps.write('./'))
       .pipe(rename({dirname: destination_subfolder}))
       .pipe(gulp.dest(config.styles.output))
