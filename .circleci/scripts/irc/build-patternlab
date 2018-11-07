@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Go to base level of project
+cd "$(dirname $0)/../../"
+
+pwd
+
+# cd ../web/themes/x
