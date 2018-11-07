@@ -109,7 +109,7 @@ jobs:
 
             - run:
                 name: Build Patternlab assets
-                command: themes/x/node_modules/gulp/bin/gulp.js patternlab:generate --gulpfile themes/x/gulpfile.js
+                command: pwd
 
             - run:
                 name: Push to IRC monthly branch
