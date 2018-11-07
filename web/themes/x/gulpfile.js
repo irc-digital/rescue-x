@@ -459,6 +459,7 @@ gulp.task('watch', function(callback) {
 
 gulp.task('clean', ['clean:styles','clean:javascript', 'clean:svgs']);
 
+// The build task called by Circle CI
 gulp.task('build', function(callback) {
   return runSequence('svgs-change', 'sass-change', 'patternlab:generate:variables', 'build:javascript', 'patternlab:generate', 'bs:reload', callback);
 });
