@@ -109,8 +109,7 @@ jobs:
 
             - run:
                 name: Build Patternlab assets
-                # command: /root/example_drops_8_composer/web/themes/x/node_modules/gulp/bin/gulp.js patternlab:generate --gulpfile themes/x/gulpfile.js
-                command: node -v
+                command: ./.circleci/scripts/irc/build-patternlab
 
             - run:
                 name: Push to IRC monthly branch
