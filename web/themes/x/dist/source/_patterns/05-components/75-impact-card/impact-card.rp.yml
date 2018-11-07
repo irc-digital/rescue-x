@@ -1,0 +1,31 @@
+impact_card:
+  label: Impact card
+  description: An impact card (TODO)
+  use: "@components/75-impact-card/impact-card.twig"
+  section: TRUE
+  fields:
+    impact_card_heading_title:
+      type: text
+      label: "Impact card heading title"
+      description: "The title in the optional heading above the impact card"
+      preview: "Veritatis neque sit aut."
+    impact_card_heading_description:
+      type: text
+      label: "Impact card heading description"
+      description: "The description text in the optional heading section above the impact card"
+      preview: "Sit aut necessitatibus veritatis."
+    impact_card_front_figure:
+      type: text
+      label: "Impact card front figure"
+      description: ".."
+      preview: "2014VI"
+    impact_card_front_description:
+      type: text
+      label: "Impact card front description"
+      description: "Impact card front description text"
+      preview: "Qui sint impedit cum deleniti aliquam optio officia. Sed ipsam blanditiis eos rerum."
+  libraries:
+    - impact_card_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-impact-card.css: {}
