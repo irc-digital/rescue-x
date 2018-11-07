@@ -25,16 +25,16 @@
     @include button-size('l');
   }
 
-  &--type-primary {
-    @include button-type('primary');
+  &--type-one {
+    @include button-type('one');
   }
 
-  &--type-secondary {
-    @include button-type('secondary');
+  &--type-two {
+    @include button-type('two');
   }
 
-  &--type-tertiary {
-    @include button-type('tertiary');
+  &--type-three {
+    @include button-type('three');
   }
 
   &--icon-position-before {

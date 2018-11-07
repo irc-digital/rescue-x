@@ -3,6 +3,6 @@ button_sizes:
   - size-medium
   - size-large
 button_types:
-  - type-primary
-  - type-secondary
-  - type-tertiary
+  - type-one
+  - type-two
+  - type-three

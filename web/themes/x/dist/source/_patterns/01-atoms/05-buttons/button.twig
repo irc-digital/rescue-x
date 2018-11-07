@@ -8,13 +8,18 @@
 {% if button_href is not empty %}
   {% set button_tag = 'a' %}
 {% endif %}
+
 {#
- # Ensure we have a default size
+ # Ensure we have sensible default for size and type
 #}
 {% set has_size = false %}
+{% set has_type = false %}
 {% for button_modifier in button_modifiers %}
   {% if button_modifier starts with 'size-' %}
     {% set has_size = true %}
+  {% endif %}
+  {% if button_modifier starts with 'type-' %}
+    {% set has_type = true %}
   {% endif %}
 {% endfor %}
 
@@ -22,18 +27,8 @@
   {% set button_modifiers = button_modifiers | merge(['size-medium']) %}
 {% endif %}
 
-{#
- # Ensure we have a type size
-#}
-{% set has_type = false %}
-{% for button_modifier in button_modifiers %}
-  {% if button_modifier starts with 'type-' %}
-    {% set has_type = true %}
-  {% endif %}
-{% endfor %}
-
 {% if not has_type %}
-  {% set button_modifiers = button_modifiers | merge(['type-primary']) %}
+  {% set button_modifiers = button_modifiers | merge(['type-one']) %}
 {% endif %}
 
 {% if button_icon_name is not empty %}
