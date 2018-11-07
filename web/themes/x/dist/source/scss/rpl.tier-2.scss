@@ -94,27 +94,6 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-@mixin typography-link-hover ($color) {
-  background-color: $color;
-  box-shadow: 0 0 0 .2em $color;
-}
-
-@mixin typography-link-standard-hover {
-  @include typography-link-hover (get-brand-color('primary'));
-}
-
-@mixin typography-link-standard ($has-hover-effect: true) {
-  @include font-weight('bold');
-  border-bottom: 2px solid get-brand-color('primary');
-  display: inline;
-
-  @if $has-hover-effect {
-    @include hover {
-      @include typography-link-standard-hover;
-    }
-  }
-}
-
 // Medium  on mobile, Medium large on bigger devices
 @mixin typography-heading-medium {
   @include font-size('m');

@@ -31,8 +31,7 @@
       <div class="rplc-teaser-highlighted__summary">{{ teaser_highlighted_summary }}</div>
       {% include '@atoms/03-links/05-link/link.twig' with {
         link_text: teaser_highlighted_cta,
-        link_tag: 'div',
-        link_modifiers: ['style-inverse'],
+        link_modifiers: ['type-one', 'subtype-inverse'],
       } only %}
     {% endblock teaser_text_block %}
     </div>

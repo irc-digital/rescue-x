@@ -1,42 +1,13 @@
 @import 'rpla-link.variables';
 
-@mixin typography-link-inverse-hover {
-  @include typography-link-hover (get-neutral-color('white'));
+@mixin link-border ($color: $link-default-border-color) {
+  border-bottom: $link-default-border-width solid $color;
 }
 
-@mixin typography-link-inverse {
-  @include font-weight('bold');
+@mixin link-hover-border ($color: $link-default-border-color, $border-width: $link-default-border-width) {
   @include hover ('data-rpla-link-hover-target') {
-    @include typography-link-inverse-hover;
+    border-bottom: $border-width solid $color;
   }
-
-  border-bottom: 2px solid get-neutral-color('white');
-  display: inline;
-}
-
-@mixin typography-link-alert {
-  @include font-weight('bold');
-  @include hover {
-    color: get-utility-color('alert');
-  }
-
-  border-bottom: 2px solid get-utility-color('alert');
-  display: inline;
-}
-
-@mixin typography-link-utility {
-  @include font-size('xxs');
-  @include font-weight('normal');
-  display: inline;
-  text-decoration: underline;
-}
-
-@mixin link-border-color ($color: $link-default-border-color, $border-width: $link-default-border-width) {
-  border-bottom: $border-width solid $color;
-}
-
-@mixin link-hover-border-color ($color: $link-default-border-color, $border-width: $link-default-border-width) {
-  border-bottom: $border-width solid $color;
 }
 
 @mixin link-color ($color: $link-default) {
@@ -56,7 +27,26 @@
 @mixin link-hover-background-color ($color: $link-default-hover-background-color) {
   @include hover ('data-rpla-link-hover-target') {
     background-color: $color;
+    box-shadow: 0 0 0 .2em $color;
   }
 }
+
+@mixin link-size ($size: 'm') {
+  @include font-size($size);
+
+  @if $size == 's' {
+    @include typography-text-small;
+  } @else if $size == 'm' {
+    @include typography-text-standard;
+  } @else if $size == 'l' {
+    @include typography-text-large;
+  } @else {
+    @error '#{$size} is not a support size of the link-size mixin';
+  }
+
+  @include font-weight('bold');
+
+}
+
 
 // end of file

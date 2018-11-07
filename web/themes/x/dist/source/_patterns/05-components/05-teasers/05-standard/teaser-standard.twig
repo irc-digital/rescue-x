@@ -12,7 +12,7 @@
  */
 #}
 <div class="rplc-teaser-standard">
-  <a href="{{ teaser_standard_url }}" class="rplc-teaser-standard__wrapper-link">
+  <a href="{{ teaser_standard_url }}" class="rplc-teaser-standard__wrapper-link" data-rpla-link-hover-target>
     <div class="rplc-teaser-standard__image-wrapper">
     {% block teaser_image_block %}
       {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
@@ -29,7 +29,11 @@
       <div class="rplc-teaser-standard__title">
         <h3 class="rpla-heading rpla-heading--medium-large">{{ teaser_standard_title }}</h3>
       </div>
-      <div class="rplc-teaser-standard__cta">{{ teaser_standard_cta }}</div>
+      <div class="rplc-teaser-standard__cta-wrapper">
+        {% include '@atoms/03-links/05-link/link.twig' with {
+          link_text: teaser_standard_cta,
+        } only %}
+      </div>
     {% endblock teaser_text_block %}
     </div>
   </a>
