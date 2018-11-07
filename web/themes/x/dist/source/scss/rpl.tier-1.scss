@@ -33,7 +33,7 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
 //
 @function get-brand-color($option: 'primary') {
   $brand-colors: (
-    'primary': pink,
+    'primary': #fdc513,
     'primary-tint-1': #ffd44b,
     'primary-tint-2': #ffd960,
   );
