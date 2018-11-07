@@ -1,16 +1,7 @@
-{#
-/**
- * Available variables:
- *     social_links          - Associative array
- *        key                       - The social site key, used to generate the svg icon
- *        value                     - The URL of the IRC social media account
- *
- * Available blocks:
- * - none
- */
-#}
 <div class="rplm-social-links{% for social_links_modifier in social_links_modifiers %} rplm-social-links--{{ social_links_modifier }}{% endfor %}">
-  <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
+  {% if social_links_has_title == true %}
+    <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
+  {% endif %}
   {% for social_site, social_link in social_links %}
     <a class="rplm-social-links__link" href="{{ social_link }}">
       {% include '@atoms/15-images/20-icon/icon.twig' with {

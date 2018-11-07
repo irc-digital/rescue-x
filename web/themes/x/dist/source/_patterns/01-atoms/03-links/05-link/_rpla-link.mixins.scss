@@ -1,14 +1,15 @@
-@import '../../../../scss/core';
+@import 'rpla-link.variables';
 
 @mixin typography-link-inverse-hover {
-  background-color: get-neutral-color('white');
+  @include typography-link-hover (get-neutral-color('white'));
 }
 
 @mixin typography-link-inverse {
   @include font-weight('bold');
-  @include hover {
+  @include hover ('data-rpla-link-hover-target') {
     @include typography-link-inverse-hover;
   }
+
   border-bottom: 2px solid get-neutral-color('white');
   display: inline;
 }
@@ -18,6 +19,7 @@
   @include hover {
     color: get-utility-color('alert');
   }
+
   border-bottom: 2px solid get-utility-color('alert');
   display: inline;
 }
@@ -27,6 +29,34 @@
   @include font-weight('normal');
   display: inline;
   text-decoration: underline;
+}
+
+@mixin link-border-color ($color: $link-default-border-color, $border-width: $link-default-border-width) {
+  border-bottom: $border-width solid $color;
+}
+
+@mixin link-hover-border-color ($color: $link-default-border-color, $border-width: $link-default-border-width) {
+  border-bottom: $border-width solid $color;
+}
+
+@mixin link-color ($color: $link-default) {
+  color: $color;
+}
+
+@mixin link-hover-color ($color: $link-default) {
+  @include hover ('data-rpla-link-hover-target') {
+    color: $color;
+  }
+}
+
+@mixin link-background-color ($color: $link-default-background-color) {
+  background-color: $color;
+}
+
+@mixin link-hover-background-color ($color: $link-default-hover-background-color) {
+  @include hover ('data-rpla-link-hover-target') {
+    background-color: $color;
+  }
 }
 
 // end of file

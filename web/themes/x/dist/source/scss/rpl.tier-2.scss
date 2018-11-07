@@ -94,8 +94,13 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
+@mixin typography-link-hover ($color) {
+  background-color: $color;
+  box-shadow: 0 0 0 .2em $color;
+}
+
 @mixin typography-link-standard-hover {
-  background-color: get-brand-color();
+  @include typography-link-hover (get-brand-color('primary'));
 }
 
 @mixin typography-link-standard ($has-hover-effect: true) {

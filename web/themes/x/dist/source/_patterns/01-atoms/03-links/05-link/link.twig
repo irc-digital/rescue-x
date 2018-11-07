@@ -8,6 +8,19 @@
  * - none
  */
 #}
+{% set link_modifiers = link_modifiers ?: [] %}
+
+{% set has_type = false %}
+{% for link_modifier in link_modifiers %}
+  {% if link_modifier starts with 'type-' %}
+    {% set has_type = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_type %}
+  {% set link_modifiers = link_modifiers | merge(['type-one']) %}
+{% endif %}
+
 {% if link_tag is empty %}
   {% set link_tag = 'a' %}
 {% endif %}
