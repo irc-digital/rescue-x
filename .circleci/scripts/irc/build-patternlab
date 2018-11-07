@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Go to base level of project
-cd "$(dirname $0)/../../web/themes/x"
-
+cd "$(dirname $0)/../../"
+cd ../web/themes/x
 pwd
