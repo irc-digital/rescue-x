@@ -434,16 +434,13 @@ gulp.task('javascript-change', function () {
 // Watch Files For Changes
 gulp.task('watch', function() {
 
-  runSequence('patterns-change', 'svgs-change', 'sass-change', 'build:javascript', 'bs:reload');
-
   if (config.browserSync.proxy.target) {
     browserSync.init({
       proxy: config.browserSync.proxy,
       open: config.browserSync.open,
       notify: false
     });
-  }
-  else {
+  } else {
     browserSync.init({
       server: config.browserSync.server,
       open: config.browserSync.open,
@@ -458,5 +455,9 @@ gulp.task('watch', function() {
 
 gulp.task('clean', ['clean:styles','clean:javascript', 'clean:svgs']);
 
+gulp.task('build', function() {
+  runSequence('patterns-change', 'svgs-change', 'sass-change', 'build:javascript', 'bs:reload');
+});
+
 // Default Task
-gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'watch']);

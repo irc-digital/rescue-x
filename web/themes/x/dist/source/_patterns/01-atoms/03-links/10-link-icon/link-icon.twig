@@ -9,9 +9,30 @@
  * - none
  */
 #}
-<a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}">
-  <svg class="rpla-link-icon__icon rpla-link-icon__icon--{{ link_icon_name }}">
-    <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#rpl-svg-{{ link_icon_name }}'></use></svg>
-  </svg>
-  <span class="rpla-link-icon__text">{{ link_icon_text }}</span>
+{% set link_icon_modifiers = link_icon_modifiers ?: [] %}
+
+{% set type = 'type-one' %}
+{% for link_icon_modifier in link_icon_modifiers %}
+  {% if link_icon_modifier starts with 'type-' %}
+    {% set type = link_icon_modifier %}
+  {% endif %}
+{% endfor %}
+
+{% if type == 'type-two' %}
+  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small']  %}
+{% else %}
+  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
+{% endif %}
+
+<a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
+  <div class="rpla-link-icon__icon-wrapper">
+    {% include '@atoms/15-images/20-icon/icon.twig' with {
+      icon_name: link_icon_name,
+      icon_modifiers: ['fill-branded'],
+    } only %}
+  </div>
+  {% include '@atoms/03-links/05-link/link.twig' with {
+    link_text: link_icon_text,
+    link_modifiers: link_modifiers,
+  } only %}
 </a>
