@@ -13,5 +13,4 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get --assume-yes install nodejs
 
 cd ../web/themes/x
-pwd
-# node_modules/gulp/bin/gulp.js patternlab:generate --gulpfile themes/x/gulpfile.js
+node_modules/gulp/bin/gulp.js patternlab:generate --gulpfile gulpfile.js

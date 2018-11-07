@@ -120,14 +120,14 @@ jobs:
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
 
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
-
-            - run:
-               name: Dev dependencies
-               command: composer install
-
-            - run:
-                name: Run functional tests with Behat
-                command: ./tests/scripts/run-behat
+#
+#            - run:
+#               name: Dev dependencies
+#               command: composer install
+#
+#            - run:
+#                name: Run functional tests with Behat
+#                command: ./tests/scripts/run-behat
 
 #            - run:
 #                name: Install additional dependencies
