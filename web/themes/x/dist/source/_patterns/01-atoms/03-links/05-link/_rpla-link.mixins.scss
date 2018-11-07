@@ -5,7 +5,7 @@
 }
 
 @mixin link-hover-border ($color: $link-default-border-color, $border-width: $link-default-border-width) {
-  @include hover ('data-rpla-link-hover-target') {
+  @include hover ('data-rpla-hover-target') {
     border-bottom: $border-width solid $color;
   }
 }
@@ -15,7 +15,7 @@
 }
 
 @mixin link-hover-color ($color: $link-default) {
-  @include hover ('data-rpla-link-hover-target') {
+  @include hover ('data-rpla-hover-target') {
     color: $color;
   }
 }
@@ -25,15 +25,13 @@
 }
 
 @mixin link-hover-background-color ($color: $link-default-hover-background-color) {
-  @include hover ('data-rpla-link-hover-target') {
+  @include hover ('data-rpla-hover-target') {
     background-color: $color;
     box-shadow: 0 0 0 .2em $color;
   }
 }
 
 @mixin link-size ($size: 'm') {
-  @include font-size($size);
-
   @if $size == 's' {
     @include typography-text-small;
   } @else if $size == 'm' {

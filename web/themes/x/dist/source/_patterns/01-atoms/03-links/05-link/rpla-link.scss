@@ -5,8 +5,7 @@
   $self: &;
 
   @include font-weight('bold');
-  display: inline-flex;
-  line-height: 1;
+  display: inline;
   text-decoration: none;
 
   &--type-one {

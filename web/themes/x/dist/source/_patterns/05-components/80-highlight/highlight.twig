@@ -19,7 +19,11 @@
       } only %}
 
       {% if highlight_link_url %}
-        <a href="{{ highlight_link_url }}" class="rpla-link rpla-link--hover-effect-none rpla-link--size-extra-small">{{ highlight_link_text }}</a>
+        {% include '@atoms/03-links/05-link/link.twig' with {
+          link_text: highlight_link_text,
+          link_url: highlight_link_url,
+          link_modifiers: ['type-two', 'subtype-inverse', 'subtype-no-hover-effect', 'size-small'],
+        } only %}
       {% endif %}
     </div>
   </div>
