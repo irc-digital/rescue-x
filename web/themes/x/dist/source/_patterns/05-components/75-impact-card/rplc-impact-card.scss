@@ -1,1 +1,17 @@
 @import 'rplc-impact-card.variables';
+  
+
+.rplc-impact-card {
+  $self: &;
+
+  background-color: #fdc513;
+  border: 1px solid;
+  color: green;
+  height: 200px;
+  margin: 20px;
+
+
+  &__inner-wrapper {
+    background-color: white;
+  }
+}
