@@ -25,4 +25,8 @@ img {
   max-width: 100%;
 }
 
+* {
+  @include rotate;
+}
+
 // end of file

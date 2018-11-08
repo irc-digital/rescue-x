@@ -304,7 +304,12 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
 // generates a JSON array of letter spacing to be used by PatternLab
 //$xxx-tvs: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', get-letter-spacing('all'), (prefix: '{ "letter_spacing":', suffix: '}'));
 
-
+// we can fill in more rotations as we need them
+@mixin rotate {
+  &[data-rpl-rotate='10'] {
+    transform: rotate(10deg);
+  }
+}
 
 // end of file
 
