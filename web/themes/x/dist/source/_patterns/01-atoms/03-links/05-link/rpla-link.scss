@@ -5,10 +5,11 @@
   $self: &;
 
   @include font-weight('bold');
+  @include transition;
+
   display: inline;
   text-decoration: none;
-  transition: .15s ease-in-out, color .15s ease-in-out;
-  transition-property: background-color, color, box-shadow;
+
 
   &--type-one {
     @include link-hover-background-color(get-brand-color('primary'));

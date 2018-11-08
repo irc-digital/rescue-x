@@ -1,7 +1,10 @@
 @import 'rpla-link-icon.variables';
+@import '../05-link/rpla-link.mixins';
 
 .rpla-link-icon {
   $self: &;
+
+  @include transition;
 
   align-items: center;
   display: inline-flex;
@@ -9,9 +12,6 @@
 
   &__icon-wrapper {
     height: 16px;
-    margin-right: get-spacing('s');
-    //position: relative;
-    //top: 2px;
     width: 16px;
   }
 
@@ -26,5 +26,10 @@
       margin-left: $link-icon-gap;
       order: 1;
     }
+  }
+
+  &--type-three {
+    @include link-hover-background-color(get-brand-color('primary'));
+    background-color: get-neutral-color('white');
   }
 }

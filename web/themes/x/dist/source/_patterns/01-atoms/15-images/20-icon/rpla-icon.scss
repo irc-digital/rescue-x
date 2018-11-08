@@ -4,6 +4,8 @@
 .rpla-icon {
   $self: &;
 
+  @include transition;
+
   display: block;
   fill: currentColor;
   height: 100%;
@@ -21,17 +23,23 @@
     fill: get-neutral-color('white');
   }
 
+  &--fill-inverse-hover {
+    @include hover ('data-rpla-hover-target') {
+      fill: get-neutral-color('white');
+    }
+  }
+
   &--fill-third-party {
     @include social-fill(#{$self});
 
-    &:hover {
+    @include hover ('data-rpla-hover-target') {
       fill: get-neutral-color('white');
     }
   }
 
   &--fill-third-party-hover,
   &--fill-third-party-inverse {
-    &:hover {
+    @include hover ('data-rpla-hover-target') {
       @include social-fill(#{$self});
     }
   }

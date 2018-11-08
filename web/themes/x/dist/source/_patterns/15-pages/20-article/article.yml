@@ -22,6 +22,17 @@ article_page_content:
         with:
           text_modifiers:
             - body
+    - join():
+      - "<p class='rpla-paragraph rpla-paragraph--body'>Nulla consequat massa quis enim "
+      - include():
+          pattern: "atoms-link-icon"
+          with:
+            link_icon_text: "praesent venenatis metus at tortor"
+            link_icon_name: 'twitter'
+            link_icon_position: 'after'
+            link_icon_modifiers:
+              - 'type-three'
+      - " praesent ut ligula non mi.</p>"
     - include():
         pattern: "atoms-paragraph"
         with:
