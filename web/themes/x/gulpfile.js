@@ -143,7 +143,7 @@ function build_styles (source_files, destination_subfolder = '') {
       .pipe(warn_size(config.styles.max_file_size))
       .on('error', () => process.exit(1))
       .pipe(sourcemaps.write('./'))
-      // .pipe(rename({dirname: destination_subfolder}))
+      .pipe(rename({dirname: destination_subfolder}))
       .pipe(gulp.dest(config.styles.output))
       .pipe(browserSync.stream({match: '**/*.css'}));
 }

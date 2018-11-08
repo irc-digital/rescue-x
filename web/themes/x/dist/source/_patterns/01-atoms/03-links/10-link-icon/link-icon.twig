@@ -22,7 +22,7 @@
   {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}
   {% set icon_modifiers = ['fill-branded'] %}
 {% elseif type == 'type-three' %}
-  {% set link_modifiers = ['type-two', 'subtype-inverse', 'subtype-no-underline', 'subtype-no-hover-effect'] %}
+  {% set link_modifiers = ['type-two', 'subtype-inverse', 'subtype-no-underline', 'subtype-inherit-weight', 'subtype-no-hover-effect'] %}
   {% set icon_modifiers = ['fill-inverse-hover'] %}
 {% else %}
   {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
@@ -33,15 +33,25 @@
 {% set link_icon_modifiers = link_icon_modifiers | merge([link_icon_position]) %}
 
 <a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
-  <span class="rpla-link-icon__icon-wrapper">
-    {% include '@atoms/15-images/20-icon/icon.twig' with {
-      icon_name: link_icon_name,
-      icon_modifiers: icon_modifiers,
-    } only %}
-  </span>
+    {% if link_icon_position == 'icon-position-before' %}
+      <span class="rpla-link-icon__icon-wrapper">
+        {% include '@atoms/15-images/20-icon/icon.twig' with {
+          icon_name: link_icon_name,
+          icon_modifiers: icon_modifiers,
+        } only %}
+      </span>
+    {% endif %}
   {% include '@atoms/03-links/05-link/link.twig' with {
     link_tag: 'span',
     link_text: link_icon_text,
     link_modifiers: link_modifiers,
   } only %}
+  {% if link_icon_position == 'icon-position-after' %}
+    <span class="rpla-link-icon__icon-wrapper">
+      {% include '@atoms/15-images/20-icon/icon.twig' with {
+        icon_name: link_icon_name,
+        icon_modifiers: icon_modifiers,
+      } only %}
+    </span>
+  {% endif %}
 </a>

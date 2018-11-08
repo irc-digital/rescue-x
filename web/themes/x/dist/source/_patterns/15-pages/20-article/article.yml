@@ -27,7 +27,7 @@ article_page_content:
       - include():
           pattern: "atoms-link-icon"
           with:
-            link_icon_text: "praesent venenatis metus at tortor"
+            link_icon_text: "praesent venenatis metus at tortor as justo online"
             link_icon_name: 'twitter'
             link_icon_position: 'after'
             link_icon_modifiers:

@@ -7,10 +7,11 @@
   @include transition;
 
   align-items: center;
-  display: inline-flex;
+  display: inline;
   text-decoration: none;
 
   &__icon-wrapper {
+    display: inline-block;
     height: 16px;
     width: 16px;
   }
@@ -24,12 +25,12 @@
   &--icon-position-after {
     #{$self}__icon-wrapper {
       margin-left: $link-icon-gap;
-      order: 1;
     }
   }
 
   &--type-three {
     @include link-hover-background-color(get-brand-color('primary'));
     background-color: get-neutral-color('white');
+    margin-right: get-typography-spacing('compact');
   }
 }
