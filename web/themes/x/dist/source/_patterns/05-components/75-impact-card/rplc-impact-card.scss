@@ -1,14 +1,10 @@
 @import 'rplc-impact-card.variables';
-  
 
 .rplc-impact-card {
   $self: &;
-
-  background-color: #fdc513;
+  background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
   border: 1px solid;
-  color: green;
   height: 200px;
-  margin: 20px;
 
 
   &__inner-wrapper {
