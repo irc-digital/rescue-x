@@ -9,24 +9,16 @@
     flex: 1;
   }
 
-  &__cta {
+  &__cta-wrapper {
     @include typography-text-small;
-    @include typography-link-standard;
     align-self: flex-start;
-    margin-bottom: $teaser-standard-cta-margin-bottom;
 
     @include breakpoint(phablet) {
       @include typography-text-standard;
-      @include typography-link-standard;
     }
   }
 
   &__wrapper-link {
-    @include hover {
-      #{ $self }__cta {
-        @include typography-link-standard-hover;
-      }
-    }
     display: flex;
     flex-direction: column;
     height: 100%;

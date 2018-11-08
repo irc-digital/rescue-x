@@ -32,8 +32,8 @@
 
 <h3 class="sg-buttons-type-label">Button within hot container</h3>
 <p>This demonstrates the usage of a button within a container that is a link. In this scenario the button's hover effect needs to fire whenever the hot container is hovered into.</p>
-<p style="margin-bottom: 2rem">Implementation note: Add an attribute to the containing link called <span style="font-family: monospace;">data-rpla-link-hover-target</span>. HTML does not permit links within links, so it is important not to attempt to use the anchor tag for your button when you are within a hot container.</p>
-<a style='margin-bottom: 2rem;' href="#" class="sg-buttons-hot-container" data-rpla-link-hover-target>
+<p style="margin-bottom: 2rem">Implementation note: Add an attribute to the containing link called <span style="font-family: monospace;">data-rpla-hover-target</span>. HTML does not permit links within links, so it is important not to attempt to use the anchor tag for your button when you are within a hot container.</p>
+<a style='margin-bottom: 2rem;' href="#" class="sg-buttons-hot-container" data-rpla-hover-target>
   <h3 class="rpla-heading rpla-heading--medium">Donec mollis hendrerit</h3>
   <p class="rpla-paragraph">Maecenas vestibulum mollis diam. Donec mollis hendrerit risus. Etiam ultricies nisi vel augue. Quisque malesuada placerat nisl. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.</p>
   {% include '@atoms/05-buttons/button.twig' with { button_icon_name: 'heart', button_text: 'Donate now' } only %}

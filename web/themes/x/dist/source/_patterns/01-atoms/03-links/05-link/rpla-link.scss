@@ -4,6 +4,79 @@
 .rpla-link {
   $self: &;
 
+  @include transition;
+  display: inline;
+  text-decoration: none;
+
+  &:not(#{$self}--subtype-inherit-weight) {
+    @include font-weight('bold');
+  }
+
+  &--type-one {
+    @include link-hover-background-color(get-brand-color('primary'));
+
+    &:not(#{$self}--subtype-no-underline) {
+      @include link-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-white {
+      @include link-color(get-neutral-color('white'));
+    }
+
+    &#{$self}--subtype-black {
+      @include link-border(get-neutral-color('black'));
+      @include link-hover-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-yellow {
+      @include link-color(get-brand-color('primary'));
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-background-color(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('black'));
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-background-color(get-neutral-color('white'));
+      @include link-hover-border(get-neutral-color('white'));
+    }
+  }
+
+  &--type-two {
+    @include link-color(get-neutral-color('white'));
+
+    &:not(#{$self}--subtype-no-hover-effect) {
+      @include link-hover-color(get-brand-color('primary'));
+    }
+
+    &:not(#{$self}--subtype-no-underline) {
+      @include link-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-alert {
+      @include link-color(get-neutral-color('black'));
+      @include link-border(get-utility-color('alert'));
+      @include link-hover-color(get-utility-color('alert'));
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-color(get-neutral-color('black'));
+    }
+
+  }
+
+  &--size-small {
+    @include link-size('s');
+  }
+
+  &--size-medium {
+    @include link-size('m');
+  }
+
+  &--size-large {
+    @include link-size('l');
+  }
+
 }
 
 // end of file

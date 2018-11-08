@@ -25,7 +25,7 @@ config.patternLab = {
 };
 
 config.styles = {
-  max_file_size: '50000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
+  max_file_size: '70000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
   input_combined: [
     config.patternLab.dir + '/source/scss/**/*.scss',
   ],
@@ -139,7 +139,7 @@ function build_styles (source_files, destination_subfolder = '') {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(postCSSProcessors))
-      .pipe(cleanCSS({compatibility: 'ie8'}))
+      //.pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(warn_size(config.styles.max_file_size))
       .on('error', () => process.exit(1))
       .pipe(sourcemaps.write('./'))
@@ -155,7 +155,7 @@ function build_styles (source_files, destination_subfolder = '') {
  * solutions - so it will have to suffice for a bit.
  */
 gulp.task('build:javascript:drupal-copy', function () {
-   return gulp.src(config.javascript.drupalDependencies)
+  return gulp.src(config.javascript.drupalDependencies)
       .pipe(gulp.dest(config.javascript.jsDir + '/' + 'core'));
 });
 
@@ -177,8 +177,8 @@ gulp.task('build:copy-javascript', function () {
 });
 
 
-gulp.task('build:javascript', function () {
-  runSequence('build:javascript:drupal-copy', 'build:javascript:pattern-copy', 'patternlab:javascript', 'build:copy-javascript');
+gulp.task('build:javascript', function (callback) {
+  return runSequence('build:javascript:drupal-copy', 'build:javascript:pattern-copy', 'patternlab:javascript', 'build:copy-javascript', callback);
 });
 
 /**
@@ -214,17 +214,16 @@ gulp.task('build:copy-css', function () {
 /**
  * PatternLab task runners
  */
-gulp.task('patternlab:generate', function () {
+gulp.task('patternlab:generate', function (callback) {
   return run('php ' + config.patternLab.dir + '/core/console --generate').exec();
 });
-
 
 /**
  * We turn some SCSS variables into JSON arrays so that PatternLab can use them
  * to more dynamically geneate some stuff (e.g. like color palettes)
  */
-gulp.task('patternlab:generate:variables', function () {
-  runSequence('patternlab:generate:variables_as_json', 'patternlab:generate:variables_as_yml', 'patternlab:generate:concatenate_button_examples');
+gulp.task('patternlab:generate:variables', function (callback) {
+  return runSequence('patternlab:generate:variables_as_json', 'patternlab:generate:variables_as_yml', 'patternlab:generate:concatenate_button_examples', callback);
 
 
 
@@ -297,10 +296,12 @@ function run_backstop_task(task) {
 /**
  * Removes the built svg file
  */
-gulp.task('clean:svgs', function () {
+gulp.task('clean:svgs', function (callback) {
   del.sync([
     config.svgs.output
   ]);
+
+  callback();
 });
 
 /**
@@ -309,18 +310,19 @@ gulp.task('clean:svgs', function () {
 gulp.task('clean:styles', function () {
   del.sync([
     config.styles.output
-  ]);
+  ])
 
   del.sync([
     config.patternLab.publicCssDir
   ]);
 
+  callback();
 });
 
 /**
  * Remove and rebuild the svg file
  */
-gulp.task('build:svgs', ['clean:svgs'], function () {
+gulp.task('build:svgs', function (callback) {
   return gulp.src(config.svgs.input)
       .pipe(tap(function (file, t) {
           return gulp.src(file.path)
@@ -349,7 +351,7 @@ gulp.task('build:svgs', ['clean:svgs'], function () {
 /**
  * Generate a YML file so that PatternLab can display all the icons in our library
  */
-gulp.task('patternlab:generate-icon-library-yml', function () {
+gulp.task('patternlab:generate-icon-library-yml', function (callback) {
   fs.writeFileSync(config.patternLab.iconLibraryDataFile, "icon_library:\n");
 
   return gulp.src(config.svgs.input)
@@ -361,7 +363,7 @@ gulp.task('patternlab:generate-icon-library-yml', function () {
 /**
  * Insert SVG file into PatternLab header
  */
-gulp.task('patternlab:grab-svgs', function () {
+gulp.task('patternlab:grab-svgs', function (callback) {
   return gulp.src(config.patternLab.metaDir + config.patternLab.headFilename)
       .pipe(cheerio(function ($, file) {
         var svgs = fs.readFileSync(config.svgs.output + config.svgs.output_filename, "utf8");
@@ -409,47 +411,46 @@ gulp.task('patternlab:javascript', function () {
 /**
  * Task sequence to run when pattern files have changed.
  */
-gulp.task('patterns-change', function () {
-  runSequence('patternlab:generate', 'bs:reload');
+gulp.task('patterns-change', function (callback) {
+  return runSequence('patternlab:generate', 'bs:reload', callback);
 });
 
 /**
  * Task sequence to run when SVG files have changed
  */
-gulp.task('svgs-change', function () {
-  runSequence('build:svgs', 'patternlab:grab-svgs', 'patternlab:generate-icon-library-yml');
+gulp.task('svgs-change', function (callback) {
+  return runSequence('clean:svgs', 'build:svgs', 'patternlab:grab-svgs', 'patternlab:generate-icon-library-yml', callback);
 });
 
 /**
  * Task sequence to run when Sass files have changed.
  */
-gulp.task('sass-change', function () {
-  runSequence(['build:styles', 'patternlab:generate:variables', 'lint:styles'], 'build:copy-css');
+gulp.task('sass-change', function (callback) {
+  return runSequence(['build:styles', 'lint:styles'], 'build:copy-css', 'bs:reload', callback);
 });
 
-gulp.task('javascript-change', function () {
-  runSequence('build:javascript', 'bs:reload');
+gulp.task('javascript-change', function (callback) {
+  return runSequence('build:javascript', 'bs:reload', callback);
 });
 
-// Watch Files For Changes
-gulp.task('watch', function() {
-
-  runSequence('patterns-change', 'svgs-change', 'sass-change', 'build:javascript', 'bs:reload');
-
+gulp.task('bs:start', function() {
   if (config.browserSync.proxy.target) {
     browserSync.init({
       proxy: config.browserSync.proxy,
       open: config.browserSync.open,
       notify: false
     });
-  }
-  else {
+  } else {
     browserSync.init({
       server: config.browserSync.server,
       open: config.browserSync.open,
       notify: false
     });
   }
+});
+
+// Watch Files For Changes
+gulp.task('watch', function(callback) {
   gulp.watch(config.styles.watchFiles, ['sass-change']);
   gulp.watch(config.patternLab.watchFiles, ['patterns-change']);
   gulp.watch(config.svgs.input, ['svgs-change']);
@@ -458,5 +459,12 @@ gulp.task('watch', function() {
 
 gulp.task('clean', ['clean:styles','clean:javascript', 'clean:svgs']);
 
+// The build task called by Circle CI
+gulp.task('build', function(callback) {
+  return runSequence('svgs-change', 'sass-change', 'patternlab:generate:variables', 'build:javascript', 'patternlab:generate', 'bs:reload', callback);
+});
+
 // Default Task
-gulp.task('default', ['watch']);
+gulp.task('default', function() {
+  return runSequence(['bs:start', 'build'], 'watch');
+});

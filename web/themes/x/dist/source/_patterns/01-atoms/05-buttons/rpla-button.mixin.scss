@@ -1,3 +1,4 @@
+@import 'rpla-button.variables';
 
 @mixin button-size ($size: 'm') {
   @include font-weight('bold');
@@ -37,20 +38,20 @@ $xxx-bs: export('dist/source/_patterns/01-atoms/06-button-examples/button-exampl
 
 @mixin button-type ($type: 'one') {
   @if $type == 'one' {
-    @include hover('data-rpla-link-hover-target') {
+    @include hover('data-rpla-hover-target') {
       background-color: get-brand-color('primary-tint-1');
     }
 
     background-color: get-brand-color('primary');
   } @else if $type == 'two' {
-    @include hover('data-rpla-link-hover-target') {
+    @include hover('data-rpla-hover-target') {
       color: get-neutral-color('white');
     }
 
     background-color: get-neutral-color('black');
     color: get-brand-color('primary');
   } @else if $type == 'three' {
-    @include hover('data-rpla-link-hover-target') {
+    @include hover('data-rpla-hover-target') {
       background-color: get-neutral-color('light-gray');
     }
 

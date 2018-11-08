@@ -1,3 +1,7 @@
+{% if social_link_icon_modifier is empty %}
+    {% set social_link_icon_modifier = 'fill-third-party-hover' %}
+{% endif %}
+
 <div class="rplm-social-links{% for social_links_modifier in social_links_modifiers %} rplm-social-links--{{ social_links_modifier }}{% endfor %}">
   {% if social_links_has_title == true %}
     <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
@@ -6,7 +10,7 @@
     <a class="rplm-social-links__link" href="{{ social_link }}">
       {% include '@atoms/15-images/20-icon/icon.twig' with {
         icon_name: social_site,
-        icon_modifiers: social_link_icon_modifiers,
+        icon_modifiers: [social_link_icon_modifier],
       } only %}
     </a>
   {% endfor %}

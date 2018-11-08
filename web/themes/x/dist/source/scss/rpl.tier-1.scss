@@ -222,6 +222,11 @@ $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spac
   font-weight: get-font-weight($option);
 }
 
+@mixin transition {
+  transition: .15s ease-in-out, color .15s ease-in-out;
+  transition-property: background-color, color, box-shadow, fill;
+}
+
 // generates a JSON array of font sizes to be used by PatternLab
 $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
 
@@ -280,6 +285,7 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
 // Function to get a typography vertical spacing value from its array entry key
 @function get-typography-spacing($option: 'standard') {
   $typography-spacing: (
+    'tight': .25em,
     'compact': .5em,
     'standard': .75em,
     'airy': 1.2em,

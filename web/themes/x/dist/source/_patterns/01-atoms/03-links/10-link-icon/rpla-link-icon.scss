@@ -1,12 +1,37 @@
 @import 'rpla-link-icon.variables';
+@import '../05-link/rpla-link.mixins';
 
 .rpla-link-icon {
   $self: &;
 
+  @include transition;
+
+  display: inline;
   text-decoration: none;
 
-  &__icon {
-    height: 24px; // temp
-    width: 24px; // temp
+  &__icon-wrapper {
+    display: inline-block;
+    height: .9em;
+    position: relative;
+    top: .1em;
+    width: .9em;
+  }
+
+  &--icon-position-before {
+    #{$self}__icon-wrapper {
+      margin-right: $link-icon-gap;
+    }
+  }
+
+  &--icon-position-after {
+    #{$self}__icon-wrapper {
+      margin-left: $link-icon-gap;
+    }
+  }
+
+  &--type-three {
+    @include link-hover-background-color(get-brand-color('primary'));
+    background-color: get-neutral-color('white');
+    margin-right: get-typography-spacing('tight');
   }
 }
