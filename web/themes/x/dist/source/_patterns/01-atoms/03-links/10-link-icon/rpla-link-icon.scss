@@ -3,14 +3,28 @@
 .rpla-link-icon {
   $self: &;
 
+  align-items: center;
+  display: inline-flex;
   text-decoration: none;
 
   &__icon-wrapper {
-    display: inline-block;
     height: 16px;
     margin-right: get-spacing('s');
-    position: relative;
-    top: 2px;
+    //position: relative;
+    //top: 2px;
     width: 16px;
+  }
+
+  &--icon-position-before {
+    #{$self}__icon-wrapper {
+      margin-right: $link-icon-gap;
+    }
+  }
+
+  &--icon-position-after {
+    #{$self}__icon-wrapper {
+      margin-left: $link-icon-gap;
+      order: 1;
+    }
   }
 }

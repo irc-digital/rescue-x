@@ -1,6 +1,10 @@
 @import 'rpla-icon.variables';
+@import 'rpla-icon.mixins';
 
 .rpla-icon {
+  $self: &;
+
+  display: block;
   fill: currentColor;
   height: 100%;
   width: 100%;
@@ -15,6 +19,29 @@
 
   &--fill-inverse {
     fill: get-neutral-color('white');
+  }
+
+  &--fill-third-party {
+    @include social-fill(#{$self});
+
+    &:hover {
+      fill: get-neutral-color('white');
+    }
+  }
+
+  &--fill-third-party-hover,
+  &--fill-third-party-inverse {
+    &:hover {
+      @include social-fill(#{$self});
+    }
+  }
+
+  &--fill-third-party-inverse {
+    fill: get-neutral-color('white');
+  }
+
+  &--fill-third-party-hover {
+    fill: get-neutral-color('black');
   }
 
   //

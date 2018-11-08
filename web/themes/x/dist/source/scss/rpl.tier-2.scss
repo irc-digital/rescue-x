@@ -170,33 +170,4 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-// Should be included on links that wrap social icons
-@mixin social-hover {
-  .rpla-icon {
-    &--twitter {
-      fill: get-social-color('twitter');
-    }
-
-    &--facebook {
-      fill: get-social-color('facebook');
-    }
-
-    &--instagram {
-      fill: get-social-color('instagram');
-    }
-
-    &--youtube {
-      fill: get-social-color('youtube');
-    }
-
-    &--linked-in {
-      fill: get-social-color('linkedin');
-    }
-
-    &--mail {
-      fill: get-social-color('mail');
-    }
-  }
-}
-
 // end of file

@@ -24,6 +24,9 @@
   {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
 {% endif %}
 
+{% set link_icon_position = 'icon-position-' ~ (link_icon_position ? link_icon_position : 'before') %}
+{% set link_icon_modifiers = link_icon_modifiers | merge([link_icon_position]) %}
+
 <a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
   <div class="rpla-link-icon__icon-wrapper">
     {% include '@atoms/15-images/20-icon/icon.twig' with {

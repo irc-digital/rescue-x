@@ -9,10 +9,6 @@
   }
 
   &__link {
-    @include hover {
-      @include social-hover;
-    }
-
     display: inline-block;
     height: $social-link-size;
     width: $social-link-size;
@@ -30,6 +26,12 @@
       &:not(:last-child) {
         margin-right: $social-link-spacing-small;
       }
+    }
+  }
+
+  &--style-inverse {
+    #{$self}__title {
+      color: get-neutral-color('white');
     }
   }
 }

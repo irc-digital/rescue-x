@@ -2,9 +2,9 @@
 
 .rplm-social-share {
   &__link {
-    @include hover {
-      @include social-hover;
-    }
+    //@include hover {
+    //  @include social-hover;
+    //}
 
     border: 1px solid get-neutral-color('light-gray');
     border-radius: 100%;
