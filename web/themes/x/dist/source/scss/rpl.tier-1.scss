@@ -285,6 +285,7 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
 // Function to get a typography vertical spacing value from its array entry key
 @function get-typography-spacing($option: 'standard') {
   $typography-spacing: (
+    'tight': .25em,
     'compact': .5em,
     'standard': .75em,
     'airy': 1.2em,

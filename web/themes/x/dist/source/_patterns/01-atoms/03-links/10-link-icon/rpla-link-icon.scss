@@ -6,7 +6,6 @@
 
   @include transition;
 
-  align-items: center;
   display: inline;
   text-decoration: none;
 
@@ -31,6 +30,6 @@
   &--type-three {
     @include link-hover-background-color(get-brand-color('primary'));
     background-color: get-neutral-color('white');
-    margin-right: get-typography-spacing('compact');
+    margin-right: get-typography-spacing('tight');
   }
 }
