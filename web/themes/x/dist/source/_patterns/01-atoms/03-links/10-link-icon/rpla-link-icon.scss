@@ -11,8 +11,10 @@
 
   &__icon-wrapper {
     display: inline-block;
-    height: 16px;
-    width: 16px;
+    height: .9em;
+    position: relative;
+    top: .1em;
+    width: .9em;
   }
 
   &--icon-position-before {
