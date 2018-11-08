@@ -2,12 +2,12 @@
 
 .rplc-impact-card {
   $self: &;
-  background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
+
+  background-color: get-brand-color();
   border: 1px solid;
   height: 200px;
 
-
   &__inner-wrapper {
-    background-color: white;
+    background-color: get-neutral-color('white');
   }
 }
