@@ -27,9 +27,10 @@
           </blockquote>
         </div>
         <div class="rplc-testimonial__link-wrapper">
-        {% include '@atoms/05-buttons/01-link/button-link.twig' with {
+        {% include '@atoms/05-buttons/button.twig' with {
           button_url: testimonial_url,
-          button_content: testimonial_cta,
+          button_text: testimonial_cta,
+          button_modifiers: ['display-block'],
         } only %}
         </div>
       </div>

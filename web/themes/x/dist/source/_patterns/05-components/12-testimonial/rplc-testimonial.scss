@@ -89,6 +89,7 @@
     align-items: flex-start;
     display: flex;
     margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'mobile');
+    min-width: 200px;
 
     @include breakpoint(tablet) {
       margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'tablet');
@@ -96,6 +97,7 @@
     @include breakpoint(laptop) {
       justify-content: flex-end;
       margin-left: safe-map-get($testimonial-link-wrapper-left-margin, 'laptop');
+      margin-right: rem(80px);
     }
   }
 
