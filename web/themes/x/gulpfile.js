@@ -25,7 +25,7 @@ config.patternLab = {
 };
 
 config.styles = {
-  max_file_size: '70000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
+  max_file_size: '60000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
   input: config.patternLab.dir + '/source/scss',
   input_combined: [
     config.patternLab.dir + '/source/scss/**/*.scss',
@@ -145,7 +145,7 @@ function build_styles (source_files, destination_subfolder = '') {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(postCSSProcessors))
-      //.pipe(cleanCSS({compatibility: 'ie8'}))
+      .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(warn_size(config.styles.max_file_size))
       .on('error', () => process.exit(1))
       .pipe(sourcemaps.write('./'))

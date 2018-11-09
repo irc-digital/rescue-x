@@ -1,0 +1,52 @@
+@import 'rpla-icon-link.variables';
+
+.rpla-icon-link {
+  $self: &;
+
+  display: inline-block;
+  line-height: 0;
+
+  #{$self}__icon-wrapper {
+    display: inline-block;
+  }
+
+  &--type-one {
+    #{$self}__icon-wrapper {
+      height: 1em;
+      width: 1em;
+    }
+  }
+
+  &--type-two {
+    #{$self}__icon-wrapper {
+      border: 1px solid get-neutral-color('light-gray');
+      border-radius: 100%;
+      height: 2.5em;
+      padding: .7em;
+      width: 2.5em;
+    }
+  }
+
+  &--type-three {
+    #{$self}__icon-wrapper {
+      background-color: get-neutral-color('white');
+      border-radius: 100%;
+      height: 2.5em;
+      padding: .5em;
+      width: 2.5em;
+    }
+  }
+
+  &--type-four {
+    #{$self}__icon-wrapper {
+      @include hover {
+        background-color: get-neutral-color('white');
+      }
+
+      background-color: $icon-link-type-four-background-color;
+      height: 2.5em;
+      padding: .4em;
+      width: 2.5em;
+    }
+  }
+}

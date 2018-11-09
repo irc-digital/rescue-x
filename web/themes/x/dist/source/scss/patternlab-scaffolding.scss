@@ -154,6 +154,8 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 *[id*='atoms-link-(type 2 - no hover)'],
 *[id*='atoms-link-icon-(type 2)'],
 *[id*='molecules-social-links-(inverse)'],
+*[id*='molecules-social-share-(type 3)'],
+*[id*='atoms-icon-link-(type 4)'],
 *[id*='atoms-link-(type 1 - white)'] {
   background-color: get-neutral-color('black');
 
@@ -163,6 +165,8 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 }
 
 *[id='atoms-link-(type 1 - black, inverse)'],
+*[id*='molecules-social-share-(type 2)'],
+*[id*='atoms-icon-link-(type 3)'],
 *[id='atoms-link-(type 1 - inverse)'] {
   background-color: get-brand-color('primary');
 }

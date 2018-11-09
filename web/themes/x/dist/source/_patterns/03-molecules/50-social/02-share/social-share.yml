@@ -1,5 +1,5 @@
 social_share_sites:
-  - icon_name: "twitter"
-  - icon_name: "facebook"
-  - icon_name: "linked-in"
-  - icon_name: "mail"
+  twitter: http://www.twitter.com
+  facebook: http://www.facebook.com
+  linked-in: http://www.instagram.com
+  mail: http://www.youtube.com
