@@ -32,7 +32,7 @@
 
 <div class="rplm-social-share{% for social_share_modifier in social_share_modifiers %} rplm-social-share--{{ social_share_modifier }}{% endfor %}">
   {% for social_site, social_link in social_share_sites %}
-    <div class="rplm-social-share__icon-link-wrapper" href="#" data-rpla-hover-target>
+    <div class="rplm-social-share__icon-link-wrapper" data-rpla-hover-target>
       {% include '@atoms/03-links/25-icon-link/icon-link.twig' with {
         icon_link_url: social_link,
         icon_link_name: social_site,
