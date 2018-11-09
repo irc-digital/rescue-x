@@ -1,20 +1,30 @@
 @import 'rplm-social-share.variables';
 
 .rplm-social-share {
-  &__link {
-    //@include hover {
-    //  @include social-hover;
-    //}
+  $self: &;
 
-    border: 1px solid get-neutral-color('light-gray');
-    border-radius: 100%;
-    display: inline-block;
-    height: $social-share-size;
-    line-height: $social-share-line-height;
-    margin-right: $social-share-gutter;
-    padding: $social-share-padding-around-icon;
-    width: $social-share-size;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+
+  &--type-one {
+    #{$self}__icon-link-wrapper {
+      margin-right: $social-share-type-one-gutter;
+    }
   }
+
+  &--type-two {
+    #{$self}__icon-link-wrapper {
+      margin-right: $social-share-type-two-gutter;
+    }
+  }
+
+  &--type-three {
+    #{$self}__icon-link-wrapper {
+      margin-right: $social-share-type-three-gutter;
+    }
+  }
+
 }
 
 // end of file

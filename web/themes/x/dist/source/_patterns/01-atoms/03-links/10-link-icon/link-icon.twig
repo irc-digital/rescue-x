@@ -11,12 +11,17 @@
 #}
 {% set link_icon_modifiers = link_icon_modifiers ?: [] %}
 
-{% set type = 'type-one' %}
+{% set type = null %}
 {% for link_icon_modifier in link_icon_modifiers %}
   {% if link_icon_modifier starts with 'type-' %}
     {% set type = link_icon_modifier %}
   {% endif %}
 {% endfor %}
+
+{% if type is empty %}
+  {% set type = 'type-one' %}
+  {% set link_icon_modifiers = link_icon_modifiers | merge([type]) %}
+{% endif %}
 
 {% if type == 'type-two' %}
   {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}

@@ -7,17 +7,37 @@
  * - none
  */
 #}
-{% if social_share_icon_modifier is empty %}
-  {% set social_share_icon_modifier = 'fill-third-party-hover' %}
+
+{% set social_share_modifiers = social_share_modifiers ?: [] %}
+
+{% set type = null %}
+{% for social_share_modifier in social_share_modifiers %}
+  {% if social_share_modifier starts with 'type-' %}
+    {% set type = social_share_modifier %}
+  {% endif %}
+{% endfor %}
+
+{% if type is empty %}
+  {% set type = 'type-one' %}
+  {% set social_share_modifiers = social_share_modifiers | merge([type]) %}
 {% endif %}
 
-<div class="rplm-social-share">
-  {% for social_share_site in social_share_sites %}
-    <a class="rplm-social-share__link" href="#">
-      {% include '@atoms/15-images/20-icon/icon.twig' with {
-        icon_name: social_share_site.icon_name,
-        icon_modifiers: [social_share_icon_modifier],
+{% if type == 'type-two' %}
+  {% set icon_link_modifiers = ['type-three'] %}
+{% elseif type == 'type-three' %}
+  {% set icon_link_modifiers = ['type-four'] %}
+{% else %}
+  {% set icon_link_modifiers = ['type-two'] %}
+{% endif %}
+
+<div class="rplm-social-share{% for social_share_modifier in social_share_modifiers %} rplm-social-share--{{ social_share_modifier }}{% endfor %}">
+  {% for social_site, social_link in social_share_sites %}
+    <div class="rplm-social-share__icon-link-wrapper" href="#" data-rpla-hover-target>
+      {% include '@atoms/03-links/25-icon-link/icon-link.twig' with {
+        icon_link_url: social_link,
+        icon_link_name: social_site,
+        icon_link_modifiers: icon_link_modifiers,
       } only %}
-    </a>
+    </div>
   {% endfor %}
 </div>
