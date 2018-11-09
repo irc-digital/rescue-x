@@ -16,10 +16,12 @@
     }
   }
 
+  border-width: 0;
   display: inline;
   left: 0;
   position: relative;
   text-decoration: none;
+  white-space: nowrap;
 
   &__text {
     @include link-border(get-brand-color('primary'));
