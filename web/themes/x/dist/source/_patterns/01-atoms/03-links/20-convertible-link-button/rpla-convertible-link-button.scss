@@ -1,0 +1,49 @@
+@import 'rpla-convertible-link-button.variables';
+@import '../rpla-link.mixins';
+
+.rpla-convertible-link-button {
+  $self: &;
+
+  @include font-weight('bold');
+  @include link-hover-background-color(get-brand-color('primary'));
+  @include transition;
+  display: inline;
+  left: 0;
+  position: relative;
+  text-decoration: none;
+
+  svg {
+    opacity: 0;
+  }
+  
+  //background-color: get-neutral-color('white');
+  //display: inline;
+  //padding-right: get-typography-spacing('tight');
+  //text-decoration: none;
+  //
+
+  @include hover {
+    background-color:#fdc513;
+    border-bottom: 0;
+    padding: rem(12px) rem(15px);
+    left:rem(-15px);
+    svg {
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  }
+
+  &__text {
+    @include link-border(get-brand-color('primary'));
+  }
+
+  &__icon-wrapper {
+    display: inline-block;
+    height: .9em;
+    margin-left: $tweet-link-icon-gap;
+    position: relative;
+    top: .1em;
+    width: .9em;
+  }
+}
