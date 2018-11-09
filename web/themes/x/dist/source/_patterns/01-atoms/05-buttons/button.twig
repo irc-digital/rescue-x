@@ -1,12 +1,10 @@
 
 {% set button_modifiers = button_modifiers ?: [] %}
 
-{% if button_tag is empty %}
-  {% set button_tag = 'button' %}
-{% endif %}
-
-{% if button_href is not empty %}
+{% if button_url is not empty %}
   {% set button_tag = 'a' %}
+{% elseif button_tag is empty %}
+  {% set button_tag = 'button' %}
 {% endif %}
 
 {#
@@ -36,7 +34,7 @@
   {% set button_modifiers = button_modifiers | merge(['with-icon', button_icon_position]) %}
 {% endif %}
 
-<{{ button_tag }}{% if button_href is not empty %} href={{  button_href }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}">
+<{{ button_tag }}{% if button_url is not empty %} href={{ button_url }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %} role="link">
   <span class="rpla-button__text">{{ button_text }}</span>
   {% if button_icon_name is not empty %}
     <div class="rpla-button__icon-wrapper">

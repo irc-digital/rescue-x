@@ -39,6 +39,14 @@
   {% include '@atoms/05-buttons/button.twig' with { button_icon_name: 'heart', button_text: 'Donate now' } only %}
 </a>
 
+<h3 class="sg-buttons-type-label">Convertible link button within hot container</h3>
+<p style="margin-bottom: 2rem">Implementation note: Add an attribute to the containing link called <span style="font-family: monospace;">data-rpla-hover-target</span>. HTML does not permit links within links, so it is important not to attempt to use the anchor tag for your button when you are within a hot container.</p>
+<a style='margin-bottom: 2rem;' href="#" class="sg-buttons-hot-container" data-rpla-hover-target>
+  <h3 class="rpla-heading rpla-heading--medium">Donec mollis hendrerit</h3>
+  <p class="rpla-paragraph">Maecenas vestibulum mollis diam. Donec mollis hendrerit risus. Etiam ultricies nisi vel augue. Quisque malesuada placerat nisl. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.</p>
+  {% include '@atoms/03-links/20-convertible-link-button/convertible-link-button.twig' with { convertible_link_button_link_text: 'Explore our goals' } only %}
+</a>
+
 <h3 class="sg-buttons-type-label">Block style button</h3>
 <p style="margin-bottom: 2rem">Handy if you want to control the padding around the button from the container. In this case the button fills the container. It still, though, has some minimal padding.</p>
 <div style='margin-bottom: 2rem;' class="sg-buttons-constraining-button-demo">

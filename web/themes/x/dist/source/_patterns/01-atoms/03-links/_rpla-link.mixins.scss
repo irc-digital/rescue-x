@@ -1,4 +1,11 @@
-@import 'rpla-link.variables';
+
+$link-default-border-width: .1em;
+$link-default-border-color: get-brand-color('primary');
+
+$link-default-color: get-neutral-color('black');
+
+$link-default-background-color: transparent;
+$link-default-hover-background-color: get-brand-color('primary');
 
 @mixin link-border ($color: $link-default-border-color) {
   border-bottom: $link-default-border-width solid $color;

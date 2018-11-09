@@ -29,4 +29,4 @@
   {% endif %}
 {% endif %}
 
-<{{ link_tag }} {% if link_url %} href="{{ link_url }}" {% endif %} class="rpla-link{% for link_modifier in link_modifiers %} rpla-link--{{ link_modifier }}{% endfor %}">{{ link_text }}</{{ link_tag }}>
+<{{ link_tag }} {% if link_url %} href="{{ link_url }}" {% endif %} class="rpla-link{% for link_modifier in link_modifiers %} rpla-link--{{ link_modifier }}{% endfor %}">{{ link_text }}</{{ link_tag }} role="link">
