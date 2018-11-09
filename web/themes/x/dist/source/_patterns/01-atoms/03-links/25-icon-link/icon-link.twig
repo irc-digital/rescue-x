@@ -1,9 +1,13 @@
 {% set icon_link_modifiers = icon_link_modifiers ?: [] %}
 
 {% set type = null %}
+{% set subtype = null %}
 {% for icon_link_modifier in icon_link_modifiers %}
   {% if icon_link_modifier starts with 'type-' %}
     {% set type = icon_link_modifier %}
+  {% endif %}
+  {% if icon_link_modifier starts with 'subtype-' %}
+    {% set subtype = icon_link_modifier %}
   {% endif %}
 {% endfor %}
 
@@ -13,12 +17,16 @@
 {% endif %}
 
 {% if type == 'type-two' or type == 'type-three' or type == 'type-four' %}
-  {% set icon_link_icon_modifiers = ['fill-third-party-hover'] %}
+  {% set mod = 'fill-third-party-hover' %}
+  {% set icon_link_icon_modifiers = [mod] %}
 {% else %}
-  {% set icon_link_icon_modifiers = [] %}
-{% endif %}
+  {% set mod = null %}
+  {% if subtype == 'subtype-inverse' %}
+    {% set mod = 'fill-third-party-inverse' %}
+  {% endif %}
 
-{#fill-third-party-hover#}
+  {% set icon_link_icon_modifiers = [mod] %}
+{% endif %}
 
 <a class="rpla-icon-link{% for icon_link_modifier in icon_link_modifiers %} rpla-icon-link--{{ icon_link_modifier }}{% endfor %}" href="{{ icon_link_url }}" data-rpla-hover-target>
   <span class="rpla-icon-link__icon-wrapper">
