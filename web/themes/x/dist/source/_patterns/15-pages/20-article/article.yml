@@ -25,13 +25,9 @@ article_page_content:
     - join():
       - "<p class='rpla-paragraph rpla-paragraph--body'>Nulla consequat massa quis enim "
       - include():
-          pattern: "atoms-link-icon"
+          pattern: "atoms-tweet-link"
           with:
-            link_icon_text: "I never had a bedroom or bed. I had to share a small amount of food with 20 other kids."
-            link_icon_name: 'twitter'
-            link_icon_position: 'after'
-            link_icon_modifiers:
-              - 'type-three'
+            tweet_link_text: "I never had a bedroom or bed. I had to share a small amount of food with 20 other kids."
       - " praesent ut ligula non mi.</p>"
     - include():
         pattern: "atoms-paragraph"
