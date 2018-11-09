@@ -317,7 +317,7 @@ gulp.task('clean:svgs', function (callback) {
 /**
  * Removes the css files
  */
-gulp.task('clean:styles', function () {
+gulp.task('clean:styles', function (callback) {
   del.sync([
     config.styles.output
   ])
@@ -336,17 +336,17 @@ gulp.task('build:svgs', function (callback) {
   return gulp.src(config.svgs.input)
       .pipe(tap(function (file, t) {
           return gulp.src(file.path)
-              .pipe(rename({prefix: 'rpl-svg-'}))
-              .pipe(svgmin())
-              .pipe(svgstore({inlineSvg: true}))
-              .pipe(cheerio(function ($, file) {
-                $('symbol').addClass($('symbol').attr('id'));
-              }, { decodeEntities: false }))
-              .pipe(rename({ basename: file.relative, extname: '', prefix: 'symbol-'}))
-              .pipe(cheerio(function ($, file) {
-                $('svg').replaceWith($('svg').children());
-              }, { decodeEntities: false }))
-              .pipe(gulp.dest(config.svgs.output + 'individuals/'));
+            .pipe(rename({prefix: 'rpl-svg-'}))
+            .pipe(svgmin())
+            .pipe(svgstore({inlineSvg: true}))
+            .pipe(cheerio(function ($, file) {
+              $('symbol').addClass($('symbol').attr('id'));
+            }, { decodeEntities: false }))
+            .pipe(rename({ basename: file.relative, extname: '', prefix: 'symbol-'}))
+            .pipe(cheerio(function ($, file) {
+              $('svg').replaceWith($('svg').children());
+            }, { decodeEntities: false }))
+            .pipe(gulp.dest(config.svgs.output + 'individuals/'));
       }))
       .pipe(rename({prefix: 'rpl-svg-'}))
       .pipe(svgmin())

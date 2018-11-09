@@ -11,9 +11,13 @@
 {% set social_share_modifiers = social_share_modifiers ?: [] %}
 
 {% set type = null %}
+{% set subtype = null %}
 {% for social_share_modifier in social_share_modifiers %}
   {% if social_share_modifier starts with 'type-' %}
     {% set type = social_share_modifier %}
+  {% endif %}
+  {% if social_share_modifier starts with 'subtype-' %}
+    {% set subtype = social_share_modifier %}
   {% endif %}
 {% endfor %}
 
@@ -23,21 +27,32 @@
 {% endif %}
 
 {% if type == 'type-two' %}
-  {% set icon_link_modifiers = ['type-three'] %}
+  {% set icon_link_modifiers = ['type-two'] %}
 {% elseif type == 'type-three' %}
+  {% set icon_link_modifiers = ['type-three'] %}
+{% elseif type == 'type-four' %}
   {% set icon_link_modifiers = ['type-four'] %}
 {% else %}
-  {% set icon_link_modifiers = ['type-two'] %}
+  {% set icon_link_modifiers = ['type-one'] %}
+{% endif %}
+
+{% if subtype == 'subtype-inverse' %}
+  {% set icon_link_modifiers = icon_link_modifiers | merge (['subtype-inverse']) %}
 {% endif %}
 
 <div class="rplm-social-share{% for social_share_modifier in social_share_modifiers %} rplm-social-share--{{ social_share_modifier }}{% endfor %}">
-  {% for social_site, social_link in social_share_sites %}
-    <div class="rplm-social-share__icon-link-wrapper" data-rpla-hover-target>
-      {% include '@atoms/03-links/25-icon-link/icon-link.twig' with {
-        icon_link_url: social_link,
-        icon_link_name: social_site,
-        icon_link_modifiers: icon_link_modifiers,
-      } only %}
-    </div>
-  {% endfor %}
+  {% if social_share_title is not empty %}
+    <h6 class="rplm-social-share__title">{{ social_share_title }}</h6>
+  {% endif %}
+  <div class="rplm-social-share__icons-wrapper">
+    {% for social_site, social_link in social_share_sites %}
+      <div class="rplm-social-share__icon-link-wrapper" data-rpla-hover-target>
+        {% include '@atoms/03-links/25-icon-link/icon-link.twig' with {
+          icon_link_url: social_link,
+          icon_link_name: social_site,
+          icon_link_modifiers: icon_link_modifiers,
+        } only %}
+      </div>
+    {% endfor %}
+  </div>
 </div>

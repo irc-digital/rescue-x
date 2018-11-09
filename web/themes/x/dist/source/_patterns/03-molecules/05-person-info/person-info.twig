@@ -37,14 +37,14 @@
   <div class="rplm-person-info__byline">
     {% if person_info_prefix %}<span class="rplm-person-info__prefix">{{ person_info_prefix }}</span>{% endif %}
     <span class="rplm-person-info__name">{{ person_info_name }}</span>
-    {% for social_site, social_link in person_info_social %}
-    <a class="rplm-person-info__social-link" href="{{ social_link }}">
-      {% include '@atoms/15-images/20-icon/icon.twig' with {
-        icon_name: social_site,
-        icon_modifiers: ['fill-third-party-hover']
-      } only %}
-    </a>
-    {% endfor %}
+      {% if person_info_social is not empty %}
+        <div class="rplm-person-info__social-wrapper">
+          {% include '@molecules/50-social/02-share/social-share.twig' with {
+            social_share_sites: person_info_social,
+            social_share_modifiers: ['subtype-snug'],
+          } only %}
+        </div>
+      {% endif %}
     <div class="rplm-person-info__title">{{ person_info_title }}</div>
   </div>
 </figure>

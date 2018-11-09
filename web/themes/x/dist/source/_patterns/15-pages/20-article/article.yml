@@ -81,7 +81,9 @@ article_page_footer:
               pattern: "components-efficiency"
           footer_layout_1_section_3:
             include():
-              pattern: "molecules-social-links"
+              pattern: "molecules-social-share"
+              with:
+                social_share_title: 'Follow us'
     - include():
         pattern: "layouts-footer-layout-2"
         with:

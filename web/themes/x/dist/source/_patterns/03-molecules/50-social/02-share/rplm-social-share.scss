@@ -3,11 +3,26 @@
 .rplm-social-share {
   $self: &;
 
-  display: flex;
-  flex-direction: row;
-  white-space: nowrap;
+  display: inline-block;
+
+  &__title {
+    @include typography-text-small;
+    @include standard-vertical-spacing;
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+  }
+
+  &__icon-link-wrapper {
+    line-height: 0;
+  }
 
   &--type-one {
+    font-size: $social-share-type-one-font-size;
+
     #{$self}__icon-link-wrapper {
       margin-right: $social-share-type-one-gutter;
     }
@@ -25,6 +40,19 @@
     }
   }
 
+  &--type-four {
+    #{$self}__icon-link-wrapper {
+      margin-right: $social-share-type-four-gutter;
+    }
+  }
+
+  &--subtype-snug {
+    font-size: 1em;
+
+    #{$self}__icon-link-wrapper {
+      margin-right: $social-share-type-one-gutter / 4;
+    }
+  }
 }
 
 // end of file
