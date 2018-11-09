@@ -451,7 +451,7 @@ gulp.task('patterns-change', function (callback) {
  * Task sequence to run when SVG files have changed
  */
 gulp.task('svgs-change', function (callback) {
-  return runSequence('clean:svgs', 'build:svgs', 'patternlab:grab-svgs', 'patternlab:generate-icon-library-yml', callback);
+  return runSequence('clean:svgs', 'build:svgs', 'build:inline:svg_css', 'patternlab:grab-svgs', 'patternlab:generate-icon-library-yml', callback);
 });
 
 /**
