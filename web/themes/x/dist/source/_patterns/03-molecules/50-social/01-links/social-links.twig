@@ -7,11 +7,14 @@
     <h6 class="rplm-social-links__title">{{ "Follow us" | trans }}</h6>
   {% endif %}
   {% for social_site, social_link in social_links %}
-    <a class="rplm-social-links__link" href="{{ social_link }}">
-      {% include '@atoms/15-images/20-icon/icon.twig' with {
-        icon_name: social_site,
-        icon_modifiers: [social_link_icon_modifier],
+    <div class="rplm-social-share__icon-link-wrapper" data-rpla-hover-target>
+      {% include '@atoms/03-links/25-icon-link/icon-link.twig' with {
+        icon_link_url: social_link,
+        icon_link_name: social_site,
+        icon_link_modifiers: ['type-one', 'subtype-inverse'],
       } only %}
-    </a>
+    </div>
   {% endfor %}
 </div>
+
+
