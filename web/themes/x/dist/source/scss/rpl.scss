@@ -27,11 +27,11 @@
 //
 // Build components
 //
-@import '../_patterns/05-components/01-heroes/03-standard/rplc-hero-standard';
-@import '../_patterns/05-components/01-heroes/05-article/rplc-hero-article';
-@import '../_patterns/05-components/01-heroes/10-landing-page/rplc-hero-landing-page';
-@import '../_patterns/05-components/01-heroes/20-text-only/rplc-hero-text-only';
-@import '../_patterns/05-components/01-heroes/30-text-with-links/rplc-hero-text-with-links';
+@import '../_patterns/05-components/95-heroes/03-standard/rplc-hero-standard';
+@import '../_patterns/05-components/95-heroes/05-article/rplc-hero-article';
+@import '../_patterns/05-components/95-heroes/10-landing-page/rplc-hero-landing-page';
+@import '../_patterns/05-components/95-heroes/20-text-only/rplc-hero-text-only';
+@import '../_patterns/05-components/95-heroes/30-text-with-links/rplc-hero-text-with-links';
 @import '../_patterns/05-components/05-teasers/05-standard/rplc-teaser-standard';
 @import '../_patterns/05-components/05-teasers/10-highlighted/rplc-teaser-highlighted';
 @import '../_patterns/05-components/05-teasers/15-minimal/rplc-teaser-minimal';
@@ -55,5 +55,6 @@
 @import '../_patterns/05-components/75-impact-card/rplc-impact-card';
 @import '../_patterns/05-components/80-highlight/rplc-highlight';
 @import '../_patterns/05-components/90-efficiency/rplc-efficiency';
+@import '../_patterns/05-components/35-call-to-action/rplc-call-to-action';
 
 // end of file

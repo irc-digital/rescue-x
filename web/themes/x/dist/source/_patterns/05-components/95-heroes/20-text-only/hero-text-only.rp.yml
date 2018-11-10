@@ -1,7 +1,7 @@
 hero_text_only:
   label: Hero (text-only)
   description: A hero that has just a headline, slug and description
-  use: "@components/01-heroes/20-text-only/hero-text-only.twig"
+  use: "@components/95-heroes/20-text-only/hero-text-only.twig"
   fields:
     hero_text_only_headline:
       type: text

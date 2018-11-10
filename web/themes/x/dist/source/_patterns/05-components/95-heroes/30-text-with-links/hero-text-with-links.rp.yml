@@ -1,7 +1,7 @@
 hero_text_with_links:
   label: Hero (text with links)
   description: A hero that has a headline, slug and description, along with some optional links
-  use: "@components/01-heroes/30-text-with-links/hero-text-with-links.twig"
+  use: "@components/95-heroes/30-text-with-links/hero-text-with-links.twig"
   fields:
     hero_text_with_links_headline:
       type: text

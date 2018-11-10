@@ -1,7 +1,7 @@
 landing_page:
   label: Hero (landing page style)
   description: A common hero used on topic, country and USP pages
-  use: "@components/01-heroes/10-landing-page/hero-landing-page.twig"
+  use: "@components/95-heroes/10-landing-page/hero-landing-page.twig"
   fields:
     hero_landing_page_headline:
       type: text

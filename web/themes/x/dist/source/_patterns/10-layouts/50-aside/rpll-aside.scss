@@ -3,11 +3,11 @@
 .rpll-aside {
 
   @include breakpoint(phablet) {
+    @include floated-aside-z-index;
     margin-left: auto;
     margin-right: auto;
     max-width: rem(1080px);
     width: 77.5vw;
-    z-index: 2;
   }
 
   &__inner-wrapper {
