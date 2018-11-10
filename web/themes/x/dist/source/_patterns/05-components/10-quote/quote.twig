@@ -7,7 +7,7 @@
   <div class="rplc-quote__content">
     <div class="rplc-quote__image-text-wrapper">
       <div class="rplc-quote__image-wrapper">
-        {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
+        {% include '@atoms/50-images/10-responsive-image/responsive-image.twig' with {
           responsive_image_source_set: quote_responsive_image_source_set,
           responsive_image_sizes: quote_responsive_image_sizes,
           responsive_image_fallback: quote_responsive_image_fallback,
@@ -17,7 +17,7 @@
 
       <div class="rplc-quote__text-wrapper">
         <div class="rplc-quote__icon-wrapper">
-          {% include '@atoms/15-images/20-icon/icon.twig' with {
+          {% include '@atoms/50-images/20-icon/icon.twig' with {
             icon_name: 'quote-mark',
             icon_modifiers: ['fill-branded']
           } only %}
@@ -31,7 +31,7 @@
             </div>
           </blockquote>
 
-          {% include '@atoms/03-links/05-link/link.twig' with {
+          {% include '@atoms/10-link/link.twig' with {
             link_url: quote_url,
             link_text: quote_cta,
           } only %}

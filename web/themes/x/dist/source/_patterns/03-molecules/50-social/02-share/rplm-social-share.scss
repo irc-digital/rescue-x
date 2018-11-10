@@ -16,32 +16,32 @@
     white-space: nowrap;
   }
 
-  &__icon-link-wrapper {
+  &__icon-only-link-wrapper {
     line-height: 0;
   }
 
   &--type-one {
     font-size: $social-share-type-one-font-size;
 
-    #{$self}__icon-link-wrapper {
+    #{$self}__icon-only-link-wrapper {
       margin-right: $social-share-type-one-gutter;
     }
   }
 
   &--type-two {
-    #{$self}__icon-link-wrapper {
+    #{$self}__icon-only-link-wrapper {
       margin-right: $social-share-type-two-gutter;
     }
   }
 
   &--type-three {
-    #{$self}__icon-link-wrapper {
+    #{$self}__icon-only-link-wrapper {
       margin-right: $social-share-type-three-gutter;
     }
   }
 
   &--type-four {
-    #{$self}__icon-link-wrapper {
+    #{$self}__icon-only-link-wrapper {
       margin-right: $social-share-type-four-gutter;
     }
   }
@@ -49,7 +49,7 @@
   &--subtype-snug {
     font-size: 1em;
 
-    #{$self}__icon-link-wrapper {
+    #{$self}__icon-only-link-wrapper {
       margin-right: $social-share-type-one-gutter / 4;
     }
   }

@@ -11,7 +11,7 @@
     <div class="rplc-hero-text-with-links__slug-wrapper">
       <h6 class="rplc-hero-text-with-links__slug">{{ hero_text_with_links_slug }}</h6>
     </div>
-    {% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_text_with_links_headline } only %}
+    {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_text_with_links_headline } only %}
     <div class="rplc-hero-text-with-links__description-links-wrapper">
       <div class="rplc-hero-text-with-links__description">{{ hero_text_with_links_description }}</div>
       {% if hero_text_with_links_links is not empty %}

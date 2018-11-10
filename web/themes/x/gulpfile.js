@@ -10,7 +10,7 @@ var config = {};
 config.patternLab = {
   dir: './dist',
   patternDir: './dist/source/_patterns',
-  iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
+  iconLibraryDataFile: './dist/source/_patterns/01-atoms/50-images/21-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
   publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
@@ -244,12 +244,12 @@ gulp.task('patternlab:generate:variables', function (callback) {
 });
 
 gulp.task('patternlab:generate:concatenate_button_examples', function () {
-  fs.writeFileSync(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/button-examples.yml', "");
+  fs.writeFileSync(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/button-examples.yml', "");
 
-  return gulp.src(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/*.yml')
+  return gulp.src(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/*.yml')
       .pipe(clean())
       .pipe(concat('button-examples.yml', {newLine: ''}))
-      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/'));
+      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/'));
 });
 
 gulp.task('patternlab:generate:variables_as_json', function () {

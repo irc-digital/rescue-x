@@ -11,7 +11,7 @@
     {% embed '@layouts/30-hero-layouts/10-hero-layout-2/hero-layout-2.twig' %}
       {% if hero_landing_page_art_directed_image_sources is not empty %}
         {% block hero_layout_2_image_block %}
-          {% include '@atoms/15-images/15-art-directed-image/art-directed-image.twig' with {
+          {% include '@atoms/50-images/15-art-directed-image/art-directed-image.twig' with {
             art_directed_image_fallback: hero_landing_page_art_directed_image_fallback,
             art_directed_image_sources: hero_landing_page_art_directed_image_sources,
             art_directed_image_alt: hero_landing_page_art_directed_image_alt
@@ -25,7 +25,7 @@
           </div>
         {% endif %}
         <div class="rplc-hero-landing-page__title-crisis-wrapper">
-          <div class="rplc-hero-landing-page__title-wrapper">{% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_landing_page_headline} %}</div>
+          <div class="rplc-hero-landing-page__title-wrapper">{% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_landing_page_headline} %}</div>
           {% if hero_landing_page_crisis_watch %}
             {% include '@molecules/30-crisis-watch/crisis-watch.twig' %}
           {% endif %}

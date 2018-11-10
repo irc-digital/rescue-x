@@ -1,0 +1,46 @@
+{#
+/**
+ * Available variables:
+ * - link_icon_name - icon name
+ * - link_icon_text - text
+ * - link_icon_url - url
+ *
+ * Available blocks:
+ * - none
+ */
+#}
+{% set link_icon_modifiers = link_icon_modifiers ?: [] %}
+
+{% set type = null %}
+{% for link_icon_modifier in link_icon_modifiers %}
+  {% if link_icon_modifier starts with 'type-' %}
+    {% set type = link_icon_modifier %}
+  {% endif %}
+{% endfor %}
+
+{% if type is empty %}
+  {% set type = 'type-one' %}
+  {% set link_icon_modifiers = link_icon_modifiers | merge([type]) %}
+{% endif %}
+
+{% if type == 'type-two' %}
+  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}
+  {% set icon_modifiers = ['fill-branded'] %}
+{% else %}
+  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
+  {% set icon_modifiers = ['fill-branded'] %}
+{% endif %}
+
+<a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
+  <span class="rpla-link-icon__icon-wrapper">
+    {% include '@atoms/50-images/20-icon/icon.twig' with {
+      icon_name: link_icon_name,
+      icon_modifiers: icon_modifiers,
+    } only %}
+  </span>
+  {% include '@atoms/10-link/link.twig' with {
+    link_tag: 'span',
+    link_text: link_icon_text,
+    link_modifiers: link_modifiers,
+  } only %}
+</a>

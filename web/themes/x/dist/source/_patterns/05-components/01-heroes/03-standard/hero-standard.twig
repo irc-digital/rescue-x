@@ -13,7 +13,7 @@
     {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% if hero_standard_art_directed_image_sources is not empty %}
         {% block hero_layout_1_image_block %}
-          {% include '@atoms/15-images/15-art-directed-image/art-directed-image.twig' with {
+          {% include '@atoms/50-images/15-art-directed-image/art-directed-image.twig' with {
             art_directed_image_fallback: hero_standard_art_directed_image_fallback,
             art_directed_image_sources: hero_standard_art_directed_image_sources,
             art_directed_image_alt: hero_standard_art_directed_image_alt
@@ -26,7 +26,7 @@
             <h6 class="rplc-hero-standard__slug">{{ hero_standard_slug }}</h6>
           </div>
         {% endif %}
-        {% include '@atoms/07-responsive-title/responsive-title.twig' with { responsive_title_text: hero_standard_headline} %}
+        {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_standard_headline} %}
         {% if hero_standard_description %}<h2 class="rplc-hero-standard__description">{{ hero_standard_description }}</h2>{% endif %}
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}
