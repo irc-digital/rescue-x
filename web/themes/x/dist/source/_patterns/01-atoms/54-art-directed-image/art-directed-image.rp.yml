@@ -1,7 +1,7 @@
 art_directed_image:
   label: Image (art-directed)
   description: Uses the picture tag to output different aspect ratioed images for different device sizes
-  use: "@atoms/50-images/15-art-directed-image/art-directed-image.twig"
+  use: "@atoms/54-art-directed-image/art-directed-image.twig"
   fields:
     art_directed_image_sources:
       type: array

@@ -23,6 +23,9 @@ hero_article_photographer: "Faker.name()"
 hero_article_social_share:
   include():
     pattern: "molecules-social-share"
+    with:
+      social_share_modifiers:
+        - 'type-two'
 hero_article_contributors:
   include():
     pattern: "molecules-contributors"

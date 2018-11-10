@@ -1,7 +1,7 @@
 image_tag:
   label: Image (basic)
   description: Todo
-  use: "@atoms/50-images/05-image-tag/image-tag.twig"
+  use: "@atoms/50-image/image.twig"
   fields:
     image_tag_source:
       type: url

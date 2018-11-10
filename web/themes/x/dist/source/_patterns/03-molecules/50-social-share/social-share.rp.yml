@@ -1,7 +1,7 @@
 social_share:
   label: Social share
   description: A list social icons that allow users to share content
-  use: "@molecules/50-social/01-share/social-share.twig"
+  use: "@molecules/50-social-share/01-share/social-share.twig"
   fields:
     social_share_sites:
       type: array

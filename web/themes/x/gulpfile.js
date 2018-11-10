@@ -10,7 +10,7 @@ var config = {};
 config.patternLab = {
   dir: './dist',
   patternDir: './dist/source/_patterns',
-  iconLibraryDataFile: './dist/source/_patterns/01-atoms/50-images/21-icon-library/icon-library.yml',
+  iconLibraryDataFile: './dist/source/_patterns/01-atoms/57-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
   publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
