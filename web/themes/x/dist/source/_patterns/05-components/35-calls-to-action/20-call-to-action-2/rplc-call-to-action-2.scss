@@ -11,8 +11,6 @@
   &__content {
     display: flex;
     flex-direction: column;
-    //display: block;
-    //padding: get-spacing('l');
 
     @include breakpoint(desktop) {
       flex-direction: row;

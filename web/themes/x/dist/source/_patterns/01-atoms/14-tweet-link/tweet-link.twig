@@ -1,5 +1,8 @@
+{% spaceless %}
+
 {% set tweet_link_icon_name = tweet_link_icon_name ?: 'twitter' %}
 
+{% endspaceless %}
 <a href="{{ tweet_link_url }}" class="rpla-tweet-link" data-rpla-hover-target>
   <span class="rpla-tweet-link__text">{{ tweet_link_text }}</span>
   <span class="rpla-tweet-link__icon-wrapper">

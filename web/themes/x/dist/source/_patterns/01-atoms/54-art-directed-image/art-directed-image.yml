@@ -4,7 +4,7 @@ art_directed_image_sources:
     - "https://placem.at/places?w=640&h=640&random=artdirectedimage 1x"
     - "https://placem.at/places?w=1280&h=1280&random=artdirectedimage 2x"
     - "https://placem.at/places?w=1920&h=1920&random=artdirectedimage 3x"
-    media: "only screen and (max--width: 40em)"
+    media: "only screen and (max-width: 40em)"
   - source_set:
     - "https://placem.at/places?w=1029&h=441&random=artdirectedimage 1x"
     - "https://placem.at/places?w=2058&h=882&random=artdirectedimage 2x"

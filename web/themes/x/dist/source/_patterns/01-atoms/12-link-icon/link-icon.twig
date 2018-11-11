@@ -9,6 +9,8 @@
  * - none
  */
 #}
+{% spaceless %}
+
 {% set link_icon_modifiers = link_icon_modifiers ?: [] %}
 
 {% set type = null %}
@@ -31,6 +33,7 @@
   {% set icon_modifiers = ['fill-branded'] %}
 {% endif %}
 
+{% endspaceless %}
 <a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
   <span class="rpla-link-icon__icon-wrapper">
     {% include '@atoms/56-icon/icon.twig' with {

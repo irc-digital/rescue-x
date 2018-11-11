@@ -1,3 +1,5 @@
+{% spaceless %}
+
 {% set call_to_action_2_modifiers = call_to_action_2_modifiers ?: [] %}
 
 {% set has_background = false %}
@@ -19,6 +21,7 @@
   {% set call_to_action_2_modifiers = call_to_action_2_modifiers | merge (['image-left']) %}
 {% endif %}
 
+{% endspaceless %}
 <div class="rplc-call-to-action-2{% for call_to_action_2_modifier in call_to_action_2_modifiers %} rplc-call-to-action-2--{{ call_to_action_2_modifier }}{% endfor %}">
   <a href="{{ call_to_action_2_url }}" class="rplc-call-to-action-2__content" data-rpla-hover-target>
     <div class="rplc-call-to-action-2__image-wrapper">
