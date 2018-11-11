@@ -1,0 +1,35 @@
+{% set call_to_action_2_modifiers = call_to_action_2_modifiers ?: [] %}
+
+{% set has_background = false %}
+{% set has_image_position = false %}
+{% for call_to_action_2_modifier in call_to_action_2_modifiers %}
+  {% if call_to_action_2_modifier starts with 'background-' %}
+    {% set has_background = true %}
+  {% endif %}
+  {% if call_to_action_2_modifier starts with 'image-' %}
+    {% set has_image_position = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_background %}
+  {% set call_to_action_2_modifiers = call_to_action_2_modifiers | merge (['background-light']) %}
+{% endif %}
+
+{% if not has_image_position %}
+  {% set call_to_action_2_modifiers = call_to_action_2_modifiers | merge (['image-left']) %}
+{% endif %}
+
+<div class="rplc-call-to-action-2{% for call_to_action_2_modifier in call_to_action_2_modifiers %} rplc-call-to-action-2--{{ call_to_action_2_modifier }}{% endfor %}">
+  <a href="{{ call_to_action_2_url }}" class="rplc-call-to-action-2__content" data-rpla-hover-target>
+    <div class="rplc-call-to-action-2__text-wrapper">
+      <h3 class="rplc-call-to-action-2__title">{{ call_to_action_2_title }}</h3>
+      <div class="rplc-call-to-action-2__subtitle">{{ call_to_action_2_subtitle }}</div>
+    </div>
+    <div class="rplc-call-to-action-2__button-wrapper">
+      {% include '@atoms/30-button/button.twig' with {
+        button_text: call_to_action_2_button_text,
+        button_icon_name: call_to_action_2_button_icon,
+      } only %}
+    </div>
+  </a>
+</div>

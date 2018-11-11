@@ -64,7 +64,7 @@ article_page_content:
           text_modifiers:
             - 'body'
     - include():
-        pattern: "components-call-to-action"
+        pattern: "components-call-to-action-1"
     - include():
         pattern: "atoms-paragraph"
         with:
@@ -76,7 +76,7 @@ article_page_content:
           text_modifiers:
             - 'body'
     - include():
-        pattern: "components-call-to-action"
+        pattern: "components-call-to-action-1"
         with:
           call_to_action_modifiers:
             - 'position-left'

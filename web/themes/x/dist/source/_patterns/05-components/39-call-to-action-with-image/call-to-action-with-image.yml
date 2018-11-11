@@ -1,5 +1,0 @@
-call_to_action_with_image_title: "Faker.words(5,true)"
-call_to_action_with_image_subtitle: "Faker.words(25,true)"
-call_to_action_with_image_url: "#"
-call_to_action_with_image_button_text: "Faker.words(3,true)"
-call_to_action_with_image_button_icon: "heart"
