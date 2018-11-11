@@ -78,7 +78,7 @@ article_page_content:
     - include():
         pattern: "components-call-to-action-1"
         with:
-          call_to_action_modifiers:
+          call_to_action_1_modifiers:
             - 'position-left'
             - 'background-dark'
 
