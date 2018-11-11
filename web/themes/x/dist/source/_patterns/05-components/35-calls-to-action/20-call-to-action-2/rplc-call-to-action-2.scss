@@ -23,8 +23,45 @@
     line-height: 0;
   }
 
-  //&__message-wrapper {
-  //}
+  &__message-wrapper {
+    background-color: get-neutral-color('white');
+    padding: get-spacing('l');
+
+    @include breakpoint(desktop) {
+      flex-basis: rem(512px);
+      max-height: rem(522px);
+      padding: get-spacing('xxl') get-spacing('xxxl');
+    }
+  }
+
+  &__title {
+    @include typography-heading-xxxl;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__subtitle {
+    @include typography-text-large;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &--image-right {
+    @include breakpoint(desktop) {
+      #{$self}__message-wrapper {
+        order: -1;
+      }
+    }
+  }
+
+  &--background-dark {
+    #{$self}__message-wrapper {
+      background-color: get-neutral-color('black');
+    }
+
+    #{$self}__title,
+    #{$self}__subtitle {
+      color: get-neutral-color('white');
+    }
+  }
 
 }
 
