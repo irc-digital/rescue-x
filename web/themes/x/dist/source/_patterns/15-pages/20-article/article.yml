@@ -79,7 +79,9 @@ article_page_content:
         pattern: "components-call-to-action"
         with:
           call_to_action_modifiers:
-            - 'position-right'
+            - 'position-left'
+            - 'background-dark'
+
     - include():
         pattern: "atoms-paragraph"
         with:

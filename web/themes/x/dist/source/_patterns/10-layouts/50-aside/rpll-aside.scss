@@ -22,7 +22,7 @@
       padding-top: $aside-top-bottom-spacing;
       width: $aside-width;
 
-      @media only screen and (min-width: #{rem(950px)}) {
+      @include breakpoint(951) {
         margin-left: 0;
       }
     }

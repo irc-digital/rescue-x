@@ -43,18 +43,42 @@
 
   }
 
+  &--position-left,
   &--position-right {
     #{$self}__content {
       @include breakpoint(phablet) {
         @include floated-aside-z-index;
-        float: right;
-        margin-left: get-spacing('l');
         width: 376px;
       }
 
       @include breakpoint(951) {
-        margin-left: -#{get-spacing('xxl')};
         width: 448px;
+      }
+    }
+  }
+
+  &--position-left {
+    #{$self}__content {
+      @include breakpoint(phablet) {
+        float: left;
+        margin-right: get-spacing('xl');
+      }
+
+      @include breakpoint(951) {
+        margin-right: rem(160px);
+      }
+    }
+  }
+
+  &--position-right {
+    #{$self}__content {
+      @include breakpoint(phablet) {
+        float: right;
+        margin-left: get-spacing('l');
+      }
+
+      @include breakpoint(951) {
+        margin-left: -#{get-spacing('xxl')};
       }
     }
   }

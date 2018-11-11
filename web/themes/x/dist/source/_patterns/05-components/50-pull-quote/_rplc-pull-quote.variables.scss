@@ -12,8 +12,6 @@ $pull-quote-icon-right-margin: (
   'desktop': get-spacing('ml')
 );
 
-$pull-quote-large-screen-breakpoint: rem(950px);
-
 $pull-quote-text-padding: (
   'mobile': get-spacing('l') get-spacing('ml'),
   'phablet': get-spacing('ml'),
