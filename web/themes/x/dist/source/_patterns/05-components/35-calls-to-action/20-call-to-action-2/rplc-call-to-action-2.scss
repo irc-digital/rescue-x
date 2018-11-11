@@ -3,13 +3,28 @@
 .rplc-call-to-action-2 {
   $self: &;
 
-  @include standard-row(true);
   @include standard-vertical-spacing;
+  @include breakpoint(desktop) {
+    @include standard-row;
+  }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     //display: block;
     //padding: get-spacing('l');
+
+    @include breakpoint(desktop) {
+      flex-direction: row;
+    }
   }
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  //&__message-wrapper {
+  //}
 
 }
 

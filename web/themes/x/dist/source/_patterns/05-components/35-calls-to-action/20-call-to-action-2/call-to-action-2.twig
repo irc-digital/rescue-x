@@ -29,15 +29,17 @@
         responsive_image_alt: call_to_action_2_responsive_image_alt
       } only %}
     </div>
-    <div class="rplc-call-to-action-2__text-wrapper">
-      <h3 class="rplc-call-to-action-2__title">{{ call_to_action_2_title }}</h3>
-      <div class="rplc-call-to-action-2__subtitle">{{ call_to_action_2_subtitle }}</div>
-    </div>
-    <div class="rplc-call-to-action-2__button-wrapper">
-      {% include '@atoms/30-button/button.twig' with {
-        button_text: call_to_action_2_button_text,
-        button_icon_name: call_to_action_2_button_icon,
-      } only %}
+    <div class="rplc-call-to-action-2__message-wrapper">
+      <div class="rplc-call-to-action-2__text-wrapper">
+        <h3 class="rplc-call-to-action-2__title">{{ call_to_action_2_title }}</h3>
+        <div class="rplc-call-to-action-2__subtitle">{{ call_to_action_2_subtitle }}</div>
+      </div>
+      <div class="rplc-call-to-action-2__button-wrapper">
+        {% include '@atoms/30-button/button.twig' with {
+          button_text: call_to_action_2_button_text,
+          button_icon_name: call_to_action_2_button_icon,
+        } only %}
+      </div>
     </div>
   </a>
 </div>
