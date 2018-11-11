@@ -1,0 +1,16 @@
+@import 'rplc-call-to-action-with-image.variables';
+
+.rplc-call-to-action-with-image {
+  $self: &;
+
+  @include standard-row(true);
+  @include standard-vertical-spacing;
+
+  &__content {
+    display: block;
+    padding: get-spacing('l');
+  }
+
+}
+
+// end of file

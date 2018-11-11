@@ -48,11 +48,11 @@
     #{$self}__content {
       @include breakpoint(phablet) {
         @include floated-aside-z-index;
-        width: 376px;
+        width: rem(376px);
       }
 
       @include breakpoint(951) {
-        width: 448px;
+        width: rem(448px);
       }
     }
   }
