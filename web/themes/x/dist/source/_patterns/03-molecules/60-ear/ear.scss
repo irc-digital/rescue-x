@@ -2,7 +2,7 @@
 
 .rplm-ear {
   position: absolute;
-  right: map-get($ear-triangle-size, 'desktop') * 1.35;
+  right: map-get($ear-triangle-size, 'mobile') * 1.35;
 
   &__content {
     display: block;
@@ -10,22 +10,22 @@
   }
 
   &__triangle {
-    border-bottom: map-get($ear-triangle-size, 'desktop') solid get-brand-color('primary');
-    border-left: map-get($ear-triangle-size, 'desktop') solid transparent;
-    border-right: map-get($ear-triangle-size, 'desktop') solid transparent;
+    border-bottom: map-get($ear-triangle-size, 'mobile') solid get-brand-color('primary');
+    border-left: map-get($ear-triangle-size, 'mobile') solid transparent;
+    border-right: map-get($ear-triangle-size, 'mobile') solid transparent;
     height: 0;
     position: absolute;
-    top: -#{map-get($ear-triangle-size, 'desktop') / 6.85};
+    top: -#{map-get($ear-triangle-size, 'mobile') / 6.85};
     transform: rotate(45deg);
     width: 0;
   }
 
   &__icon-wrapper {
-    height: map-get($ear-triangle-icon-wrapper-size, 'desktop');
-    left: map-get($ear-triangle-icon-wrapper-left, 'desktop');
+    height: map-get($ear-triangle-icon-wrapper-size, 'mobile');
+    left: map-get($ear-triangle-icon-wrapper-left, 'mobile');
     position: absolute;
-    top: map-get($ear-triangle-icon-wrapper-top, 'desktop');
-    width: map-get($ear-triangle-icon-wrapper-size, 'desktop');
+    top: map-get($ear-triangle-icon-wrapper-top, 'mobile');
+    width: map-get($ear-triangle-icon-wrapper-size, 'mobile');
     z-index: 1;
   }
 }

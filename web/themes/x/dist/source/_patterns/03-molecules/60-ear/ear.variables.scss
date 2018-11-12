@@ -4,23 +4,28 @@
 // these are all in ems, giving the container a change to adjust it for its needs
 // however, stuff should look good just with the font size specified on the body tag
 $ear-triangle-magic-number: (
-  'desktop': 7em,
+  'mobile': 4em,
+  'phablet': 7em,
 );
 
 $ear-triangle-size: (
-  'desktop': map-get($ear-triangle-magic-number, 'desktop'),
+  'mobile': map-get($ear-triangle-magic-number, 'mobile'),
+  'phablet': map-get($ear-triangle-magic-number, 'phablet'),
 );
 
 $ear-triangle-icon-wrapper-size: (
-  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .5
+  'mobile': map-get($ear-triangle-magic-number, 'mobile') * .5,
+  'phablet': map-get($ear-triangle-magic-number, 'phablet') * .5,
 );
 
 $ear-triangle-icon-wrapper-left: (
-  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .68,
+  'mobile': map-get($ear-triangle-magic-number, 'mobile') * .68,
+  'phablet': map-get($ear-triangle-magic-number, 'phablet') * .68,
 );
 
 $ear-triangle-icon-wrapper-top: (
-  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .19,
+  'mobile': map-get($ear-triangle-magic-number, 'mobile') * .19,
+  'phablet': map-get($ear-triangle-magic-number, 'phablet') * .19,
 );
 
 // end of file
