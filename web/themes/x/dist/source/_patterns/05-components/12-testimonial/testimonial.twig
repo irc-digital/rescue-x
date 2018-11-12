@@ -9,7 +9,7 @@
       <h3 class="rplc-testimonial__title">{{ testimonial_title }}</h3>
       <div class="rplc-testimonial__quote-wrapper">
         <div class="rplc-testimonial__quote-mark-wrapper">
-          {% include '@atoms/15-images/20-icon/icon.twig' with {
+          {% include '@atoms/56-icon/icon.twig' with {
             icon_name: 'quote-mark',
             icon_modifiers: ['fill-branded']
           } only %}
@@ -27,7 +27,7 @@
           </blockquote>
         </div>
         <div class="rplc-testimonial__link-wrapper">
-        {% include '@atoms/05-buttons/button.twig' with {
+        {% include '@atoms/30-button/button.twig' with {
           button_url: testimonial_url,
           button_text: testimonial_cta,
           button_modifiers: ['display-block'],

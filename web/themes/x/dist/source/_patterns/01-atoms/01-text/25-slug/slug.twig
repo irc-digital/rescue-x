@@ -4,7 +4,9 @@
   {% else %}
     <div class="rpla-slug__slug">{{ slug_text }}</div>
     {% if sub_slug_url %}<a class="rpla-slug__sub-slug-link" href="{{ sub_slug_url }}">{% endif %}
-    <div class="rpla-slug__sub-slug">{{ sub_slug_text }}</div>
+    <div class="rpla-slug__sub-slug">
+      <div class="rpla-slug__sub-slug-text">{{ sub_slug_text }}</div>
+    </div>
     {% if sub_slug_url %}</a>{% endif %}
   {% endif %}
 </h6>

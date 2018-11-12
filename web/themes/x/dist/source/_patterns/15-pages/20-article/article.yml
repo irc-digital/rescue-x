@@ -15,13 +15,13 @@ article_page_content:
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - lead
-            - body
+            - 'lead'
+            - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
+            - 'body'
     - join():
       - "<p class='rpla-paragraph rpla-paragraph--body'>Nulla consequat massa quis enim "
       - include():
@@ -33,41 +33,75 @@ article_page_content:
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
+            - 'body'
     - include():
         pattern: "components-pull-quote"
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
+            - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
-    - include():
-        pattern: "atoms-paragraph"
-        with:
-          text_modifiers:
-            - body
-    - include():
-        pattern: "atoms-paragraph"
-        with:
-          text_modifiers:
-            - body
+            - 'body'
     - include():
         pattern: "components-image-partial-width-landscape"
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
+            - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
-            - body
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "components-call-to-action-1"
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "components-call-to-action-1"
+        with:
+          call_to_action_1_modifiers:
+            - 'position-left'
+            - 'background-dark'
+
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
 article_page_footer:
   join():
     - include():
@@ -81,7 +115,9 @@ article_page_footer:
               pattern: "components-efficiency"
           footer_layout_1_section_3:
             include():
-              pattern: "molecules-social-links"
+              pattern: "molecules-social-share"
+              with:
+                social_share_title: 'Follow us'
     - include():
         pattern: "layouts-footer-layout-2"
         with:

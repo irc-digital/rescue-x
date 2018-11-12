@@ -37,10 +37,9 @@
     margin-left: $person-info-byline-left-margin;
   }
 
-  &__social-link {
+  &__social-wrapper {
+    @include font-size('s');
     display: inline-block;
-    height: rem(16px);
-    width: rem(16px);
   }
 
   &--small {

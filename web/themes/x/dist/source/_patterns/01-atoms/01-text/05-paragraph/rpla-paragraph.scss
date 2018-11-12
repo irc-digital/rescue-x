@@ -17,7 +17,7 @@
     width: 90vw;
     z-index: 1;
 
-    @media only screen and (min-width: #{rem(951px)}) {
+    @include breakpoint(951) {
       left: -105px;
       width: 650px;
     }

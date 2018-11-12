@@ -96,6 +96,9 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 #components-image-link-boxes,
 #components-quote,
 #components-testimonial,
+[id^="components-call-to-action-1"],
+[id^="components-call-to-action-2"],
+[id^="components-call-to-action-3"],
 [id^="components-pull-quote"],
 [id^="pages-"],
 [id^="layouts-"] {
@@ -148,16 +151,17 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   }
 }
 
-*[id*='atoms-link-(type 2)'],
-*[id*='atoms-link-(type 2 - no underline)'],
-*[id*='atoms-link-(type 1 - yellow)'],
-*[id*='atoms-link-(type 2 - no hover)'],
-*[id*='atoms-link-icon-(type 2)'],
-*[id*='molecules-social-links-(inverse)'],
-*[id*='atoms-icon-link-(inverse)'],
-*[id*='molecules-social-share-(type 3)'],
-*[id*='atoms-icon-link-(type 4)'],
-*[id*='atoms-link-(type 1 - white)'] {
+*[id='atoms-link-type-2'],
+*[id='atoms-link-type-2-no-underline'],
+*[id='atoms-link-type-1-yellow'],
+*[id='atoms-link-type-2-no-hover'],
+*[id='atoms-link-icon-type-2'],
+*[id='molecules-social-share-type-1-inverse'],
+*[id='atoms-icon-link-inverse'],
+*[id='atoms-icon-only-link-inverse'],
+*[id='molecules-social-share-type-4'],
+*[id='atoms-icon-link-type-4'],
+*[id='atoms-link-type-1-white'] {
   background-color: get-neutral-color('black');
 
   .patternLink:hover {
@@ -165,10 +169,10 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   }
 }
 
-*[id='atoms-link-(type 1 - black, inverse)'],
-*[id*='molecules-social-share-(type 2)'],
-*[id*='atoms-icon-link-(type 3)'],
-*[id='atoms-link-(type 1 - inverse)'] {
+*[id='atoms-link-type-1-black-inverse'],
+*[id='molecules-social-share-type 3'],
+*[id='atoms-icon-link-type-3'],
+*[id='atoms-link-type-1-inverse'] {
   background-color: get-brand-color('primary');
 }
 

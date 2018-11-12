@@ -1,0 +1,19 @@
+{% spaceless %}
+
+{% if convertible_link_button_url is not empty %}
+  {% set convertible_link_button_tag = 'a' %}
+{% elseif convertible_link_button_tag is empty %}
+  {% set convertible_link_button_tag = 'div' %}
+{% endif %}
+
+{% set convertible_link_button_icon_name = convertible_link_button_icon_name ?: 'caret-down' %}
+
+{% endspaceless %}
+<{{ convertible_link_button_tag }}{% if convertible_link_button_url is not empty %} href="{{ convertible_link_button_url }}"{% endif %} role="link" class="rpla-convertible-link-button">
+  <span class="rpla-convertible-link-button__text">{{ convertible_link_button_link_text }}</span>
+  <span class="rpla-convertible-link-button__icon-wrapper">
+    {% include '@atoms/56-icon/icon.twig' with {
+      icon_name: convertible_link_button_icon_name
+    } only %}
+  </span>
+</{{ convertible_link_button_tag }}>

@@ -10,7 +10,7 @@ var config = {};
 config.patternLab = {
   dir: './dist',
   patternDir: './dist/source/_patterns',
-  iconLibraryDataFile: './dist/source/_patterns/01-atoms/15-images/21-icon-library/icon-library.yml',
+  iconLibraryDataFile: './dist/source/_patterns/01-atoms/57-icon-library/icon-library.yml',
   publicCssDir: './dist/public/css',
   publicJsDir: './dist/public/js',
   metaDir: './dist/source/_meta/',
@@ -25,7 +25,7 @@ config.patternLab = {
 };
 
 config.styles = {
-  max_file_size: '60000', // this is a bit of a safety value - edge this up to protect us from bad includes or bad CSS blowing up our file size
+  max_file_size: '75000', // this is a bit of a safety valve - edge this up to protect us from bad includes or bad CSS blowing up our file size
   input: config.patternLab.dir + '/source/scss',
   input_combined: [
     config.patternLab.dir + '/source/scss/**/*.scss',
@@ -244,12 +244,12 @@ gulp.task('patternlab:generate:variables', function (callback) {
 });
 
 gulp.task('patternlab:generate:concatenate_button_examples', function () {
-  fs.writeFileSync(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/button-examples.yml', "");
+  fs.writeFileSync(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/button-examples.yml', "");
 
-  return gulp.src(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/*.yml')
+  return gulp.src(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/*.yml')
       .pipe(clean())
       .pipe(concat('button-examples.yml', {newLine: ''}))
-      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns/01-atoms/06-button-examples/'));
+      .pipe(gulp.dest(config.patternLab.dir + '/source/_patterns/01-atoms/31-button-examples/'));
 });
 
 gulp.task('patternlab:generate:variables_as_json', function () {
@@ -317,7 +317,7 @@ gulp.task('clean:svgs', function (callback) {
 /**
  * Removes the css files
  */
-gulp.task('clean:styles', function () {
+gulp.task('clean:styles', function (callback) {
   del.sync([
     config.styles.output
   ])
@@ -336,17 +336,17 @@ gulp.task('build:svgs', function (callback) {
   return gulp.src(config.svgs.input)
       .pipe(tap(function (file, t) {
           return gulp.src(file.path)
-              .pipe(rename({prefix: 'rpl-svg-'}))
-              .pipe(svgmin())
-              .pipe(svgstore({inlineSvg: true}))
-              .pipe(cheerio(function ($, file) {
-                $('symbol').addClass($('symbol').attr('id'));
-              }, { decodeEntities: false }))
-              .pipe(rename({ basename: file.relative, extname: '', prefix: 'symbol-'}))
-              .pipe(cheerio(function ($, file) {
-                $('svg').replaceWith($('svg').children());
-              }, { decodeEntities: false }))
-              .pipe(gulp.dest(config.svgs.output + 'individuals/'));
+            .pipe(rename({prefix: 'rpl-svg-'}))
+            .pipe(svgmin())
+            .pipe(svgstore({inlineSvg: true}))
+            .pipe(cheerio(function ($, file) {
+              $('symbol').addClass($('symbol').attr('id'));
+            }, { decodeEntities: false }))
+            .pipe(rename({ basename: file.relative, extname: '', prefix: 'symbol-'}))
+            .pipe(cheerio(function ($, file) {
+              $('svg').replaceWith($('svg').children());
+            }, { decodeEntities: false }))
+            .pipe(gulp.dest(config.svgs.output + 'individuals/'));
       }))
       .pipe(rename({prefix: 'rpl-svg-'}))
       .pipe(svgmin())

@@ -253,7 +253,7 @@ $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.js
 }
 
 // generates a JSON array of font style to be used by PatternLab
-$xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.json', get-font-weight('all'), (prefix: '{ "font_style":', suffix: '}'));
+$xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.json', get-font-style('all'), (prefix: '{ "font_style":', suffix: '}'));
 
 // Function to get a spacing value from its array entry key
 @function get-spacing($option: 'm') {

@@ -1,0 +1,21 @@
+call_to_action_3_title: "Help now"
+call_to_action_3_subtitle: "Faker.sentences(2,true)"
+call_to_action_3_url: "#"
+call_to_action_3_button_text: "Faker.words(3,true)"
+call_to_action_3_button_icon: "heart"
+call_to_action_3_art_directed_image_sources:
+  - source_set:
+    - "https://placem.at/places?w=640&h=747&random=calltoaction3 1x"
+    - "https://placem.at/places?w=1280&h=1493&random=calltoaction3 2x"
+    - "https://placem.at/places?w=1920&h=2240&random=calltoaction3 3x"
+    media: "only screen and (max-width: 40em)"
+  - source_set:
+    - "https://placem.at/places?w=1029&h=441&random=calltoaction3 1x"
+    - "https://placem.at/places?w=2058&h=882&random=calltoaction3 2x"
+    media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+  - source_set:
+    - "https://placem.at/places?w=1208&h=362&random=calltoaction3 1x"
+    - "https://placem.at/places?w=2416&h=725&random=calltoaction3 2x"
+    media: "only screen and (min-width: 64.063em)"
+call_to_action_3_art_directed_image_fallback: "https://placem.at/places?w=1208&h=906&random=calltoaction2"
+call_to_action_3_art_directed_image_alt: "Faker.words(5,true)"

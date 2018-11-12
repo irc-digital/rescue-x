@@ -15,7 +15,7 @@
   <a href="{{ teaser_standard_url }}" class="rplc-teaser-standard__wrapper-link" data-rpla-hover-target>
     <div class="rplc-teaser-standard__image-wrapper">
     {% block teaser_image_block %}
-      {% include '@atoms/15-images/10-responsive-image/responsive-image.twig' with {
+      {% include '@atoms/52-responsive-image/responsive-image.twig' with {
         responsive_image_source_set: teaser_standard_image_source_set,
         responsive_image_sizes: teaser_standard_image_sizes,
         responsive_image_fallback: teaser_standard_image_fallback,
@@ -30,7 +30,7 @@
         <h3 class="rpla-heading rpla-heading--medium-large">{{ teaser_standard_title }}</h3>
       </div>
       <div class="rplc-teaser-standard__cta-wrapper">
-        {% include '@atoms/03-links/05-link/link.twig' with {
+        {% include '@atoms/10-link/link.twig' with {
           link_text: teaser_standard_cta,
         } only %}
       </div>

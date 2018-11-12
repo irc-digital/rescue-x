@@ -5,17 +5,17 @@
 @import '../_patterns/01-atoms/01-text/05-paragraph/rpla-paragraph';
 @import '../_patterns/01-atoms/01-text/10-heading/rpla-heading';
 @import '../_patterns/01-atoms/01-text/25-slug/rpla-slug';
-@import '../_patterns/01-atoms/01-text/30-utility/rpla-utility-text';
-@import '../_patterns/01-atoms/05-buttons/rpla-button';
-@import '../_patterns/01-atoms/03-links/05-link/rpla-link';
-@import '../_patterns/01-atoms/03-links/10-link-icon/rpla-link-icon';
-@import '../_patterns/01-atoms/03-links/15-tweet-link/rpla-tweet-link';
-@import '../_patterns/01-atoms/03-links/20-convertible-link-button/rpla-convertible-link-button';
-@import '../_patterns/01-atoms/03-links/25-icon-link/rpla-icon-link';
-@import '../_patterns/01-atoms/10-lists/05-unordered/rpla-unordered-list';
-@import '../_patterns/01-atoms/07-responsive-title/rpla-responsive-title';
-@import '../_patterns/01-atoms/15-images/20-icon/rpla-icon';
-@import '../_patterns/01-atoms/15-images/10-responsive-image/rpla-responsive-image';
+@import '../_patterns/01-atoms/01-text/30-utility-text/rpla-utility-text';
+@import '../_patterns/01-atoms/30-button/rpla-button';
+@import '../_patterns/01-atoms/10-link/rpla-link';
+@import '../_patterns/01-atoms/12-link-icon/rpla-link-icon';
+@import '../_patterns/01-atoms/14-tweet-link/rpla-tweet-link';
+@import '../_patterns/01-atoms/18-convertible-link-button/rpla-convertible-link-button';
+@import '../_patterns/01-atoms/16-icon-only-link/rpla-icon-link';
+@import '../_patterns/01-atoms/40-list/05-unordered/rpla-unordered-list';
+@import '../_patterns/01-atoms/02-responsive-title/rpla-responsive-title';
+@import '../_patterns/01-atoms/56-icon/rpla-icon';
+@import '../_patterns/01-atoms/52-responsive-image/rpla-responsive-image';
 
 // so ubiquitous that despite being a molecule we'll include it into the CSS as if it were an atom
 @import '../_patterns/03-molecules/20-section-heading/rplm-section-heading';

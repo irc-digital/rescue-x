@@ -23,16 +23,15 @@
 @import '../_patterns/03-molecules/10-contributors/rplm-contributors';
 @import '../_patterns/03-molecules/30-crisis-watch/rplm-crisis-watch';
 @import '../_patterns/03-molecules/40-authority/rplm-authority';
-@import '../_patterns/03-molecules/50-social/01-links/rplm-social-links';
-@import '../_patterns/03-molecules/50-social/02-share/rplm-social-share';
+@import '../_patterns/03-molecules/50-social-share/rplm-social-share';
 //
 // Build components
 //
-@import '../_patterns/05-components/01-heroes/03-standard/rplc-hero-standard';
-@import '../_patterns/05-components/01-heroes/05-article/rplc-hero-article';
-@import '../_patterns/05-components/01-heroes/10-landing-page/rplc-hero-landing-page';
-@import '../_patterns/05-components/01-heroes/20-text-only/rplc-hero-text-only';
-@import '../_patterns/05-components/01-heroes/30-text-with-links/rplc-hero-text-with-links';
+@import '../_patterns/05-components/95-heroes/03-standard/rplc-hero-standard';
+@import '../_patterns/05-components/95-heroes/05-article/rplc-hero-article';
+@import '../_patterns/05-components/95-heroes/10-landing-page/rplc-hero-landing-page';
+@import '../_patterns/05-components/95-heroes/20-text-only/rplc-hero-text-only';
+@import '../_patterns/05-components/95-heroes/30-text-with-links/rplc-hero-text-with-links';
 @import '../_patterns/05-components/05-teasers/05-standard/rplc-teaser-standard';
 @import '../_patterns/05-components/05-teasers/10-highlighted/rplc-teaser-highlighted';
 @import '../_patterns/05-components/05-teasers/15-minimal/rplc-teaser-minimal';
@@ -56,5 +55,8 @@
 @import '../_patterns/05-components/75-impact-card/rplc-impact-card';
 @import '../_patterns/05-components/80-highlight/rplc-highlight';
 @import '../_patterns/05-components/90-efficiency/rplc-efficiency';
+@import '../_patterns/05-components/35-calls-to-action/10-call-to-action-1/rplc-call-to-action-1';
+@import '../_patterns/05-components/35-calls-to-action/20-call-to-action-2/rplc-call-to-action-2';
+@import '../_patterns/05-components/35-calls-to-action/30-call-to-action-3/rplc-call-to-action-3';
 
 // end of file

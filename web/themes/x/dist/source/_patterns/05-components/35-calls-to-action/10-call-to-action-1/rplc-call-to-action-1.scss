@@ -1,0 +1,108 @@
+@import 'rplc-call-to-action-1.variables';
+
+.rplc-call-to-action-1 {
+  $self: &;
+
+  @include standard-row(true);
+  @include standard-vertical-spacing;
+
+  &__content {
+    display: block;
+    padding: get-spacing('l');
+  }
+
+  &__title {
+    @include typography-heading-xxxl;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__subtitle {
+    @include typography-text-large;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &--background-light {
+    #{$self}__content {
+      background-color: get-neutral-color('white');
+    }
+
+    #{$self}__title {
+      color: get-neutral-color('black');
+    }
+  }
+
+  &--background-dark {
+    #{$self}__content {
+      background-color: get-neutral-color('black');
+    }
+
+    #{$self}__title,
+    #{$self}__subtitle {
+      color: get-neutral-color('white');
+    }
+  }
+
+
+  &--position-middle {
+    #{$self}__content {
+      @include breakpoint(951) {
+        display: flex;
+      }
+    }
+
+    #{$self}__text-wrapper {
+      @include breakpoint(951) {
+        padding-right: get-spacing('xxxl');
+      }
+    }
+
+    #{$self}__subtitle {
+      @include breakpoint(951) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--position-left,
+  &--position-right {
+    #{$self}__content {
+      @include breakpoint(phablet) {
+        @include floated-aside-z-index;
+        width: rem(376px);
+      }
+
+      @include breakpoint(951) {
+        width: rem(448px);
+      }
+    }
+  }
+
+  &--position-left {
+    #{$self}__content {
+      @include breakpoint(phablet) {
+        float: left;
+        margin-right: get-spacing('xl');
+      }
+
+      @include breakpoint(951) {
+        margin-right: rem(160px);
+      }
+    }
+  }
+
+  &--position-right {
+    #{$self}__content {
+      @include breakpoint(phablet) {
+        float: right;
+        margin-left: get-spacing('l');
+      }
+
+      @include breakpoint(951) {
+        margin-left: -#{get-spacing('xxl')};
+      }
+    }
+  }
+
+}
+
+// end of file

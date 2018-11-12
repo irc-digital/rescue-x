@@ -9,12 +9,15 @@
 //
 // Note: We've inherited using padding rather than margin for the breathing space from rescue.org
 //
-@mixin standard-row {
+@mixin standard-row ($no-padding: false) {
   margin-left: auto;
   margin-right: auto;
   max-width: $max-row-width;
-  padding-left: get-spacing();
-  padding-right: get-spacing();
+
+  @if not $no-padding {
+    padding-left: get-spacing('m');
+    padding-right: get-spacing('m');
+  }
 }
 
 @mixin standard-vertical-spacing ($airy: false) {
@@ -49,7 +52,10 @@
 //
 // A mixin to help with our most common media queries
 //
-// accepts:  desktop, laptop, tablet and phablet.
+// accepts:  desktop, laptop, 950, tablet and phablet.
+//
+// 951 is a slightly odd case where it does not map onto a common device, but our design changes a bunch
+// of stuff at that point - think of it as a magic number for the rescue.org design
 //
 // mobile is not an option as our SCSS should be mobile-first
 //
@@ -68,12 +74,13 @@
     @media only screen and (min-width: #{$smallest-desktop-size}) { @content ; }
   } @else if $point == laptop {
     @media only screen and (min-width: #{$smallest-laptop-size}) { @content ; }
+  } @else if $point == 951 {
+    @media only screen and (min-width: rem(951px)) { @content ; }
   } @else if $point == tablet {
     @media only screen and (min-width: #{$smallest-tablet-size}) { @content ; }
   } @else if $point == phablet {
     @media only screen and (min-width: #{$smallest-phablet-size})  { @content ; }
   }
 }
-
 
 // end of file

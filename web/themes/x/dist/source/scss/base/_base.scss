@@ -25,6 +25,10 @@ img {
   max-width: 100%;
 }
 
+strong {
+  @include font-weight('bold');
+}
+
 * {
   @include rotate;
 }

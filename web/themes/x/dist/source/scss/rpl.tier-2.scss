@@ -141,6 +141,18 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
+// Extra large on mobile, Extra extra extra large on bigger devices
+@mixin typography-heading-xxxl {
+  @include font-size('xl');
+  @include font-weight('bold');
+  @include letter-spacing('compact');
+  @include line-height('xs');
+
+  @include breakpoint(phablet) {
+    @include font-size('xxxl');
+  }
+}
+
 // Extra large light on mobile, Extra extra large on bigger devices (light)
 @mixin typography-heading-extra-large-light {
   @include font-size('xl');
@@ -151,6 +163,11 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include breakpoint(tablet) {
     @include font-size('xxl');
   }
+}
+
+@mixin floated-aside-z-index {
+  position: relative;
+  z-index: 5;
 }
 
 @mixin hover ($target: '&') {
