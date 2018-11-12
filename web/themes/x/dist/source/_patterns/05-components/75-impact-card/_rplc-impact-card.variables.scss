@@ -1,2 +1,6 @@
 @import '../../../scss/core';
 
+$impact-card-detils-section-padding: (
+  'mobile': get-spacing(),
+  'phablet': get-spacing('l'),
+);
