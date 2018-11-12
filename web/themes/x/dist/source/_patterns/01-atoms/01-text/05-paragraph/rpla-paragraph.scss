@@ -17,9 +17,13 @@
     width: 90vw;
     z-index: 1;
 
+    @include breakpoint(phablet) {
+      margin-left: get-spacing('xl');
+    }
+
     @include breakpoint(951) {
-      left: -105px;
-      width: 650px;
+      left: -102px;
+      margin-left: auto;
     }
   }
 }
