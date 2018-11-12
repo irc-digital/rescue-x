@@ -14,7 +14,14 @@
     background-color: get-brand-color();
   }
 
+  &__heading-title {
+    @include typography-heading-medium-large;
+    font-weight: bold;
+    //to do why is this not defaul bold?
+  }
+
   &__card {
     background-color: get-neutral-color('white');
   }
+
 }
