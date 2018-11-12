@@ -1,0 +1,86 @@
+@import 'rplc-call-to-action-4.variables';
+
+.rplc-call-to-action-4 {
+  $self: &;
+
+  &__content {
+    @include standard-vertical-spacing;
+
+    display: block;
+
+    @media only screen and (min-width: #{$smallest-desktop-size-less-gutters}) {
+      @include standard-row();
+    }
+  }
+
+  &__cta-wrapper {
+    color: get-neutral-color('white');
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+
+    &::before {
+      background: linear-gradient(to bottom, map-get($call-to-action-4-background-transparency, 'from') 49%, map-get($call-to-action-4-background-transparency, 'to') 100%);
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+
+      @include breakpoint(phablet) {
+        background: linear-gradient(to right, map-get($call-to-action-4-background-transparency, 'from') 49%, map-get($call-to-action-4-background-transparency, 'to') 100%);
+      }
+    }
+  }
+
+  &__message-wrapper {
+    bottom: -#{map-get($call-to-action-4-eat-in, 'mobile')};
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 0;
+    overflow: hidden;
+    padding: get-spacing('l') get-spacing('xxxl');
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include breakpoint(phablet) {
+      bottom: -#{map-get($call-to-action-4-eat-in, 'phablet')};
+      justify-content: center;
+      left: auto;
+      padding: get-spacing('l');
+      width: rem(512px);
+    }
+
+    @include breakpoint(desktop) {
+      padding: get-spacing('xl');
+    }
+  }
+
+  &__title {
+    @include typography-heading-xxxl;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__subtitle {
+    @include typography-text-large;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__footer-wrapper {
+    @include standard-row;
+
+    background-color: get-neutral-color('very-dark-gray');
+    padding-top: map-get($call-to-action-4-eat-in, 'mobile') / 2;
+
+    @include breakpoint(phablet) {
+      padding-top: map-get($call-to-action-4-eat-in, 'phablet') / 2;
+    }
+  }
+}
+
+// end of file
