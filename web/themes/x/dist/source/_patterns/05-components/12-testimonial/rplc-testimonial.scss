@@ -100,14 +100,4 @@
       margin-right: rem(80px);
     }
   }
-
-  &__authority-wrapper {
-    @include standard-row;
-    background-color: $testimonial-authority-color;
-
-    @include breakpoint(tablet) {
-      background-color: inherit;
-    }
-  }
-
 }
