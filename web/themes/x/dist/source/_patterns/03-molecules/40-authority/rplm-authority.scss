@@ -4,14 +4,23 @@
   background-color: $authority-background-color;
   padding: $authority-padding 0;
   @include breakpoint(tablet) {
-    padding: $authority-padding-tablet;
+    background-color: transparent;
+    padding: 0;
   }
 
   &__wrapper {
+    @include standard-row;
+  }
+
+  &__content-wrapper {
+    background-color: $authority-background-color;
     display: flex;
     flex-direction: column;
     @include breakpoint(phablet) {
       flex-direction: row;
+    }
+    @include breakpoint(tablet) {
+      padding: $authority-padding-tablet;
     }
   }
 
