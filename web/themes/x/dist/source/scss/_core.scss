@@ -8,9 +8,9 @@
 $standard-overlay-treatment: rgba(0, 0, 0, .5);
 
 $well-width-inner: rem(1208px);
-$max-row-width: $well-width-inner + (get-spacing() * 2);
 
-$smallest-desktop-size: $max-row-width;
+$smallest-desktop-size: $well-width-inner;
+$smallest-desktop-size-plus-gutters: $well-width-inner + get-spacing('m') + get-spacing('m');
 $smallest-desktop-size-less-gutters: $well-width-inner - rem(1px);
 $smallest-laptop-size: rem(1024px);
 $smallest-tablet-size: rem(768px);

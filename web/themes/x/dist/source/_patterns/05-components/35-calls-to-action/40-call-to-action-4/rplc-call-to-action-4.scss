@@ -3,14 +3,17 @@
 .rplc-call-to-action-4 {
   $self: &;
 
+  @include standard-vertical-spacing;
+
   &__content {
-    @include standard-vertical-spacing;
-
-    display: block;
-
-    @media only screen and (min-width: #{$smallest-desktop-size-less-gutters}) {
-      @include standard-row();
+    @include breakpoint(desktop) {
+      @include standard-row;
     }
+  }
+
+  &__content-wrapper {
+    background-color: get-neutral-color('very-dark-gray');
+    display: block;
   }
 
   &__cta-wrapper {
@@ -74,7 +77,6 @@
   &__footer-wrapper {
     @include standard-row;
 
-    background-color: get-neutral-color('very-dark-gray');
     padding-top: map-get($call-to-action-4-eat-in, 'mobile') / 2;
 
     @include breakpoint(phablet) {

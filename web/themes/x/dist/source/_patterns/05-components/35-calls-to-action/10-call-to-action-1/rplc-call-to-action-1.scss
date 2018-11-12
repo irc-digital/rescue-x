@@ -3,10 +3,15 @@
 .rplc-call-to-action-1 {
   $self: &;
 
-  @include standard-row(true);
   @include standard-vertical-spacing;
 
   &__content {
+    @include breakpoint(desktop) {
+      @include standard-row;
+    }
+  }
+
+  &__content-wrapper {
     display: block;
     padding: get-spacing('l');
   }
@@ -22,7 +27,7 @@
   }
 
   &--background-light {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       background-color: get-neutral-color('white');
     }
 
@@ -32,7 +37,7 @@
   }
 
   &--background-dark {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       background-color: get-neutral-color('black');
     }
 
@@ -42,9 +47,8 @@
     }
   }
 
-
   &--position-middle {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       @include breakpoint(951) {
         display: flex;
       }
@@ -65,7 +69,7 @@
 
   &--position-left,
   &--position-right {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       @include breakpoint(phablet) {
         @include floated-aside-z-index;
         width: rem(376px);
@@ -78,7 +82,7 @@
   }
 
   &--position-left {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       @include breakpoint(phablet) {
         float: left;
         margin-right: get-spacing('xl');
@@ -91,7 +95,7 @@
   }
 
   &--position-right {
-    #{$self}__content {
+    #{$self}__content-wrapper {
       @include breakpoint(phablet) {
         float: right;
         margin-left: get-spacing('l');
