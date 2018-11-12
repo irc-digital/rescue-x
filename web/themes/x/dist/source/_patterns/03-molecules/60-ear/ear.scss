@@ -21,11 +21,11 @@
   }
 
   &__icon-wrapper {
-    height: $ear-triangle-icon-wrapper-size;
-    left: $ear-triangle-icon-wrapper-left;
+    height: map-get($ear-triangle-icon-wrapper-size, 'desktop');
+    left: map-get($ear-triangle-icon-wrapper-left, 'desktop');
     position: absolute;
-    top: $ear-triangle-icon-wrapper-top;
-    width: $ear-triangle-icon-wrapper-size;
+    top: map-get($ear-triangle-icon-wrapper-top, 'desktop');
+    width: map-get($ear-triangle-icon-wrapper-size, 'desktop');
     z-index: 1;
   }
 }

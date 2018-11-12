@@ -1,13 +1,26 @@
 @import '../../../scss/core';
 
-$ear-triangle-magic-number: 7em;
-
-$ear-triangle-size: (
-  'desktop': $ear-triangle-magic-number,
+// adjusting this magic number stucture will adjust the overall size of the ear
+// these are all in ems, giving the container a change to adjust it for its needs
+// however, stuff should look good just with the font size specified on the body tag
+$ear-triangle-magic-number: (
+  'desktop': 7em,
 );
 
-$ear-triangle-icon-wrapper-size: $ear-triangle-magic-number * .5;
-$ear-triangle-icon-wrapper-left: $ear-triangle-magic-number * .68;
-$ear-triangle-icon-wrapper-top: $ear-triangle-magic-number * .19
+$ear-triangle-size: (
+  'desktop': map-get($ear-triangle-magic-number, 'desktop'),
+);
+
+$ear-triangle-icon-wrapper-size: (
+  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .5
+);
+
+$ear-triangle-icon-wrapper-left: (
+  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .68,
+);
+
+$ear-triangle-icon-wrapper-top: (
+  'desktop': map-get($ear-triangle-magic-number, 'desktop') * .19,
+);
 
 // end of file
