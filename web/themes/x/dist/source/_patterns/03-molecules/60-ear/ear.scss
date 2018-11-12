@@ -21,11 +21,11 @@
   }
 
   &__icon-wrapper {
-    height: 48px;
-    left: 66px;
+    height: $ear-triangle-icon-wrapper-size;
+    left: $ear-triangle-icon-wrapper-left;
     position: absolute;
-    top: 18px;
-    width: 48px;
+    top: $ear-triangle-icon-wrapper-top;
+    width: $ear-triangle-icon-wrapper-size;
     z-index: 1;
   }
 }
