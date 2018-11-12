@@ -31,7 +31,7 @@
     @include breakpoint(desktop) {
       flex-basis: rem(512px);
       max-height: rem(522px);
-      padding: get-spacing('xl') get-spacing('xxl');
+      padding: get-spacing('xxl') get-spacing('xxxl');
     }
   }
 
