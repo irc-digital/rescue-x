@@ -1,4 +1,15 @@
 <div class="rplc-question">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: question_section_heading_title,
+    section_heading_description: question_section_heading_description,
+    section_heading_icon: question_section_heading_icon
+  } only %}
   <div class="rplc-question__content">
+    {% include '@molecules/60-ear/ear.twig' with {
+      ear_icon: 'question',
+    } only %}
+    <div>adadasd</div>
+    <div>adadasd</div>
+    <div>adadasd</div>
   </div>
 </div>

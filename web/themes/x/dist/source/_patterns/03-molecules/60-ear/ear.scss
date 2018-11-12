@@ -1,0 +1,33 @@
+@import 'ear.variables';
+
+.rplm-ear {
+  position: absolute;
+  right: map-get($ear-triangle-size, 'desktop') * 1.35;
+
+  &__content {
+    display: block;
+    position: relative;
+  }
+
+  &__triangle {
+    border-bottom: map-get($ear-triangle-size, 'desktop') solid get-brand-color('primary');
+    border-left: map-get($ear-triangle-size, 'desktop') solid transparent;
+    border-right: map-get($ear-triangle-size, 'desktop') solid transparent;
+    height: 0;
+    position: absolute;
+    top: -#{map-get($ear-triangle-size, 'desktop') / 6.85};
+    transform: rotate(45deg);
+    width: 0;
+  }
+
+  &__icon-wrapper {
+    height: 48px;
+    left: 66px;
+    position: absolute;
+    top: 18px;
+    width: 48px;
+    z-index: 1;
+  }
+}
+
+// end of file

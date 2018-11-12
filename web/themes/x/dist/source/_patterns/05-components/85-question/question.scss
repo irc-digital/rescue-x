@@ -1,6 +1,19 @@
-//
-//.rplc-question {
-//
-//}
+@import 'question.variables';
+
+.rplc-question {
+
+  &__content {
+    @include standard-row;
+
+    background-color: get-neutral-color('white');
+    height: 1000px;
+    position: relative;
+  }
+
+  //&__icon-wrapper {
+  //
+  //}
+
+}
 
 // end of file
