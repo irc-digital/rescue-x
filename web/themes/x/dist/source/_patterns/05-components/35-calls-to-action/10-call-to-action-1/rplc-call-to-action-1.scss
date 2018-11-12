@@ -42,6 +42,27 @@
     }
   }
 
+
+  &--position-middle {
+    #{$self}__content {
+      @include breakpoint(951) {
+        display: flex;
+      }
+    }
+
+    #{$self}__text-wrapper {
+      @include breakpoint(951) {
+        padding-right: get-spacing('xxxl');
+      }
+    }
+
+    #{$self}__subtitle {
+      @include breakpoint(951) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &--position-left,
   &--position-right {
     #{$self}__content {

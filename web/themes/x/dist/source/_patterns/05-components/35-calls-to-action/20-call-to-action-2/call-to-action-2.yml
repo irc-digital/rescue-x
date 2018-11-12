@@ -1,4 +1,4 @@
-call_to_action_2_title: "Faker.words(5,true)"
+call_to_action_2_title: "Faker.words(3,true)"
 call_to_action_2_subtitle: "Faker.sentences(3,true)"
 call_to_action_2_url: "#"
 call_to_action_2_button_text: "Faker.words(3,true)"
