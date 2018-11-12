@@ -8,7 +8,7 @@
   @include link-hover-background-color(get-brand-color('primary'));
   background-color: get-neutral-color('white');
   display: inline;
-  padding-right: get-typography-spacing('tight');
+  margin-right: get-typography-spacing('tight');
   text-decoration: none;
 
   &__icon-wrapper {
