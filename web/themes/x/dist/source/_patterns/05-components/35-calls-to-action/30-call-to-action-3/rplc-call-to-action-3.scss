@@ -6,11 +6,13 @@
 
   @include standard-vertical-spacing;
 
-  @include breakpoint(desktop) {
-    @include standard-row;
+  &__content {
+    @include breakpoint(desktop) {
+      @include standard-row;
+    }
   }
 
-  &__content {
+  &__content-wrapper {
     color: get-neutral-color('white');
     display: flex;
     flex-direction: column;

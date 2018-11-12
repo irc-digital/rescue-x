@@ -4,11 +4,15 @@
   $self: &;
 
   @include standard-vertical-spacing;
-  @include breakpoint(desktop) {
-    @include standard-row;
-  }
 
   &__content {
+    @include breakpoint(desktop) {
+      @include standard-row;
+    }
+  }
+
+  &__content-wrapper {
+    background-color: get-neutral-color('white');
     display: flex;
     flex-direction: column;
 
@@ -22,7 +26,6 @@
   }
 
   &__message-wrapper {
-    background-color: get-neutral-color('white');
     padding: get-spacing('l');
 
     @include breakpoint(desktop) {
@@ -51,7 +54,7 @@
   }
 
   &--background-dark {
-    #{$self}__message-wrapper {
+    #{$self}__content-wrapper {
       background-color: get-neutral-color('black');
     }
 
