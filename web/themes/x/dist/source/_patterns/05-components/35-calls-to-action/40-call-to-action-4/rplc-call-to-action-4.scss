@@ -46,7 +46,7 @@
     justify-content: flex-end;
     left: 0;
     overflow: hidden;
-    padding: get-spacing('l') get-spacing('xxxl');
+    padding: get-spacing('l') get-spacing('3xl');
     position: absolute;
     right: 0;
     top: 0;
@@ -65,7 +65,7 @@
   }
 
   &__title {
-    @include typography-heading-xxxl;
+    @include typography-heading-3xl;
     @include standard-vertical-spacing('standard');
   }
 

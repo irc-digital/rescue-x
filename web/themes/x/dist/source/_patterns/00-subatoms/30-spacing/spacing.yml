@@ -5,5 +5,5 @@ spacing:
   ml: 24px
   l: 32px
   xl: 48px
-  xxl: 64px
-  xxxl: 80px
+  2xl: 64px
+  3xl: 80px

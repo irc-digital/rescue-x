@@ -125,7 +125,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include line-height('s');
 
   @include breakpoint(phablet) {
-    @include font-size('xxl');
+    @include font-size('2xl');
   }
 }
 
@@ -137,19 +137,19 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include line-height('xs');
 
   @include breakpoint(phablet) {
-    @include font-size('xxl');
+    @include font-size('2xl');
   }
 }
 
 // Extra large on mobile, Extra extra extra large on bigger devices
-@mixin typography-heading-xxxl {
+@mixin typography-heading-3xl {
   @include font-size('xl');
   @include font-weight('bold');
   @include letter-spacing('compact');
   @include line-height('xs');
 
   @include breakpoint(phablet) {
-    @include font-size('xxxl');
+    @include font-size('3xl');
   }
 }
 
@@ -161,7 +161,7 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   @include line-height('xs');
 
   @include breakpoint(tablet) {
-    @include font-size('xxl');
+    @include font-size('2xl');
   }
 }
 

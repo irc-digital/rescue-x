@@ -31,12 +31,12 @@
     @include breakpoint(desktop) {
       flex-basis: rem(512px);
       max-height: rem(522px);
-      padding: get-spacing('xxl') get-spacing('xxxl');
+      padding: get-spacing('2xl') get-spacing('3xl');
     }
   }
 
   &__title {
-    @include typography-heading-xxxl;
+    @include typography-heading-3xl;
     @include standard-vertical-spacing('standard');
   }
 

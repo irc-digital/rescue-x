@@ -17,7 +17,7 @@
   }
 
   &__title {
-    @include typography-heading-xxxl;
+    @include typography-heading-3xl;
     @include standard-vertical-spacing('standard');
   }
 
@@ -56,7 +56,7 @@
 
     #{$self}__text-wrapper {
       @include breakpoint(951) {
-        padding-right: get-spacing('xxxl');
+        padding-right: get-spacing('3xl');
       }
     }
 
@@ -102,7 +102,7 @@
       }
 
       @include breakpoint(951) {
-        margin-left: -#{get-spacing('xxl')};
+        margin-left: -#{get-spacing('2xl')};
       }
     }
   }

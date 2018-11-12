@@ -31,7 +31,7 @@
 
   &__list-item {
     &::before {
-      @include font-size('xxl');
+      @include font-size('2xl');
       content: '• ';
       font-family: Arial;
       line-height: 0;

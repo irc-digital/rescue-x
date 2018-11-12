@@ -1,0 +1,31 @@
+{#
+/**
+ * Available variables:
+ * - impact_card_heading_title -
+ The title in the optional card heading
+ * - impact_card_heading_description -Description in the optional card heading
+ * Available blocks:
+ * - none
+ */
+#}
+<h1>TEST AGAIN</h1>
+<div class="rplc-impact-card{% for impact_card_modifier in impact_card_modifiers %} rplc-impact-card--{{ impact_card_modifier }}{% endfor %}">
+  <div class="rplc-impact-card__inner-wrapper test_class">
+    <h2 class="rplc-impact-card__heading-title">{{impact_card_heading_title}}</h2>
+    <p  class="rplc-impact-card__heading-description">{{impact_card_heading_description}}</p>
+    
+    <div class="rplc-impact-card__card">
+      <div class="rplc-impact-card__manual-flip">
+
+        <div class="rplc-impact-card__front">
+          <h3 class="rplc-impact-card__front-figure">{{impact_card_front_figure}}</h3>
+           <p  class="rplc-impact-card__front-description">{{impact_card_front_description}}</p>
+        </div>
+
+        <div class="rplc-impact-card__back">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

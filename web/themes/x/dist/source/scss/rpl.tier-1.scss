@@ -123,11 +123,11 @@ $xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json',
     'ml': 20px,
     'l': 24px,
     'xl': 28px,
-    'xxl': 36px,
-    'xxxl': 44px,
-    'xxxxl': 52px,
-    'xxxxxl': 60px,
-    'xxxxxxl': 72px,
+    '2xl': 36px,
+    '3xl': 44px,
+    '4xl': 52px,
+    '5xl': 60px,
+    '6xl': 72px,
   );
   @if $option != 'all' {
     @return rem(safe-map-get($font-sizes, $option));
@@ -266,8 +266,8 @@ $xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.jso
     'ml': 1.5 * $space-unit, // 24px
     'l': 2 * $space-unit, // 32px
     'xl': 3 * $space-unit, // 48px
-    'xxl': 4 * $space-unit, // 64px
-    'xxxl': 5 * $space-unit, // 80px
+    '2xl': 4 * $space-unit, // 64px
+    '3xl': 5 * $space-unit, // 80px
   );
   @if $option != 'all' {
     @return rem(safe-map-get($spacings, $option));

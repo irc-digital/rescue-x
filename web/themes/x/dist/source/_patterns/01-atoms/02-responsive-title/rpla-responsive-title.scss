@@ -9,20 +9,20 @@
     @include line-height('xs');
 
     &--short {
-      @include font-size('xxxxxl');
+      @include font-size('5xl');
     }
 
     &--medium,
     &--long {
-      @include font-size('xxxxl');
+      @include font-size('4xl');
     }
 
     &--very-long {
-      @include font-size('xxxl');
+      @include font-size('3xl');
     }
 
     &--super-long {
-      @include font-size('xxl');
+      @include font-size('2xl');
     }
   }
 }

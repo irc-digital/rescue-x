@@ -20,8 +20,8 @@
   } @else {
     @include breakpoint(phablet) {
       max-width: rem(864px);
-      top: -#{get-spacing('xxl')};
-      width: calc(100vw - #{2 * get-spacing('xxl')});
+      top: -#{get-spacing('2xl')};
+      width: calc(100vw - #{2 * get-spacing('2xl')});
     }
   }
 
