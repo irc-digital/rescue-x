@@ -15,9 +15,7 @@
   }
 
   &__heading-title {
-    @include typography-heading-medium-large;
-    font-weight: bold;
-    //to do why is this not defaul bold?
+    @include typography-heading-large;
   }
 
   &__card {

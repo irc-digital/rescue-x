@@ -4,3 +4,5 @@ impact_card_front_figure: "2014VI"
 impact_card_front_description: "Qui sint impedit cum deleniti aliquam optio officia. Sed ipsam blanditiis eos rerum."
 impact_card_rear_description: "Optio qui  impedit cum deleniti rerum aliquam optio officia. Sed eos rerum aliquam."
 impact_card_rear_link: "Veritatis aut."
+icon_name: flip
+icon_modifiers:
