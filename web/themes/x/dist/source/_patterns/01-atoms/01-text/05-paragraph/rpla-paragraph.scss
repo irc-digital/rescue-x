@@ -1,12 +1,22 @@
 @import 'rpla-paragraph.variables';
 
 .rpla-paragraph {
-  @include typography-text-standard;
 
-  max-width: $max-text-width;
+  //
+  // This is a bit of a concession to make our life much easier. We have plenty of scenarios where we provide
+  // plain text editors where an editor can insert line spaces - that all ends up as paragraphs, but it is often
+  // really difficult to attach the appropriate class to those paragraphs. Here we allow components to name their
+  // divs rpla-paragraph and paragraph styling will be applied to the paragraphs within.
+  //
+  *,
+  * > p { // 1
+    @include typography-text-standard;
+    max-width: $max-text-width;
 
-  &:not(:last-child) {
-    @include typography-vertical-spacing('airy');
+    &:not(:last-child) {
+      @include typography-vertical-spacing('airy');
+    }
+
   }
 
   &--lead {

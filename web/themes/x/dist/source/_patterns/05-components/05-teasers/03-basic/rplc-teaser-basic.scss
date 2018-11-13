@@ -1,0 +1,42 @@
+@import 'rplc-teaser-basic.variables';
+
+.rplc-teaser-basic {
+
+  &__wrapper-link {
+    background-color: get-neutral-color('white');
+    display: block;
+    margin-left: get-spacing();
+    padding: get-spacing('2xl') get-spacing('ml') get-spacing('xl');
+    position: relative;
+
+    @include breakpoint('phablet') {
+      padding-left: rem(210px);
+      padding-top: get-spacing('l');
+    }
+  }
+
+  &__slug {
+    background-color: get-neutral-color('gray');
+    left: -#{get-spacing()};
+    line-height: 1;
+    min-width: rem(176px);
+    padding-bottom: .5em;
+    padding-top: .5em;
+    position: absolute;
+    text-align: center;
+    top: get-spacing('m');
+
+    @include breakpoint('phablet') {
+      top: get-spacing('l');
+    }
+  }
+
+  &__title {
+    @include typography-heading-medium-large;
+    @include font-weight('bold');
+    @include typography-vertical-spacing;
+  }
+}
+
+// end of file
+

@@ -1,0 +1,12 @@
+@import 'rpll-one-column-list.variables';
+
+.rpll-one-column-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  &__item {
+    margin-bottom: get-spacing('l');
+  }
+}
+
+// end of file

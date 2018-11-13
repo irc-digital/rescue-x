@@ -1,0 +1,12 @@
+teaser_basic_url: "#"
+teaser_basic_slug: "Faker.words(2,true)"
+teaser_basic_title: "Faker.sentence(7,true)"
+teaser_basic_summary:
+  join():
+    - "<p>"
+    - "Faker.paragraph(3,true)"
+    - "</p><p>"
+    - "Faker.paragraph(3,true)"
+    - "</p>"
+teaser_basic_prefix: "Faker.sentence(3,true)"
+teaser_basic_suffix: "Faker.sentence(3,true)"

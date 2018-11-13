@@ -38,13 +38,19 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 //
 // 1) Dodges around oddity related to responsive image handling when we are outside of a legit container (grid)
 //
-.rplc-teaser-standard, .rplc-teaser-minimal {
+.rplc-teaser-standard,
+.rplc-teaser-minimal {
   img {
     width: 100%; // 1
   }
 
   @include breakpoint(desktop) {
     max-width: rem(590px);
+  }
+}
+.rplc-teaser-basic {
+  @include breakpoint(desktop) {
+    max-width: rem(1092px);
   }
 }
 
@@ -104,6 +110,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 [id^="components-call-to-action-3"],
 [id^="components-call-to-action-4"],
 [id^="components-pull-quote"],
+[id^="components-basic-teaser-list"],
 [id^="pages-"],
 [id^="layouts-"] {
   & > .sg-pattern-example {

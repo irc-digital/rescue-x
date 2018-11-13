@@ -113,15 +113,15 @@
   }
 
   &__answer-image-wrapper {
-    margin-bottom: get-spacing();
     flex-shrink: 20;
     line-height: 0;
+    margin-bottom: get-spacing();
 
     @include breakpoint(tablet) {
-      order: 1;
       margin-bottom: 0;
       margin-left: get-spacing('l');
       max-width: rem(448px);
+      order: 1;
     }
   }
 

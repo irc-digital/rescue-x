@@ -5,6 +5,8 @@
 
   @include standard-row;
 
+  margin-bottom: get-spacing();
+
   //
   // 1) Ensures that the icon does not get too squished
   //

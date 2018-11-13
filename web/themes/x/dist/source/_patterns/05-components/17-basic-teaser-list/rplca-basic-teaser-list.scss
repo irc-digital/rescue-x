@@ -1,0 +1,9 @@
+@import 'rplc-basic-teaser-list.variables';
+
+.rplc-basic-teaser-list {
+  &__content {
+    @include standard-row;
+  }
+}
+
+// end of file

@@ -6,6 +6,7 @@
 //
 // Build layouts
 //
+@import '../_patterns/10-layouts/03-one-column-list/rpll-one-column-list';
 @import '../_patterns/10-layouts/05-two-column-list/rpll-two-column-list';
 @import '../_patterns/10-layouts/07-three-column-list/rpll-three-column-list';
 @import '../_patterns/10-layouts/10-four-column-list/rpll-four-column-list';
@@ -25,6 +26,7 @@
 @import '../_patterns/03-molecules/40-authority/rplm-authority';
 @import '../_patterns/03-molecules/50-social-share/rplm-social-share';
 @import '../_patterns/03-molecules/60-ear/ear';
+
 //
 // Build components
 //
@@ -38,9 +40,11 @@
 @import '../_patterns/05-components/05-teasers/15-minimal/rplc-teaser-minimal';
 @import '../_patterns/05-components/05-teasers/50-simple-image-link/rplc-teaser-simple-image-link';
 @import '../_patterns/05-components/05-teasers/20-image-link-box/rplc-teaser-image-link-box';
+@import '../_patterns/05-components/05-teasers/03-basic/rplc-teaser-basic';
 @import '../_patterns/05-components/10-quote/rplc-quote';
 @import '../_patterns/05-components/12-testimonial/rplc-testimonial';
 @import '../_patterns/05-components/15-news-and-features/rplc-news-and-features';
+@import '../_patterns/05-components/17-basic-teaser-list/rplca-basic-teaser-list';
 @import '../_patterns/05-components/20-top-stories/rplc-top-stories';
 @import '../_patterns/05-components/25-press-releases/rplc-press-releases';
 @import '../_patterns/05-components/30-images/05-image-partial-width-landscape/rplc-image-partial-width-landscape';

@@ -1,2 +1,2 @@
 section_heading_title: "Faker.sentence(5,true)"
-section_heading_description: "<p class='rplm-section-heading__description'>Fusce ac felis sit amet phasellus blandit leo ut odi.</p>"
+section_heading_description: "Fusce ac felis sit amet phasellus blandit leo ut odi. This has <a class='rpla-link rpla-link--type-one' href='#'> link in too</a> - very nice."
