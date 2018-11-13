@@ -6,6 +6,8 @@ question_answer_options:
   - 'He was the first Postmaster General of the U.S.'
   - 'He discovered electricity.'
 question_correct_answer: 3
+question_right_answer_info: "You’re right! He was the first Postmaster General of the U.S."
+question_wrong_answer_info: "Not quite. He was the first Postmaster General of the U.S."
 question_answer_info: "In 1775, the Second Continental Congress appointed Benjamin Franklin the first postmaster general. He was also a U.S. diplomat, the oldest member of the Constitutional Convention, the writer of “Poor Richard’s Almanac” and started the first free libraries. While he did not discover electricity, Franklin was a pioneer in the study of electricity and made many important contributions to the science."
 question_responsive_image_source_set:
   - "https://placem.at/places?w=448&h=448&random=question 464w"

@@ -1,4 +1,4 @@
-<div class="rplc-question">
+<div class="rplc-question" data-rpl-question-answer="{{ question_correct_answer }}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: question_section_heading_title,
     section_heading_description: question_section_heading_description,
@@ -18,7 +18,7 @@
       </div>
       <ul class="rplc-question__answer-options">
         {% for question_answer_option in question_answer_options %}
-          <li class="rplc-question__answer-option">{{ question_answer_option }}</li>
+          <li class="rplc-question__answer-option" data-rpl-question-answer-index="{{ loop.index }}">{{ question_answer_option }}</li>
         {% endfor %}
       </ul>
     </div>

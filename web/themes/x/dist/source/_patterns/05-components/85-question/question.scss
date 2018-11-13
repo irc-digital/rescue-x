@@ -15,6 +15,14 @@
   &__text-wrapper {
     padding-bottom: get-spacing('l');
     padding-top: get-spacing('l');
+
+    @include breakpoint(tablet) {
+      padding: get-spacing('xl') get-spacing('xl') get-spacing('xl') get-spacing('l');
+    }
+
+    @include breakpoint(laptop) {
+      padding-left: rem(128px);
+    }
   }
 
   &__prefix {
@@ -29,18 +37,31 @@
     max-width: rem(730px);
     padding-right: get-spacing('l');
 
-    @include breakpoint(tablet) {
+    @include breakpoint(phablet) {
+      @include font-size('xl');
       padding-right: get-spacing('3xl');
+    }
+
+    @include breakpoint(tablet) {
+      @include font-size('2xl');
     }
   }
 
   &__question-wrapper {
     padding-left: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+    }
   }
 
   &__answer-options {
     padding-left: get-spacing();
     padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+    }
   }
 
   &__answer-option {
@@ -51,10 +72,8 @@
     background-color: get-neutral-color('dark-gray');
     color: get-neutral-color('white');
     cursor: pointer;
-    max-width: rem(600px);
-    padding-bottom: get-spacing();
-    padding-left: get-spacing();
-    padding-top: get-spacing();
+    max-width: $max-text-width;
+    padding: get-spacing();
 
     &:last-child {
       margin-bottom: 0;
@@ -66,10 +85,21 @@
     }
   }
 
-  //&__icon-wrapper {
+  //&.e-question__answer-option--correct-answer {
+  //  background-color: get-color(primary);
   //
+  //  &:hover {
+  //    background-color: get-color(primary);
+  //  }
   //}
-
+  //
+  //&.e-question__answer-option--wrong-answer {
+  //  background-color: get-color(primary);
+  //
+  //  &:hover {
+  //    background-color: get-color(primary);
+  //  }
+  //}
 }
 
 // end of file
