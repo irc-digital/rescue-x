@@ -88,10 +88,12 @@
 
   &__answer-wrapper {
     display: none;
+    flex-direction: column;
     padding-left: get-spacing();
     padding-right: get-spacing();
 
     @include breakpoint(tablet) {
+      flex-direction: row;
       padding-left: 0;
       padding-right: 0;
     }
@@ -120,10 +122,14 @@
 
   &__answer-info {
     flex-shrink: 10;
-    max-width: rem(448px);
+    max-width: 100%;
 
-    &--no-answer-image {
-      max-width: 100%;
+    @include breakpoint(tablet) {
+      max-width: rem(448px);
+
+      &--no-answer-image {
+        max-width: 100%;
+      }
     }
   }
 
