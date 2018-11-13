@@ -15,9 +15,11 @@
 // habitat" so to speak. These style do not get used in a production environment, so use sparingly and document them
 // in the appropriate twig and .md files
 //
+.sg-pattern-example > .rpll-one-column-list,
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
 .sg-pattern-example > .rpll-three-column-list,
+body > .rpll-one-column-list,
 body > .rpll-two-column-list,
 body > .rpll-four-column-list,
 body > .rpll-three-column-list {
