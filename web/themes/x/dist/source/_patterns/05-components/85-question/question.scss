@@ -35,7 +35,7 @@
 
   &__question {
     @include typography-heading-extra-large-light;
-    @include typography-vertical-spacing;
+    @include typography-vertical-spacing('airy');
     max-width: rem(730px);
     padding-right: get-spacing('l');
 
@@ -113,11 +113,16 @@
   }
 
   &__answer-image-wrapper {
+    margin-bottom: get-spacing();
     flex-shrink: 20;
     line-height: 0;
-    margin-left: get-spacing('l');
-    max-width: rem(448px);
-    order: 1;
+
+    @include breakpoint(tablet) {
+      order: 1;
+      margin-bottom: 0;
+      margin-left: get-spacing('l');
+      max-width: rem(448px);
+    }
   }
 
   &__answer-info {
