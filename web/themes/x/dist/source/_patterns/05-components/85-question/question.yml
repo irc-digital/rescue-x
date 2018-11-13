@@ -6,16 +6,7 @@ question_answer_options:
   - 'He was the first Postmaster General of the U.S.'
   - 'He discovered electricity.'
 question_correct_answer: 3
-question_right_answer_info: "You’re right! He was the first Postmaster General of the U.S."
-question_wrong_answer_info: "Not quite. He was the first Postmaster General of the U.S."
-question_answer_info: "In 1775, the Second Continental Congress appointed Benjamin Franklin the first postmaster general. He was also a U.S. diplomat, the oldest member of the Constitutional Convention, the writer of “Poor Richard’s Almanac” and started the first free libraries. While he did not discover electricity, Franklin was a pioneer in the study of electricity and made many important contributions to the science."
-question_responsive_image_source_set:
-  - "https://placem.at/places?w=448&h=448&random=question 464w"
-  - "https://placem.at/places?w=640&h=640&random=question 640w"
-  - "https://placem.at/places?w=896&h=896&random=question 896w"
-  - "https://placem.at/places?w=1280&h=1280&random=question 1280w"
-  - "https://placem.at/places?w=1920&h=1920&random=question 1920w"
-question_responsive_image_sizes: "(min-width: 768px) 448px,(min-width: 321px) calc(100vw - 2rem),320px"
-question_responsive_image_fallback: "https://placem.at/places?w=640&h=640&random=question"
-question_responsive_image_alt: "Faker.words(5,true)"
+question_right_answer_message: "You’re right! He was the first Postmaster General of the U.S."
+question_wrong_answer_message: "Not quite. He was the first Postmaster General of the U.S."
+question_answer_info: "<p class='rpla-paragraph'>In 1775, the Second Continental Congress appointed Benjamin Franklin the first postmaster general. He was also a U.S. diplomat, the oldest member of the Constitutional Convention, the writer of “Poor Richard’s Almanac” and started the first free libraries. While he did not discover electricity, Franklin was a pioneer in the study of electricity and made many important contributions to the science.</p>"
 

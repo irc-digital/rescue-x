@@ -35,7 +35,7 @@
 
   &__question {
     @include typography-heading-extra-large-light;
-    @include typography-vertical-spacing;
+    @include typography-vertical-spacing('airy');
     max-width: rem(730px);
     padding-right: get-spacing('l');
 
@@ -66,10 +66,82 @@
     }
   }
 
+  &__right-wrong-answer-wrapper {
+    @include typography-heading-medium-large;
+    @include typography-vertical-spacing;
+    @include font-weight('bold');
+    @include font-style('italic');
+    display: none;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__wrong-answer-message,
+  &__right-answer-message {
+    display: none;
+  }
+
+  &__answer-wrapper {
+    display: none;
+    flex-direction: column;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.js-rplc-right-question-answer {
+    #{$self}__right-answer-message {
+      display: block;
+    }
+  }
+
+  &.js-rplc-wrong-question-answer {
+    #{$self}__wrong-answer-message {
+      display: block;
+      padding-top: 0;
+    }
+  }
+
+  &__answer-image-wrapper {
+    margin-bottom: get-spacing();
+    flex-shrink: 20;
+    line-height: 0;
+
+    @include breakpoint(tablet) {
+      order: 1;
+      margin-bottom: 0;
+      margin-left: get-spacing('l');
+      max-width: rem(448px);
+    }
+  }
+
+  &__answer-info {
+    flex-shrink: 10;
+    max-width: 100%;
+
+    @include breakpoint(tablet) {
+      max-width: rem(448px);
+
+      &--no-answer-image {
+        max-width: 100%;
+      }
+    }
+  }
+
   &__answer-option {
     @include typography-text-large;
     @include font-weight('bold');
-    @include typography-vertical-spacing;
+    @include typography-vertical-spacing('airy');
 
     background-color: get-neutral-color('dark-gray');
     color: get-neutral-color('white');
@@ -86,7 +158,7 @@
       background-color: get-neutral-color('black');
     }
 
-    &.js-answer-given {
+    &.js-rplc-question-answer-given {
       background-color: get-brand-color('primary');
 
       @include hover {
@@ -94,22 +166,6 @@
       }
     }
   }
-
-  //&.e-question__answer-option--correct-answer {
-  //  background-color: get-color(primary);
-  //
-  //  &:hover {
-  //    background-color: get-color(primary);
-  //  }
-  //}
-  //
-  //&.e-question__answer-option--wrong-answer {
-  //  background-color: get-color(primary);
-  //
-  //  &:hover {
-  //    background-color: get-color(primary);
-  //  }
-  //}
 }
 
 // end of file
