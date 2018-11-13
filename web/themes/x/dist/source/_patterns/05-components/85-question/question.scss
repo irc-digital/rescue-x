@@ -24,8 +24,14 @@
   }
 
   &__question {
-    @include typography-vertical-spacing('airy');
+    @include typography-heading-extra-large-light;
+    @include typography-vertical-spacing;
+    max-width: rem(730px);
     padding-right: get-spacing('l');
+
+    @include breakpoint(tablet) {
+      padding-right: get-spacing('3xl');
+    }
   }
 
   &__question-wrapper {

@@ -5,30 +5,35 @@
 // however, stuff should look good just with the font size specified on the body tag
 $ear-triangle-magic-number: (
   'mobile': 4em,
-  'tablet': 7em,
+  'tablet': 5.5em,
+  'laptop': 7em,
 );
 
 $ear-triangle-size: (
   'mobile': map-get($ear-triangle-magic-number, 'mobile'),
   'tablet': map-get($ear-triangle-magic-number, 'tablet'),
+  'laptop': map-get($ear-triangle-magic-number, 'laptop'),
 );
 
 $ear-triangle-top-magic-number: 6.85;
 $ear-triangle-top: (
   'mobile': -#{map-get($ear-triangle-size, 'mobile') / $ear-triangle-top-magic-number},
   'tablet': -#{map-get($ear-triangle-size, 'tablet') / $ear-triangle-top-magic-number},
+  'laptop': -#{map-get($ear-triangle-size, 'laptop') / $ear-triangle-top-magic-number},
 );
 
 $ear-triangle-icon-wrapper-size-magic-number: .5;
 $ear-triangle-icon-wrapper-size: (
   'mobile': map-get($ear-triangle-magic-number, 'mobile') * $ear-triangle-icon-wrapper-size-magic-number,
   'tablet': map-get($ear-triangle-magic-number, 'tablet') * $ear-triangle-icon-wrapper-size-magic-number,
+  'laptop': map-get($ear-triangle-magic-number, 'laptop') * $ear-triangle-icon-wrapper-size-magic-number,
 );
 
 $ear-triangle-icon-wrapper-left-magic-number: .68;
 $ear-triangle-icon-wrapper-left: (
   'mobile': map-get($ear-triangle-magic-number, 'mobile') * $ear-triangle-icon-wrapper-left-magic-number,
   'tablet': map-get($ear-triangle-magic-number, 'tablet') * $ear-triangle-icon-wrapper-left-magic-number,
+  'laptop': map-get($ear-triangle-magic-number, 'laptop') * $ear-triangle-icon-wrapper-left-magic-number,
 );
 
 
@@ -36,6 +41,7 @@ $ear-triangle-icon-wrapper-top-magic-number: .19;
 $ear-triangle-icon-wrapper-top: (
   'mobile': map-get($ear-triangle-magic-number, 'mobile') * $ear-triangle-icon-wrapper-top-magic-number,
   'phablet': map-get($ear-triangle-magic-number, 'tablet') * $ear-triangle-icon-wrapper-top-magic-number,
+  'laptop': map-get($ear-triangle-magic-number, 'laptop') * $ear-triangle-icon-wrapper-top-magic-number,
 );
 
 // end of file
