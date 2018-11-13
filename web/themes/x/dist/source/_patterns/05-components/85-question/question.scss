@@ -2,6 +2,8 @@
 
 .rplc-question {
 
+  $self: &;
+
   @include standard-vertical-spacing;
 
   &__content {
@@ -82,6 +84,14 @@
     // sass-lint:disable-block mixins-before-declarations
     @include hover {
       background-color: get-neutral-color('black');
+    }
+
+    &.js-answer-given {
+      background-color: get-brand-color('primary');
+
+      @include hover {
+        background-color: get-brand-color('primary');
+      }
     }
   }
 
