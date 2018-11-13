@@ -2,9 +2,12 @@
 
 .rpla-paragraph {
   @include typography-text-standard;
-  @include typography-vertical-spacing('airy');
 
   max-width: $max-text-width;
+
+  &:not(:last-child) {
+    @include typography-vertical-spacing('airy');
+  }
 
   &--lead {
     @include typography-text-large;
