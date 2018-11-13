@@ -1,4 +1,4 @@
-question_question: 'What is one thing Benjamin Franklin is famous for?'
+question_text: 'What is one thing Benjamin Franklin is famous for?'
 question_prefix: 'Did you know?'
 question_answer_options:
   - 'He was the leader of the Constitutional Convention.'

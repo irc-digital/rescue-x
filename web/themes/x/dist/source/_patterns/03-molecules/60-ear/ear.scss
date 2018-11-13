@@ -1,8 +1,13 @@
 @import 'ear.variables';
 
 .rplm-ear {
+
   position: absolute;
   right: map-get($ear-triangle-size, 'mobile') * 1.35;
+
+  @include breakpoint(tablet) {
+    right: map-get($ear-triangle-size, 'tablet') * 1.35;
+  }
 
   &__content {
     display: block;
@@ -15,9 +20,16 @@
     border-right: map-get($ear-triangle-size, 'mobile') solid transparent;
     height: 0;
     position: absolute;
-    top: -#{map-get($ear-triangle-size, 'mobile') / 6.85};
+    top: map-get($ear-triangle-top, 'mobile');
     transform: rotate(45deg);
     width: 0;
+
+    @include breakpoint(tablet) {
+      border-bottom-width: map-get($ear-triangle-size, 'tablet');
+      border-left-width: map-get($ear-triangle-size, 'tablet');
+      border-right-width: map-get($ear-triangle-size, 'tablet');
+      top: map-get($ear-triangle-top, 'tablet');
+    }
   }
 
   &__icon-wrapper {
@@ -27,6 +39,14 @@
     top: map-get($ear-triangle-icon-wrapper-top, 'mobile');
     width: map-get($ear-triangle-icon-wrapper-size, 'mobile');
     z-index: 1;
+
+    @include breakpoint(tablet) {
+      height: map-get($ear-triangle-icon-wrapper-size, 'tablet');
+      left: map-get($ear-triangle-icon-wrapper-left, 'tablet');
+      top: map-get($ear-triangle-icon-wrapper-top, 'tablet');
+      width: map-get($ear-triangle-icon-wrapper-size, 'tablet');
+    }
+
   }
 }
 

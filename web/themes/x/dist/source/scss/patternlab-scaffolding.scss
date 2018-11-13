@@ -255,7 +255,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   position: fixed;
   right: get-spacing() * 2;
   top: get-spacing();
-  z-index: 5;
+  z-index: 50;
 
   &::before {
     content: 'mobile';

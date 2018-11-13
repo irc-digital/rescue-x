@@ -8,8 +8,19 @@
     {% include '@molecules/60-ear/ear.twig' with {
       ear_icon: 'question',
     } only %}
-    <div>adadasd</div>
-    <div>adadasd</div>
-    <div>adadasd</div>
+    <div class="rplc-question__text-wrapper">
+      <div class="rplc-question__question-wrapper">
+        {% if question_prefix %}
+          <div class="rplc-question__prefix">{{ question_prefix }}</div>
+        {% endif  %}
+
+        <div class="rplc-question__question">{{ question_text }}</div>
+      </div>
+      <ul class="rplc-question__answer-options">
+        {% for question_answer_option in question_answer_options %}
+          <li class="rplc-question__answer-option">{{ question_answer_option }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>

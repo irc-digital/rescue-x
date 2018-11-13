@@ -2,12 +2,62 @@
 
 .rplc-question {
 
+  @include standard-vertical-spacing;
+
   &__content {
     @include standard-row;
 
     background-color: get-neutral-color('white');
-    height: 1000px;
+    overflow: hidden;
     position: relative;
+  }
+
+  &__text-wrapper {
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('l');
+  }
+
+  &__prefix {
+    @include typography-heading-medium-large;
+    @include typography-vertical-spacing;
+    @include font-weight('bold');
+  }
+
+  &__question {
+    @include typography-vertical-spacing('airy');
+    padding-right: get-spacing('l');
+  }
+
+  &__question-wrapper {
+    padding-left: get-spacing();
+  }
+
+  &__answer-options {
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+  }
+
+  &__answer-option {
+    @include typography-text-large;
+    @include font-weight('bold');
+    @include typography-vertical-spacing;
+
+    background-color: get-neutral-color('dark-gray');
+    color: get-neutral-color('white');
+    cursor: pointer;
+    max-width: rem(600px);
+    padding-bottom: get-spacing();
+    padding-left: get-spacing();
+    padding-top: get-spacing();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      background-color: get-neutral-color('black');
+    }
   }
 
   //&__icon-wrapper {
