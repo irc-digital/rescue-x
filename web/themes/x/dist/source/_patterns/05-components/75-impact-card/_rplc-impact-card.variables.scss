@@ -1,6 +1,11 @@
 @import '../../../scss/core';
 
-$impact-card-detils-section-padding: (
+$impact-card-heading-description-padding: (
   'mobile': get-spacing(),
   'phablet': get-spacing('l'),
+);
+
+$impact-card-front-figure-size: (
+  'mobile': get-font-size('3xl'),
+  'phablet': get-font-size('5xl'),
 );

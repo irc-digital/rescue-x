@@ -12,14 +12,50 @@
 
   &__inner-wrapper {
     background-color: get-brand-color();
+    padding: safe-map-get($impact-card-heading-description-padding, 'mobile');
+
+    @include breakpoint(phablet) {
+      padding: safe-map-get($impact-card-heading-description-padding, 'phablet');
+    }
   }
 
   &__heading-title {
     @include typography-heading-large;
   }
 
+  &__heading-description {
+    @include typography-text-standard;
+  }
+
   &__card {
     background-color: get-neutral-color('white');
+    height: 324px;
+  }
+
+  &__front {
+    height: 324px;
+    padding: 25px;
+  }
+
+  &__front-figure {
+    font-size: safe-map-get($impact-card-front-figure-size, 'mobile');
+    font-weight: bold;
+  }
+
+  &__front-description {
+    @include typography-text-small;
+  }
+
+  &__icon {
+    bottom: 26px;
+    height: 52px;
+    position: absolute;
+    right: 28px;
+    width: 52px;
+  }
+
+  &__rear {
+    display: none;
   }
 
 }
