@@ -54,27 +54,21 @@ article_page_content:
           text_modifiers:
             - 'body'
     - include():
-        pattern: "atoms-paragraph"
-        with:
-          text_modifiers:
-            - 'body'
-    - include():
-        pattern: "atoms-paragraph"
-        with:
-          text_modifiers:
-            - 'body'
-
-        pattern: "layouts-aside"
-        with:
-          aside_content:
-            include():
-              pattern: "components-highlight"
-    - include():
         pattern: "layouts-aside-2"
         with:
           aside_2_content:
             include():
               pattern: "components-impact-card"
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
