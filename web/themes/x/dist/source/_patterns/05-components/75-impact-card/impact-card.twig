@@ -8,32 +8,31 @@
  * - none
  */
 #}
-<h1>test</h1>
 <div class="rplc-impact-card{% for impact_card_modifier in impact_card_modifiers %} rplc-impact-card--{{ impact_card_modifier }}{% endfor %}">
-  <div class="rplc-impact-card__inner-wrapper test_class">
-    <h2 class="rplc-impact-card__heading-title">{{impact_card_heading_title}}</h2>
-    <p  class="rplc-impact-card__heading-description">{{impact_card_heading_description}}</p>
-    
+  <div class="rplc-impact-card__inner-wrapper">
+    <div class="rplc-impact-card__heading-text-wrapper">
+      <h3 class="rplc-impact-card__heading-title">{{impact_card_heading_title}}</h3>
+      <p class="rplc-impact-card__heading-description">{{impact_card_heading_description}}</p>
+    </div>
     <div class="rplc-impact-card__card">
       <div class="rplc-impact-card__manual-flip">
-
         <div class="rplc-impact-card__front">
           <h3 class="rplc-impact-card__front-figure">{{impact_card_front_figure}}</h3>
-           <p  class="rplc-impact-card__front-description">
-            {{impact_card_front_description}}
-           </p>
-           <button class="rplc-impact-card__icon">
-             <a href="#" class="flip rpla--button">
-                {% include '@atoms/56-icon/icon.twig' with {
-                  icon_name: icon_name
-                } only %}
-             </a>
-            </button>
+           <p  class="rplc-impact-card__front-description">{{impact_card_front_description}}</p>
+           <div class="rplc-impact-card__icon-link-wrapper">
+              {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
+                icon_only_link_name: 'flip'
+              } only %}
+            </div>
         </div>
-
         <div class="rplc-impact-card__rear">
            <p  class="rplc-impact-card__rear-description">{{impact_card_rear_description}}</p>
-            <p  class="rplc-impact-card__rear-link">{{impact_card_rear_link}}</p>
+            <p class="rplc-impact-card__rear-link">{{impact_card_rear_link}}</p>
+            <div class="rplc-impact-card__icon-link-wrapper">
+              {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
+                icon_only_link_name: 'flip'
+              } only %}
+            </div>
         </div>
       </div>
     </div>

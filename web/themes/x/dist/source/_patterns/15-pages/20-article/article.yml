@@ -74,12 +74,7 @@ article_page_content:
         with:
           aside_2_content:
             include():
-              pattern: "components-call-to-action-1"
-              with:
-                call_to_action_1_modifiers:
-                  - 'background-light'
-          aside_2_modifiers:
-            - 'position-right'
+              pattern: "components-impact-card"
     - include():
         pattern: "atoms-paragraph"
         with:

@@ -4,14 +4,13 @@
   $self: &;
 
   background-color: get-brand-color();
-  float: none;
-  margin-left: 0;
-  margin-top: 22px;
-  padding-bottom: 16px;
-  width: 100%;
+  padding-bottom: $impact-card-spacing-around-card;
 
   &__inner-wrapper {
     background-color: get-brand-color();
+  }
+
+  &__heading-text-wrapper {
     padding: safe-map-get($impact-card-heading-description-padding, 'mobile');
 
     @include breakpoint(phablet) {
@@ -29,33 +28,37 @@
 
   &__card {
     background-color: get-neutral-color('white');
+    margin-left: $impact-card-spacing-around-card;
+    margin-right: $impact-card-spacing-around-card;
     height: 324px;
   }
 
   &__front {
     height: 324px;
-    padding: 25px;
+    padding: get-spacing('ml');
+    position: relative;
   }
 
   &__front-figure {
-    font-size: safe-map-get($impact-card-front-figure-size, 'mobile');
-    font-weight: bold;
+    @include typography-heading-5xl;
+    @include typography-vertical-spacing('compact');
   }
 
   &__front-description {
     @include typography-text-small;
   }
 
-  &__icon {
-    bottom: 26px;
-    height: 52px;
+  &__icon-link-wrapper {
+    @include font-size('2xl');
+    bottom: get-spacing();
+    line-height: 0;
     position: absolute;
-    right: 28px;
-    width: 52px;
+    right: get-spacing();
   }
 
   &__rear {
     display: none;
+    position: relative;
   }
 
 }
