@@ -1,5 +1,5 @@
 impact_card_heading_title: "Faker.words(4,true)"
-impact_card_heading_description: "Faker.sentence(7,true)"
+impact_card_heading_description: "Faker.sentence(5,true)"
 impact_card_front_figure: "Faker.words(2,true)"
 impact_card_front_description: "Faker.sentence(10,true)"
 impact_card_rear_description: "Faker.sentence(10,true)"
