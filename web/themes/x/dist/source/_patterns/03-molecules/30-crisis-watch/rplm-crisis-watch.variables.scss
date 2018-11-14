@@ -1,7 +1,16 @@
 @import '../../../scss/core';
 
-$crisis-watch-icon-size: 1.125rem;
-$crisis-watch-icon-gap: .5rem;
+$crisis-watch-prefix-color: get-neutral-color('white');
+
+$crisis-watch-icon-size: (
+  'default': 1.125rem,
+  'small': 1rem
+);
+
+$crisis-watch-gap: (
+  'default': .5rem,
+  'small': .375rem
+);
 
 // end of filer
 

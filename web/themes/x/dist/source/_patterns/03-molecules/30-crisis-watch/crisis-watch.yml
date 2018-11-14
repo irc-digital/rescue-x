@@ -1,6 +1,5 @@
 crisis_watch_link_url: '#'
 crisis_watch_link_tag: 'a'
-crisis_watch_link_text: 'Crisis Watch'
 crisis_watch_link_modifiers:
   - 'type-two'
   - 'subtype-alert'
