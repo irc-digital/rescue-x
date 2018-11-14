@@ -4,14 +4,7 @@
   $self: &;
 
   background-color: get-brand-color();
-<<<<<<< HEAD
   padding-bottom: $impact-card-spacing-around-card;
-=======
-  float: none;
-  margin-left: 0;
-  padding-bottom: get-spacing('m');
-  width: 100%;
->>>>>>> 3599a2d45acc9d37ccf8306b05b3d2d9bb960c4d
 
   &__inner-wrapper {
     background-color: get-brand-color();
@@ -36,9 +29,9 @@
 
   &__card {
     background-color: get-neutral-color('white');
+    height: 324px;
     margin-left: $impact-card-spacing-around-card;
     margin-right: $impact-card-spacing-around-card;
-    height: 324px;
   }
 
   &__front {
