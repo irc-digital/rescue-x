@@ -8,9 +8,9 @@
   }
 
   &__icon-wrapper {
+    color: get-utility-color('alert');
     height: $crisis-watch-icon-size;
     margin-right: $crisis-watch-icon-gap;
-    color: get-utility-color('alert');
     width: $crisis-watch-icon-size;
   }
 
