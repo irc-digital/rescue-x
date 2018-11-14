@@ -25,7 +25,7 @@
               }
             }
           }
-          target.attr('data-' + state_type, state_value);
+          target.attr('data-rpl-' + state_type, state_value);
         }
       });
     }

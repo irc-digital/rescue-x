@@ -35,7 +35,8 @@
     margin-right: $impact-card-spacing-around-card;
   }
 
-  &__front {
+  &__front,
+  &__rear {
     height: $impact-card-size;
     padding: get-spacing('ml');
     position: relative;
@@ -64,16 +65,24 @@
   }
 
   &__rear {
+    background-color: get-neutral-color('black');
+    color: get-neutral-color('white');
     display: none;
-    position: relative;
   }
 
-  .js-rplc-impact-card-rear {
+  &__rear-description {
+    @include typography-vertical-spacing;
+  }
+
+  &[data-rpl-show-card-side='rear'] {
     #{$self}__rear {
       display: block;
     }
-  }
 
+    #{$self}__front {
+      display: none;
+    }
+  }
 }
 
 // end file
