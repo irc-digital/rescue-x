@@ -26,13 +26,18 @@
             </div>
         </div>
         <div class="rplc-impact-card__rear">
-           <p  class="rplc-impact-card__rear-description">{{impact_card_rear_description}}</p>
-            <p class="rplc-impact-card__rear-link">{{impact_card_rear_link}}</p>
-            <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-value="front">
-              {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
-                icon_only_link_name: 'flip'
-              } only %}
-            </div>
+          <p class="rplc-impact-card__rear-description">{{impact_card_rear_description}}</p>
+          {% include '@atoms/10-link/link.twig' with {
+            link_text: impact_card_rear_link_text,
+            link_url: impact_card_rear_link_url,
+            link_modifiers: ['type-two', 'subtype-no-hover-effect'],
+          } only %}
+          <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-value="front">
+            {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
+              icon_only_link_name: 'flip',
+              icon_only_link_modifiers: ['subtype-inverse'],
+            } only %}
+          </div>
         </div>
       </div>
     </div>
