@@ -7,7 +7,7 @@ crisis_watch:
       type: string
       label: 'Link text'
       description: "Text of the link pointing to the crisis watch page"
-        preview: "'Asylum ban' is an attack on families in the caravan in need of protection"
+        preview: "Sed fringilla mauris sit amet"
     crisis_watch_link_url:
       type: url
       label: "URL"
