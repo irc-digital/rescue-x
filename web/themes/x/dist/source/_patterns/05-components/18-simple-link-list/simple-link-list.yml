@@ -1,6 +1,6 @@
-simple_link_teaser_section_heading_title: "Simple link teaser list"
-simple_link_teaser_section_heading_description: "This is an example of the layout we use when we just have a link of simple link titles."
-simple_link_teaser_list_content:
+simple_link_section_heading_title: "Simple link list"
+simple_link_section_heading_description: "This is an example of the layout we use when we just have a link of simple link titles."
+simple_link_list_content:
   - include():
       pattern: "components-teaser-simple-link"
   - include():
