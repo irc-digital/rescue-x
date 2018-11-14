@@ -75,8 +75,6 @@
   }
 
   &__footer-wrapper {
-    @include well-row;
-
     padding-top: map-get($call-to-action-4-eat-in, 'mobile') / 2;
 
     @include breakpoint(phablet) {
