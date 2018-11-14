@@ -4,14 +4,7 @@
   $self: &;
 
   background-color: get-brand-color();
-<<<<<<< HEAD
   padding-bottom: $impact-card-spacing-around-card;
-=======
-  float: none;
-  margin-left: 0;
-  padding-bottom: get-spacing('m');
-  width: 100%;
->>>>>>> 3599a2d45acc9d37ccf8306b05b3d2d9bb960c4d
 
   &__inner-wrapper {
     background-color: get-brand-color();
@@ -27,6 +20,7 @@
 
   &__heading-title {
     @include typography-heading-large;
+    @include typography-vertical-spacing('tight');
   }
 
   &__heading-description {
@@ -38,11 +32,10 @@
     background-color: get-neutral-color('white');
     margin-left: $impact-card-spacing-around-card;
     margin-right: $impact-card-spacing-around-card;
-    height: 324px;
   }
 
   &__front {
-    height: 324px;
+    height: $impact-card-size;
     padding: get-spacing('ml');
     position: relative;
   }
@@ -62,6 +55,11 @@
     line-height: 0;
     position: absolute;
     right: get-spacing();
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
   }
 
   &__rear {
@@ -69,4 +67,12 @@
     position: relative;
   }
 
+  .js-rplc-impact-card-rear {
+    #{$self}__rear {
+      display: block;
+    }
+  }
+
 }
+
+// end file
