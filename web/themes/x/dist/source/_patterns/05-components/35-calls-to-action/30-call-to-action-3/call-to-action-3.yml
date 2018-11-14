@@ -19,4 +19,3 @@ call_to_action_3_art_directed_image_sources:
     media: "only screen and (min-width: 64.063em)"
 call_to_action_3_art_directed_image_fallback: "https://placem.at/places?w=1029&h=441&random=calltoaction3"
 call_to_action_3_art_directed_image_alt: "Faker.words(5,true)"
-call_to_action_3_section_heading_title: "Faker.words(5,true)"

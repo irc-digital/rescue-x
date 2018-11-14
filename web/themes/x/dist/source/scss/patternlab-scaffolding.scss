@@ -91,20 +91,14 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 #components-hero-landing-page-crisis-watch,
 #components-news-and-features,
 #components-hero-text-only,
-#components-image-partial-width-landscape,
-#components-image-partial-width-landscape-caption-right,
-#components-image-well-width,
-#components-image-well-width-variable-height,
-#components-image-well-width-caption-low-key,
-#components-image-window-width,
-#components-image-window-width-caption-low-key,
-#components-image-partial-width-portrait,
-#components-image-partial-width-portrait-caption-right,
-#components-image-window-width,
 #components-image-link-boxes,
 #molecules-authority,
 #components-quote,
 #components-testimonial,
+[id^="components-image-window-width"],
+[id^="components-image-partial-width-portrait"],
+[id^="components-image-partial-width-landscape"],
+[id^="components-image-well-width"],
 [id^="components-question"],
 [id^="components-image-link-boxes"],
 [id^="components-call-to-action-1"],
@@ -120,6 +114,8 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
     padding-right: 0 !important;
   }
 }
+
+date-after-summary
 
 #atoms-social-share-standard {
   background-color: get-neutral-color('white');
@@ -194,6 +190,16 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   left: get-spacing('ml');
 }
 
+#molecules-ear {
+  max-width: 900px;
+
+  .sg-pattern-example {
+    margin-left: 1rem;
+    min-height: 300px;
+    background-color: white;
+  }
+}
+
 .demo-animate {
   background: #ddd;
   padding: 1em;
@@ -204,15 +210,18 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 }
 
 .patternlab-icon-library {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-top: 3rem;
 }
 
 .patternlab-icon-library-icon-wrapper {
-  float:left;
-  margin-bottom: 2rem;
+  flex-basis: 256px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 3rem;
   text-align: center;
-  width: 256px;
 }
 
 .patternlab-icon-library-icon {

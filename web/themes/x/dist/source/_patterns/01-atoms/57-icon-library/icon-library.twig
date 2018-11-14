@@ -1,17 +1,16 @@
 <p><strong>NOTE:</strong> You would not include this pattern elsewhere, it is only here to demonstrate the icon choices available.</p>
 
+<ul class="patternlab-icon-library">
 {% for icon_name in icon_library %}
-  <ul class="patternlab-icon-library">
-    <li class="patternlab-icon-library-icon-wrapper">
-      <div class="patternlab-icon-library-icon">
-        {% include '@atoms/56-icon/icon.twig' with {
-          icon_name: icon_name
-        } only %}
-      </div>
-      <p>{{ icon_name }}</p>
-    </li>
-  </ul>
-
+  <li class="patternlab-icon-library-icon-wrapper">
+    <div class="patternlab-icon-library-icon">
+      {% include '@atoms/56-icon/icon.twig' with {
+        icon_name: icon_name
+      } only %}
+    </div>
+    <p>{{ icon_name }}</p>
+  </li>
 {% endfor %}
+</ul>
 
 

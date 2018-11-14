@@ -1,0 +1,10 @@
+@import 'rpll-page.variables';
+
+.rpll-page {
+
+  &__main {
+    @include standard-vertical-spacing(true);
+  }
+}
+
+// end of file

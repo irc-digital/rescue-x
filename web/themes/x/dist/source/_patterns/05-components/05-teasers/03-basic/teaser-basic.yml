@@ -8,5 +8,3 @@ teaser_basic_summary:
     - "</p><p>"
     - "Faker.paragraph(3,true)"
     - "</p>"
-teaser_basic_prefix: "Faker.sentence(3,true)"
-teaser_basic_suffix: "Faker.sentence(3,true)"

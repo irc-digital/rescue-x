@@ -1,13 +1,21 @@
 @import 'rplc-teaser-basic.variables';
 
 .rplc-teaser-basic {
+  $self: &;
 
   &__wrapper-link {
+    @include transition;
     background-color: get-neutral-color('white');
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-left: get-spacing();
     padding: get-spacing('2xl') get-spacing('ml') get-spacing('xl');
     position: relative;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      background-color: get-neutral-color('light-gray');
+    }
 
     @include breakpoint('phablet') {
       padding-left: rem(210px);
@@ -35,6 +43,33 @@
     @include typography-heading-medium-large;
     @include font-weight('bold');
     @include typography-vertical-spacing;
+
+    order: 2;
+  }
+
+  &__summary {
+    order: 4;
+  }
+
+  &__date {
+    @include typography-text-extra-small;
+    order: 3;
+  }
+
+  &--date-after-summary {
+    #{$self}__date {
+      order: 5;
+    }
+
+    #{$self}__summary {
+      @include typography-vertical-spacing;
+    }
+  }
+
+  &--date-before-summary {
+    #{$self}__date {
+      @include typography-vertical-spacing;
+    }
   }
 }
 

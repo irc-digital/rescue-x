@@ -15,4 +15,3 @@ call_to_action_2_responsive_image_source_set:
 call_to_action_2_responsive_image_sizes: "(min-width: 1240px) 696px,(min-width: 321px) 100vw,320px"
 call_to_action_2_responsive_image_fallback: "https://placem.at/places?w=1208&h=906&random=calltoaction2"
 call_to_action_2_responsive_image_alt: "Faker.words(5,true)"
-call_to_action_2_section_heading_title: "Faker.words(5,true)"
