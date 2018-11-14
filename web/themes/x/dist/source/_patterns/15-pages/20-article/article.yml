@@ -65,6 +65,9 @@ article_page_content:
             - 'body'
     - include():
         pattern: "components-call-to-action-1"
+        with:
+          call_to_action_1_modifiers:
+            - 'position-right'
     - include():
         pattern: "atoms-paragraph"
         with:
@@ -108,6 +111,8 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+    - include():
+        pattern: "components-call-to-action-1"
 article_page_footer:
   join():
     - include():

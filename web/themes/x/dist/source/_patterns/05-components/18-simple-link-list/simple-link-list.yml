@@ -5,6 +5,41 @@ simple_link_list_content:
       pattern: "atoms-link-icon"
       with:
         link_icon_name: 'map-marker-empty-circle'
-        link_icon_text: "Faker.sentence(7,true)"
+        link_icon_text: "Faker.sentence(4 ,true)"
+        link_icon_modifiers:
+          - 'type-three'
+  - include():
+      pattern: "atoms-link-icon"
+      with:
+        link_icon_name: 'map-marker-empty-circle'
+        link_icon_text: "Faker.sentence(4,true)"
+        link_icon_modifiers:
+          - 'type-three'
+  - include():
+      pattern: "atoms-link-icon"
+      with:
+        link_icon_name: 'map-marker-empty-circle'
+        link_icon_text: "Faker.sentence(4,true)"
+        link_icon_modifiers:
+          - 'type-three'
+  - include():
+      pattern: "atoms-link-icon"
+      with:
+        link_icon_name: 'map-marker-empty-circle'
+        link_icon_text: "Faker.sentence(4,true)"
+        link_icon_modifiers:
+          - 'type-three'
+  - include():
+      pattern: "atoms-link-icon"
+      with:
+        link_icon_name: 'map-marker-empty-circle'
+        link_icon_text: "Faker.sentence(4,true)"
+        link_icon_modifiers:
+          - 'type-three'
+  - include():
+      pattern: "atoms-link-icon"
+      with:
+        link_icon_name: 'map-marker-empty-circle'
+        link_icon_text: "Faker.sentence(4,true)"
         link_icon_modifiers:
           - 'type-three'

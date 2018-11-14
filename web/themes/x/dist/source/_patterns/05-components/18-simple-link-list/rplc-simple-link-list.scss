@@ -5,6 +5,7 @@
 
   &__content {
     @include well-row;
+    @include font-size('xl');
   }
 }
 

@@ -3,8 +3,6 @@
 .rplc-call-to-action-1 {
   $self: &;
 
-  @include standard-vertical-spacing;
-
   &__content {
     @include breakpoint(desktop) {
       @include well-row;
@@ -12,6 +10,7 @@
   }
 
   &__content-wrapper {
+    @include standard-vertical-spacing;
     display: block;
     padding: get-spacing('l');
   }
@@ -76,7 +75,7 @@
       }
 
       @include breakpoint(951) {
-        width: rem(448px);
+        width: rem(416px);
       }
     }
   }
