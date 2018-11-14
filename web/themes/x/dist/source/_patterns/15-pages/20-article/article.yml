@@ -63,10 +63,22 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
-    - include():
-        pattern: "components-call-to-action-1"
+
+        pattern: "layouts-aside"
         with:
-          call_to_action_1_modifiers:
+          aside_content:
+            include():
+              pattern: "components-highlight"
+    - include():
+        pattern: "layouts-aside-2"
+        with:
+          aside_2_content:
+            include():
+              pattern: "components-call-to-action-1"
+              with:
+                call_to_action_1_modifiers:
+                  - 'background-light'
+          aside_2_modifiers:
             - 'position-right'
     - include():
         pattern: "atoms-paragraph"
@@ -79,11 +91,16 @@ article_page_content:
           text_modifiers:
             - 'body'
     - include():
-        pattern: "components-call-to-action-1"
+        pattern: "layouts-aside-2"
         with:
-          call_to_action_1_modifiers:
+          aside_2_content:
+            include():
+              pattern: "components-call-to-action-1"
+              with:
+                call_to_action_1_modifiers:
+                  - 'background-dark'
+          aside_2_modifiers:
             - 'position-left'
-            - 'background-dark'
     - include():
         pattern: "atoms-paragraph"
         with:
@@ -113,6 +130,9 @@ article_page_content:
             - 'body'
     - include():
         pattern: "components-call-to-action-1"
+        with:
+          call_to_action_1_modifiers:
+            - 'position-middle'
 article_page_footer:
   join():
     - include():

@@ -1,0 +1,51 @@
+@import 'rpll-aside-2.variables';
+
+.rpll-aside-2 {
+  $self: &;
+
+  @include breakpoint(desktop) {
+    @include well-row;
+  }
+
+  &--position-left,
+  &--position-right {
+    #{$self}__inner-wrapper {
+      @include breakpoint(phablet) {
+        @include floated-aside-z-index;
+        width: rem(376px);
+      }
+
+      @include breakpoint(951) {
+        width: rem(416px);
+      }
+    }
+  }
+
+  &--position-left {
+    #{$self}__inner-wrapper {
+      @include breakpoint(phablet) {
+        float: left;
+        margin-right: get-spacing('xl');
+      }
+
+      @include breakpoint(951) {
+        margin-right: rem(160px);
+      }
+    }
+  }
+
+  &--position-right {
+    #{$self}__inner-wrapper {
+      @include breakpoint(phablet) {
+        float: right;
+        margin-left: get-spacing('l');
+      }
+
+      @include breakpoint(951) {
+        margin-left: -#{get-spacing('2xl')};
+      }
+    }
+  }
+}
+
+// end of file
