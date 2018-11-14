@@ -81,7 +81,6 @@ article_page_content:
           call_to_action_1_modifiers:
             - 'position-left'
             - 'background-dark'
-
     - include():
         pattern: "atoms-paragraph"
         with:
