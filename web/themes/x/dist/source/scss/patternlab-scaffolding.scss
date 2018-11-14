@@ -170,12 +170,18 @@ date-after-summary
 *[id='atoms-icon-only-link-inverse'],
 *[id='molecules-social-share-type-4'],
 *[id='atoms-icon-link-type-4'],
+*[id='atoms-link-type-2-alert-white'],
 *[id='atoms-link-type-1-white'] {
   background-color: get-neutral-color('black');
 
   .patternLink:hover {
     color: white !important;
   }
+}
+
+*[id='molecules-crisis-watch-with-prefix'],
+*[id='molecules-crisis-watch-small'] {
+  background-color: get-neutral-color('black');
 }
 
 *[id='atoms-link-type-1-black-inverse'],

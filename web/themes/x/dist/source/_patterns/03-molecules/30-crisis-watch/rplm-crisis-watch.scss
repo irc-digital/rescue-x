@@ -1,6 +1,7 @@
 @import 'rplm-crisis-watch.variables';
 
 .rplm-crisis-watch {
+  $self: &;
 
   &__wrapper {
     align-items: center;
@@ -10,12 +11,40 @@
   &__icon-wrapper {
     color: get-utility-color('alert');
     height: $crisis-watch-icon-size;
-    margin-right: $crisis-watch-icon-gap;
+    margin-right: $crisis-watch-gap;
     width: $crisis-watch-icon-size;
   }
 
   &__link-wrapper {
     @include font-size('s');
+  }
+
+  &--small {
+    #{$self}__icon-wrapper {
+      margin-right: $crisis-watch-gap-small;
+      width: $crisis-watch-icon-size-small;
+    }
+
+    #{$self}__link-wrapper {
+      @include font-size('2xs');
+    }
+  }
+
+  &--with-prefix {
+    #{$self}__icon-wrapper {
+      margin-right: $crisis-watch-gap-small;
+      width: $crisis-watch-icon-size-small;
+    }
+
+    #{$self}__prefix {
+      @include font-size('2xs');
+      color: $crisis-watch-prefix-color;
+      margin-right: $crisis-watch-gap-small;
+    }
+
+    #{$self}__link-wrapper {
+      @include font-size('2xs');
+    }
   }
 }
 
