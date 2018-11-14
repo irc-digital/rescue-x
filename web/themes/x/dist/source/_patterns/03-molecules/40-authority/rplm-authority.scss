@@ -2,7 +2,7 @@
 
 .rplm-authority {
   background-color: $authority-background-color;
-  padding: $authority-padding 0;
+  padding: $authority-padding;
   @include breakpoint(tablet) {
     padding: $authority-padding-tablet;
   }

@@ -1,7 +1,7 @@
 @import '../../../scss/core';
 
 $testimonial-wrapper-padding: (
-  'mobile': get-spacing('ml') 0,
+  'mobile': get-spacing('ml') get-spacing(),
   'tablet': get-spacing('xl') get-spacing('l')
 );
 
