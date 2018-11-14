@@ -1,13 +1,21 @@
 @import 'rplm-crisis-watch.variables';
 
 .rplm-crisis-watch {
-  color: get-utility-color('alert');
-  display: flex;
-  stroke: get-utility-color('alert');
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+  }
 
   &__icon-wrapper {
-    height: 26px;
-    width: 26px;
+    height: $crisis-watch-icon-size;
+    margin-right: $crisis-watch-icon-gap;
+    color: get-utility-color('alert');
+    width: $crisis-watch-icon-size;
+  }
+
+  &__link-wrapper {
+    @include font-size('s');
   }
 }
 

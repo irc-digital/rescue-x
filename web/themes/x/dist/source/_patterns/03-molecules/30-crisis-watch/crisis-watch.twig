@@ -1,4 +1,19 @@
 <div class="rplm-crisis-watch">
-  <div class="rplm-crisis-watch__icon-wrapper">{% include '@atoms/56-icon/icon.twig' with { icon_name: 'crisis'} %}</div>
-  <div class="rplm-crisis-watch__text-wrapper">{{ "Crisis Watch" | trans }}</div>
+  <div class="rplm-crisis-watch__wrapper">
+    <div class="rplm-crisis-watch__icon-wrapper">
+    {% include '@atoms/56-icon/icon.twig' with {
+      icon_name: 'crisis'
+    } %}
+    </div>
+    <div class="rplm-crisis-watch__link-wrapper">
+    {% include '@atoms/10-link/link.twig' with {
+      link_tag: crisis_watch_link_tag,
+      link_url: crisis_watch_link_url,
+      link_text: crisis_watch_link_text,
+      link_modifiers: crisis_watch_link_modifiers,
+      } only %}
+    </div>
+    <div class="rplm-crisis-watch__text-wrapper">
+    </div>
+  </div>
 </div>
