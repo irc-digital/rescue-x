@@ -4,7 +4,6 @@
   $self: &;
 
   &__content-wrapper {
-    @include standard-vertical-spacing;
     display: block;
     padding: get-spacing('l');
   }
@@ -48,6 +47,7 @@
     }
 
     #{$self}__content-wrapper {
+      @include standard-vertical-spacing;
       @include breakpoint(951) {
         display: flex;
       }

@@ -10,6 +10,8 @@
   &--position-left,
   &--position-right {
     #{$self}__inner-wrapper {
+      @include standard-vertical-spacing;
+
       @include breakpoint(phablet) {
         @include floated-aside-z-index;
         width: rem(376px);

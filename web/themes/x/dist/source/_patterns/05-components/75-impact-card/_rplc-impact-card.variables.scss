@@ -1,8 +1,8 @@
 @import '../../../scss/core';
 
 $impact-card-heading-description-padding: (
-  'mobile': get-spacing(),
-  'phablet': get-spacing('ml'),
+  'mobile': get-spacing() get-spacing() 0 get-spacing(),
+  'phablet': get-spacing('ml') get-spacing('ml') 0 get-spacing('ml'),
 );
 
 $impact-card-front-figure-size: (
@@ -11,3 +11,6 @@ $impact-card-front-figure-size: (
 );
 
 $impact-card-spacing-around-card: get-spacing();
+$impact-card-size: rem(324px);
+
+// end file
