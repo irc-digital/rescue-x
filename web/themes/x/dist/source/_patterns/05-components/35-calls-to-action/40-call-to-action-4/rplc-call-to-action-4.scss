@@ -7,7 +7,7 @@
 
   &__content {
     @include breakpoint(desktop) {
-      @include standard-row;
+      @include well-row;
     }
   }
 
@@ -75,7 +75,7 @@
   }
 
   &__footer-wrapper {
-    @include standard-row;
+    @include well-row;
 
     padding-top: map-get($call-to-action-4-eat-in, 'mobile') / 2;
 

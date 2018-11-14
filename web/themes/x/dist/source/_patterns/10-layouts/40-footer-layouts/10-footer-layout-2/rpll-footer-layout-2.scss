@@ -7,7 +7,7 @@
   background-color: get-neutral-color('black');
 
   &__inner-content-wrapper {
-    @include standard-row;
+    @include well-row;
 
     @include breakpoint(laptop) {
       display: grid;

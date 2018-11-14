@@ -2,7 +2,7 @@
 
 .rplc-top-stories {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

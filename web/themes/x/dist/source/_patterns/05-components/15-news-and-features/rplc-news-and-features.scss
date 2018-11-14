@@ -2,7 +2,7 @@
 
 .rplc-news-and-features {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

@@ -2,7 +2,7 @@
 
 .rplc-image-well-width-variable-height {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 
   &__image-wrapper {

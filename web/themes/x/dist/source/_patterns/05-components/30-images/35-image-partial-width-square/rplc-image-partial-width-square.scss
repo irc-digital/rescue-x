@@ -2,7 +2,7 @@
 
 .rplc-image-partial-width-square {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 
   &__image-wrapper {

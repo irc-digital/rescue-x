@@ -4,7 +4,7 @@
   $self: &;
 
   &__content {
-    @include standard-row;
+    @include well-row;
     background-color: get-neutral-color('light-gray');
 
     @include breakpoint(tablet) {
@@ -102,7 +102,7 @@
   }
 
   &__footer-wrapper {
-    @include standard-row;
+    @include well-row;
     background-color: $testimonial-authority-color;
 
     @include breakpoint(tablet) {

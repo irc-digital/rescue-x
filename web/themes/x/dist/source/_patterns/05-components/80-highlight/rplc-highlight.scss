@@ -3,7 +3,7 @@
 .rplc-highlight {
   $self: &;
 
-  @include standard-row;
+  @include well-row;
   @include standard-vertical-spacing;
   width: 90vw;
 

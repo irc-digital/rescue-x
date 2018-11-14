@@ -2,7 +2,7 @@
 
 .rplc-press-releases {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

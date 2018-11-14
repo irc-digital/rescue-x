@@ -1,28 +1,29 @@
 @import '../../../scss/core';
 
 @mixin social-fill ($selector: '') {
+
   &#{$selector}--twitter {
-    fill: get-social-color('twitter');
+    color: get-social-color('twitter');
   }
 
   &#{$selector}--facebook {
-    fill: get-social-color('facebook');
+    color: get-social-color('facebook');
   }
 
   &#{$selector}--instagram {
-    fill: get-social-color('instagram');
+    color: get-social-color('instagram');
   }
 
   &#{$selector}--youtube {
-    fill: get-social-color('youtube');
+    color: get-social-color('youtube');
   }
 
   &#{$selector}--linked-in {
-    fill: get-social-color('linkedin');
+    color: get-social-color('linkedin');
   }
 
   &#{$selector}--mail {
-    fill: get-social-color('mail');
+    color: get-social-color('mail');
   }
 }
 

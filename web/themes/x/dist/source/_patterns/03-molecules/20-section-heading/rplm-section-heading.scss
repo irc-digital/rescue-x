@@ -3,7 +3,7 @@
 .rplm-section-heading {
   $self: &;
 
-  @include standard-row;
+  @include well-row;
 
   margin-bottom: get-spacing();
 

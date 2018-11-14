@@ -4,7 +4,7 @@
   $self: &;
 
   &__inner-content-wrapper {
-    @include standard-row;
+    @include well-row;
   }
 
   &__image-wrapper {

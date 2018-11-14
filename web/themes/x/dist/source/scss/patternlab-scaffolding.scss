@@ -23,7 +23,7 @@ body > .rpll-one-column-list,
 body > .rpll-two-column-list,
 body > .rpll-four-column-list,
 body > .rpll-three-column-list {
-  @include standard-row;
+  @include well-row;
 }
 
 //

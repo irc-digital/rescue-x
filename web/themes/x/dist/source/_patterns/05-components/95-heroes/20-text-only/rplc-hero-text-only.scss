@@ -6,7 +6,7 @@
   background-color: get-brand-color();
 
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

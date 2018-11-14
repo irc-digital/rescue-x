@@ -1,0 +1,4 @@
+link_icon_name: 'map-marker-empty-circle'
+link_icon_text: "IRC Fast Facts"
+link_icon_modifiers:
+  - 'type-three'

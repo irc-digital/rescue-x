@@ -2,7 +2,7 @@
 
 .rplc-image-link-boxes {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

@@ -1,6 +1,10 @@
 @import 'rpla-icon.variables';
 @import 'rpla-icon.mixins';
 
+
+//
+// 1) We are using currentColor in the SVG file, so we have to set the color, rather than, say, the fill
+//
 .rpla-icon {
   $self: &;
 
@@ -12,20 +16,20 @@
   width: 100%;
 
   &--fill-branded {
-    fill: get-brand-color();
+    color: get-brand-color(); // 1
   }
 
   &--fill-alert {
-    fill: get-utility-color('alert');
+    color: get-utility-color('alert'); // 1
   }
 
   &--fill-inverse {
-    fill: get-neutral-color('white');
+    color: get-neutral-color('white');
   }
 
   &--fill-inverse-hover {
     @include hover ('data-rpla-hover-target') {
-      fill: get-neutral-color('white');
+      color: get-neutral-color('white');
     }
   }
 
@@ -33,7 +37,7 @@
     @include social-fill(#{$self});
 
     @include hover ('data-rpla-hover-target') {
-      fill: get-neutral-color('white');
+      color: get-neutral-color('white');
     }
   }
 
@@ -45,16 +49,13 @@
   }
 
   &--fill-third-party-inverse {
-    fill: get-neutral-color('white');
+    color: get-neutral-color('white');
   }
 
   &--fill-third-party-hover {
-    fill: get-neutral-color('black');
+    color: get-neutral-color('black');
   }
 
-  //
-  // 1) We are using currentColor in the SVG file, so we have to set the color, rather than, say, the fill
-  //
   &--question,
   &--work,
   &--respond,

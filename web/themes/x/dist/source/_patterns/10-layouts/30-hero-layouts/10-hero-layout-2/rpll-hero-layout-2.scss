@@ -28,7 +28,7 @@
     }
 
     #{$self}__text-wrapper {
-      @include standard-row;
+      @include well-row;
       display: grid;
       grid-column-gap: $hero-2-text-column-gap;
       grid-template-areas: 'primary' 'secondary';

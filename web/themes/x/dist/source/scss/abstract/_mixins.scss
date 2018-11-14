@@ -3,13 +3,13 @@
 // a rule-of-thumb would be 'does this feel like boilerplating' - if so, consider a mixin
 
 //
-// standard-row mixin
+// well-row mixin
 //
 // Useful when an element needs to fit into our well.
 //
 // Note: We've inherited using padding rather than margin for the breathing space from rescue.org
 //
-@mixin standard-row {
+@mixin well-row {
   margin-left: auto;
   margin-right: auto;
   max-width: $well-width-inner;

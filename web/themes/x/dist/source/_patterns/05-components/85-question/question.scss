@@ -7,7 +7,7 @@
   @include standard-vertical-spacing;
 
   &__content {
-    @include standard-row;
+    @include well-row;
 
     background-color: get-neutral-color('white');
     overflow: hidden;

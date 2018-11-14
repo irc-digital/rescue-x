@@ -4,7 +4,7 @@
   @include standard-vertical-spacing;
 
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 }
 

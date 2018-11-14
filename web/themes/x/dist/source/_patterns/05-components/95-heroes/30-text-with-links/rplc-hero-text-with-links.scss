@@ -3,7 +3,7 @@
 .rplc-hero-text-with-links {
   $self: &;
 
-  @include standard-row;
+  @include well-row;
 
   &__link-list {
     list-style: none;

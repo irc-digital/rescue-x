@@ -7,7 +7,7 @@
   background-color: get-neutral-color('light-gray');
 
   &__inner-content-wrapper {
-    @include standard-row;
+    @include well-row;
 
     //
     // 1) two column grid on tablet but ...

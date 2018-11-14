@@ -2,7 +2,7 @@
 
 .rplc-simple-image-link-list {
   &__content {
-    @include standard-row;
+    @include well-row;
   }
 
   // MODIFIERS - IF NEITHER PRESENT THEN IMAGES SHOULD ALWAYS BE SHOWN
