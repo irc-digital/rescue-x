@@ -10,42 +10,34 @@
 
   &__icon-wrapper {
     color: get-utility-color('alert');
-    height: $crisis-watch-icon-size;
-    margin-right: $crisis-watch-gap;
-    width: $crisis-watch-icon-size;
+    height: safe-map-get($crisis-watch-icon-size, 'default');
+    margin-right: safe-map-get($crisis-watch-gap, 'default');
+    width: safe-map-get($crisis-watch-icon-size, 'default');
   }
 
   &__link-wrapper {
     @include font-size('s');
   }
 
-  &--small {
-    #{$self}__icon-wrapper {
-      margin-right: $crisis-watch-gap-small;
-      width: $crisis-watch-icon-size-small;
-    }
-
-    #{$self}__link-wrapper {
-      @include font-size('2xs');
-    }
-  }
-
+  &--small,
   &--with-prefix {
     #{$self}__icon-wrapper {
-      margin-right: $crisis-watch-gap-small;
-      width: $crisis-watch-icon-size-small;
+      height: safe-map-get($crisis-watch-icon-size, 'small');
+      margin-right: safe-map-get($crisis-watch-gap, 'small');
+      width: safe-map-get($crisis-watch-icon-size, 'small');
+    }
+
+    #{$self}__link-wrapper,
+    #{$self}__prefix {
+      @include font-size('2xs');
     }
 
     #{$self}__prefix {
-      @include font-size('2xs');
       color: $crisis-watch-prefix-color;
-      margin-right: $crisis-watch-gap-small;
-    }
-
-    #{$self}__link-wrapper {
-      @include font-size('2xs');
+      margin-right: safe-map-get($crisis-watch-gap, 'small');
     }
   }
+
 }
 
 // end of file
