@@ -1,5 +1,5 @@
 basic_teaser_list_section_heading_title: "Basic teaser list"
-basic_teaser_list_section_heading_description: "This is an example of the lay we use for elements such as announcements and reports."
+basic_teaser_list_section_heading_description: "This is an example of the layout we use for elements such as announcements and reports."
 basic_teaser_list_content:
   - include():
       pattern: "components-teaser-basic"

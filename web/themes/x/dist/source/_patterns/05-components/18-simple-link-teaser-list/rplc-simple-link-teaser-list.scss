@@ -1,0 +1,11 @@
+@import 'rplc-simple-link-teaser-list.variables';
+
+.rplc-simple-link-teaser-list {
+  @include standard-vertical-spacing;
+
+  &__content {
+    @include standard-row;
+  }
+}
+
+// end of file

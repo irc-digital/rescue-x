@@ -1,0 +1,14 @@
+{% if simple_link_teaser_list_content %}
+<div class="rplc-simple-link-teaser-list">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: simple_link_teaser_section_heading_title,
+    section_heading_description: simple_link_teaser_section_heading_title,
+    section_heading_icon: simple_link_teaser_section_heading_icon
+  } only %}
+  <div class="rplc-simple-link-teaser__content">
+    {% include '@layouts/03-one-column-list/one-column-list.twig' with {
+      one_column_list_content: simple_link_teaser_list_content,
+    } only %}
+  </div>
+</div>
+{% endif %}
