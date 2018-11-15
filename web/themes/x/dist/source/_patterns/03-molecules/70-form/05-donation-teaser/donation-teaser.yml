@@ -11,5 +11,7 @@ donation_teaser_buttons:
       pattern: "atoms-button"
       with:
         button_text: 'Donate now'
+        button_url: null
+        button_tag: 'input'
         button_modifiers:
           - 'type-two'
