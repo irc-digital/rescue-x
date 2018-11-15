@@ -25,6 +25,12 @@
     //white-space: nowrap;
   }
 
+  &--size-2x-small {
+    #{$self}__icon-wrapper {
+      @include font-size('2xs');
+    }
+  }
+
   &--icon-position-outside {
     pointer-events: none;
 

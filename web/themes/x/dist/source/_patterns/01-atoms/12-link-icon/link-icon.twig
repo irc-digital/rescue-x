@@ -33,6 +33,7 @@
 
     {% if link_icon_modifier starts with 'size-' %}
       {% set size = link_icon_modifier %}
+      {% set link_icon_modifiers = link_icon_modifiers | merge([size]) %}
     {% endif %}
 
   {% endfor %}
@@ -61,7 +62,7 @@
     {% set icon_modifiers = ['fill-branded'] %}
   {% endif %}
 
-  {% if size == 'size-small' %}
+  {% if size == 'size-2x-small' %}
     {% set link_modifiers = link_modifiers|merge(['size-2x-small']) %}
   {% endif %}
 
