@@ -6,6 +6,10 @@
 
   line-height: 0;
 
+  @include hover {
+    border-color: transparent;
+  }
+
   &--type-one {
     #{$self}__label {
       display: none;
