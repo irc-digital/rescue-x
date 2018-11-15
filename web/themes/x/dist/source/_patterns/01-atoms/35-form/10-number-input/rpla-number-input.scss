@@ -1,7 +1,7 @@
-@import 'rpla-text-input.variables';
+@import 'rpla-number-input.variables';
 @import '../rpl-form.mixins';
 
-.rpla-text-input {
+.rpla-number-input {
   $self: &;
 
   &--type-one {

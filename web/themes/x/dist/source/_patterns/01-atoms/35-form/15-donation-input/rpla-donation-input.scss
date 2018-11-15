@@ -1,7 +1,7 @@
-@import 'rpla-text-input.variables';
+@import 'rpla-donation-input.variables';
 @import '../rpl-form.mixins';
 
-.rpla-text-input {
+.rpla-donation-input {
   $self: &;
 
   &--type-one {

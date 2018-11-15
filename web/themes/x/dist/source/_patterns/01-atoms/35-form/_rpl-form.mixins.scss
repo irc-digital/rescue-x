@@ -1,0 +1,14 @@
+@import '../../../scss/core';
+
+@mixin input-type-one ($element: &) {
+  #{$element}__label {
+    display: none;
+  }
+
+  #{$element}__field {
+    padding: .5em;
+  }
+}
+
+// end of file
+

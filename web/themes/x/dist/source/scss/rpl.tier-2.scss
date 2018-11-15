@@ -182,8 +182,6 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
 }
 
 @mixin hover ($target: '&') {
-  outline: none;
-
   @if $target == '&' {
     &:hover,
     &:focus {

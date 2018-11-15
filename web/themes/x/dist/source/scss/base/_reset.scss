@@ -7,6 +7,7 @@
 // /
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 //
@@ -42,6 +43,18 @@ figure {
   padding: 0;
 }
 
+// sass-lint:disable-block no-vendor-prefixes
+input {
+  -moz-appearance: textfield;
+  width: 100%;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 //
 // 1) Set HTML5 elements to display: block
 //
@@ -55,7 +68,6 @@ figure {
 }
 
 a {
-  outline: none;
   text-decoration: none;
 }
 

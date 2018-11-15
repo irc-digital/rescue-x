@@ -1,0 +1,4 @@
+donation_input_name: "amount"
+donation_input_label: "Donation amount"
+donation_input_placeholder: "Donation amount"
+donation_input_required: true
