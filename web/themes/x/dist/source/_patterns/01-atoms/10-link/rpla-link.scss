@@ -66,6 +66,14 @@
 
   }
 
+  &--size-extra-extra-small {
+    @include link-size('2xs');
+  }
+
+  &--size-extra-small {
+    @include link-size('xs');
+  }
+
   &--size-small {
     @include link-size('s');
   }
