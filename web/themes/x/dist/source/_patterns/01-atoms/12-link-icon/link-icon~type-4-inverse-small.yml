@@ -3,3 +3,4 @@ link_icon_text: "Crisis Watch"
 link_icon_modifiers:
   - 'type-four'
   - 'subtype-inverse'
+  - 'size-small'
