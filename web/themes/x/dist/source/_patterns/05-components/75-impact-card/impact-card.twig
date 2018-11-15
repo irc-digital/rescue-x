@@ -19,7 +19,7 @@
         <div class="rplc-impact-card__front">
           <h3 class="rplc-impact-card__front-figure">{{impact_card_front_figure}}</h3>
            <p  class="rplc-impact-card__front-description">{{impact_card_front_description}}</p>
-           <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-value="rear">
+           <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-values="rear">
               {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
                 icon_only_link_name: 'flip'
               } only %}
@@ -32,7 +32,7 @@
             link_url: impact_card_rear_link_url,
             link_modifiers: ['type-two', 'subtype-no-hover-effect'],
           } only %}
-          <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-value="front">
+          <div class="rplc-impact-card__icon-link-wrapper" data-rpl-state-type="show-card-side" data-rpl-state-values="front">
             {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
               icon_only_link_name: 'flip',
               icon_only_link_modifiers: ['subtype-inverse'],

@@ -7,9 +7,9 @@
  */
 #}
 {% if highlight_list_content %}
-<div class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}" data-rpl-state="collapsed">
+<div class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}" data-rpl-highlight-state="collapsed">
   <div class="rplc-highlight__content">
-    <a href="#" class="rplc-highlight__show-hide">
+    <a href="#" class="rplc-highlight__show-hide" data-rpl-state-type="highlight-state" data-rpl-state-values="expanded, collapsed">
       <h5 class="rplc-highlight__header">{{ "Highlights" | trans }}</h5>
     </a>
     <div class="rplc-highlight__list-wrapper">
@@ -28,7 +28,4 @@
     </div>
   </div>
 </div>
-
-
-
 {% endif %}
