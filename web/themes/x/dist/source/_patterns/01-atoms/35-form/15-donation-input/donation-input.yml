@@ -3,3 +3,5 @@ donation_input_label: "Donation amount"
 donation_input_placeholder: "Donation amount"
 donation_input_required: true
 donation_input_default_value: 100
+donation_input_prefix: '$'
+donation_input_suffix: 'USD'

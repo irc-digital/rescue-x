@@ -1,20 +1,32 @@
 {% spaceless %}
 
-{% set donation_input_modifiers = donation_input_modifiers ?: [] %}
+  {% set donation_input_modifiers = donation_input_modifiers ?: [] %}
 
-{% set has_type = false %}
-{% for donation_input_modifier in donation_input_modifiers %}
-  {% if donation_input_modifier starts with 'type-' %}
-    {% set has_type = true %}
+  {% set has_type = false %}
+  {% for donation_input_modifier in donation_input_modifiers %}
+    {% if donation_input_modifier starts with 'type-' %}
+      {% set has_type = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_type %}
+    {% set donation_input_modifiers = donation_input_modifiers | merge(['type-one']) %}
   {% endif %}
-{% endfor %}
 
-{% if not has_type %}
-  {% set donation_input_modifiers = donation_input_modifiers | merge(['type-one']) %}
-{% endif %}
+  {% if donation_input_prefix %}
+    {% set donation_input_modifiers = donation_input_modifiers | merge(['has-prefix']) %}
+  {% endif %}
+
+  {% if donation_input_suffix %}
+    {% set donation_input_modifiers = donation_input_modifiers | merge(['has-suffix']) %}
+  {% endif %}
 
 {% endspaceless %}
 <div class="rpla-donation-input{% for donation_input_modifier in donation_input_modifiers %} rpla-donation-input--{{ donation_input_modifier }}{% endfor %}">
   <label class="rpla-donation-input__label" for="{{ donation_input_name }}">{{ donation_input_label }}</label>
-  <input class="rpla-donation-input__field" type="number" name="{{ donation_input_name }}"{% if donation_input_default_value %} value="{{ donation_input_default_value }}"{% endif %}{% if donation_input_placeholder %} placeholder="{{ donation_input_placeholder }}"{% endif %}{% if donation_input_required %} required{% endif %}>
+  <div class="rpla-donation-input__field-wrapper">
+    {% if donation_input_prefix %}<span class="rpla-donation-input__field-prefix">{{ donation_input_prefix }}</span>{% endif %}
+    <input class="rpla-donation-input__field" type="number" name="{{ donation_input_name }}"{% if donation_input_default_value %} value="{{ donation_input_default_value }}"{% endif %}{% if donation_input_placeholder %} placeholder="{{ donation_input_placeholder }}"{% endif %}{% if donation_input_required %} required{% endif %}>
+    {% if donation_input_suffix %}<span class="rpla-donation-input__field-suffix">{{ donation_input_suffix }}</span>{% endif %}
+  </div>
 </div>

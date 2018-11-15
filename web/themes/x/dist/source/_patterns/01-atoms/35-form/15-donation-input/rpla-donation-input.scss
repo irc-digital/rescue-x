@@ -7,6 +7,17 @@
   @include input-type-hide-label;
   font-size: 2em;
 
+  &__field-wrapper {
+    position: relative;
+  }
+
+  &__field-prefix,
+  &__field-suffix {
+    @include font-weight('bold');
+    color: get-brand-color();
+    position: absolute;
+  }
+
   &--type-one {
     border-width: 0;
 

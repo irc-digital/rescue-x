@@ -2,7 +2,7 @@
 // Tier 2 variables
 //
 
-@import 'abstract/mixins';
+@import '../../../scss/abstract/mixins';
 
 @function is-not-in-list ($list, $value) {
   @return index($list, $value) == null;
