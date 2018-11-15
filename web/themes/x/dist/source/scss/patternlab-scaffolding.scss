@@ -84,7 +84,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 }
 
 // ... except for the ones that are supposed to go window width
-[id='atoms-paragraph-(body)'],
+#atoms-paragraph-body#,
 #components-image-window-width,
 #components-hero-article,
 #components-hero-standard,
@@ -161,18 +161,20 @@ date-after-summary
   }
 }
 
-*[id='atoms-link-type-2'],
-*[id='atoms-link-type-2-no-underline'],
-*[id='atoms-link-type-1-yellow'],
-*[id='atoms-link-type-2-no-hover'],
-*[id='atoms-link-icon-type-2'],
-*[id='molecules-social-share-type-1-inverse'],
-*[id='atoms-icon-link-inverse'],
-*[id='atoms-icon-only-link-inverse'],
-*[id='molecules-social-share-type-4'],
-*[id='atoms-icon-link-type-4'],
-*[id='atoms-link-type-2-alert-white'],
-*[id='atoms-link-type-1-white'] {
+#atoms-link-type-2,
+#atoms-link-type-2-no-underline,
+#atoms-link-type-1-yellow,
+#atoms-link-type-2-no-hover,
+#atoms-link-icon-type-2,
+#molecules-social-share-type-1-inverse,
+#atoms-icon-link-inverse,
+#atoms-icon-only-link-inverse,
+#molecules-social-share-type-4,
+#atoms-icon-link-type-4,
+#atoms-link-type-2-alert-white,
+#atoms-link-type-1-white,
+#molecules-crisis-watch-with-prefix,
+#molecules-crisis-watch-small {
   background-color: get-neutral-color('black');
 
   .patternLink:hover {
@@ -180,15 +182,10 @@ date-after-summary
   }
 }
 
-*[id='molecules-crisis-watch-with-prefix'],
-*[id='molecules-crisis-watch-small'] {
-  background-color: get-neutral-color('black');
-}
-
-*[id='atoms-link-type-1-black-inverse'],
-*[id='molecules-social-share-type 3'],
-*[id='atoms-icon-link-type-3'],
-*[id='atoms-link-type-1-inverse'] {
+#atoms-link-type-1-black-inverse,
+#molecules-social-share-type 3,
+#atoms-icon-link-type-3,
+#atoms-link-type-1-inverse {
   background-color: get-brand-color('primary');
 }
 
