@@ -45,7 +45,9 @@
     {% set link_modifiers = ['type-two', 'subtype-alert'] %}
     {% set icon_modifiers = ['fill-alert'] %}
     {% if subtype == 'subtype-inverse' %}
-      {% set link_modifiers = link_modifiers|merge(['subtype-white']) %}
+      {% set link_modifiers = link_modifiers|merge(['subtype-white', 'size-extra-extra-small']) %}
+    {% else %}
+      {% set link_modifiers = link_modifiers|merge(['size-small']) %}
     {% endif %}
   {% else %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}

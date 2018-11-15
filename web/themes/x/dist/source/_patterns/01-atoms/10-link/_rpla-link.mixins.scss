@@ -39,7 +39,11 @@ $link-default-hover-background-color: get-brand-color('primary');
 }
 
 @mixin link-size ($size: 'm') {
-  @if $size == 's' {
+  @if $size == '2xs' {
+    @include typography-text-2x-small;
+  } @else if $size == 'xs' {
+    @include typography-text-extra-small;
+  } @else if $size == 's' {
     @include typography-text-small;
   } @else if $size == 'm' {
     @include typography-text-standard;
