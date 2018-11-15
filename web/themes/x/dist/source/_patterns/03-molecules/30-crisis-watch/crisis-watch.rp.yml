@@ -5,9 +5,9 @@ crisis_watch:
   fields:
     crisis_watch_link_text:
       type: string
-      label: 'Link text'
+      label: "Link text"
       description: "Text of the link pointing to the crisis watch page"
-        preview: "Sed fringilla mauris sit amet"
+      preview: "Sed fringilla mauris sit amet"
     crisis_watch_link_url:
       type: url
       label: "URL"
