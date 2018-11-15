@@ -8,10 +8,13 @@
     {% set button_tag = 'button' %}
   {% endif %}
 
-  {% if button_tag == 'input' and input_type is empty %}
-    {% set input_type = 'submit' %}
+  {% if button_tag == 'input' %}
+    {% set button_tag = 'button' %}
+    {% if input_type is empty %}
+      {% set input_type = 'submit' %}
+    {% endif %}
   {% endif %}
-  
+
   {#
    # Ensure we have sensible default for size and type
   #}
