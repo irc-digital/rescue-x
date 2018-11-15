@@ -30,7 +30,7 @@
 
   &__scene {
     height: 324px;
-    perspective: 700px;
+    perspective: 980px;
     width: 382px;
   }
 
@@ -39,20 +39,21 @@
     height: 100%;
     margin-left: $impact-card-spacing-around-card;
     margin-right: $impact-card-spacing-around-card;
-    width: 100%;
-    position: relative;
     transform-style: preserve-3d;
-    transition: transform 2s;    
+    transition: transform .5s;
+    width: 100%;
+  }
+  &__front {
+    border: solid;
   }
 
   &__front,
   &__rear {
-    height: $impact-card-size;
+    backface-visibility: hidden;
+    height: 100%;
     padding: get-spacing('ml');
     position: absolute;
-    height: 100%;
     width: 100%;
-    backface-visibility: hidden;
   }
 
   &__front-figure {
@@ -80,7 +81,6 @@
   &__rear {
     background-color: get-neutral-color('black');
     color: get-neutral-color('white');
-    /*display: none;*/
     transform: rotateY(180deg);
   }
 
@@ -89,8 +89,8 @@
   }
 
   &[data-rpl-show-card-side='rear'] {
-    
-    #{$self}__card{
+
+    #{$self}__card {
       transform: rotateY(180deg);
     }
   }
