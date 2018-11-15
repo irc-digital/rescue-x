@@ -17,6 +17,7 @@
     color: get-brand-color();
     display: block;
     font-size: .75em;
+    pointer-events: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -54,6 +55,10 @@
     #{$self}__field {
       padding-right: 1.5em + $donation-input-suffix-indent + $donation-input-field-value-indent;
     }
+  }
+
+  &--display-inline {
+    display: inline-block;
   }
 }
 
