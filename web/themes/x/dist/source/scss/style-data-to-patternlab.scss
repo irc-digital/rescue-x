@@ -1,5 +1,9 @@
 @import 'abstract/mixins';
 
+//
+// This generates YML files from some of our enumerations so that we can see them in PatternLab but drive them from SASS
+//
+
 // generates a JSON array of brand colors to be used by PatternLab
 $xxx-bc: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', get-brand-color('all'), (prefix: '{ "color_brand":', suffix: '}'));
 
