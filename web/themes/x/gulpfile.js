@@ -462,7 +462,7 @@ gulp.task('sass-change', function (callback) {
 });
 
 gulp.task('javascript-change', function (callback) {
-  return runSequence('build:javascript', 'bs:reload', callback);
+  return runSequence('clean:javascript', 'build:javascript', 'bs:reload', callback);
 });
 
 gulp.task('bs:start', function() {

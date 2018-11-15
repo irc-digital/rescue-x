@@ -1,7 +1,16 @@
 @import 'rpla-text-input.variables';
 //
-//.rpla-text-input {
-//
-//}
+
+.rpla-text-input {
+  $self: &;
+
+  line-height: 0;
+
+  &--type-one {
+    #{$self}__label {
+      display: none;
+    }
+  }
+}
 
 // end of file
