@@ -4,8 +4,8 @@
 .rpla-text-input {
   $self: &;
 
-  &--type-one {
-    @include input-type-one($self);
+  &--type-two {
+    @include input-type-two($self);
   }
 }
 

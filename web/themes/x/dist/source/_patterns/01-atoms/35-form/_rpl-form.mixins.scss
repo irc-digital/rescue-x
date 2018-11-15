@@ -1,6 +1,6 @@
 @import '../../../scss/core';
 
-@mixin input-type-one ($element: &) {
+@mixin input-type-two ($element: &) {
   #{$element}__label {
     display: none;
   }
