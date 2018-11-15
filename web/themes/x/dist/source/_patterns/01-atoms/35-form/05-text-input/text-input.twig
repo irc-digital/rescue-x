@@ -1,2 +1,4 @@
-<label for="{{ text_input_name }}">{{ text_input_label }}</label>
-<input type="text" placeholder="{{ text_input_placeholder }}">
+<div class="rpla-text-input{% for text_input_modifier in text_input_modifiers %} rpla-text-input--{{ text_input_modifier }}{% endfor %}">
+  <label class="rpla-text-input__label" for="{{ text_input_name }}">{{ text_input_label }}</label>
+  <input class="rpla-text-input__field" type="text"{% if text_input_required %} name="{{ text_input_name }}" placeholder="{{ text_input_placeholder }}"{% endif %}{% if text_input_required %} required{% endif %}>
+</div>
