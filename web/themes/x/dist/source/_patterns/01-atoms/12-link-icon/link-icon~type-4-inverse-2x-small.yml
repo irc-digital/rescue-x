@@ -1,5 +1,6 @@
 link_icon_name: 'crisis'
 link_icon_text: "Crisis Watch"
 link_icon_modifiers:
+  - 'size-2x-small'
   - 'type-four'
   - 'subtype-inverse'

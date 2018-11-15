@@ -9,23 +9,33 @@
  * - none
  */
 #}
+
 {% spaceless %}
 
   {% set link_icon_modifiers = link_icon_modifiers ?: [] %}
   {% set icon_position = 'icon-position-inside' %}
   {% set type = null %}
   {% set subtype = null %}
+  {% set size = null %}
 
   {% for link_icon_modifier in link_icon_modifiers %}
     {% if link_icon_modifier starts with 'type-' %}
       {% set type = link_icon_modifier %}
     {% endif %}
+
     {% if link_icon_modifier starts with 'icon-position-' %}
-      {% set type = link_icon_modifier %}
+      {% set icon_position = link_icon_modifier %}
     {% endif %}
+
     {% if link_icon_modifier starts with 'subtype-' %}
       {% set subtype = link_icon_modifier %}
     {% endif %}
+
+    {% if link_icon_modifier starts with 'size-' %}
+      {% set size = link_icon_modifier %}
+      {% set link_icon_modifiers = link_icon_modifiers | merge([size]) %}
+    {% endif %}
+
   {% endfor %}
 
   {% if type is empty %}
@@ -34,7 +44,7 @@
   {% endif %}
 
   {% if type == 'type-two' %}
-    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline'] %}
     {% set icon_modifiers = ['fill-branded'] %}
   {% elseif type == 'type-three' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
@@ -45,13 +55,15 @@
     {% set link_modifiers = ['type-two', 'subtype-alert'] %}
     {% set icon_modifiers = ['fill-alert'] %}
     {% if subtype == 'subtype-inverse' %}
-      {% set link_modifiers = link_modifiers|merge(['subtype-white', 'size-extra-extra-small']) %}
-    {% else %}
-      {% set link_modifiers = link_modifiers|merge(['size-small']) %}
+      {% set link_modifiers = link_modifiers|merge(['subtype-white']) %}
     {% endif %}
   {% else %}
-    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
+  {% endif %}
+
+  {% if size == 'size-2x-small' %}
+    {% set link_modifiers = link_modifiers|merge(['size-2x-small']) %}
   {% endif %}
 
 {% endspaceless %}

@@ -8,8 +8,15 @@
     {% set button_tag = 'button' %}
   {% endif %}
 
-  {% if button_tag == 'input' and input_type is empty %}
-    {% set input_type = 'submit' %}
+  {% if button_tag == 'input' %}
+    {% set button_tag = 'button' %}
+    {% if input_type is empty %}
+      {% set input_type = 'submit' %}
+    {% endif %}
+  {% endif %}
+
+  {% if button_tag != 'button' and button_tag != 'a' %}
+    {% set aria_role = 'link' %}
   {% endif %}
   
   {#
@@ -40,7 +47,7 @@
   {% endif %}
 
 {% endspaceless %}
-<{{ button_tag }}{% if input_type is not empty %} type="{{ input_type }}"{% endif %}{% if button_url is not empty %} href={{ button_url }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}" role="link">
+<{{ button_tag }}{% if input_type is not empty %} type="{{ input_type }}"{% endif %}{% if button_url is not empty %} href={{ button_url }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}"{% if aria_role %} role="{{ aria_role }}{% endif %}">
   <span class="rpla-button__text">{{ button_text }}</span>
   {% if button_icon_name is not empty %}
     <div class="rpla-button__icon-wrapper">
