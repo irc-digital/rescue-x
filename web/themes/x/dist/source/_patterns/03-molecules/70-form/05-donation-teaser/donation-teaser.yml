@@ -1,0 +1,15 @@
+donation_teaser_text: "Faker.sentence(10,true)"
+donation_teaser_donation_input_name: "amount"
+donation_teaser_donation_input_label: "Donation amount"
+donation_teaser_donation_input_placeholder: "Donation amount"
+donation_teaser_donation_input_required: true
+donation_teaser_donation_input_default_value: 30
+donation_teaser_donation_input_prefix: '$'
+donation_teaser_donation_input_suffix: 'USD'
+donation_teaser_buttons:
+  - include():
+      pattern: "atoms-button"
+      with:
+        button_text: 'Donate now'
+        button_modifiers:
+          - 'type-two'

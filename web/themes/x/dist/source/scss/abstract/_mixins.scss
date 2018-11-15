@@ -261,25 +261,6 @@ $xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.jso
 // generates a JSON array of spacing to be used by PatternLab
 $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', get-spacing('all'), (prefix: '{ "spacing":', suffix: '}'));
 
-//
-// Typography vertical spacing (margin bottom). Em based
-//
-
-// Function to get a typography vertical spacing value from its array entry key
-@function get-typography-spacing($option: 'standard') {
-  $typography-spacing: (
-    'tight': .25em,
-    'compact': .5em,
-    'standard': .75em,
-    'airy': 1.2em,
-  );
-  @if $option != 'all' {
-    @return safe-map-get($typography-spacing, $option);
-  } @else {
-    @return $typography-spacing;
-  }
-}
-
 @mixin hover ($target: '&') {
   @if $target == '&' {
     &:hover,
