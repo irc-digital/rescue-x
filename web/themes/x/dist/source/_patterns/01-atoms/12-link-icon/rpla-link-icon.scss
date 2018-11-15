@@ -24,4 +24,12 @@
     width: 100%;
     //white-space: nowrap;
   }
+
+  &--icon-position-outside {
+    pointer-events: none;
+
+    #{$self}__link-wrapper {
+      pointer-events: all;
+    }
+  }
 }

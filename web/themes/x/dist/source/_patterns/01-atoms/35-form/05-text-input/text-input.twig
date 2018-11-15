@@ -1,3 +1,19 @@
+{% spaceless %}
+
+{% set text_input_modifiers = text_input_modifiers ?: [] %}
+
+{% set has_type = false %}
+{% for text_input_modifier in text_input_modifiers %}
+  {% if text_input_modifier starts with 'type-' %}
+    {% set has_type = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_type %}
+  {% set text_input_modifiers = text_input_modifiers | merge(['type-one']) %}
+{% endif %}
+
+{% endspaceless %}
 <div class="rpla-text-input{% for text_input_modifier in text_input_modifiers %} rpla-text-input--{{ text_input_modifier }}{% endfor %}">
   <label class="rpla-text-input__label" for="{{ text_input_name }}">{{ text_input_label }}</label>
   <input class="rpla-text-input__field" type="text"{% if text_input_required %} name="{{ text_input_name }}" placeholder="{{ text_input_placeholder }}"{% endif %}{% if text_input_required %} required{% endif %}>

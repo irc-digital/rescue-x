@@ -11,30 +11,34 @@
 #}
 {% spaceless %}
 
-{% set link_icon_modifiers = link_icon_modifiers ?: [] %}
+  {% set link_icon_modifiers = link_icon_modifiers ?: [] %}
+  {% set icon_position = 'icon-position-inside' %}
+  {% set type = null %}
 
-{% set type = null %}
-{% for link_icon_modifier in link_icon_modifiers %}
-  {% if link_icon_modifier starts with 'type-' %}
-    {% set type = link_icon_modifier %}
+  {% for link_icon_modifier in link_icon_modifiers %}
+    {% if link_icon_modifier starts with 'type-' %}
+      {% set type = link_icon_modifier %}
+    {% endif %}
+    {% if link_icon_modifier starts with 'icon-position-' %}
+      {% set type = link_icon_modifier %}
+    {% endif %}
+  {% endfor %}
+
+  {% if type is empty %}
+    {% set type = 'type-one' %}
+    {% set link_icon_modifiers = link_icon_modifiers | merge([type]) %}
   {% endif %}
-{% endfor %}
 
-{% if type is empty %}
-  {% set type = 'type-one' %}
-  {% set link_icon_modifiers = link_icon_modifiers | merge([type]) %}
-{% endif %}
-
-{% if type == 'type-two' %}
-  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}
-  {% set icon_modifiers = ['fill-branded'] %}
-{% elseif type == 'type-three' %}
-  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
-  {% set icon_modifiers = ['fill-branded'] %}
-{% else %}
-  {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
-  {% set icon_modifiers = ['fill-branded'] %}
-{% endif %}
+  {% if type == 'type-two' %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'size-small'] %}
+    {% set icon_modifiers = ['fill-branded'] %}
+  {% elseif type == 'type-three' %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
+    {% set icon_modifiers = ['fill-branded'] %}
+  {% else %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
+    {% set icon_modifiers = ['fill-branded'] %}
+  {% endif %}
 
 {% endspaceless %}
 <a href="{{ link_icon_url }}" class="rpla-link-icon{% for link_icon_modifier in link_icon_modifiers %} rpla-link-icon--{{ link_icon_modifier }}{% endfor %}" data-rpla-hover-target>
@@ -44,9 +48,11 @@
       icon_modifiers: icon_modifiers,
     } only %}
   </span>
-  {% include '@atoms/10-link/link.twig' with {
-    link_tag: 'span',
-    link_text: link_icon_text,
-    link_modifiers: link_modifiers,
-  } only %}
+  <span class="rpla-link-icon__link-wrapper">
+    {% include '@atoms/10-link/link.twig' with {
+      link_tag: 'span',
+      link_text: link_icon_text,
+      link_modifiers: link_modifiers,
+    } only %}
+  </span>
 </a>
