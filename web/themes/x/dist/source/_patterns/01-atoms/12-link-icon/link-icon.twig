@@ -35,6 +35,9 @@
   {% elseif type == 'type-three' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
+  {% elseif type == 'type-four' %}
+    {% set link_modifiers = ['type-two', 'subtype-alert'] %}
+    {% set icon_modifiers = ['fill-alert'] %}
   {% else %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse', 'size-small'] %}
     {% set icon_modifiers = ['fill-branded'] %}
