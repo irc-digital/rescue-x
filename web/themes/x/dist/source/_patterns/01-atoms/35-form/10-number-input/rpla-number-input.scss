@@ -4,9 +4,16 @@
 .rpla-number-input {
   $self: &;
 
-  &--type-two {
-    @include input-type-two($self);
-  }
+  @include input-type-hide-label;
+  //@include input-type;
+  //
+  //&--type-one {
+  //  @include input-type-one($self);
+  //}
+  //
+  //&--type-two {
+  //  @include input-type-two($self);
+  //}
 }
 
 // end of file

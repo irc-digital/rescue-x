@@ -1,11 +1,30 @@
 @import '../../../scss/core';
 
-@mixin input-type-two ($element: &) {
+@mixin input-type-hide-label ($element: &) {
   #{$element}__label {
     display: none;
   }
+}
 
+@mixin input-type ($element: &) {
+  font-size: 1em;
+
+  @include breakpoint(phablet) {
+    font-size: 1em;
+  }
+}
+
+@mixin input-type-one ($element: &) {
   #{$element}__field {
+    border-width: 0;
+    font-size: 1.125em;
+    padding: .25em .5em;
+  }
+}
+
+@mixin input-type-two ($element: &) {
+  #{$element}__field {
+    font-size: 1em;
     padding: .5em;
   }
 }

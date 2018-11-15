@@ -4,9 +4,19 @@
 .rpla-donation-input {
   $self: &;
 
-  &--type-two {
-    @include input-type-two($self);
+  @include input-type-hide-label;
+  font-size: 2em;
+
+  &--type-one {
+    border-width: 0;
+
+    #{$self}__field {
+      border-width: 0;
+      font-size: 1em;
+      padding: .25em .5em;
+    }
   }
+
 }
 
 // end of file
