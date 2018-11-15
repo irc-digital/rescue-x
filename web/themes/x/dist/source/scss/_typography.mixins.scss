@@ -2,7 +2,6 @@
 // Tier 2 variables
 //
 
-@import 'rpl.tier-1';
 @import 'abstract/mixins';
 
 @function is-not-in-list ($list, $value) {
@@ -69,9 +68,6 @@
     }
   }
 }
-// generates a JSON array of typography-text-small paarameters to be used by PatternLab
-$xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-text-small.json', xxx-tts-params('all'), (prefix: '{ "typography_text_small":', suffix: '}'));
-
 
 @mixin typography-text-standard {
   @include font-size('m');
@@ -176,26 +172,8 @@ $xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-
   }
 }
 
-@mixin floated-aside-z-index {
-  position: relative;
-  z-index: 5;
-}
-
-@mixin hover ($target: '&') {
-  @if $target == '&' {
-    &:hover,
-    &:focus {
-      @content;
-    }
-  } @else {
-    // sass-lint:disable-block force-pseudo-nesting
-    &:hover,
-    &:focus,
-    [#{$target}]:hover &,
-    [#{$target}]:focus & {
-      @content;
-    }
-  }
+@mixin typography-vertical-spacing($option: 'standard') {
+  margin-bottom: get-typography-spacing($option);
 }
 
 // end of file

@@ -253,7 +253,7 @@ gulp.task('patternlab:generate:concatenate_button_examples', function () {
 });
 
 gulp.task('patternlab:generate:variables_as_json', function () {
-  return gulp.src([config.patternLab.dir + '/source/scss/rpl.tier-*.scss', config.patternLab.dir + '/source/_patterns/01-atoms/05-buttons/rpla-button.mixin.scss'])
+  return gulp.src([config.patternLab.dir + '/source/scss/style-data-to-patternlab.scss'])
       .pipe(sass(
           {
             functions: export_sass('.')

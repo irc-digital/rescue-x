@@ -1,0 +1,8 @@
+button_sizes:
+  - size-small
+  - size-medium
+  - size-large
+button_types:
+  - type-one
+  - type-two
+  - type-three

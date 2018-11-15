@@ -13,8 +13,9 @@
       @include standard-vertical-spacing;
 
       @include breakpoint(phablet) {
-        @include floated-aside-z-index;
+        position: relative;
         width: rem(376px);
+        z-index: 5;
       }
 
       @include breakpoint(951) {

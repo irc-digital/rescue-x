@@ -1,0 +1,29 @@
+@import 'abstract/mixins';
+
+// generates a JSON array of brand colors to be used by PatternLab
+$xxx-bc: export('dist/source/_patterns/00-subatoms/05-color/color-brand.json', get-brand-color('all'), (prefix: '{ "color_brand":', suffix: '}'));
+
+// generates a JSON array of neutral colors to be used by PatternLab
+$xxx-nc: export('dist/source/_patterns/00-subatoms/05-color/color-neutral.json', get-neutral-color('all'), (prefix: '{ "color_neutral":', suffix: '}'));
+
+// generates a JSON array of utility colors to be used by PatternLab
+$xxx-uc: export('dist/source/_patterns/00-subatoms/05-color/color-utility.json', get-utility-color('all'), (prefix: '{ "color_utility":', suffix: '}'));
+
+// generates a JSON array of font sizes to be used by PatternLab
+$xxx-fs: export('dist/source/_patterns/00-subatoms/10-font-size/font-size.json', get-font-size('all'), (prefix: '{ "font_size":', suffix: '}'));
+
+// generates a JSON array of line heights to be used by PatternLab
+$xxx-lh: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.json', get-line-height('all'), (prefix: '{ "line_height":', suffix: '}'));
+
+// generates a JSON array of letter spacing to be used by PatternLab
+$xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', get-letter-spacing('all'), (prefix: '{ "letter_spacing":', suffix: '}'));
+
+// generates a JSON array of font sizes to be used by PatternLab
+$xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
+
+// generates a JSON array of typography-text-small paarameters to be used by PatternLab
+$xxx-tts: export('dist/source/_patterns/00-subatoms/50-tier-2-mixins/typography-text-small.json', xxx-tts-params('all'), (prefix: '{ "typography_text_small":', suffix: '}'));
+
+$xxx-bs: export('dist/source/_patterns/01-atoms/31-button-examples/button-examples-sizes.json', ('size-small', 'size-medium', 'size-large'), (prefix: '{ "button_sizes":', suffix: '}'));
+
+$xxx-bt: export('dist/source/_patterns/01-atoms/31-button-examples/button-examples-types.json', ('type-one', 'type-two', 'type-three'), (prefix: '{ "button_types":', suffix: '}'));

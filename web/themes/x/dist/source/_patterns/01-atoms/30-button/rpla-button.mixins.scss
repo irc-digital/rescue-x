@@ -34,8 +34,6 @@
 
 }
 
-$xxx-bs: export('dist/source/_patterns/01-atoms/06-button-examples/button-examples-sizes.json', ('size-small', 'size-medium', 'size-large'), (prefix: '{ "button_sizes":', suffix: '}'));
-
 @mixin button-type ($type: 'one') {
   @if $type == 'one' {
     @include hover('data-rpla-hover-target') {
@@ -61,7 +59,5 @@ $xxx-bs: export('dist/source/_patterns/01-atoms/06-button-examples/button-exampl
     @error '#{$type} is not a support type of the button-type mixin';
   }
 }
-
-$xxx-bt: export('dist/source/_patterns/01-atoms/06-button-examples/button-examples-types.json', ('type-one', 'type-two', 'type-three'), (prefix: '{ "button_types":', suffix: '}'));
 
 // end of file
