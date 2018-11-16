@@ -1,0 +1,31 @@
+@import 'rplm-stacked-title-1.variables';
+
+.rplm-stacked-title-1 {
+  color: get-neutral-color('white');
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    max-width: 80%;
+
+    @include breakpoint(phablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__top-text {
+    @include typography-heading-large;
+  }
+
+  &__bottom-text {
+    @include typography-heading-4xl;
+  }
+
+  &__line {
+    border-bottom: $stacked-title-1-line-width solid get-brand-color();
+    margin-bottom: $stacked-title-1-line-spacing;
+    padding-top: $stacked-title-1-line-spacing;
+    transform: translateY($stacked-title-1-line-width / 2);
+  }
+}
+// end of file

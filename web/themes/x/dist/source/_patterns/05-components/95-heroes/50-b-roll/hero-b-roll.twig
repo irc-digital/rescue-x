@@ -1,0 +1,15 @@
+<div class="rplc-hero-b-roll{% for hero_b_roll_modifier in hero_b_roll_modifiers %} rplc-hero-b-roll--{{ hero_b_roll_modifiers }}{% endfor %}">
+  <div class="rplc-hero-b-roll__content">
+    {% embed '@layouts/30-hero-layouts/15-hero-layout-3/hero-layout-3.twig' with { hero_layout_3_modifiers : layout_modifiers } %}
+      {% block hero_layout_3_primary_block %}
+        {% if hero_b_roll_slug %}
+          <div class="rplc-hero-b-roll__slug-title-wrapper">
+            <h6 class="rplc-hero-b-roll__slug">{{  hero_b_roll_slug }}</h6>
+            {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_b_roll_headline} %}
+          </div>
+          <p class="rpla-paragraph">{{ hero_b_roll_summary }}</p>
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+  </div>
+</div>

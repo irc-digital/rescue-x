@@ -1,0 +1,3 @@
+hero_b_roll_slug: "Faker.words(3,true)"
+hero_b_roll_headline: "Faker.sentence(7,true)"
+hero_b_roll_summary: "Faker.sentences(3,true)"

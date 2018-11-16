@@ -162,6 +162,19 @@ date-after-summary
   }
 }
 
+.patternlab-faux-hero-3-text {
+  //background-color: get-neutral-color('black');
+  border: 4px dashed get-neutral-color('white');
+  color: get-neutral-color('white');
+  height:200px;
+  line-height: 200px;
+  text-align:center;
+
+  @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+    background-color: transparent;
+  }
+}
+
 #atoms-link-type-2,
 #atoms-link-type-2-no-underline,
 #atoms-link-type-1-yellow,
@@ -173,6 +186,7 @@ date-after-summary
 #molecules-social-share-type-4,
 #atoms-icon-link-type-4,
 #atoms-link-type-2-alert-white,
+#molecules-stacked-title-1,
 #atoms-link-type-1-white,
 #molecules-crisis-watch-with-prefix,
 #molecules-crisis-watch-small,

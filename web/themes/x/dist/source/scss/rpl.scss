@@ -12,6 +12,7 @@
 @import '../_patterns/10-layouts/10-four-column-list/rpll-four-column-list';
 @import '../_patterns/10-layouts/30-hero-layouts/05-hero-layout-1/rpll-hero-layout-1';
 @import '../_patterns/10-layouts/30-hero-layouts/10-hero-layout-2/rpll-hero-layout-2';
+@import '../_patterns/10-layouts/30-hero-layouts/15-hero-layout-3/rpll-hero-layout-3';
 @import '../_patterns/10-layouts/40-footer-layouts/05-footer-layout-1/rpll-footer-layout-1';
 @import '../_patterns/10-layouts/40-footer-layouts/10-footer-layout-2/rpll-footer-layout-2';
 @import '../_patterns/10-layouts/50-aside/rpll-aside';
@@ -21,6 +22,7 @@
 //
 // Build molecules
 //
+@import '../_patterns/03-molecules/02-title-treatments/05-stacked-1/rplm-stacked-title-1';
 @import '../_patterns/03-molecules/03-caption/rplm-caption';
 @import '../_patterns/03-molecules/05-person-info/rplm-person-info';
 @import '../_patterns/03-molecules/10-contributors/rplm-contributors';
@@ -38,6 +40,7 @@
 @import '../_patterns/05-components/95-heroes/10-landing-page/rplc-hero-landing-page';
 @import '../_patterns/05-components/95-heroes/20-text-only/rplc-hero-text-only';
 @import '../_patterns/05-components/95-heroes/30-text-with-links/rplc-hero-text-with-links';
+@import '../_patterns/05-components/95-heroes/50-b-roll/rplc-hero-b-roll';
 @import '../_patterns/05-components/05-teasers/05-standard/rplc-teaser-standard';
 @import '../_patterns/05-components/05-teasers/10-highlighted/rplc-teaser-highlighted';
 @import '../_patterns/05-components/05-teasers/15-minimal/rplc-teaser-minimal';

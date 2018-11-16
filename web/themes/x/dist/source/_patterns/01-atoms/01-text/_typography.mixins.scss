@@ -149,6 +149,17 @@
   }
 }
 
+@mixin typography-heading-4xl {
+  @include font-size('2xl');
+  @include font-weight('bold');
+  @include letter-spacing('compact');
+  @include line-height('xs');
+
+  @include breakpoint(phablet) {
+    @include font-size('4xl');
+  }
+}
+
 @mixin typography-heading-5xl {
   @include font-size('3xl');
   @include font-weight('bold');
