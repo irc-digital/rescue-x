@@ -1,34 +1,28 @@
 {% set type = null %}
 
 {% for crisis_watch_modifier in crisis_watch_modifiers %}
-  {% set type = crisis_watch_modifier %}
+  {% if crisis_watch_modifier starts with 'type-' %}
+    {% set type = crisis_watch_modifier %}
+  {% endif %}
 {% endfor %}
 
-{% if type != 'with-prefix' %}
-  {% set crisis_watch_link_text = "Crisis watch" %}
+{% set crisis_watch_link_icon_text = 'Crisis Watch' %}
+{% set crisis_watch_link_icon_name = 'crisis' %}
+
+{% if type == 'type-one' %}
+  {% set crisis_watch_link_icon_modifiers = ['type-four'] %}
+{% endif %}
+
+{% if type == 'type-two' %}
+  {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-inverse'] %}
 {% endif %}
 
 <div class="rplm-crisis-watch {% for crisis_watch_modifier in crisis_watch_modifiers %} rplm-crisis-watch--{{ crisis_watch_modifier }}{% endfor %}">
   <div class="rplm-crisis-watch__wrapper">
-    <div class="rplm-crisis-watch__icon-wrapper">
-      {% include '@atoms/56-icon/icon.twig' with {
-        icon_name: 'crisis'
-      } %}
-    </div>
-
-    {% if type == 'with-prefix' %}
-      <div class="rplm-crisis-watch__prefix">
-        {{ "Crisis watch:" | trans }}
-      </div>
-    {% endif %}
-
-    <div class="rplm-crisis-watch__link-wrapper">
-      {% include '@atoms/10-link/link.twig' with {
-        link_tag: crisis_watch_link_tag,
-        link_url: crisis_watch_link_url,
-        link_text: crisis_watch_link_text,
-        link_modifiers: crisis_watch_link_modifiers,
-        } only %}
-    </div>
+    {% include '@atoms/12-link-icon/link-icon.twig' with {
+      link_icon_text: crisis_watch_link_icon_text,
+      link_icon_name: crisis_watch_link_icon_name,
+      link_icon_modifiers: crisis_watch_link_icon_modifiers
+      } only %}
   </div>
 </div>
