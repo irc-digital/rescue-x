@@ -129,7 +129,12 @@ article_page_footer:
         with:
           footer_layout_1_section_1:
             include():
-              pattern: "molecules-crisis-watch"
+              pattern: "atoms-link-icon"
+              with:
+                link_icon_name: 'crisis'
+                link_icon_text: "Crisis Watch"
+                link_icon_modifiers:
+                  - 'type-four'
           footer_layout_1_section_2:
             include():
               pattern: "components-efficiency"
