@@ -32,6 +32,11 @@
   {% endif %}
 
 {% endspaceless %}
+{% set link_classes = 'rpla-link' %}
+{% for link_modifier in link_modifiers %}
+  {% set link_classes = link_classes ~ ' rpla-link--' ~ link_modifier %}
+{% endfor %}
+
 {% block link_block %}
-<{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="rpla-link{% for link_modifier in link_modifiers %} rpla-link--{{ link_modifier }}{% endfor %}">{{ link_text }}</{{ link_tag }}>
+<{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="{{ link_classes }}">{{ link_text }}</{{ link_tag }}>
 {% endblock link_block %}
