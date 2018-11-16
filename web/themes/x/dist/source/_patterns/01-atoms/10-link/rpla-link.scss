@@ -6,8 +6,18 @@
 
   @include font-weight('bold');
   @include transition;
+  background-color: transparent;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-style: inset;
+  border-top-width: 0;
   display: inline;
   text-decoration: none;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer;
+  }
 
   &--type-one {
     @include link-hover-background-color(get-brand-color('primary'));

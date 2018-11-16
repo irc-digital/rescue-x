@@ -1,0 +1,8 @@
+{% embed "@atoms/10-link/link.twig" with {
+  link_modifiers: ['type-two', 'subtype-no-hover-effect', 'subtype-inverse'],
+}
+%}
+  {% block link_block %}
+    <input type="submit" class="rpla-link{% for link_modifier in link_modifiers %} rpla-link--{{ link_modifier }}{% endfor %}" value="{{ link_text }}">
+  {% endblock %}
+{% endembed %}

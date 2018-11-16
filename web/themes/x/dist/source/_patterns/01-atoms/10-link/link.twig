@@ -10,26 +10,28 @@
 #}
 {% spaceless %}
 
-{% set link_modifiers = link_modifiers ?: [] %}
+  {% set link_modifiers = link_modifiers ?: [] %}
 
-{% set has_type = false %}
-{% for link_modifier in link_modifiers %}
-  {% if link_modifier starts with 'type-' %}
-    {% set has_type = true %}
+  {% set has_type = false %}
+  {% for link_modifier in link_modifiers %}
+    {% if link_modifier starts with 'type-' %}
+      {% set has_type = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_type %}
+    {% set link_modifiers = link_modifiers | merge(['type-one']) %}
   {% endif %}
-{% endfor %}
 
-{% if not has_type %}
-  {% set link_modifiers = link_modifiers | merge(['type-one']) %}
-{% endif %}
-
-{% if link_tag is empty %}
-  {% if link_url is not empty %}
-    {% set link_tag = 'a' %}
-  {% else %}
-    {% set link_tag = 'div' %}
+  {% if link_tag is empty %}
+    {% if link_url is not empty %}
+      {% set link_tag = 'a' %}
+    {% else %}
+      {% set link_tag = 'div' %}
+    {% endif %}
   {% endif %}
-{% endif %}
 
 {% endspaceless %}
+{% block link_block %}
 <{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="rpla-link{% for link_modifier in link_modifiers %} rpla-link--{{ link_modifier }}{% endfor %}">{{ link_text }}</{{ link_tag }}>
+{% endblock link_block %}

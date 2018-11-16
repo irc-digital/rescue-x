@@ -45,14 +45,18 @@ figure {
 
 // sass-lint:disable-block no-vendor-prefixes
 input {
-  -moz-appearance: textfield;
-  width: 100%;
+  &[type='text'],
+  &[type='number'] {
+    -moz-appearance: textfield;
+    width: 100%;
 
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
+
 }
 
 //
