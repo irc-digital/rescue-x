@@ -15,6 +15,7 @@
 
   &__item {
     margin-bottom: $two-column-list-stacked-margin-bottom;
+    overflow: hidden;
 
     @include breakpoint(desktop) {
       margin-bottom: 0;
