@@ -1,0 +1,6 @@
+link_icon_name: 'crisis'
+link_icon_text: 'Praesent ut ligula non mi'
+link_icon_modifiers:
+  - 'type-four'
+  - 'subtype-prefix'
+  - 'size-2x-small'
