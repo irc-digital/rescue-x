@@ -26,9 +26,15 @@
   }
 
   &--size-2x-small {
-    #{$self}__icon-wrapper {
-      @include font-size('2xs');
+    #{$self}__icon-wrapper,
+    #{$self}__prefix-wrapper {
+      @include font-size('s');
     }
+  }
+
+  &__prefix-wrapper {
+    color: get-neutral-color('white');
+    margin-right: $link-icon-gap;
   }
 
   &--icon-position-outside {

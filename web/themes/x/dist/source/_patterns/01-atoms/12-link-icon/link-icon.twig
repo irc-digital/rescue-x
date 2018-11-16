@@ -46,17 +46,29 @@
   {% if type == 'type-two' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline'] %}
     {% set icon_modifiers = ['fill-branded'] %}
+
   {% elseif type == 'type-three' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
+
   {% elseif type == 'type-four' %}
     {% set mod = 'icon-position-outside' %}
     {% set link_icon_modifiers = link_icon_modifiers|merge([mod]) %}
-    {% set link_modifiers = ['type-two', 'subtype-alert'] %}
+    {% set link_modifiers = ['type-two'] %}
     {% set icon_modifiers = ['fill-alert'] %}
+
+    {% if subtype != 'subtype-prefix' %}
+      {% set link_modifiers = link_modifiers|merge(['subtype-alert']) %}
+    {% endif %}
+
     {% if subtype == 'subtype-inverse' %}
       {% set link_modifiers = link_modifiers|merge(['subtype-white']) %}
     {% endif %}
+
+    {% if subtype == 'subtype-prefix' %}
+      {% set link_modifiers = link_modifiers|merge(['subtype-no-hover-effect']) %}
+    {% endif %}
+
   {% else %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
@@ -74,6 +86,13 @@
       icon_modifiers: icon_modifiers,
     } only %}
   </span>
+
+  {% if subtype == 'subtype-prefix' %}
+    <span class="rpla-link-icon__prefix-wrapper">
+      {{ "Crisis watch:" | trans }}
+    </span>
+  {% endif %}
+
   <span class="rpla-link-icon__link-wrapper">
     {% include '@atoms/10-link/link.twig' with {
       link_tag: 'span',
