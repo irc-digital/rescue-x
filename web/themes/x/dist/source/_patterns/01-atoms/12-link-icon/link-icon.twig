@@ -51,7 +51,7 @@
     {% set icon_modifiers = ['fill-branded'] %}
   {% elseif type == 'type-four' %}
     {% set mod = 'icon-position-outside' %}
-    {% set link_icon_modifiers = [mod] %}
+    {% set link_icon_modifiers = link_icon_modifiers|merge([mod]) %}
     {% set link_modifiers = ['type-two', 'subtype-alert'] %}
     {% set icon_modifiers = ['fill-alert'] %}
     {% if subtype == 'subtype-inverse' %}
