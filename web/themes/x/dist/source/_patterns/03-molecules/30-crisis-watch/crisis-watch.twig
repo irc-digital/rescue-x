@@ -6,11 +6,16 @@
   {% endif %}
 {% endfor %}
 
-{% set crisis_watch_link_icon_text = 'Crisis Watch' %}
+{% if type != 'type-three' %}
+  {% set crisis_watch_link_icon_text = 'Crisis Watch' %}
+{% endif %}
+
 {% set crisis_watch_link_icon_name = 'crisis' %}
 
 {% if type == 'type-two' %}
   {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-inverse'] %}
+{% elseif type == 'type-three' %}
+  {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-prefix'] %}
 {% else %}
   {% set crisis_watch_link_icon_modifiers = ['type-four'] %}
 {% endif %}
