@@ -10,6 +10,7 @@
 
   &__icon-wrapper {
     display: inline-block;
+    flex-shrink: 0;
     height: $link-icon-height;
     margin-right: $link-icon-gap;
     width: $link-icon-width;
