@@ -1,0 +1,11 @@
+{% macro markdown(text) %}
+  {%- spaceless -%}
+    {% import _self as rpl %}
+    {% set broken_out_text = text | split('*', 3) %}
+    {% if  broken_out_text | length == 3 %}
+      {{ broken_out_text[0] }}<span class="rpla-emphasis">{{ broken_out_text[1] }}</span>{% if broken_out_text[2]|first == ' ' %}{{ ' ' }}{% endif %}{{ rpl.markdown(broken_out_text[2]) }}
+    {% else %}
+      {{ text }}
+    {% endif %}
+  {%- endspaceless -%}
+{%- endmacro -%}
