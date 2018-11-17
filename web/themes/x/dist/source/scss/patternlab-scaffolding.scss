@@ -364,6 +364,10 @@ date-after-summary
   height: 100px;
 }
 
+.xxx-typography-text-2x-small {
+  @include typography-text-2x-small
+}
+
 .xxx-typography-text-extra-small {
   @include typography-text-extra-small;
 }
@@ -380,6 +384,10 @@ date-after-summary
   @include typography-heading-medium;
 }
 
+.xxx-typography-heading-medium-large-standard {
+  @include typography-heading-medium-large-standard;
+}
+
 .xxx-typography-heading-medium-large {
   @include typography-heading-medium-large;
 }
@@ -394,4 +402,16 @@ date-after-summary
 
 .xxx-typography-heading-extra-large-light {
   @include typography-heading-extra-large-light;
+}
+
+.xxx-typography-heading-3xl {
+  @include typography-heading-3xl;
+}
+
+.xxx-typography-heading-4xl {
+  @include typography-heading-4xl;
+}
+
+.xxx-typography-heading-5xl {
+  @include typography-heading-5xl;
 }

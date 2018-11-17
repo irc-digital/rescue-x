@@ -41,7 +41,6 @@
 
   &__title {
     @include typography-heading-medium-large;
-    @include font-weight('bold');
     @include typography-vertical-spacing;
 
     order: 2;

@@ -10,7 +10,7 @@
   }
 
   &__slug {
-    @include typography-heading-medium-large;
+    @include typography-heading-medium-large-standard;
     @include typography-vertical-spacing('compact');
   }
 

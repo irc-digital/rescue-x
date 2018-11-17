@@ -28,44 +28,13 @@
   }
 }
 
-// internal function for small text mixin parameters
-@function xxx-tts-params ($option: 'keys') {
-  $typography-text-small-params: (
-    'm': 'Default value, up-sized to medium',
-    'ml': 'Up-sizes to medium-large on non-mobile devices',
-    //'s': 'Prevents up-sizing by maintaining small font size on all devices',
-  );
-
-  @if $option != 'all' {
-    @return map-keys($typography-text-small-params);
-  } @else {
-    @return $typography-text-small-params;
-  }
-}
-
-//
-// Small text mixin. Outputs with a small (s) font size on mobile and a medium  on other devices
-//
-// The responds arguments allows some control over the up-sizing on non-mobile devices.
-// Options:
-//    m   Default value, up-sized to medium
-//    ml  Up-sizes to medium-large on non-mobile devices
-//    s   Prevents up-sizing by maintaining small font size on all devices
-//
-@mixin typography-text-small ($responds: 'm') {
-  @if is-not-in-list(xxx-tts-params(), $responds) { // sass-lint:disable-line empty-args
-    @error '#{$responds} is not a legitimate parameter';
-  }
-
-  $mobile-font-size: 's';
-  @include font-size($mobile-font-size);
+@mixin typography-text-small  {
+  @include font-size('s');
   @include font-weight('light');
   @include line-height('s');
 
-  @if $responds != $mobile-font-size {
-    @include breakpoint(phablet) {
-      @include font-size($responds);
-    }
+  @include breakpoint(phablet) {
+    @include font-size('m');
   }
 }
 
@@ -81,7 +50,7 @@
   }
 }
 
-@mixin typography-text-large ($responds: 'l') {
+@mixin typography-text-large {
   @include font-size('ml');
 
   @include breakpoint(phablet) {
@@ -103,9 +72,19 @@
 }
 
 // Medium large on mobile, Extra large on bigger devices
-@mixin typography-heading-medium-large  {
+@mixin typography-heading-medium-large-standard  {
   @include font-size('ml');
   @include letter-spacing('compact');
+  @include line-height('s');
+
+  @include breakpoint(phablet) {
+    @include font-size('xl');
+  }
+}
+
+@mixin typography-heading-medium-large  {
+  @include font-size('ml');
+  @include font-weight('bold');
   @include line-height('s');
 
   @include breakpoint(phablet) {
@@ -133,6 +112,18 @@
   @include line-height('xs');
 
   @include breakpoint(phablet) {
+    @include font-size('2xl');
+  }
+}
+
+// Extra large light on mobile, Extra extra large on bigger devices (light)
+@mixin typography-heading-extra-large-light {
+  @include font-size('xl');
+  @include font-weight('light');
+  @include letter-spacing;
+  @include line-height('xs');
+
+  @include breakpoint(tablet) {
     @include font-size('2xl');
   }
 }
@@ -170,19 +161,6 @@
     @include font-size('5xl')
   }
 }
-
-// Extra large light on mobile, Extra extra large on bigger devices (light)
-@mixin typography-heading-extra-large-light {
-  @include font-size('xl');
-  @include font-weight('light');
-  @include letter-spacing;
-  @include line-height('xs');
-
-  @include breakpoint(tablet) {
-    @include font-size('2xl');
-  }
-}
-
 
 //
 // Typography vertical spacing (margin bottom). Em based

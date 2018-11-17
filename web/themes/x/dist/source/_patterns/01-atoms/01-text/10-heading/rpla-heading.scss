@@ -2,7 +2,6 @@
 
 .rpla-heading {
 
-  @include font-weight('bold');
   @include typography-vertical-spacing;
 
   &--medium {
@@ -14,14 +13,23 @@
   }
 
   &--large {
-    // TODO SOME MARGIN FOR THIS ONE
     @include typography-heading-large;
-    @include typography-vertical-spacing('compact');
   }
 
   &--extra-large {
     @include typography-heading-extra-large;
-    @include typography-vertical-spacing('compact');
+  }
+
+  &--3x-large {
+    @include typography-heading-3xl;
+  }
+
+  &--4x-large {
+    @include typography-heading-4xl;
+  }
+
+  &--5x-large {
+    @include typography-heading-5xl;
   }
 }
 

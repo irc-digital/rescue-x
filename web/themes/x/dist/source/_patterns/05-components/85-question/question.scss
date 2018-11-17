@@ -30,7 +30,6 @@
   &__prefix {
     @include typography-heading-medium-large;
     @include typography-vertical-spacing;
-    @include font-weight('bold');
   }
 
   &__question {
@@ -69,7 +68,6 @@
   &__right-wrong-answer-wrapper {
     @include typography-heading-medium-large;
     @include typography-vertical-spacing;
-    @include font-weight('bold');
     @include font-style('italic');
     display: none;
     padding-left: get-spacing();
