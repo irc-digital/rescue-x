@@ -1,17 +1,18 @@
 {% spaceless %}
+  {% import '@atoms/rpl.macros.twig' as rpl %}
 
-{% set call_to_action_1_modifiers = call_to_action_1_modifiers ?: [] %}
+  {% set call_to_action_1_modifiers = call_to_action_1_modifiers ?: [] %}
 
-{% set has_background = false %}
-{% for call_to_action_1_modifier in call_to_action_1_modifiers %}
-  {% if call_to_action_1_modifier starts with 'background-' %}
-    {% set has_background = true %}
+  {% set has_background = false %}
+  {% for call_to_action_1_modifier in call_to_action_1_modifiers %}
+    {% if call_to_action_1_modifier starts with 'background-' %}
+      {% set has_background = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_background %}
+    {% set call_to_action_1_modifiers = call_to_action_1_modifiers | merge (['background-light']) %}
   {% endif %}
-{% endfor %}
-
-{% if not has_background %}
-  {% set call_to_action_1_modifiers = call_to_action_1_modifiers | merge (['background-light']) %}
-{% endif %}
 
 {% endspaceless %}
 <div class="rplc-call-to-action-1{% for call_to_action_1_modifier in call_to_action_1_modifiers %} rplc-call-to-action-1--{{ call_to_action_1_modifier }}{% endfor %}">
@@ -23,7 +24,7 @@
   <div class="rplc-call-to-action-1__content">
     <a href="{{ call_to_action_1_url }}" class="rplc-call-to-action-1__content-wrapper" data-rpla-hover-target>
       <div class="rplc-call-to-action-1__text-wrapper">
-        <h3 class="rplc-call-to-action-1__title">{{ call_to_action_1_title }}</h3>
+        <h3 class="rplc-call-to-action-1__title">{{ rpl.markdown(call_to_action_1_title) }}</h3>
         <div class="rplc-call-to-action-1__subtitle">{{ call_to_action_1_subtitle }}</div>
       </div>
       <div class="rplc-call-to-action-1__button-wrapper">
