@@ -1,0 +1,31 @@
+@import 'rplm-two-column-headline-1.variables';
+
+.rplm-two-column-headline-1 {
+  color: get-neutral-color('white');
+
+  @include breakpoint(laptop) {
+    display: grid;
+    grid-column-gap: get-spacing('s');
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__slug {
+    @include typography-heading-medium-large;
+    @include typography-vertical-spacing('compact');
+  }
+
+  &__headline {
+    @include typography-heading-4xl;
+    @include typography-vertical-spacing;
+
+    @include breakpoint(laptop) {
+      @include typography-vertical-spacing('none');
+    }
+  }
+
+  &__summary {
+    @include typography-text-large;
+  }
+
+}
+// end of file

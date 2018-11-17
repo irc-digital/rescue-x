@@ -191,6 +191,7 @@
 // Function to get a typography vertical spacing value from its array entry key
 @function get-typography-spacing($option: 'standard') {
   $typography-spacing: (
+    'none': 0,
     'tight': .25em,
     'compact': .5em,
     'standard': .75em,

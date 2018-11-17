@@ -1,6 +1,6 @@
-@import 'rplm-stacked-title-1.variables';
+@import 'rplm-stacked-headline-1.variables';
 
-.rplm-stacked-title-1 {
+.rplm-stacked-headline-1 {
   color: get-neutral-color('white');
   display: flex;
   flex-direction: column;
@@ -13,12 +13,12 @@
     }
   }
 
-  &__top-text {
-    @include typography-heading-large;
+  &__headline {
+    @include typography-heading-4xl;
   }
 
-  &__bottom-text {
-    @include typography-heading-4xl;
+  &__summary {
+    @include typography-heading-large;
   }
 
   &__line {
