@@ -15,6 +15,7 @@
 {% if type == 'type-two' %}
   {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-inverse'] %}
 {% elseif type == 'type-three' %}
+  {% set crisis_watch_link_icon_prefix_text = "Crisis watch" %}
   {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-prefix'] %}
 {% else %}
   {% set crisis_watch_link_icon_modifiers = ['type-four'] %}
@@ -25,7 +26,8 @@
     {% include '@atoms/12-link-icon/link-icon.twig' with {
       link_icon_text: crisis_watch_link_icon_text|trans,
       link_icon_name: crisis_watch_link_icon_name,
+      link_icon_prefix_text: crisis_watch_link_icon_prefix_text,
       link_icon_modifiers: crisis_watch_link_icon_modifiers
-      } only %}
+    } only %}
   </div>
 </div>

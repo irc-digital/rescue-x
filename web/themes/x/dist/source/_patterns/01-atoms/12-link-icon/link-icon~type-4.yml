@@ -1,4 +1,4 @@
-link_icon_name: 'crisis'
-link_icon_text: 'Crisis watch'
+link_icon_name: 'food'
+link_icon_text: 'Alert'
 link_icon_modifiers:
   - 'type-four'
