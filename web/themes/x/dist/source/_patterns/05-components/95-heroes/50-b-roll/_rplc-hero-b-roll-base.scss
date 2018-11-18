@@ -1,0 +1,23 @@
+@import 'rplc-hero-b-roll-base.variables';
+
+.rplc-hero-b-roll {
+  background-color: get-neutral-color('black');
+
+  &__content {
+    @include standard-vertical-padding;
+  }
+
+  &__video-wrapper {
+    @include vertical-fade;
+
+    height: 100%;
+    max-height: $hero-b-roll-max-height;
+    overflow: hidden;
+  }
+
+  &__text-wrapper {
+    @include well-row;
+  }
+}
+
+// end of file

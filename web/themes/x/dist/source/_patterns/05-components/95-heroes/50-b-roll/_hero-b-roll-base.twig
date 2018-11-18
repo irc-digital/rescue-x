@@ -1,4 +1,4 @@
-<div class="rplc-hero-b-roll{% for hero_b_roll_modifier in hero_b_roll_modifiers %} rplc-hero-b-roll--{{ hero_b_roll_modifiers }}{% endfor %}">
+<div class="rplc-hero-b-roll{% for hero_b_roll_modifier in hero_b_roll_modifiers %} rplc-hero-b-roll--{{ hero_b_roll_modifier }}{% endfor %}">
   <div class="rplc-hero-b-roll__content">
     <div class="rplc-hero-b-roll__video-wrapper">
       {% include '@molecules/80-b-roll/b-roll.twig' with {
@@ -10,10 +10,8 @@
       } only %}
     </div>
     <div class="rplc-hero-b-roll__text-wrapper">
-      {% include '@molecules/02-basic-headline-treatments/05-stacked-1/stacked-headline-1.twig' with {
-        stacked_headline_1_headline: hero_b_roll_headline,
-        stacked_headline_1_summary: hero_b_roll_summary,
-      } only %}
+      {% block b_roll_text_block %}
+      {% endblock %}
     </div>
   </div>
 </div>
