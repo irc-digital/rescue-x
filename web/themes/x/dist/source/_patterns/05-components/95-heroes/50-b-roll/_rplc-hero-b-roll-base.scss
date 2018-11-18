@@ -4,7 +4,11 @@
   background-color: get-neutral-color('black');
 
   &__content {
-    @include standard-vertical-padding;
+    padding-bottom: get-spacing('s');
+
+    @include breakpoint(phablet) {
+      padding-bottom: get-spacing('l');
+    }
   }
 
   &__video-wrapper {
