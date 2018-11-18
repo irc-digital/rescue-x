@@ -13,7 +13,7 @@ hero_article:
       label: "Slug"
       description: "Slug"
       preview: "Syria crisis"
-    hero_article_description:
+    hero_article_summary:
       type: text
       label: "Description"
       description: "A piece of summary text"

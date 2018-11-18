@@ -21,13 +21,11 @@
         {% endblock %}
       {% endif %}
       {% block hero_layout_1_primary_1_block %}
-        {% if hero_standard_slug %}
-          <div class="rplc-hero-standard__slug-wrapper">
-            <h6 class="rplc-hero-standard__slug">{{ hero_standard_slug }}</h6>
-          </div>
-        {% endif %}
-        {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_standard_headline} %}
-        {% if hero_standard_description %}<h2 class="rplc-hero-standard__description">{{ hero_standard_description }}</h2>{% endif %}
+        {% include '@molecules/02-basic-headline-treatments/10-stacked-2/stacked-headline-2.twig' with {
+          stacked_headline_2_headline: hero_standard_headline,
+          stacked_headline_2_slug: hero_standard_slug,
+          stacked_headline_2_summary: hero_standard_summary,
+        } only %}
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}
         LINK HERE

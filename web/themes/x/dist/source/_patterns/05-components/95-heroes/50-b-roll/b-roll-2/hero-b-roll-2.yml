@@ -1,7 +1,7 @@
-hero_b_roll_2_headline: "Fast and Financed"
-hero_b_roll_2_summary: "Refugees have been described as an economic burden, a strain and a drain on the United States. That's far from the truth and our latest data shows why."
-hero_b_roll_2_slug: "Refugees and the economy"
-hero_b_roll_2_image_alt: 'Lots of cars driving'
+hero_b_roll_2_headline: "Faker.words(3,true)"
+hero_b_roll_2_summary: "Faker.sentences(3,true)"
+hero_b_roll_2_slug: "Faker.words(3,true)"
+hero_b_roll_2_image_alt: "Faker.words(7,true)"
 hero_b_roll_2_image_url_mobile: '../../images/b-roll/traffic_mobile.jpg'
 hero_b_roll_2_video_url_mobile: '../../images/b-roll/traffic-animation-bg-mobile.mp4'
 hero_b_roll_2_image_url_desktop: '../../images/b-roll/traffic_desktop.jpg'

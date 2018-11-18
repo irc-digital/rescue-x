@@ -19,11 +19,10 @@
         {% endblock %}
       {% endif %}
       {% block hero_layout_2_primary_block %}
-        {% if hero_landing_page_slug %}
-          <div class="rplc-hero-landing-page__slug-wrapper">
-            <h6 class="rplc-hero-landing-page__slug">{{ hero_landing_page_slug }}</h6>
-          </div>
-        {% endif %}
+        {% include '@atoms/01-text/25-slug/slug.twig' with {
+          slug_text: hero_landing_page_slug,
+          slug_modifiers: ['size-large'],
+        } only %}
         <div class="rplc-hero-landing-page__title-crisis-wrapper">
           <div class="rplc-hero-landing-page__title-wrapper">{% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_landing_page_headline} %}</div>
           {% if hero_landing_page_crisis_watch %}
