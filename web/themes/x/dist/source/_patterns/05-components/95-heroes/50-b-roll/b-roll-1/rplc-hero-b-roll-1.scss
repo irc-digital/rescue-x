@@ -1,9 +1,9 @@
 @import 'rplc-hero-b-roll-1.variables';
 
 .rplc-hero-b-roll--type-1 {
-  $self: '.rplc-hero-b-roll';
+  $base: '.rplc-hero-b-roll';
 
-  #{$self}__text-wrapper {
+  #{$base}__text-wrapper {
     margin-top: map-get($hero-b-roll-1-eat-in, 'mobile');
     position: relative;
     z-index: 3;
