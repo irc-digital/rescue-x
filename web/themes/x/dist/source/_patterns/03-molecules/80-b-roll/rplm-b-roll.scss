@@ -5,10 +5,12 @@
 
   &__video {
     display: none;
+    object-fit: cover;
+    width: 100%;
   }
 
   &[data-rpl-b-roll-loaded] {
-    #{$self}__imagew-wrapper {
+    #{$self}__image-wrapper {
       display: none;
     }
 
