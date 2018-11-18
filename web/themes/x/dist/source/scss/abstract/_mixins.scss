@@ -288,6 +288,23 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
+@mixin vertical-fade ($start-color: rgba(0, 0, 0, 0), $end-color: rgba(0, 0, 0, 1), $start-percent: 0%, $end-percent: 100%) {
+  position: relative;
+
+  &::before {
+    background: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) repeat-x ;
+    bottom: 0;
+    content: '';
+    display: block;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+    height: 50%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
 //
 // well-row mixin
 //

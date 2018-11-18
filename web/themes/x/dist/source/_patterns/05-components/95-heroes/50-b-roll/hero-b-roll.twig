@@ -1,15 +1,22 @@
 <div class="rplc-hero-b-roll{% for hero_b_roll_modifier in hero_b_roll_modifiers %} rplc-hero-b-roll--{{ hero_b_roll_modifiers }}{% endfor %}">
   <div class="rplc-hero-b-roll__content">
-    {% embed '@layouts/30-hero-layouts/15-hero-layout-3/hero-layout-3.twig' with { hero_layout_3_modifiers : layout_modifiers } %}
-      {% block hero_layout_3_primary_block %}
-        {% if hero_b_roll_slug %}
-          <div class="rplc-hero-b-roll__slug-title-wrapper">
-            <h6 class="rplc-hero-b-roll__slug">{{  hero_b_roll_slug }}</h6>
-            {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_b_roll_headline} %}
-          </div>
-          <p class="rpla-paragraph">{{ hero_b_roll_summary }}</p>
-        {% endif %}
-      {% endblock %}
-    {% endembed %}
+    <div class="rplc-hero-b-roll__video-wrapper">
+      {% include '@molecules/80-b-roll/b-roll.twig' with {
+        b_roll_image_alt: hero_b_roll_image_alt,
+        b_roll_image_url_mobile: hero_b_roll_image_url_mobile,
+        b_roll_video_url_mobile: hero_b_roll_video_url_mobile,
+        b_roll_image_url_desktop: hero_b_roll_image_url_desktop,
+        b_roll_video_url_desktop: hero_b_roll_video_url_desktop,
+      } only %}
+    </div>
+    <div class="rplc-hero-b-roll__text-wrapper">
+      {% include '@molecules/02-basic-headline-treatments/05-stacked-1/stacked-headline-1.twig' with {
+        stacked_headline_1_headline: hero_b_roll_headline,
+        stacked_headline_1_summary: hero_b_roll_summary,
+      } only %}
+    </div>
   </div>
 </div>
+
+
+

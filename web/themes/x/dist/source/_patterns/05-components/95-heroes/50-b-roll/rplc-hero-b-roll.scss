@@ -1,7 +1,31 @@
 @import 'rplc-hero-b-roll.variables';
 
 .rplc-hero-b-roll {
-  color: get-neutral-color('white');
+  background-color: get-neutral-color('black');
+
+  &__content {
+    @include standard-vertical-padding;
+  }
+
+  &__text-wrapper {
+    @include well-row;
+
+    margin-top: map-get($hero-b-roll-eat-in, 'mobile');
+    position: relative;
+    z-index: 3;
+
+    @include breakpoint(phablet) {
+      margin-top: map-get($hero-b-roll-eat-in, 'phablet');
+    }
+  }
+
+  &__video-wrapper {
+    @include vertical-fade;
+
+    height: 100%;
+    max-height: $hero-b-roll-max-height;
+    overflow: hidden;
+  }
 }
 
 // end of file

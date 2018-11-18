@@ -1,3 +1,7 @@
-hero_b_roll_slug: "Faker.words(3,true)"
-hero_b_roll_headline: "Faker.sentence(7,true)"
-hero_b_roll_summary: "Faker.sentences(3,true)"
+hero_b_roll_headline: "This World Refugee Day *#StandWithRefugees*."
+hero_b_roll_summary: "Every 60 seconds 20 people are forced to flee their homes."
+hero_b_roll_image_alt: 'Pictures of refugees'
+hero_b_roll_image_url_mobile: '../../images/b-roll/refugee_mobile.jpg'
+hero_b_roll_video_url_mobile: '../../images/b-roll/traffic-animation-bg-mobile.mp4'
+hero_b_roll_image_url_desktop: '../../images/b-roll/refugee_desktop.jpg'
+hero_b_roll_video_url_desktop: '../../images/b-roll/refugee-animation-bg-desktop.mp4'
