@@ -1,6 +1,7 @@
 @import 'rpla-responsive-title.variables';
 
 .rpla-responsive-title {
+  $self: &;
 
   @include typography-heading-large;
   margin-bottom: get-spacing();
@@ -24,6 +25,10 @@
     &--super-long {
       @include font-size('2xl');
     }
+  }
+
+  &--inverse {
+    color: get-neutral-color('white');
   }
 }
 

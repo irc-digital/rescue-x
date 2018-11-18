@@ -1,11 +1,32 @@
-<div class="rplm-stacked-headline-2">
+{%- spaceless -%}
+  {% set stacked_headline_2_modifiers = stacked_headline_2_modifiers ?: [] %}
+  {% set responsive_title_modifiers = [] %}
+
+  {% set type = null %}
+  {% for stacked_headline_2_modifier in stacked_headline_2_modifiers %}
+    {% if stacked_headline_2_modifier starts with 'type-' %}
+      {% set type = stacked_headline_2_modifier %}
+    {% endif %}
+  {% endfor %}
+
+  {% if type is empty %}
+    {% set type = 'type-one' %}
+    {% set stacked_headline_2_modifiers = stacked_headline_2_modifiers | merge([type]) %}
+  {% endif %}
+
+  {% if type == 'type-two' %}
+    {% set responsive_title_modifiers = responsive_title_modifiers | merge(['inverse']) %}
+  {% endif %}
+
+{%- endspaceless -%}
+<div class="rplm-stacked-headline-2{% for stacked_headline_2_modifier in stacked_headline_2_modifiers %} rplm-stacked-headline-2--{{ stacked_headline_2_modifier }}{% endfor %}">
   {% include '@atoms/01-text/25-slug/slug.twig' with {
     slug_text: stacked_headline_2_slug,
     slug_sub_slug_text: stacked_headline_2_sub_slug,
     slug_sub_slug_url: stacked_headline_2_sub_slug_url,
     slug_modifiers: ['size-large'],
   } only %}
-  {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: stacked_headline_2_headline} only %}
+  {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: stacked_headline_2_headline, responsive_title_modifiers: responsive_title_modifiers } only %}
   {% include '@atoms/01-text/05-paragraph/paragraph.twig' with { paragraph_text: stacked_headline_2_summary } only %}
 </div>
 
