@@ -1,0 +1,21 @@
+<div class='rplm-b-roll'>
+  <div class='rplm-b-roll__imagew-wrapper'>
+    {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
+      art_directed_image_fallback: b_roll_image_url_desktop,
+      art_directed_image_sources: [
+        {
+          'source_set': [b_roll_image_url_desktop],
+          'media': 'only screen and (min-width: 40.063em)',
+        },
+        {
+          'source_set': [b_roll_image_url_mobile],
+        },
+      ],
+      art_directed_image_alt: '',
+    } only %}
+  </div>
+  <video class='rplm-b-roll__video' data-rpl-b-roll-src-mobile='{{ b_roll_video_url_mobile }}' data-rpl-b-roll-src-desktop='{{ b_roll_video_url_desktop }}' preload='none' loop muted playsinline></video>
+</div>
+
+
+
