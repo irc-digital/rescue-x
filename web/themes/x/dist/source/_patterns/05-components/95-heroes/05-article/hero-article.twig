@@ -28,10 +28,10 @@
       {% endblock %}
       {% block hero_layout_1_primary_2_block %}
         <div class="rplc-hero-article__dates-wrapper">
-        <div class="rplc-hero-article__published">{{ hero_article_published }}</div>
-        {% if hero_article_last_updated and hero_article_last_updated != hero_article_published %}<div class="rplc-hero-article__updated">{{ "Last updated:" | trans }} {{ hero_article_last_updated }}</div>{% endif %}
+          {% include '@atoms/01-text/35-meta/meta.twig' with { meta_text: hero_article_published } only %}
+          {% if hero_article_last_updated and hero_article_last_updated != hero_article_published %}{% include '@atoms/01-text/35-meta/meta.twig' with { meta_prefix: "Last updated:" | trans, meta_text: hero_article_last_updated } only %}{% endif %}
         </div>
-        {% if hero_article_photographer %}<div class="rplc-hero-article__photographer">{{ "Photo:" | trans }} {{ hero_article_photographer }}</div>{% endif %}
+        {% if hero_article_photographer %}{% include '@atoms/01-text/35-meta/meta.twig' with { meta_prefix: "Photo:" | trans, meta_text: hero_article_photographer } only %}{% endif %}
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}
         {{ hero_article_social_share }}

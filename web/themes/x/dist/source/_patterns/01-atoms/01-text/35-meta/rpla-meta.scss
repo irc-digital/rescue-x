@@ -1,0 +1,11 @@
+@import 'rpla-meta.variables';
+
+.rpla-meta {
+  $self: &;
+
+  @include font-size('xs');
+  @include font-weight('light');
+  @include line-height('s');
+}
+
+// end of file

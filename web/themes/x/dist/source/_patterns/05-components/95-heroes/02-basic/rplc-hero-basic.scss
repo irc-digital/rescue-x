@@ -1,0 +1,9 @@
+@import 'rplc-hero-basic.variables';
+
+.rplc-hero-basic {
+  $self: &;
+
+  @include standard-vertical-spacing(true);
+}
+
+// end of file

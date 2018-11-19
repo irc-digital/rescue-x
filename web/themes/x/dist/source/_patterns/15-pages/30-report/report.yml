@@ -2,9 +2,9 @@ report_page_header: "Hello"
 report_page_navigation: "Hello"
 report_page_hero:
   include():
-    pattern: "components-hero-article"
+    pattern: "components-hero-basic"
     with:
-      hero_article_art_directed_image_sources: ''
+      hero_basic_slug: 'Report'
 report_page_content:
   join():
     - include():
