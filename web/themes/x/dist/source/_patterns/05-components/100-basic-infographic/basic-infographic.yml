@@ -1,0 +1,31 @@
+basic_infographic_section_heading_title: "Faker.sentence(2,true)"
+basic_infographic_section_heading_description: "Faker.paragraph(1,true)"
+basic_infographic_content:
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "We serve"
+        teaser_icon_summary: "Faker.paragraph(1,true)"
+        teaser_icon_icon_name: "serve"
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "We work"
+        teaser_icon_summary: "Faker.paragraph(1,true)"
+        teaser_icon_icon_name: "work"
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "We respond"
+        teaser_icon_summary: "Faker.paragraph(1,true)"
+        teaser_icon_icon_name: "respond"
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "We resettle"
+        teaser_icon_summary: "Faker.paragraph(1,true)"
+        teaser_icon_icon_name: "resettle"
+      only: true
