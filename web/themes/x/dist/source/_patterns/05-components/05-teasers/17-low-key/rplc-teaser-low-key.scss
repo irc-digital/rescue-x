@@ -37,7 +37,7 @@
     }
 
     @include breakpoint(desktop) {
-      max-height: rem(75px);
+      max-height: rem(72px);
     }
   }
 
@@ -46,7 +46,13 @@
     padding: get-spacing('m');
 
     @include breakpoint(phablet) {
+      max-height: rem(198px);
+      overflow: hidden;
       padding: get-spacing('ml');
+    }
+
+    @include breakpoint(desktop) {
+      max-height: rem(162px);
     }
   }
 }
