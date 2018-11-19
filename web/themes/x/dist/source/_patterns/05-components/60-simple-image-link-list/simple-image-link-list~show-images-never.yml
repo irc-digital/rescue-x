@@ -12,7 +12,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist21 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist21 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist21 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist21"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -27,7 +26,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist22 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist22 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist22 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist22"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -43,7 +41,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist23 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist23 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist23 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist23"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -59,7 +56,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist24 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist24 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist24 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist24"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -75,7 +71,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist25 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist25 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist25 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist25"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -91,7 +86,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist26 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist26 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist26 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist26"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -107,7 +101,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist27 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist27 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist27 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist27"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:
@@ -123,7 +116,6 @@ simple_image_link_list_content:
           - "https://placem.at/things?w=320&random=simpleimagelinklist28 320w"
           - "https://placem.at/things?w=450&random=simpleimagelinklist28 450w"
           - "https://placem.at/things?w=640&random=simpleimagelinklist28 640w"
-        teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
         teaser_simple_image_link_image_fallback: "https://placem.at/things?w=320&random=simpleimagelinklist28"
         teaser_simple_image_link_image_alt: "Faker.words(5,true)"
         teaser_simple_image_link_modifiers:

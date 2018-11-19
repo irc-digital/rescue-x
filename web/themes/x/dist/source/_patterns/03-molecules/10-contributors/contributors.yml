@@ -22,7 +22,6 @@ contributors_list:
         person_info_responsive_image_source_set:
           - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=contributor1b 72w"
           - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=144&h=144&random=contributor1b 144w"
-        person_info_responsive_image_sizes: "72px"
         person_info_responsive_image_fallback: "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=contributor1b"
         person_info_responsive_image_alt: "Faker.words(5,true)"
       only: true

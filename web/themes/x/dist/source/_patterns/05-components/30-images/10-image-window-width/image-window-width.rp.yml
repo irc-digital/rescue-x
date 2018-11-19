@@ -13,11 +13,6 @@ image_window_width:
         - "https://placem.at/places?w=1024&h=576&random=windowwidth 1024w"
         - "https://placem.at/places?w=2048&h=1152&random=windowwidth 2048w"
         - "https://placem.at/places?w=2576&h=1449&random=windowwidth 2576w"
-    image_window_width_responsive_image_sizes:
-      type: string
-      label: "Image sizes"
-      description:  "The media query for the image sizes"
-      preview: "(min-width: 321px) 100vw, 320px"
     image_window_width_responsive_image_fallback:
       type: string
       label: "Image fallback"

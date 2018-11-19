@@ -17,7 +17,7 @@
     {% block teaser_image_block %}
       {% include '@atoms/52-responsive-image/responsive-image.twig' with {
         responsive_image_source_set: teaser_standard_image_source_set,
-        responsive_image_sizes: teaser_standard_image_sizes,
+        responsive_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), (min-width: 321px) calc(100vw - 2rem), 320px",
         responsive_image_fallback: teaser_standard_image_fallback,
         responsive_image_alt: teaser_standard_image_alt
       } only %}

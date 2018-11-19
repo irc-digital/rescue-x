@@ -32,11 +32,6 @@ teaser_standard:
         - "https://placem.at/places?w=528&h=297&random=teaserstandardimage 528w"
         - "https://placem.at/places?w=1024&h=576&random=teaserstandardimage 1024w"
         - "https://placem.at/places?w=1280&h=720&random=teaserstandardimage 1280w"
-    teaser_standard_image_sizes:
-      type: text
-      label: "Image sizes"
-      description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), (min-width: 321px) calc(100vw - 2rem), 320px"
     teaser_standard_image_fallback:
       type: url
       label: "Image fallback"

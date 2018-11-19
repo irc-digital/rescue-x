@@ -9,7 +9,6 @@ testimonial_title: "President and CEO of the International Rescue Committee"
 testimonial_responsive_image_source_set:
   - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=testimonial 72w"
   - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=144&h=144&random=testimonial 144w"
-testimonial_responsive_image_sizes: "72px"
 testimonial_responsive_image_fallback: "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=testimonial"
 testimonial_responsive_image_alt: "Faker.words(5,true)"
 testimonial_authority_message: "Of every $1 the IRC spends, more than 89¢ goes to programs and services that directly benefit people affected by crisis. We've earned the highest marks from:"
