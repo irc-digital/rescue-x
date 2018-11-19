@@ -1,0 +1,19 @@
+{#
+/**
+ * Available variables:
+ * - teaser_minimal_url - The URL of the resource being teased
+ * - teaser_minimal_slug - Slug
+ * - teaser_minimal_title - Title
+ *
+ * Available blocks:
+ * - none
+ */
+#}
+<div class="rplc-teaser-minimal{% for teaser_minimal_modifier in teaser_minimal_modifiers %} rplc-teaser-minimal--{{ teaser_minimal_modifier }}{% endfor %}">
+  <a href="{{ teaser_minimal_url }}" class="rplc-teaser-minimal__wrapper-link">
+    <div class="rplc-teaser-minimal__title">
+      <h3 class="rpla-heading rpla-heading--medium">{{ teaser_minimal_title }}</h3>
+    </div>
+    <div class="rpla-slug">{{ teaser_minimal_slug }}</div>
+  </a>
+</div>
