@@ -1,0 +1,16 @@
+@import 'rplc-teaser-icon.variables';
+
+.rplc-teaser-icon {
+  $self: &;
+
+  &__icon {
+    max-width: $teaser-icon-icon-width;
+  }
+
+  &__summary {
+    @include typography-text-small;
+  }
+}
+
+// end of file
+

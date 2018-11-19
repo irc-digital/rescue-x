@@ -1,0 +1,29 @@
+{#
+/**
+ * Available variables:
+ * - teaser_icon_url - The URL of the resource being teased (optional)
+ * - teaser_icon_title - Title
+ * - teaser_icon_summary - Summary
+ * - teaser_icon_name - Icon
+ * - teaser_icon_modifiers - Icon options
+ *
+ */
+#}
+<div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %}">
+  {% if teaser_icon_url %}
+    <a href="{{ teaser_icon_url }}" class="rplc-teaser-icon__wrapper-link">
+  {%  endif %}
+    <div class="rplc-teaser-icon__icon">
+      {% include '@atoms/56-icon/icon.twig' with {
+        icon_name: teaser_icon_icon_name,
+        icon_modifiers: teaser_icon_icon_modifiers,
+      } only %}
+    </div>
+    <div class="rplc-teaser-icon__title">
+      <h3 class="rpla-heading rpla-heading--extra-large">{{ teaser_icon_title }}</h3>
+    </div>
+    <div class="rplc-teaser-icon__summary">{{ teaser_icon_summary }}</div>
+  {% if teaser_icon_url %}
+    </a>
+  {%  endif %}
+</div>
