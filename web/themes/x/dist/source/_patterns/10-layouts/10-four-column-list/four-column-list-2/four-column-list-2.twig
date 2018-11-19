@@ -1,0 +1,8 @@
+{% if four_column_list_2_content %}
+<ul class="rpll-four-column-list-2{% for four_column_list_2_modifier in four_column_list_2_modifiers %} rpll-four-column-list-2--{{ four_column_list_2_modifier }}{% endfor %}">
+{% for four_column_list_2_item in four_column_list_2_content %}
+  <li class="rpll-four-column-list-2__item">{{ four_column_list_2_item }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
