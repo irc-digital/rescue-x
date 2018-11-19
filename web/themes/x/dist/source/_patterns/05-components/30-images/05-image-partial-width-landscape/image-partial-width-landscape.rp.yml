@@ -15,11 +15,6 @@ image_partial_width_landscape:
         - "https://placem.at/places?w=1280&h=960&random=partialwidthlandscape 1280w"
         - "https://placem.at/places?w=1600&h=1200&random=partialwidthlandscape 1600w"
         - "https://placem.at/places?w=1920&h=1440&random=partialwidthlandscape 1920w"
-    image_partial_width_landscape_responsive_image_sizes:
-      type: string
-      label: "Image sizes"
-      description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 819px,(min-width: 641px) 70vw,(min-width: 321px) 100vw,320px"
     image_partial_width_landscape_responsive_image_fallback:
       type: string
       label: "Image fallback"

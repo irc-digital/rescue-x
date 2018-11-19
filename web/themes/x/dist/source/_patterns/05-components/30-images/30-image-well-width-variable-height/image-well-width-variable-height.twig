@@ -8,7 +8,7 @@
     <div class="rplc-image-well-width-variable-height__image-wrapper">
       {% include '@atoms/52-responsive-image/responsive-image.twig' with {
         responsive_image_source_set: image_well_width_variable_height_responsive_image_source_set,
-        responsive_image_sizes: image_well_width_variable_height_responsive_image_sizes,
+        responsive_image_sizes: "(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw",
         responsive_image_fallback: image_well_width_variable_height_responsive_image_fallback,
         responsive_image_alt: image_well_width_variable_height_responsive_image_alt
       } only %}
