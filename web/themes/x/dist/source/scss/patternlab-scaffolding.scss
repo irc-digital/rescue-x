@@ -26,7 +26,15 @@ body > .rpll-three-column-list {
   @include well-row;
 }
 
-//
+.sg-pattern-example > .rplc-teaser-video,
+body > .rplc-teaser-video {
+  max-width: 640px;
+
+  @include breakpoint(phablet) {
+    max-width: 256px;
+  }
+}
+  //
 // 1) Hack for Pattern Lab to make the highlight teaser look right when it is view entirely standalone
 //
 body > .rplc-teaser-highlighted .rpla-responsive-image {
@@ -118,8 +126,6 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
     padding-right: 0 !important;
   }
 }
-
-date-after-summary
 
 #atoms-social-share-standard {
   background-color: get-neutral-color('white');

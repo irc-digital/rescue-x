@@ -122,6 +122,32 @@ article_page_content:
         with:
           call_to_action_1_modifiers:
             - 'position-middle'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "layouts-aside"
+        with:
+          aside_content:
+            include():
+              pattern: "components-teaser-video"
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
 article_page_footer:
   join():
     - include():

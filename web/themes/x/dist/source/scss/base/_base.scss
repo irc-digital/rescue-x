@@ -42,6 +42,8 @@ strong {
 
 * {
   @include rotate;
+  @include image-content-type-decorator;
 }
+
 
 // end of file

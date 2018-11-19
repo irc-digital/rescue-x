@@ -1,0 +1,50 @@
+@import 'rplc-teaser-video.variables';
+
+.rplc-teaser-video {
+  $self: &;
+
+  @include standard-vertical-spacing;
+
+  @include breakpoint(phablet) {
+    margin-bottom: 0;
+  }
+
+  &__wrapper-link {
+    @include well-row;
+
+    display: block;
+
+    @media only screen and (min-width: #{$minimum-size-width + rem(1px)}) {
+      width: 90vw;
+    }
+
+    @include breakpoint(phablet) {
+      width: auto;
+    }
+  }
+
+  &__image-wrapper {
+    line-height: 0;
+    margin-bottom: get-spacing();
+    //max-width: rem(600px);
+  }
+
+  &__slug {
+    @include typography-text-small;
+    @include typography-vertical-spacing;
+
+    @include breakpoint(phablet) {
+      @include typography-text-extra-small;
+    }
+  }
+
+  &__title {
+    @include typography-heading-medium-large;
+
+    @include breakpoint(phablet) {
+      @include typography-heading-medium;
+    }
+  }
+}
+
+// end of file
