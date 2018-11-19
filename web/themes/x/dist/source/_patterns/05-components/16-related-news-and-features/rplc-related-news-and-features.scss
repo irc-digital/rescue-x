@@ -1,0 +1,9 @@
+@import 'rplc-related-news-and-features.variables';
+
+.rplc-related-news-and-features {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file

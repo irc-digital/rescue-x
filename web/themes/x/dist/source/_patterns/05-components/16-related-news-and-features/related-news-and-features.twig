@@ -1,0 +1,14 @@
+{% if related_news_and_features_content %}
+<div class="rplc-related-news-and-features{% for related_news_and_features_modifier in related_news_and_features_modifiers %} rplc-related-news-and-features--{{ related_news_and_features_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: related_news_and_features_section_heading_title,
+    section_heading_description: related_news_and_features_section_heading_description,
+    section_heading_icon: related_news_and_features_section_heading_icon
+  } only %}
+  <div class="rplc-related-news-and-features__content">
+    {% include '@layouts/05-two-column-list/two-column-list.twig' with {
+      two_column_list_content: related_news_and_features_content,
+    } only %}
+  </div>
+</div>
+{% endif %}

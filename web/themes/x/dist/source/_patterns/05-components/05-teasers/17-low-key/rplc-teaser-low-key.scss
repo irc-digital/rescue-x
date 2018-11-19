@@ -3,15 +3,52 @@
 .rplc-teaser-low-key {
   $self: &;
 
-  //&__wrapper-link {
-  //  display: flex;
-  //  flex-direction: column;
-  //  text-decoration: none;
-  //}
-  //
-  //&__title {
-  //  order: 10;
-  //}
+  &__image-wrapper {
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  &__wrapper-link {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(phablet) {
+      border-top: 1px solid get-neutral-color('gray');
+    }
+
+    @include breakpoint(phablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @include typography-heading-medium;
+    @include typography-vertical-spacing;
+
+    max-width: rem(470px);
+
+    @include breakpoint(phablet) {
+      @include font-size('m');
+    }
+
+    @include breakpoint(phablet) {
+      max-height: rem(96px);
+      overflow: hidden;
+    }
+
+    @include breakpoint(desktop) {
+      max-height: rem(75px);
+    }
+  }
+
+  &__text-wrapper {
+    overflow: hidden;
+    padding: get-spacing('m');
+
+    @include breakpoint(phablet) {
+      padding: get-spacing('ml');
+    }
+  }
 }
 
 
