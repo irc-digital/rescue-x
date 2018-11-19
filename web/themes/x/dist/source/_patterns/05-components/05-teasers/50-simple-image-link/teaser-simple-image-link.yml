@@ -5,6 +5,5 @@ teaser_simple_image_link_image_source_set:
   - "https://placem.at/places?w=320&random=simpleimagelink 320w"
   - "https://placem.at/places?w=450&random=simpleimagelink 450w"
   - "https://placem.at/places?w=640&random=simpleimagelink 640w"
-teaser_simple_image_link_image_sizes: "(min-width: 640px) 300px, 150px"
 teaser_simple_image_link_image_fallback: "https://placem.at/places?w=320&random=simpleimagelink"
 teaser_simple_image_link_image_alt: "Faker.words(3,true)"

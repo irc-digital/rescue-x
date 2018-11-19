@@ -4,6 +4,5 @@ question_responsive_image_source_set:
   - "https://placem.at/places?w=896&h=896&random=question 896w"
   - "https://placem.at/places?w=1280&h=1280&random=question 1280w"
   - "https://placem.at/places?w=1920&h=1920&random=question 1920w"
-question_responsive_image_sizes: "(min-width: 768px) 448px,(min-width: 321px) calc(100vw - 2rem),320px"
 question_responsive_image_fallback: "https://placem.at/places?w=640&h=640&random=question"
 question_responsive_image_alt: "Faker.words(5,true)"

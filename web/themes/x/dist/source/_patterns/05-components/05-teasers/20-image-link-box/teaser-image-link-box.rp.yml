@@ -29,11 +29,6 @@ teaser_image_link_box:
         - "https://placem.at/places?w=784&h=588&random=teaserimagelinkbox 784w"
         - "https://placem.at/places?w=1280&h=960&random=teaserimagelinkbox 1280w"
         - "https://placem.at/places?w=1920&h=1440&random=teaserimagelinkbox 1920w"
-    teaser_image_link_box_image_sizes:
-      type: text
-      label: "Image sizes"
-      description:  "The media query for the image sizes"
-      preview: "(min-width: 1208px) 392px, (min-width: 641px) 288px, (min-width: 321px) calc(100vw - 1rem), 320px"
     teaser_image_link_box_image_fallback:
       type: url
       label: "Image fallback"
