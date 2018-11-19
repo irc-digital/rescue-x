@@ -1,0 +1,9 @@
+@import 'rplc-basic-infographic.variables';
+
+.rplc-basic-infographic {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file
