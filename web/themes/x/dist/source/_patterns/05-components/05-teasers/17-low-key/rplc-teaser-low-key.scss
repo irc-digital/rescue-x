@@ -1,6 +1,6 @@
-@import 'rplc-teaser-minimal.variables';
+@import 'rplc-teaser-low-key.variables';
 
-.rplc-teaser-minimal {
+.rplc-teaser-low-key {
   $self: &;
 
   &__wrapper-link {
@@ -11,12 +11,6 @@
 
   &__title {
     order: 10;
-  }
-
-  &--title-first {
-    #{ $self }__title {
-      order: 0;
-    }
   }
 }
 
