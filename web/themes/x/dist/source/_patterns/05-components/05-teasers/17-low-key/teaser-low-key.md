@@ -1,4 +1,3 @@
 ---
-title: Teaser minimal
+title: Teaser low-key
 ---
-A least prominent teaser
