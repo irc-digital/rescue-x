@@ -3,8 +3,34 @@
 .rplc-teaser-icon {
   $self: &;
 
+  align-items: center;
+  display: flex;
+
+  @include breakpoint(phablet) {
+    align-items: flex-start;
+  }
+
+  @include breakpoint(desktop) {
+    flex-direction: column;
+  }
+
+
   &__icon {
     max-width: $teaser-icon-icon-width;
+    padding-right: $teaser-icon-icon-padding;
+    width: 25%;
+
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
+  }
+
+  &__text-wrapper {
+    width: 75%;
+
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
   }
 
   &__summary {
