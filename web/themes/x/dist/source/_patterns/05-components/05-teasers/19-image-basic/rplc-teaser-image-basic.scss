@@ -1,0 +1,31 @@
+@import 'rplc-teaser-image-basic.variables';
+
+.rplc-teaser-image-basic {
+  max-width: rem(376px);
+
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  &__title {
+    @include typography-heading-medium;
+    @include transition;
+
+    background-color: get-neutral-color('white');
+    line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $teaser-image-basic-eat-in;
+    padding: get-spacing();
+    position: relative;
+    text-align: center;
+    width: 88%;
+
+    // sass-lint:disable mixins-before-declarations
+    @include hover ('data-rpla-hover-target') {
+      background-color: get-brand-color('primary');
+    }
+  }
+}
+
+// end of file
