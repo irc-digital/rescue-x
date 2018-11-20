@@ -1,0 +1,14 @@
+<div class="rplm-related-topics">
+  <h5 class="rplm-related-topics__label">{{ related_topics_label }}</h5>
+  <ul class="rplm-related-topics__list">
+    {% for related_topics_value in related_topics_values %}
+      <li class="rplm-related-topics__list-item">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: related_topics_value.title,
+          link_url: related_topics_value.url,
+          link_modifiers: ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'],
+        } only %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

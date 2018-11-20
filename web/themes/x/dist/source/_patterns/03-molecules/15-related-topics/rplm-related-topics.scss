@@ -1,0 +1,20 @@
+@import 'rplm-related-topics.variables';
+
+.rplm-related-topics {
+  align-items: center;
+  display: flex;
+
+  &__list {
+    line-height: 1;
+    list-style: none;
+    padding-left: get-spacing('ml');
+  }
+
+  &__list-item {
+    border-left: 2px solid get-neutral-color('gray');
+    display: inline-block;
+    padding: get-spacing('s') get-spacing('m');
+  }
+}
+
+// end of file
