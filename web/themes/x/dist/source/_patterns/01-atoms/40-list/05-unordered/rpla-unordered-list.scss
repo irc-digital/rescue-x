@@ -1,6 +1,7 @@
 @import 'rpla-unordered-list.variables';
 
 .rpla-unordered-list {
+  $self: &;
 
   @include typography-text-standard;
   list-style: none;
@@ -9,6 +10,11 @@
     margin-bottom: get-spacing();
     padding-left: get-spacing('l');
     text-indent: -.85em;
+
+    &::first-line {
+      //text-indent: -.85em;
+      //color: red;
+    }
 
     &::before {
       @include font-size('l');
@@ -25,6 +31,26 @@
     @include typography-text-small;
   }
 
+  &--color-dark {
+    #{$self}__item {
+      &::before {
+        color: get-neutral-color('black');
+      }
+    }
+  }
+
+  &--spacing-compact {
+    @include line-height('2xs');
+
+    #{$self}__item {
+      margin-bottom: get-spacing('s');
+      padding-left: get-spacing('ml');
+
+      &::before {
+        left: -#{get-spacing('s')};
+      }
+    }
+  }
 }
 
 
