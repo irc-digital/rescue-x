@@ -2,7 +2,7 @@
 
 .rpla-heading {
 
-  @include typography-vertical-spacing;
+  @include typography-vertical-spacing('compact');
 
   &--medium {
     @include typography-heading-medium;

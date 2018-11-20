@@ -11,11 +11,6 @@
     padding-left: get-spacing('l');
     text-indent: -.85em;
 
-    &::first-line {
-      //text-indent: -.85em;
-      //color: red;
-    }
-
     &::before {
       @include font-size('l');
       color: get-brand-color();
@@ -27,7 +22,7 @@
     }
   }
 
-  &--small {
+  &--size-small {
     @include typography-text-small;
   }
 
@@ -40,11 +35,12 @@
   }
 
   &--spacing-compact {
-    @include line-height('2xs');
+    @include line-height('xs');
 
     #{$self}__item {
       margin-bottom: get-spacing('s');
       padding-left: get-spacing('ml');
+      text-indent: -.75em;
 
       &::before {
         left: -#{get-spacing('s')};

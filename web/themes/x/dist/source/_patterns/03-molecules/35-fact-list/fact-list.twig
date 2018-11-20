@@ -1,0 +1,9 @@
+<div class="rplm-fact-list">
+  <div class="rplm-fact-list__content">
+    <h5 class="rpla-heading rpla-heading--large">{{ fact_list_title }}</h5>
+    {% include '@atoms/40-list/05-unordered/unordered-list.twig' with {
+      unordered_list_items: fact_list_content,
+      unordered_list_modifiers: ['color-dark', 'spacing-compact']
+    } only %}
+  </div>
+</div>

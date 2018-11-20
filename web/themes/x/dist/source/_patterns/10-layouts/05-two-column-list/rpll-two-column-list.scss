@@ -6,7 +6,7 @@
   list-style-type: none;
   padding-left: 0;
 
-  @include breakpoint(desktop) {
+  @include breakpoint(laptop) {
     display: grid;
     grid-column-gap: $two-column-list-column-gutter;
     grid-row-gap: $two-column-list-row-gutter;
