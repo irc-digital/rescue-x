@@ -1,4 +1,4 @@
-image_link_boxes_content:
+image_link_boxes_1_content:
   - include():
       pattern: "components-teaser-image-link-box-1"
       with:
