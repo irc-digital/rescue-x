@@ -1,7 +1,7 @@
 image_link_boxes:
   label: "Image link boxes"
   description: "A set of image link box teasers"
-  use: "@components/70-image-link-box-1es/-image-link-box-1es.twig"
+  use: "@components/70-image-link-boxes/-image-link-boxes.twig"
   section: TRUE
   fields:
     image_link_boxes_content:
@@ -15,7 +15,7 @@ image_link_boxes:
     - image_link_boxes_library:
        css:
          theme:
-           dist/public/css/patterns/rplc-image-link-box-1es.css: {}
+           dist/public/css/patterns/rplc-image-link-boxes.css: {}
     - three_column_list_library:
        css:
          theme:

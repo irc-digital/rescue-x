@@ -1,0 +1,9 @@
+@import 'rplc-image-link-boxes-2.variables';
+
+.rplc-image-link-boxes-2 {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file

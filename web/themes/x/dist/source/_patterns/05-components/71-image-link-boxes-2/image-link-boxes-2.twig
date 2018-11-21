@@ -1,0 +1,12 @@
+<div class="rplc-image-link-boxes-2{% for image_link_boxes_2_modifier in image_link_boxes_2_modifiers %} rplc-image-link-boxes-2--{{ image_link_boxes_2_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: image_link_boxes_2_section_heading_title,
+    section_heading_description: image_link_boxes_2_section_heading_description,
+    section_heading_icon: image_link_boxes_2_section_heading_icon
+  } only %}
+  <div class="rplc-image-link-boxes-2__content">
+    {% include '@layouts/05-two-column-list/two-column-list.twig' with {
+      two_column_list_content: image_link_boxes_2_content,
+    } only %}
+  </div>
+</div>
