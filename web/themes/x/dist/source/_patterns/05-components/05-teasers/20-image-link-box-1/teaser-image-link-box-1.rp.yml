@@ -1,24 +1,24 @@
-teaser_image_link_box:
+teaser_image_link_box_1:
   label: "Teaser (image link box)"
   description: "The image link box teaser (todo)"
-  use: "@components/05-teasers/20-image-link-box/teaser-image-link-box.twig"
+  use: "@components/05-teasers/20-image-link-box-1/teaser-image-link-box-1.twig"
   fields:
-    teaser_image_link_box_url:
+    teaser_image_link_box_1_url:
       type: url
       label: "URL"
       description: "The URL of the resource being teased"
       preview: "#"
-    teaser_image_link_box_title:
+    teaser_image_link_box_1_title:
       type: text
       label: "Title"
       description: "The title"
       preview: "An image link box"
-    teaser_image_link_box_summary:
+    teaser_image_link_box_1_summary:
       type: text
       label: "Blurb"
       description: "The blurb"
       preview: "Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum."
-    teaser_image_link_box_image_source_set:
+    teaser_image_link_box_1_image_source_set:
        type: array
        label: "Image source set"
        description: "The set of images used for the responsive picture"
@@ -29,18 +29,18 @@ teaser_image_link_box:
         - "https://placem.at/places?w=784&h=588&random=teaserimagelinkbox 784w"
         - "https://placem.at/places?w=1280&h=960&random=teaserimagelinkbox 1280w"
         - "https://placem.at/places?w=1920&h=1440&random=teaserimagelinkbox 1920w"
-    teaser_image_link_box_image_fallback:
+    teaser_image_link_box_1_image_fallback:
       type: url
       label: "Image fallback"
       description: "Fallback image if the browser does not support responsive images"
       preview: "https://placem.at/places?w=640&h=480&random=teaserimagelinkbox"
-    teaser_image_link_box_image_alt:
+    teaser_image_link_box_1_image_alt:
       type: text
       label: "Image alt attribute"
       description: "Image alt attribute"
       preview: "Maecenas tempus"
   libraries:
-    - teaser_image_link_box_library:
+    - teaser_image_link_box_1_library:
        css:
          theme:
-           dist/public/css/patterns/rplc-teaser-image-link-box.css: {}
+           dist/public/css/patterns/rplc-teaser-image-link-box-1.css: {}

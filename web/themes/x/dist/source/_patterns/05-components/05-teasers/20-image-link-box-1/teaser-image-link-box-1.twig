@@ -1,0 +1,37 @@
+{#
+/**
+ * Available variables:
+ * - teaser_image_link_box_1_url - The URL of the resource being teased
+ * - teaser_image_link_box_1_title - Title text
+ * - teaser_image_link_box_1_summary - Short description
+ * - teaser_image_link_box_1_image_source_set - Image source set
+ * - teaser_image_link_box_1_image_sizes - Image sizes
+ * - teaser_image_link_box_1_image_fallback - Image fallback
+ * - teaser_image_link_box_1_image_title - Image title attribute
+ * - teaser_image_link_box_1_image_alt - Image alt attribute
+ * Available blocks:
+ * - teaser_image_link_box_1_image_block - The block that surrounds the responsive image
+ */
+#}
+<div class="rplc-teaser-image-link-box-1{% for teaser_image_link_box_1_modifier in teaser_image_link_box_1_modifiers %} rplc-teaser-image-link-box-1--{{ teaser_image_link_box_1_modifier }}{% endfor %}">
+  <a href="{{ teaser_image_link_box_1_url }}" class="rplc-teaser-image-link-box-1__wrapper-link">
+    <figure class="rplc-teaser-image-link-box-1__inner-wrapper">
+      <div class="rplc-teaser-image-link-box-1__image-wrapper">
+        {% block teaser_image_link_box_1_image_block %}
+        {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+          responsive_image_source_set: teaser_image_link_box_1_image_source_set,
+          responsive_image_sizes: "(min-width: 1208px) 392px, (min-width: 641px) 288px, (min-width: 321px) calc(100vw - 1rem), 320px",
+          responsive_image_fallback: teaser_image_link_box_1_image_fallback,
+          responsive_image_alt: teaser_image_link_box_1_image_alt
+        } only %}
+        {% endblock %}
+      </div>
+      <figcaption class="rplc-teaser-image-link-box-1__text-wrapper">
+        <div class="rplc-teaser-image-link-box-1__caption-wrapper">
+          <h3 class="rplc-teaser-image-link-box-1__title">{{ teaser_image_link_box_1_title }}</h3>
+          <p class="rplc-teaser-image-link-box-1__summary">{{ teaser_image_link_box_1_summary }}</p>
+        </div>
+      </figcaption>
+    </figure>
+  </a>
+</div>

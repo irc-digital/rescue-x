@@ -1,11 +1,11 @@
-@import 'rplc-teaser-image-link-box.variables';
+@import 'rplc-teaser-image-link-box-1.variables';
 
-.rplc-teaser-image-link-box {
+.rplc-teaser-image-link-box-1 {
   $self: &;
 
   @include hover {
     #{ $self }__caption-wrapper {
-      background-color: safe-map-get($teaser-image-link-box-decoration-color, 'default');
+      background-color: safe-map-get($teaser-image-link-box-1-decoration-color, 'default');
     }
 
     #{ $self }__title {
@@ -46,17 +46,17 @@
 
   &__caption-wrapper {
     background-color: get-neutral-color('white');
-    border-bottom: $teaser-image-link-box-caption-bottom-border-size solid safe-map-get($teaser-image-link-box-decoration-color, 'default');
+    border-bottom: $teaser-image-link-box-1-caption-bottom-border-size solid safe-map-get($teaser-image-link-box-1-decoration-color, 'default');
     color: get-neutral-color('black');
-    margin: 0 auto $teaser-image-link-box-caption-eats-in;
+    margin: 0 auto $teaser-image-link-box-1-caption-eats-in;
     overflow: hidden;
     padding: get-spacing('ml') get-spacing('l');
     position: relative;
-    top: $teaser-image-link-box-caption-eats-in;
-    width: calc(100% - #{$teaser-image-link-box-caption-total-horizontal-margin});
+    top: $teaser-image-link-box-1-caption-eats-in;
+    width: calc(100% - #{$teaser-image-link-box-1-caption-total-horizontal-margin});
 
     @media #{$teaser-image-medium-device-media-query} {
-      height: $teaser-image-link-box-caption-height-tablet;
+      height: $teaser-image-link-box-1-caption-height-tablet;
       position: static;
       width: 100%;
     }
@@ -78,20 +78,20 @@
     line-height: 0;
 
     @media #{$teaser-image-medium-device-media-query} {
-      flex: 0 0 $teaser-image-link-box-image-width-tablet;
+      flex: 0 0 $teaser-image-link-box-1-image-width-tablet;
     }
   }
 
   &--style-alert {
     @include hover {
       #{ $self }__caption-wrapper {
-        background-color: safe-map-get($teaser-image-link-box-decoration-color, 'alert');
+        background-color: safe-map-get($teaser-image-link-box-1-decoration-color, 'alert');
         color: get-neutral-color('white');
       }
     }
 
     #{ $self }__caption-wrapper {
-      border-bottom-color: safe-map-get($teaser-image-link-box-decoration-color, 'alert');
+      border-bottom-color: safe-map-get($teaser-image-link-box-1-decoration-color, 'alert');
     }
   }
 

@@ -8,7 +8,7 @@
 
     @include breakpoint(laptop) {
       display: grid;
-      grid-column-gap: get-spacing();
+      grid-column-gap: get-spacing('m');
       grid-template-columns: 1fr 1fr;
       margin-bottom: 0;
     }
