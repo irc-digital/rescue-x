@@ -5,6 +5,7 @@
   background-color: $iconed-message-background-color;
   display: inline-flex;
   min-height: $iconed-message-icon-size;
+  position: relative;
 
   &__icon {
     background-color: get-brand-color();
