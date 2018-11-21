@@ -1,0 +1,20 @@
+@import 'rplm-search-result-message.variables';
+
+.rplm-search-result-message {
+  align-items: center;
+  background-color: $search-result-message-background-color;
+  display: inline-flex;
+
+  &__icon {
+    background-color: get-brand-color();
+    height: $search-result-message-icon-size;
+    padding: $search-result-message-icon-padding;
+    width: $search-result-message-icon-size;
+  }
+
+  &__text {
+    padding: $search-result-message-text-padding;
+  }
+}
+
+// end of file
