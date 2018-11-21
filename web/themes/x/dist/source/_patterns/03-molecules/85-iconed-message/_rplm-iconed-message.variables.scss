@@ -1,0 +1,9 @@
+@import '../../../scss/core';
+
+$iconed-message-background-color: get-neutral-color();
+$iconed-message-icon-size: 3rem;
+$iconed-message-icon-padding: .875rem;
+$iconed-message-text-padding-left: calc(#{$iconed-message-icon-size} + #{$iconed-message-icon-padding});
+$iconed-message-text-padding-right: $iconed-message-icon-padding;
+
+// end of file
