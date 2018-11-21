@@ -2,5 +2,6 @@
 $search-result-message-background-color: get-neutral-color();
 $search-result-message-icon-size: 3rem;
 $search-result-message-icon-padding: .875rem;
-$search-result-message-text-padding: 0 $search-result-message-icon-padding;
+$search-result-message-text-padding-left: calc(#{$search-result-message-icon-size} + #{$search-result-message-icon-padding});
+$search-result-message-text-padding-right: $search-result-message-icon-padding;
 // end of file
