@@ -1,4 +1,3 @@
-related_topics_label: 'Explore related topics'
 related_topics_values:
   - url: '#'
     title: "Faker.words(1,true)"

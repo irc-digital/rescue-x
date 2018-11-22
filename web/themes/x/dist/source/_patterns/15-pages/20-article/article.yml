@@ -174,6 +174,8 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+    - include():
+        pattern: "components-social-related"
 article_page_footer:
   join():
     - include():

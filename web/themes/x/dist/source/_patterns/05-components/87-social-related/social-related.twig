@@ -1,0 +1,15 @@
+<div class="rplc-social-related{% for social_related_modifier in social_related_modifiers %} rplc-social-related--{{ social_related_modifier }}{% endfor %}">
+  <div class="rplc-social-related__content">
+    <div class="rplc-social-related__social">
+      {% block social_related_social_block %}
+        {{ social_related_social }}
+      {% endblock social_related_social_block %}
+    </div>
+    <div class="rplc-social-related__related">
+      {% block social_related_related_block %}
+        {{ social_related_related }}
+      {% endblock social_related_related_block %}
+    </div>
+  </div>
+</div>
+

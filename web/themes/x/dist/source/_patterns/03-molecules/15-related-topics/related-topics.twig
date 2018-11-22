@@ -1,3 +1,8 @@
+{% spaceless %}
+  {% if related_topics_label is empty %}
+    {% set related_topics_label = 'Explore related topics' | trans %}
+  {% endif %}
+{% endspaceless %}
 <div class="rplm-related-topics">
   <h5 class="rplm-related-topics__label">{{ related_topics_label }}</h5>
   <ul class="rplm-related-topics__list">
