@@ -89,7 +89,7 @@ article_page_content:
                 image_inset_modifiers:
                   - 'caption-style-2-box'
           aside_2_modifiers:
-            - 'position-right'
+            - 'position-left'
     - include():
         pattern: "atoms-paragraph"
         with:
