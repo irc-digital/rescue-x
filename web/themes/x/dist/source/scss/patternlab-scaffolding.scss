@@ -34,6 +34,14 @@ body > .rplc-teaser-video {
     max-width: 256px;
   }
 }
+
+.sg-pattern-example > .rplc-image-inset,
+body > .rplc-image-inset {
+
+  @include breakpoint(phablet) {
+    max-width: rem(416px);
+  }
+}
   //
 // 1) Hack for Pattern Lab to make the highlight teaser look right when it is view entirely standalone
 //

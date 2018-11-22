@@ -1,3 +1,24 @@
+{% spaceless %}
+
+  {% set image_inset_modifiers = image_inset_modifiers ?: [] %}
+  {% set caption_modifiers = [] %}
+
+  {% set has_caption_style = false %}
+  {% for image_inset_modifier in image_inset_modifiers %}
+    {% if image_inset_modifier starts with 'type-' %}
+      {% set has_caption_style = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_caption_style %}
+    {% set image_inset_modifiers = image_inset_modifiers | merge(['caption-style-2-low-key']) %}
+  {% endif %}
+
+  {% if 'caption-style-2-low-key' in image_inset_modifiers %}
+    {% set caption_modifiers = caption_modifiers|merge(['style-low-key']) %}
+  {% endif %}
+
+{% endspaceless %}
 <div class="rplc-image-inset{% for image_inset_modifier in image_inset_modifiers %} rplc-image-inset--{{ image_inset_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: image_inset_section_heading_title,
@@ -8,7 +29,7 @@
     <div class="rplc-image-inset__image-wrapper">
       {% include '@atoms/52-responsive-image/responsive-image.twig' with {
         responsive_image_source_set: image_inset_responsive_image_source_set,
-        responsive_image_sizes: "(min-width: 951px) 448px, (min-width: 640px) 378px, 100vw",
+        responsive_image_sizes: "(min-width: 951px) 416px, (min-width: 641px) 376px, (min-width: 321px) 100vw, 320px",
         responsive_image_fallback: image_inset_responsive_image_fallback,
         responsive_image_alt: image_inset_responsive_image_alt
       } only %}
@@ -17,6 +38,7 @@
       {% include '@molecules/03-caption/caption.twig' with {
         caption_text: image_inset_caption_text,
         caption_credit: image_inset_caption_credit,
+        caption_modifiers: caption_modifiers,
       } only %}
     </div>
   </figure>

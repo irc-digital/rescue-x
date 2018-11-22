@@ -84,6 +84,29 @@ article_page_content:
         with:
           aside_2_content:
             include():
+              pattern: "components-image-inset"
+          aside_2_modifiers:
+            - 'position-right'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+    - include():
+        pattern: "layouts-aside-2"
+        with:
+          aside_2_content:
+            include():
               pattern: "components-call-to-action-1"
               with:
                 call_to_action_1_modifiers:
