@@ -1,3 +1,19 @@
+{% spaceless %}
+
+  {% set caption_modifiers = caption_modifiers ?: [] %}
+
+  {% set has_style = false %}
+  {% for caption_modifier in caption_modifiers %}
+    {% if caption_modifier starts with 'style-' %}
+      {% set has_style = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_style %}
+    {% set caption_modifiers = caption_modifiers | merge(['style-default']) %}
+  {% endif %}
+
+{% endspaceless %}
 <div class="rplm-caption{% for caption_modifier in caption_modifiers %} rplm-caption--{{ caption_modifier }}{% endfor %}">
   <div class="rplm-caption__text-wrapper">
     <p class="rplm-caption__text">{{ caption_text }}</p>

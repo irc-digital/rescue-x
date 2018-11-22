@@ -5,7 +5,7 @@
 
   {% set has_caption_style = false %}
   {% for image_inset_modifier in image_inset_modifiers %}
-    {% if image_inset_modifier starts with 'type-' %}
+    {% if image_inset_modifier starts with 'caption-style-2-' %}
       {% set has_caption_style = true %}
     {% endif %}
   {% endfor %}
@@ -16,6 +16,8 @@
 
   {% if 'caption-style-2-low-key' in image_inset_modifiers %}
     {% set caption_modifiers = caption_modifiers|merge(['style-low-key']) %}
+  {% elseif 'caption-style-2-box' in image_inset_modifiers %}
+    {% set caption_modifiers = caption_modifiers|merge(['style-white-box']) %}
   {% endif %}
 
 {% endspaceless %}

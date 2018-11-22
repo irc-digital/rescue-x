@@ -1,21 +1,47 @@
 @import 'rplc-image-inset.variables';
 
 .rplc-image-inset {
-  //&__content {
-  //  @include well-row;
-  //}
+  $self: &;
 
   &__image-wrapper {
     line-height: 0;
   }
 
-  &__caption-wrapper {
-    @include well-row;
+  &--caption-style-2-low-key {
+    #{$self}__caption-wrapper {
+      @include well-row;
 
-    @include breakpoint(phablet) {
-      width: auto;
+      @include breakpoint(phablet) {
+        width: auto;
+      }
     }
   }
+
+  &--caption-style-2-box {
+    #{$self}__content {
+      margin-bottom: -#{$image-inset-caption-style-2-box-eat-in};;
+    }
+
+    #{$self}__image-wrapper {
+      padding-left: get-spacing('m');
+      padding-right: get-spacing('m');
+      position: relative;
+      z-index: 1;
+
+      @include breakpoint(phablet) {
+        padding-left: get-spacing('s');
+        padding-right: get-spacing('s');
+      }
+    }
+
+    #{$self}__caption-wrapper {
+      background-color: get-neutral-color('white');
+      padding-top: $image-inset-caption-style-2-box-eat-in;
+      position: relative;
+      top: -#{$image-inset-caption-style-2-box-eat-in};
+    }
+  }
+
 }
 
 // end of file

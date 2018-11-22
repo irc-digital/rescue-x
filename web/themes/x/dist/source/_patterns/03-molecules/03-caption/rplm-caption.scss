@@ -3,7 +3,7 @@
 .rplm-caption {
   $self: &;
 
-  &:not(&--style-low-key) {
+  &--style-default {
     background-color: $caption-default-background-color;
     color: $caption-default-text-color;
     padding: get-spacing('ml');
@@ -18,7 +18,6 @@
     }
   }
 
-
   &--style-low-key {
     #{$self}__text-wrapper {
       @include line-height('s');
@@ -28,6 +27,25 @@
     #{$self}__credit {
       @include typography-text-extra-small;
       color: get-neutral-color('dark-gray');
+      display: inline;
+    }
+  }
+
+  &--style-white-box {
+    background-color: get-neutral-color('white');
+    padding: get-spacing('m');
+
+    @include breakpoint('phablet') {
+      padding: get-spacing('ml');
+    }
+
+    #{$self}__text-wrapper {
+      @include line-height('s');
+    }
+
+    #{$self}__text,
+    #{$self}__credit {
+      @include typography-text-extra-small;
       display: inline;
     }
   }

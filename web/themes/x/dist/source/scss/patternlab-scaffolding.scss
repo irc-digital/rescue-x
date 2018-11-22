@@ -41,7 +41,7 @@ body > .rplc-image-inset {
   @include breakpoint(phablet) {
     max-width: rem(378px);
   }
-  
+
   @include breakpoint(951) {
     max-width: rem(416px);
   }
