@@ -19,7 +19,7 @@
 
   &--caption-style-2-box {
     #{$self}__content {
-      margin-bottom: -#{$image-inset-caption-style-2-box-eat-in};;
+      margin-bottom: -#{$image-inset-caption-style-2-box-eat-in};
     }
 
     #{$self}__image-wrapper {
