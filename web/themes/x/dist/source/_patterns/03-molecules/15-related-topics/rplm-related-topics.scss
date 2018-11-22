@@ -1,7 +1,7 @@
 @import 'rplm-related-topics.variables';
 
 .rplm-related-topics {
-  align-items: flex-start;
+  align-items: baseline;
   display: flex;
 
   @include breakpoint(phablet) {

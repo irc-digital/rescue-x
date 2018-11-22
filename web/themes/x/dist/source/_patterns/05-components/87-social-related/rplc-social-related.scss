@@ -6,12 +6,12 @@
   padding: get-spacing('xl') get-spacing('ml');
 
   &__content {
-    @include well-row;
-
     line-height: 1;
 
     // sass-lint:disable-block mixins-before-declarations
     @include breakpoint(laptop) {
+      @include well-row;
+
       align-items: center;
       display: flex;
     }

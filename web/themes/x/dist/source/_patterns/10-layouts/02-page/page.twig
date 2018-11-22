@@ -10,5 +10,15 @@
     {{ page_content }}
   </main>
 
-  {{ page_footer }}
+  {% if page_content_footer is not empty %}
+    <div class="rpll-page__content-footer">
+      {{ page_content_footer }}
+    </div>
+  {% endif %}
+
+  {% if page_footer is not empty %}
+    <div class="rpll-page__footer">
+      {{ page_footer }}
+    </div>
+  {% endif %}
 </div>
