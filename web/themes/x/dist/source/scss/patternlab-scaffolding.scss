@@ -117,6 +117,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 #molecules-authority,
 #components-fast-facts,
 #molecules-b-roll,
+#components-crisis-mode,
 #components-quote,
 #components-testimonial,
 [id^="components-image-window-width"],
@@ -235,6 +236,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   background-color: get-brand-color('primary');
 }
 
+#atoms-link-type-2-white,
 #atoms-unordered-list-color-light {
   background-color: get-utility-color('alert');
 }

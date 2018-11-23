@@ -65,8 +65,17 @@
       @include link-hover-color(get-utility-color('alert'));
     }
 
+    &#{$self}--subtype-alert-white {
+      @include link-color(get-neutral-color('white'));
+      @include link-border(get-utility-color('alert'));
+      @include link-hover-color(get-utility-color('alert'));
+    }
+
     &#{$self}--subtype-white {
       @include link-color(get-neutral-color('white'));
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('black'));
+      @include link-hover-border(get-neutral-color('black'));
     }
 
     &#{$self}--subtype-inverse {

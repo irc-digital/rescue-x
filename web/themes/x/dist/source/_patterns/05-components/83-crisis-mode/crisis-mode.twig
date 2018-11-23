@@ -1,0 +1,33 @@
+<div class="rplc-crisis-mode">
+  <div class="rplc-crisis-mode__content">
+    <div class="rplc-crisis-mode__text-wrapper">
+      <div class="rplc-crisis-mode__title-wrapper">
+        <div class="rplc-crisis-mode__icon-wrapper">
+          {% include '@atoms/56-icon/icon.twig' with { icon_name: 'crisis' } only %}
+        </div>
+        <h3 class="rpla-heading rpla-heading--medium">{{ crisis_mode_title }}</h3>
+      </div>
+      {% include '@atoms/40-list/05-unordered/unordered-list.twig' with {
+        unordered_list_items: crisis_mode_list,
+        unordered_list_modifiers: ['color-light']
+      } only %}
+      {% include '@atoms/10-link/link.twig' with {
+        link_text: crisis_mode_read_more_title,
+        link_url: crisis_mode_read_more_url,
+        link_modifiers: ['type-two', 'subtype-white'],
+      } only %}
+    </div>
+    {% if crisis_mode_cta_url is not empty and crisis_mode_cta_title is not empty %}
+      <div class="rplc-crisis-mode__cta-wrapper">
+        <div class="rplc-crisis-mode__button-wrapper">
+          {% include '@atoms/30-button/button.twig' with {
+            button_text: crisis_mode_cta_title,
+            button_url: crisis_mode_cta_url,
+            button_icon_name: 'caret-right',
+            button_modifiers: ['type-three', 'size-large'],
+          } only %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

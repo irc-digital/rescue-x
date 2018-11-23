@@ -210,7 +210,7 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
 
 @mixin transition {
   transition: .15s ease-in-out;
-  transition-property: background-color, color, box-shadow, fill;
+  transition-property: background-color, border, color, box-shadow, fill;
 }
 
 //

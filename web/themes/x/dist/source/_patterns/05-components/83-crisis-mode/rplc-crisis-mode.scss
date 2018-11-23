@@ -1,0 +1,38 @@
+@import 'rplc-crisis-mode.variables';
+
+.rplc-crisis-mode {
+  background-color: get-utility-color('alert');
+
+  &__content {
+    @include well-row;
+    display: flex;
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('xl');
+  }
+
+  &__text-wrapper {
+    width: 70%;
+  }
+
+  &__title-wrapper {
+    @include typography-vertical-spacing;
+    color: get-neutral-color('white');
+    display: flex;
+  }
+
+  &__icon-wrapper {
+    height: $crisis-mode-icon-size;
+    margin-right: $crisis-mode-icon-size / 2;
+    width: $crisis-mode-icon-size;
+  }
+
+  &__cta-wrapper {
+    width: 30%;
+  }
+
+  &__button-wrapper {
+    text-align: right;
+  }
+}
+
+// end of file
