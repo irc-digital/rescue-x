@@ -177,7 +177,7 @@ article_page_content:
 article_page_content_footer:
   join():
     - include():
-        pattern: "components-social-related"
+        pattern: "components-share-and-explore-related"
 article_page_footer:
   join():
     - include():

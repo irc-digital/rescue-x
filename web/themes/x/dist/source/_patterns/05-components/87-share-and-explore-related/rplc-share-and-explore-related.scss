@@ -1,6 +1,6 @@
-@import 'rplc-social-related.variabes';
+@import 'rplc-share-and-explore-related.variabes';
 
-.rplc-social-related {
+.rplc-share-and-explore-related {
 
   background-color: get-neutral-color('white');
   padding: get-spacing('xl') get-spacing('ml');
@@ -17,7 +17,7 @@
     }
   }
 
-  &__social {
+  &__share {
     margin-bottom: get-spacing('xl');
 
     @include breakpoint(laptop) {

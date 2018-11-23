@@ -141,6 +141,10 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   }
 }
 
+[id^="pages-"].sg-pattern {
+  margin-bottom: 0;
+}
+
 #atoms-social-share-standard {
   background-color: get-neutral-color('white');
 }

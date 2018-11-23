@@ -5,7 +5,8 @@
 
   @include well-row;
   @include standard-vertical-spacing;
-  width: 90vw;
+
+  width: calc(100% - #{get-spacing('m') * 2});
 
   @include breakpoint(phablet) {
     margin-bottom: 0;

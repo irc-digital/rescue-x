@@ -1,4 +1,4 @@
-social_related_social:
+share_and_explore_related_share:
   include():
     pattern: "molecules-social-share"
     with:
@@ -10,7 +10,7 @@ social_related_social:
       social_share_modifiers:
         - 'type-two'
     only: true
-social_related_related:
+share_and_explore_related_related:
   include():
     pattern: "molecules-related-topics"
     with:
