@@ -235,6 +235,10 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   background-color: get-brand-color('primary');
 }
 
+#atoms-unordered-list-color-light {
+  background-color: get-utility-color('alert');
+}
+
 #atoms-convertible-link-button .sg-pattern-example {
   position: relative;
   left: get-spacing('ml');

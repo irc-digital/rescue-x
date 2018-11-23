@@ -34,6 +34,16 @@
     }
   }
 
+  &--color-light {
+    #{$self}__item {
+      color: get-neutral-color('white');
+
+      &::before {
+        color: get-neutral-color('white');
+      }
+    }
+  }
+
   &--spacing-compact {
     @include line-height('xs');
 
