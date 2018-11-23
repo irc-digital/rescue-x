@@ -102,9 +102,10 @@ const jsonToYaml = require('gulp-json-to-yaml');
 const clean = require('gulp-clean');
 const warn_size = require('gulp-warn-size');
 const replace = require('gulp-replace');
-var concat = require('gulp-concat');
-var entities = require('gulp-html-entities');
-var base64 = require('gulp-base64-inline');
+const concat = require('gulp-concat');
+const entities = require('gulp-html-entities');
+const base64 = require('gulp-base64-inline');
+const minify = require('gulp-minify');
 
 var postCSSProcessors = [
   // rtl,  //commented out for now as it makes the CSS hard to inspect
@@ -171,6 +172,13 @@ gulp.task('build:javascript:drupal-copy', function () {
 gulp.task('build:javascript:pattern-copy', function () {
   return gulp.src(config.javascript.pattern_javascript)
       .pipe(rename({dirname: './'}))
+      .pipe(concat('rpl.js'))
+      .pipe(minify({
+        noSource: true,
+        ext: {
+          min:'.min.js'
+        }
+      }))
       .pipe(gulp.dest(config.javascript.jsDir + '/' + 'patterns'))
 });
 
