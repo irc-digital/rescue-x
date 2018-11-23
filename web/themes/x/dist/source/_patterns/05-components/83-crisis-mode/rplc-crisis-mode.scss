@@ -5,13 +5,22 @@
 
   &__content {
     @include well-row;
-    display: flex;
+
     padding-bottom: get-spacing('l');
     padding-top: get-spacing('xl');
+
+    @include breakpoint(951) {
+      display: flex;
+    }
   }
 
   &__text-wrapper {
-    width: 70%;
+    margin-bottom: get-spacing('l');
+
+    @include breakpoint(951) {
+      margin-bottom: 0;
+      width: 70%;
+    }
   }
 
   &__title-wrapper {
@@ -27,11 +36,15 @@
   }
 
   &__cta-wrapper {
-    width: 30%;
+    @include breakpoint(951) {
+      width: 30%;
+    }
   }
 
   &__button-wrapper {
-    text-align: right;
+    @include breakpoint(951) {
+      text-align: right;
+    }
   }
 }
 

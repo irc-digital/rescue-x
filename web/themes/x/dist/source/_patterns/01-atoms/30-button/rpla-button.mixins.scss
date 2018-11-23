@@ -5,28 +5,28 @@
   line-height: 1;
 
   @if $size == 's' {
+    @include font-size('xs');
+    padding: get-spacing('m') get-spacing('l');
+
+    .rpla-button__icon-wrapper {
+      height: rem(14px);
+      width: rem(14px);
+    }
+  } @else if $size == 'm' {
     @include font-size('s');
     padding: get-spacing('m') get-spacing('l');
 
     .rpla-button__icon-wrapper {
-      height: rem(16px);
-      width: rem(16px);
+      height: rem(18px);
+      width: rem(18px);
     }
-  } @else if $size == 'm' {
+  } @else if $size == 'l' {
     @include font-size('m');
     padding: get-spacing('m') get-spacing('l');
 
     .rpla-button__icon-wrapper {
       height: rem(24px);
       width: rem(24px);
-    }
-  } @else if $size == 'l' {
-    @include font-size('l');
-    padding: get-spacing('m') get-spacing('l');
-
-    .rpla-button__icon-wrapper {
-      height: rem(32px);
-      width: rem(32px);
     }
   } @else {
     @error '#{$size} is not a support size of the button-size mixin';
