@@ -1,45 +1,24 @@
 @import 'rpll-two-column-list.variables';
+@import 'rpll-two-column-list.mixins';
 
 .rpll-two-column-list {
   $self: &;
 
+  @include two-column-grid-helper ($self, 'laptop');
+
   list-style-type: none;
   padding-left: 0;
 
-  @include breakpoint(laptop) {
-    display: grid;
-    grid-column-gap: $two-column-list-column-gutter;
-    grid-row-gap: $two-column-list-row-gutter;
-    grid-template-columns: 1fr 1fr;
+  &--respond-phablet {
+    @include two-column-grid-helper ($self, 'phablet');
   }
 
-  &__item {
-    margin-bottom: $two-column-list-stacked-margin-bottom;
-    overflow: hidden;
-
-    @include breakpoint(desktop) {
-      margin-bottom: 0;
-    }
-  }
-
-  &--highlighted {
-    #{ $self }__item {
-      &:nth-child(1) {
-        @include breakpoint(desktop) {
-          grid-column-end: 3;
-          grid-column-start: 1;
-        }
-      }
-    }
+  &--respond-tablet {
+    @include two-column-grid-helper ($self, 'tablet');
   }
 
   &--plus-separators {
-    @include breakpoint(tablet) { // hold the grid longer when we are doing this version
-      display: grid;
-      grid-column-gap: $two-column-list-column-gutter;
-      grid-row-gap: 0;
-      grid-template-columns: 1fr 1fr;
-    }
+    @include two-column-grid-helper ($self, 'tablet', 0);
 
     #{ $self }__item {
       border-bottom: 1px solid get-neutral-color('gray');
