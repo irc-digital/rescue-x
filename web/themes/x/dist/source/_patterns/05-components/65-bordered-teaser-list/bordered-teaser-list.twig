@@ -13,8 +13,9 @@
     section_heading_icon: bordered_teaser_list_section_heading_icon
   } only %}
   <div class="rplc-bordered-teaser-list__content">
-    {% include '@layouts/05-two-column-list/two-column-list/two-column-list.twig' with {
+    {% include '@layouts/05-two-column-list/two-column-list.twig' with {
       two_column_list_content: bordered_teaser_list_content,
+      two_column_list_modifiers: ['respond-phablet'],
     } only %}
   </div>
 </div>
