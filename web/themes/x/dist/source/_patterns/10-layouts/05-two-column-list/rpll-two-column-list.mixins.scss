@@ -1,20 +1,17 @@
 @import 'rpll-two-column-list.variables';
 
 @mixin two-column-grid-helper ($target, $breakpoint, $row-gap: $two-column-list-row-gutter) {
+  display: grid;
+  grid-column-gap: $two-column-list-column-gutter;
+  grid-row-gap: $row-gap;
+  grid-template-columns: 1fr;
+
   @include breakpoint($breakpoint) {
-    display: grid;
-    grid-column-gap: $two-column-list-column-gutter;
-    grid-row-gap: $row-gap;
     grid-template-columns: 1fr 1fr;
   }
 
   #{ $target }__item {
-    margin-bottom: $two-column-list-stacked-margin-bottom;
     overflow: hidden;
-
-    @include breakpoint($breakpoint) {
-      margin-bottom: 0;
-    }
   }
 
   &--highlighted {

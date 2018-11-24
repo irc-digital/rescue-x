@@ -17,6 +17,10 @@
     @include two-column-grid-helper ($self, 'tablet');
   }
 
+  &--highlighted {
+    @include two-column-grid-helper ($self, 'laptop', $two-column-list-large-row-gutter);
+  }
+
   &--plus-separators {
     @include two-column-grid-helper ($self, 'tablet', 0);
 

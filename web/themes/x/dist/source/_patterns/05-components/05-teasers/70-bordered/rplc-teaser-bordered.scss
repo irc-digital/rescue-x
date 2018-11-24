@@ -3,10 +3,13 @@
 .rplc-teaser-bordered {
   $self: &;
 
+  height: 100%;
+
   &__wrapper-link {
     background-color: get-neutral-color('white');
     border-top: 3px solid get-brand-color();
     display: block;
+    height: 100%;
     padding: get-spacing('ml');
   }
 
