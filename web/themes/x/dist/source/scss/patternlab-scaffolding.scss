@@ -26,6 +26,11 @@ body > .rpll-three-column-list {
   @include well-row;
 }
 
+.sg-pattern-example > .rplc-teaser-bordered,
+body > .rplc-teaser-bordered {
+  max-width: 594px;
+}
+
 .sg-pattern-example > .rplc-teaser-video,
 body > .rplc-teaser-video {
   max-width: 640px;
