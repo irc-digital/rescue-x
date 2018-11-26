@@ -1,11 +1,13 @@
 <div class="rplm-iconed-message{% for iconed_message_modifier in iconed_message_modifiers %} rplm-iconed-message--{{ iconed_message_modifier }}{% endfor %}">
-  <div class="rplm-iconed-message__icon">
-    {% include '@atoms/56-icon/icon.twig' with {
-      icon_name: iconed_message_icon_name,
-      icon_modifiers: iconed_message_icon_modifiers,
-    } only %}
-  </div>
-  <div class="rplm-iconed-message__text">
-    {{ iconed_message_text }}
+  <div class="rplm-iconed-message__wrapper">
+    <div class="rplm-iconed-message__icon">
+      {% include '@atoms/56-icon/icon.twig' with {
+        icon_name: iconed_message_icon_name,
+        icon_modifiers: iconed_message_icon_modifiers,
+      } only %}
+    </div>
+    <div class="rplm-iconed-message__text">
+      {{ iconed_message_text }}
+    </div>
   </div>
 </div>

@@ -1,24 +1,25 @@
 @import 'rplm-iconed-message.variables';
 
 .rplm-iconed-message {
-  align-items: center;
-  background-color: $iconed-message-background-color;
-  display: inline-flex;
   min-height: $iconed-message-icon-size;
   position: relative;
 
+  &__wrapper {
+    background-color: $iconed-message-background-color;
+    display: inline-block;
+  }
+
   &__icon {
     background-color: get-brand-color();
+    float: left;
     height: $iconed-message-icon-size;
     padding: $iconed-message-icon-padding;
-    position: absolute;
-    top: 0;
+    margin-right: $iconed-message-icon-padding;
     width: $iconed-message-icon-size;
   }
 
   &__text {
-    padding-left: $iconed-message-text-padding-left;
-    padding-right: $iconed-message-text-padding-right;
+    padding: $iconed-message-text-padding;
   }
 }
 
