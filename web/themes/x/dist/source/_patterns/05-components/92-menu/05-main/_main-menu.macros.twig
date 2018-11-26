@@ -35,7 +35,7 @@
 
   {% set has_level_4 = item.items is not empty and item.items[0].items is not empty %}
 
-  <li class="rplc-main-menu__level-2-menu-item{% if has_level_4 %} hidden{% else %} shown{% endif %}">
+  <li class="rplc-main-menu__level-2-menu-item rplc-main-menu__level-2-menu-item--{{% if has_level_4 %}hidden{% else %}shown{% endif %}">
     {{ item.title }}
 
     {% if item.items is not empty %}
