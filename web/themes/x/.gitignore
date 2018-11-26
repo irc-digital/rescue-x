@@ -6,3 +6,4 @@ dist/public/
 dist/source/css/
 dist/source/js/
 dist/svg/
+node_modules/
