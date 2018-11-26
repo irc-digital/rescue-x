@@ -16,6 +16,35 @@ main_menu_items:
             url: '#'
   - title: 'Where we work'
     url: "#"
+    items:
+      - title: 'Location'
+        items:
+          - title: 'Africa'
+            items:
+              - title: 'Burundi'
+                url: '#'
+              - title: 'Cameroon'
+                url: '#'
+              - title: 'Central African Republic'
+                url: '#'
+              - title: 'Chad'
+                url: '#'
+              - title: 'Democratic Republic of Congo'
+                url: '#'
+              - title: 'Ethiopia'
+                url: '#'
+          - title: 'Middle East'
+            items:
+              - title: 'Iraq'
+                url: '#'
+              - title: 'Libya'
+                url: '#'
+              - title: 'Jordan'
+                url: '#'
+              - title: 'Syria'
+                url: '#'
+              - title: 'Yemen'
+                url: '#'
   - title: 'What we do'
     url: "#"
   - title: 'How to help'

@@ -1,29 +1,15 @@
 {% import _self as main_menu %}
 
-{% macro _build_leveL_3(item) %}
-  <li class="rplc-main-menu__level-3-menu-item">
-    {{ item.title }}
-  </li>
-
-{% endmacro %}
-
-{% macro _build_leveL_2(item) %}
+{% macro build(items) %}
   {% import _self as main_menu %}
 
-  <li class="rplc-main-menu__level-2-menu-item">
-    {{ item.title }}
-
-    {% if item.items is not empty %}
-      <ul class="rplc-main-menu__level-3">
-        {% for subitem in item.items %}
-          {{ main_menu._build_leveL_3(subitem) }}
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-  </li>
-
+  <ul class="rplc-main-menu">
+    {% for item in items %}
+      {{ main_menu._build_leveL_1(item) }}
+    {% endfor %}
+  </ul>
 {% endmacro %}
+
 
 {% macro _build_leveL_1(item) %}
   {% import _self as main_menu %}
@@ -43,19 +29,46 @@
 
 {% endmacro %}
 
-{% macro _build_leveL_0(items) %}
+
+{% macro _build_leveL_2(item) %}
   {% import _self as main_menu %}
 
-  <ul class="rplc-main-menu">
-    {% for item in items %}
-      {{ main_menu._build_leveL_1(item) }}
-    {% endfor %}
-  </ul>
+  {% set has_level_4 = item.items is not empty and item.items[0].items is not empty %}
+
+  <li class="rplc-main-menu__level-2-menu-item{% if has_level_4 %} hidden{% else %} shown{% endif %}">
+    {{ item.title }}
+
+    {% if item.items is not empty %}
+      <ul class="rplc-main-menu__level-3">
+        {% for subitem in item.items %}
+          {{ main_menu._build_leveL_3(subitem) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </li>
+
 {% endmacro %}
 
-{% macro build(items) %}
+{% macro _build_leveL_3(item) %}
   {% import _self as main_menu %}
 
-  {{ main_menu._build_leveL_0(items) }}
+  <li class="rplc-main-menu__level-3-menu-item">
+    {{ item.title }}
+
+    {% if item.items is not empty %}
+      <ul class="rplc-main-menu__level-2">
+        {% for subitem in item.items %}
+          {{ main_menu._build_leveL_4(subitem) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+
 {% endmacro %}
 
+{% macro _build_leveL_4(item) %}
+  <li class="rplc-main-menu__level-4-menu-item">
+    {{ item.title }}
+  </li>
+{% endmacro %}

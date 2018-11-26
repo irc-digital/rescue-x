@@ -2,18 +2,12 @@
 
 .rplc-main-menu {
 
-  &__level-1-menu-item {
-    margin-left: get-spacing();
+  &__level-1-menu-item,
+  &__level-2-menu-item,
+  &__level-3-menu-item,
+  &__level-4-menu-item {
+    margin-left: get-spacing('l');
   }
-
-  &__level-2-menu-item {
-    margin-left: 2 * get-spacing();
-  }
-
-  &__level-3-menu-item {
-    margin-left: 3 * get-spacing();
-  }
-
 }
 
 // end of file
