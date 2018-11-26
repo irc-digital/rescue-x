@@ -35,8 +35,8 @@
 
   {% set has_level_4 = item.items is not empty and item.items[0].items is not empty %}
 
-  <li class="rplc-main-menu__level-2-menu-item rplc-main-menu__level-2-menu-item--{{% if has_level_4 %}hidden{% else %}shown{% endif %}">
-    {{ item.title }}
+  <li class="rplc-main-menu__level-2-menu-item">
+    <h5 class="rplc-main-menu__level-2-menu-item-title rplc-main-menu__level-2-menu-item-title--{% if has_level_4 %}hidden{% else %}shown{% endif %}">{{ item.title }}</h5>
 
     {% if item.items is not empty %}
       <ul class="rplc-main-menu__level-3">
@@ -54,10 +54,10 @@
   {% import _self as main_menu %}
 
   <li class="rplc-main-menu__level-3-menu-item">
-    {{ item.title }}
+    <div class="rplc-main-menu__level-3-menu-item-title">{{ item.title }}</div>
 
     {% if item.items is not empty %}
-      <ul class="rplc-main-menu__level-2">
+      <ul class="rplc-main-menu__level-4">
         {% for subitem in item.items %}
           {{ main_menu._build_leveL_4(subitem) }}
         {% endfor %}

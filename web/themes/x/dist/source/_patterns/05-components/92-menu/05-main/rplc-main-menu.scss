@@ -1,6 +1,7 @@
 @import 'rplc-main-menu.variables';
 
 .rplc-main-menu {
+  $self: &;
 
   &__level-1-menu-item,
   &__level-2-menu-item,
@@ -8,6 +9,13 @@
   &__level-4-menu-item {
     margin-left: get-spacing('l');
   }
+
+  &__level-2-menu-item-title {
+    &--hidden {
+      opacity: 0.3;
+    }
+  }
+
 }
 
 // end of file
