@@ -8,7 +8,7 @@ body {
   @include typography-text-standard;
   background-color: get-neutral-color('very-light-gray');
   color: get-neutral-color('black');
-  min-width: $minimum-size-width;
+  min-width: $minimum-site-width;
   width: 100%;
 }
 

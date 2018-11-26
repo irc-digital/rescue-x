@@ -29,13 +29,21 @@
   }
 
   &__scene {
-    height: 324px;
+    height: $impact-card-height;
+    min-width: $minimum-site-width;
     perspective: 980px;
-    width: 382px;
+    width: map-get($impact-card-width, 'mobile');
+
+    @include breakpoint(phablet) {
+      width: map-get($impact-card-width, 'phablet');
+    }
+
+    @include breakpoint(951) {
+      width: map-get($impact-card-width, '951');
+    }
   }
 
   &__card {
-    background-color: get-neutral-color('white');
     height: 100%;
     margin-left: $impact-card-spacing-around-card;
     margin-right: $impact-card-spacing-around-card;
@@ -45,7 +53,7 @@
   }
 
   &__front {
-    border: solid;
+    background-color: get-neutral-color('white');
   }
 
   &__front,

@@ -3,7 +3,7 @@
 @mixin image-caption-common-treatment ($caption-floated: false) {
   margin-left: auto;
   margin-right: auto;
-  min-width: $minimum-size-width - (2 * get-spacing('m'));
+  min-width: $minimum-site-width - (2 * get-spacing('m'));
   position: relative;
   top: -#{get-spacing('m')};
   width: calc(100vw - #{2 * get-spacing('m')});
