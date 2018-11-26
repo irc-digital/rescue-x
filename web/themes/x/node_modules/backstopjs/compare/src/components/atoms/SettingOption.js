@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import ToggleButton from 'react-toggle-button';
 
-import { colors, fonts, shadows } from '../../styles';
+import { colors, fonts } from '../../styles';
 
 const WrapperOption = styled.div`
   display: flex;
@@ -21,7 +20,7 @@ const WrapperOption = styled.div`
 `;
 
 export default class SettingOption extends React.Component {
-  render() {
+  render () {
     let { label, value, onToggle } = this.props;
 
     return (

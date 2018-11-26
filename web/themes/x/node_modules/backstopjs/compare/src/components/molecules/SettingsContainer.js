@@ -9,15 +9,13 @@ import ButtonSettings from '../atoms/ButtonSettings';
 // molecules
 import SettingsPopup from './SettingsPopup';
 
-import { colors, fonts } from '../../styles';
-
 const SettingsWrapper = styled.div`
   flex: 0 0 auto;
   height: 100%;
 `;
 
 class SettingsPanel extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -25,13 +23,13 @@ class SettingsPanel extends React.Component {
     };
   }
 
-  onButtonClick() {
+  onButtonClick () {
     this.setState({
       popup: !this.state.popup
     });
   }
 
-  render() {
+  render () {
     const popupVisible = this.state.popup;
 
     return (

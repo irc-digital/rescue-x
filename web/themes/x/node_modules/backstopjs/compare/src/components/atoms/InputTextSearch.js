@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { colors, fonts } from '../../styles';
@@ -36,7 +35,7 @@ const Input = styled.input`
 `;
 
 export default class ButtonFilter extends React.Component {
-  render() {
+  render () {
     return (
       <Input
         placeholder="Filter tests with search..."
