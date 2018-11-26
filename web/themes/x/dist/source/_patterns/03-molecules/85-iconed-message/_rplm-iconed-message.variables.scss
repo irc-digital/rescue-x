@@ -3,6 +3,8 @@
 $iconed-message-background-color: get-neutral-color('light-gray');
 $iconed-message-icon-size: 3rem;
 $iconed-message-icon-padding: .875rem;
+$iconed-message-icon-margin-left: #{-$iconed-message-icon-padding};
+$iconed-message-icon-margin-right: $iconed-message-icon-padding;
 $iconed-message-text-padding: 0 $iconed-message-icon-padding;
 //$iconed-message-text-padding-left: calc(#{$iconed-message-icon-size} + #{$iconed-message-icon-padding});
 //$iconed-message-text-padding-right: $iconed-message-icon-padding;
