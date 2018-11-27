@@ -58,7 +58,7 @@
 
     {% if item.items is not empty %}
       <div class="rplc-main-menu__level-3-menu-item-title" data-rpl-main-menu-expanding-section>{{ item.title }}</div>
-
+      <span class="rplc-main-menu__level-3-expand-toggle" data-rpl-main-menu-expanding-section>></span>
       {% set halfway = ((item.items | length) / 2) | round %}
 
       {% set split_items = [item.items | slice(0, halfway), item.items | slice(halfway)] %}
