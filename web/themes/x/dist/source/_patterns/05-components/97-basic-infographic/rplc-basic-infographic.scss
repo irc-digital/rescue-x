@@ -4,6 +4,20 @@
   &__content {
     @include well-row;
   }
+
+  &--alternate-rows {
+    .rplc-teaser-icon--row-even {
+      flex-direction: row-reverse;
+
+      @include breakpoint(phablet) {
+        flex-direction: row;
+      }
+
+      @include breakpoint(desktop) {
+        flex-direction: column;
+      }
+    }
+  }
 }
 
 // end of file

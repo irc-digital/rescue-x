@@ -6,10 +6,11 @@
  * - teaser_icon_summary - Summary
  * - teaser_icon_name - Icon
  * - teaser_icon_modifiers - Icon options
+ * - teaser_icon_row - Odd / Even
  *
  */
 #}
-<div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %}">
+<div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %} rplc-teaser-icon--row-{{ teaser_icon_row }}">
   {% if teaser_icon_url %}
   <a href="{{ teaser_icon_url }}" class="rplc-teaser-icon__wrapper-link">
   {%  endif %}

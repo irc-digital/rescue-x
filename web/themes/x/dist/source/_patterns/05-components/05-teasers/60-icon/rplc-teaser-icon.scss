@@ -5,6 +5,7 @@
 
   align-items: center;
   display: flex;
+  justify-content: space-between;
 
   @include breakpoint(phablet) {
     align-items: flex-start;
@@ -27,7 +28,7 @@
   }
 
   &__text-wrapper {
-    width: 75%;
+    width: 73%;
 
     @include breakpoint(desktop) {
       width: 100%;
