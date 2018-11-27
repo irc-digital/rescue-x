@@ -7,10 +7,6 @@
   display: flex;
   justify-content: space-between;
 
-  @include breakpoint(phablet) {
-    align-items: flex-start;
-  }
-
   @include breakpoint(desktop) {
     flex-direction: column;
   }
@@ -38,16 +34,20 @@
     #{$self}__title {
       @include typography-heading-extra-large;
     }
+
+    #{$self}__summary {
+      @include typography-text-small;
+    }
+
+    @include breakpoint(phablet) {
+      align-items: flex-start;
+    }
   }
 
   &--type-two {
     @include breakpoint(phablet) {
       align-items: center;
     }
-  }
-
-  &__summary {
-    @include typography-text-small;
   }
 }
 
