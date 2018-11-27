@@ -1,0 +1,55 @@
+@import 'rplc-main-menu.variables';
+
+.rplc-main-menu {
+  $self: &;
+
+  @media #{$global-navigation-large-device-media-query} {
+    background-color: get-neutral-color('white');
+    display: flex;
+
+    &__level-1-menu-item {
+      @include line-height('2xs');
+      padding-bottom: get-spacing('m');
+      padding-top: get-spacing('m');
+
+      white-space: nowrap;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include hover {
+        #{$self}__level-2 {
+          display: block;
+        }
+      }
+    }
+
+    &__level-1-menu-item-link {
+      @include font-size('s');
+      @include font-weight('bold');
+
+      border-right: 1px solid get-neutral-color('gray');
+      padding: get-spacing('xs') get-spacing('m');
+      text-transform: uppercase;
+
+      &--last {
+        border-right-width: 0;
+      }
+    }
+
+    &__level-1-menu-item--type-2 {
+      #{$self}__level-2-menu-item-title {
+        opacity: .3;
+      }
+    }
+
+    &__level-2 {
+      display: none;
+    }
+
+    &__level-4-wrapper {
+      display: flex;
+    }
+
+  }
+}
+
+// end of file

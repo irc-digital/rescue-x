@@ -1,3 +1,6 @@
 @import '../../../../scss/core';
 
+$main-menu-smallest-large-device-size: $global-navigation-large-device-size;
+$main-menu-largest-small-device-size: $main-menu-smallest-large-device-size - rem(1px);
+
 // end of file

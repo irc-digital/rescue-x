@@ -1,0 +1,12 @@
+@import 'rplc-main-menu.variables';
+
+.rplc-main-menu {
+  $self: &;
+
+  @media only screen and (max-width: #{$main-menu-largest-small-device-size}) {
+    background-color: get-utility-color('alert');
+  }
+
+}
+
+// end of file

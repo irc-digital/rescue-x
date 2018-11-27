@@ -1,60 +1,11 @@
 @import 'rplc-main-menu.variables';
 
-.rplc-main-menu {
-  $self: &;
-
-  background-color: get-neutral-color('white');
-  display: flex;
-
-  &,
-  &__level-2,
-  &__level-3,
-  &__level-4 {
-    list-style: none;
-  }
-
-  &__level-1-menu-item {
-    @include line-height('2xs');
-    padding-bottom: get-spacing();
-    padding-top: get-spacing();
-
-    white-space: nowrap;
-
-    // sass-lint:disable-block mixins-before-declarations
-    @include hover {
-      #{$self}__level-2 {
-        display: block;
-      }
-    }
-  }
-
-  &__level-1-menu-item-link {
-    @include font-size('s');
-    @include font-weight('bold');
-
-    border-right: 1px solid get-neutral-color('gray');
-    padding: get-spacing('xs') get-spacing('m');
-    text-transform: uppercase;
-
-    &--last {
-      border-right-width: 0;
-    }
-  }
-
-  &__level-1-menu-item--type-2 {
-    #{$self}__level-2-menu-item-title {
-      opacity: .3;
-    }
-  }
-
-  &__level-2 {
-    display: none;
-  }
-
-  &__level-4-wrapper {
-    display: flex;
-  }
-
-}
+// the small device and big device version of the menu is so radically different that
+// i decided to split them into different files and to NOT do mobile-first, rather
+// making mobile and desktop styles explicitly mutually exclusive. the few shared styles
+// for, say, making sure the list has not style are placed in the common file.
+@import 'rplc-main-menu.common';
+@import 'rplc-main-menu.mobile';
+@import 'rplc-main-menu.desktop';
 
 // end of file

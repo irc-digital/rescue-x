@@ -14,6 +14,9 @@ $smallest-laptop-size: rem(1024px);
 $smallest-tablet-size: rem(768px);
 $smallest-phablet-size: rem(641px);
 
+$global-navigation-large-device-size: rem(1143px);
+$global-navigation-large-device-media-query: 'only screen and (min-width: #{$global-navigation-large-device-size})';
+
 // The default font family.
 $base-font-family: $font-family-sans-serif;
 

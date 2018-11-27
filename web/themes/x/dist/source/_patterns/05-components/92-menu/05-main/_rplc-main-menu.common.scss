@@ -1,0 +1,15 @@
+@import 'rplc-main-menu.variables';
+
+.rplc-main-menu {
+  $self: &;
+
+  &,
+  &__level-2,
+  &__level-3,
+  &__level-4 {
+    list-style: none;
+  }
+
+}
+
+// end of file

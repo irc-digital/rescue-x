@@ -1,4 +1,4 @@
-@import 'ear.variables';
+@import 'rplm-ear.variables';
 
 @mixin ear-align ($size: 'mobile') {
   right: map-get($ear-triangle-size, $size) * 1.35;
