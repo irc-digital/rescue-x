@@ -50,16 +50,11 @@
     }
 
     //
-    // 1) Type one is the menu that has three levels - like the Who We Are menu
+    // 1) Type one is the menu that has four levels - like the Who We Are menu
     //
     &__level-1-menu-item--type-1 { // 1
-
-      #{$self}__level-3-menu-item {
-        border-bottom: 1px solid $main-menu-desktop-level-3-border-color;
-
-        &:last-child {
-          border-bottom-width: 0;
-        }
+      #{$self}__level-3 {
+        margin-right: 52px;
       }
     }
 
@@ -69,6 +64,10 @@
     &__level-1-menu-item--type-2 { // 1
 
       #{$self}__level-2-menu-item-title {
+        display: none;
+      }
+
+      #{$self}__level-4 {
         display: none;
       }
     }
@@ -102,11 +101,9 @@
     //
     // LEVEL 3
     //
-    &__level-3 {
-      margin-right: 52px;
-    }
 
-    &__level-3-menu-item-link {
+    &__level-3-menu-item-link,
+    &__level-3-menu-item-title {
       @include font-size('s');
       @include font-weight('bold');
       @include transition;
@@ -118,6 +115,21 @@
       // sass-lint:disable-block mixins-before-declarations
       @include hover {
         background-color: get-brand-color('primary-tint-1');
+        cursor: pointer;
+      }
+    }
+
+    &__level-3-menu-item {
+      border-bottom: 1px solid $main-menu-desktop-level-3-border-color;
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+
+    & [data-rpl-main-menu-expanded-section] {
+      #{$self}__level-4 {
+        display: block;
       }
     }
 

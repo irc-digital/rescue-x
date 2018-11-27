@@ -6,10 +6,10 @@
         // attaching via a data attribute rather than a class?
         if ($(this).css('pointer-events') == 'none') {
           return;
-        }
 
+        }
         var state_type = $(this).data('rpl-state-type');
-        var state_values = (typeof $(this).data('rpl-state-values') !== 'undefined') ? $(this).data('rpl-state-values'): '';
+        var state_values = (typeof $(this).data('rpl-state-values') !== 'undefined') ? $(this).data('rpl-state-values').toString() : '';
         state_values = state_values.replace(/ /g,'').split(',');
         var target_data_attribute_name = 'data-rpl-' + state_type;
 
