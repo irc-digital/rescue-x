@@ -15,7 +15,6 @@
     flex-direction: column;
   }
 
-
   &__icon {
     height: $teaser-icon-icon-height;
     max-width: $teaser-icon-icon-width;
@@ -38,6 +37,12 @@
   &--type-one {
     #{$self}__title {
       @include typography-heading-extra-large;
+    }
+  }
+
+  &--type-two {
+    @include breakpoint(phablet) {
+      align-items: center;
     }
   }
 
