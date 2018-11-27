@@ -154,6 +154,14 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   min-height: 400px;
 }
 
+.rplc-main-menu {
+  max-width: 280px;
+
+  @media #{$global-navigation-large-device-media-query} {
+    max-width: none;
+  }
+}
+
 [id^="pages-"].sg-pattern {
   margin-bottom: 0;
 }

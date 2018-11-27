@@ -3,8 +3,11 @@
 $main-menu-smallest-large-device-size: $global-navigation-large-device-size;
 $main-menu-largest-small-device-size: $main-menu-smallest-large-device-size - rem(1px);
 
+$main-menu-mobile-level-1-height: rem(80px);
+
 $main-menu-desktop-top-level-border: 5px solid get-neutral-color('white');
 $main-menu-desktop-level-3-border-color: #ecb200;
 $main-menu-desktop-horizontal-padding: rem(56px);
+
 
 // end of file
