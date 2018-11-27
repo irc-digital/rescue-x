@@ -29,7 +29,7 @@
   }
 
   &__title-wrapper {
-    line-height: 1;
+    @include line-height('2xs');
   }
 }
 

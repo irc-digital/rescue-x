@@ -9,10 +9,10 @@
 
   &__title {
     @include typography-heading-medium;
+    @include line-height('2xs');
     @include transition;
 
     background-color: get-neutral-color('white');
-    line-height: 1;
     margin-left: auto;
     margin-right: auto;
     margin-top: $teaser-image-basic-eat-in;

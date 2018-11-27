@@ -24,9 +24,9 @@
   }
 
   &__slug {
+    @include line-height('2xs');
     background-color: get-neutral-color('gray');
     left: -#{get-spacing()};
-    line-height: 1;
     min-width: rem(176px);
     padding-bottom: .5em;
     padding-top: .5em;

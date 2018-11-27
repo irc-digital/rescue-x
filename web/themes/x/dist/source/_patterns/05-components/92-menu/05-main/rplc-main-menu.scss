@@ -3,17 +3,56 @@
 .rplc-main-menu {
   $self: &;
 
-  &__level-1-menu-item,
-  &__level-2-menu-item,
-  &__level-3-menu-item,
-  &__level-4-menu-item {
-    margin-left: get-spacing('l');
+  background-color: get-neutral-color('white');
+  display: flex;
+
+  &,
+  &__level-2,
+  &__level-3,
+  &__level-4 {
+    list-style: none;
   }
 
-  &__level-2-menu-item-title {
-    &--hidden {
-      opacity: 0.3;
+  &__level-1-menu-item {
+    @include line-height('2xs');
+    padding-bottom: get-spacing();
+    padding-top: get-spacing();
+
+    white-space: nowrap;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      #{$self}__level-2 {
+        display: block;
+      }
     }
+  }
+
+  &__level-1-menu-item-link {
+    @include font-size('s');
+    @include font-weight('bold');
+
+    border-right: 1px solid get-neutral-color('gray');
+    padding: get-spacing('xs') get-spacing('m');
+    text-transform: uppercase;
+
+    &--last {
+      border-right-width: 0;
+    }
+  }
+
+  &__level-1-menu-item--type-2 {
+    #{$self}__level-2-menu-item-title {
+      opacity: .3;
+    }
+  }
+
+  &__level-2 {
+    display: none;
+  }
+
+  &__level-4-wrapper {
+    display: flex;
   }
 
 }

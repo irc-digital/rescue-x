@@ -6,7 +6,7 @@
   padding: get-spacing('xl') get-spacing('ml');
 
   &__content {
-    line-height: 1;
+    @include line-height('2xs');
 
     // sass-lint:disable-block mixins-before-declarations
     @include breakpoint(laptop) {

@@ -5,22 +5,25 @@
 
   <ul class="rplc-main-menu">
     {% for item in items %}
-      {{ main_menu._build_leveL_1(item) }}
+      {{ main_menu._build_leveL_1(item, loop.last) }}
     {% endfor %}
   </ul>
 {% endmacro %}
 
 
-{% macro _build_leveL_1(item) %}
+{% macro _build_leveL_1(item, last) %}
   {% import _self as main_menu %}
 
-  <li class="rplc-main-menu__level-1-menu-item">
-    <a class="rplc-main-menu__level-1-menu-item-link" href="{{ item.url }}">{{ item.title }}</a>
+  {% set has_level_4 = item.items is not empty and item.items[0].items is not empty and item.items[0].items[0].items is not empty %}
+  {% set type = "rplc-main-menu__level-1-menu-item--type-" ~ (has_level_4 ? '2' : '1') %}
+  {% set position = last ? ' rplc-main-menu__level-1-menu-item-link--last' : '' %}
+  <li class="rplc-main-menu__level-1-menu-item {{ type }}">
+    <a class="rplc-main-menu__level-1-menu-item-link{{ position }}" href="{{ item.url }}">{{ item.title }}</a>
 
     {% if item.items is not empty %}
       <ul class="rplc-main-menu__level-2">
         {% for subitem in item.items %}
-          {{ main_menu._build_leveL_2(subitem) }}
+          {{ main_menu._build_leveL_2(subitem, has_level_4) }}
         {% endfor %}
       </ul>
     {% endif %}
@@ -33,10 +36,8 @@
 {% macro _build_leveL_2(item) %}
   {% import _self as main_menu %}
 
-  {% set has_level_4 = item.items is not empty and item.items[0].items is not empty %}
-
   <li class="rplc-main-menu__level-2-menu-item">
-    <h5 class="rplc-main-menu__level-2-menu-item-title rplc-main-menu__level-2-menu-item-title--{% if has_level_4 %}hidden{% else %}shown{% endif %}">{{ item.title }}</h5>
+    <h5 class="rplc-main-menu__level-2-menu-item-title">{{ item.title }}</h5>
 
     {% if item.items is not empty %}
       <ul class="rplc-main-menu__level-3">
@@ -53,15 +54,23 @@
 {% macro _build_leveL_3(item) %}
   {% import _self as main_menu %}
 
-  <li class="rplc-main-menu__level-3-menu-item">
+  <li class="rplc-main-menu__level-3-menu-item{% if item.items is empty %}rplc-main-menu__level-3-menu-item--leaf{% endif %}">
     <div class="rplc-main-menu__level-3-menu-item-title">{{ item.title }}</div>
 
     {% if item.items is not empty %}
-      <ul class="rplc-main-menu__level-4">
-        {% for subitem in item.items %}
-          {{ main_menu._build_leveL_4(subitem) }}
+      {% set halfway = ((item.items | length) / 2) | round %}
+
+      {% set split_items = [item.items | slice(0, halfway), item.items | slice(halfway)] %}
+
+      <div class="rplc-main-menu__level-4-wrapper">
+        {% for items_group in split_items %}
+          <ul class="rplc-main-menu__level-4 rplc-main-menu__level-4--group-{{ loop.index }}">
+            {% for subitem in items_group %}
+              {{ main_menu._build_leveL_4(subitem) }}
+            {% endfor %}
+          </ul>
         {% endfor %}
-      </ul>
+      </div>
     {% endif %}
   </li>
 

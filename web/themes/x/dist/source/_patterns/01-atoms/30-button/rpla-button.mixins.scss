@@ -2,7 +2,7 @@
 
 @mixin button-size ($size: 'm') {
   @include font-weight('bold');
-  line-height: 1;
+  @include line-height('2xs');;
 
   @if $size == 's' {
     @include font-size('xs');
