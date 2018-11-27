@@ -7,7 +7,7 @@
 
   &--alternate-rows {
     .rplc-teaser-icon--row-even {
-      @media only screen and (max-width: 640px) {
+      @media only screen and (max-width: #{$basic-infographic-mobile-end}) {
         flex-direction: row-reverse;
       }
     }
