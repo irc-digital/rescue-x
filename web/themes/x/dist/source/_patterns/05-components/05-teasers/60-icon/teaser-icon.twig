@@ -10,7 +10,23 @@
  *
  */
 #}
-<div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %} rplc-teaser-icon--row-{{ teaser_icon_row }}">
+
+{% set teaser_icon_modifiers = teaser_icon_modifiers ?: [] %}
+
+{% set type = null %}
+
+{% for teaser_icon_modifier in teaser_icon_modifiers %}
+  {% if teaser_icon_modifier starts with 'type-' %}
+    {% set type = teaser_icon_modifier %}
+  {% endif %}
+{% endfor %}
+
+{% if type is empty %}
+  {% set type = 'type-one' %}
+  {% set teaser_icon_modifiers = teaser_icon_modifiers | merge([type]) %}
+{% endif %}
+
+<div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %}">
   {% if teaser_icon_url %}
   <a href="{{ teaser_icon_url }}" class="rplc-teaser-icon__wrapper-link">
   {%  endif %}
@@ -21,10 +37,10 @@
       } only %}
     </div>
     <div class="rplc-teaser-icon__text-wrapper">
-      <div class="rplc-teaser-icon__title">
-        <h3 class="rpla-heading rpla-heading--extra-large">{{ teaser_icon_title }}</h3>
-      </div>
+      <div class="rplc-teaser-icon__title">{{ teaser_icon_title }}</div>
+      {% if teaser_icon_summary and type == 'type-one' %}
       <div class="rplc-teaser-icon__summary">{{ teaser_icon_summary }}</div>
+      {% endif %}
     </div>
   {% if teaser_icon_url %}
   </a>

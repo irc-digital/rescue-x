@@ -35,6 +35,12 @@
     }
   }
 
+  &--type-one {
+    #{$self}__title {
+      @include typography-heading-extra-large;
+    }
+  }
+
   &__summary {
     @include typography-text-small;
   }
