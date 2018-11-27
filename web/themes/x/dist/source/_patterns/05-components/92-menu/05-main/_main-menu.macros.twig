@@ -55,9 +55,10 @@
   {% import _self as main_menu %}
 
   <li class="rplc-main-menu__level-3-menu-item{% if item.items is empty %}rplc-main-menu__level-3-menu-item--leaf{% endif %}">
-    <div class="rplc-main-menu__level-3-menu-item-title">{{ item.title }}</div>
 
     {% if item.items is not empty %}
+      <div class="rplc-main-menu__level-3-menu-item-title">{{ item.title }}</div>
+
       {% set halfway = ((item.items | length) / 2) | round %}
 
       {% set split_items = [item.items | slice(0, halfway), item.items | slice(halfway)] %}
@@ -71,6 +72,8 @@
           </ul>
         {% endfor %}
       </div>
+    {% else %}
+      <a class="rplc-main-menu__level-3-menu-item-link" href="{{ item.url }}">{{ item.title }}</a>
     {% endif %}
   </li>
 

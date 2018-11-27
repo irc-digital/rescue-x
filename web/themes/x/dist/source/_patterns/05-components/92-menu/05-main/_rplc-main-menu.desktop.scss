@@ -9,6 +9,9 @@
     background-color: get-neutral-color('white');
     display: flex;
 
+    //
+    // LEVEL 1
+    //
     &__level-1-menu-item {
       @include line-height('2xs');
       padding-bottom: get-spacing('m');
@@ -17,7 +20,7 @@
       white-space: nowrap;
 
       &:first-child {
-        border-left: 5px solid #fff;
+        border-left: $main-menu-desktop-top-level-border;
       }
 
       // sass-lint:disable-block mixins-before-declarations
@@ -25,7 +28,7 @@
         background-color: get-brand-color();
 
         #{$self}__level-2 {
-          display: block;
+          display: flex;
         }
       }
 
@@ -34,6 +37,7 @@
     &__level-1-menu-item-link {
       @include font-size('s');
       @include font-weight('bold');
+      @include transition;
 
       border-right: 1px solid get-neutral-color('gray');
       padding: get-spacing('xs') get-spacing('m');
@@ -44,25 +48,63 @@
       }
     }
 
-    &__level-1-menu-item--type-2 {
+    //
+    // 1) Type two is the menu that has four levels - like the Where We Work menu
+    //
+    &__level-1-menu-item--type-2 { // 1
+
       #{$self}__level-2-menu-item-title {
         display: none;
       }
     }
 
+    //
+    // LEVEL 2
+    //
     &__level-2 {
-      display: none;
-      position: absolute;
       background-color: get-brand-color();
-      border: 5px solid get-neutral-color('white');
+      border: $main-menu-desktop-top-level-border;
       border-top-width: 0;
+      display: none;
       left: 0;
       padding: 36px 56px 0;
+      position: absolute;
       top: 52px;
       width: 1011px;
-
     }
 
+    &__level-2-menu-item {
+      flex-basis: 100%;
+    }
+
+    &__level-2-menu-item-title {
+      @include font-size('s');
+      @include font-weight('light');
+
+      margin-bottom: 12px;
+    }
+
+    //
+    // LEVEL 3
+    //
+    &__level-3-menu-item-link {
+      @include font-size('s');
+      @include font-weight('bold');
+      @include transition;
+
+      display: block;
+      line-height: 4;
+      padding-left: 36px;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include hover {
+        background-color: get-brand-color('primary-tint-1');
+      }
+    }
+
+    //
+    // LEVEL 4
+    //
     &__level-4-wrapper {
       display: flex;
     }

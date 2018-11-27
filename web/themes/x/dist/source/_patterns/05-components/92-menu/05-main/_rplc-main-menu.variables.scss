@@ -3,4 +3,6 @@
 $main-menu-smallest-large-device-size: $global-navigation-large-device-size;
 $main-menu-largest-small-device-size: $main-menu-smallest-large-device-size - rem(1px);
 
+$main-menu-desktop-top-level-border: 5px solid get-neutral-color('white');
+
 // end of file
