@@ -1,0 +1,35 @@
+basic_infographic_section_heading_title: "Faker.sentence(2,true)"
+basic_infographic_section_heading_description: "Faker.paragraph(1,true)"
+basic_infographic_content:
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "Search our volunteer opportunities"
+        teaser_icon_icon_name: "find"
+        teaser_icon_modifiers:
+          - 'type-two'
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "Apply and attend an IRC orientation"
+        teaser_icon_icon_name: "apply"
+        teaser_icon_modifiers:
+          - 'type-two'
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "Be interviewed by IRC staff"
+        teaser_icon_icon_name: "interview"
+        teaser_icon_modifiers:
+          - 'type-two'
+      only: true
+  - include():
+      pattern: "components-teaser-icon"
+      with:
+        teaser_icon_title: "Complete a background check"
+        teaser_icon_icon_name: "background"
+        teaser_icon_modifiers:
+          - 'type-two'
+      only: true
