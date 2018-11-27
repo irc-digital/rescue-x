@@ -26,6 +26,7 @@
     }
 
     &__level-1-menu-item-link,
+    &__level-3-menu-item-title,
     &__level-3-menu-item-link {
       display: block;
       height: $main-menu-mobile-level-1-height;
@@ -49,8 +50,8 @@
     // LEVEL 2
     //
     &__level-2 {
-      padding-left: get-spacing();
-      padding-right: get-spacing();
+      padding-left: $main-menu-mobile-horizontal-padding;
+      padding-right: $main-menu-mobile-horizontal-padding;
     }
 
     &__level-2-menu-item-title {
@@ -69,8 +70,25 @@
     //
     // LEVEL 3
     //
-  }
+    &__level-3-menu-item {
+      border-bottom: 1px solid $main-menu-mobile-level-3-border-color;
+    }
 
+    //
+    // LEVEL 4
+    //
+    &__level-4-wrapper {
+      margin-left: -#{$main-menu-mobile-horizontal-padding};
+      margin-right: -#{$main-menu-mobile-horizontal-padding};
+      padding-left: $main-menu-mobile-horizontal-padding;
+      padding-right: $main-menu-mobile-horizontal-padding;
+    }
+
+    &__level-4-menu-item-link {
+      line-height: 1.5;
+      padding: 8px 29px;
+    }
+  }
 }
 
 // end of file
