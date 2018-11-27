@@ -2,13 +2,13 @@ main_menu_items:
   - title: 'Who we are'
     url: "#"
     items:
-      - title: 'About us'
+      - title: 'About Us'
         items:
           - title: 'At a glance'
             url: '#'
           - title: 'Annual report'
             url: '#'
-      - title: 'Our people'
+      - title: 'Our People'
         items:
           - title: 'President David Miliband'
             url: '#'
@@ -47,7 +47,46 @@ main_menu_items:
                 url: '#'
   - title: 'What we do'
     url: "#"
+    items:
+      - title: 'Where We Focus'
+        items:
+          - title: 'Health'
+            url: '#'
+          - title: 'Safety'
+            url: '#'
+      - title: 'Our Approach'
+        items:
+          - title: 'Better Aid'
+            url: '#'
+          - title: 'Ideas & Impact'
+            url: '#'
   - title: 'How to help'
     url: "#"
+    items:
+      - title: 'Give'
+        items:
+          - title: 'Donate'
+            url: '#'
+          - title: 'Shop Rescue Gifts'
+            url: '#'
+      - title: 'Join Us'
+        items:
+          - title: 'Take Action'
+            url: '#'
+          - title: 'Become a Corporate Partner'
+            url: '#'
   - title: 'Latest'
     url: "#"
+    items:
+      - title: 'News'
+        items:
+          - title: 'News & Features'
+            url: '#'
+          - title: 'Media Center'
+            url: '#'
+      - title: 'Crises & Issues'
+        items:
+          - title: 'Central American caravans'
+            url: '#'
+          - title: 'Ebola'
+            url: '#'
