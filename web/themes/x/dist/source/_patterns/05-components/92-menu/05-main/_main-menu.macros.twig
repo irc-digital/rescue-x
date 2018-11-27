@@ -19,9 +19,10 @@
   {% set position = last ? ' rplc-main-menu__level-1-menu-item-link--last' : '' %}
   <li class="rplc-main-menu__level-1-menu-item {{ type }}">
     <a class="rplc-main-menu__level-1-menu-item-link{{ position }}" href="{{ item.url }}">{{ item.title }}</a>
-    <button class="rplc-main-menu__level-1-expand-toggle" data-rpl-main-menu-expanding-section-target></button>
 
     {% if item.items is not empty %}
+      <button class="rplc-main-menu__level-1-expand-toggle" data-rpl-main-menu-expanding-section-target></button>
+
       <ul class="rplc-main-menu__level-2">
         {% for subitem in item.items %}
           {{ main_menu._build_leveL_2(subitem, loop.last) }}
