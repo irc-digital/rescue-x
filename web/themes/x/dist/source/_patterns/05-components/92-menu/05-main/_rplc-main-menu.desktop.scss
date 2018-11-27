@@ -3,6 +3,8 @@
 .rplc-main-menu {
   $self: &;
 
+  position: relative;
+
   @media #{$global-navigation-large-device-media-query} {
     background-color: get-neutral-color('white');
     display: flex;
@@ -14,12 +16,19 @@
 
       white-space: nowrap;
 
+      &:first-child {
+        border-left: 5px solid #fff;
+      }
+
       // sass-lint:disable-block mixins-before-declarations
       @include hover {
+        background-color: get-brand-color();
+
         #{$self}__level-2 {
           display: block;
         }
       }
+
     }
 
     &__level-1-menu-item-link {
@@ -37,12 +46,21 @@
 
     &__level-1-menu-item--type-2 {
       #{$self}__level-2-menu-item-title {
-        opacity: .3;
+        display: none;
       }
     }
 
     &__level-2 {
       display: none;
+      position: absolute;
+      background-color: get-brand-color();
+      border: 5px solid get-neutral-color('white');
+      border-top-width: 0;
+      left: 0;
+      padding: 36px 56px 0;
+      top: 52px;
+      width: 1011px;
+
     }
 
     &__level-4-wrapper {
