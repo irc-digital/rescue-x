@@ -61,11 +61,14 @@
   &--respond,
   &--resettle,
   &--efficiency,
-  &--serve {
+  &--serve,
+  &--background,
+  &--find,
+  &--interview,
+  &--apply {
     color: get-brand-color(); // 1
     fill: get-neutral-color('black');
   }
-
 }
 
 // end of file

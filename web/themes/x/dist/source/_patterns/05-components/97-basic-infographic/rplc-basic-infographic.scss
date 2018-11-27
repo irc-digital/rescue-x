@@ -5,11 +5,9 @@
     @include well-row;
   }
 
-  &--alternate-rows {
-    .rplc-teaser-icon--row-even {
-      @media only screen and (max-width: #{$basic-infographic-mobile-end}) {
-        flex-direction: row-reverse;
-      }
+  .rplc-teaser-icon--even {
+    @media only screen and (max-width: #{$basic-infographic-mobile-end}) {
+      flex-direction: row-reverse;
     }
   }
 }
