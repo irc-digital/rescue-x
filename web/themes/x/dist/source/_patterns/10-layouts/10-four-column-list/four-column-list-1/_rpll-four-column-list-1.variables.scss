@@ -1,7 +1,7 @@
 @import '../../../../scss/core';
 
-$four-column-list-1-column-gutter: get-spacing();
-$four-column-list-1-row-gutter: 2 * get-spacing();
+$four-column-list-1-column-gutter: 4 * get-spacing();
+$four-column-list-1-row-gutter: 4 * get-spacing();
 $four-column-list-1-item-margin-bottom: get-spacing() * 1.5;
 
 // end of file
