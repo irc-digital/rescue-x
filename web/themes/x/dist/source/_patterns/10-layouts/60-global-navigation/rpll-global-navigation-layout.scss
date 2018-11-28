@@ -2,21 +2,41 @@
 
 .rpll-global-navigation-layout {
 
-  &__desktop-trailing-wrapper,
-  &__top-wrapper {
+  &__desktop-top-wrapper,
+  &__desktop-trailing-wrapper {
     display: none;
 
     @media #{$global-navigation-large-device-media-query} {
-      display: block;
+      display: flex;
     }
   }
 
+  &__mobile-top-wrapper,
   &__mobile-secondary-wrapper {
     @media #{$global-navigation-large-device-media-query} {
       display: none;
     }
   }
 
+  &__desktop-top-wrapper {
+    background-color: $global-navigation-layout-top-wrapper-background;
+    color: get-neutral-color('white');
+    justify-content: space-between;
+  }
+  
+  &__top-wrapper {
+
+  }
+
+  &__bottom-wrapper {
+    background-color: get-neutral-color('white');
+
+    @media #{$global-navigation-large-device-media-query} {
+      display: flex;
+      justify-content: space-between;
+
+    }
+  }
 }
 
 // end of file
