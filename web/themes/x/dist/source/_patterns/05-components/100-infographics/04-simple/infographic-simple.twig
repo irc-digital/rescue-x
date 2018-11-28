@@ -1,0 +1,14 @@
+{% if infographic_simple_content %}
+<div class="rplc-infographic-simple{% for infographic_simple_modifier in infographic_simple_modifiers %} rplc-infographic-simple--{{ infographic_simple_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: infographic_simple_section_heading_title,
+    section_heading_description: infographic_simple_section_heading_description,
+    section_heading_icon: infographic_simple_section_heading_icon
+  } only %}
+  <div class="rplc-infographic-simple__content">
+    {% include '@layouts/10-four-column-list/four-column-list-1/four-column-list-1.twig' with {
+      four_column_list_1_content: infographic_simple_content
+    } only %}
+  </div>
+</div>
+{% endif %}
