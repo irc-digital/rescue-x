@@ -37,6 +37,10 @@
     border: 1px solid get-neutral-color('black');
     padding: 32px;
     text-indent: -9999px;
+    
+    @include hover {
+      cursor: pointer;
+    }
   }
 
   //
