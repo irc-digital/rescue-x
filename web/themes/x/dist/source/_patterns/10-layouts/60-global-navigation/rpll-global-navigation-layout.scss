@@ -1,0 +1,22 @@
+@import 'rpll-global-navigation-layout.variables';
+
+.rpll-global-navigation-layout {
+
+  &__desktop-trailing-wrapper,
+  &__top-wrapper {
+    display: none;
+
+    @media #{$global-navigation-large-device-media-query} {
+      display: block;
+    }
+  }
+
+  &__mobile-secondary-wrapper {
+    @media #{$global-navigation-large-device-media-query} {
+      display: none;
+    }
+  }
+
+}
+
+// end of file
