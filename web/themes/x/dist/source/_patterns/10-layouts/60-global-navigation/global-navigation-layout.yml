@@ -4,4 +4,4 @@ global_navigation_layout_main_menu: "<div style='width: 900px; text-align:center
 global_navigation_layout_desktop_trailing: "<div style='width: 198px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>TRAILING NAV</div>"
 global_navigation_layout_mobile_call_to_action_menu: "<div style='width: 280px; text-align:center; background-color: transparent; border: 4px dashed #333;'>CTA MENU</div>"
 global_navigation_layout_mobile_secondary_menu: "<div style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECONDARY MENU (MOBILE)</div>"
-global_navigation_layout_mobile_branding: "<div style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>BRANDING</div>"
+global_navigation_layout_mobile_branding: "<div style='text-align:center; background-color: transparent; border: 4px dashed #333;'>BRANDING</div>"
