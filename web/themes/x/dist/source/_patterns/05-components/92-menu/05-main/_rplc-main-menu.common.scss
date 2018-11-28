@@ -205,6 +205,7 @@
   // LEVEL 3
   //
   &__level-3-menu-item {
+    border-bottom: 1px solid $main-menu-mobile-level-3-border-color;
     position: relative;
 
     &[data-rpl-main-menu-expanded-section] {
@@ -220,6 +221,14 @@
         color: get-neutral-color('white');
       }
     }
+
+    @media #{$global-navigation-large-device-media-query} {
+      border-bottom-color: $main-menu-desktop-level-3-border-color;
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
   }
 
   &__level-3-menu-item-link,
@@ -229,6 +238,11 @@
     @include transition;
 
     display: block;
+
+
+    @media #{$global-navigation-large-device-media-query} {
+      line-height: 4;
+    }
 
     // sass-lint:disable-block mixins-before-declarations
     @include hover {
@@ -242,8 +256,13 @@
     display: block;
     height: $main-menu-toggle-icon-size;
     position: absolute;
+    right: rem(9px);
     top: rem(28px);
     width: $main-menu-toggle-icon-size;
+
+    @media #{$global-navigation-large-device-media-query} {
+      right: 0;
+    }
   }
 
   //

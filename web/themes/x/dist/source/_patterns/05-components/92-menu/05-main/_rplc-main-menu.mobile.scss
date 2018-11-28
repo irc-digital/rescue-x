@@ -6,17 +6,6 @@
   @media only screen and (max-width: #{$main-menu-largest-small-device-size}) {
 
     //
-    // LEVEL 3
-    //
-    &__level-3-menu-item {
-      border-bottom: 1px solid $main-menu-mobile-level-3-border-color;
-    }
-
-    &__level-3-expand-toggle {
-      right: rem(9px);
-    }
-
-    //
     // LEVEL 4
     //
     &__level-4-wrapper {

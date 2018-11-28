@@ -6,26 +6,6 @@
   @media #{$global-navigation-large-device-media-query} {
 
     //
-    // LEVEL 3
-    //
-    &__level-3-menu-item {
-      border-bottom: 1px solid $main-menu-desktop-level-3-border-color;
-
-      &:last-child {
-        border-bottom-width: 0;
-      }
-    }
-
-    &__level-3-menu-item-link,
-    &__level-3-menu-item-title {
-      line-height: 4;
-    }
-
-    &__level-3-expand-toggle {
-      right: 0;
-    }
-
-    //
     // LEVEL 4
     //
     &__level-4-wrapper {
