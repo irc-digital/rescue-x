@@ -382,12 +382,29 @@ gulp.task('patternlab:generate-icon-library-yml', function (callback) {
  * Insert SVG file into PatternLab header
  */
 gulp.task('patternlab:grab-svgs', function (callback) {
+  // return gulp.src(config.patternLab.metaDir + config.patternLab.headFilename)
+  //     .pipe(cheerio(function ($, file) {
+  //       var svgs = fs.readFileSync(config.svgs.output + config.svgs.output_filename, "utf8");
+  //       $('#do-not-replace-see-gulpfile').find('svg').replaceWith(svgs);
+  //     }, { decodeEntities: false }))
+  //     .pipe(gulp.dest(config.patternLab.metaDir));
+
+
   return gulp.src(config.patternLab.metaDir + config.patternLab.headFilename)
-      .pipe(cheerio(function ($, file) {
-        var svgs = fs.readFileSync(config.svgs.output + config.svgs.output_filename, "utf8");
-        $('#do-not-replace-see-gulpfile').find('svg').replaceWith(svgs);
-      }, { decodeEntities: false }))
+      .pipe(replace(/<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">(.*?)<\/div>/g, function(match, p1, offset, string) {
+        var output = '<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">';
+        output += fs.readFileSync(config.svgs.output + config.svgs.output_filename, "utf8");
+        output += '</div>';
+
+        // fs.readdirSync(config.javascript.jsDir + '/patterns').forEach(file => {
+        //   output += '<script src="../../js/patterns/' + file + '"></script>';
+        // });
+
+        return output;
+      }))
       .pipe(gulp.dest(config.patternLab.metaDir));
+
+
 });
 
 gulp.task('build:inline:svgs', function () {
