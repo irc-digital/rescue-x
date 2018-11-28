@@ -1,0 +1,15 @@
+@import 'rplc-infographic-standard.variables';
+
+.rplc-infographic-standard {
+  &__content {
+    @include well-row;
+  }
+
+  .rplc-teaser-icon--even {
+    @media only screen and (max-width: #{$infographic-standard-mobile-end}) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+// end of file
