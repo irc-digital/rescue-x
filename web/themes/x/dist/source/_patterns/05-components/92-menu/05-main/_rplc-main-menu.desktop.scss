@@ -3,69 +3,7 @@
 .rplc-main-menu {
   $self: &;
 
-  position: relative;
-  width: 1011px;
-
   @media #{$global-navigation-large-device-media-query} {
-    background-color: get-neutral-color('white');
-    display: flex;
-
-    //
-    // LEVEL 1
-    //
-    &__level-1-menu-item {
-      @include line-height('2xs');
-      padding-bottom: get-spacing('m');
-      padding-top: get-spacing('m');
-
-      white-space: nowrap;
-
-      &:first-child {
-        border-left: $main-menu-desktop-top-level-border;
-      }
-
-      // sass-lint:disable-block mixins-before-declarations
-      @include hover {
-        background-color: get-brand-color();
-
-        #{$self}__level-2 {
-          display: flex;
-        }
-      }
-
-    }
-
-    &__level-1-menu-item-link {
-      border-right: 1px solid get-neutral-color('gray');
-      padding: get-spacing('xs') get-spacing('m');
-
-      &--last {
-        border-right-width: 0;
-      }
-    }
-
-    //
-    // 1) Type one is the menu that has four levels - like the Who We Are menu
-    //
-    &__level-1-menu-item--type-1 { // 1
-      #{$self}__level-3 {
-        margin-right: rem(52px);
-      }
-
-      #{$self}__level-3-menu-item-link {
-        padding-left: get-spacing('l');
-
-        // sass-lint:disable-block mixins-before-declarations
-        @include hover {
-          background-color: get-brand-color('primary-tint-1');
-        }
-      }
-    }
-
-    &__level-1-expand-toggle {
-      display: none;
-    }
-
     //
     // LEVEL 2
     //
