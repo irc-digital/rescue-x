@@ -19,13 +19,17 @@
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
 .sg-pattern-example > .rpll-three-column-list,
-.sg-pattern-example > .rpll-global-navigation-layout,
 body > .rpll-one-column-list,
 body > .rpll-two-column-list,
 body > .rpll-four-column-list,
-body > .rpll-three-column-list,
-body > .rpll-global-navigation-layout {
+body > .rpll-three-column-list {
   @include well-row;
+}
+
+.sg-pattern-example > .rpll-global-navigation-layout,
+body > .rpll-global-navigation-layout {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sg-pattern-example > .rplc-teaser-bordered,
@@ -160,7 +164,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   max-width: 320px;
 
   @media #{$global-navigation-large-device-media-query} {
-    max-width: none;
+    max-width: 1011px;
   }
 }
 

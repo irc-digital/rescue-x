@@ -1,0 +1,16 @@
+global_navigation_crisis_watch:
+  include():
+    pattern: "molecules-crisis-watch"
+    with:
+      crisis_watch_url: '#'
+      crisis_watch_text: 'Faker.words(5,true)'
+      crisis_watch_modifiers:
+        - 'type-three'
+global_navigation_secondary_menu: "<div style='width: 280px; text-align:center; background-color: transparent; border: 4px dashed #333;'>SECONDARY MENU</div>"
+global_navigation_main_menu:
+  include():
+    pattern: "components-main-menu"
+global_navigation_desktop_trailing: "<div style='width: 160px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>TRAILING NAV</div>"
+global_navigation_mobile_call_to_action_menu: "<div style='width: 280px; text-align:center; background-color: transparent; border: 4px dashed #333;'>CTA MENU</div>"
+global_navigation_mobile_secondary_menu: "<div style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECONDARY MENU (MOBILE)</div>"
+global_navigation_mobile_branding: "<div style='text-align:center; background-color: transparent; border: 4px dashed #333;'>BRANDING</div>"

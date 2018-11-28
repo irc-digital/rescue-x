@@ -3,12 +3,12 @@ crisis_watch:
   description: Todo
   use: "@molecules/30-crisis-watch/crisis-watch.twig"
   fields:
-    crisis_watch_link_text:
+    crisis_watch_text:
       type: string
       label: "Link text"
       description: "Text of the link pointing to the crisis watch page"
       preview: "Sed fringilla mauris sit amet"
-    crisis_watch_link_url:
+    crisis_watch_url:
       type: url
       label: "URL"
       description: "The URL of the crisis watch page"

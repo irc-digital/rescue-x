@@ -1,6 +1,7 @@
 @import 'rpll-global-navigation-layout.variables';
 
 .rpll-global-navigation-layout {
+  max-width: 1176px;
 
   //
   // MOBILE COMPONENTS
@@ -60,6 +61,7 @@
     background-color: $global-navigation-layout-top-wrapper-background;
     color: get-neutral-color('white');
     justify-content: space-between;
+    padding-left: get-spacing('ml');
   }
 
 
