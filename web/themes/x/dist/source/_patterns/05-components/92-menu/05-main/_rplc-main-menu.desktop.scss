@@ -4,27 +4,6 @@
   $self: &;
 
   @media #{$global-navigation-large-device-media-query} {
-    //
-    // LEVEL 2
-    //
-    &__level-2 {
-      border: $main-menu-desktop-top-level-border;
-      border-top-width: 0;
-      left: 0;
-      padding: get-spacing('l') $main-menu-desktop-horizontal-padding 0;
-      position: absolute;
-      top: rem(52px);
-      width: rem(1011px);
-    }
-
-    &__level-2-menu-item {
-      flex-basis: 100%;
-    }
-
-    &__level-2-menu-item-title {
-      @include font-size('s');
-      margin-bottom: get-spacing('s');
-    }
 
     //
     // LEVEL 3

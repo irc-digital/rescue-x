@@ -6,27 +6,6 @@
   @media only screen and (max-width: #{$main-menu-largest-small-device-size}) {
 
     //
-    // LEVEL 2
-    //
-    &__level-2 {
-      padding-left: $main-menu-mobile-horizontal-padding;
-      padding-right: $main-menu-mobile-horizontal-padding;
-    }
-
-    &__level-2-menu-item-title {
-      @include font-size('m');
-      padding-top: get-spacing();
-    }
-
-    &__level-2-menu-item--last {
-      #{$self}__level-3-menu-item {
-        &:last-child {
-          border-bottom-width: 0;
-        }
-      }
-    }
-
-    //
     // LEVEL 3
     //
     &__level-3-menu-item {
