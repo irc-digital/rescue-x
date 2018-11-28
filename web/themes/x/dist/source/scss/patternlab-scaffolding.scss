@@ -19,10 +19,12 @@
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
 .sg-pattern-example > .rpll-three-column-list,
+.sg-pattern-example > .rpll-global-navigation-layout,
 body > .rpll-one-column-list,
 body > .rpll-two-column-list,
 body > .rpll-four-column-list,
-body > .rpll-three-column-list {
+body > .rpll-three-column-list,
+body > .rpll-global-navigation-layout {
   @include well-row;
 }
 
