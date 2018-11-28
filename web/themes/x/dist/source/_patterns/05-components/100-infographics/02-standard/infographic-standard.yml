@@ -1,8 +1,8 @@
-basic_infographic_section_heading_title: "Faker.sentence(2,true)"
-basic_infographic_section_heading_description: "Faker.paragraph(1,true)"
-basic_infographic_modifiers:
+infographic_standard_section_heading_title: "Faker.sentence(2,true)"
+infographic_standard_section_heading_description: "Faker.paragraph(1,true)"
+infographic_standard_modifiers:
   - "alternate-rows"
-basic_infographic_content:
+infographic_standard_content:
   - include():
       pattern: "components-teaser-icon"
       with:
