@@ -4,10 +4,10 @@
   $self: &;
 
   @media only screen and (max-width: #{$main-menu-largest-small-device-size}) {
+
     //
     // LEVEL 1
     //
-
     &__level-1-menu-item {
       background-color: get-neutral-color('white');
       border-bottom: 1px solid get-neutral-color('dark-gray');
@@ -31,19 +31,19 @@
       display: block;
       height: $main-menu-mobile-level-1-height;
       line-height: 3.2;
-      padding: 15px 20px;
+      padding: get-spacing();
     }
 
     &__level-1-expand-toggle {
       background: get-neutral-color('light-gray') url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2010%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M14.15.5l1.35%201.398L8%209.5.5%201.9%201.85.5%208%206.8l6.15-6.3V.5z%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E') center center no-repeat;
-      background-size: 14px;
+      background-size: $main-menu-toggle-icon-size;
       cursor: pointer;
       display: block;
       height: $main-menu-mobile-level-1-height;
       position: absolute;
       right: 0;
       top: 0;
-      width: 64px;
+      width: rem(64px);
     }
 
     //
@@ -74,6 +74,10 @@
       border-bottom: 1px solid $main-menu-mobile-level-3-border-color;
     }
 
+    &__level-3-expand-toggle {
+      right: rem(9px);
+    }
+
     //
     // LEVEL 4
     //
@@ -86,7 +90,7 @@
 
     &__level-4-menu-item-link {
       line-height: 1.5;
-      padding: 8px 29px;
+      padding: get-spacing('s') get-spacing('l');
     }
   }
 }

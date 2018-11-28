@@ -49,11 +49,11 @@
     //
     &__level-1-menu-item--type-1 { // 1
       #{$self}__level-3 {
-        margin-right: 52px;
+        margin-right: rem(52px);
       }
 
       #{$self}__level-3-menu-item-link {
-        padding-left: 36px;
+        padding-left: get-spacing('l');
 
         // sass-lint:disable-block mixins-before-declarations
         @include hover {
@@ -73,10 +73,10 @@
       border: $main-menu-desktop-top-level-border;
       border-top-width: 0;
       left: 0;
-      padding: 36px $main-menu-desktop-horizontal-padding 0;
+      padding: get-spacing('l') $main-menu-desktop-horizontal-padding 0;
       position: absolute;
-      top: 52px;
-      width: 1011px;
+      top: rem(52px);
+      width: rem(1011px);
     }
 
     &__level-2-menu-item {
@@ -85,7 +85,7 @@
 
     &__level-2-menu-item-title {
       @include font-size('s');
-      margin-bottom: 12px;
+      margin-bottom: get-spacing('s');
     }
 
     //
@@ -104,6 +104,10 @@
       line-height: 4;
     }
 
+    &__level-3-expand-toggle {
+      right: 0;
+    }
+
     //
     // LEVEL 4
     //
@@ -117,7 +121,7 @@
 
     &__level-4 {
       flex-basis: 100%;
-      margin-top: 10px;
+      margin-top: get-spacing('s');
       padding-left: get-spacing();
       padding-right: get-spacing();
     }
@@ -127,7 +131,7 @@
     }
 
     &__level-4-menu-item-link {
-      padding: 4px 41px;
+      padding: get-spacing('xs') get-spacing('xl');
 
       // sass-lint:disable-block mixins-before-declarations
       @include hover {
