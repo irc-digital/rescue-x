@@ -4,7 +4,8 @@
   $self: &;
 
   @media only screen and (max-width: #{$main-menu-largest-small-device-size}) {
-
+    overflow-y: scroll;
+    
     //
     // LEVEL 1
     //
