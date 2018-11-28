@@ -1,5 +1,6 @@
 <ul class="rpla-unordered-list{% for unordered_list_modifier in unordered_list_modifiers %} rpla-unordered-list--{{ unordered_list_modifier }}{% endfor %}">
   {% for unordered_list_item in unordered_list_items %}
-  <li class="rpla-unordered-list__item">{{ unordered_list_item }}</li>
+{#   <li class="rpla-unordered-list__item">{{ unordered_list_item }}</li> #}
+<li class="rpla-unordered-list__item">{% block list_item_block %}{{ unordered_list_item }}{% endblock %}</li>
   {% endfor %}
 </ul>
