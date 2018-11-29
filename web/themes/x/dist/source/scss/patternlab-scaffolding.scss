@@ -428,7 +428,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 
 [data-rpl-mobile-navigation-open] {
   .rpll-global-navigation-layout__bottom-wrapper {
-    height: calc(100vh - 104px);
+    height: calc(100vh - 101px);
 
     @media #{$global-navigation-large-device-media-query} {
       height: auto;
