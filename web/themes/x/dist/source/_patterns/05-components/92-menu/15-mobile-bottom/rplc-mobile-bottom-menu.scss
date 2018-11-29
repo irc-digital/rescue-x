@@ -1,0 +1,13 @@
+@import 'rplc-mobile-bottom-menu.variables';
+
+.rplc-mobile-bottom-menu {
+  background-color: get-neutral-color('black');
+  max-width: $global-navigation-mobile-width;
+
+  &__item {
+    @include font-size('s');
+    padding: get-spacing() get-spacing('l');
+  }
+}
+
+// end of file

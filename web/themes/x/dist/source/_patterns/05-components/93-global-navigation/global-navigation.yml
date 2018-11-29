@@ -11,6 +11,16 @@ global_navigation_main_menu:
   include():
     pattern: "components-main-menu"
 global_navigation_desktop_trailing: "<div style='width: 220px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>TRAILING NAV</div>"
-global_navigation_mobile_call_to_action_menu: "<div style='width: 280px; text-align:center; background-color: transparent; border: 4px dashed #333;'>CTA MENU</div>"
-global_navigation_mobile_secondary_menu: "<div style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECONDARY MENU (MOBILE)</div>"
-global_navigation_mobile_branding: "<div style='text-align:center; background-color: transparent; border: 4px dashed #333;'>BRANDING</div>"
+global_navigation_mobile_call_to_action_menu:
+  include():
+    pattern: "components-mobile-call-to-action-menu"
+    with:
+      mobile_call_to_action_menu_items:
+        - title: 'Donate'
+          url: "#"
+global_navigation_mobile_secondary_menu:
+  include():
+    pattern: "components-mobile-bottom-menu"
+global_navigation_mobile_branding:
+  include():
+    pattern: "atoms-global-navigation-branding-link"

@@ -25,10 +25,7 @@
     @include two-column-grid-helper ($self, 'tablet', 0);
 
     #{ $self }__item {
-      border-bottom: 1px solid get-neutral-color('gray');
-      margin-bottom: 0;
-      padding-bottom: get-spacing();
-      padding-top: get-spacing();
+      @include layout-separator;
 
       @include breakpoint(tablet) {
         &:nth-child(1),

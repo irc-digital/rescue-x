@@ -234,6 +234,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 #atoms-link-type-1-yellow,
 #atoms-link-type-2-no-hover,
 #atoms-link-icon-type-2,
+#atoms-link-icon-type-5,
 #molecules-social-share-type-1-inverse,
 #atoms-icon-link-inverse,
 #atoms-icon-only-link-inverse,
@@ -360,7 +361,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   position: fixed;
   right: get-spacing() * 2;
   top: get-spacing();
-  z-index: 50;
+  z-index: -50;
 
   &::before {
     content: 'mobile';
