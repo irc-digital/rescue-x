@@ -129,6 +129,7 @@
       display: block;
       height: calc(100vh - 67px);
       overflow-y: scroll;
+      padding-bottom: get-spacing('2xl');
       position: fixed;
       right: 0;
       width: 320px;
@@ -138,6 +139,7 @@
         display: flex;
         height: auto;
         overflow: visible;
+        padding-bottom: 0;
         position: static;
         width: auto;
         z-index: auto;

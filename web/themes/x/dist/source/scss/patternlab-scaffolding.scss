@@ -426,13 +426,36 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   height: 100px;
 }
 
-[data-rpl-mobile-navigation-open] {
-  .rpll-global-navigation-layout__bottom-wrapper {
-    height: calc(100vh - 101px);
+body > .rplc-mobile-bottom-menu,
+#components-mobile-bottom-menu .rplc-mobile-bottom-menu {
+  background-color: get-neutral-color('black');
+  max-width: $global-navigation-mobile-width;
+}
 
-    @media #{$global-navigation-large-device-media-query} {
-      height: auto;
+[data-rpl-mobile-navigation-open] {
+
+  > .rpll-page {
+    .rpll-global-navigation-layout__bottom-wrapper {
+      height: calc(100vh - 101px);
     }
+  }
+
+  [id^="pages-"] {
+    .rpll-global-navigation-layout__bottom-wrapper {
+      height: calc(100vh - 188px);
+    }
+  }
+
+  @media #{$global-navigation-large-device-media-query} {
+    .rpll-global-navigation-layout__bottom-wrapper {
+      height: auto !important;
+    }
+  }
+}
+
+#molecules-social-share-space-evenly {
+  .rplm-social-share {
+    max-width: 400px;
   }
 }
 

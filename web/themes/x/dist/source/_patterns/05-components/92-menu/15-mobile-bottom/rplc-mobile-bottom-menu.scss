@@ -1,12 +1,24 @@
 @import 'rplc-mobile-bottom-menu.variables';
 
 .rplc-mobile-bottom-menu {
-  background-color: get-neutral-color('black');
-  max-width: $global-navigation-mobile-width;
+  //max-width: $global-navigation-mobile-width;
+  padding-bottom: get-spacing();
 
-  &__item {
+  &__menu {
+    list-style: none;
+    margin-bottom: get-spacing('l');
+  }
+
+  &__menu-item {
     @include font-size('s');
     padding: get-spacing() get-spacing('l');
+  }
+
+  &__social-wrapper {
+    @include font-size('s');
+    padding-left: get-spacing('l');
+    padding-right: get-spacing('l');
+    text-align: center;
   }
 }
 
