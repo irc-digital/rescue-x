@@ -17,7 +17,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  &--three-to-four-border {
+  &--three-to-four {
     @include breakpoint(phablet) {
       display: grid;
       grid-column-gap: $four-column-list-three-to-four-border-column-gutter;
@@ -28,10 +28,15 @@
     @include breakpoint(laptop) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+  }
 
+  &--plus-separators {
     #{$self}__item {
-      border-bottom: 1px solid get-neutral-color('gray');
-      padding-bottom: $four-column-list-three-to-four-border-item-margin-bottom;
+      @include layout-separator;
+    }
+
+    @include breakpoint(phablet) {
+      grid-row-gap: 0;
     }
   }
 }

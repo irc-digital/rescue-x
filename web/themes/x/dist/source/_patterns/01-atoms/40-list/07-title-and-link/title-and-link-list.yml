@@ -1,6 +1,7 @@
 unordered_list_items:
-  - [An item, test]
-  - [Another item, another test]
-  # - Yet another item
-  # - One more
-  # - Last one
+  - title: 'This test list item'
+    link_text: 'Text for the link styling'
+    url: 'rescue.org'
+  - title: 'Second test list item'
+    link_text: 'More text with link styling etc'
+    url: 'rescue.org'
