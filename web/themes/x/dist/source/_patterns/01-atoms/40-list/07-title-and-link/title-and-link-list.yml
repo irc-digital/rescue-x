@@ -1,7 +1,7 @@
 unordered_list_items:
-  - title: 'this test list item'
+  - title: 'This test list item'
     link_text: 'Text for the link styling'
     url: 'test-list-url.com'
-  - title: 'second test list item'
+  - title: 'Second test list item'
     link_text: 'More text with link styling etc'
     url: 'another-listy-url.org'
