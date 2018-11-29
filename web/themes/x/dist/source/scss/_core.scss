@@ -14,6 +14,8 @@ $smallest-laptop-size: rem(1024px);
 $smallest-tablet-size: rem(768px);
 $smallest-phablet-size: rem(641px);
 
+$global-navigation-mobile-menu-height: rem(66px);
+$global-navigation-mobile-width: rem(320px);
 $global-navigation-large-device-size: rem(1143px);
 $global-navigation-large-device-media-query: 'only screen and (min-width: #{$global-navigation-large-device-size})';
 

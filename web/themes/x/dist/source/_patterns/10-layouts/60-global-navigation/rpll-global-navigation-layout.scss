@@ -10,7 +10,7 @@
     align-items: center;
     background-color: $global-navigation-layout-mobile-menu-background-color;
     display: flex;
-    height: $global-navigation-layout-mobile-menu-height;
+    height: $global-navigation-mobile-menu-height;
     justify-content: space-between;
 
     @media #{$global-navigation-large-device-media-query} {
@@ -42,6 +42,20 @@
     // sass-lint:disable-block mixins-before-declarations
     @include hover {
       cursor: pointer;
+    }
+  }
+
+  &__mobile-navivation-top-wrapper {
+    display: none;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include when-mobile-navigation-open {
+      display: block;
+      margin-top: -#{$global-navigation-mobile-menu-height};
+      position: fixed;
+      right: 0;
+      width: 320px;
+      //z-index: -100;
     }
   }
 
@@ -84,7 +98,28 @@
     @media #{$global-navigation-large-device-media-query} {
       display: block;
     }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include when-mobile-navigation-open {
+      background: get-neutral-color('black');
+      display: block;
+      height: calc(100vh - 67px);
+      overflow-y: scroll;
+      position: fixed;
+      right: 0;
+      width: 320px;
+      //z-index: -100;
+
+      @media #{$global-navigation-large-device-media-query} {
+        height: auto;
+        overflow: visible;
+        position: static;
+        width: auto;
+        z-index: auto;
+      }
+    }
   }
+
 }
 
 [data-rpl-mobile-navigation-open] {
@@ -92,34 +127,6 @@
   overflow: hidden;
   position: fixed; //iOS scroll lock
   width: 100%; //iOS scroll lock
-
-  .rpll-main-container {
-    position: relative;
-    right: 320px;
-
-    @media #{$global-navigation-large-device-media-query} {
-      right: 0;
-    }
-  }
-
-  .rpll-global-navigation-layout__main-menu-wrapper {
-    background: get-neutral-color('black');
-    display: block;
-    position: fixed;
-    right: 0;
-    height: calc(100vh - 67px);
-    width: 320px;
-    z-index: -100;
-    overflow-y: scroll;
-
-    @media #{$global-navigation-large-device-media-query} {
-      position: static;
-      height: auto;
-      overflow: visible;
-      width: auto;
-      z-index: auto;
-    }
-  }
 }
 
 // end of file

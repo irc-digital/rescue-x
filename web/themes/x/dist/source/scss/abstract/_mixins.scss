@@ -416,4 +416,12 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
+@mixin when-mobile-navigation-open {
+  @at-root {
+    [data-rpl-mobile-navigation-open] & {
+      @content ;
+    }
+  }
+}
+
 // end of file

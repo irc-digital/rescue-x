@@ -2,6 +2,15 @@
 
 .rpll-page {
 
+  @include when-mobile-navigation-open {
+    position: relative;
+    right: $global-navigation-mobile-width;
+
+    @media #{$global-navigation-large-device-media-query} {
+      right: 0;
+    }
+  }
+
   &__main {
     @include standard-vertical-spacing(true);
   }
