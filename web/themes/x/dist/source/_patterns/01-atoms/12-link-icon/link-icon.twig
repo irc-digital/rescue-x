@@ -46,11 +46,9 @@
   {% if type == 'type-two' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline'] %}
     {% set icon_modifiers = ['fill-branded'] %}
-
   {% elseif type == 'type-three' %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
-
   {% elseif type == 'type-four' %}
     {% set mod = 'icon-position-outside' %}
     {% set link_icon_modifiers = link_icon_modifiers|merge([mod]) %}
@@ -68,7 +66,9 @@
     {% if subtype == 'subtype-prefix' %}
       {% set link_modifiers = link_modifiers|merge(['subtype-no-hover-effect']) %}
     {% endif %}
-
+  {% elseif type == 'type-five' %}
+    {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect'] %}
+    {% set icon_modifiers = ['fill-gray'] %}
   {% else %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}

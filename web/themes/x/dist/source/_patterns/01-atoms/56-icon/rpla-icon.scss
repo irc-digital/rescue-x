@@ -15,6 +15,10 @@
   height: 100%;
   width: 100%;
 
+  &--fill-gray {
+    color: get-neutral-color('gray');
+  }
+
   &--fill-branded {
     color: get-brand-color(); // 1
   }

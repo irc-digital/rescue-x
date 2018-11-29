@@ -1,0 +1,20 @@
+<ul class="rplc-mobile-bottom-menu">
+  {% if mobile_bottom_menu_crisis_watch_url is not empty %}
+    <li class="rplc-mobile-bottom-menu__item">
+      {% include '@molecules/30-crisis-watch/crisis-watch.twig' with {
+        crisis_watch_modifiers: ['type-two'],
+      } only %}
+    </li>
+  {% endif %}
+  {% for mobile_bottom_menu_item in mobile_bottom_menu_items %}
+    <li class="rplc-mobile-bottom-menu__item">
+      {% include '@atoms/12-link-icon/link-icon.twig' with {
+        link_icon_url: mobile_bottom_menu_item.url,
+        link_icon_text: mobile_bottom_menu_item.title,
+        link_icon_name: mobile_bottom_menu_item.icon,
+        link_icon_prefix_text: crisis_watch_link_icon_prefix_text,
+        link_icon_modifiers: [],
+      } only %}
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,12 @@
+@import 'rplc-mobile-bottom-menu.variables';
+
+.rplc-mobile-bottom-menu {
+  background-color: get-neutral-color('black');
+  max-width: $global-navigation-mobile-width;
+
+  &__item {
+    height: 80px;
+  }
+}
+
+// end of file
