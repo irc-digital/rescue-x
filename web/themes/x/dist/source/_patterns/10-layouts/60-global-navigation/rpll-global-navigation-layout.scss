@@ -58,6 +58,10 @@
       right: 0;
       width: 320px;
       //z-index: -100;
+
+      @media #{$global-navigation-large-device-media-query} {
+        display: none;
+      }
     }
   }
 
