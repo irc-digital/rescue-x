@@ -5,7 +5,7 @@
     @include well-row;
   }
 
-  .rplc-teaser-icon--even {
+  .rplc-teaser-icon--odd {
     @media only screen and (max-width: #{$infographic-standard-mobile-end}) {
       flex-direction: row-reverse;
     }

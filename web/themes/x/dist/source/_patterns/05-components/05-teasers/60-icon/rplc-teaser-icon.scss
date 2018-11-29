@@ -12,12 +12,14 @@
   }
 
   &__icon {
-    height: $teaser-icon-icon-height;
-    max-width: $teaser-icon-icon-width;
+    width: $teaser-icon-icon-width;
     padding-right: $teaser-icon-icon-padding;
 
+    @include breakpoint(phablet) {
+      height: 9vw;
+    }
+
     @include breakpoint(desktop) {
-      max-width: $teaser-icon-icon-width-desktop;
       padding-right: 0;
     }
   }
