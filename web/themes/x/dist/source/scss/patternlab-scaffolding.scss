@@ -427,8 +427,8 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 }
 
 [data-rpl-mobile-navigation-open] {
-  .rpll-global-navigation-layout__main-menu-wrapper {
-    height: calc(100vh - 180px);
+  .rpll-global-navigation-layout__bottom-wrapper {
+    height: calc(100vh - 104px);
 
     @media #{$global-navigation-large-device-media-query} {
       height: auto;
