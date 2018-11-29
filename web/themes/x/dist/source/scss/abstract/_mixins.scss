@@ -432,5 +432,13 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   text-shadow: none;
 }
 
+@mixin layout-separator {
+  border-bottom: 1px solid get-neutral-color('gray');
+  margin-bottom: 0;
+  padding-bottom: get-spacing();
+  padding-top: get-spacing();
+}
+
+
 
 // end of file
