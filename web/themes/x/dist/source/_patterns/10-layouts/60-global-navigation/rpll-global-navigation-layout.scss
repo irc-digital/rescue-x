@@ -103,14 +103,21 @@
   }
 
   .rpll-global-navigation-layout__main-menu-wrapper {
+    background: get-neutral-color('black');
     display: block;
     position: fixed;
     right: 0;
+    height: calc(100vh - 67px);
     width: 320px;
+    z-index: -100;
+    overflow-y: scroll;
 
     @media #{$global-navigation-large-device-media-query} {
       position: static;
+      height: auto;
+      overflow: visible;
       width: auto;
+      z-index: auto;
     }
   }
 }
