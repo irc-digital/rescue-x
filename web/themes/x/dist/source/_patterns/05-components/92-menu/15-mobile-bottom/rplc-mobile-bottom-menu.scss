@@ -5,7 +5,8 @@
   max-width: $global-navigation-mobile-width;
 
   &__item {
-    height: 80px;
+    @include font-size('s');
+    padding: get-spacing() get-spacing('l');
   }
 }
 
