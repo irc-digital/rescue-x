@@ -1,5 +1,7 @@
 article_page_header: "Hello"
-article_page_navigation: "Hello"
+article_page_navigation:
+  include():
+    pattern: "components-global-navigation"
 article_page_hero:
   include():
     pattern: "components-hero-article"

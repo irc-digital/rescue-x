@@ -92,6 +92,27 @@
   overflow: hidden;
   position: fixed; //iOS scroll lock
   width: 100%; //iOS scroll lock
+
+  .rpll-main-container {
+    position: relative;
+    right: 320px;
+
+    @media #{$global-navigation-large-device-media-query} {
+      right: 0;
+    }
+  }
+
+  .rpll-global-navigation-layout__main-menu-wrapper {
+    display: block;
+    position: fixed;
+    right: 0;
+    width: 320px;
+
+    @media #{$global-navigation-large-device-media-query} {
+      position: static;
+      width: auto;
+    }
+  }
 }
 
 // end of file

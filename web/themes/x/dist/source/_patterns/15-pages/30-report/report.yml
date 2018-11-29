@@ -1,5 +1,7 @@
 report_page_header: "Hello"
-report_page_navigation: "Hello"
+report_page_navigation:
+  include():
+    pattern: "components-global-navigation"
 report_page_hero:
   include():
     pattern: "components-hero-basic"
