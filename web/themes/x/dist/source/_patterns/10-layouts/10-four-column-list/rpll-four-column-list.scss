@@ -1,0 +1,37 @@
+@import 'rpll-four-column-list.variables';
+
+.rpll-four-column-list {
+  $self: &;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  @include breakpoint(phablet) {
+    display: grid;
+    grid-column-gap: $four-column-list-column-gutter;
+    grid-row-gap: $four-column-list-row-gutter;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint(desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &--three-to-four-border {
+    @include breakpoint(phablet) {
+      display: grid;
+      grid-column-gap: $four-column-list-three-to-four-border-column-gutter;
+      grid-row-gap: $four-column-list-three-to-four-border-row-gutter;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include breakpoint(laptop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #{$self}__item {
+      border-bottom: 1px solid get-neutral-color('gray');
+      padding-bottom: $four-column-list-three-to-four-border-item-margin-bottom;
+    }
+  }
+}
