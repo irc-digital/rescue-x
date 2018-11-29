@@ -69,7 +69,11 @@
   &--background,
   &--find,
   &--interview,
-  &--apply {
+  &--apply,
+  &--rescuing-lives-1,
+  &--rescuing-lives-2,
+  &--rescuing-lives-3,
+  &--rescuing-lives-4 {
     color: get-brand-color(); // 1
     fill: get-neutral-color('black');
   }
