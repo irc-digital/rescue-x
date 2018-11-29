@@ -5,7 +5,7 @@
 
   @include text-hide;
   background: no-repeat get-brand-color();
-  display: inline-block;
+  display: block;
   height: $global-navigation-mobile-menu-height;
 
   &--context-usa {
