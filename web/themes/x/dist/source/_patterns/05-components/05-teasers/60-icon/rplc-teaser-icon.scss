@@ -21,14 +21,15 @@
 
     @include breakpoint(desktop) {
       padding-right: 0;
+      width: $teaser-icon-icon-width-desktop;
     }
   }
 
   &__text-wrapper {
-    width: 75%;
+    width: $teaser-icon-text-width;
 
     @include breakpoint(desktop) {
-      width: 100%;
+      width: $teaser-icon-text-width-desktop;
     }
   }
 
@@ -47,8 +48,30 @@
   }
 
   &--type-two {
+    #{$self}__icon {
+      height: 15vw;
+      width: $teaser-icon-icon-width-type-two;
+
+      @include breakpoint(desktop) {
+        width: $teaser-icon-icon-width-desktop-type-two;
+        height: $teaser-icon-icon-width-desktop-type-two;
+      }
+    }
+
+    #{$self}__text-wrapper {
+      width: $teaser-icon-text-width-type-two;
+
+      @include breakpoint(desktop) {
+        width: $teaser-icon-text-width-desktop-type-two;
+      }
+    }
+
     @include breakpoint(phablet) {
       align-items: center;
+    }
+
+    @include breakpoint(desktop) {
+      align-items: start;
     }
   }
 }
