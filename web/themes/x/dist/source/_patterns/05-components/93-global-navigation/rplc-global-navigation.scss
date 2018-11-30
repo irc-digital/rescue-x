@@ -96,11 +96,22 @@
     }
   }
 
+  &__desktop-trailing-wrapper {
+    align-items: center;
+  }
+
   &__desktop-top-wrapper {
     background-color: $global-navigation-top-wrapper-background;
     color: get-neutral-color('white');
     justify-content: space-between;
     padding-left: get-spacing('ml');
+  }
+
+  &__search-icon-wrapper {
+    border-left: 1px solid get-neutral-color('dark-gray');
+    line-height: 1;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
   }
 
   //
