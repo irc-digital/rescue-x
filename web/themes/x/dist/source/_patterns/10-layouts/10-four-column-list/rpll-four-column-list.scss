@@ -3,13 +3,13 @@
 .rpll-four-column-list {
   $self: &;
 
+  display: grid;
+  grid-row-gap: $four-column-list-row-gutter;
   list-style-type: none;
   padding-left: 0;
 
   @include breakpoint(phablet) {
-    display: grid;
     grid-column-gap: $four-column-list-column-gutter;
-    grid-row-gap: $four-column-list-row-gutter;
     grid-template-columns: 1fr 1fr;
   }
 
