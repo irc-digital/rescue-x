@@ -23,10 +23,9 @@
     }
 
     #{$self}__image-wrapper {
+      @include z-index('up');
       padding-left: get-spacing('m');
       padding-right: get-spacing('m');
-      position: relative;
-      z-index: 1;
 
       @include breakpoint(phablet) {
         padding-left: get-spacing('s');

@@ -53,6 +53,18 @@
       margin-right: $social-share-type-one-gutter / 4;
     }
   }
+
+  &--space-evenly {
+    width: 100%;
+
+    #{$self}__icons-wrapper {
+      justify-content: space-between;
+    }
+
+    #{$self}__icon-only-link-wrapper {
+      margin-right: 0;
+    }
+  }
 }
 
 // end of file

@@ -1,13 +1,41 @@
 @import 'rpll-page.variables';
 
 .rpll-page {
+  $self: &;
 
+  position: relative;
+  right: 0;
+  transition: right $global-navigation-mobile-menu-transition-time ease-in-out;
+
+  // sass-lint:disable-block mixins-before-declarations
   @include when-mobile-navigation-open {
-    position: relative;
     right: $global-navigation-mobile-width;
 
+    // sass-lint:disable-block mixins-before-declarations
     @media #{$global-navigation-large-device-media-query} {
       right: 0;
+      transition: none;
+    }
+  }
+
+  &__overlay {
+    @include z-index('overlay');
+    background-color: $page-overlay-color;
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include when-mobile-navigation-open {
+      display: block;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @media #{$global-navigation-large-device-media-query} {
+        display: none;
+      }
     }
   }
 

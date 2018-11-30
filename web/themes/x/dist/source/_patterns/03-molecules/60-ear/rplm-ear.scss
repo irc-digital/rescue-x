@@ -37,8 +37,8 @@
 
   &__icon-wrapper {
     @include ear-icon-wrapper;
+    @include z-index('up');
     position: absolute;
-    z-index: 1;
 
     @include breakpoint(tablet) {
       @include ear-icon-wrapper('tablet');

@@ -261,6 +261,26 @@ $xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.jso
 // generates a JSON array of spacing to be used by PatternLab
 $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', get-spacing('all'), (prefix: '{ "spacing":', suffix: '}'));
 
+@function get-z-index($option) {
+  $z-indices: (
+    'auto': auto,
+    'up': 5,
+    'up-more': 10,
+    'overlay': 1000,
+    'above-overlay': 2000,
+  );
+  @if $option != 'all' {
+    @return rem(safe-map-get($z-indices, $option));
+  } @else {
+    @return $z-indices;
+  }
+}
+
+@mixin z-index ($option: 'auto') {
+  position: relative;
+  z-index: get-z-index($option);
+}
+
 @mixin hover ($target: '&') {
   @if $target == '&' {
     &:hover,

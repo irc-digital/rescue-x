@@ -1,11 +1,38 @@
 <nav class="rplc-global-navigation">
-  {% include '@layouts/60-global-navigation/global-navigation-layout.twig' with {
-    global_navigation_layout_crisis_watch: global_navigation_crisis_watch,
-    global_navigation_layout_secondary_menu: global_navigation_secondary_menu,
-    global_navigation_layout_main_menu: global_navigation_main_menu,
-    global_navigation_layout_desktop_trailing: global_navigation_desktop_trailing,
-    global_navigation_layout_mobile_call_to_action_menu: global_navigation_mobile_call_to_action_menu,
-    global_navigation_layout_mobile_secondary_menu: global_navigation_mobile_secondary_menu,
-    global_navigation_layout_mobile_branding: global_navigation_mobile_branding,
-  } only %}
+  <div class="rplc-global-navigation__top-wrapper">
+    <div class="rplc-global-navigation__desktop-top-wrapper">
+      <div class="rplc-global-navigation__desktop-crisis-watch-wrapper">
+        {{ global_navigation_crisis_watch }}
+      </div>
+      <div class="rplc-global-navigation__desktop-secondary-menu-wrapper">
+        {{ global_navigation_secondary_menu }}
+      </div>
+    </div>
+    <div class="rplc-global-navigation__mobile-top-wrapper">
+      <div class="rplc-global-navigation__branding-wrapper">
+        {{ global_navigation_branding }}
+      </div>
+      <div class="rplc-global-navigation__mobile-trailing-wrapper">
+        <div class="rplc-global-navigation__mobile-call-to-action-menu-wrapper">
+          {{ global_navigation_mobile_call_to_action_menu }}
+        </div>
+        <button class="rplc-global-navigation__mobile-menu-expand-toggle" data-rpl-mobile-navigation-toggle="body"></button>
+      </div>
+    </div>
+  </div>
+  <div class="rplc-global-navigation__mobile-navigation-top-wrapper">
+    {% include '@molecules/45-mobile-navigation-top/mobile-navigation-top.twig' %}
+  </div>
+  <div class="rplc-global-navigation__bottom-wrapper">
+    <div class="rplc-global-navigation__main-menu-wrapper">
+      {{ global_navigation_main_menu }}
+    </div>
+    <div class="rplc-global-navigation__desktop-trailing-wrapper">
+      {{ global_navigation_desktop_trailing }}
+    </div>
+    <div class="rplc-global-navigation__mobile-secondary-wrapper">
+      {{ global_navigation_mobile_secondary_menu }}
+    </div>
+  </div>
 </nav>
+

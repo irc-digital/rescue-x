@@ -4,12 +4,12 @@
       $("[data-rpl-mobile-navigation-toggle]").click(function(e) {
         var toggle_element = $(this).data("rpl-mobile-navigation-toggle");
 
-        var open_navivation_attribute = "data-rpl-mobile-navigation-open";
+        var open_navigation_attribute = "data-rpl-mobile-navigation-open";
 
-        if (typeof $(toggle_element).attr(open_navivation_attribute) == 'undefined') {
-          $(toggle_element).attr(open_navivation_attribute, '');
+        if (typeof $(toggle_element).attr(open_navigation_attribute) == 'undefined') {
+          $(toggle_element).attr(open_navigation_attribute, '');
         } else {
-          $(toggle_element).removeAttr(open_navivation_attribute);
+          $(toggle_element).removeAttr(open_navigation_attribute);
         }
       });
     }

@@ -1,3 +1,7 @@
 @import '../../../scss/core';
 
+$global-navigation-top-wrapper-background: get-neutral-color('black'); //rgba(0, 0, 0, .6);
+
+$global-navigation-mobile-menu-background-color: get-brand-color();
+
 // end of file

@@ -1,7 +1,0 @@
-global_navigation_layout_crisis_watch: "<div style='width: 600px; text-align:center; background-color: transparent; border: 4px dashed #333;'>CRISIS WATCH</div>"
-global_navigation_layout_secondary_menu: "<div style='width: 350px; text-align:center; background-color: transparent; border: 4px dashed #333;'>SECONDARY MENU</div>"
-global_navigation_layout_main_menu: "<div style='width: 850px; text-align:center; background-color: transparent; border: 4px dashed #333;'>MAIN MENU</div>"
-global_navigation_layout_desktop_trailing: "<div style='width: 220px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>TRAILING NAV</div>"
-global_navigation_layout_mobile_call_to_action_menu: "<div style='width: 280px; text-align:center; background-color: transparent; border: 4px dashed #333;'>CTA MENU</div>"
-global_navigation_layout_mobile_secondary_menu: "<div style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECONDARY MENU (MOBILE)</div>"
-global_navigation_layout_mobile_branding: "<div style='text-align:center; background-color: transparent; border: 4px dashed #333;'>BRANDING</div>"
