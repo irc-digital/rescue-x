@@ -36,13 +36,12 @@
   }
 
   &__text-wrapper {
+    @include z-index('up');
     background-color: $quote-text-section-background;
     display: flex;
     flex-direction: column;
     margin: safe-map-get($quote-text-section-eats-in, 'mobile') $quote-text-section-horizontal-margin 0;
     padding: safe-map-get($quote-text-section-padding, 'mobile');
-    position: relative;
-    z-index: 2;
 
     @include breakpoint(phablet) {
       left: safe-map-get($quote-text-section-eats-in, 'phablet');

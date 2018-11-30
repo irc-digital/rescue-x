@@ -12,14 +12,13 @@
   }
 
   &__text-wrapper {
+    @include z-index('up');
     background-color: get-neutral-color('white');
     display: grid;
     grid-row-gap: get-spacing();
     grid-template-areas: 'primary_1' 'primary_2' 'secondary_1' 'secondary_2';
     grid-template-columns: 1fr;
     padding: 30px;
-    position: relative;
-    z-index: 10;
   }
 
   &__primary-1 {

@@ -264,6 +264,8 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
 @function get-z-index($option) {
   $z-indices: (
     'auto': auto,
+    'up': 5,
+    'up-more': 10,
     'overlay': 1000,
     'above-overlay': 2000,
   );

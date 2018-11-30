@@ -68,7 +68,6 @@
     right: -#{$global-navigation-mobile-width};
     transition: opacity $global-navigation-mobile-menu-transition-time ease-in, right $global-navigation-mobile-menu-transition-time ease-in-out;
     width: $global-navigation-mobile-width;
-    //z-index: -100;
 
     // sass-lint:disable-block mixins-before-declarations
     @include when-mobile-navigation-open {
@@ -129,7 +128,6 @@
       position: initial;
       transition: none;
       width: auto;
-      //z-index: auto;
     }
 
     // sass-lint:disable-block mixins-before-declarations

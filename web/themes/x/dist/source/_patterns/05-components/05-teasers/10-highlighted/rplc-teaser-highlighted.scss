@@ -24,11 +24,10 @@
   }
 
   &__text-wrapper {
+    @include z-index('up');
     background-color: $teaser-highlighted-text-section-background;
     margin: $teaser-highlighted-text-section-eats-in $teaser-highlighted-text-section-horizontal-margin 0;
     padding: safe-map-get($teaser-highlighted-text-section-padding, 'mobile');
-    position: relative;
-    z-index: 2;
 
     @include breakpoint(phablet) {
       padding: safe-map-get($teaser-highlighted-text-section-padding, 'phablet');

@@ -4,9 +4,8 @@
   $base: '.rplc-hero-b-roll';
 
   #{$base}__text-wrapper {
+    @include z-index('up');
     margin-top: map-get($hero-b-roll-1-eat-in, 'mobile');
-    position: relative;
-    z-index: 3;
 
     @include breakpoint(phablet) {
       margin-top: map-get($hero-b-roll-1-eat-in, 'phablet');

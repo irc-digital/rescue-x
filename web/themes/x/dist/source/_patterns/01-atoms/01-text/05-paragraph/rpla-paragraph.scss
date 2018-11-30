@@ -23,11 +23,10 @@
   }
 
   &--body {
+    @include z-index('up');
     margin-left: auto;
     margin-right: auto;
-    position: relative;
     width: calc(100% - #{get-spacing('m') * 2});
-    z-index: 1;
 
     @include breakpoint(phablet) {
       margin-left: get-spacing('xl');

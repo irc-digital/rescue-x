@@ -14,9 +14,8 @@
       @include standard-vertical-spacing;
 
       @include breakpoint(phablet) {
-        position: relative;
+        @include z-index('up-more');
         width: map-get($aside-2-width, 'phablet');
-        z-index: 5;
       }
 
       @include breakpoint(951) {
