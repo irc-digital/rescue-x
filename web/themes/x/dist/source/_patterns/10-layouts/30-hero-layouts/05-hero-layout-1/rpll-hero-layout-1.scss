@@ -81,38 +81,40 @@
   }
 
   @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+    //
+    // 1) Define template column widths and map each area to each column
+    // 2) Declare three grid rows and set to `auto`. `auto` results in different
+    // math than `1fr`, which is worth noting.
+    //
     &__text-wrapper {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      max-height: 530px;
+      grid-template-areas: 'primary_1 secondary_1' 'primary_2 secondary_2'; // 1
+      grid-template-columns: 66% 1fr; // 1
+      grid-template-rows: auto auto auto; // 2
     }
 
-    &__primary-1,
+    //
+    // 1) Tell the primary-1 area to span two rows. This is important to prevent
+    // secondary-1 and secondary-2 from matching the height of primary-1.
+    //
+    &__primary-1 {
+      grid-row: span 2; // 1
+    }
+
+    //
+    // 1) Tell primary-2 to start on row 3, after primary-1.
+    //
     &__primary-2 {
-      margin-right: 2 * get-spacing();
-      width: 66%;
+      grid-row-start: 3; // 2
     }
 
-    &__secondary-1,
-    &__secondary-2 {
-      width: 32%;
-    }
-
-    &__primary-1,
-    &__secondary-1 {
-      margin-bottom: get-spacing();
-    }
-
+    //
+    // 1) Tell secondary-2 to span two rows. This is important to prevent
+    // primary-1 from matching the height of secondary-1 and secondary-2,
+    // which can end up pushing primary-2 down too far.
+    //
     &__secondary-2 {
       border-width: 0;
-      padding-top: 0;
-    }
-
-    &--no-second-blocks {
-      #{$self}__text-wrapper {
-        max-height: 300px;
-      }
+      grid-row: span 2; // 1
     }
   }
 }
