@@ -21,6 +21,6 @@ global_navigation_mobile_call_to_action_menu:
 global_navigation_mobile_secondary_menu:
   include():
     pattern: "components-mobile-bottom-menu"
-global_navigation_mobile_branding:
+global_navigation_branding:
   include():
     pattern: "atoms-global-navigation-branding-link"
