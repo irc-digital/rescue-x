@@ -26,12 +26,6 @@ body > .rpll-three-column-list {
   @include well-row;
 }
 
-.sg-pattern-example > .rpll-global-navigation-layout,
-body > .rpll-global-navigation-layout {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .sg-pattern-example > .rplc-teaser-bordered,
 body > .rplc-teaser-bordered {
   max-width: 594px;
@@ -259,6 +253,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 #atoms-link-type-1-black-inverse,
 #molecules-social-share-type-3,
 #atoms-icon-link-type-3,
+#atoms-link-type-2-black,
 #molecules-stacked-headline-2-type-2,
 #atoms-link-type-1-inverse {
   background-color: get-brand-color('primary');
@@ -435,21 +430,33 @@ body > .rplc-mobile-bottom-menu,
 [data-rpl-mobile-navigation-open] {
 
   > .rpll-page {
-    .rpll-global-navigation-layout__bottom-wrapper {
+    .rplc-global-navigation__bottom-wrapper {
       height: calc(100vh - 101px);
     }
   }
 
+  #components-global-navigation,
   [id^="pages-"] {
-    .rpll-global-navigation-layout__bottom-wrapper {
+    .rplc-global-navigation__bottom-wrapper {
       height: calc(100vh - 188px);
     }
   }
 
   @media #{$global-navigation-large-device-media-query} {
-    .rpll-global-navigation-layout__bottom-wrapper {
+    .rplc-global-navigation__bottom-wrapper {
       height: auto !important;
     }
+  }
+}
+
+.sg-pattern-example > .rplc-global-navigation,
+> .rplc-global-navigation {
+  position: relative;
+  right: 0;
+  transition: right $global-navigation-mobile-menu-transition-time ease-in-out;
+
+  @include when-mobile-navigation-open {
+    right: $global-navigation-mobile-width;
   }
 }
 

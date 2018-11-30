@@ -27,16 +27,10 @@
   }
 
   &__mobile-secondary-wrapper {
-    display: none;
+    padding-top: get-spacing();
 
-    // sass-lint:disable-block mixins-before-declarations
-    @include when-mobile-navigation-open {
-      display: block;
-      padding-top: get-spacing();
-
-      @media #{$global-navigation-large-device-media-query} {
-        display: none;
-      }
+    @media #{$global-navigation-large-device-media-query} {
+      display: none;
     }
   }
 
@@ -65,17 +59,19 @@
     }
   }
 
-  &__mobile-navivation-top-wrapper {
-    display: none;
+  &__mobile-navigation-top-wrapper {
+    margin-top: -#{$global-navigation-mobile-menu-height};
+    opacity: 0;
+    position: fixed;
+    right: -#{$global-navigation-mobile-width};
+    transition: opacity $global-navigation-mobile-menu-transition-time ease-in, right $global-navigation-mobile-menu-transition-time ease-in-out;
+    width: $global-navigation-mobile-width;
+    //z-index: -100;
 
     // sass-lint:disable-block mixins-before-declarations
     @include when-mobile-navigation-open {
-      display: block;
-      margin-top: -#{$global-navigation-mobile-menu-height};
-      position: fixed;
+      opacity: 1;
       right: 0;
-      width: 320px;
-      //z-index: -100;
 
       @media #{$global-navigation-large-device-media-query} {
         display: none;
@@ -109,49 +105,35 @@
   //
   // SHARED COMPONENTS
   //
-  &__main-menu-wrapper {
-    display: none;
-
-    @media #{$global-navigation-large-device-media-query} {
-      display: block;
-    }
-
-    // sass-lint:disable-block mixins-before-declarations
-    @include when-mobile-navigation-open {
-      display: block;
-    }
-  }
-
   &__bottom-wrapper {
-    background-color: get-neutral-color('white');
+    background: get-neutral-color('black');
+    height: calc(100vh - 67px);
+    opacity: 0;
+    overflow-y: scroll;
+    padding-bottom: get-spacing('2xl');
+    position: fixed;
+    right: -#{$global-navigation-mobile-width};
+    transition: opacity $global-navigation-mobile-menu-transition-time ease-in, right $global-navigation-mobile-menu-transition-time ease-in-out;
+    width: $global-navigation-mobile-width;
 
     @media #{$global-navigation-large-device-media-query} {
+      background-color: get-neutral-color('white');
       display: flex;
+      height: auto;
       justify-content: space-between;
-
+      opacity: 1;
+      overflow: visible;
+      padding-bottom: 0;
+      position: initial;
+      transition: none;
+      width: auto;
+      //z-index: auto;
     }
 
     // sass-lint:disable-block mixins-before-declarations
     @include when-mobile-navigation-open {
-      background: get-neutral-color('black');
-      display: block;
-      height: calc(100vh - 67px);
-      overflow-y: scroll;
-      padding-bottom: get-spacing('2xl');
-      position: fixed;
+      opacity: 1;
       right: 0;
-      width: 320px;
-      //z-index: -100;
-
-      @media #{$global-navigation-large-device-media-query} {
-        display: flex;
-        height: auto;
-        overflow: visible;
-        padding-bottom: 0;
-        position: static;
-        width: auto;
-        z-index: auto;
-      }
     }
   }
 }
