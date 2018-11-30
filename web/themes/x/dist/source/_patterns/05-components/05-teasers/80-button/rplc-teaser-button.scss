@@ -3,19 +3,18 @@
 .rplc-teaser-button {
   $self: &;
 
-
   background-color: get-neutral-color('white');
   border-top: 10px solid get-neutral-color('very-dark-gray');
-  display: block;
-  height: 340px;
+  display: flex;
+  flex-direction: column;
   padding: get-spacing('ml');
 
-  &__date {
-    @include typography-vertical-spacing;
+  @include breakpoint(tablet) {
+    min-height: 340px;
   }
 
-  &__summary {
-    @include typography-text-small;
+  &__heading-wrapper {
+    flex-grow: 1;
   }
 }
 

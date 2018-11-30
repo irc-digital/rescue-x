@@ -1,6 +1,8 @@
 <div class="rplc-teaser-button">
   <div class="rpla-slug">{{ teaser_button_slug }}</div>
-  <h3 class="rpla-heading rpla-heading--medium-large">{{ teaser_button_title }}</h3>
+  <div class="rplc-teaser-button__heading-wrapper">
+    <h3 class="rpla-heading rpla-heading--medium-large">{{ teaser_button_title }}</h3>
+  </div>
   <div class="rplc-teaser-button__link-wrapper">
     {% include '@atoms/30-button/button.twig' with {
       button_url: teaser_button_url,
