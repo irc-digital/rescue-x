@@ -46,6 +46,11 @@
   }
 
   @include breakpoint(phablet) {
+    &__secondary-1 {
+      margin-top: get-spacing('m');
+      text-align: right;
+    }
+
     &__text-wrapper {
       grid-column-gap: get-spacing('m');
       grid-template-areas: 'primary_1 primary_1' 'primary_2 secondary_1' 'secondary_2 secondary_2';
@@ -87,7 +92,7 @@
     // math than `1fr`, which is worth noting.
     //
     &__text-wrapper {
-      grid-template-areas: 'primary_1 secondary_1' 'primary_2 secondary_2'; // 1
+      grid-template-areas: 'primary_1 secondary_1' 'primary_1 secondary_2' 'primary_2 .'; // 1
       grid-template-columns: 66% 1fr; // 1
       grid-template-rows: auto auto auto; // 2
     }
@@ -115,7 +120,14 @@
     &__secondary-2 {
       border-width: 0;
       grid-row: span 2; // 1
+      padding-top: 0;
     }
+
+    &__secondary-1 {
+      margin-top: 0;
+      text-align: initial;
+    }
+
   }
 }
 
