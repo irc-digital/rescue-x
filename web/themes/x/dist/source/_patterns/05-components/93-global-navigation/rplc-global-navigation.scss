@@ -2,6 +2,8 @@
 
 .rplc-global-navigation {
 
+  @include z-index('above-overlay');
+
   max-width: 1176px;
 
   // todo probably temp

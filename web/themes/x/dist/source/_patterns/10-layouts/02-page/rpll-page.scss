@@ -11,17 +11,15 @@
   @include when-mobile-navigation-open {
     right: $global-navigation-mobile-width;
 
-    #{$self}__overlay {
-      //display: block;
-    }
-
     // sass-lint:disable-block mixins-before-declarations
     @media #{$global-navigation-large-device-media-query} {
       right: 0;
+      transition: none;
     }
   }
 
   &__overlay {
+    @include z-index('overlay');
     background-color: $page-overlay-color;
     bottom: 0;
     display: none;
@@ -29,7 +27,16 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 1000000;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include when-mobile-navigation-open {
+      display: block;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @media #{$global-navigation-large-device-media-query} {
+        display: none;
+      }
+    }
   }
 
   &__main {
