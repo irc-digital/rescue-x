@@ -57,6 +57,16 @@
       }
     }
   }
+
+  &--contains-markup {
+    #{$self}__item {
+      display: flex;
+
+      &::before {
+        top: -2px;
+      }
+    }
+  }
 }
 
 
