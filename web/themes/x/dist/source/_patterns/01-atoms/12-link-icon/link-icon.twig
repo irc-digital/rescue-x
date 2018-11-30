@@ -17,6 +17,7 @@
   {% set type = null %}
   {% set subtype = null %}
   {% set size = null %}
+  {% set weight = null %}
 
   {% for link_icon_modifier in link_icon_modifiers %}
     {% if link_icon_modifier starts with 'type-' %}
@@ -29,6 +30,10 @@
 
     {% if link_icon_modifier starts with 'subtype-' %}
       {% set subtype = link_icon_modifier %}
+    {% endif %}
+
+    {% if link_icon_modifier starts with 'weight-' %}
+      {% set weight = link_icon_modifier %}
     {% endif %}
 
     {% if link_icon_modifier starts with 'size-' %}
@@ -72,6 +77,10 @@
   {% else %}
     {% set link_modifiers = ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'] %}
     {% set icon_modifiers = ['fill-branded'] %}
+  {% endif %}
+
+  {% if weight is not empty %}
+    {% set link_modifiers = link_modifiers | merge ([weight]) %}
   {% endif %}
 
   {% if size == 'size-2x-small' %}

@@ -4,7 +4,6 @@
 .rpla-link {
   $self: &;
 
-  @include font-weight('bold');
   @include transition;
   background-color: transparent;
   border-left-width: 0;
@@ -12,6 +11,10 @@
   border-top-width: 0;
   display: inline;
   text-decoration: none;
+
+  &:not(#{$self}--weight-normal) {
+    @include font-weight('bold');
+  }
 
   // sass-lint:disable-block mixins-before-declarations
   @include hover {

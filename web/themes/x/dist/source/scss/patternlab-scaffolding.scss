@@ -432,6 +432,12 @@ body > .rplc-mobile-bottom-menu,
   max-width: $global-navigation-mobile-width;
 }
 
+body > .rplc-secondary-menu,
+#components-secondary-menu .rplc-secondary-menu {
+  background-color: rgba(0, 0, 0, .6);
+  max-width: 500px;
+}
+
 [data-rpl-mobile-navigation-open] {
 
   > .rpll-page {
