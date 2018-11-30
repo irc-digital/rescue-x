@@ -457,6 +457,10 @@ body > .rplc-mobile-bottom-menu,
 
   @include when-mobile-navigation-open {
     right: $global-navigation-mobile-width;
+
+    @media #{$global-navigation-large-device-media-query} {
+      position: static;
+    }
   }
 }
 
