@@ -3,8 +3,19 @@
 .rpla-icon-only-link {
   $self: &;
 
+  //
+  // 1) For buttons
+  //
+  background-color: transparent; // 1
+  border-width: 0; // 1
   display: inline-block;
+  font-size: 1em; // 1
   line-height: 0;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer; // 1
+  }
 
   #{$self}__icon-wrapper {
     display: inline-block;
@@ -39,14 +50,15 @@
 
   &--type-four {
     #{$self}__icon-wrapper {
-      @include hover {
-        background-color: get-neutral-color('white');
-      }
-
       background-color: $icon-only-link-type-four-background-color;
       height: 2.5em;
       padding: .4em;
       width: 2.5em;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include hover {
+        background-color: get-neutral-color('white');
+      }
     }
   }
 }

@@ -1,0 +1,17 @@
+@import 'rplm-search-form.variables';
+
+.rplm-search-form {
+  align-content: center;
+  background-color: get-neutral-color('white');
+  display: flex;
+
+  &__text-input-wrapper {
+    flex-grow: 1;
+  }
+
+  &__submit-wrapper {
+    display: flex;
+  }
+}
+
+// end of file
