@@ -12,6 +12,10 @@
           $(toggle_element).removeAttr(open_navigation_attribute);
         }
       });
+
+      $("[data-rpl-search]").click(function(e) {
+        $('body').attr("data-rpl-search-open", '');
+      });
     }
   };
 

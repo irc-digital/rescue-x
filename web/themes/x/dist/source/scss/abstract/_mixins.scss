@@ -266,8 +266,10 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
     'auto': auto,
     'up': 5,
     'up-more': 10,
-    'overlay': 1000,
-    'above-overlay': 2000,
+    'navigation-overlay': 1000,
+    'above-navigation-overlay': 2000,
+    'overlay': 3000,
+    'above-overlay': 4000,
   );
   @if $option != 'all' {
     @return rem(safe-map-get($z-indices, $option));
@@ -433,6 +435,14 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
     @media only screen and (min-width: #{$smallest-tablet-size}) { @content ; }
   } @else if $point == phablet {
     @media only screen and (min-width: #{$smallest-phablet-size})  { @content ; }
+  }
+}
+
+@mixin when-search-open {
+  @at-root {
+    [data-rpl-search-open] & {
+      @content ;
+    }
   }
 }
 

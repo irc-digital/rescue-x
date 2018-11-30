@@ -31,11 +31,18 @@
     // sass-lint:disable-block mixins-before-declarations
     @include when-mobile-navigation-open {
       display: block;
+      @include z-index('navigation-overlay');
+      position: fixed;
 
       // sass-lint:disable-block mixins-before-declarations
       @media #{$global-navigation-large-device-media-query} {
         display: none;
       }
+    }
+
+    // sass-lint:disable mixins-before-declarations
+    @include when-search-open {
+      display: block;
     }
   }
 

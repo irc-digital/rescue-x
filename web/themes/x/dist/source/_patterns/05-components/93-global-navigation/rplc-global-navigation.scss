@@ -2,7 +2,7 @@
 
 .rplc-global-navigation {
 
-  @include z-index('above-overlay');
+  @include z-index('above-navigation-overlay');
 
   max-width: 1176px;
 
@@ -112,6 +112,11 @@
     line-height: 1;
     padding-left: get-spacing();
     padding-right: get-spacing();
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
   }
 
   //
