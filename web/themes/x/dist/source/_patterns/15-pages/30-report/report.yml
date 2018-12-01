@@ -1,4 +1,3 @@
-report_page_header: "Hello"
 report_page_navigation:
   include():
     pattern: "components-global-navigation"

@@ -19,11 +19,15 @@
   }
 
   &__hero-wrapper {
-    margin-top: rem(210px);
+    padding-top: rem(50px);
+
+    @media #{$global-navigation-large-device-media-query} {
+      padding-top: rem(210px);
+    }
 
     // sass-lint:disable-block mixins-before-declarations
     @include when-page-has-image-in-hero {
-      margin-top: 0;
+      padding-top: 0;
     }
   }
 
