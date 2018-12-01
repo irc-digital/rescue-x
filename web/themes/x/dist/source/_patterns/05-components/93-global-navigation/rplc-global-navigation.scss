@@ -4,13 +4,9 @@
 
   @include z-index('above-navigation-overlay');
 
-  max-width: 1176px;
-
-  // todo probably temp
   @media #{$global-navigation-large-device-media-query} {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1142px;
+    position: absolute;
+    width: 100%;
   }
 
   //
@@ -18,10 +14,10 @@
   //
   &__mobile-top-wrapper {
     align-items: center;
-    background-color: $global-navigation-mobile-menu-background-color;
+    background-color: get-brand-color();
     display: flex;
     height: $global-navigation-mobile-menu-height;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     @media #{$global-navigation-large-device-media-query} {
       display: none;
@@ -38,13 +34,23 @@
 
   &__mobile-trailing-wrapper {
     align-items: center;
-    background-color: $global-navigation-mobile-menu-background-color;
+    background-color: get-brand-color();
     display: flex;
     height: 100%;
   }
 
   &__branding-wrapper {
-    background-color: $global-navigation-mobile-menu-background-color;
+    background-color: get-brand-color();
+    position: absolute;
+
+    @media #{$global-navigation-large-device-media-query} {
+      left: get-spacing();
+    }
+
+    @media #{$global-navigation-full-width-media-query} {
+      left: rem(-136px);
+      top: 0;
+    }
   }
 
   &__mobile-menu-expand-toggle {
@@ -87,6 +93,22 @@
   //
   // DESKTOP COMPONENTS
   //
+  &__content {
+    @media #{$global-navigation-large-device-media-query} {
+      margin-left: rem(151px);
+      margin-right: get-spacing();
+      margin-top: get-spacing();
+    }
+
+    @media #{$global-navigation-full-width-media-query} {
+      left: rem(40px);
+      margin-left: auto;
+      margin-right: auto;
+      max-width: rem(1176px);
+      position: relative;
+    }
+  }
+
   &__desktop-top-wrapper,
   &__desktop-trailing-wrapper {
     display: none;
@@ -107,6 +129,11 @@
     padding-bottom: get-spacing('s');
     padding-left: get-spacing('ml');
     padding-top: get-spacing('s');
+  }
+
+  &__desktop-cta-wrapper {
+    height: 100%;
+    width: rem(164px);
   }
 
   &__search-icon-wrapper {

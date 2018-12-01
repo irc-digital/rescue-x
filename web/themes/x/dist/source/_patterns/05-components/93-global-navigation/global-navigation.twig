@@ -4,56 +4,60 @@
 
 {% endspaceless %}
 <nav class="rplc-global-navigation">
-  <div class="rplc-global-navigation__top-wrapper">
-    <div class="rplc-global-navigation__desktop-top-wrapper">
-      <div class="rplc-global-navigation__desktop-crisis-watch-wrapper">
-        {{ global_navigation_crisis_watch }}
-      </div>
-      <div class="rplc-global-navigation__desktop-secondary-menu-wrapper">
-        {{ global_navigation_secondary_menu }}
-      </div>
-    </div>
-    <div class="rplc-global-navigation__mobile-top-wrapper">
+  <div class="rplc-global-navigation__content">
+    <div class="rplc-global-navigation__top-wrapper">
       <div class="rplc-global-navigation__branding-wrapper">
         {{ global_navigation_branding }}
       </div>
-      <div class="rplc-global-navigation__mobile-trailing-wrapper">
-        <div class="rplc-global-navigation__mobile-call-to-action-menu-wrapper">
-          {{ global_navigation_mobile_call_to_action_menu }}
-          {% include '@components/92-menu/30-mobile-call-to-action/mobile-call-to-action-menu.twig' with {
-            mobile_call_to_action_menu_items: [{
-              'title': global_navigation_cta_text,
-              'url': global_navigation_cta_url,
-            }],
+      <div class="rplc-global-navigation__desktop-top-wrapper">
+        <div class="rplc-global-navigation__desktop-crisis-watch-wrapper">
+          {{ global_navigation_crisis_watch }}
+        </div>
+        <div class="rplc-global-navigation__desktop-secondary-menu-wrapper">
+          {{ global_navigation_secondary_menu }}
+        </div>
+      </div>
+      <div class="rplc-global-navigation__mobile-top-wrapper">
+        <div class="rplc-global-navigation__mobile-trailing-wrapper">
+          <div class="rplc-global-navigation__mobile-call-to-action-menu-wrapper">
+            {{ global_navigation_mobile_call_to_action_menu }}
+            {% include '@components/92-menu/30-mobile-call-to-action/mobile-call-to-action-menu.twig' with {
+              mobile_call_to_action_menu_items: [{
+                'title': global_navigation_cta_text,
+                'url': global_navigation_cta_url,
+              }],
+            } only %}
+          </div>
+          <button class="rplc-global-navigation__mobile-menu-expand-toggle" data-rpl-mobile-navigation-toggle="body"></button>
+        </div>
+      </div>
+    </div>
+    <div class="rplc-global-navigation__mobile-navigation-top-wrapper">
+      {% include '@molecules/45-mobile-navigation-top/mobile-navigation-top.twig' %}
+    </div>
+    <div class="rplc-global-navigation__bottom-wrapper">
+      <div class="rplc-global-navigation__main-menu-wrapper">
+        {{ global_navigation_main_menu }}
+      </div>
+      <div class="rplc-global-navigation__desktop-trailing-wrapper">
+        <div class="rplc-global-navigation__search-icon-wrapper" data-rpl-search>
+          {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
+            icon_only_link_alt_text: ('Search' | trans),
+            icon_only_link_name: 'search',
           } only %}
         </div>
-        <button class="rplc-global-navigation__mobile-menu-expand-toggle" data-rpl-mobile-navigation-toggle="body"></button>
+        <div class="rplc-global-navigation__desktop-cta-wrapper">
+          {% include '@atoms/30-button/button.twig' with {
+            button_text: global_navigation_cta_text,
+            button_url: global_navigation_cta_url,
+            button_icon_name: cta_button_icon_name,
+            button_modifiers: ['display-block'],
+          } only %}
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="rplc-global-navigation__mobile-navigation-top-wrapper">
-    {% include '@molecules/45-mobile-navigation-top/mobile-navigation-top.twig' %}
-  </div>
-  <div class="rplc-global-navigation__bottom-wrapper">
-    <div class="rplc-global-navigation__main-menu-wrapper">
-      {{ global_navigation_main_menu }}
-    </div>
-    <div class="rplc-global-navigation__desktop-trailing-wrapper">
-      <div class="rplc-global-navigation__search-icon-wrapper" data-rpl-search>
-        {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
-          icon_only_link_alt_text: ('Search' | trans),
-          icon_only_link_name: 'search',
-        } only %}
+      <div class="rplc-global-navigation__mobile-secondary-wrapper">
+        {{ global_navigation_mobile_secondary_menu }}
       </div>
-      {% include '@atoms/30-button/button.twig' with {
-        button_text: global_navigation_cta_text,
-        button_url: global_navigation_cta_url,
-        button_icon_name: cta_button_icon_name,
-        button_modifiers: ['display-block'],
-      } only %}
-    </div>
-    <div class="rplc-global-navigation__mobile-secondary-wrapper">
-      {{ global_navigation_mobile_secondary_menu }}
     </div>
   </div>
 </nav>

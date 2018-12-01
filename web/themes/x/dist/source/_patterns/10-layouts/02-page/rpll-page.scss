@@ -18,6 +18,15 @@
     }
   }
 
+  &__hero-wrapper {
+    margin-top: rem(210px);
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include when-page-has-image-in-hero {
+      margin-top: 0;
+    }
+  }
+
   &__overlay {
     @include z-index('overlay');
     background-color: $page-overlay-color;

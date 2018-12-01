@@ -18,6 +18,8 @@ $global-navigation-mobile-menu-height: rem(66px);
 $global-navigation-mobile-width: rem(320px);
 $global-navigation-large-device-size: rem(1143px);
 $global-navigation-large-device-media-query: 'only screen and (min-width: #{$global-navigation-large-device-size})';
+$global-navigation-full-width-size: rem(1400px);
+$global-navigation-full-width-media-query: 'only screen and (min-width: #{$global-navigation-full-width-size})';
 $global-navigation-mobile-menu-transition-time: .4s;
 
 // The default font family.

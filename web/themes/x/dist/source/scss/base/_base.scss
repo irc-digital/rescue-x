@@ -30,10 +30,18 @@ a {
 //
 // Responsive image styling
 // 1) Allows for images to flex with varying screen size
+// 2) In general, we do not want images going wider than their designated size, as on smaller devices it can mask
+// incorrect configuration and setup and cause images to be sized up and lose resolution. However, on very large
+// devices we may max out as to the available options and may, indeed, need to provide an image to the visitor that
+// is scaled.
 //
 img {
   height: auto;
   max-width: 100%;
+
+  @media #{$global-navigation-full-width-media-query} {
+    width: 100%; // 2
+  }
 }
 
 strong {

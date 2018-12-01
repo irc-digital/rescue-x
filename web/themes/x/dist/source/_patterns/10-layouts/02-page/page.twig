@@ -5,11 +5,17 @@
 
 {% endspaceless %}
 <div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}" data-rpl-hero-has-image="{{ page_hero_has_image }}">
-  {{ page_header }}
+  {% if page_header is not empty %}
+    <div class="rpll-page__header-wrapper">
+      {{ page_header }}
+    </div>
+  {% endif %}
 
   {{ page_navigation }}
 
-  {{ page_hero }}
+  <div class="rpll-page__hero-wrapper">
+    {{ page_hero }}
+  </div>
 
   <main class="rpll-page__main" role="main" tabindex="-1">
     {{ page_content }}
