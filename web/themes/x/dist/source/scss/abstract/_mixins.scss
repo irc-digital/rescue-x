@@ -454,6 +454,14 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
+@mixin page-has-image-in-hero {
+  @at-root {
+    [data-rpl-hero-has-image='yes'] & {
+      @content ;
+    }
+  }
+}
+
 @mixin text-hide {
   border: 0;
   color: transparent;
