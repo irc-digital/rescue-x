@@ -3,9 +3,11 @@
 .rpll-page {
   $self: &;
 
+  height: 100%;
   position: relative;
   right: 0;
   transition: right $global-navigation-mobile-menu-transition-time ease-in-out;
+  width: 100%;
 
   // sass-lint:disable-block mixins-before-declarations
   @include when-mobile-navigation-open {
@@ -43,8 +45,8 @@
 
     // sass-lint:disable-block mixins-before-declarations
     @include when-mobile-navigation-open {
-      display: block;
       @include z-index('navigation-overlay');
+      display: block;
       position: fixed;
 
       // sass-lint:disable-block mixins-before-declarations
