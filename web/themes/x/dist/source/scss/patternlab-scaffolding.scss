@@ -119,12 +119,7 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 // ... except for the ones that are supposed to go window width
 #atoms-paragraph-body,
 #components-image-window-width,
-#components-hero-article,
-#components-hero-standard,
-#components-hero-landing-page,
-#components-hero-landing-page-crisis-watch,
 #components-news-and-features,
-#components-hero-text-only,
 #components-image-link-boxes,
 #molecules-authority,
 #components-impact-card,
@@ -144,10 +139,10 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
 [id^="components-call-to-action-2"],
 [id^="components-call-to-action-3"],
 [id^="components-call-to-action-4"],
+[id^="components-hero"],
 [id^="components-pull-quote"],
 [id^="components-basic-teaser-list"],
 [id^="components-related-news-and-features"],
-[id^="components-hero-b-roll-"],
 [id^="pages-"],
 [id^="layouts-"] {
   & > .sg-pattern-example {
