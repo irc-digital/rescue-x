@@ -1,0 +1,36 @@
+@import 'rpll-modal.variables';
+
+.rpll-modal {
+  $self: &;
+
+  display: inline-block;
+  position: relative;
+
+  &__close {
+    @include font-size('5xl');
+    @include line-height('2xs');
+
+    position: absolute;
+    right: 10px;
+    top: 0;
+    user-select: none;
+    
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
+  }
+
+  &--close-button-dark {
+    #{$self}__close {
+      color: get-neutral-color('black');
+    }
+  }
+
+  &--close-button-light {
+    #{$self}__close {
+      color: get-neutral-color('gray');
+    }
+  }
+}
+// end of file
