@@ -12,8 +12,8 @@
   }
 
   &__icon {
-    padding-right: $teaser-icon-icon-padding;
     height: $teaser-icon-icon-height;
+    padding-right: $teaser-icon-icon-padding;
     width: $teaser-icon-icon-width;
 
     @include breakpoint(phablet) {
