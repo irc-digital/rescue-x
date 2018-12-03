@@ -14,7 +14,7 @@
           {{ hero_layout_1_primary_1 }}
         {% endblock %}
       </div>
-      {% if 'no-second-blocks' not in hero_layout_1_modifiers %}
+      {% if hero_layout_1_primary_2 is not empty %}
         <div class="rpll-hero-layout-1__primary-2">
           {% block hero_layout_1_primary_2_block %}
             {{ hero_layout_1_primary_2 }}
@@ -26,7 +26,7 @@
           {{ hero_layout_1_secondary_1 }}
         {% endblock %}
       </div>
-      {% if 'no-second-blocks' not in hero_layout_1_modifiers %}
+      {% if hero_layout_1_secondary_2 is not empty %}
         <div class="rpll-hero-layout-1__secondary-2">
           {% block hero_layout_1_secondary_2_block %}
             {{ hero_layout_1_secondary_2 }}

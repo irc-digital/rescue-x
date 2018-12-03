@@ -39,12 +39,6 @@
     padding-top: get-spacing();
   }
 
-  &--no-second-blocks {
-    #{$self}__text-wrapper {
-      grid-template-areas: 'primary_1' 'secondary_1';
-    }
-  }
-
   @include breakpoint(phablet) {
     &__secondary-1 {
       margin-top: get-spacing('m');
@@ -56,13 +50,6 @@
       grid-template-areas: 'primary_1 primary_1' 'primary_2 secondary_1' 'secondary_2 secondary_2';
       grid-template-columns: 1fr 1fr;
 
-    }
-
-    &--no-second-blocks {
-      #{$self}__text-wrapper {
-        grid-template-areas: 'primary_1' 'secondary_1';
-        grid-template-columns: 1fr;
-      }
     }
   }
 
