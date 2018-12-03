@@ -44,11 +44,10 @@ icon_library:
   - press-release
   - question
   - quote-mark
-  - rescuing-lives-1
-  - rescuing-lives-2
-  - rescuing-lives-3
-  - rescuing-lives-4
+  - resettle
+  - respond
   - search
+  - serve
   - slideshow
   - stethoscope
   - stopwatch
@@ -56,4 +55,5 @@ icon_library:
   - twitter
   - video
   - volunteer
+  - work
   - youtube
