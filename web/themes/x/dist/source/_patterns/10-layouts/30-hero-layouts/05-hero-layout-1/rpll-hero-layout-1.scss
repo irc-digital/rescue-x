@@ -20,7 +20,7 @@
 
     @include breakpoint(phablet) {
       display: grid;
-      //grid-row-gap: get-spacing();
+      grid-row-gap: get-spacing('m');
       grid-template-areas: 'primary_1' 'primary_2' 'secondary_1' 'secondary_2';
       grid-template-columns: 1fr;
     }
