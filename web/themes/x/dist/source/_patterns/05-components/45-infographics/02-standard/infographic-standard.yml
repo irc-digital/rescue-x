@@ -8,7 +8,7 @@ infographic_standard_content:
       with:
         teaser_icon_title: "We serve"
         teaser_icon_summary: "Faker.paragraph(1,true)"
-        teaser_icon_icon_name: "rescuing-lives-1"
+        teaser_icon_icon_name: "serve"
         teaser_icon_modifiers:
           - "even"
       only: true
@@ -17,7 +17,7 @@ infographic_standard_content:
       with:
         teaser_icon_title: "We work"
         teaser_icon_summary: "Faker.paragraph(1,true)"
-        teaser_icon_icon_name: "rescuing-lives-2"
+        teaser_icon_icon_name: "work"
         teaser_icon_modifiers:
           - "odd"
       only: true
@@ -26,7 +26,7 @@ infographic_standard_content:
       with:
         teaser_icon_title: "We respond"
         teaser_icon_summary: "Faker.paragraph(1,true)"
-        teaser_icon_icon_name: "rescuing-lives-3"
+        teaser_icon_icon_name: "respond"
         teaser_icon_modifiers:
           - "even"
       only: true
@@ -35,7 +35,7 @@ infographic_standard_content:
       with:
         teaser_icon_title: "We resettle"
         teaser_icon_summary: "Faker.paragraph(1,true)"
-        teaser_icon_icon_name: "rescuing-lives-4"
+        teaser_icon_icon_name: "resettle"
         teaser_icon_modifiers:
           - "odd"
       only: true
