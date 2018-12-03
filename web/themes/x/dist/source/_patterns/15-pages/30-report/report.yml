@@ -6,6 +6,7 @@ report_page_hero:
     pattern: "components-hero-basic"
     with:
       hero_basic_slug: 'Report'
+      hero_basic_headline: "Dreams Deterred: opportunities to promote self-reliance for Somali refugee youth in Kenya"
 report_page_content:
   join():
     - include():
