@@ -29,5 +29,14 @@
   }
 }
 
+@mixin input-type-three ($element: &) {
+  #{$element}__field {
+    background-color: transparent;
+    border-width: 0;
+    font-size: 1em;
+    padding: .25em 0;
+  }
+}
+
 // end of file
 

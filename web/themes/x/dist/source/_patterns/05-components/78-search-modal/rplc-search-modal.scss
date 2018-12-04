@@ -3,8 +3,8 @@
 .rplc-search-modal {
   $self: &;
 
-  height: 315px;
+  padding: get-spacing('2xl') get-spacing('xl') get-spacing('5xl') ;
   width: calc(100vw - 3.5rem);
-
 }
+
 // end of file

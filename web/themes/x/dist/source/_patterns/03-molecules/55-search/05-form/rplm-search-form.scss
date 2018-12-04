@@ -3,13 +3,16 @@
 .rplm-search-form {
   align-content: center;
   background-color: get-neutral-color('white');
+  border-bottom: 1px solid get-neutral-color('gray');
   display: flex;
 
   &__text-input-wrapper {
+    @include font-size('5xl');
     flex-grow: 1;
   }
 
   &__submit-wrapper {
+    @include font-size('2xl');
     display: flex;
   }
 }

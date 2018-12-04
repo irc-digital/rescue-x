@@ -251,6 +251,8 @@ $xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.jso
     'xl': 3 * $space-unit, // 48px
     '2xl': 4 * $space-unit, // 64px
     '3xl': 5 * $space-unit, // 80px
+    '4xl': 6 * $space-unit, // 96px
+    '5xl': 7 * $space-unit, // 112px
   );
   @if $option != 'all' {
     @return rem(safe-map-get($spacings, $option));
