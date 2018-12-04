@@ -45,13 +45,14 @@
 
     @include breakpoint(phablet) {
       left: safe-map-get($quote-text-section-eats-in, 'phablet');
-      margin: 0;
+      margin: 0 0 safe-map-get($quote-text-section-pushed-down, 'phablet');
       padding: safe-map-get($quote-text-section-padding, 'phablet');
       top: safe-map-get($quote-text-section-pushed-down, 'phablet');
     }
 
     @include breakpoint(laptop) {
       flex-direction: row;
+      margin: 0 0 safe-map-get($quote-text-section-pushed-down, 'laptop');
       padding: safe-map-get($quote-text-section-padding, 'laptop');
       top: safe-map-get($quote-text-section-pushed-down, 'laptop');
     }
