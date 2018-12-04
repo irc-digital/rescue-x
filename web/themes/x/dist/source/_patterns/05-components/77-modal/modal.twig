@@ -11,9 +11,11 @@
     {% set modal_modifiers = modal_modifiers | merge (['close-button-dark']) %}
   {% endif %}
 {% endspaceless %}
-<div class="rpll-modal{% for modal_modifier in modal_modifiers %} rpll-modal--{{ modal_modifier }}{% endfor %}">
-  <span class="rpll-modal__close">×</span>
-  <div class="rpll-modal__content">
-    {{ modal_content }}
+<div class="rplc-modal{% for modal_modifier in modal_modifiers %} rplc-modal--{{ modal_modifier }}{% endfor %}" data-rpl-modal-id="{{ modal_id }}" data-rpl-modal-state="closed">
+  <span class="rplc-modal__close">×</span>
+  <div class="rplc-modal__content-wrapper">
+    {% block modal_content_block %}
+      {{ modal_content }}
+    {% endblock %}
   </div>
 </div>

@@ -1,0 +1,13 @@
+{% embed '@components/77-modal/modal.twig' with {
+  modal_id: 'search',
+  modal_modifiers: ['type-search'],
+} %}
+  {% block modal_content_block %}
+    {#{% include '@molecules/02-basic-headline-treatments/05-stacked-1/stacked-headline-1.twig' with {#}
+      {#stacked_headline_1_headline: hero_b_roll_1_headline,#}
+      {#stacked_headline_1_summary: hero_b_roll_1_summary,#}
+    {#} only %}#}
+    SEARCH STUFF HERE
+  {% endblock %}
+{% endembed %}
+

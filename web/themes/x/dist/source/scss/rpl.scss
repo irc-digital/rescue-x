@@ -20,7 +20,6 @@
 @import '../_patterns/10-layouts/50-aside/rpll-aside';
 @import '../_patterns/10-layouts/55-aside-2/rpll-aside-2';
 @import '../_patterns/10-layouts/02-page/rpll-page';
-@import '../_patterns/10-layouts/80-modal/rpll-modal';
 
 //
 // Build molecules
@@ -106,5 +105,7 @@
 @import '../_patterns/05-components/92-menu/30-mobile-call-to-action/rplc-mobile-call-to-action-menu';
 @import '../_patterns/05-components/92-menu/15-mobile-bottom/rplc-mobile-bottom-menu';
 @import '../_patterns/05-components/93-global-navigation/rplc-global-navigation';
+@import '../_patterns/05-components/77-modal/rplc-modal';
+@import '../_patterns/05-components/78-search-modal/rplc-search-modal';
 
 // end of file

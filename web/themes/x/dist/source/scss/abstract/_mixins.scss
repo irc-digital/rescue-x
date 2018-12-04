@@ -438,9 +438,9 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
-@mixin when-search-open {
+@mixin when-modal-open {
   @at-root {
-    [data-rpl-search-open] & {
+    [data-rpl-modal-opened] & {
       @content ;
     }
   }
@@ -448,7 +448,7 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
 
 @mixin when-mobile-navigation-open {
   @at-root {
-    [data-rpl-mobile-navigation-open] & {
+    [data-rpl-mobile-navigation-opened] & {
       @content ;
     }
   }

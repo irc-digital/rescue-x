@@ -56,7 +56,7 @@
     }
 
     // sass-lint:disable mixins-before-declarations
-    @include when-search-open {
+    @include when-modal-open {
       display: block;
     }
   }

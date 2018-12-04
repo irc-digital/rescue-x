@@ -1,6 +1,6 @@
-@import 'rpll-modal.variables';
+@import 'rplc-modal.variables';
 
-.rpll-modal {
+.rplc-modal {
   $self: &;
 
   display: inline-block;
@@ -31,6 +31,10 @@
     #{$self}__close {
       color: get-neutral-color('gray');
     }
+  }
+
+  &[data-rpl-modal-state='closed'] {
+    display: none;
   }
 }
 // end of file

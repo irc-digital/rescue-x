@@ -18,7 +18,8 @@
           {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
             art_directed_image_fallback: hero_article_art_directed_image_fallback,
             art_directed_image_sources: hero_article_art_directed_image_sources,
-            art_directed_image_alt: hero_article_art_directed_image_alt
+            art_directed_image_alt: hero_article_art_directed_image_alt,
+            art_directed_image_modifiers: ['permit-upscaling'],
           } only %}
         {% endblock %}
       {% endif %}

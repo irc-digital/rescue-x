@@ -1,4 +1,4 @@
-<img class='rpla-responsive-image'
+<img class='rpla-responsive-image{% for responsive_image_modifier in responsive_image_modifiers %} rpla-responsive-image--{{ responsive_image_modifier }}{% endfor %}'
      src="{{ responsive_image_fallback }}"
      alt="{{ responsive_image_alt }}"
      srcset="{% for responsive_image_source in responsive_image_source_set %}{{ responsive_image_source }},{% endfor %}"
