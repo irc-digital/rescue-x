@@ -81,6 +81,7 @@
       @include link-hover-border(get-neutral-color('black'));
     }
 
+    // sass-lint:disable-block empty-args
     &#{$self}--subtype-gray {
       @include link-color(get-neutral-color());
       @include link-border(get-neutral-color());
