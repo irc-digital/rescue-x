@@ -3,6 +3,8 @@
 .rplc-quote {
   $self: &;
 
+  @include standard-vertical-padding;
+
   &__content {
     @include well-row;
   }

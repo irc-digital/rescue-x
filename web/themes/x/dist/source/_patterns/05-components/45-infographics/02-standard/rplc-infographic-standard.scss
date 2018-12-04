@@ -1,6 +1,11 @@
 @import 'rplc-infographic-standard.variables';
 
 .rplc-infographic-standard {
+
+  @include standard-vertical-padding;
+
+  background-color: get-neutral-color('light-gray');
+
   &__content {
     @include well-row;
   }

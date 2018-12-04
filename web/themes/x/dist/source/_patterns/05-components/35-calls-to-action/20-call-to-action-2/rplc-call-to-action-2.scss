@@ -3,7 +3,7 @@
 .rplc-call-to-action-2 {
   $self: &;
 
-  @include standard-vertical-spacing;
+  @include standard-vertical-padding;
 
   &__content {
     @include breakpoint(desktop) {

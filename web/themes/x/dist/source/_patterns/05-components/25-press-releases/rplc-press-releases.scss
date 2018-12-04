@@ -1,6 +1,11 @@
 @import 'rplc-press-releases.variables';
 
 .rplc-press-releases {
+
+  @include standard-vertical-padding;
+
+  background-color: get-neutral-color('white');
+
   &__content {
     @include well-row;
   }

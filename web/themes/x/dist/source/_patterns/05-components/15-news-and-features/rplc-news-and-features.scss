@@ -1,6 +1,9 @@
 @import 'rplc-news-and-features.variables';
 
 .rplc-news-and-features {
+
+  @include standard-vertical-padding;
+
   &__content {
     @include well-row;
   }

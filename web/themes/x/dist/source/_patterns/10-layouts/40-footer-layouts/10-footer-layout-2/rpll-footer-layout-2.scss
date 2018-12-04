@@ -3,8 +3,14 @@
 .rpll-footer-layout-2 {
   $self: &;
 
-  @include standard-vertical-padding;
   background-color: get-neutral-color('black');
+  padding-bottom: get-spacing('s');
+  padding-top: get-spacing('s');
+
+  @include breakpoint(phablet) {
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('l');
+  }
 
   &__inner-content-wrapper {
     @include well-row;
