@@ -1,0 +1,24 @@
+<div class="rplc-utility-menu">
+  <ul class="rplc-utility-menu__menu rplc-utility-menu__menu--affiliates">
+    {% for utility_menu_affiliates_item in utility_menu_affiliates_items %}
+      <li class="rplc-utility-menu__menu-item">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: utility_menu_affiliates_item.title,
+          link_url:  utility_menu_affiliates_item.url,
+          link_modifiers: ['type-two', 'subtype-no-hover-effect', 'subtype-dark-gray'],
+        } only %}
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="rplc-utility-menu__menu rplc-utility-menu__menu--legal">
+    {% for utility_menu_legal_item in utility_menu_legal_items %}
+      <li class="rplc-utility-menu__menu-item">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: utility_menu_legal_item.title,
+          link_url:  utility_menu_legal_item.url,
+          link_modifiers: ['type-two', 'subtype-no-hover-effect', 'subtype-dark-gray'],
+        } only %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

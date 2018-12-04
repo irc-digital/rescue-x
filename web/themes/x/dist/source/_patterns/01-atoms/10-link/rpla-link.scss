@@ -81,6 +81,11 @@
       @include link-hover-border(get-neutral-color('black'));
     }
 
+    &#{$self}--subtype-dark-gray {
+      @include link-color(get-neutral-color('dark-gray'));
+      @include link-border(get-neutral-color('dark-gray'));
+    }
+
     &#{$self}--subtype-black {
       @include link-color(get-neutral-color('black'));
       @include link-border(get-neutral-color('white'));
