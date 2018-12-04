@@ -203,7 +203,6 @@ article_page_footer:
               pattern: "molecules-social-share"
               with:
                 social_share_title: 'Follow us'
-              only: true
         only: true
     - include():
         pattern: "layouts-footer-layout-2"
