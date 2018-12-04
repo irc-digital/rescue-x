@@ -1,12 +1,12 @@
 teaser_video__url: "#"
 teaser_video_title: "Faker.sentence(4,true)"
 teaser_video_image_source_set:
-  - "https://placem.at/things?w=256&h=144&random=teaservideoimage 256"
-  - "https://placem.at/things?w=512&h=288&random=teaservideoimage 512"
+  - "https://placem.at/things?w=256&h=144&random=teaservideoimage 256w"
+  - "https://placem.at/things?w=512&h=288&random=teaservideoimage 512w"
   - "https://placem.at/things?w=640&h=360&random=teaservideoimage 640w"
   - "https://placem.at/things?w=1280&h=720&random=teaservideoimage 1280w"
   - "https://placem.at/things?w=1920&h=1080&random=teaservideoimage 1920w"
-teaser_video_image_fallback: "https://placem.at/things?w=640&h=360&random=teaservideoimage 640w"
+teaser_video_image_fallback: "https://placem.at/things?w=640&h=360&random=teaservideoimage"
 teaser_video_image_alt: "Faker.words(4, true)"
 
 
