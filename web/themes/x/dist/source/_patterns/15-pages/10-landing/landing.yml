@@ -1,0 +1,46 @@
+landing_page_navigation:
+  include():
+    pattern: "components-global-navigation"
+landing_page_hero_has_image: "yes"
+landing_page_hero:
+  include():
+    pattern: "components-hero-landing-page"
+landing_page_content:
+  join():
+    - include():
+        pattern: "components-infographic-standard"
+    - include():
+        pattern: "components-news-and-features"
+    - include():
+        pattern: "components-press-releases"
+    - include():
+        pattern: "components-quote"
+    - include():
+        pattern: "components-call-to-action-2"
+landing_page_footer:
+  join():
+    - include():
+        pattern: "layouts-footer-layout-1"
+        with:
+          footer_layout_1_section_1:
+            include():
+              pattern: "molecules-crisis-watch"
+          footer_layout_1_section_2:
+            include():
+              pattern: "components-efficiency"
+          footer_layout_1_section_3:
+            include():
+              pattern: "molecules-social-share"
+              with:
+                social_share_title: 'Follow us'
+    - include():
+        pattern: "layouts-footer-layout-2"
+        with:
+          footer_layout_2_section_1:
+            include():
+              pattern: "atoms-utility-text"
+              with:
+                utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+          footer_layout_2_section_2:
+            include():
+              pattern: "atoms-utility-text"

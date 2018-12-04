@@ -36,6 +36,7 @@
   &__overlay {
     @include z-index('overlay');
     background-color: $page-overlay-color;
+    background-size: cover;
     bottom: 0;
     display: none;
     left: 0;
