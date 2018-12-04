@@ -7,6 +7,10 @@
     @include font-size('s');
   }
 
+  &--type-one {
+    @include standard-vertical-spacing;
+  }
+
 }
 
 // end of file

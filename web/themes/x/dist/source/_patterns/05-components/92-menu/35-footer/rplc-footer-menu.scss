@@ -12,6 +12,7 @@
 
   &__menu-item {
     @include font-size('s');
+    padding-bottom: get-spacing('xs');
   }
 
   &__menu--main {
