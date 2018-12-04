@@ -1,0 +1,26 @@
+footer_menu_main_menu_items:
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+footer_menu_utility_menu_items:
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
+  - title: 'Faker.words(2,true)'
+    url: "#"
