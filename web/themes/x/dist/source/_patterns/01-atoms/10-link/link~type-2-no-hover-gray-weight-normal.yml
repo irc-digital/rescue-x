@@ -1,4 +1,5 @@
 link_modifiers:
   - 'type-two'
   - 'subtype-no-hover-effect'
-  - 'subtype-dark-gray'
+  - 'subtype-gray'
+  - 'weight-normal'

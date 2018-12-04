@@ -2,6 +2,18 @@
 
 .rplc-utility-menu {
   $self: &;
+
+  display: flex;
+  flex-direction: row;
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    #{$self}__menu-item {
+      @include font-size('2xs');
+    }
+  }
+
 }
 
 // end of file
