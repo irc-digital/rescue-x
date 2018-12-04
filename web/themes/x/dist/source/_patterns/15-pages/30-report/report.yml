@@ -40,8 +40,11 @@ report_page_footer:
         pattern: "layouts-footer-layout-1"
         with:
           footer_layout_1_section_1:
-            include():
-              pattern: "molecules-crisis-watch"
+            join():
+              - include():
+                  pattern: "molecules-crisis-watch"
+              - include():
+                  pattern: "components-footer-menu"
           footer_layout_1_section_2:
             include():
               pattern: "components-efficiency"
@@ -63,5 +66,5 @@ report_page_footer:
               only: true
           footer_layout_2_section_2:
             include():
-              pattern: "atoms-utility-text"
+              pattern: "components-utility-menu"
         only: true

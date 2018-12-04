@@ -1,0 +1,5 @@
+link_modifiers:
+  - 'type-two'
+  - 'subtype-no-hover-effect'
+  - 'subtype-gray'
+  - 'weight-normal'

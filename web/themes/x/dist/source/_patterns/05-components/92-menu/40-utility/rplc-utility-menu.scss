@@ -1,0 +1,51 @@
+@import 'rplc-utility-menu.variables';
+@import 'rplc-utility-menu.mixins';
+
+.rplc-utility-menu {
+  $self: &;
+
+  display: flex;
+  flex-direction: row;
+
+  &__menu {
+    display: flex;
+    list-style: none;
+
+    #{$self}__menu-item {
+      @include font-size('2xs');
+      position: relative;
+    }
+  }
+
+  &__label {
+    @include font-size('2xs');
+    color: get-neutral-color('dark-gray');
+    padding-right: get-spacing('xs');
+  }
+
+  &__menu--affiliates {
+    #{$self}__menu-item {
+      &:last-child {
+        @include utility-menu-border;
+        padding-right: get-spacing('s');
+      }
+
+      &:not(:last-child) {
+        @include utility-menu-dot;
+      }
+    }
+  }
+
+  &__menu--legal {
+    #{$self}__menu-item {
+      padding: 0 get-spacing('s');
+
+      &:not(:last-child) {
+        @include utility-menu-border;
+      }
+    }
+  }
+
+}
+
+// end of file
