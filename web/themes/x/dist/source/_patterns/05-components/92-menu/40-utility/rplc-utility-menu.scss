@@ -17,6 +17,12 @@
     }
   }
 
+  &__label {
+    @include font-size('2xs');
+    color: get-neutral-color('dark-gray');
+    padding-right: get-spacing('xs');
+  }
+
   &__menu--affiliates {
     #{$self}__menu-item {
       &:last-child {
