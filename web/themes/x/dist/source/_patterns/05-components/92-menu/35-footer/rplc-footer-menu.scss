@@ -1,0 +1,22 @@
+@import 'rplc-footer-menu.variables';
+
+.rplc-footer-menu {
+  $self: &;
+
+  display: flex;
+  flex-direction: row;
+
+  &__menu {
+    list-style: none;
+  }
+
+  &__menu-item {
+    @include font-size('s');
+  }
+
+  &__menu--main {
+    padding-right: get-spacing('l');
+  }
+}
+
+// end of file

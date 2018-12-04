@@ -1,0 +1,24 @@
+<div class="rplc-footer-menu">
+  <ul class="rplc-footer-menu__menu rplc-footer-menu__menu--main">
+    {% for footer_menu_main_menu_item in footer_menu_main_menu_items %}
+      <li class="rplc-footer-menu__menu-item">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: footer_menu_main_menu_item.title,
+          link_url:  footer_menu_main_menu_item.url,
+          link_modifiers: ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'],
+        } only %}
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="rplc-footer-menu__menu rplc-footer-menu__menu--utility">
+    {% for footer_menu_utility_menu_item in footer_menu_utility_menu_items %}
+      <li class="rplc-footer-menu__menu-item">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: footer_menu_utility_menu_item.title,
+          link_url:  footer_menu_utility_menu_item.url,
+          link_modifiers: ['type-two', 'subtype-no-underline', 'subtype-no-hover-effect', 'subtype-inverse'],
+        } only %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
