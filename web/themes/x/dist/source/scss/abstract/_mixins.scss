@@ -398,6 +398,10 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   padding-bottom: get-spacing('m');
   padding-top: get-spacing('m');
 
+  //p + & {
+  //  margin-top: -1.2em;
+  //}
+
   @include breakpoint(phablet) {
     padding-bottom: get-spacing('xl');
     padding-top: get-spacing('xl');

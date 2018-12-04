@@ -13,29 +13,34 @@ article_page_content:
           aside_content:
             include():
               pattern: "components-highlight"
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'lead'
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - join():
       - "<p class='rpla-paragraph rpla-paragraph--body'>Nulla consequat massa quis enim "
       - include():
           pattern: "atoms-tweet-link"
           with:
             tweet_link_text: "I never had a bedroom or bed. I had to share a small amount of food with 20 other kids."
+          only: true
       - " praesent ut ligula non mi.</p>"
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "components-pull-quote"
     - include():
@@ -43,11 +48,13 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+          only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+          only: true
     - include():
         pattern: "components-image-partial-width-landscape"
     - include():
@@ -55,12 +62,14 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "layouts-aside-2"
         with:
           aside_2_content:
             include():
               pattern: "components-impact-card"
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
@@ -71,16 +80,19 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "layouts-aside-2"
         with:
@@ -92,21 +104,25 @@ article_page_content:
                   - 'caption-style-2-box'
           aside_2_modifiers:
             - 'position-left'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "layouts-aside-2"
         with:
@@ -118,21 +134,25 @@ article_page_content:
                   - 'background-dark'
           aside_2_modifiers:
             - 'position-left'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "components-question"
     - include():
@@ -140,42 +160,50 @@ article_page_content:
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "components-call-to-action-1"
         with:
           call_to_action_1_modifiers:
             - 'position-middle'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "layouts-aside"
         with:
           aside_content:
             include():
               pattern: "components-teaser-video"
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
 article_page_content_footer:
   join():
     - include():
@@ -196,6 +224,8 @@ article_page_footer:
               pattern: "molecules-social-share"
               with:
                 social_share_title: 'Follow us'
+              only: true
+        only: true
     - include():
         pattern: "layouts-footer-layout-2"
         with:
@@ -204,6 +234,8 @@ article_page_footer:
               pattern: "atoms-utility-text"
               with:
                 utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+              only: true
           footer_layout_2_section_2:
             include():
               pattern: "atoms-utility-text"
+        only: true

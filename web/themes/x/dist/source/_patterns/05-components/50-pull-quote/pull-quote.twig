@@ -12,6 +12,11 @@
  */
 #}
 <div class="rplc-pull-quote{% for pull_quote_modifier in pull_quote_modifiers %} rplc-pull-quote--{{ pull_quote_modifier }}{% endfor %}">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: pull_quote_section_heading_title,
+    section_heading_description: pull_quote_section_heading_description,
+    section_heading_icon: pull_quote_section_heading_icon
+  } only %}
   <div class="rplc-pull-quote__content">
       <blockquote class="rplc-pull-quote__text-wrapper">
         <div class="rplc-pull-quote__icon-wrapper">

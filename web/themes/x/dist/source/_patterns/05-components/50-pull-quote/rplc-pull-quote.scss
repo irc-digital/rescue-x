@@ -4,7 +4,7 @@
 .rplc-pull-quote {
   $self: &;
 
-  @include standard-vertical-spacing;
+  @include standard-vertical-padding;
   background-color: $pull-quote-background-color;
   width: 100%;
 
