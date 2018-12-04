@@ -1,7 +1,10 @@
 @import 'rplc-search-modal.variables';
 
-.rplc-searcb-modal {
+.rplc-search-modal {
   $self: &;
+
+  height: 315px;
+  width: calc(100vw - 3.5rem);
 
 }
 // end of file

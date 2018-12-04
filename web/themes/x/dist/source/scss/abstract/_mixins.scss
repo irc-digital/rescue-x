@@ -477,6 +477,11 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   padding-top: get-spacing();
 }
 
-
+@mixin prevent-scrolling {
+  height: 100%; //iOS scroll lock
+  overflow: hidden;
+  position: fixed; //iOS scroll lock
+  width: 100%; //iOS scroll lock
+}
 
 // end of file

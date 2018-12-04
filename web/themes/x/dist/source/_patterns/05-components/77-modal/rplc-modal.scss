@@ -3,12 +3,28 @@
 .rplc-modal {
   $self: &;
 
-  display: inline-block;
-  position: relative;
+  @include z-index('above-overlay');
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+
+  &__content {
+    background-clip: padding-box;
+    background-color: get-neutral-color('white');
+    box-shadow: $modal-box-shadow;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+  }
 
   &__close {
     @include font-size('5xl');
     @include line-height('2xs');
+    @include z-index('up');
 
     position: absolute;
     right: 10px;
@@ -33,8 +49,21 @@
     }
   }
 
+  &--type-search {
+    overflow-y: auto;
+
+    #{$self}__content {
+      top: 190px;
+    }
+  }
+
   &[data-rpl-modal-state='closed'] {
     display: none;
   }
 }
+
+[data-rpl-modal-opened] {
+  @include prevent-scrolling;
+}
+
 // end of file

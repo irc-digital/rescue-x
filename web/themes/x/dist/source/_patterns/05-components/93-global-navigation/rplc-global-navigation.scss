@@ -189,10 +189,7 @@
 }
 
 [data-rpl-mobile-navigation-opened] {
-  height: 100%; //iOS scroll lock
-  overflow: hidden;
-  position: fixed; //iOS scroll lock
-  width: 100%; //iOS scroll lock
+  @include prevent-scrolling;
 }
 
 // end of file

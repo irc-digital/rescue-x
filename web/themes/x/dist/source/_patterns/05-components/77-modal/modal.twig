@@ -12,10 +12,12 @@
   {% endif %}
 {% endspaceless %}
 <div class="rplc-modal{% for modal_modifier in modal_modifiers %} rplc-modal--{{ modal_modifier }}{% endfor %}" data-rpl-modal-id="{{ modal_id }}" data-rpl-modal-state="closed">
-  <span class="rplc-modal__close">×</span>
-  <div class="rplc-modal__content-wrapper">
-    {% block modal_content_block %}
-      {{ modal_content }}
-    {% endblock %}
+  <div class="rplc-modal__content">
+    <span class="rplc-modal__close" data-rpl-modal-close>×</span>
+    <div class="rplc-modal__inner-content-wrapper">
+      {% block modal_content_block %}
+        {{ modal_content }}
+      {% endblock %}
+    </div>
   </div>
 </div>
