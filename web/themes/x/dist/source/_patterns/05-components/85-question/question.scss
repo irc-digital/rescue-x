@@ -4,7 +4,7 @@
 
   $self: &;
 
-  @include standard-vertical-spacing;
+  @include standard-vertical-padding;
 
   &__content {
     @include well-row;

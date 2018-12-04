@@ -15,21 +15,25 @@ report_page_content:
           aside_content:
             include():
               pattern: "components-teaser-report"
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
+        only: true
 report_page_footer:
   join():
     - include():
@@ -46,6 +50,8 @@ report_page_footer:
               pattern: "molecules-social-share"
               with:
                 social_share_title: 'Follow us'
+              only: true
+        only: true
     - include():
         pattern: "layouts-footer-layout-2"
         with:
@@ -54,6 +60,8 @@ report_page_footer:
               pattern: "atoms-utility-text"
               with:
                 utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+              only: true
           footer_layout_2_section_2:
             include():
               pattern: "atoms-utility-text"
+        only: true
