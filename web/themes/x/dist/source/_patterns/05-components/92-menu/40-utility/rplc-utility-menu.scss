@@ -5,7 +5,12 @@
   $self: &;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include breakpoint(tablet) {
+    flex-direction: row;
+  }
+
 
   &__menu {
     display: flex;
@@ -17,6 +22,15 @@
     }
   }
 
+  &__affiliates-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    @include breakpoint(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
   &__label {
     @include font-size('2xs');
     color: get-neutral-color('dark-gray');
@@ -25,9 +39,11 @@
 
   &__menu--affiliates {
     #{$self}__menu-item {
-      &:last-child {
-        @include utility-menu-border;
-        padding-right: get-spacing('s');
+      @include breakpoint(tablet) {
+        &:last-child {
+          @include utility-menu-border;
+          padding-right: get-spacing('s');
+        }
       }
 
       &:not(:last-child) {
@@ -37,11 +53,22 @@
   }
 
   &__menu--legal {
-    #{$self}__menu-item {
-      padding: 0 get-spacing('s');
+    flex-direction: column;
 
-      &:not(:last-child) {
-        @include utility-menu-border;
+    @include breakpoint(tablet) {
+      flex-direction: row;
+    }
+
+    #{$self}__menu-item {
+      margin-bottom: 5px;
+
+      @include breakpoint(tablet) {
+        margin-bottom: 0;
+        padding: 0 get-spacing('s');
+
+        &:not(:last-child) {
+          @include utility-menu-border;
+        }
       }
     }
   }
