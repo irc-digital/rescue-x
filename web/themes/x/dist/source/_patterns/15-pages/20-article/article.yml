@@ -186,8 +186,11 @@ article_page_footer:
         pattern: "layouts-footer-layout-1"
         with:
           footer_layout_1_section_1:
-            include():
-              pattern: "molecules-crisis-watch"
+            join():
+              - include():
+                  pattern: "molecules-crisis-watch"
+              - include():
+                  pattern: "components-footer-menu"
           footer_layout_1_section_2:
             include():
               pattern: "components-efficiency"

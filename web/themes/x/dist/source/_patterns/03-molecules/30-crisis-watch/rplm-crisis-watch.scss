@@ -3,6 +3,10 @@
 .rplm-crisis-watch {
   $self: &;
 
+  &__wrapper {
+    @include font-size('s');
+  }
+
 }
 
 // end of file

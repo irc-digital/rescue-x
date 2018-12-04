@@ -1,26 +1,22 @@
 footer_menu_main_menu_items:
-  - title: 'Faker.words(2,true)'
+  - title: 'Who We Are'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Where We Work'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'What We Do'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'How To Help'
     url: "#"
-  - title: 'Faker.words(2,true)'
-    url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Latest'
     url: "#"
 footer_menu_utility_menu_items:
-  - title: 'Faker.words(2,true)'
+  - title: 'Careers'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Contact Us'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Donor Help'
     url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Code of Conduct'
     url: "#"
-  - title: 'Faker.words(2,true)'
-    url: "#"
-  - title: 'Faker.words(2,true)'
+  - title: 'Ethics Hotline'
     url: "#"
