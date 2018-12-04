@@ -398,9 +398,11 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   padding-bottom: get-spacing('m');
   padding-top: get-spacing('m');
 
-  //p + & {
-  //  margin-top: -1.2em;
-  //}
+  p + & {
+    margin-bottom: 1.2em;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 
   @include breakpoint(phablet) {
     padding-bottom: get-spacing('xl');
