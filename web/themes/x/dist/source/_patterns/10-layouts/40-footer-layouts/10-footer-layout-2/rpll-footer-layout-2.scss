@@ -4,8 +4,8 @@
   $self: &;
 
   background-color: get-neutral-color('black');
-  padding-bottom: get-spacing('s');
-  padding-top: get-spacing('s');
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
 
   @include breakpoint(phablet) {
     padding-bottom: get-spacing('l');
@@ -26,9 +26,28 @@
   &__section {
     &:first-child {
       border-bottom: 1px solid get-neutral-color('very-dark-gray');
+      padding-bottom: get-spacing('s');
+      @include breakpoint(phablet) {
+        padding-bottom: get-spacing('m');
+      }
 
       @include breakpoint(laptop) {
         border-bottom: 0;
+        order: 2;
+        padding-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      padding-top: get-spacing('s');
+
+      @include breakpoint(phablet) {
+        padding-top: get-spacing('m');
+      }
+
+      @include breakpoint(laptop) {
+        order: 1;
+        padding-top: 0;
       }
     }
   }
