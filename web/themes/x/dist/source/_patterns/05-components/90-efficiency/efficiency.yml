@@ -9,4 +9,5 @@ efficiency_below:
   include():
     pattern: "atoms-button"
     with:
-      button_icon_name: 'caret-right'
+      button_text: "Donate"
+      button_icon_name: 'heart'
