@@ -1,18 +1,23 @@
 @import 'rplc-hero-standard.variables';
+@import '../../../10-layouts/30-hero-layouts/05-hero-layout-1/rpll-hero-layout-1.shared.mixins';
 
 .rplc-hero-standard {
   $self: &;
 
-  &__link-wrapper {
-    text-decoration: none;
+  &__inner-content-wrapper {
+    @include well-row;
   }
 
-  &__description {
-    // TODO temp until we can common core styles
-    font-size: 20px;
-    font-weight: 100;
-    letter-spacing: -.1px;
-    line-height: 1.6;
+  &__image-wrapper {
+    line-height: 0;
+  }
+
+  &__text-wrapper {
+    @include hero-text-wrapper-eat-in;
+
+    background-color: get-neutral-color('white');
+    display: flex;
+    padding: get-spacing('l');
   }
 }
 

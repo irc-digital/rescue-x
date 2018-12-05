@@ -1,4 +1,5 @@
 @import 'rpll-hero-layout-1.variables';
+@import 'rpll-hero-layout-1.shared.mixins';
 
 .rpll-hero-layout-1 {
   $self: &;
@@ -12,11 +13,9 @@
   }
 
   &__text-wrapper {
-    @include z-index('up');
-
     background-color: get-neutral-color('white');
     display: block;
-    padding: 30px;
+    padding: get-spacing('l');
 
     @include breakpoint(phablet) {
       display: grid;
@@ -61,19 +60,7 @@
   // modifiers
   &--has-image {
     #{$self}__text-wrapper {
-      margin-top: $hero-text-wrapper-eats-in;
-    }
-
-    @include breakpoint(phablet) {
-      #{$self}__text-wrapper {
-        margin-top: $hero-text-wrapper-eats-in-phablet;
-      }
-    }
-
-    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
-      #{$self}__text-wrapper {
-        margin-top: $hero-text-wrapper-eats-in-desktop;
-      }
+      @include hero-text-wrapper-eat-in;
     }
   }
 

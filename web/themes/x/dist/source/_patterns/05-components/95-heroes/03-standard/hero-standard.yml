@@ -17,3 +17,6 @@ hero_standard_art_directed_image_alt: "Faker.words(5,true)"
 hero_standard_slug: "Faker.words(2,true)"
 hero_standard_headline: "Faker.sentence(6, true)"
 hero_standard_summary: "Faker.sentences(3,true)"
+hero_standard_primary_cta_url: '#'
+hero_standard_primary_cta_text: "Faker.words(2,true)"
+hero_standard_primary_cta_icon_name: 'caret-down'
