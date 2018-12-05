@@ -203,6 +203,12 @@ article_page_footer:
               pattern: "molecules-social-share"
               with:
                 social_share_title: 'Follow us'
+                social_share_sites:
+                  twitter: 'http://www.twitter.com'
+                  facebook: 'http://www.facebook.com'
+                  instagram: 'http://www.instagram.com'
+                  youtube: 'http://www.youtube.com'
+              only: true
         only: true
     - include():
         pattern: "layouts-footer-layout-2"
