@@ -20,6 +20,12 @@
   <main class="rpll-page__main" role="main" tabindex="-1">
     {{ page_content }}
   </main>
+  <script type="text/javascript">
+    var first_element = document.getElementsByClassName('rpll-page__main')[0].firstElementChild;;
+    if (typeof first_element.dataset.rplCanvasColor !== 'undefined') {
+      document.getElementsByClassName('rpll-page__hero-wrapper')[0].dataset.rplCanvasColor = first_element.dataset.rplCanvasColor;
+    }
+  </script>
 
   {% if page_content_footer is not empty %}
     <div class="rpll-page__content-footer">
@@ -34,10 +40,4 @@
   {% endif %}
 </div>
 <div class="rpll-page__overlay"></div>
-<script type="text/javascript">
-  var first_element = document.getElementsByClassName('rpll-page__main')[0].firstElementChild;;
-  if (typeof first_element.dataset.rplCanvasColor !== 'undefined') {
-    document.getElementsByClassName('rpll-page__hero-wrapper')[0].dataset.rplCanvasColor = first_element.dataset.rplCanvasColor;
-  }
-</script>
 {% include '@components/77-modals/05-search/search-modal.twig' %}
