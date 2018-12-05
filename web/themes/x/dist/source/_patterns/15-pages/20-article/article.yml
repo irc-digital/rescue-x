@@ -209,7 +209,7 @@ article_page_footer:
                   instagram: 'http://www.instagram.com'
                   youtube: 'http://www.youtube.com'
                 social_share_modifiers:
-                  - subtype-small
+                  - 'subtype-small'
               only: true
         only: true
     - include():
