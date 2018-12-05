@@ -28,6 +28,11 @@
   &__headline-wrapper {
     margin-bottom: get-spacing('l');
   }
+
+  &__call-to-action-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+  }
 }
 
 // end of file

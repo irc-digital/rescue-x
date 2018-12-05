@@ -12,6 +12,13 @@
 
   {% set link_modifiers = link_modifiers ?: [] %}
 
+  {% if link_handler_javascript %}
+    {% set link_javascript = 'data-rpl-link-javascript="' ~ link_url ~ '"' %}
+    {% set link_url = null %}
+    {% set link_tag = 'div' %}
+    {% set link_modifiers = link_modifiers | merge(['type-javascript']) %}
+  {% endif %}
+
   {% set has_type = false %}
   {% for link_modifier in link_modifiers %}
     {% if link_modifier starts with 'type-' %}
@@ -21,12 +28,6 @@
 
   {% if not has_type %}
     {% set link_modifiers = link_modifiers | merge(['type-one']) %}
-  {% endif %}
-
-  {% if link_handler_javascript %}
-    {% set link_javascript = 'data-rpl-link-javascript="' ~ link_url ~ '"' %}
-    {% set link_url = null %}
-    {% set link_tag = 'div' %}
   {% endif %}
 
   {% if link_tag is empty %}
