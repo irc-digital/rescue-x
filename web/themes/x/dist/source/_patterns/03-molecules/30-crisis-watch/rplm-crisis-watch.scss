@@ -3,12 +3,15 @@
 .rplm-crisis-watch {
   $self: &;
 
-  &__wrapper {
-    @include font-size('2xs');
-  }
-
   &--type-one {
     @include standard-vertical-spacing;
+    @include font-size('s');
+  }
+
+  &--type-three {
+    #{$self}__wrapper {
+      @include font-size('2xs');
+    }
   }
 
 }
