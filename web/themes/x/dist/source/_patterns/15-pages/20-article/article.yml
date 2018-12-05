@@ -208,6 +208,8 @@ article_page_footer:
                   facebook: 'http://www.facebook.com'
                   instagram: 'http://www.instagram.com'
                   youtube: 'http://www.youtube.com'
+                social_share_modifiers:
+                  - subtype-small
               only: true
         only: true
     - include():
