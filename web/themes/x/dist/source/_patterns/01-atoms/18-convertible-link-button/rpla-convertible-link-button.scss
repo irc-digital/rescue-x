@@ -8,9 +8,6 @@
   @include link-hover-background-color(get-brand-color('primary'));
   @include transition;
   @include hover (data-rpla-hover-target) {
-    left: -#{get-spacing('m')};
-    padding: get-spacing('s') get-spacing('m');
-
     #{$self}__icon-wrapper {
       opacity: 1;
     }
@@ -18,7 +15,8 @@
 
   border-width: 0;
   display: inline;
-  left: 0;
+  left: -#{get-spacing('m')};
+  padding: get-spacing('s') get-spacing('m');
   position: relative;
   text-decoration: none;
   white-space: nowrap;

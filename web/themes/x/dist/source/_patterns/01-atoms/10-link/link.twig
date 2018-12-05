@@ -23,6 +23,12 @@
     {% set link_modifiers = link_modifiers | merge(['type-one']) %}
   {% endif %}
 
+  {% if link_handler_javascript %}
+    {% set link_javascript = 'data-rpl-link-javascript="' ~ link_url ~ '"' %}
+    {% set link_url = null %}
+    {% set link_tag = 'div' %}
+  {% endif %}
+
   {% if link_tag is empty %}
     {% if link_url is not empty %}
       {% set link_tag = 'a' %}
@@ -38,5 +44,5 @@
 {% endfor %}
 
 {% block link_block %}
-<{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="{{ link_classes }}">{{ link_text }}</{{ link_tag }}>
+<{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="{{ link_classes }}"{{ link_javascript }}>{{ link_text }}</{{ link_tag }}>
 {% endblock link_block %}
