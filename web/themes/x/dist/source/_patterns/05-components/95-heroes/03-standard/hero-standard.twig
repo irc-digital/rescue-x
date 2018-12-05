@@ -36,7 +36,8 @@
                 {% include '@atoms/10-link/link.twig' with {
                   link_text: hero_standard_secondary_cta_text,
                   link_url: hero_standard_secondary_cta_url,
-                  link_modifiers: ['type-one', 'subtype-black', 'handler-javascript'],
+                  link_handler_javascript: true,
+                  link_modifiers: ['size-extra-small'],
                 } only %}
               {% endif %}
             </div>

@@ -12,8 +12,8 @@ $link-default-hover-background-color: get-brand-color('primary');
   border-bottom: $link-default-border-width solid $color;
 }
 
-@mixin link-hover-border ($color: $link-default-border-color, $border-width: $link-default-border-width) {
-  @include hover ('data-rpla-hover-target') {
+@mixin link-hover-border ($color: $link-default-border-color, $border-width: $link-default-border-width, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
     border-bottom: $border-width solid $color;
   }
 }
@@ -22,8 +22,8 @@ $link-default-hover-background-color: get-brand-color('primary');
   color: $color;
 }
 
-@mixin link-hover-color ($color: $link-default) {
-  @include hover ('data-rpla-hover-target') {
+@mixin link-hover-color ($color: $link-default, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
     color: $color;
   }
 }
@@ -32,8 +32,8 @@ $link-default-hover-background-color: get-brand-color('primary');
   background-color: $color;
 }
 
-@mixin link-hover-background-color ($color: $link-default-hover-background-color) {
-  @include hover ('data-rpla-hover-target') {
+@mixin link-hover-background-color ($color: $link-default-hover-background-color, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
     background-color: $color;
     box-shadow: 0 0 0 .2em $color;
   }
