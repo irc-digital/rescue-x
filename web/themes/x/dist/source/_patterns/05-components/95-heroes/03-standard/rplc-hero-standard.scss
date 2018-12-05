@@ -16,8 +16,17 @@
     @include hero-text-wrapper-eat-in;
 
     background-color: get-neutral-color('white');
-    display: flex;
-    padding: get-spacing('l');
+    display: block;
+    padding: get-spacing('ml') get-spacing('l');
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      display: flex;
+      padding: get-spacing('l');
+    }
+  }
+
+  &__headline-wrapper {
+    margin-bottom: get-spacing('l');
   }
 }
 
