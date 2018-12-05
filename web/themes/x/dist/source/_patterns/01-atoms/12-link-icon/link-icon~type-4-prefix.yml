@@ -4,4 +4,3 @@ link_icon_prefix_text: "Faker.words(3,true)"
 link_icon_modifiers:
   - 'type-four'
   - 'subtype-prefix'
-  - 'size-2x-small'

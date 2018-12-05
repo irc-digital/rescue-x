@@ -126,9 +126,7 @@
     background-color: $global-navigation-top-wrapper-background;
     color: get-neutral-color('white');
     justify-content: space-between;
-    padding-bottom: get-spacing('s');
-    padding-left: get-spacing('ml');
-    padding-top: get-spacing('s');
+    padding: rem(15px) rem(20px);
   }
 
   &__desktop-cta-wrapper {

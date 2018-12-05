@@ -1,6 +1,5 @@
 link_icon_name: 'fleeing'
 link_icon_text: "Faker.words(1,true)"
 link_icon_modifiers:
-  - 'size-2x-small'
   - 'type-four'
   - 'subtype-inverse'

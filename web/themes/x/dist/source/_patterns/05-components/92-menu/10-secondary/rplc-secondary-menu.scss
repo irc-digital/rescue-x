@@ -14,13 +14,13 @@
     position: relative;
 
     &::after {
-      border: 1px solid get-neutral-color('gray');
+      border-right: 1px solid get-neutral-color('dark-gray');
       content: '';
       display: inline;
-      height: 10px;
+      height: 15px;
       position: absolute;
       right: 0;
-      top: 5px;
+      top: 4px;
       width: 0;
     }
 
