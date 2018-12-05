@@ -101,8 +101,11 @@
   &--type-javascript {
     @include link-color(get-neutral-color('black'));
     @include link-border(get-neutral-color('black'));
-    @include link-hover-background-color(get-brand-color('primary'), '&');
     @include link-hover-border(get-brand-color('primary'), $link-default-border-width, '&');
+
+    @include hover {
+      background-color: get-brand-color('primary');
+    }
   }
 
   &--size-2x-small {

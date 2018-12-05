@@ -27,11 +27,31 @@
 
   &__headline-wrapper {
     margin-bottom: get-spacing('l');
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      margin-bottom: 0;
+      padding-right: get-spacing('l');
+      width: 62%;
+    }
   }
 
   &__call-to-action-wrapper {
+    align-items: flex-start;
     display: inline-flex;
     flex-direction: column;
+
+    @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$hero-layout-1-largest-medium-device-size}) {
+      flex-direction: row;
+    }
+  }
+
+  &__primary-call-to-action-wrapper {
+    margin-bottom: get-spacing();
+
+    @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$hero-layout-1-largest-medium-device-size}) {
+      margin-bottom: 0;
+      margin-right: get-spacing();
+    }
   }
 }
 

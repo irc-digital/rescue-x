@@ -27,19 +27,26 @@
               } only %}
             </div>
             <div class="rplc-hero-standard__call-to-action-wrapper">
-                {% include '@atoms/18-convertible-link-button/convertible-link-button.twig' with {
-                  convertible_link_button_link_text: hero_standard_primary_cta_text,
-                  convertible_link_button_icon_name: hero_standard_primary_cta_icon_name,
-                } only %}
-
-              {% if hero_standard_secondary_cta_url is not empty and hero_standard_secondary_cta_text is not empty %}
-                {% include '@atoms/10-link/link.twig' with {
-                  link_text: hero_standard_secondary_cta_text,
-                  link_url: hero_standard_secondary_cta_url,
-                  link_handler_javascript: true,
-                  link_modifiers: ['size-extra-small'],
-                } only %}
-              {% endif %}
+              <div class="rplc-hero-standard__primary-call-to-action-wrapper">
+                {% if hero_standard_secondary_cta_url is not empty and hero_standard_secondary_cta_text is not empty %}
+                  {% include '@atoms/30-button/button.twig' with {
+                    button_text: hero_standard_primary_cta_text,
+                    button_icon_name: hero_standard_primary_cta_icon_name,
+                  } only %}
+                </div><div class="rplc-hero-standard__secondary-call-to-action-wrapper">
+                  {% include '@atoms/10-link/link.twig' with {
+                    link_text: hero_standard_secondary_cta_text,
+                    link_url: hero_standard_secondary_cta_url,
+                    link_handler_javascript: true,
+                    link_modifiers: ['size-extra-small'],
+                  } only %}
+                {% else %}
+                  {% include '@atoms/18-convertible-link-button/convertible-link-button.twig' with {
+                    convertible_link_button_link_text: hero_standard_primary_cta_text,
+                    convertible_link_button_icon_name: hero_standard_primary_cta_icon_name,
+                  } only %}
+                {% endif %}
+              </div>
             </div>
         </div>
       </a>
