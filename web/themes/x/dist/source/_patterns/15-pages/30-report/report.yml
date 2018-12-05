@@ -21,19 +21,21 @@ report_page_content:
         with:
           text_modifiers:
             - 'body'
-        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
-        only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
-        only: true
+    - include():
+        pattern: "components-title-and-link-list"
+        with:
+          text_modifiers:
+            - 'body'
 report_page_footer:
   join():
     - include():
