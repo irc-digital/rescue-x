@@ -4,7 +4,7 @@ landing_page_navigation:
 landing_page_hero_has_image: "yes"
 landing_page_hero:
   include():
-    pattern: "components-hero-landing-page"
+    pattern: "components-hero-standard"
 landing_page_content:
   join():
     - include():

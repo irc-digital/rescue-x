@@ -30,8 +30,8 @@
 
     @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
       margin-bottom: 0;
-      padding-right: get-spacing('l');
-      width: 62%;
+      padding-right: get-spacing('xl');
+      width: 75%;
     }
   }
 
