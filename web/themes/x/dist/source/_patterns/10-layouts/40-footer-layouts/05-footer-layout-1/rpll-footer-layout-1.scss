@@ -4,8 +4,8 @@
   $self: &;
 
   background-color: get-neutral-color('light-gray');
-  padding-bottom: get-spacing('s');
-  padding-top: get-spacing('s');
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
 
   @include breakpoint(phablet) {
     padding-bottom: get-spacing('l');
