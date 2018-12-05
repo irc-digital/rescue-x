@@ -5,8 +5,8 @@ efficiency:
     percentage: '7%'
   - name: 'Fundraising'
     percentage: '4%'
-#efficiency_below:
-#  include():
-#    pattern: "atoms-button-link"
-#    with:
-#      button_icon_name: 'caret-right'
+efficiency_below:
+  include():
+    pattern: "atoms-button"
+    with:
+      button_icon_name: 'caret-right'
