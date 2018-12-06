@@ -49,4 +49,8 @@ strong {
   background-color: get-neutral-color('light-gray');
 }
 
+[data-rpl-canvas-color='neutral-white'] {
+  background-color: get-neutral-color('white');
+}
+
 // end of file
