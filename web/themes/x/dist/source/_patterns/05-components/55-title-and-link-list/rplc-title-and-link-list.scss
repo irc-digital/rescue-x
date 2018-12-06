@@ -5,8 +5,9 @@
   @include well-row;
 
   &__heading {
-    @include font-size('xs');
+    @include font-size('s');
     @include font-weight('bold');
+    letter-spacing: .125rem;
     margin-bottom: get-spacing('m');
     text-transform: uppercase;
   }
