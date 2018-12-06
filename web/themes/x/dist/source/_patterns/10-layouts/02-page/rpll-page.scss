@@ -21,9 +21,11 @@
   }
 
   &__hero-wrapper {
+    margin-top: rem(68px);
     padding-top: rem(50px);
 
     @media #{$global-navigation-large-device-media-query} {
+      margin-top: 0;
       padding-top: rem(210px);
     }
 

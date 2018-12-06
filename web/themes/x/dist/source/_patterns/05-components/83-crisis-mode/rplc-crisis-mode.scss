@@ -3,6 +3,8 @@
 .rplc-crisis-mode {
   @include standard-vertical-padding;
 
+  background-color: get-utility-color('alert');
+
   &__content {
     @include well-row;
 
