@@ -5,5 +5,10 @@
     section_heading_icon: slider_stories_section_heading_icon
   } only %}
   <div class="rplc-slider-stories__content">
+    <ul class="rplc-slider-stories__slides">
+      {% for slider_stories_slide in slider_stories_slides %}
+        <li class="rplc-slider-stories__slide">{{ slider_stories_slide }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
