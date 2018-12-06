@@ -47,6 +47,9 @@ config.javascript = {
     '../../core/misc/drupal.js',
     '../../core/misc/drupal.init.js',
   ],
+  externalLibraries: [
+    '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js',
+  ],
   pattern_javascript: [
     config.patternLab.patternDir + '/**/*.js',
   ],
@@ -442,6 +445,11 @@ gulp.task('patternlab:javascript', function () {
           var file_name = split_out[split_out.length - 1];
           output += '<script src="../../js/core/' + file_name + '"></script>';
         }
+
+        for (var i in config.javascript.externalLibraries) {
+          output += '<script src="' + config.javascript.externalLibraries[i] + '"></script>';
+        }
+
         fs.readdirSync(config.javascript.jsDir + '/patterns').forEach(file => {
           output += '<script src="../../js/patterns/' + file + '"></script>';
         });
