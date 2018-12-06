@@ -1,2 +1,12 @@
-
-
+<div class="rpll-slider-layout-1{% for slider_layout_1_modifier in slider_layout_1_modifiers %} rpll-slider-layout-1--{{ slider_layout_1_modifier }}{% endfor %}">
+  <div class="rpll-slider-layout-1__wrapper">
+    <div class="rpll-slider-layout-1__previous">{{ slider_layout_1_previous }}</div>
+    <div class="rpll-slider-layout-1__slides">
+      {% block slider_layout_1_slides_block %}
+        {{ slider_layout_1_slides }}
+      {% endblock %}
+    </div>
+    <div class="rpll-slider-layout-1__next">{{ slider_layout_1_next }}</div>
+  </div>
+  <div class="rpll-slider-layout-1__pager">{{ slider_layout_1_pager }}</div>
+</div>
