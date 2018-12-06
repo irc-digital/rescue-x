@@ -1,1 +1,2 @@
-teaser_story_sample_text: "Faker.sentences(5,true)"
+teaser_story_text: "Faker.sentences(2,true)"
+teaser_story_image: "https://placeimg.com/640/480/any"
