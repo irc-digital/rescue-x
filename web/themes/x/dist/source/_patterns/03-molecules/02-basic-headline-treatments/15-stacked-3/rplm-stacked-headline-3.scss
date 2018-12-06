@@ -10,7 +10,12 @@
   &__headline {
     @include typography-heading-5xl;
     color: get-neutral-color('white');
+    display: inline;
     margin-bottom: get-spacing('ml');
+
+    @include breakpoint(phablet) {
+      display: block;
+    }
   }
 
   &__text-wrapper {
@@ -22,11 +27,14 @@
   }
 
   &__crisis-watch-wrapper {
+    display: inline;
     font-size: 20px;
-  }
+    margin-left: .5em;
 
-  &__headline-wrapper {
-
+    @include breakpoint(phablet) {
+      display: block;
+      margin-left: 0;
+    }
   }
 }
 

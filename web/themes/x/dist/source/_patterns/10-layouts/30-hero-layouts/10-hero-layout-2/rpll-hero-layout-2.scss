@@ -4,6 +4,7 @@
   $self: &;
 
   background-color: $hero-2-text-area-text-background;
+  position: relative;
 
   @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
     background-color: transparent;
