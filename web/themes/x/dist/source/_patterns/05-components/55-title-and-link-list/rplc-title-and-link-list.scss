@@ -1,9 +1,14 @@
 @import 'rplc-title-and-link-list.variables';
 
 .rplc-teaser-title-and-link-list {
+  $self: &;
+  @include well-row;
+
   &__heading {
+    @include font-size('xs');
+    @include font-weight('bold');
+    margin-bottom: get-spacing('m');
     text-transform: uppercase;
   }
 }
-
 // end of file

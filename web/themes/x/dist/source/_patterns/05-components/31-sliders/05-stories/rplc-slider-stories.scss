@@ -1,0 +1,10 @@
+@import 'rplc-slider-stories.variables';
+
+.rplc-slider-stories {
+  &__content {
+    @include well-row;
+  }
+}
+
+
+// end of file
