@@ -33,6 +33,21 @@ topic_page_content:
         pattern: "components-news-and-features"
         with:
           news_and_features_section_heading_description: ''
+    - include():
+        pattern: "components-basic-teaser-list"
+        with:
+          basic_teaser_list_section_heading_title: "Related reports and resources"
+          basic_teaser_list_section_heading_description: ""
+          basic_teaser_list_content:
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+          only: true
 topic_page_footer:
   join():
     - include():
