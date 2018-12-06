@@ -1,13 +1,10 @@
 @import 'rplc-crisis-mode.variables';
 
 .rplc-crisis-mode {
-  background-color: get-utility-color('alert');
+  @include standard-vertical-padding;
 
   &__content {
     @include well-row;
-
-    padding-bottom: get-spacing('l');
-    padding-top: get-spacing('xl');
 
     @include breakpoint(951) {
       display: flex;

@@ -53,4 +53,8 @@ strong {
   background-color: get-neutral-color('white');
 }
 
+[data-rpl-canvas-color='utility-alert'] {
+  background-color: get-utility-color('alert');
+}
+
 // end of file
