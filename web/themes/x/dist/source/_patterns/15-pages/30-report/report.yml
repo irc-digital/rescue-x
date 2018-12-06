@@ -29,9 +29,6 @@ report_page_content:
             - 'body'
     - include():
         pattern: "components-title-and-link-list"
-        with:
-          text_modifiers:
-            - 'body'
 report_page_footer:
   join():
     - include():
