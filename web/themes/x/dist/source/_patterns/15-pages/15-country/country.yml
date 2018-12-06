@@ -5,6 +5,9 @@ country_page_hero_has_image: "yes"
 country_page_hero:
   include():
     pattern: "components-hero-landing-page"
+    with:
+      hero_landing_page_slug: 'Legacy of violence'
+      hero_landing_page_headline: 'Democratic Republic of Congo'
 country_page_content:
   join():
     - include():
