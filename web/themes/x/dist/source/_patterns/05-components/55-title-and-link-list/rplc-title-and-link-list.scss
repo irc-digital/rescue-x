@@ -2,7 +2,6 @@
 
 .rplc-teaser-title-and-link-list {
   $self: &;
-  @include well-row;
 
   &__heading {
     @include font-size('s');
