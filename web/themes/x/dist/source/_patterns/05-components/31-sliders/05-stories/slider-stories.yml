@@ -1,1 +1,8 @@
 slider_stories_section_heading_title: "Rescue stories"
+slider_stories_slides:
+  - include():
+      pattern: "components-teaser-story"
+  - include():
+      pattern: "components-teaser-story"
+  - include():
+      pattern: "components-teaser-story"
