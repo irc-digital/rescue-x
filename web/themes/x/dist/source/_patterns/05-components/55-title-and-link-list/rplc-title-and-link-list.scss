@@ -3,6 +3,7 @@
 .rplc-teaser-title-and-link-list {
   $self: &;
   @include well-row;
+
   &__heading {
     @include font-size('xs');
     @include font-weight('bold');
@@ -10,5 +11,4 @@
     text-transform: uppercase;
   }
 }
-
 // end of file
