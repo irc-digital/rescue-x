@@ -16,3 +16,9 @@ hero_landing_page_art_directed_image_sources:
 hero_landing_page_art_directed_image_alt: "Faker.words(5,true)"
 hero_landing_page_slug: "Faker.words(2,true)"
 hero_landing_page_headline: "Faker.words(1,true)"
+hero_landing_page_social_share_sites:
+  'twitter': '#'
+  'facebook': '#'
+  'linked-in': '#'
+  'mail': '#'
+hero_landing_page_criss_mode: true

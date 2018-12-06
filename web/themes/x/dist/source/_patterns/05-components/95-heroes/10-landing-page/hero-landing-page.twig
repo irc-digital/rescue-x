@@ -20,18 +20,12 @@
         {% endblock %}
       {% endif %}
       {% block hero_layout_2_primary_block %}
-        {% include '@atoms/01-text/25-slug/slug.twig' with {
-          slug_text: hero_landing_page_slug,
-          slug_modifiers: ['size-large'],
+        {% include '@molecules/02-basic-headline-treatments/15-stacked-3/stacked-headline-3.twig' with {
+          stacked_headline_3_headline: hero_landing_page_headline,
+          stacked_headline_3_slug: hero_landing_page_slug,
+          stacked_headline_3_social_share_sites: hero_landing_page_social_share_sites,
+          stacked_headline_3_criss_mode: hero_landing_page_criss_mode,
         } only %}
-        <div class="rplc-hero-landing-page__title-crisis-wrapper">
-          <div class="rplc-hero-landing-page__title-wrapper">{% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: hero_landing_page_headline} %}</div>
-          {% if hero_landing_page_crisis_watch %}
-            {% include '@molecules/30-crisis-watch/crisis-watch.twig' %}
-          {% endif %}
-          </div>
-        </div>
-        {% if hero_landing_page_social %}{{ hero_landing_page_social }}{% endif %}
       {% endblock %}
       {% block hero_layout_2_secondary_block %}
         {{ hero_landing_page_secondary_block }}

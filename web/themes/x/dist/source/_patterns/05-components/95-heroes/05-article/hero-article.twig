@@ -40,9 +40,11 @@
       {% block hero_layout_1_secondary_1_block %}
         {{ hero_article_social_share }}
       {% endblock %}
-      {% block hero_layout_1_secondary_2_block %}
-        {{ hero_article_contributors }}
-      {% endblock %}
+      {% if hero_article_contributors is empty %}
+        {% block hero_layout_1_secondary_2_block %}
+          {{ hero_article_contributors }}
+        {% endblock %}
+      {% endif %}
     {% endembed %}
   </div>
 </div>
