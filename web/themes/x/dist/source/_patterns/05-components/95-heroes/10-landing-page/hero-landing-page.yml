@@ -1,3 +1,5 @@
+hero_landing_page_slug: "Faker.words(2,true)"
+hero_landing_page_headline: "Faker.words(1,true)"
 hero_landing_page_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=herolandingpage"
 hero_landing_page_art_directed_image_sources:
   - source_set:
@@ -14,5 +16,9 @@ hero_landing_page_art_directed_image_sources:
     - "https://placem.at/places?w=3840&h=2160&random=herolandingpage 2x"
     media: "only screen and (min-width: 64.063em)"
 hero_landing_page_art_directed_image_alt: "Faker.words(5,true)"
-hero_landing_page_slug: "Faker.words(2,true)"
-hero_landing_page_headline: "Faker.words(1,true)"
+hero_landing_page_social_share_sites:
+  'twitter': '#'
+  'facebook': '#'
+  'linked-in': '#'
+  'mail': '#'
+hero_landing_page_criss_mode: true

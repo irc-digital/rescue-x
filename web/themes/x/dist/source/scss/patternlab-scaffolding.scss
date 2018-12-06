@@ -26,6 +26,16 @@ body > .rpll-three-column-list {
   @include well-row;
 }
 
+.sg-pattern-example > .rplm-stacked-headline-3,
+body > .rplm-stacked-headline-3 {
+  background-color: black;
+  max-width: 574px;
+}
+
+[id^="molecules-stacked-headline-3"] {
+  background-color: black;
+}
+
 // body > .rplc-modal
 #components-search-modal .sg-pattern-example > .rplc-modal {
   display: block;

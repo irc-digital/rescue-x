@@ -4,7 +4,7 @@
 
   @include standard-vertical-padding;
 
-  background-color: get-neutral-color('light-gray');
+  //background-color: get-neutral-color('light-gray');
 
   &__content {
     @include well-row;

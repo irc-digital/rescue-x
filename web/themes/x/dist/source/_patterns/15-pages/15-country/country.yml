@@ -1,48 +1,54 @@
-landing_page_navigation:
+country_page_navigation:
   include():
     pattern: "components-global-navigation"
-landing_page_hero_has_image: "yes"
-landing_page_hero:
+country_page_hero_has_image: "yes"
+country_page_hero:
   include():
-    pattern: "components-hero-standard"
+    pattern: "components-hero-landing-page"
     with:
-      hero_standard_art_directed_image_sources:
+      hero_landing_page_slug: 'Legacy of violence'
+      hero_landing_page_headline: 'Democratic Republic of Congo'
+      hero_landing_page_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=countrypagehero"
+      hero_landing_page_art_directed_image_sources:
         - source_set:
-          - "https://placem.at/places?w=640&h=640&random=landingpage1 1x"
-          - "https://placem.at/places?w=1280&h=1280&random=landingpage1 2x"
-          - "https://placem.at/places?w=1920&h=1920&random=landingpage1 3x"
+          - "https://placem.at/places?w=640&h=640&random=countrypagehero 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=countrypagehero 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=countrypagehero 3x"
           media: "only screen and (max-width: 40em)"
         - source_set:
-          - "https://placem.at/places?w=1029&h=441&random=landingpage1 1x"
-          - "https://placem.at/places?w=2058&h=882&random=landingpage1 2x"
+          - "https://placem.at/places?w=1024&h=576&random=countrypagehero 1x"
+          - "https://placem.at/places?w=2048&h=1152&random=countrypagehero 2x"
           media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
         - source_set:
-          - "https://placem.at/places?w=1925&h=825&random=landingpage1 1x"
-          - "https://placem.at/places?w=3850&h=1650&random=landingpage1 2x"
+          - "https://placem.at/places?w=1920&h=1080&random=countrypagehero 1x"
+          - "https://placem.at/places?w=3840&h=2160&random=countrypagehero 2x"
           media: "only screen and (min-width: 64.063em)"
-landing_page_content:
+country_page_content:
   join():
     - include():
-        pattern: "components-infographic-standard"
+        pattern: "components-crisis-mode"
+    - include():
+        pattern: "components-fast-facts"
+        with:
+          fast_facts_list_1:
+            include():
+              pattern: "molecules-fact-list"
+              with:
+                fact_list_title: 'Country facts'
+          fast_facts_list_2:
+            include():
+              pattern: "molecules-fact-list"
+              with:
+                fact_list_title: 'IRC response'
     - include():
         pattern: "components-news-and-features"
+        with:
+          news_and_features_section_heading_description: ''
     - include():
         pattern: "components-press-releases"
     - include():
-        pattern: "components-quote"
-    - include():
-        pattern: "components-pull-quote"
-        with:
-          pull_quote_text: 'Faker.sentences(4,true)'
-          pull_quote_section_heading_title: 'Faker.words(6,true)'
-          pull_quote_modifiers:
-            - 'background-transparent'
-        only: true
-    - include():
-        pattern: "components-question"
-    - include():
         pattern: "components-call-to-action-2"
-landing_page_footer:
+country_page_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"

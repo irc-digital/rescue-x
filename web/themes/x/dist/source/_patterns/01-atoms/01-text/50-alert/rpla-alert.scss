@@ -1,0 +1,17 @@
+@import 'rpla-alert.variables';
+
+.rpla-alert {
+
+  align-items: center;
+  color: get-utility-color('alert');
+  display: inline-flex;
+  line-height: 1;
+
+  &__icon-wrapper {
+    height: $alert-icon-size;
+    margin-right: .25em;
+    width: $alert-icon-size;
+  }
+}
+
+// end of file

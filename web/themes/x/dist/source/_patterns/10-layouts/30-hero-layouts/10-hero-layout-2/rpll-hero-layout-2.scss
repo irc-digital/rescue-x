@@ -33,6 +33,8 @@
       grid-column-gap: $hero-2-text-column-gap;
       grid-template-areas: 'primary' 'secondary';
       grid-template-columns: 1fr 1fr;
+      padding-bottom: get-spacing('l');
+      padding-top: get-spacing('l');
     }
   }
 }
