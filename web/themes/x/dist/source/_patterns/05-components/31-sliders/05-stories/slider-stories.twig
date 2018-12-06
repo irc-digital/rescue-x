@@ -4,8 +4,9 @@
     section_heading_description: slider_stories_section_heading_description,
     section_heading_icon: slider_stories_section_heading_icon
   } only %}
+
   <div class="rplc-slider-stories__content">
-    <ul class="rplc-slider-stories__slides">
+    <ul class="rplc-slider-stories__slides" data-slick='{}'>
       {% for slider_stories_slide in slider_stories_slides %}
         <li class="rplc-slider-stories__slide">{{ slider_stories_slide }}</li>
       {% endfor %}

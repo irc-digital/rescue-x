@@ -1,6 +1,7 @@
 @import 'rplc-slider-stories.variables';
 
 .rplc-slider-stories {
+  @include standard-vertical-padding;
   background: get-brand-color('primary') url('../../../../images/sliders/stories_background.jpg') no-repeat;
   background-size: cover;
 
@@ -10,6 +11,13 @@
 
   &__slides {
     list-style: none;
+  }
+
+  &__slide {
+    // sass-lint:disable-block no-important
+    display: block !important;
+    margin: 0 auto;
+    max-width: 465px;
   }
 }
 
