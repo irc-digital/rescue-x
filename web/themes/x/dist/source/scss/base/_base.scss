@@ -45,16 +45,4 @@ strong {
   @include image-content-type-decorator;
 }
 
-[data-rpl-canvas-color='neutral-light-gray'] {
-  background-color: get-neutral-color('light-gray');
-}
-
-[data-rpl-canvas-color='neutral-white'] {
-  background-color: get-neutral-color('white');
-}
-
-[data-rpl-canvas-color='utility-alert'] {
-  background-color: get-utility-color('alert');
-}
-
 // end of file
