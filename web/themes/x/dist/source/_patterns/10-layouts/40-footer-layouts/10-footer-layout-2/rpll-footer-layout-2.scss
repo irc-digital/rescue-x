@@ -32,8 +32,8 @@
       }
 
       @include breakpoint(desktop) {
-        justify-self: flex-end;
         border-bottom: 0;
+        justify-self: flex-end;
         order: 2;
         padding-bottom: 0;
       }

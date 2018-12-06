@@ -38,16 +38,8 @@ topic_page_content:
         with:
           basic_teaser_list_section_heading_title: "Related reports and resources"
           basic_teaser_list_section_heading_description: ""
-          basic_teaser_list_content:
-            - include():
-                pattern: "components-teaser-basic"
-                with:
-                  teaser_basic_slug: 'Report'
-            - include():
-                pattern: "components-teaser-basic"
-                with:
-                  teaser_basic_slug: 'Report'
-          only: true
+          basic_teaser_list_content: null
+        only: true
 topic_page_footer:
   join():
     - include():
