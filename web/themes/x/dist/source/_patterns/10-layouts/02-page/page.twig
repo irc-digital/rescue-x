@@ -1,7 +1,7 @@
 {% spaceless %}
 
   {% set page_modifiers = page_modifiers ?: [] %}
-  {% set page_hero_has_image = page_hero_has_image ?: 'no' %}
+  {% set page_hero_has_image = page_hero_has_image ? 'yes' : 'no' %}
 
 {% endspaceless %}
 <div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}" data-rpl-hero-has-image="{{ page_hero_has_image }}">

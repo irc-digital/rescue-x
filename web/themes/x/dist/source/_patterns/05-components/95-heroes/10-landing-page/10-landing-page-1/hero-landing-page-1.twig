@@ -1,0 +1,16 @@
+{% embed '@components/95-heroes/10-landing-page/_hero-landing-page.twig' with {
+  hero_landing_page_slug: hero_landing_page_1_slug,
+  hero_landing_page_headline: hero_landing_page_1_headline,
+  hero_landing_page_art_directed_image_fallback: hero_landing_page_1_art_directed_image_fallback,
+  hero_landing_page_art_directed_image_sources: hero_landing_page_1_art_directed_image_sources,
+  hero_landing_page_art_directed_image_alt: hero_landing_page_1_art_directed_image_alt,
+  hero_landing_page_social_share_sites: hero_landing_page_1_social_share_sites,
+  hero_landing_page_crisis_mode: hero_landing_page_1_crisis_mode,
+  hero_landing_page_modifiers: ['type-1'],
+} %}
+  {% block hero_landing_page_secondary_block %}
+    <div class="rplc-hero-landing-page__summary">
+      {{ hero_landing_page_1_summary }}
+    </div>
+  {% endblock %}
+{% endembed %}

@@ -38,7 +38,14 @@
       grid-template-columns: 1fr 1fr;
     }
   }
-}
 
+  &__primary {
+    margin-bottom: get-spacing('l');
+
+    @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+      margin-bottom: 0;
+    }
+  }
+}
 
 // end of file

@@ -1,56 +1,51 @@
-country_page_navigation:
+outcome_page_navigation:
   include():
     pattern: "components-global-navigation"
-country_page_hero_has_image: true
-country_page_hero:
+outcome_page_hero_has_image: true
+outcome_page_hero:
   include():
     pattern: "components-hero-landing-page-1"
     with:
-      hero_landing_page_1_slug: 'Legacy of violence'
-      hero_landing_page_1_headline: 'Democratic Republic of Congo'
-      hero_landing_page_1_crisis_mode: TRUE
-      hero_landing_page_1_summary: 'The International Rescue Committee provides vital support to Congolese who are struggling to recover from decades of conflict, ongoing violence and widespread disease.'
-      hero_landing_page_1_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=countrypagehero"
+      hero_landing_page_1_slug: 'Where we focus'
+      hero_landing_page_1_headline: 'Education'
+      hero_landing_page_1_summary: 'During conflict and crisis, education protects children and sets them up for a better future. It provides a sense of hope and enables them to recover, learn and thrive. However, over 62 million children in countries affected by war remain out of school, while many others receive only a poor quality education. Despite this great need, education has received less than two percent of all humanitarian aid in recent years.'
+      hero_landing_page_1_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=outcomepagehero"
       hero_landing_page_1_art_directed_image_sources:
         - source_set:
-          - "https://placem.at/places?w=640&h=640&random=countrypagehero 1x"
-          - "https://placem.at/places?w=1280&h=1280&random=countrypagehero 2x"
-          - "https://placem.at/places?w=1920&h=1920&random=countrypagehero 3x"
+          - "https://placem.at/places?w=640&h=640&random=outcomepagehero 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=outcomepagehero 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=outcomepagehero 3x"
           media: "only screen and (max-width: 40em)"
         - source_set:
-          - "https://placem.at/places?w=1024&h=576&random=countrypagehero 1x"
-          - "https://placem.at/places?w=2048&h=1152&random=countrypagehero 2x"
+          - "https://placem.at/places?w=1024&h=576&random=outcomepagehero 1x"
+          - "https://placem.at/places?w=2048&h=1152&random=outcomepagehero 2x"
           media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
         - source_set:
-          - "https://placem.at/places?w=1920&h=1080&random=countrypagehero 1x"
-          - "https://placem.at/places?w=3840&h=2160&random=countrypagehero 2x"
+          - "https://placem.at/places?w=1920&h=1080&random=outcomepagehero 1x"
+          - "https://placem.at/places?w=3840&h=2160&random=outcomepagehero 2x"
           media: "only screen and (min-width: 64.063em)"
-country_page_content:
+outcome_page_content:
   join():
-    - include():
-        pattern: "components-crisis-mode"
-    - include():
-        pattern: "components-fast-facts"
-        with:
-          fast_facts_list_1:
-            include():
-              pattern: "molecules-fact-list"
-              with:
-                fact_list_title: 'Country facts'
-          fast_facts_list_2:
-            include():
-              pattern: "molecules-fact-list"
-              with:
-                fact_list_title: 'IRC response'
     - include():
         pattern: "components-news-and-features"
         with:
           news_and_features_section_heading_description: ''
     - include():
-        pattern: "components-press-releases"
-    - include():
-        pattern: "components-call-to-action-2"
-country_page_footer:
+        pattern: "components-basic-teaser-list"
+        with:
+          basic_teaser_list_section_heading_title: "Related reports and resources"
+          basic_teaser_list_section_heading_description: ""
+          basic_teaser_list_content:
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+        only: true
+outcome_page_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"
