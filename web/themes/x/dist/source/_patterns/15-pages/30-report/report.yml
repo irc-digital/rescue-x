@@ -15,25 +15,27 @@ report_page_content:
           aside_content:
             include():
               pattern: "components-teaser-report"
-        only: true
+          only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
-        only: true
+          only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
-        only: true
+          only: true
     - include():
         pattern: "atoms-paragraph"
         with:
           text_modifiers:
             - 'body'
-        only: true
+          only: true
+    - include():
+        pattern: "components-title-and-link-list"
 report_page_footer:
   join():
     - include():
@@ -61,7 +63,7 @@ report_page_footer:
                 social_share_modifiers:
                   - 'subtype-small'
               only: true
-        only: true
+          only: true
     - include():
         pattern: "layouts-footer-layout-2"
         with:

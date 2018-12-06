@@ -8,6 +8,21 @@ country_page_hero:
     with:
       hero_landing_page_slug: 'Legacy of violence'
       hero_landing_page_headline: 'Democratic Republic of Congo'
+      hero_landing_page_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=countrypagehero"
+      hero_landing_page_art_directed_image_sources:
+        - source_set:
+          - "https://placem.at/places?w=640&h=640&random=countrypagehero 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=countrypagehero 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=countrypagehero 3x"
+          media: "only screen and (max-width: 40em)"
+        - source_set:
+          - "https://placem.at/places?w=1024&h=576&random=countrypagehero 1x"
+          - "https://placem.at/places?w=2048&h=1152&random=countrypagehero 2x"
+          media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+        - source_set:
+          - "https://placem.at/places?w=1920&h=1080&random=countrypagehero 1x"
+          - "https://placem.at/places?w=3840&h=2160&random=countrypagehero 2x"
+          media: "only screen and (min-width: 64.063em)"
 country_page_content:
   join():
     - include():
