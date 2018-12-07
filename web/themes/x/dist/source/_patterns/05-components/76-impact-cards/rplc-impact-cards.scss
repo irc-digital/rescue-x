@@ -10,15 +10,21 @@
   }
 
   &__inner-content-wrapper {
-    display: grid;
-    grid-column-gap: get-spacing('m');
-    grid-template-columns: 1fr 1fr 1fr;
-    //max-width: 1328px;
-    //overflow-x: auto;
-    //width: 100%;
+    display: flex;
+    max-width: rem(1328px);
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  &__card-wrapper {
+    margin-right: get-spacing('m');
 
     @include breakpoint(phablet) {
       grid-column-gap: get-spacing('ml');
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
