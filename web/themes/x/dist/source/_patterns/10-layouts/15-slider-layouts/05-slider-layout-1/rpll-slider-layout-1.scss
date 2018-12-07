@@ -16,6 +16,11 @@
     justify-content: center;
   }
 
+  // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
+  &__slides {
+    overflow: hidden; // 1
+  }
+
 }
 
 // end of file
