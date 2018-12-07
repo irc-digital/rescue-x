@@ -173,6 +173,7 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
   $letter-spacings: (
     'compact': -.03em,
     'standard': -.01em,
+    'airy': 0.1em,
   );
   @if $option != 'all' {
     @return safe-map-get($letter-spacings, $option);
