@@ -4,9 +4,18 @@
   $self: &;
 
   @include well-row;
-  @include standard-vertical-spacing;
 
-  padding-left: get-spacing('2xl');
+  margin-bottom: get-spacing('xl');
+  padding-left: get-spacing('m');
+
+  @include breakpoint(phablet) {
+    padding-left: get-spacing('l');
+  }
+
+  @include breakpoint(desktop) {
+    padding-left: get-spacing('2xl');
+  }
+
 }
 
 // end of file
