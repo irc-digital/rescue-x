@@ -10,7 +10,7 @@
   }
 
   &__inner-content-wrapper {
-    display: grid;
+    //display: grid;
     grid-column-gap: get-spacing('m');
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 1328px;
