@@ -16,9 +16,11 @@
           stacked_headline_2_headline: hero_basic_headline,
           stacked_headline_2_slug: hero_basic_slug,
         } only %}
-        <div class="rplc-hero-basic__dates-wrapper">
-          {% include '@atoms/01-text/35-meta/meta.twig' with { meta_text: hero_basic_published } only %}
-        </div>
+        {% if hero_basic_published is not empty %}
+          <div class="rplc-hero-basic__dates-wrapper">
+            {% include '@atoms/01-text/35-meta/meta.twig' with { meta_text: hero_basic_published } only %}
+          </div>
+        {% endif %}
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}
         {{ hero_basic_social_share }}
