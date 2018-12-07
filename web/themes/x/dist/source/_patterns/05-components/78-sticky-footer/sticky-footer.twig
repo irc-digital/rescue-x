@@ -1,4 +1,4 @@
-<div class="rplc-sticky-footer{% for sticky_footer_modifier in sticky_footer_modifiers %} rplc-sticky-footer--{{ sticky_footer_modifier }}{% endfor %}" data-rpl-sticky-footer-state="closed">
+<div class="rplc-sticky-footer{% for sticky_footer_modifier in sticky_footer_modifiers %} rplc-sticky-footer--{{ sticky_footer_modifier }}{% endfor %}" data-rpl-sticky-footer-state="closed" data-rpl-sticky-footer-cookie="{{ sticky_footer_cookie | default('sticky-footer') }}">
   <div class="rplc-sticky-footer__content">
     <span class="rplc-sticky-footer__close" data-rpl-sticky-footer-close>×</span>
     <div class="rplc-sticky-footer__inner-content-wrapper">
