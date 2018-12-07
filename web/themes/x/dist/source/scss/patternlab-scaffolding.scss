@@ -70,27 +70,13 @@ body > .rplc-teaser-video {
   }
 }
 
-.sg-pattern-example > .rplc-impact-card,
-body > .rplc-impact-card,
-.sg-pattern-example > .rplc-image-inset,
-body > .rplc-image-inset {
-
-  @include breakpoint(phablet) {
-    max-width: rem(378px);
-  }
-
-  @include breakpoint(951) {
-    max-width: rem(416px);
-  }
-}
-  //
+//
 // 1) Hack for Pattern Lab to make the highlight teaser look right when it is view entirely standalone
 //
 body > .rplc-teaser-highlighted .rpla-responsive-image {
   width: 100% // 1)
 }
 
-.rplc-impact-card,
 .rplm-donation-teaser,
 .rplc-teaser-simple-image-link {
   max-width: rem(640px);

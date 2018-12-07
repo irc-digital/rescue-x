@@ -13,16 +13,9 @@ $impact-card-front-figure-size: (
 
 $impact-card-spacing-around-card: get-spacing();
 $impact-card-height: rem(324px);
-$impact-card-outer-max-width: (
-  'phablet': map-get($aside-2-width, 'phablet'),
-  '951': map-get($aside-2-width, '951'),
-);
-
 $impact-card-width: (
   'mobile': calc(100vw - #{2 * get-spacing()}),
-  'mobile-part-of-set': rem(245px),
-  'phablet': map-get($impact-card-outer-max-width, 'phablet') - 2 * get-spacing(),
-  '951': map-get($impact-card-outer-max-width, '951') - 2 * get-spacing(),
-);
-
+  'phablet': map-get($aside-2-width, 'phablet') - 2 * get-spacing(),
+  '951': map-get($aside-2-width, '951') - 2 * get-spacing(),
+)
 // end file

@@ -1,0 +1,26 @@
+@import 'rplc-impact-cards.variables';
+
+.rplc-impact-cards {
+  $self: &;
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+  }
+
+  &__inner-content-wrapper {
+    display: grid;
+    grid-column-gap: get-spacing('m');
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1328px;
+    overflow-x: auto;
+    width: 100%;
+
+    @include breakpoint(phablet) {
+      grid-column-gap: get-spacing('ml');
+    }
+  }
+}
+
+// end file

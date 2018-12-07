@@ -6,15 +6,23 @@
   background-color: get-brand-color();
   padding-bottom: $impact-card-spacing-around-card;
 
+  @include breakpoint(phablet) {
+    max-width: map-get($impact-card-outer-max-width, 'phablet');
+  }
+
+  @include breakpoint(951) {
+    max-width: map-get($impact-card-outer-max-width, '951');
+  }
+
   &__inner-wrapper {
     background-color: get-brand-color();
   }
 
   &__heading-text-wrapper {
-    padding: safe-map-get($impact-card-heading-description-padding, 'mobile');
+    padding: map-get($impact-card-heading-description-padding, 'mobile');
 
     @include breakpoint(phablet) {
-      padding: safe-map-get($impact-card-heading-description-padding, 'phablet');
+      padding: map-get($impact-card-heading-description-padding, 'phablet');
     }
   }
 
@@ -101,6 +109,32 @@
 
     #{$self}__card {
       transform: rotateY(180deg);
+    }
+  }
+
+  &--part-of-set {
+    background-color: transparent;
+    padding-bottom: 0;
+
+    #{$self}__card {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    #{$self}__inner-wrapper {
+      background-color: transparent;
+    }
+
+    #{$self}__scene {
+      width: map-get($impact-card-width, 'mobile-part-of-set');
+
+      @include breakpoint(phablet) {
+        width: map-get($impact-card-width, 'phablet');
+      }
+
+      @include breakpoint(951) {
+        width: map-get($impact-card-width, '951');
+      }
     }
   }
 }
