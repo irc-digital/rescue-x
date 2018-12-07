@@ -7,10 +7,12 @@
   } only %}
 
   <div class="rplc-slider-stories__content">
-    <ul class="rplc-slider-stories__slides" data-slick='{"useTransform": false}'>
-      {% for slider_stories_slide in slider_stories_slides %}
-        <li class="rplc-slider-stories__slide">{{ slider_stories_slide }}</li>
-      {% endfor %}
-    </ul>
+    {% embed '@layouts/15-slider-layouts/05-slider-layout-1/slider-layout-1.twig' %}
+      {% block slider_layout_1_slides_block %}
+        {% for slider_stories_slide in slider_stories_slides %}
+          <div class="rplc-slider-stories__slide">{{ slider_stories_slide }}</div>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
   </div>
 </div>

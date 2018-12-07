@@ -3,7 +3,7 @@
 .rplc-teaser-title-and-link-list {
   $self: &;
   @include body-text-row;
-  @include letter-spacing('wide');
+  @include letter-spacing('airy');
   @include standard-vertical-spacing;
 
   &__heading {
