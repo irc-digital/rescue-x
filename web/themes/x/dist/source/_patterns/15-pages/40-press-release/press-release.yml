@@ -9,11 +9,13 @@ press_release_page_hero:
       hero_basic_slug: 'Press Release'
       hero_basic_published: ''
       hero_basic_headline: "Faker.sentence(18, true)"
+      hero_basic_summary: "Faker.sentences(3, true)"
       hero_basic_modifiers:
         - 'transparent'
-    only: true
 press_release_page_content:
   join():
+    - include():
+        pattern: "components-summary"
     - include():
         pattern: "layouts-aside"
         with:

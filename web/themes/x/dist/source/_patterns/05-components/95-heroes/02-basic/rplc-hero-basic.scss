@@ -4,6 +4,10 @@
   $self: &;
 
   @include standard-vertical-spacing(true);
+
+  &--transparent {
+    margin-bottom: 0;
+  }
 }
 
 // end of file

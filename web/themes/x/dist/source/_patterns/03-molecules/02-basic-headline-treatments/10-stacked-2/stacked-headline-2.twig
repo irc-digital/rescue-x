@@ -27,7 +27,9 @@
     slug_modifiers: ['size-large'],
   } only %}
   {% include '@atoms/02-responsive-title/responsive-title.twig' with { responsive_title_text: stacked_headline_2_headline, responsive_title_modifiers: responsive_title_modifiers } only %}
-  {% include '@atoms/01-text/05-paragraph/paragraph.twig' with { paragraph_text: stacked_headline_2_summary } only %}
+  {% if stacked_headline_2_summary is not empty %}
+    <div class="rplm-stacked-headline-2__summary-wrapper">{% include '@atoms/01-text/05-paragraph/paragraph.twig' with { paragraph_text: stacked_headline_2_summary } only %}</div>
+  {% endif %}
 </div>
 
 

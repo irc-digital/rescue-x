@@ -45,7 +45,7 @@
   }
 
   &--spacing-compact {
-    @include line-height('xs');
+    @include line-height('s');
 
     #{$self}__item {
       margin-bottom: get-spacing('s');

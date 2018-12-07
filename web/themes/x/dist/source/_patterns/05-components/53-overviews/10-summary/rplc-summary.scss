@@ -1,0 +1,12 @@
+@import 'rplc-summary.variables';
+
+.rplc-summary {
+  $self: &;
+
+  @include well-row;
+  @include standard-vertical-spacing;
+
+  padding-left: get-spacing('2xl');
+}
+
+// end of file
