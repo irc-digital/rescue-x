@@ -4,20 +4,21 @@
 
   {% set close_button = nulll  %}
   {% for modal_modifier in modal_modifiers %}
-    {% set close_button = modal_modifier %}
+    {% if modal_modifier starts with 'close-button-' %}
+      {% set close_button = modal_modifier %}
+    {% endif %}
   {% endfor %}
 
   {% if close_button is null %}
     {% set modal_modifiers = modal_modifiers | merge (['close-button-dark']) %}
   {% endif %}
+
 {% endspaceless %}
 <div class="rplc-modal{% for modal_modifier in modal_modifiers %} rplc-modal--{{ modal_modifier }}{% endfor %}" data-rpl-modal-id="{{ modal_id }}" data-rpl-modal-state="closed">
   <div class="rplc-modal__content">
     <span class="rplc-modal__close" data-rpl-modal-close>×</span>
     <div class="rplc-modal__inner-content-wrapper">
-      {% block modal_content_block %}
-        {{ modal_content }}
-      {% endblock %}
+      {% block modal_content_block %}{% endblock %}
     </div>
   </div>
 </div>

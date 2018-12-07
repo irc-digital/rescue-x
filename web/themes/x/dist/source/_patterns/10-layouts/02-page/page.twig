@@ -38,6 +38,11 @@
       {{ page_footer }}
     </div>
   {% endif %}
+
+  {% if page_sticky_footer is not empty %}
+    {{ page_sticky_footer }}
+  {% endif %}
+
 </div>
 <div class="rpll-page__overlay"></div>
 {% include '@components/77-modals/05-search/search-modal.twig' %}

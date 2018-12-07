@@ -241,3 +241,6 @@ article_page_footer:
                 utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
               only: true
         only: true
+article_sticky_footer:
+  include():
+    pattern: "components-sticky-footer"
