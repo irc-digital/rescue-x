@@ -6,7 +6,7 @@ press_release_page_hero:
   include():
     pattern: "components-hero-basic"
     with:
-      hero_basic_slug: 'Press release'
+      hero_basic_slug: 'Press Release'
       hero_basic_published: ''
       hero_basic_headline: "Faker.sentence(18, true)"
       hero_basic_modifiers:
