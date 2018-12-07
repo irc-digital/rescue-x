@@ -3,15 +3,14 @@
 .rpll-slider-layout-1 {
   $self: &;
 
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: get-spacing('2xl');
-
   &__slides-wrapper {
-    //flex-basis: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: get-spacing('2xl');
   }
+
 }
 
 // end of file
