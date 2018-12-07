@@ -11,6 +11,7 @@ press_release_page_hero:
       hero_basic_headline: "Faker.sentence(18, true)"
       hero_basic_modifiers:
         - 'transparent'
+    only: true
 press_release_page_content:
   join():
     - include():
@@ -31,7 +32,7 @@ press_release_page_content:
         with:
           text_modifiers:
             - 'body'
-press_releasepage_footer:
+press_release_page_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"
