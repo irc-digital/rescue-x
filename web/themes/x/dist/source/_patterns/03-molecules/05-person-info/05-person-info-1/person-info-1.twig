@@ -16,36 +16,36 @@
  */
 #}
 {% set contributor_first_in_list = contributor_first_in_list ? contributor_first_in_list : FALSE %}
-<figure class="rplm-person-info{% for person_info_modifier in person_info_modifiers %} rplm-person-info--{{ person_info_modifier }}{% endfor %}">
-  {% if person_info_responsive_image_source_set %}
-    <div class="rplm-person-info__image-wrapper">
+<figure class="rplm-person-info-1{% for person_info_1_modifier in person_info_1_modifiers %} rplm-person-info-1--{{ person_info_1_modifier }}{% endfor %}">
+  {% if person_info_1_responsive_image_source_set %}
+    <div class="rplm-person-info-1__image-wrapper">
       {% include '@atoms/52-responsive-image/responsive-image.twig' with {
-            responsive_image_source_set: person_info_responsive_image_source_set,
+            responsive_image_source_set: person_info_1_responsive_image_source_set,
             responsive_image_sizes: "72px",
-            responsive_image_fallback: person_info_responsive_image_fallback,
-            responsive_image_alt: person_info_responsive_image_alt
+            responsive_image_fallback: person_info_1_responsive_image_fallback,
+            responsive_image_alt: person_info_1_responsive_image_alt
           } only %}
     </div>
   {% else %}
-    <div class="rplm-person-info__image-wrapper rplm-person-info__image-wrapper--default-image">
+    <div class="rplm-person-info-1__image-wrapper rplm-person-info-1__image-wrapper--default-image">
       {% include '@atoms/56-icon/icon.twig' with {
             icon_name: 'person',
           } only
       %}
     </div>
   {% endif %}
-  <div class="rplm-person-info__byline">
-    {% if person_info_prefix %}<span class="rplm-person-info__prefix">{{ person_info_prefix }}</span>{% endif %}
-    <span class="rplm-person-info__name">{{ person_info_name }}</span>
-      {% if person_info_social is not empty %}
-        <div class="rplm-person-info__social-wrapper">
+  <div class="rplm-person-info-1__byline">
+    {% if person_info_1_prefix %}<span class="rplm-person-info-1__prefix">{{ person_info_1_prefix }}</span>{% endif %}
+    <span class="rplm-person-info-1__name">{{ person_info_1_name }}</span>
+      {% if person_info_1_social is not empty %}
+        <div class="rplm-person-info-1__social-wrapper">
           {% include '@molecules/50-social-share/social-share.twig' with {
-            social_share_sites: person_info_social,
+            social_share_sites: person_info_1_social,
             social_share_modifiers: ['subtype-snug'],
           } only %}
         </div>
       {% endif %}
-    <div class="rplm-person-info__title">{{ person_info_title }}</div>
+    <div class="rplm-person-info-1__title">{{ person_info_1_title }}</div>
   </div>
 </figure>
 

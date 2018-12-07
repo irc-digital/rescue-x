@@ -1,31 +1,31 @@
-person_info:
+person_info_1:
   label: Person info
   description: Information about a single person
-  use: "@molecules/05-person-info/person-info.twig"
+  use: "@molecules/05-person-info/05-person-info-1/person-info-1.twig"
   fields:
-    person_info_name:
+    person_info_1_name:
       type: string
       label: 'Name'
       description: "The person's name"
       preview: "Randy Hornton"
-    person_info_title:
+    person_info_1_title:
       type: string
       label: 'Role title'
       description: "The person's title"
       preview: "Bounty hunter"
-    person_info_prefix:
+    person_info_1_prefix:
       type: string
       label: 'Prefix'
       description: "Text placed before the person's name"
       preview: by
-    person_info_social:
+    person_info_1_social:
       type: array
       label: "Social sites"
       description: "An associative array of social media sites"
       preview:
         twitter: http://www.twitter.com
         facebook: http://www.facebook.com
-    person_info_responsive_image_source_set:
+    person_info_1_responsive_image_source_set:
       type: array
       label: "Image source set"
       description: "Image source set"
@@ -33,19 +33,19 @@ person_info:
         - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=48&h=48random=personinfo5b 48w"
         - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=personinfo5b 72w"
         - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=144&h=144&random=personinfo5b 144w"
-    person_info_responsive_image_fallback:
+    person_info_1_responsive_image_fallback:
       type: string
       label: 'Image fallback'
       description: 'Todo'
       preview: "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=personinfo5b"
-    person_info_responsive_image_alt:
+    person_info_1_responsive_image_alt:
       type: string
       label: 'Image alt attribute'
       description: 'Image alt attribute'
       preview: "Faker.words(5,true)"
 
   libraries:
-    - person_info_library:
+    - person_info_1_library:
        css:
          theme:
-           dist/public/css/patterns/rplm-person-info.css: {}
+           dist/public/css/patterns/rplm-person-info-1.css: {}

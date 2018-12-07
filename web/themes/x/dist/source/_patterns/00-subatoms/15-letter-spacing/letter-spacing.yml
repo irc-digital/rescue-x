@@ -1,7 +1,4 @@
 letter_spacing:
   compact: '-0.03em'
   standard: '-0.01em'
-<<<<<<< HEAD
-=======
-  airy: '0.1em'
->>>>>>> 37132a8613e3d0ce4c15477991d359615390cc64
+  airy: 0.1em
