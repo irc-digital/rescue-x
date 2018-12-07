@@ -20,7 +20,7 @@
     margin-right: get-spacing('m');
 
     @include breakpoint(phablet) {
-      grid-column-gap: get-spacing('ml');
+      margin-right: get-spacing('ml');
     }
 
     &:last-child {
