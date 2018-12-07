@@ -1,0 +1,20 @@
+@import 'rplm-person-info-2.variables';
+
+.rplm-person-info-2 {
+  $self: &;
+
+  &__email,
+  &__telephone-number,
+  &__affiliation,
+  &__name {
+    @include font-size('s');
+    @include font-weight('light');
+    @include line-height('s');
+    @include typography-vertical-spacing('tight');
+
+    color: get-neutral-color('dark-gray');
+  }
+
+}
+
+// end of file
