@@ -3,12 +3,12 @@
 .rplc-teaser-title-and-link-list {
   $self: &;
   @include body-text-row;
+  @include letter-spacing('wide');
   @include standard-vertical-spacing;
 
   &__heading {
     @include font-size('s');
     @include font-weight('bold');
-    letter-spacing: .125rem;
     margin-bottom: get-spacing('m');
     text-transform: uppercase;
   }
