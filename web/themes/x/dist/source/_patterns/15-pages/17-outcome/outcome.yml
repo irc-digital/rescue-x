@@ -29,7 +29,7 @@ outcome_page_content:
     - include():
         pattern: "components-impact-cards"
         with:
-          image_cards_section_heading_title: 'Our impact'
+          impact_cards_section_heading_title: 'Our impact'
     - include():
         pattern: "components-news-and-features"
         with:
