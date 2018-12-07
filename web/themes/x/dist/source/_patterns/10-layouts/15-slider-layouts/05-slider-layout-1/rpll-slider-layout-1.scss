@@ -1,7 +1,17 @@
 @import 'rpll-slider-layout-1.variables';
 
-.rpll-slider {
+.rpll-slider-layout-1 {
   $self: &;
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: get-spacing('2xl');
+
+  &__slides-wrapper {
+    flex-basis: 400px;
+  }
 }
 
 // end of file
