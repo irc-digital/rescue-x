@@ -1,5 +1,5 @@
 media_contacts_content:
-  - "Mollitia quia rerum laboriosam velit."
-  - "Et libero et sapiente sed modi."
-  - "Eum est consequatur sit eveniet excepturi."
-  - "Excepturi quisquam est quaerat sapiente."
+  - include():
+      pattern: "molecules-person-info-2"
+  - include():
+      pattern: "molecules-person-info-2"

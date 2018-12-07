@@ -1,0 +1,71 @@
+press_release_page_navigation:
+  include():
+    pattern: "components-global-navigation"
+press_release_page_hero_has_image: true
+press_release_page_hero:
+  include():
+    pattern: "components-hero-basic"
+    with:
+      hero_basic_modifiers:
+        - 'transparent'
+press_release_page_content:
+  join():
+    - include():
+        pattern: "layouts-aside"
+        with:
+          aside_content:
+            include():
+              pattern: "components-media-contacts"
+        only: true
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'lead'
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          text_modifiers:
+            - 'body'
+press_releasepage_footer:
+  join():
+    - include():
+        pattern: "layouts-footer-layout-1"
+        with:
+          footer_layout_1_section_1:
+            join():
+              - include():
+                  pattern: "molecules-crisis-watch"
+              - include():
+                  pattern: "components-footer-menu"
+          footer_layout_1_section_2:
+            include():
+              pattern: "components-efficiency"
+          footer_layout_1_section_3:
+            include():
+              pattern: "molecules-social-share"
+              with:
+                social_share_title: 'Follow us'
+                social_share_sites:
+                  twitter: 'http://www.twitter.com'
+                  facebook: 'http://www.facebook.com'
+                  instagram: 'http://www.instagram.com'
+                  youtube: 'http://www.youtube.com'
+                social_share_modifiers:
+                  - 'subtype-small'
+              only: true
+        only: true
+    - include():
+        pattern: "layouts-footer-layout-2"
+        with:
+          footer_layout_2_section_1:
+            include():
+              pattern: "components-utility-menu"
+          footer_layout_2_section_2:
+            include():
+              pattern: "atoms-utility-text"
+              with:
+                utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+              only: true
+        only: true

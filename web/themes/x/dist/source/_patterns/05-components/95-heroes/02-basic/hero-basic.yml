@@ -1,7 +1,7 @@
 hero_basic_slug: "Faker.words(2,true)"
 hero_basic_headline: "Faker.sentence(6, true)"
 hero_basic_published: "August 2, 2018"
-hero_article_social_share:
+hero_basic_social_share:
   include():
     pattern: "molecules-social-share"
     with:

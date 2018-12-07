@@ -15,7 +15,7 @@
   &__text-wrapper {
     background-color: get-neutral-color('white');
     display: block;
-    padding: get-spacing('l');
+    padding: get-spacing('l') get-spacing('2xl');
 
     @include breakpoint(phablet) {
       display: grid;
@@ -107,6 +107,14 @@
       text-align: initial;
     }
 
+  }
+
+  &--transparent {
+    #{$self}__text-wrapper {
+      background-color: transparent;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 }
 

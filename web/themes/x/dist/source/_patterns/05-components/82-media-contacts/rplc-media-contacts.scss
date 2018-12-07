@@ -23,6 +23,10 @@
       pointer-events: none;
     }
   }
+
+  &__media-contact-wrapper {
+    margin-bottom: get-spacing('xl');
+  }
 }
 
 // end of file

@@ -6,9 +6,11 @@
  * Available blocks:
  */
 #}
+{% set hero_basic_modifiers = hero_basic_modifiers ?: [] %}
+{% set layout_modifiers = hero_basic_modifiers | merge(['no-image', 'no-second-blocks']) %}
 <div class="rplc-hero-basic{% for hero_basic_modifier in hero_basic_modifiers %} rplc-hero-basic--{{ hero_basic_modifier }}{% endfor %}">
   <div class="rplc-hero-basic__content">
-    {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : ['no-image', 'no-second-blocks'] } %}
+    {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% block hero_layout_1_primary_1_block %}
         {% include '@molecules/02-basic-headline-treatments/10-stacked-2/stacked-headline-2.twig' with {
           stacked_headline_2_headline: hero_basic_headline,
@@ -19,7 +21,7 @@
         </div>
       {% endblock %}
       {% block hero_layout_1_secondary_1_block %}
-        {{ hero_article_social_share }}
+        {{ hero_basic_social_share }}
       {% endblock %}
     {% endembed %}
   </div>
