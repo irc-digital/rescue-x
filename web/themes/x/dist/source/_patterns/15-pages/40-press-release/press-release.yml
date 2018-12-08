@@ -1,3 +1,8 @@
+press_release_page_header:
+  include():
+    pattern: "components-header"
+    with:
+      header_test_mode: true
 press_release_page_navigation:
   include():
     pattern: "components-global-navigation"
@@ -75,8 +80,3 @@ press_release_page_footer:
                 utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
               only: true
         only: true
-press_release_page_sticky_footer:
-  include():
-    pattern: "components-sticky-footer"
-    with:
-      sticky_footer_test_mode: true

@@ -14,7 +14,6 @@
           $(window).scroll(scroll_handler);
 
           $('[data-rpl-sticky-footer-close]').click(function(e) {
-            console.debug ('click1');
             $(window).off("scroll", scroll_handler);
             rplHideStickyFooter();
           });

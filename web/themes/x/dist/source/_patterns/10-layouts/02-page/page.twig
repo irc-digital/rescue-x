@@ -4,12 +4,12 @@
   {% set page_hero_has_image = page_hero_has_image ? 'yes' : 'no' %}
 
 {% endspaceless %}
+{% if page_header is not empty %}
+  <div class="rpll-page__header-wrapper">
+    {{ page_header }}
+  </div>
+{% endif %}
 <div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}" data-rpl-hero-has-image="{{ page_hero_has_image }}">
-  {% if page_header is not empty %}
-    <div class="rpll-page__header-wrapper">
-      {{ page_header }}
-    </div>
-  {% endif %}
 
   {{ page_navigation }}
 

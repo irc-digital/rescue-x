@@ -3,14 +3,12 @@
 .rplc-sticky-footer {
   $self: &;
 
-  //
-  // 1) Set in Javascript
-  //
   @include z-index('below-navigation-overlay');
   background-color: get-neutral-color('black');
   bottom: 0;
   box-shadow: $sticky-footer-box-shadow;
   color: get-neutral-color('white');
+  padding-right: get-spacing('xl');
   position: fixed;
   transition: transform .3s ease-out;
   width: 100%;
