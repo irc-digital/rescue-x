@@ -14,6 +14,7 @@
           $(window).scroll(scroll_handler);
 
           $('[data-rpl-sticky-footer-close]').click(function(e) {
+            console.debug ('click1');
             $(window).off("scroll", scroll_handler);
             rplHideStickyFooter();
           });
@@ -45,13 +46,11 @@
   function rplShowStickyFooter () {
     var sticky_footer = $('[data-rpl-sticky-footer-state]');
     sticky_footer.attr('data-rpl-sticky-footer-state', 'opened');
-    sticky_footer.css('max-height', sticky_footer.height());
   }
 
   function rplHideStickyFooter () {
     var sticky_footer = $('[data-rpl-sticky-footer-state]');
-    sticky_footer.css('max-height', '');
-    sticky_footer.attr('data-rpl-sticky-footer-state', 'closed');
+    sticky_footer.attr('data-rpl-sticky-footer-state', 'dismissed');
 
     var d = new Date();
     d.setTime(d.getTime() + (sticky_footer[0].dataset.rplStickyFooterCookieExpiry * 24 * 60 * 60 * 1000));
