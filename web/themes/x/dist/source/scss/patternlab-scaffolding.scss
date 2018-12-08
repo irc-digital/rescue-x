@@ -38,10 +38,17 @@ body > .rplm-stacked-headline-3 {
   background-color: black;
 }
 
-// body > .rplc-modal
+#do-not-replace-see-gulpfile + .rplc-modal, // fingerprint of a standalone pattern
 #components-search-modal .sg-pattern-example > .rplc-modal {
   display: block;
   overflow: auto;
+  position: relative;
+}
+
+#do-not-replace-see-gulpfile + .rplc-sticky-footer, // fingerprint of a standalone pattern
+#components-sticky-footer .sg-pattern-example > .rplc-sticky-footer {
+  display: block;
+  max-height: 200px;
   position: relative;
 }
 
