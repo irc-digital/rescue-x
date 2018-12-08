@@ -8,7 +8,7 @@
   padding-right: get-spacing('xl');
   position: relative;
   right: 0;
-  top: 68px;
+  top: $global-navigation-mobile-menu-height;
   transition: transform .3s ease-out, right $global-navigation-mobile-menu-transition-time ease-in-out;
   width: 100%;
 
