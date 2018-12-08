@@ -3,10 +3,6 @@
 .rplc-call-to-action-6 {
   $self: &;
 
-  //min-height: 219px;
-  padding-bottom: get-spacing();
-  padding-top: get-spacing();
-
   &__content {
     display: flex;
   }
@@ -23,6 +19,8 @@
 
   &__text-wrapper {
     align-self: center;
+    padding-bottom: get-spacing();
+    padding-top: get-spacing();
 
     @include breakpoint(tablet) {
       padding-right: get-spacing('m');
