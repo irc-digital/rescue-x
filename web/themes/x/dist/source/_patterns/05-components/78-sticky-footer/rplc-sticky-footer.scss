@@ -47,15 +47,12 @@
     transform: translateY(100%);
   }
 
-  //
-  // 1) This is just a placeholder value, it gets set in javascript
-  //
   &[data-rpl-sticky-footer-state='opened'] {
     display: block;
   }
 
   &[data-rpl-sticky-footer-stuck] {
-    border-top: 1px solid get-neutral-color('light-gray');
+    border-top: 1px solid get-neutral-color('dark-gray');
     box-shadow: none;
     position: static;
   }

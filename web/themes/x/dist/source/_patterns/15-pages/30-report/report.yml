@@ -77,3 +77,4 @@ report_page_sticky_footer:
       sticky_footer_content:
         include():
           pattern: "components-call-to-action-6"
+      sticky_footer_test_mode: true
