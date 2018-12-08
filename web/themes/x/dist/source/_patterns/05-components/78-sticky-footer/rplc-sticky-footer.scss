@@ -6,7 +6,7 @@
   //
   // 1) Set in Javascript
   //
-  @include z-index('up-more');
+  @include z-index('below-navigation-overlay');
   background-color: get-neutral-color('black');
   bottom: 0;
   box-shadow: $sticky-footer-box-shadow;
@@ -17,8 +17,6 @@
 
   &__content {
     @include well-row;
-    padding-bottom: get-spacing('m');
-    padding-top: get-spacing('m');
   }
 
   &__close {
@@ -50,7 +48,7 @@
   // 1) This is just a placeholder value, it gets set in javascript
   //
   &[data-rpl-sticky-footer-state='opened'] {
-    max-height: 200px; // 1
+    max-height: 400px; // 1
   }
 
   &[data-rpl-sticky-footer-stuck] {

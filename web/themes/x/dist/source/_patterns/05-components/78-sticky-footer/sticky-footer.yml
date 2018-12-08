@@ -1,2 +1,5 @@
 sticky_footer_cookie_name: 'test-cookie'
 sticky_footer_cookie_expiry: 1
+sticky_footer_content:
+  include():
+    pattern: "components-call-to-action-5"

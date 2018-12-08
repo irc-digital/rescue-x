@@ -1,0 +1,15 @@
+call_to_action_6_title: "Faker.words(3,true)"
+call_to_action_6_subtitle: "Faker.sentences(2,true)"
+call_to_action_6_url: "#"
+call_to_action_6_link_text: "Faker.words(3,true)"
+call_to_action_6_art_directed_image_fallback: "https://placem.at/places?w=728&h=329&random=calltoaction6"
+call_to_action_6_art_directed_image_sources:
+  - source_set:
+    - "https://placem.at/places?w=528&h=297&random=calltoaction6 1x"
+    - "https://placem.at/places?w=1024&h=576&random=calltoaction6 2x"
+    media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+  - source_set:
+    - "https://placem.at/places?w=768&h=329&random=calltoaction6 1x"
+    - "https://placem.at/places?w=1536&h=658&random=calltoaction6 2x"
+    media: "only screen and (min-width: 64.063em)"
+hero_article_art_directed_image_alt: "Faker.words(5,true)"

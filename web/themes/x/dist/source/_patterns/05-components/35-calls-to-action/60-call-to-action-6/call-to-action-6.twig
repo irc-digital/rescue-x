@@ -1,0 +1,20 @@
+<div class="rplc-call-to-action-6">
+  <div class="rplc-call-to-action-6__content">
+    <div class="rplc-call-to-action-6__text-wrapper">
+      <h3 class="rplc-call-to-action-6__title">{{ call_to_action_6_title }}</h3>
+      <div class="rplc-call-to-action-6__subtitle">{{ call_to_action_6_subtitle }}</div>
+      {% include '@atoms/10-link/link.twig' with {
+        link_text: call_to_action_6_link_text,
+        link_url: call_to_action_6_url,
+        link_modifiers: ['type-two'],
+      } only %}
+    </div>
+    <div class="rplc-call-to-action-6__image-wrapper">
+      {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
+        art_directed_image_fallback: call_to_action_6_art_directed_image_fallback,
+        art_directed_image_sources: call_to_action_6_art_directed_image_sources,
+        art_directed_image_alt: call_to_action_6_art_directed_image_alt,
+      } only %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+@import 'rplc-call-to-action-6.variables';
+
+.rplc-call-to-action-6 {
+  $self: &;
+
+  //min-height: 219px;
+  padding-bottom: get-spacing();
+  padding-top: get-spacing();
+
+  &__content {
+    display: flex;
+  }
+
+  &__image-wrapper {
+    display: none;
+    line-height: 0;
+    width: 50%;
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  &__text-wrapper {
+    align-self: center;
+
+    @include breakpoint(tablet) {
+      padding-right: get-spacing('m');
+      width: 50%;
+    }
+
+    @include breakpoint(desktop) {
+      padding-left: get-spacing('4xl');
+    }
+  }
+
+  &__title {
+    @include typography-heading-large;
+
+    @include breakpoint(phablet) {
+      @include font-size('l');
+    }
+
+    @include breakpoint(tablet) {
+      @include font-size('2xl');
+    }
+
+    color: get-brand-color();
+  }
+
+  &__subtitle {
+    color: get-neutral-color('white');
+  }
+
+}
+
+// end of file

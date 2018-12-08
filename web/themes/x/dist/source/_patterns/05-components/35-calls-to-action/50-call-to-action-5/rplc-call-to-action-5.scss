@@ -1,0 +1,20 @@
+@import 'rplc-call-to-action-5.variables';
+
+.rplc-call-to-action-5 {
+  $self: &;
+
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
+
+  &__link-wrapper {
+    display: inline;
+  }
+
+  &__description {
+    color: get-neutral-color('white');
+    display: inline;
+    margin-right: .25em;
+  }
+}
+
+// end of file
