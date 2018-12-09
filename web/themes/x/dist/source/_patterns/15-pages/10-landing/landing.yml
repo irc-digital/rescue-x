@@ -39,6 +39,8 @@ landing_page_content:
             - 'background-transparent'
         only: true
     - include():
+        pattern: "components-media-highlights"
+    - include():
         pattern: "components-question"
     - include():
         pattern: "components-call-to-action-2"
