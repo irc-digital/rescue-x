@@ -39,6 +39,20 @@ press_release_page_content:
         with:
           text_modifiers:
             - 'body'
+press_release_page_content_footer:
+  join():
+    - include():
+        pattern: "layouts-body-text-row"
+        with:
+          body_text_row_content:
+            include():
+              pattern: "molecules-social-share"
+              with:
+                social_share_title: 'Follow us'
+                social_share_modifiers:
+                  - 'subtype-small'
+    - include():
+        pattern: "components-about-list"
 press_release_page_footer:
   join():
     - include():
