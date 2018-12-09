@@ -9,7 +9,7 @@
   }
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
 
     @media only screen and (min-width: #{$well-width-inner}) {
       width: rem(976px);

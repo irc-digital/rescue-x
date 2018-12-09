@@ -5,7 +5,7 @@
   @include standard-vertical-spacing;
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
   }
 
   &__caption-wrapper {

@@ -8,10 +8,11 @@
   }
 
   &__image-wrapper {
+    @include line-height('none');
     display: none;
-    line-height: 0;
     width: 50%;
 
+    // sass-lint:disable-block mixins-before-declarations
     @include breakpoint(tablet) {
       display: block;
     }

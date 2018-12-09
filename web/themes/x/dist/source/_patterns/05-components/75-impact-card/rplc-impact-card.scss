@@ -84,8 +84,9 @@
 
   &__icon-link-wrapper {
     @include font-size('2xl');
+    @include line-height('none');
+
     bottom: get-spacing();
-    line-height: 0;
     position: absolute;
     right: get-spacing();
 

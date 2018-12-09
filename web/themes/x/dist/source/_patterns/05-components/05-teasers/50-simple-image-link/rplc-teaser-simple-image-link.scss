@@ -13,7 +13,7 @@
   }
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
     margin-bottom: get-spacing('l');
     margin-left: auto;
     margin-right: auto;

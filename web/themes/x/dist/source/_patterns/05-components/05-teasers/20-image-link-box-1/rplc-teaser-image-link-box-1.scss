@@ -75,7 +75,7 @@
   }
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
 
     @media #{$teaser-image-medium-device-media-query} {
       flex: 0 0 $teaser-image-link-box-1-image-width-tablet;

@@ -32,9 +32,10 @@
   &__list-item {
     &::before {
       @include font-size('2xl');
+      @include line-height('none');
+
       content: '• ';
       font-family: Arial;
-      line-height: 0;
       position: relative;
       top: 7px;
     }

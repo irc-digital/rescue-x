@@ -4,8 +4,8 @@
   $self: &;
 
   &__image-wrapper {
+    @include line-height('none');
     flex-shrink: 0;
-    line-height: 0;
   }
 
   &__wrapper-link {

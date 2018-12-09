@@ -12,11 +12,11 @@
 
   &__menu-item {
     @include font-size('s');
-    padding-bottom: get-spacing('xs');
+    @include typography-vertical-spacing('tight');
   }
 
   &__menu--main {
-    padding-right: get-spacing('l');
+    margin-right: get-spacing('l');
   }
 }
 

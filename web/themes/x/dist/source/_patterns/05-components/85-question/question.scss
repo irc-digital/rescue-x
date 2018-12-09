@@ -111,10 +111,12 @@
   }
 
   &__answer-image-wrapper {
+    @include line-height('none');
+
     flex-shrink: 20;
-    line-height: 0;
     margin-bottom: get-spacing();
 
+    // sass-lint:disable-block mixins-before-declarations
     @include breakpoint(tablet) {
       margin-bottom: 0;
       margin-left: get-spacing('l');

@@ -9,8 +9,15 @@
  * - none
  */
 #}
+{% set teaser_minimal_modifiers = teaser_minimal_modifiers ?: [] %}
+{% if teaser_minimal_date is not empty %}
+  {% set teaser_minimal_modifiers = teaser_minimal_modifiers | merge (['title-first']) %}
+{% endif %}
 <div class="rplc-teaser-minimal{% for teaser_minimal_modifier in teaser_minimal_modifiers %} rplc-teaser-minimal--{{ teaser_minimal_modifier }}{% endfor %}">
   <a href="{{ teaser_minimal_url }}" class="rplc-teaser-minimal__wrapper-link">
+    {% if teaser_minimal_date is not empty %}
+      <div class="rplc-teaser-minimal__date"><div class="rpla-slug">{{ teaser_minimal_date }}</div></div>
+    {% endif %}
     <div class="rplc-teaser-minimal__title">
       <h3 class="rpla-heading rpla-heading--medium">{{ teaser_minimal_title }}</h3>
     </div>

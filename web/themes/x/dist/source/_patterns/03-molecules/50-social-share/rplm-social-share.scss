@@ -17,7 +17,7 @@
   }
 
   &__icon-only-link-wrapper {
-    line-height: 0;
+    @include line-height('none');
   }
 
   &--type-one {
@@ -67,6 +67,12 @@
 
     #{$self}__icon-only-link-wrapper {
       margin-right: 0;
+    }
+  }
+
+  &--title-bold {
+    #{$self}__title {
+      @include font-weight('bold');
     }
   }
 }

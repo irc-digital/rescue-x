@@ -144,6 +144,7 @@ $font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
 // Function to get a line height value from its array entry key
 @function get-line-height($option: 'm') {
   $line-heights: (
+    'none': 0,
     '2xs': 1,
     'xs': 1.2,
     's': 1.4,

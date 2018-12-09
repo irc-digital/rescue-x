@@ -6,11 +6,11 @@
   //
   // 1) For buttons
   //
+  @include line-height('none');
   background-color: transparent; // 1
   border-width: 0; // 1
   display: inline-block;
   font-size: 1em; // 1
-  line-height: 0;
 
   // sass-lint:disable-block mixins-before-declarations
   @include hover {

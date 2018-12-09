@@ -63,9 +63,9 @@
   }
 
   &__image-wrapper {
+    @include line-height('none');
     @include z-index('up');
     flex-shrink: 0;
-    line-height: 0;
   }
 }
 

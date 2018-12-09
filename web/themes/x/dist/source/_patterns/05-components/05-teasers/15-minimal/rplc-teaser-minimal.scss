@@ -13,11 +13,17 @@
     order: 10;
   }
 
+  &__date {
+    @include typography-vertical-spacing('compact');
+    order: -1;
+  }
+
   &--title-first {
     #{ $self }__title {
       order: 0;
     }
   }
+
 }
 
 

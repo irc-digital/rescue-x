@@ -10,7 +10,7 @@
   max-width: $well-width-inner;
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
   }
 
   &:not(&--caption-style-low-key) {

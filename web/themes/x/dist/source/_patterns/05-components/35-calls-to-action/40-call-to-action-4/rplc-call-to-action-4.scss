@@ -24,7 +24,7 @@
   }
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
 
     &::before {
       background: linear-gradient(to bottom, map-get($call-to-action-4-background-transparency, 'from') 49%, map-get($call-to-action-4-background-transparency, 'to') 100%);

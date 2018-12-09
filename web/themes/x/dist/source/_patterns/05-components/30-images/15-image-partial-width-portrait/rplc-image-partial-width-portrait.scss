@@ -14,7 +14,7 @@
   }
 
   &__image-wrapper {
-    line-height: 0;
+    @include line-height('none');
 
     @include breakpoint(phablet) {
       text-align: right;

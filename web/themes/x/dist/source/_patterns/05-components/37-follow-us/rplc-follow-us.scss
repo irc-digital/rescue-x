@@ -1,0 +1,13 @@
+@import 'rplc-follow-us.variables';
+
+.rplc-follow-us {
+  @include font-size('xs');
+
+  margin-bottom: get-spacing('l');
+
+  @include breakpoint(phablet) {
+    margin-bottom: get-spacing('xl');
+  }
+}
+
+// end of file

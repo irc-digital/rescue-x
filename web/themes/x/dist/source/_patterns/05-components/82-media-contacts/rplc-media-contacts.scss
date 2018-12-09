@@ -25,7 +25,11 @@
   }
 
   &__media-contact-wrapper {
-    margin-bottom: get-spacing('xl');
+    margin-bottom: get-spacing('l');
+
+    @include breakpoint(phablet) {
+      margin-bottom: get-spacing('xl');
+    }
   }
 }
 
