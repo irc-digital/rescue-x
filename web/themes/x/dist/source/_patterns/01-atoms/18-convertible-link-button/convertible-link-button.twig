@@ -1,15 +1,28 @@
 {% spaceless %}
+  {% set convertible_link_button_modifiers = convertible_link_button_modifiers ?: [] %}
 
-{% if convertible_link_button_url is not empty %}
-  {% set convertible_link_button_tag = 'a' %}
-{% elseif convertible_link_button_tag is empty %}
-  {% set convertible_link_button_tag = 'div' %}
-{% endif %}
+  {% set type = null %}
+  {% for convertible_link_button_modifier in convertible_link_button_modifiers %}
+    {% if convertible_link_button_modifier starts with 'type-' %}
+      {% set type = convertible_link_button_modifier %}
+    {% endif %}
+  {% endfor %}
 
-{% set convertible_link_button_icon_name = convertible_link_button_icon_name ?: 'caret-down' %}
+  {% if type is null %}
+    {% set type = 'type-one' %}
+    {% set convertible_link_button_modifiers = convertible_link_button_modifiers | merge ([type]) %}
+  {% endif %}
+
+  {% if convertible_link_button_url is not empty %}
+    {% set convertible_link_button_tag = 'a' %}
+  {% elseif convertible_link_button_tag is empty %}
+    {% set convertible_link_button_tag = 'div' %}
+  {% endif %}
+
+  {% set convertible_link_button_icon_name = convertible_link_button_icon_name ?: 'caret-down' %}
 
 {% endspaceless %}
-<{{ convertible_link_button_tag }}{% if convertible_link_button_url is not empty %} href="{{ convertible_link_button_url }}"{% endif %} role="link" class="rpla-convertible-link-button">
+<{{ convertible_link_button_tag }}{% if convertible_link_button_url is not empty %} href="{{ convertible_link_button_url }}"{% endif %} role="link" class="rpla-convertible-link-button{% for convertible_link_button_modifier in convertible_link_button_modifiers %} rpla-convertible-link-button--{{ convertible_link_button_modifier }}{% endfor %}">
   <span class="rpla-convertible-link-button__text">{{ convertible_link_button_link_text }}</span>
   <span class="rpla-convertible-link-button__icon-wrapper">
     {% include '@atoms/05-icon/icon.twig' with {

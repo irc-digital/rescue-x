@@ -53,6 +53,13 @@
       margin-right: get-spacing();
     }
   }
+
+  &--background-color-primary {
+
+    #{$self}__text-wrapper {
+      background-color: get-brand-color();
+    }
+  }
 }
 
 // end of file

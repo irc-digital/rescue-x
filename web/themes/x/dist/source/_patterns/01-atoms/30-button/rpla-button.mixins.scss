@@ -48,9 +48,13 @@
 
     background-color: get-neutral-color('black');
     color: get-brand-color('primary');
-  } @else if $type == 'three' {
+  } @else if $type == 'three' or $type == 'three-hover-tint' {
     @include hover('data-rpla-hover-target') {
-      background-color: get-neutral-color('light-gray');
+      @if $type == 'three' {
+        background-color: get-neutral-color('light-gray');
+      } @else if $type == 'three-hover-tint' {
+        background-color: get-brand-color('primary-tint-1');
+      }
     }
 
     background-color: get-neutral-color('white');

@@ -5,6 +5,8 @@
 .rpla-button {
   $self: &;
 
+  @include transition;
+
   align-items: center;
   border: 0;
   display: inline-flex;
@@ -34,7 +36,13 @@
   }
 
   &--type-three {
-    @include button-type('three');
+    &:not(#{$self}--hover-brand-tint) {
+      @include button-type('three');
+    }
+
+    &#{$self}--hover-brand-tint {
+      @include button-type('three-hover-tint');
+    }
   }
 
   &--icon-position-before {

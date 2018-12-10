@@ -5,7 +5,6 @@
   $self: &;
 
   @include font-weight('bold');
-  @include link-hover-background-color(get-brand-color('primary'));
   @include transition;
   @include hover (data-rpla-hover-target) {
     #{$self}__icon-wrapper {
@@ -21,10 +20,6 @@
   text-decoration: none;
   white-space: nowrap;
 
-  &__text {
-    @include link-border(get-brand-color('primary'));
-  }
-
   &__icon-wrapper {
     display: inline-block;
     height: .9em;
@@ -34,5 +29,21 @@
     top: .1em;
     transition: opacity .5s ease;
     width: .9em;
+  }
+
+  &--type-one {
+    @include link-hover-background-color(get-brand-color('primary'));
+
+    #{$self}__text {
+      @include link-border(get-brand-color('primary'));
+    }
+  }
+
+  &--type-two {
+    @include link-hover-background-color(get-neutral-color('white'));
+
+    #{$self}__text {
+      @include link-border(get-neutral-color('white'));
+    }
   }
 }

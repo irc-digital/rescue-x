@@ -6,6 +6,27 @@
  * Available blocks:
  */
 #}
+{% spaceless %}
+
+  {% set hero_standard_modifiers = hero_standard_modifiers ?: [] %}
+  {% set hero_standard_convertible_link_button_modifiers = [] %}
+  {% set hero_standard_button_modifiers = [] %}
+  {% set hero_standard_link_modifier = ['size-extra-small'] %}
+
+  {% set background_color = null %}
+  {% for hero_standard_modifier in hero_standard_modifiers %}
+    {% if hero_standard_modifier starts with 'background-color' %}
+      {% set background_color = hero_standard_modifier %}
+    {% endif %}
+  {% endfor %}
+
+  {% if background_color == 'background-color-primary' %}
+    {% set hero_standard_convertible_link_button_modifiers = hero_standard_convertible_link_button_modifiers | merge (['type-two']) %}
+    {% set hero_standard_button_modifiers = hero_standard_button_modifiers | merge (['type-three', 'hover-brand-tint']) %}
+    {% set hero_standard_link_modifier = hero_standard_link_modifier | merge (['subtype-inverse']) %}
+  {% endif %}
+
+{% endspaceless %}
 <div class="rplc-hero-standard{% for hero_standard_modifier in hero_standard_modifiers %} rplc-hero-standard--{{ hero_standard_modifier }}{% endfor %}">
   <div class="rplc-hero-standard__content">
     <div class="rplc-hero-standard__image-wrapper">
@@ -32,18 +53,20 @@
                   {% include '@atoms/30-button/button.twig' with {
                     button_text: hero_standard_primary_cta_text,
                     button_icon_name: hero_standard_primary_cta_icon_name,
+                    button_modifiers: hero_standard_button_modifiers,
                   } only %}
                 </div><div class="rplc-hero-standard__secondary-call-to-action-wrapper">
                   {% include '@atoms/10-link/link.twig' with {
                     link_text: hero_standard_secondary_cta_text,
                     link_url: hero_standard_secondary_cta_url,
                     link_handler_javascript: true,
-                    link_modifiers: ['size-extra-small'],
+                    link_modifiers: hero_standard_link_modifier,
                   } only %}
                 {% else %}
                   {% include '@atoms/18-convertible-link-button/convertible-link-button.twig' with {
                     convertible_link_button_link_text: hero_standard_primary_cta_text,
                     convertible_link_button_icon_name: hero_standard_primary_cta_icon_name,
+                    convertible_link_button_modifiers: hero_standard_convertible_link_button_modifiers,
                   } only %}
                 {% endif %}
               </div>

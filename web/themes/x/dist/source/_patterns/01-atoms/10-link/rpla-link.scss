@@ -101,10 +101,21 @@
   &--type-javascript {
     @include link-color(get-neutral-color('black'));
     @include link-border(get-neutral-color('black'));
-    @include link-hover-border(get-brand-color('primary'), $link-default-border-width, '&');
 
-    @include hover {
-      background-color: get-brand-color('primary');
+    &:not(#{$self}--subtype-inverse) {
+      @include link-hover-border(get-brand-color('primary'), $link-default-border-width, '&');
+
+      @include hover {
+        background-color: get-brand-color('primary');
+      }
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-hover-border(get-neutral-color('white'), $link-default-border-width, '&');
+
+      @include hover {
+        background-color: get-neutral-color('white');
+      }
     }
   }
 
