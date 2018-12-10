@@ -1,2 +1,9 @@
-slider_layout_1_slides: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div><div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div><div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"
-slider_layout_1_pager: "<div style='text-align:center; width: 20vw; background-color: #d7d7d7; border: 4px dashed #333;'>PAGER</div>"
+slider_layout_1_slides:
+  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div>"
+  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div>"
+  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"
+slider_layout_1_attribute_dots: "true"
+slider_layout_1_attribute_dots_class: "rplm-pager--1"
+slider_layout_1_attribute_prev: ".rpll-slider-layout-1__previous"
+slider_layout_1_attribute_next: ".rpll-slider-layout-1__next"
+slider_layout_1_attribute_transform: "false"

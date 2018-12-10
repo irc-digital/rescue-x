@@ -1,4 +1,4 @@
-<div class="rplc-slider-stories{% for slider_stories_modifier in slider_stories_modifiers %} rplc-slider-stories--{{ slider_stories_modifier }}{% endfor %}">
+<div data-rpl-slider class="rplc-slider-stories">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: slider_stories_section_heading_title,
     section_heading_description: slider_stories_section_heading_description,
@@ -7,12 +7,9 @@
   } only %}
 
   <div class="rplc-slider-stories__content">
-    {% embed '@layouts/15-slider-layouts/05-slider-layout-1/slider-layout-1.twig' %}
-      {% block slider_layout_1_slides_block %}
-        {% for slider_stories_slide in slider_stories_slides %}
-          <div class="rplc-slider-stories__slide">{{ slider_stories_slide }}</div>
-        {% endfor %}
-      {% endblock %}
+    {% embed '@layouts/15-slider-layouts/05-slider-layout-1/slider-layout-1.twig' with {
+      'slider_layout_1_slides': slider_stories_slides,
+      } %}
     {% endembed %}
   </div>
 </div>
