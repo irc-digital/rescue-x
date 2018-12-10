@@ -12,8 +12,10 @@
   }
 
   &__pager {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    li {
+      display: inline-block;
+    }
   }
 
   // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
