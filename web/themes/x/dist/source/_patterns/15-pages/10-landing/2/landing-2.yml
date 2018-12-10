@@ -1,14 +1,14 @@
-landing_page_navigation:
+landing_page_2_navigation:
   include():
     pattern: "components-global-navigation"
     with:
       global_navigation_modifiers:
         - 'no-desktop-navigation'
-landing_page_hero_has_image: true
-landing_page_hero:
+landing_page_2_hero_has_image: true
+landing_page_2_hero:
   include():
     pattern: "components-hero-b-roll-1"
-landing_page_content:
+landing_page_2_content:
   join():
     - include():
         pattern: "components-image-link-boxes-1"
@@ -16,7 +16,7 @@ landing_page_content:
         pattern: "components-testimonial"
     - include():
         pattern: "components-call-to-action-4"
-landing_page_footer:
+landing_page_2_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"

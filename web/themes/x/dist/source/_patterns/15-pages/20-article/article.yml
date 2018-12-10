@@ -200,6 +200,8 @@ article_page_content_footer:
   join():
     - include():
         pattern: "components-share-and-explore-related"
+    - include():
+        pattern: "components-related-news-and-features"
 article_page_footer:
   join():
     - include():
