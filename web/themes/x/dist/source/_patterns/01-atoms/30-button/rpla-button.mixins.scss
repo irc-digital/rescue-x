@@ -48,13 +48,16 @@
 
     background-color: get-neutral-color('black');
     color: get-brand-color('primary');
-  } @else if $type == 'three' or $type == 'three-hover-tint' {
+  } @else if $type == 'three' {
     @include hover('data-rpla-hover-target') {
-      @if $type == 'three' {
-        background-color: get-neutral-color('light-gray');
-      } @else if $type == 'three-hover-tint' {
-        background-color: get-brand-color('primary-tint-1');
-      }
+      background-color: get-neutral-color('light-gray');
+    }
+
+    background-color: get-neutral-color('white');
+    color: get-neutral-color('black');
+  } @else if $type == 'four' {
+    @include hover('data-rpla-hover-target') {
+      background-color: get-brand-color('primary-tint-1');
     }
 
     background-color: get-neutral-color('white');

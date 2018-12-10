@@ -13,4 +13,4 @@ $xxx-lh: export('dist/source/_patterns/00-subatoms/20-line-height/line-height.js
 $xxx-ls: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', get-letter-spacing('all'), (prefix: '{ "letter_spacing":', suffix: '}'));
 $xxx-fw: export('dist/source/_patterns/00-subatoms/25-font-weight/font-weight.json', get-font-weight('all'), (prefix: '{ "font_weight":', suffix: '}'));
 $xxx-bs: export('dist/source/_patterns/01-atoms/31-button-examples/button-examples-sizes.json', ('size-small', 'size-medium', 'size-large'), (prefix: '{ "button_sizes":', suffix: '}'));
-$xxx-bt: export('dist/source/_patterns/01-atoms/31-button-examples/button-examples-types.json', ('type-one', 'type-two', 'type-three'), (prefix: '{ "button_types":', suffix: '}'));
+$xxx-bt: export('dist/source/_patterns/01-atoms/31-button-examples/button-examples-types.json', ('type-one', 'type-two', 'type-three', 'type-four'), (prefix: '{ "button_types":', suffix: '}'));

@@ -36,13 +36,11 @@
   }
 
   &--type-three {
-    &:not(#{$self}--hover-brand-tint) {
-      @include button-type('three');
-    }
+    @include button-type('three');
+  }
 
-    &#{$self}--hover-brand-tint {
-      @include button-type('three-hover-tint');
-    }
+  &--type-four {
+    @include button-type('four');
   }
 
   &--icon-position-before {
