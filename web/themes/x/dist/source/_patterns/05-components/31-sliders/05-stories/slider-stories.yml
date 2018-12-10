@@ -4,11 +4,17 @@ slider_stories_slides:
       pattern: "components-teaser-story"
       with:
         teaser_story_image: "https://dummyimage.com/600x400&text=Story%201"
+        teaser_story_nav_title: "Al Sharaa"
+        teaser_story_nav_description: "Syrian family"
   - include():
       pattern: "components-teaser-story"
       with:
         teaser_story_image: "https://dummyimage.com/600x400&text=Story%202"
+        teaser_story_nav_title: "Zulu"
+        teaser_story_nav_description: "Embracing refugees"
   - include():
       pattern: "components-teaser-story"
       with:
         teaser_story_image: "https://dummyimage.com/600x400&text=Story%203"
+        teaser_story_nav_title: "Mohmoud"
+        teaser_story_nav_description: "Top student"

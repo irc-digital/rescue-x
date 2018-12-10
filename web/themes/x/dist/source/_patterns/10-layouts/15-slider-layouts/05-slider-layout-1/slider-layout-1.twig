@@ -9,7 +9,7 @@
       } only %}
     </div>
 
-    <div class="rpll-slider-layout-1__slides" data-slick='{"useTransform": false, "prevArrow": ".rpll-slider-layout-1__previous", "nextArrow": ".rpll-slider-layout-1__next"}'>
+    <div class="rpll-slider-layout-1__slides">
       {% block slider_layout_1_slides_block %}
         {{ slider_layout_1_slides }}
       {% endblock %}
@@ -24,10 +24,6 @@
 
   </div>
 
-  <div class="rpll-slider-layout-1__pager">
-    {% block slider_layout_1_slides_pager %}
-      {{ slider_layout_1_pager }}
-    {% endblock %}
-  </div>
+  <div class="rpll-slider-layout-1__pager"></div>
 
 </div>

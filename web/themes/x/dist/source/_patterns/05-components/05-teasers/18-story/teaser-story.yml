@@ -1,2 +1,4 @@
 teaser_story_text: "Faker.sentences(2,true)"
 teaser_story_image: "https://picsum.photos/640/480/?random"
+teaser_story_nav_description: "Faker.sentences(1,true)"
+teaser_story_nav_title: "Faker.words(3,true)"
