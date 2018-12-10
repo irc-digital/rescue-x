@@ -2,11 +2,6 @@
 
 .rplm-stacked-headline-2 {
   $self: &;
-
-  // TODO removed because throwing off hero standard - delete if no issues elsewhere
-  //&__summary-wrapper {
-  //  @include typography-vertical-spacing;
-  //}
 }
 
 // end of file

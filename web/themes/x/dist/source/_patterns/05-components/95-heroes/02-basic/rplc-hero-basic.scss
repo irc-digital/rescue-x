@@ -5,6 +5,10 @@
 
   @include standard-vertical-spacing(true);
 
+  &__headline-treatment-wrapper {
+    @include typography-vertical-spacing;
+  }
+
   &--transparent {
     margin-bottom: 0;
   }
