@@ -1,2 +1,2 @@
-slider_layout_1_slides: "<div style='height:400px; width:60vw; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDES</div>"
+slider_layout_1_slides: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div><div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div><div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"
 slider_layout_1_pager: "<div style='text-align:center; width: 20vw; background-color: #d7d7d7; border: 4px dashed #333;'>PAGER</div>"
