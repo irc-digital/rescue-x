@@ -105,7 +105,15 @@
         padding-left: get-spacing('2xl');
         padding-right: get-spacing('2xl');
       }
+    }
+  }
 
+  &--50-50 {
+    #{$self}__text-wrapper {
+      @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+        grid-template-areas: 'primary_1 secondary_1' 'primary_1 secondary_2' 'primary_2 .'; // 1
+        grid-template-columns: 50% 1fr;
+      }
     }
   }
 }
