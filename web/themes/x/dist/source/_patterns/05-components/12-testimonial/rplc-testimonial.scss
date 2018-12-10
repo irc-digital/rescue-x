@@ -3,6 +3,8 @@
 .rplc-testimonial {
   $self: &;
 
+  @include standard-vertical-padding;
+
   &__content {
     @include breakpoint(tablet) {
       @include well-row;
