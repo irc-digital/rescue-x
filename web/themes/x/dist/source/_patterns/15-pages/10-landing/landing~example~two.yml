@@ -1,6 +1,9 @@
 landing_page_navigation:
   include():
     pattern: "components-global-navigation"
+    with:
+      global_navigation_modifiers:
+        - 'no-desktop-navigation'
 landing_page_hero_has_image: true
 landing_page_hero:
   include():

@@ -3,7 +3,7 @@
   {% set cta_button_icon_name = cta_button_icon_name ?: 'heart' %}
 
 {% endspaceless %}
-<nav class="rplc-global-navigation">
+<nav class="rplc-global-navigation{% for global_navigation_modifier in global_navigation_modifiers %} rplc-global-navigation--{{ global_navigation_modifier }}{% endfor %}">
   <div class="rplc-global-navigation__content">
     <div class="rplc-global-navigation__top-wrapper">
       <div class="rplc-global-navigation__branding-wrapper">

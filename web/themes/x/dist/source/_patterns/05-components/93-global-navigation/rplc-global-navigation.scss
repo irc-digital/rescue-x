@@ -1,6 +1,7 @@
 @import 'rplc-global-navigation.variables';
 
 .rplc-global-navigation {
+  $self: &;
 
   @include z-index('above-navigation-overlay');
 
@@ -191,6 +192,21 @@
     @include when-mobile-navigation-open {
       opacity: 1;
       right: 0;
+    }
+  }
+
+  &--no-desktop-navigation-except-logo {
+    @media #{$global-navigation-large-device-media-query} {
+      #{$self}__desktop-top-wrapper,
+      #{$self}__bottom-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  &--no-desktop-navigation {
+    @media #{$global-navigation-large-device-media-query} {
+      display: none;
     }
   }
 }
