@@ -2,6 +2,12 @@
 
 .rplm-stacked-headline-4 {
   $self: &;
+
+  &__summary-wrapper {
+    &:not(:last-child) {
+      @include typography-vertical-spacing;
+    }
+  }
 }
 
 // end of file

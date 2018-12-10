@@ -17,7 +17,8 @@ hero_donation_form_art_directed_image_alt: "Faker.words(5,true)"
 hero_donation_form_slug: "Faker.words(2,true)"
 hero_donation_form_headline: "Faker.sentence(6, true)"
 hero_donation_form_summary: "Faker.sentences(3,true)"
-
+hero_donation_form_link_title: "Faker.words(3,true)"
+hero_donation_form_link_url: '#'
 hero_donation_form_donation_text: "Faker.sentence(10,true)"
 hero_donation_form_donation_input_name: "amount"
 hero_donation_form_donation_input_label: "Donation amount"
