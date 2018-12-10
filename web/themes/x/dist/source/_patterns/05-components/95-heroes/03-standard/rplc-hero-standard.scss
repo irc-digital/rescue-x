@@ -17,11 +17,15 @@
 
     background-color: get-neutral-color('white');
     display: block;
-    padding: get-spacing('ml') get-spacing('l');
+    padding: get-spacing('ml');
+
+    @include breakpoint(phablet) {
+      padding: get-spacing('l');
+    }
 
     @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
       display: flex;
-      padding: get-spacing('l');
+      padding: get-spacing('l') get-spacing('2xl');
     }
   }
 
