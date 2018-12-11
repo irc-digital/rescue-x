@@ -1,5 +1,4 @@
 <div class="rpll-slider-layout-1{% for slider_layout_1_modifier in slider_layout_1_modifiers %} rpll-slider-layout-1--{{ slider_layout_1_modifier }}{% endfor %}">
-
   <div class="rpll-slider-layout-1__slides-wrapper">
     <div class="rpll-slider-layout-1__previous" data-rpl-slider-previous>
       {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
@@ -7,7 +6,6 @@
         icon_only_link_name: 'caret-left',
       } only %}
     </div>
-
     <div class="rpll-slider-layout-1__slides" data-rpl-slider-pager="rplm-pager-list-1" data-rpl-slider-slides>
       {% for slider_layout_1_slide_info in slider_layout_1_slides %}
         {% set slide_pager %}
@@ -19,14 +17,11 @@
         <div class="rpll-slider-layout-1__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}">{{ slider_layout_1_slide_info.slide }}</div>
       {% endfor %}
     </div>
-
     <div class="rpll-slider-layout-1__next" data-rpl-slider-next>
       {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
         icon_only_link_alt_text: ('Next' | trans),
         icon_only_link_name: 'caret-right',
       } only %}
     </div>
-
   </div>
-
 </div>
