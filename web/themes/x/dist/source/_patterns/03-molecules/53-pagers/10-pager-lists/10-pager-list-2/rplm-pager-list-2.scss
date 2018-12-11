@@ -11,9 +11,10 @@
   > li, // 1
   &__item-wrapper {
     display: inline-block;
+    opacity: .15;
 
     &.slick-active {
-      color: get-neutral-color('black');
+      opacity: 1;
     }
   }
 }
