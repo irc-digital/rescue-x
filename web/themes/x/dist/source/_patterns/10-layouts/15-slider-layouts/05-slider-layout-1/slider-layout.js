@@ -2,9 +2,12 @@
     Drupal.behaviors.rplSliders = {
         attach: function attach(context, settings) {
             $('[data-rpl-slider-slides]').each(function(key, item) {
+              var dots_class = this.getAttribute('data-rpl-slider-pager');
+              var use_dots = dots_class != null;
+
               $(this).slick({
-                dots: true,
-                dotsClass: 'rplm-pager-list-1',
+                dots: use_dots,
+                dotsClass: dots_class,
                 useTransform: false,
                 prevArrow: "[data-rpl-slider-previous]",
                 nextArrow: "[data-rpl-slider-next]",
