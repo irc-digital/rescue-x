@@ -14,7 +14,7 @@
   @include hover {
     cursor: pointer;
   }
-  
+
   @include breakpoint(tablet) {
     background-color: transparent;
     border-left: 1px solid currentColor;
@@ -24,6 +24,10 @@
     padding-left: get-spacing('ml');
     padding-right: get-spacing('ml');
     width: auto;
+  }
+
+  @include breakpoint(laptop) {
+    margin-right: get-spacing('xl');
   }
 
   &__slug {
@@ -39,7 +43,7 @@
     display: none;
 
     @include breakpoint(tablet) {
-      @include typography-text-large;
+      @include typography-text-standard;
       @include font-weight('bold');
       @include line-height('2xs');
 
