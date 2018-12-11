@@ -41,6 +41,8 @@
     left: -78px;
     margin-right: get-spacing();
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: map-get($teaser-story-image-size, 'mobile');
 
     @include breakpoint(phablet) {
@@ -53,9 +55,12 @@
 
   &__text-wrapper {
     background-color: get-neutral-color('white');
+    display: flex;
+    flex-direction: column;
     padding: get-spacing('ml');
 
     @include breakpoint(phablet) {
+      min-height: rem(416px);
       padding: get-spacing('l');
     }
   }
