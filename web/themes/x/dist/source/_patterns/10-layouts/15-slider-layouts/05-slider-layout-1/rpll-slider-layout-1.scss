@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: get-spacing('2xl');
   }
 
   &__pager {
@@ -32,6 +31,15 @@
     max-width: 465px;
   }
 
+  &__next,
+  &__previous {
+    height: 24px;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
+  }
 }
 
 // end of file

@@ -19,6 +19,10 @@
     color: get-neutral-color('gray');
   }
 
+  &--fill-white {
+    color: get-neutral-color('white');
+  }
+
   &--fill-branded {
     color: get-brand-color(); // 1
   }
