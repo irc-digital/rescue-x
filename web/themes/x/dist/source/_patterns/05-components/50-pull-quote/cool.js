@@ -6,6 +6,7 @@
         var element = $(this);
         console.debug (element.attr('data-cool'));
         element.append(element.attr('data-cool'));
+        element.removeAttr('data-cool');
       });
     }
   };
