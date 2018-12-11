@@ -1,0 +1,7 @@
+pager_list_2_items:
+  - include():
+      pattern: 'molecules-pager-item-2'
+  - include():
+      pattern: 'molecules-pager-item-2'
+  - include():
+      pattern: 'molecules-pager-item-2'

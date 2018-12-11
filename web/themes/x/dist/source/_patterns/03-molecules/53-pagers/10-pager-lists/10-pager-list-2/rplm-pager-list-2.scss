@@ -1,0 +1,22 @@
+@import 'rplm-pager-list-2.variables';
+
+.rplm-pager-list-2 {
+  list-style: none;
+  margin-top: get-spacing('l');
+  text-align: center;
+
+  //
+  // 1) This is for the Slick slider as we cannot place a class on the li within the pager
+  //
+  > li, // 1
+  &__item-wrapper {
+    color: transparent;
+    display: inline-block;
+
+    &.slick-active {
+      color: get-neutral-color('white');
+    }
+  }
+}
+
+// end of file
