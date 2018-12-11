@@ -1,20 +1,26 @@
 <div class="rpll-slider-layout-1{% for slider_layout_1_modifier in slider_layout_1_modifiers %} rpll-slider-layout-1--{{ slider_layout_1_modifier }}{% endfor %}">
 
   <div class="rpll-slider-layout-1__slides-wrapper">
-    <div class="rpll-slider-layout-1__previous">
+    <div class="rpll-slider-layout-1__previous" data-rpl-slider-previous>
       {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
         icon_only_link_alt_text: ('Previous' | trans),
         icon_only_link_name: 'caret-left',
       } only %}
     </div>
 
-    <div class="rpll-slider-layout-1__slides" data-slick='{"dots": {{ slider_layout_1_attribute_dots }}, "dotsClass": "{{ slider_layout_1_attribute_dots_class }}", "useTransform": {{ slider_layout_1_attribute_transform }}, "prevArrow": "{{ slider_layout_1_attribute_prev }}", "nextArrow": "{{ slider_layout_1_attribute_next }}"}'>
-      {% for slider_layout_1_slide in slider_layout_1_slides %}
-        <div class="rpll-slider-layout-1__slide">{{ slider_layout_1_slide }}</div>
+    <div class="rpll-slider-layout-1__slides" data-rpl-slider-slides>
+      {% for slider_layout_1_slide_info in slider_layout_1_slides %}
+        {% set slide_pager %}
+          {% include '@molecules/53-pagers/05-pager-items/05-pager-item-1/pager-item-1.twig' with {
+            pager_item_1_slug: slider_layout_1_slide_info.slug,
+            pager_item_1_title: slider_layout_1_slide_info.title,
+          } only %}
+        {% endset %}
+        <div class="rpll-slider-layout-1__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}">{{ slider_layout_1_slide_info.slide }}</div>
       {% endfor %}
     </div>
 
-    <div class="rpll-slider-layout-1__next">
+    <div class="rpll-slider-layout-1__next" data-rpl-slider-next>
       {% include '@atoms/16-icon-only-link/icon-only-link.twig' with {
         icon_only_link_alt_text: ('Next' | trans),
         icon_only_link_name: 'caret-right',

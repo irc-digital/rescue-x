@@ -3,8 +3,16 @@
 .rplm-pager-list-1 {
   list-style: none;
 
+  //
+  // 1) This is for the Slick slider as we cannot place a class on the li within the pager
+  //
+  > li, // 1
   &__item-wrapper {
     display: inline-block;
+
+    &.slick-active {
+      color: get-neutral-color('white');
+    }
   }
 }
 
