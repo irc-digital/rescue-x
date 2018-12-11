@@ -5,12 +5,11 @@
         icon_name: 'caret-left',
       } only %}
     </div>
-    <div class="rpll-slider-layout-2__slides" data-rpl-slider-pager="rplm-pager-list-1" data-rpl-slider-slides>
+    <div class="rpll-slider-layout-2__slides" data-rpl-slider-pager="rplm-pager-list-2" data-rpl-slider-slides>
       {% for slider_layout_2_slide_info in slider_layout_2_slides %}
         {% set slide_pager %}
-          {% include '@molecules/53-pagers/05-pager-items/05-pager-item-1/pager-item-1.twig' with {
-            pager_item_1_slug: slider_layout_2_slide_info.slug,
-            pager_item_1_title: slider_layout_2_slide_info.title,
+          {% include '@molecules/53-pagers/05-pager-items/10-pager-item-2/pager-item-2.twig' with {
+            pager_item_2_title: slider_layout_2_slide_info.title,
           } only %}
         {% endset %}
         <div class="rpll-slider-layout-2__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}">{{ slider_layout_2_slide_info.slide }}</div>
