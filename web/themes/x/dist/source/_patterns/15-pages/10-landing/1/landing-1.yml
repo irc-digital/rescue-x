@@ -31,6 +31,8 @@ landing_page_1_content:
     - include():
         pattern: "components-quote"
     - include():
+        pattern: "components-stories"
+    - include():
         pattern: "components-pull-quote"
         with:
           pull_quote_text: 'Faker.sentences(4,true)'
