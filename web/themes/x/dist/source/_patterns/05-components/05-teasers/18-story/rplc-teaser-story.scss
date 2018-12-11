@@ -3,6 +3,56 @@
 .rplc-teaser-story {
   $self: &;
 
+  &__content {
+    display: flex;
+    padding-bottom: get-spacing();
+  }
+
+  &__quote {
+    @include font-style('italic');
+    margin-bottom: get-spacing('ml');
+  }
+
+  &__quote-mark-wrapper {
+    flex-shrink: 0;
+    height: map-get($teaser-story-quote-icon-size, 'mobile');
+    margin-right: get-spacing();
+    width: map-get($teaser-story-quote-icon-size, 'mobile');
+
+    @include breakpoint(phablet) {
+      height: map-get($teaser-story-quote-icon-size, 'phablet');
+      width: map-get($teaser-story-quote-icon-size, 'phablet');
+    }
+  }
+
+  &__image-summary-wrapper {
+    align-items: center;
+    display: flex;
+    transform: translateX(-78px);
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+
+    flex-shrink: 0;
+    height: map-get($teaser-story-image-size, 'mobile');
+    margin-right: get-spacing();
+    width: map-get($teaser-story-image-size, 'mobile');
+
+    @include breakpoint(phablet) {
+      height: map-get($teaser-story-image-size, 'mobile');
+      width: map-get($teaser-story-image-size, 'mobile');
+    }
+  }
+
+  &__text-wrapper {
+    background-color: get-neutral-color('white');
+    padding: get-spacing('ml');
+  }
+
+  &__summary {
+    @include typography-vertical-spacing;
+  }
 }
 
 
