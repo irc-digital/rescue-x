@@ -1,0 +1,23 @@
+@import 'rplm-pager-item-1.variables';
+
+.rplm-pager-item-1 {
+  border-left: 1px solid currentColor;
+  display: inline-block;
+  padding-left: get-spacing('ml');
+  padding-right: get-spacing('ml');
+
+  &__slug {
+    @include typography-text-small;
+  }
+
+  &__title {
+    @include typography-text-large;
+    @include font-weight('bold');
+
+    @include breakpoint(phablet) {
+      @include line-height('2xs');
+    }
+  }
+}
+
+// end of file
