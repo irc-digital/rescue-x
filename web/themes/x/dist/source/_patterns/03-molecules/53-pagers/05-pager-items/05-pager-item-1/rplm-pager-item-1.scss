@@ -1,21 +1,43 @@
 @import 'rplm-pager-item-1.variables';
 
 .rplm-pager-item-1 {
-  border-left: 1px solid currentColor;
+  background-color: currentColor;
+  border: 2px solid get-neutral-color('white');
+  border-radius: 50%;
   display: inline-block;
-  padding-left: get-spacing('ml');
-  padding-right: get-spacing('ml');
+  height: 16px;
+  margin-right: get-spacing();
+  width: 16px;
+
+  @include breakpoint(tablet) {
+    background-color: transparent;
+    border-left: 1px solid currentColor;
+    border-radius: 0;
+    border-width: 0 0 0 1px;
+    height: auto;
+    padding-left: get-spacing('ml');
+    padding-right: get-spacing('ml');
+    width: auto;
+  }
 
   &__slug {
-    @include typography-text-small;
+    display: none;
+
+    @include breakpoint(tablet) {
+      @include typography-text-small;
+      display: block;
+    }
   }
 
   &__title {
-    @include typography-text-large;
-    @include font-weight('bold');
+    display: none;
 
-    @include breakpoint(phablet) {
+    @include breakpoint(tablet) {
+      @include typography-text-large;
+      @include font-weight('bold');
       @include line-height('2xs');
+
+      display: block;
     }
   }
 }

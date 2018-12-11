@@ -8,7 +8,12 @@
   //
   > li, // 1
   &__item-wrapper {
+    color: transparent;
     display: inline-block;
+
+    @include breakpoint(tablet) {
+      color: get-neutral-color('black');
+    }
 
     &.slick-active {
       color: get-neutral-color('white');
