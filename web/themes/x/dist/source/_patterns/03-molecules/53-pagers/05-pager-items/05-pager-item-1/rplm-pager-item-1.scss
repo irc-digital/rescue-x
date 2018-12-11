@@ -5,9 +5,10 @@
   border: 2px solid get-neutral-color('white');
   border-radius: 50%;
   display: inline-block;
-  height: 16px;
+  height: $pager-item-1-size;
   margin-right: get-spacing();
-  width: 16px;
+  text-align: left;
+  width: $pager-item-1-size;
 
   @include breakpoint(tablet) {
     background-color: transparent;
