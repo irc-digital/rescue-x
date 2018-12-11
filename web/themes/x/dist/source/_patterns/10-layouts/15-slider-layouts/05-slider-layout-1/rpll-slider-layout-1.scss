@@ -44,6 +44,8 @@
 
     @include breakpoint(tablet) {
       height: 24px;
+      position: relative;
+      top: -46px;
     }
 
     // sass-lint:disable-block mixins-before-declarations
