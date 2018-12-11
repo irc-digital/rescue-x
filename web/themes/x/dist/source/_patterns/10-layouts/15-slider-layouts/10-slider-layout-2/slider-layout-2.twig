@@ -1,0 +1,25 @@
+<div class="rpll-slider-layout-2{% for slider_layout_1_modifier in slider_layout_1_modifiers %} rpll-slider-layout-2--{{ slider_layout_1_modifier }}{% endfor %}">
+  <div class="rpll-slider-layout-2__slides-wrapper">
+    <div class="rpll-slider-layout-2__previous" data-rpl-slider-previous>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-left',
+      } only %}
+    </div>
+    <div class="rpll-slider-layout-2__slides" data-rpl-slider-pager="rplm-pager-list-1" data-rpl-slider-slides>
+      {% for slider_layout_2_slide_info in slider_layout_2_slides %}
+        {% set slide_pager %}
+          {% include '@molecules/53-pagers/05-pager-items/05-pager-item-1/pager-item-1.twig' with {
+            pager_item_1_slug: slider_layout_2_slide_info.slug,
+            pager_item_1_title: slider_layout_2_slide_info.title,
+          } only %}
+        {% endset %}
+        <div class="rpll-slider-layout-2__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}">{{ slider_layout_2_slide_info.slide }}</div>
+      {% endfor %}
+    </div>
+    <div class="rpll-slider-layout-2__next" data-rpl-slider-next>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-right',
+      } only %}
+    </div>
+  </div>
+</div>
