@@ -28,7 +28,7 @@
     // sass-lint:disable-block no-important
     display: block !important; // 1
     margin: 0 auto;
-    max-width: 465px;
+    max-width: $slider-layout-1-max-content-width;
   }
 
   &__next,

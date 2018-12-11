@@ -6,18 +6,42 @@ slider_stories_slides:
       include():
         pattern: "components-teaser-story"
         with:
-          teaser_story_image: "https://dummyimage.com/600x400&text=Story%201"
+          teaser_story_quote: "Faker.sentences(2,true)"
+          teaser_story_summary: "Faker.sentences(2,true)"
+          teaser_story_link_text: "Faker.words(3,true)"
+          teaser_story_responsive_image_source_set:
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=112&h=112&random=storiesperson1 112w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=192&h=192&random=storiesperson1 192w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=224&h=224&random=storiesperson1 224w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=336&h=336&random=storiesperson1 336w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=384&h=384&random=storiesperson1 384w"
   - slug: "Faker.words(3,true)"
     title: "Faker.words(2,true)"
     slide:
       include():
         pattern: "components-teaser-story"
         with:
-          teaser_story_image: "https://dummyimage.com/600x400&text=Story%202"
+          teaser_story_quote: "Faker.sentences(2,true)"
+          teaser_story_summary: "Faker.sentences(2,true)"
+          teaser_story_link_text: "Faker.words(3,true)"
+          teaser_story_responsive_image_source_set:
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=112&h=112&random=storiesperson2 112w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=192&h=192&random=storiesperson2 192w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=224&h=224&random=storiesperson2 224w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=336&h=336&random=storiesperson2 336w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=384&h=384&random=storiesperson2 384w"
   - slug: "Faker.words(3,true)"
     title: "Faker.words(2,true)"
     slide:
       include():
         pattern: "components-teaser-story"
         with:
-          teaser_story_image: "https://dummyimage.com/600x400&text=Story%203"
+          teaser_story_quote: "Faker.sentences(2,true)"
+          teaser_story_summary: "Faker.sentences(2,true)"
+          teaser_story_link_text: "Faker.words(3,true)"
+          teaser_story_responsive_image_source_set:
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=112&h=112&random=storiesperson3 112w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=192&h=192&random=storiesperson3 192w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=224&h=224&random=storiesperson3 224w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=336&h=336&random=storiesperson3 336w"
+            - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=384&h=384&random=storiesperson3 384w"
