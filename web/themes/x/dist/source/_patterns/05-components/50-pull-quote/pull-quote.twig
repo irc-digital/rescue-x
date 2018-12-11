@@ -29,3 +29,9 @@
       </blockquote>
   </div>
 </div>
+
+{% set this_is_cool %}
+  {% include '@molecules/53-pagers/05-pager-items/05-pager-item-1/pager-item-1.twig' %}
+{% endset %}
+
+<div data-cool="{{ this_is_cool | escape('html') }}"></div>
