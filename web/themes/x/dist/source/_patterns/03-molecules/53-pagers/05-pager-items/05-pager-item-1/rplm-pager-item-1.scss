@@ -10,6 +10,11 @@
   text-align: left;
   width: $pager-item-1-size;
 
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer;
+  }
+  
   @include breakpoint(tablet) {
     background-color: transparent;
     border-left: 1px solid currentColor;
