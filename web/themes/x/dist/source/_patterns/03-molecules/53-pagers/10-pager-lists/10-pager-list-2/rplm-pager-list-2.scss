@@ -10,11 +10,10 @@
   //
   > li, // 1
   &__item-wrapper {
-    color: transparent;
     display: inline-block;
 
     &.slick-active {
-      color: get-neutral-color('white');
+      color: get-neutral-color('black');
     }
   }
 }
