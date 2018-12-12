@@ -3,6 +3,33 @@
 .rplc-goal {
   $self: &;
 
+  @media only screen and (min-width: #{$goal-large-screen-size}) {
+    display: flex;
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+    display: none;
+    flex-shrink: 0;
+
+    @media only screen and (min-width: #{$goal-large-screen-size}) {
+      display: block;
+      height: $goal-image-size;
+      width: $goal-image-size;
+    }
+  }
+
+  &__text-wrapper {
+    background-color: get-neutral-color('white');
+    max-width: rem(518px);
+    padding: get-spacing('xl');
+
+    @media only screen and (min-width: #{$goal-large-screen-size}) {
+      flex-shrink: 0;
+      width: rem(450px);
+    }
+  }
+
 }
 
 // end of file
