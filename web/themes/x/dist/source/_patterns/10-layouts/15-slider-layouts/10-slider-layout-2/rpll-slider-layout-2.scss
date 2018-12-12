@@ -28,10 +28,14 @@
 
   // 1) Overrides core Slick. Hopefully we find a better way of doing this.
   &__slide {
-    // sass-lint:disable-block no-important
-    display: block !important; // 1
-    margin: 0 auto;
-    max-width: 560px;
+    margin-bottom: 20px;
+
+    @include breakpoint(phablet) {
+      // sass-lint:disable-block no-important
+      display: block !important; // 1
+      margin: 0 auto;
+      max-width: 560px;
+    }
 
     @include breakpoint(laptop) {
       max-width: 1060px;
@@ -40,10 +44,7 @@
 
   &__next,
   &__previous {
-    //
-    // 1) done with height rather than display as slick uses display
-    //
-    height: 0; // 1
+    display: none;
 
     @include breakpoint(phablet) {
       height: 24px;

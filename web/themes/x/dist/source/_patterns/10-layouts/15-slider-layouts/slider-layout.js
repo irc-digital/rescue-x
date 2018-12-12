@@ -5,6 +5,13 @@
                 var dots_class = this.getAttribute('data-rpl-slider-pager');
                 var use_dots = dots_class != null;
                 var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
+
+                var getDataOptions = function ( options ) {
+                    return (!options || typeof JSON.parse !== 'function') ? {} : JSON.parse(options);
+                };
+
+                var responsiveSettings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
+
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
                 $(this).slick({
@@ -18,7 +25,8 @@
                   customPaging: function (slick, i) {
                       var slide = slick.$slides.eq(i).find('[data-rpl-slider-slide-pager-item]');
                       return slide[0].getAttribute('data-rpl-slider-slide-pager-item');
-                  }
+                  },
+                  responsive: [responsiveSettings],
                 });
             });
         }
