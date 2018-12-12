@@ -30,6 +30,11 @@
       height: rem(532px);
       width: $goal-text-width;
     }
+
+    @media only screen and (min-width: #{$goal-large-screen-size}) and (max-width: #{$goal-eat-in-breakpoint}) {
+      left: calc(100vw - #{$goal-eat-in-breakpoint});
+      position: relative;
+    }
   }
 
 }
