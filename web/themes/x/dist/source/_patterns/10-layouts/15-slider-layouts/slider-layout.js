@@ -2,16 +2,15 @@
     Drupal.behaviors.rplSliders = {
         attach: function attach(context, settings) {
             $('[data-rpl-slider-slides]').each(function(key, item) {
-                var dots_class = this.getAttribute('data-rpl-slider-pager');
-                var use_dots = dots_class != null;
-                var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
 
                 var getDataOptions = function ( options ) {
                     return (!options || typeof JSON.parse !== 'function') ? {} : JSON.parse(options);
                 };
 
+                var dots_class = this.getAttribute('data-rpl-slider-pager');
+                var use_dots = dots_class != null;
+                var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
                 var responsiveSettings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
-
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
                 $(this).slick({
