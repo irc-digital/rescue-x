@@ -1,5 +1,4 @@
 @import '../../../../scss/core';
-// This is a bit awkward. See: rplc-goal.variables.scss
-$slider-layout-2-large-screen-size: rem(1180px);
+@import 'rpll-slider-layout-2.shared.variables';
 
 // end of file
