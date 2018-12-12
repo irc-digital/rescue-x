@@ -57,21 +57,6 @@
     }
   }
 
-  .rplm-pager-list-2 {
-    @include breakpoint(phablet) {
-      height: 0;
-      left: 0;
-      margin-top: 0;
-      position: absolute;
-      top: 0;
-    }
-
-    @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
-      left: auto;
-      right: 0;
-    }
-  }
-
 }
 
 // end of file

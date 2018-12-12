@@ -1,9 +1,24 @@
 @import 'rplm-pager-list-2.variables';
+@import '../../../../10-layouts/15-slider-layouts/10-slider-layout-2/rpll-slider-layout-2.shared.variables';
 
 .rplm-pager-list-2 {
   list-style: none;
   margin-top: get-spacing('l');
-  text-align: center;
+
+  @include breakpoint(phablet) {
+    left: -160px;
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
+    left: auto;
+    right: 0;
+    width: auto;
+  }
 
   //
   // 1) This is for the Slick slider as we cannot place a class on the li within the pager
@@ -18,5 +33,6 @@
     }
   }
 }
+
 
 // end of file
