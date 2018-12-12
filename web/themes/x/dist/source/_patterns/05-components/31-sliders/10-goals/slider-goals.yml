@@ -5,16 +5,46 @@ slider_goals_slides:
       include():
         pattern: "components-goal"
         with:
-          goal_image: "https://dummyimage.com/600x400&text=Goal%201"
+          goal_title: "Faker.words(10,true)"
+          goal_subtitle: "Faker.words(6,true)"
+          goal_description: "Faker.sentences(6,true)"
+          goal_art_directed_image_fallback: "https://placem.at/places?w=500&h=500&random=goalsgoal1"
+          goal_art_directed_image_sources:
+            - source_set:
+              - "https://placem.at/places?w=500&h=500&random=goalsgoal1 1x"
+              - "https://placem.at/places?w=1000&h=1000&random=goalsgoal1 2x"
+              media: "only screen and (min-width: 1051px)"
+            - source_set:
+              - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
   - title: "2"
     slide:
       include():
         pattern: "components-goal"
         with:
-          goal_image: "https://dummyimage.com/600x400&text=Goal%202"
+          goal_title: "Faker.words(10,true)"
+          goal_subtitle: "Faker.words(6,true)"
+          goal_description: "Faker.sentences(6,true)"
+          goal_art_directed_image_fallback: "https://placem.at/places?w=500&h=500&random=goalsgoal2"
+          goal_art_directed_image_sources:
+            - source_set:
+              - "https://placem.at/places?w=500&h=500&random=goalsgoal2 1x"
+              - "https://placem.at/places?w=1000&h=1000&random=goalsgoal2 2x"
+              media: "only screen and (min-width: 1051px)"
+            - source_set:
+              - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
   - title: "3"
     slide:
       include():
         pattern: "components-goal"
         with:
-          goal_image: "https://dummyimage.com/600x400&text=Goal%203"
+          goal_title: "Faker.words(10,true)"
+          goal_subtitle: "Faker.words(6,true)"
+          goal_description: "Faker.sentences(6,true)"
+          goal_art_directed_image_fallback: "https://placem.at/places?w=500&h=500&random=goalsgoal3"
+          goal_art_directed_image_sources:
+            - source_set:
+              - "https://placem.at/places?w=500&h=500&random=goalsgoal3 1x"
+              - "https://placem.at/places?w=1000&h=1000&random=goalsgoal3 2x"
+              media: "only screen and (min-width: 1051px)"
+            - source_set:
+              - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
