@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: get-spacing('2xl');
   }
 
   &__pager {
@@ -22,7 +21,9 @@
   // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
   &__slides {
     overflow: hidden; // 1
-    padding-top: 100px;
+    @include breakpoint(phablet) {
+      padding-top: 100px;
+    }
   }
 
   // 1) Overrides core Slick. Hopefully we find a better way of doing this.
