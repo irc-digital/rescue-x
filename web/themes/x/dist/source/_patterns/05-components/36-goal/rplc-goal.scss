@@ -23,12 +23,20 @@
 
   &__text-wrapper {
     background-color: get-neutral-color('white');
-    padding: get-spacing('xl');
+    padding: get-spacing('l');
 
     @include breakpoint(phablet) {
       flex-shrink: 0;
       height: rem(532px);
       width: $goal-text-width;
+    }
+
+    @media only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$slider-layout-2-small-screen-challenging-breakpoint}) {
+      width: 78vw;
+    }
+
+    @include breakpoint(tablet) {
+      padding: get-spacing('xl');
     }
 
     @media only screen and (min-width: #{$goal-large-screen-size}) and (max-width: #{$goal-eat-in-breakpoint}) {

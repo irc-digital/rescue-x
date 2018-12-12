@@ -6,11 +6,15 @@
   margin-top: get-spacing('l');
 
   @include breakpoint(phablet) {
-    left: -#{map-get($slider-layout-2-component-max-width, 'phablet')};
+    left: 0;
     margin-top: 0;
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  @media only screen and (min-width: #{$slider-layout-2-small-screen-challenging-breakpoint + rem(1px)}) {
+    left: -#{map-get($slider-layout-2-component-max-width, 'phablet')};
     transform: translateX(50%);
   }
 
