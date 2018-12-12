@@ -1,0 +1,19 @@
+<div class="rpll-slider-layout-3{% for slider_layout_3_modifier in slider_layout_3_modifiers %} rpll-slider-layout-3--{{ slider_layout_3_modifier }}{% endfor %}">
+  <div class="rpll-slider-layout-3__slides-wrapper">
+    <div class="rpll-slider-layout-3__previous" data-rpl-slider-previous>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-left',
+      } only %}
+    </div>
+    <div class="rpll-slider-layout-3__slides" data-rpl-slider-slides>
+      {% for slider_layout_3_slide in slider_layout_3_slides %}
+        <div class="rpll-slider-layout-3__slide">{{ slider_layout_3_slide }}</div>
+      {% endfor %}
+    </div>
+    <div class="rpll-slider-layout-3__next" data-rpl-slider-next>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-right',
+      } only %}
+    </div>
+  </div>
+</div>

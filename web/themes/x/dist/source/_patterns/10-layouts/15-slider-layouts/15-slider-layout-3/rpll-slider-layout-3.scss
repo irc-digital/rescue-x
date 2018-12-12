@@ -1,0 +1,57 @@
+@import 'rpll-slider-layout-3.variables';
+
+.rpll-slider-layout-3 {
+  $self: &;
+  //
+  //&__slides-wrapper {
+  //  align-items: center;
+  //  display: flex;
+  //  flex-direction: row;
+  //  justify-content: space-between;
+  //}
+  //
+  //&__pager {
+  //  text-align: center;
+  //
+  //  li {
+  //    display: inline-block;
+  //  }
+  //}
+  //
+  ////
+  //// 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
+  ////
+  //&__slides {
+  //  overflow: hidden; // 1
+  //}
+  //
+  ////
+  //// 1) Overrides core Slick.
+  ////
+  //&__slide {
+  //  // sass-lint:disable-block no-important
+  //  display: block !important; // 1
+  //  margin: 0 auto;
+  //}
+  //
+  //&__next,
+  //&__previous {
+  //  //
+  //  // 1) done with height rather than display as slick uses display
+  //  //
+  //  height: 0; // 1
+  //
+  //  @include breakpoint(tablet) {
+  //    height: 24px;
+  //    position: relative;
+  //    top: -46px;
+  //  }
+  //
+  //  // sass-lint:disable-block mixins-before-declarations
+  //  @include hover {
+  //    cursor: pointer;
+  //  }
+  //}
+}
+
+// end of file
