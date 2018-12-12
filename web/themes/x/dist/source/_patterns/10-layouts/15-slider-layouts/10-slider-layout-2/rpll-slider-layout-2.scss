@@ -34,11 +34,11 @@
       // sass-lint:disable-block no-important
       display: block !important; // 1
       margin: 0 auto;
-      max-width: 560px;
+      max-width: map-get($slider-layout-2-component-max-width, 'phablet');
     }
 
     @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
-      max-width: 1060px;
+      max-width: map-get($slider-layout-2-component-max-width, 'large');
     }
   }
 

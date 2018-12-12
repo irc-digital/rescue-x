@@ -6,18 +6,18 @@
   margin-top: get-spacing('l');
 
   @include breakpoint(phablet) {
-    left: -160px;
+    left: -#{map-get($slider-layout-2-component-max-width, 'phablet')};
     margin-top: 0;
     position: absolute;
+    right: 0;
     top: 0;
-    text-align: center;
-    width: 100%;
+    transform: translateX(50%);
   }
 
   @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
     left: auto;
     right: 0;
-    width: auto;
+    transform: none;
   }
 
   //

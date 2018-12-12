@@ -1,5 +1,8 @@
 @import '../../../../scss/core';
 
 $slider-layout-2-large-screen-size: rem(1108px);
-
+$slider-layout-2-component-max-width: (
+  'phablet': rem(560px),
+  'large': rem(1060px),
+);
 // end of file
