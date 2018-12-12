@@ -8,6 +8,7 @@
                     dots: use_dots,
                     dotsClass: dots_class,
                     useTransform: false,
+                    touchThreshold: 10,
                     prevArrow: $('[data-rpl-slider-previous]')[key],
                     nextArrow: $('[data-rpl-slider-next]')[key],
                     customPaging: function (slick, i) {
