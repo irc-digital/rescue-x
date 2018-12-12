@@ -81,6 +81,18 @@ main_menu_items:
                 url: '#'
               - title: 'Dallas, TX'
                 url: '#'
+              - title: 'Denver, CO'
+                url: '#'
+              - title: 'Elizabeth, NJ'
+                url: '#'
+              - title: 'Los Angeles, CA'
+                url: '#'
+              - title: 'Miami, FL'
+                url: '#'
+              - title: 'Missoula, MT'
+                url: '#'
+              - title: 'New York, NY'
+                url: '#'
   - title: 'What we do'
     url: "#"
     items:

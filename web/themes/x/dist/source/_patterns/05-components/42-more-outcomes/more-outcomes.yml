@@ -1,4 +1,4 @@
-more_outcomes_section_heading_title: "Rescue stories"
+more_outcomes_section_heading_title: "More outcomes"
 more_outcomes_slides:
   - include():
       pattern: "components-teaser-image-basic"
