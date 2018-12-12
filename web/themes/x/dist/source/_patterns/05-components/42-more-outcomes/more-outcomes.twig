@@ -1,0 +1,14 @@
+<div class="rplc-more-outcomes" data-rpl-slider>
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: more_outcomes_section_heading_title,
+    section_heading_description: more_outcomes_section_heading_description,
+    section_heading_icon: more_outcomes_section_heading_icon,
+  } only %}
+
+  <div class="rplc-more-stories__content">
+    {% embed '@layouts/15-slider-layouts/15-slider-layout-2/slider-layout-2.twig' with {
+      'slider_layout_3_slides': more_outcomes_slides,
+    } %}
+    {% endembed %}
+  </div>
+</div>

@@ -1,0 +1,34 @@
+more_outcomes_section_heading_title: "Rescue stories"
+more_outcomes_slides:
+  - include():
+      pattern: "components-teaser-image-basic"
+      with:
+        teaser_image_basic_title: "Faker.words(3, true)"
+        teaser_image_basic_image_source_set:
+          - "https://placem.at/places?w=376&h=212&random=moreoutcomes1 376w"
+        teaser_image_basic_image_fallback: "https://placem.at/places?w=376&h=212&random=moreoutcomes1"
+        teaser_image_basic_image_alt: "Faker.words(4, true)"
+  - include():
+      pattern: "components-teaser-image-basic"
+      with:
+        teaser_image_basic_title: "Faker.words(3, true)"
+        teaser_image_basic_image_source_set:
+          - "https://placem.at/places?w=376&h=212&random=moreoutcomes2 376w"
+        teaser_image_basic_image_fallback: "https://placem.at/places?w=376&h=212&random=moreoutcomes2"
+        teaser_image_basic_image_alt: "Faker.words(4, true)"
+  - include():
+      pattern: "components-teaser-image-basic"
+      with:
+        teaser_image_basic_title: "Faker.words(3, true)"
+        teaser_image_basic_image_source_set:
+          - "https://placem.at/places?w=376&h=212&random=moreoutcomes3 376w"
+        teaser_image_basic_image_fallback: "https://placem.at/places?w=376&h=212&random=moreoutcomes3"
+        teaser_image_basic_image_alt: "Faker.words(4, true)"
+  - include():
+      pattern: "components-teaser-image-basic"
+      with:
+        teaser_image_basic_title: "Faker.words(3, true)"
+        teaser_image_basic_image_source_set:
+          - "https://placem.at/places?w=376&h=212&random=moreoutcomes4 376w"
+        teaser_image_basic_image_fallback: "https://placem.at/places?w=376&h=212&random=moreoutcomes4"
+        teaser_image_basic_image_alt: "Faker.words(4, true)"
