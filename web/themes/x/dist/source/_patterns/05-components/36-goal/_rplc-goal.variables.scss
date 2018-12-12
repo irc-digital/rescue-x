@@ -1,5 +1,6 @@
 @import '../../../scss/core';
 
+$goal-large-screen-size: rem(1180px);
 $goal-image-size: rem(500px);
 $goal-text-width: rem(560px);
 $goal-eat-in-breakpoint: $goal-image-size + $goal-text-width + get-spacing() + get-spacing();
