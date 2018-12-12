@@ -21,13 +21,13 @@
     border-radius: 0;
     border-width: 0 0 0 1px;
     height: auto;
-    padding-left: get-spacing('ml');
-    padding-right: get-spacing('ml');
+    padding-left: get-spacing('m');
     width: auto;
   }
 
   @include breakpoint(laptop) {
     margin-right: get-spacing('xl');
+    padding-left: get-spacing('ml');
   }
 
   &__slug {
