@@ -25,12 +25,12 @@
   }
 
   //1) Overrides core Slick. Hopefully we find a better way of doing this.
-  &__slide {
-    // sass-lint:disable-block no-important
-    display: block !important; // 1
-    margin: 0 auto;
-    max-width: 465px;
-  }
+  //&__slide {
+  //  // sass-lint:disable-block no-important
+  //  display: block !important; // 1
+  //  margin: 0 auto;
+  //  max-width: 465px;
+  //}
 
 }
 
