@@ -20,17 +20,19 @@
                 }
 
                 var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
-                var responsiveSettings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
+                var responsive_settings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
                 var infinite = slides_to_show == 1;
+
+                console.debug(responsive_settings); 
 
                 $(this).slick({
                   dots: use_dots,
                   dotsClass: dots_class,
                   useTransform: false,
                   infinite: infinite,
-                  slidesToShow: slides_to_show,
+                  slidesToShow: parseInt(slides_to_show),
                   touchThreshold: 10,
                   prevArrow: $('[data-rpl-slider-previous]')[key],
                   nextArrow: $('[data-rpl-slider-next]')[key],
@@ -38,9 +40,10 @@
                       var slide = slick.$slides.eq(i).find('[data-rpl-slider-slide-pager-item]');
                       return slide[0].getAttribute('data-rpl-slider-slide-pager-item');
                   },
-                  responsive: [responsiveSettings],
+                  responsive: responsive_settings,
                 });
             });
         }
     };
 })(jQuery);
+

@@ -26,6 +26,11 @@
     @include hover {
       cursor: pointer;
     }
+
+    &.slick-disabled {
+      // sass-lint:disable-block no-important
+      display: none !important; // grrr - slick
+    }
   }
 
   &__next {
@@ -34,6 +39,10 @@
 
   &__previous {
     left: $slider-layout-3-previous-icon-gap;
+  }
+
+  &__slide {
+    padding-right: get-spacing();
   }
 }
 

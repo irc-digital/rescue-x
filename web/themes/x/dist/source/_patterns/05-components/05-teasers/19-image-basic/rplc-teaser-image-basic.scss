@@ -1,25 +1,35 @@
 @import 'rplc-teaser-image-basic.variables';
 
 .rplc-teaser-image-basic {
-  max-width: rem(376px);
+  max-width: rem(256px);
+
+  @include breakpoint(phablet) {
+    max-width: rem(376px);
+  }
 
   &__image-wrapper {
     @include line-height('none');
   }
 
   &__title {
-    @include typography-heading-medium;
     @include line-height('2xs');
     @include transition;
+    @include typography-heading-medium;
+    @include font-size('xs');
+
+    @include breakpoint(phablet) {
+      @include font-size('m');
+    }
 
     background-color: get-neutral-color('white');
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: get-spacing();
+    //margin-right: auto;
     margin-top: $teaser-image-basic-eat-in;
-    padding: get-spacing();
+    padding-bottom: get-spacing();
+    padding-top: get-spacing();
     position: relative;
     text-align: center;
-    width: 88%;
+    width: calc(100% - #{get-spacing()} - #{get-spacing()});
 
     // sass-lint:disable mixins-before-declarations
     @include hover ('data-rpla-hover-target') {
