@@ -19,13 +19,14 @@
                   dots_class = component_class + '__pager';
                 }
 
+                console.debug(this.getAttribute('data-rpl-slider-responsive'));
+
                 var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
                 var responsive_settings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
+
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
                 var infinite = slides_to_show == 1;
-
-                console.debug(responsive_settings); 
 
                 $(this).slick({
                   dots: use_dots,
