@@ -9,11 +9,11 @@
     @include well-row;
 
     #{$self}__intro {
-      padding-bottom: 30px;
+      padding-bottom: $goals-intro-bottom-padding;
 
       @include breakpoint(desktop) {
         padding-bottom: 0;
-        padding-right: 30%;
+        padding-right: $goals-intro-right-padding;
       }
     }
   }
