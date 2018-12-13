@@ -3,6 +3,6 @@
 $slider-layout-3-previous-next-icon-size: rem(24px);
 $slider-layout-3-previous-next-icon-gap: get-spacing('l');
 $slider-layout-3-previous-icon-gap: -#{$slider-layout-3-previous-next-icon-gap};
-$slider-layout-3-next-icon-gap: -#{$slider-layout-3-previous-next-icon-gap - get-spacing()};
+$slider-layout-3-next-icon-gap: -#{$slider-layout-3-previous-next-icon-gap - get-spacing('l')};
 
 // end of file
