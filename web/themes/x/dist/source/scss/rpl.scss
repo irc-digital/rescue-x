@@ -57,7 +57,6 @@
 //
 // Build components
 //
-@import '../_patterns/05-components/36-goal/rplc-goal';
 @import '../_patterns/05-components/95-heroes/02-basic/rplc-hero-basic';
 @import '../_patterns/05-components/95-heroes/03-standard/rplc-hero-standard';
 @import '../_patterns/05-components/95-heroes/05-article/rplc-hero-article';
@@ -100,6 +99,14 @@
 @import '../_patterns/05-components/30-images/15-image-partial-width-portrait/rplc-image-partial-width-portrait';
 @import '../_patterns/05-components/30-images/20-image-well-width/rplc-image-well-width';
 @import '../_patterns/05-components/30-images/25-image-inset/rplc-image-inset';
+@import '../_patterns/05-components/31-goal/rplc-goal';
+@import '../_patterns/05-components/33-goals/rplc-goals';
+@import '../_patterns/05-components/35-calls-to-action/10-call-to-action-1/rplc-call-to-action-1';
+@import '../_patterns/05-components/35-calls-to-action/20-call-to-action-2/rplc-call-to-action-2';
+@import '../_patterns/05-components/35-calls-to-action/30-call-to-action-3/rplc-call-to-action-3';
+@import '../_patterns/05-components/35-calls-to-action/40-call-to-action-4/rplc-call-to-action-4';
+@import '../_patterns/05-components/35-calls-to-action/50-call-to-action-5/rplc-call-to-action-5';
+@import '../_patterns/05-components/35-calls-to-action/60-call-to-action-6/rplc-call-to-action-6';
 @import '../_patterns/05-components/37-follow-us/rplc-follow-us';
 @import '../_patterns/05-components/40-fast-facts/rplc-fast-facts';
 @import '../_patterns/05-components/42-more-outcomes/rplc-more-outcomes';
@@ -120,13 +127,6 @@
 @import '../_patterns/05-components/85-question/question';
 @import '../_patterns/05-components/87-share-and-explore-related/rplc-share-and-explore-related';
 @import '../_patterns/05-components/90-efficiency/rplc-efficiency';
-@import '../_patterns/05-components/31-goals/rplc-goals';
-@import '../_patterns/05-components/35-calls-to-action/10-call-to-action-1/rplc-call-to-action-1';
-@import '../_patterns/05-components/35-calls-to-action/20-call-to-action-2/rplc-call-to-action-2';
-@import '../_patterns/05-components/35-calls-to-action/30-call-to-action-3/rplc-call-to-action-3';
-@import '../_patterns/05-components/35-calls-to-action/40-call-to-action-4/rplc-call-to-action-4';
-@import '../_patterns/05-components/35-calls-to-action/50-call-to-action-5/rplc-call-to-action-5';
-@import '../_patterns/05-components/35-calls-to-action/60-call-to-action-6/rplc-call-to-action-6';
 @import '../_patterns/05-components/92-menu/05-main/rplc-main-menu';
 @import '../_patterns/05-components/92-menu/10-secondary/rplc-secondary-menu';
 @import '../_patterns/05-components/92-menu/30-mobile-call-to-action/rplc-mobile-call-to-action-menu';
