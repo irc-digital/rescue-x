@@ -1,0 +1,19 @@
+
+@mixin pager-list-2 {
+  list-style: none;
+
+  //
+  // 1) This is for the Slick slider as we cannot place a class on the li within the pager
+  //
+  > li, // 1
+  &__item-wrapper {
+    display: inline-block;
+    opacity: .15;
+
+    &.slick-active {
+      opacity: 1;
+    }
+  }
+}
+
+// end of file

@@ -1,41 +1,8 @@
 @import 'rplm-pager-list-2.variables';
-@import '../../../../10-layouts/15-slider-layouts/10-slider-layout-2/rpll-slider-layout-2.shared.variables';
+@import 'rplm-pager-list-2.mixins';
 
 .rplm-pager-list-2 {
-  list-style: none;
-  margin-top: get-spacing('l');
-
-  @include breakpoint(phablet) {
-    left: 0;
-    margin-top: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  @media only screen and (min-width: #{$slider-layout-2-small-screen-challenging-breakpoint + rem(1px)}) {
-    left: -#{map-get($slider-layout-2-component-max-width, 'phablet')};
-    transform: translateX(50%);
-  }
-
-  @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
-    left: auto;
-    right: 0;
-    transform: none;
-  }
-
-  //
-  // 1) This is for the Slick slider as we cannot place a class on the li within the pager
-  //
-  > li, // 1
-  &__item-wrapper {
-    display: inline-block;
-    opacity: .15;
-
-    &.slick-active {
-      opacity: 1;
-    }
-  }
+  @include pager-list-2;
 }
 
 

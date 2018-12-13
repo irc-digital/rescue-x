@@ -1,4 +1,5 @@
 @import 'rpll-slider-layout-2.variables';
+@import '../../../03-molecules/53-pagers/10-pager-lists/10-pager-list-2/rplm-pager-list-2.mixins';
 
 .rpll-slider-layout-2 {
   $self: &;
@@ -8,14 +9,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  &__pager {
-    text-align: center;
-
-    li {
-      display: inline-block;
-    }
   }
 
   // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
@@ -54,6 +47,31 @@
     // sass-lint:disable-block mixins-before-declarations
     @include hover {
       cursor: pointer;
+    }
+  }
+
+  &__pager {
+    @include pager-list-2;
+
+    margin-top: get-spacing('l');
+
+    @include breakpoint(phablet) {
+      left: 0;
+      margin-top: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    @media only screen and (min-width: #{$slider-layout-2-small-screen-challenging-breakpoint + rem(1px)}) {
+      left: -#{map-get($slider-layout-2-component-max-width, 'phablet')};
+      transform: translateX(50%);
+    }
+
+    @media only screen and (min-width: #{$slider-layout-2-large-screen-size}) {
+      left: auto;
+      right: 0;
+      transform: none;
     }
   }
 
