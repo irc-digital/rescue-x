@@ -28,6 +28,8 @@ outcome_page_content:
   join():
     - include():
         pattern: "components-goals"
+        with:
+          goals_section_heading_title: 'Our goals'
     - include():
         pattern: "components-impact-cards"
         with:
