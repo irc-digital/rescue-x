@@ -1,4 +1,5 @@
 slider_goals_section_heading_title: "Goals"
+slider_goals_intro: "Faker.sentences(6,true)"
 slider_goals_slides:
   - title: "1"
     slide:

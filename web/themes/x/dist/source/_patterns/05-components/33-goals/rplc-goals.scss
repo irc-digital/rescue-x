@@ -1,10 +1,21 @@
 @import 'rplc-goals.variables';
 
 .rplc-slider-goals {
+  $self: &;
+
   @include standard-vertical-padding;
 
   &__content {
     @include well-row;
+
+    #{$self}__intro {
+      padding-bottom: 30px;
+
+      @include breakpoint(desktop) {
+        padding-bottom: 0;
+        padding-right: 30%;
+      }
+    }
   }
 
   &__slides {
