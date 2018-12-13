@@ -322,14 +322,6 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   }
 }
 
-#molecules-pager-list-1 {
-  .rplm-pager-list-1 {
-    > :nth-child(2) {
-      color: white !important;
-    }
-  }
-}
-
 #atoms-link-type-2-white,
 #atoms-unordered-list-color-light {
   background-color: get-utility-color('alert');

@@ -16,7 +16,8 @@
       color: get-neutral-color('black');
     }
 
-    &.slick-active {
+    &[data-rpl-pager-item='active'],
+    &.slick-active { // 1
       color: get-neutral-color('white');
     }
   }

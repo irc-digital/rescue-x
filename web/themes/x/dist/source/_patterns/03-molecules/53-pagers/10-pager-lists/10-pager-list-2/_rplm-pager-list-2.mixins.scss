@@ -10,7 +10,8 @@
     display: inline-block;
     opacity: .15;
 
-    &.slick-active {
+    &[data-rpl-pager-item='active'],
+    &.slick-active { // 1
       opacity: 1;
     }
   }
