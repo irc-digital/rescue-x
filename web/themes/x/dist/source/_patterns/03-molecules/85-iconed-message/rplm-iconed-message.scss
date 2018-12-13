@@ -11,21 +11,21 @@
     display: inline-block;
     line-height: 2.4;
     vertical-align: top;
+  }
 
-    #{$self}__icon {
-      background-color: get-brand-color();
-      display: inline-block;
-      height: $iconed-message-icon-size;
-      margin-left: $iconed-message-icon-margin-left;
-      margin-right: $iconed-message-icon-margin-right;
-      padding: $iconed-message-icon-padding;
-      vertical-align: top;
-      width: $iconed-message-icon-size;
-    }
+  &__icon {
+    background-color: get-brand-color();
+    display: inline-block;
+    height: $iconed-message-icon-size;
+    margin-left: $iconed-message-icon-margin-left;
+    margin-right: $iconed-message-icon-margin-right;
+    padding: $iconed-message-icon-padding;
+    vertical-align: top;
+    width: $iconed-message-icon-size;
+  }
 
-    #{$self}__text {
-      padding: $iconed-message-text-padding;
-    }
+  &__text {
+    padding: $iconed-message-text-padding;
   }
 }
 
