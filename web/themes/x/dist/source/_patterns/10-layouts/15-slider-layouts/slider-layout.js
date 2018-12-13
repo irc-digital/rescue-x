@@ -24,21 +24,7 @@
                 var slides_to_show = this.getAttribute('data-rpl-slider-slides-to-show');
                 var responsive_settings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
 
-                responsive_settings = [
-                  {
-                    breakpoint: 10000,
-                    settings: {
-                      slidesToShow: 3
-                    }
-                  },
-                  {
-                    breakpoint: 1240,
-                    settings: {
-                      slidesToShow: 2
-                    }
-                  }
-                ];
-
+                console.debug(responsive_settings);
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
                 var infinite = slides_to_show == 1;

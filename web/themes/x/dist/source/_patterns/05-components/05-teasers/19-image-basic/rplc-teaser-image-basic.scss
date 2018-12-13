@@ -1,11 +1,6 @@
 @import 'rplc-teaser-image-basic.variables';
 
 .rplc-teaser-image-basic {
-  max-width: rem(256px);
-
-  @include breakpoint(phablet) {
-    max-width: rem(376px);
-  }
 
   &__image-wrapper {
     @include line-height('none');
@@ -17,19 +12,20 @@
     @include typography-heading-medium;
     @include font-size('xs');
 
-    @include breakpoint(phablet) {
-      @include font-size('m');
-    }
-
     background-color: get-neutral-color('white');
     margin-left: get-spacing();
-    //margin-right: auto;
-    margin-top: $teaser-image-basic-eat-in;
-    padding-bottom: get-spacing();
-    padding-top: get-spacing();
-    position: relative;
+    padding-bottom: get-spacing('s');
+    padding-top: get-spacing('s');
     text-align: center;
+    transform: translateY(-50%);
     width: calc(100% - #{get-spacing()} - #{get-spacing()});
+
+    // sass-lint:disable mixins-before-declarations
+    @include breakpoint(phablet) {
+      padding-bottom: get-spacing('m');
+      padding-top: get-spacing('m');
+      @include font-size('m');
+    }
 
     // sass-lint:disable mixins-before-declarations
     @include hover ('data-rpla-hover-target') {

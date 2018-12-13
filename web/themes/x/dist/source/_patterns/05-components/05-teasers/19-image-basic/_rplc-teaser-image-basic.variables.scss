@@ -1,6 +1,8 @@
 @import '../../../../scss/core';
 
 $teaser-image-basic-eat-in: -#{get-spacing('ml')};
+$teaser-image-max-width: rem(376px);
+$teaser-image-text-max-width: #{$teaser-image-max-width - get-spacing()  - get-spacing()};
 
 // end of file
 

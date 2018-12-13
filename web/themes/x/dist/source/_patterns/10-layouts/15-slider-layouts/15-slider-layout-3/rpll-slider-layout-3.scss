@@ -12,14 +12,14 @@
     //
     // 1) done with height rather than display as slick uses display
     //
-    height: 0; // 1
+    height: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    width: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
 
-    @include breakpoint(tablet) {
-      height: $slider-layout-3-previous-next-icon-size;
-      width: $slider-layout-3-previous-next-icon-size;
+    @include breakpoint(phablet) {
+      height: map-get($slider-layout-3-previous-next-icon-size, 'phablet');
+      width: map-get($slider-layout-3-previous-next-icon-size, 'phablet');
     }
 
     // sass-lint:disable-block mixins-before-declarations
