@@ -150,6 +150,19 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   padding-right: 1rem !important;
 }
 
+.patternlab-slider-two-content {
+  background-color: #d7d7d7;
+  border: 4px dashed #333;
+  height:400px;
+  line-height: 400px;
+  text-align:center;
+  width: 90vw;
+
+  @include breakpoint(phablet) {
+    width: auto;
+  }
+}
+
 // ... except for the ones that are supposed to go window width
 #atoms-paragraph-body,
 #components-image-window-width,

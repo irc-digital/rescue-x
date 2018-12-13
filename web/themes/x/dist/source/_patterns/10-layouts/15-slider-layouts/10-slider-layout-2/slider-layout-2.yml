@@ -1,7 +1,7 @@
 slider_layout_2_slides:
   - title: "1"
-    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div>"
+    slide: "<div class='patternlab-slider-two-content'>SLIDE 1</div>"
   - title: "2"
-    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div>"
+    slide: "<div class='patternlab-slider-two-content'>SLIDE 2</div>"
   - title: "3"
-    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"
+    slide: "<div class='patternlab-slider-two-content'>SLIDE 3</div>"
