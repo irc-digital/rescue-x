@@ -27,6 +27,8 @@ outcome_page_hero:
 outcome_page_content:
   join():
     - include():
+        pattern: "components-goals"
+    - include():
         pattern: "components-impact-cards"
         with:
           impact_cards_section_heading_title: 'Our impact'
