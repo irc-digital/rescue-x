@@ -5,7 +5,9 @@ more_outcomes_slides:
       with:
         teaser_image_basic_title: "Faker.words(3, true)"
         teaser_image_basic_image_source_set:
-          - "https://placem.at/places?w=387&h=218&random=moreoutcomes1 387w"
+          - "https://placem.at/places?w=387&h=218&random=teaserimagebasic 387w"
+          - "https://placem.at/places?w=774&h=436&random=teaserimagebasic 774w"
+          - "https://placem.at/places?w=1161&h=654&random=teaserimagebasic 1161w"
         teaser_image_basic_image_fallback: "https://placem.at/places?w=387&h=218&random=moreoutcomes1"
         teaser_image_basic_image_alt: "Faker.words(4, true)"
   - include():
@@ -13,7 +15,9 @@ more_outcomes_slides:
       with:
         teaser_image_basic_title: "Faker.words(3, true)"
         teaser_image_basic_image_source_set:
-          - "https://placem.at/places?w=387&h=218&random=moreoutcomes2 387w"
+          - "https://placem.at/places?w=387&h=218&random=teaserimagebasic 387w"
+          - "https://placem.at/places?w=774&h=436&random=teaserimagebasic 774w"
+          - "https://placem.at/places?w=1161&h=654&random=teaserimagebasic 1161w"
         teaser_image_basic_image_fallback: "https://placem.at/places?w=387&h=218&random=moreoutcomes2"
         teaser_image_basic_image_alt: "Faker.words(4, true)"
   - include():
@@ -21,7 +25,9 @@ more_outcomes_slides:
       with:
         teaser_image_basic_title: "Faker.words(3, true)"
         teaser_image_basic_image_source_set:
-          - "https://placem.at/places?w=387&h=218&random=moreoutcomes3 387w"
+          - "https://placem.at/places?w=387&h=218&random=teaserimagebasic 387w"
+          - "https://placem.at/places?w=774&h=436&random=teaserimagebasic 774w"
+          - "https://placem.at/places?w=1161&h=654&random=teaserimagebasic 1161w"
         teaser_image_basic_image_fallback: "https://placem.at/places?w=387&h=218&random=moreoutcomes3"
         teaser_image_basic_image_alt: "Faker.words(4, true)"
   - include():
@@ -29,6 +35,8 @@ more_outcomes_slides:
       with:
         teaser_image_basic_title: "Faker.words(3, true)"
         teaser_image_basic_image_source_set:
-          - "https://placem.at/places?w=387&h=218&random=moreoutcomes4 387w"
+          - "https://placem.at/places?w=387&h=218&random=teaserimagebasic 387w"
+          - "https://placem.at/places?w=774&h=436&random=teaserimagebasic 774w"
+          - "https://placem.at/places?w=1161&h=654&random=teaserimagebasic 1161w"
         teaser_image_basic_image_fallback: "https://placem.at/places?w=387&h=218&random=moreoutcomes4"
         teaser_image_basic_image_alt: "Faker.words(4, true)"

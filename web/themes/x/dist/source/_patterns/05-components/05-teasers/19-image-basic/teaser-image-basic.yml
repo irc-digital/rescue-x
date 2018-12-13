@@ -2,5 +2,7 @@ teaser_image_basic_url: "#"
 teaser_image_basic_title: "Faker.words(3, true)"
 teaser_image_basic_image_source_set:
   - "https://placem.at/places?w=387&h=218&random=teaserimagebasic 387w"
+  - "https://placem.at/places?w=774&h=436&random=teaserimagebasic 774w"
+  - "https://placem.at/places?w=1161&h=654&random=teaserimagebasic 1161w"
 teaser_image_basic_image_fallback: "https://placem.at/places?w=387&h=218&random=teaserimagebasic"
 teaser_image_basic_image_alt: "Faker.words(4, true)"
