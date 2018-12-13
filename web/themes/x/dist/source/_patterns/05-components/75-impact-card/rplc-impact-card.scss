@@ -76,6 +76,8 @@
   &__front-figure {
     @include typography-heading-5xl;
     @include typography-vertical-spacing('compact');
+
+    overflow: hidden;
   }
 
   &__front-description {

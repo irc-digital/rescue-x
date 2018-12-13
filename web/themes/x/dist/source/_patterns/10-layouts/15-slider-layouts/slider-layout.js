@@ -11,7 +11,7 @@
                 var dots_class = this.getAttribute('data-rpl-slider-pager');
 
                 if (use_dots && dots_class.length == 0) {
-                  // default to a pager class of component name __pager 
+                  // default to a pager class of component name __pager
                   var classes = this.getAttribute('class').split(/\s+/);
                   var main_class = classes[0];
                   var position_of_bem_separator = main_class.indexOf("__");
