@@ -53,6 +53,8 @@ outcome_page_content:
                 with:
                   teaser_basic_slug: 'Report'
         only: true
+    - include():
+        pattern: "components-more-outcomes"
 outcome_page_footer:
   join():
     - include():
