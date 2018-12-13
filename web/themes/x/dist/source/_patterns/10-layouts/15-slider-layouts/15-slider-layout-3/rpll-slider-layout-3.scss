@@ -10,11 +10,11 @@
   &__next,
   &__previous {
     //
-    // 1) done with height rather than display as slick uses display
+    // 1) Compensate a bit for the teaser, which pulls its text up a bit.
     //
     height: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
     position: absolute;
-    top: 50%;
+    top: 40%; // 1
     width: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
 
     @include breakpoint(phablet) {
@@ -34,15 +34,19 @@
   }
 
   &__next {
-    right: $slider-layout-3-next-icon-gap;
+    right: get-spacing();
   }
 
   &__previous {
-    left: $slider-layout-3-previous-icon-gap;
+    left: 0;
   }
 
   &__slide {
     padding-right: get-spacing();
+  }
+
+  &__slides {
+    margin: 0 2.3rem;
   }
 }
 
