@@ -23,10 +23,13 @@
                 var responsiveSettings = getDataOptions( item ? this.getAttribute('data-rpl-slider-responsive') : null );
                 slides_to_show = slides_to_show != null ? slides_to_show : '1';
 
+                var infinite = slides_to_show == 1;
+
                 $(this).slick({
                   dots: use_dots,
                   dotsClass: dots_class,
                   useTransform: false,
+                  infinite: infinite,
                   slidesToShow: slides_to_show,
                   touchThreshold: 10,
                   prevArrow: $('[data-rpl-slider-previous]')[key],
