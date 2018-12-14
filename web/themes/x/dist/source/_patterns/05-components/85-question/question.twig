@@ -1,4 +1,4 @@
-<div class="rplc-question" data-rpl-question-answer="{{ question_correct_answer }}">
+<div{% if question_id %} id="{{ question_id }}"{% endif %} class="rplc-question" data-rpl-question-answer="{{ question_correct_answer }}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: question_section_heading_title,
     section_heading_description: question_section_heading_description,

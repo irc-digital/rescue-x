@@ -1,4 +1,4 @@
-<div{% if press_releases_id  %} id="{{ press_releases_id }}"{% endif %} class="rplc-press-releases{% for press_release_modifier in press_release_modifiers %} rplc-press-releases--{{ press_release_modifier }}{% endfor %}" data-rpl-canvas-color='neutral-white'>
+<div{% if press_releases_id %} id="{{ press_releases_id }}"{% endif %} class="rplc-press-releases{% for press_release_modifier in press_release_modifiers %} rplc-press-releases--{{ press_release_modifier }}{% endfor %}" data-rpl-canvas-color='neutral-white'>
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: press_releases_section_heading_title,
     section_heading_description: press_releases_section_heading_description,

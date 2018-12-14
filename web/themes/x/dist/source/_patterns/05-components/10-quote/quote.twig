@@ -1,4 +1,4 @@
-<div{% if quote_id  %} id="{{ quote_id }}"{% endif %} class="rplc-quote{% for quote_modifier in quote_modifiers %} rplc-quote--{{ quote_modifier }}{% endfor %}">
+<div{% if quote_id %} id="{{ quote_id }}"{% endif %} class="rplc-quote{% for quote_modifier in quote_modifiers %} rplc-quote--{{ quote_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: quote_section_heading_title,
     section_heading_description: quote_section_heading_description,

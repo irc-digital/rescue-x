@@ -6,7 +6,7 @@
  * Available blocks:
  */
 #}
-<div class="rplc-bordered-teaser-list{% for bordered_teaser_list_modifier in bordered_teaser_list_modifiers %} rplc-bordered-teaser-list--{{ bordered_teaser_list_modifier }}{% endfor %}">
+<div{% if bordered_teaser_list_id %} id="{{ bordered_teaser_list_id }}"{% endif %} class="rplc-bordered-teaser-list{% for bordered_teaser_list_modifier in bordered_teaser_list_modifiers %} rplc-bordered-teaser-list--{{ bordered_teaser_list_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: bordered_teaser_list_section_heading_title,
     section_heading_description: bordered_teaser_list_list_section_heading_description,
