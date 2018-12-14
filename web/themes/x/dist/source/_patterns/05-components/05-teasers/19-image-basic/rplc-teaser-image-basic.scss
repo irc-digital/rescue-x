@@ -13,8 +13,8 @@
     @include font-size('xs');
 
     background-color: get-neutral-color('white');
-    margin-top: map-get($teaser-image-basic-eat-in, 'mobile');
     margin-left: get-spacing();
+    margin-top: map-get($teaser-image-basic-eat-in, 'mobile');
     padding-bottom: get-spacing('m');
     padding-top: get-spacing('m');
     position: relative;
