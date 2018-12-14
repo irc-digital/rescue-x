@@ -6,9 +6,11 @@
 
   <div class="rplc-slider-goals__content">
     <div class="rplc-slider-goals__intro">{{ slider_goals_section_heading_description }}</div>
-    {% embed '@layouts/15-slider-layouts/10-slider-layout-2/slider-layout-2.twig' with {
-      'slider_layout_2_slides': slider_goals_slides,
-      } %}
-    {% endembed %}
+    <div class="rplc-slider-goals__wrapper">
+      {% embed '@layouts/15-slider-layouts/10-slider-layout-2/slider-layout-2.twig' with {
+        'slider_layout_2_slides': slider_goals_slides,
+        } %}
+      {% endembed %}
+    </div>
   </div>
 </div>
