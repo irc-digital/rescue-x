@@ -9,12 +9,10 @@
 
   &__next,
   &__previous {
-    //
-    // 1) Compensate a bit for the teaser, which pulls its text up a bit.
-    //
     height: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
     position: absolute;
-    top: 40%; // 1
+    top: 50%;
+    transform: translateY(-50%);
     width: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
 
     @include breakpoint(phablet) {
