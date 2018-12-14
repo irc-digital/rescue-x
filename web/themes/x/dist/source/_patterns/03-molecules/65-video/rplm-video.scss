@@ -1,0 +1,12 @@
+@import 'rplm-video.variables';
+@import 'rplm-video.mixins';
+
+.rplm-video {
+
+  .video-js {
+    @include video-js-mixin;
+  }
+
+}
+
+// end of file

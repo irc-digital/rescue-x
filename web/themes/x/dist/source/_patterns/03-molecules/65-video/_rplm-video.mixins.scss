@@ -1,0 +1,45 @@
+@import 'rplm-video.variables';
+
+@mixin video-js-mixin {
+  color: get-neutral-color('black');
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    .vjs-big-play-button {
+      background-color: get-brand-color('primary-tint-1');
+      color: get-neutral-color('white');
+    }
+  }
+
+  .vjs-big-play-button {
+    background-color: get-brand-color();
+    border-radius: 100%;
+    border-width: 0;
+    height: 1.5em;
+    left: 50%;
+    top: 50%;
+    width: 1.5em;
+  }
+
+  .vjs-control-bar {
+    @include font-size('s');
+    background-color: get-brand-color();
+  }
+
+  .vjs-play-progress {
+    background-color: get-brand-color('primary-tint-1');
+  }
+
+  .vjs-progress-holder {
+    .vjs-load-progress {
+      display: none;
+    }
+  }
+
+  .vjs-volume-level,
+  .vjs-volume-bar {
+    background-color: get-brand-color('primary-tint-1');
+  }
+}
+
+// end of file
