@@ -3,7 +3,7 @@
 
 .rplm-video {
 
-  .video-js {
+  &__player {
     @include video-js-mixin;
   }
 
