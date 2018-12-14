@@ -13,6 +13,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    user-select: none;
     width: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
 
     @include breakpoint(phablet) {

@@ -38,6 +38,7 @@
   &__next,
   &__previous {
     display: none;
+    user-select: none;
 
     @include breakpoint(phablet) {
       height: 24px;
