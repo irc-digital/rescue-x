@@ -54,6 +54,7 @@
       // secondary-1 and secondary-2 from matching the height of primary-1.
       //
       grid-row: span 2; // 1
+      margin-right: get-spacing('l');
     }
   }
 
