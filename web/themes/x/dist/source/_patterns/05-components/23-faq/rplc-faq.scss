@@ -1,0 +1,59 @@
+@import 'rplc-faq.variables';
+@import 'rplc-faq.mixins';
+
+.rplc-faq {
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+  }
+
+  &__introduction {
+    @include typography-vertical-spacing('airy');
+  }
+
+  &__item {
+    @include typography-vertical-spacing();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__question {
+    position: relative;
+    text-indent: $faq-question-icon-size + get-spacing('s');
+
+    @include faq-question-is-opened {
+      margin-bottom: get-spacing();
+    }
+
+    &::before {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNOCAwQzMuNTkgMCAwIDMuNTkgMCA4czMuNTkgOCA4IDggOC0zLjU5IDgtOC0zLjU5LTgtOC04em0wIDE0LjRjLTMuNTMgMC02LjQtMi44Ny02LjQtNi40UzQuNDcgMS42IDggMS42czYuNCAyLjg3IDYuNCA2LjQtMi44NyA2LjQtNi40IDYuNHoiLz48cGF0aCBkPSJNMTAuNzMgNy41SDUuMjdjLS41IDAtLjkwOC0uMDAyLS45MDguNXMuNDA4LjUuOTEuNWg1LjQ1NmMuNTAzIDAgLjkxLjAwMi45MS0uNXMtLjQwOC0uNS0uOTEtLjV6Ii8+PC9zdmc+');
+      background-repeat: no-repeat;
+      background-size: $faq-question-icon-size;
+      content: '';
+      cursor: pointer;
+      height: $faq-question-icon-size;
+      left: 0;
+      padding-right: get-spacing('s');
+      position: absolute;
+      top: 0.45em;
+      width: $faq-question-icon-size;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include faq-question-is-closed {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNOCAxLjZDNC40NyAxLjYgMS42IDQuNDcgMS42IDhzMi44NyA2LjQgNi40IDYuNCA2LjQtMi44NyA2LjQtNi40UzExLjUzIDEuNiA4IDEuNnptMi40IDYuOUg4LjV2Mi4wMjVjMCAuNDQtLjA1OC44LS41LjhzLS41LS4zNTgtLjUtLjhWOC41SDUuNmMtLjQ0MiAwLS44LS4wNi0uOC0uNXMuMzU4LS41LjgtLjVoMS45VjUuNzI1YzAtLjQ0LjA1OC0uOC41LS44cy41LjM1OC41LjhWNy41aDEuOWMuNDQgMCAuOC4wNi44LjVzLS4zNTguNS0uOC41eiIvPjxwYXRoIGQ9Ik04IDBDMy41OSAwIDAgMy41OSAwIDhzMy41OSA4IDggOCA4LTMuNTkgOC04LTMuNTktOC04LTh6bTAgMTQuNGMtMy41MyAwLTYuNC0yLjg3LTYuNC02LjRTNC40NyAxLjYgOCAxLjZzNi40IDIuODcgNi40IDYuNC0yLjg3IDYuNC02LjQgNi40eiIvPjxwYXRoIGQ9Ik0xMC40IDcuNUg4LjVWNS43MjVjMC0uNDQtLjA1OC0uOC0uNS0uOHMtLjUuMzU4LS41LjhWNy41SDUuNmMtLjQ0MiAwLS44LjA2LS44LjVzLjM1OC41LjguNWgxLjl2Mi4wMjVjMCAuNDQuMDU4LjguNS44cy41LS4zNTguNS0uOFY4LjVoMS45Yy40NCAwIC44LS4wNi44LS41cy0uMzU4LS41LS44LS41eiIvPjwvc3ZnPg==');
+      }
+    }
+  }
+
+  &__response {
+    @include faq-question-is-closed {
+      display: none;
+    }
+  }
+}
+
+// end of file

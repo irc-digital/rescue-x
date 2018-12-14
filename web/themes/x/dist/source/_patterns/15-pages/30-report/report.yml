@@ -19,13 +19,13 @@ report_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
           only: true
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "components-title-and-link-list"

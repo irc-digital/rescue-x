@@ -43,6 +43,12 @@ country_page_content:
               with:
                 fact_list_title: 'IRC response'
     - include():
+        pattern: "components-faq"
+    - include():
+        pattern: "components-impact-cards"
+        with:
+          impact_cards_section_heading_title: 'Our impact'
+    - include():
         pattern: "components-news-and-features"
         with:
           news_and_features_section_heading_description: ''

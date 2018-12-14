@@ -31,13 +31,13 @@ press_release_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'lead'
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
 press_release_page_content_footer:
   join():

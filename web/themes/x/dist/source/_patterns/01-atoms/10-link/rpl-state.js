@@ -13,22 +13,28 @@
         state_values = state_values.replace(/ /g,'').split(',');
         var target_data_attribute_name = 'data-rpl-' + state_type;
 
-        var parent = $(this).parent();
-        var target = parent;
-        var parent_classes = parent.attr('class').split(/\s+/);
+        // first look up the DOM to see if we have data-rpl-state-target
+        var specified_target = $(this).parents('[data-rpl-state-target]');
+        if (specified_target.length == 1) {
+          target = specified_target;
+        } else {
+          var parent = $(this).parent();
+          var target = parent;
+          var parent_classes = parent.attr('class').split(/\s+/);
 
-        if (parent_classes.length > 0) {
-          var parent_first_class = parent_classes[0];
+          if (parent_classes.length > 0) {
+            var parent_first_class = parent_classes[0];
 
-          var position_of_bem_separator = parent_first_class.indexOf("__")
+            var position_of_bem_separator = parent_first_class.indexOf("__")
 
-          if (position_of_bem_separator) {
-            var bem_element = parent_first_class.substring(0, position_of_bem_separator);
+            if (position_of_bem_separator) {
+              var bem_element = parent_first_class.substring(0, position_of_bem_separator);
 
-            var ancestor_element = $(this).parents('.' + bem_element);
+              var ancestor_element = $(this).parents('.' + bem_element);
 
-            if (typeof ancestor_element !== 'undefined') {
-              target = ancestor_element;
+              if (typeof ancestor_element !== 'undefined') {
+                target = ancestor_element;
+              }
             }
           }
         }

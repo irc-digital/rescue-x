@@ -33,13 +33,13 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'lead'
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - join():
       - "<p class='rpla-paragraph rpla-paragraph--body'>Nulla consequat massa quis enim "
@@ -51,24 +51,24 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "components-image-partial-width-landscape"
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "layouts-aside-2"
@@ -79,17 +79,17 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "components-pull-quote"
@@ -99,7 +99,7 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "layouts-aside-2"
@@ -115,17 +115,17 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "layouts-aside-2"
@@ -141,29 +141,29 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "components-question"
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "components-call-to-action-1"
@@ -173,12 +173,12 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "layouts-aside"
@@ -189,12 +189,12 @@ article_page_content:
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
     - include():
         pattern: "atoms-paragraph"
         with:
-          text_modifiers:
+          paragraph_modifiers:
             - 'body'
 article_page_content_footer:
   join():

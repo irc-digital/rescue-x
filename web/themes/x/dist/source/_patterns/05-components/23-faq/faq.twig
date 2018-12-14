@@ -1,0 +1,21 @@
+<div class="rplc-faq">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: faq_section_heading_title,
+    section_heading_description: faq_section_heading_description,
+    section_heading_icon: faq_section_heading_icon
+  } only %}
+  <div class="rplc-faq__content">
+    <div class="rplc-faq__introduction">{{ faq_intro_text }}</div>
+    {% for faq_item in faq_items %}
+      <div class="rplc-faq__item" data-rpl-faq-question-state="collapsed" data-rpl-state-target>
+        <div class="rplc-faq__question" data-rpl-state-type="faq-question-state" data-rpl-state-values="expanded, collapsed">
+          {% include '@atoms/10-link/link.twig' with {
+            link_text: faq_item.question,
+            link_modifiers: ['type-two', 'subtype-inverse', 'subtype-no-hover-effect', 'weight-normal'],
+          } only %}
+        </div>
+        <div class="rplc-faq__response">{{ faq_item.response }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
