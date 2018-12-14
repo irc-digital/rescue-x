@@ -14,10 +14,10 @@
                     settings = getSlickSettings(this, key);
                     $.each(settings.responsive , function(key, val) {
                         if(val.settings == 'unslick') {
-                            unslickBreakpoint = val.breakpoint;
+                            unslick_breakpoint = val.breakpoint;
                         }
                     });
-                    if (typeof unslickBreakpoint !== 'undefined' && $(window).width() > unslickBreakpoint && !$(this).hasClass('slick-initialized')) {
+                    if (typeof unslick_breakpoint !== 'undefined' && $(window).width() > unslick_breakpoint && !$(this).hasClass('slick-initialized')) {
                         $(this).slick(settings);
                     }
                 });
