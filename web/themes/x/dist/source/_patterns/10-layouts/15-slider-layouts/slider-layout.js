@@ -17,7 +17,7 @@
                             unslickBreakpoint = val.breakpoint;
                         }
                     });
-                    if (unslickBreakpoint && $(window).width() > unslickBreakpoint && !$(this).hasClass('slick-initialized')) {
+                    if (typeof unslickBreakpoint !== 'undefined' && $(window).width() > unslickBreakpoint && !$(this).hasClass('slick-initialized')) {
                         $(this).slick(settings);
                     }
                 });
