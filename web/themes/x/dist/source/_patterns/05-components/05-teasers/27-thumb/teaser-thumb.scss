@@ -6,6 +6,7 @@
 
   &__image-wrapper {
     @include line-height('none');
+    @include typography-vertical-spacing('compact');
   }
 
   &__text-wrapper {
