@@ -1,5 +1,5 @@
 {% if news_and_features_content %}
-<div class="rplc-news-and-features{% for news_and_features_modifier in news_and_features_modifiers %} rplc-news-and-features--{{ news_and_features_modifier }}{% endfor %}">
+<div{% if news_and_features_id  %} id="{{ news_and_features_id }}"{% endif %} class="rplc-news-and-features{% for news_and_features_modifier in news_and_features_modifiers %} rplc-news-and-features--{{ news_and_features_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: news_and_features_section_heading_title,
     section_heading_description: news_and_features_section_heading_description,

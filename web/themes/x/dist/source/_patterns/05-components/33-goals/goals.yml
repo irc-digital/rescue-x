@@ -1,6 +1,6 @@
-slider_goals_section_heading_title: "Goals"
-slider_goals_section_heading_description: "Faker.sentences(6,true)"
-slider_goals_items:
+goals_section_heading_title: "Goals"
+goals_section_heading_description: "Faker.sentences(6,true)"
+goals_items:
   - title: "1"
     slide:
       include():

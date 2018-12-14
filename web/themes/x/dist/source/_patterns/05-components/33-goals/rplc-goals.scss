@@ -1,6 +1,6 @@
 @import 'rplc-goals.variables';
 
-.rplc-slider-goals {
+.rplc-goals {
   $self: &;
 
   @include standard-vertical-padding;
@@ -16,10 +16,6 @@
         padding-right: $goals-intro-right-padding;
       }
     }
-  }
-
-  &__slides {
-    list-style: none;
   }
 
   &__wrapper {
