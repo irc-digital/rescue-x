@@ -1,0 +1,13 @@
+teaser_thumb_url: "#"
+teaser_thumb_title: "Faker.words(8,true)"
+teaser_thumb_content_type: 'video'
+teaser_thumb_image_source_set:
+  - "https://placem.at/things?w=200&h=112&random=teaserthumb 200w"
+  - "https://placem.at/things?w=400&h=224&random=teaserthumb 400w"
+teaser_thumb_image_fallback: "https://placem.at/things?w=200&h=112&random=teaserthumb"
+teaser_thumb_image_alt: "Faker.words(4, true)"
+
+
+
+
+
