@@ -1,6 +1,8 @@
 <div class="rplc-about-list">
-  {% include '@layouts/03-one-column-list/one-column-list.twig' with {
-    one_column_list_content: about_list_content,
-    one_column_list_modifiers: ['spacing-airy'],
-  } only %}
+  <div class="rplc-about-list__content">
+    {% include '@layouts/03-one-column-list/one-column-list.twig' with {
+      one_column_list_content: about_list_content,
+      one_column_list_modifiers: ['spacing-airy'],
+    } only %}
+  </div>
 </div>

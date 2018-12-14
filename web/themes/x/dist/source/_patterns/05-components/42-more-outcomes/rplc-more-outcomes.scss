@@ -1,6 +1,9 @@
 @import 'rplc-more-outcomes.variables';
 
 .rplc-more-outcomes {
+
+  @include standard-vertical-padding;
+
   &__content {
     @include well-row;
   }

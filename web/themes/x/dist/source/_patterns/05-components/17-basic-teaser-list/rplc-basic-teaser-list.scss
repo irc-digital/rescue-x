@@ -1,7 +1,7 @@
 @import 'rplc-basic-teaser-list.variables';
 
 .rplc-basic-teaser-list {
-  @include standard-vertical-spacing;
+  @include standard-vertical-padding;
 
   &__content {
     @include well-row;

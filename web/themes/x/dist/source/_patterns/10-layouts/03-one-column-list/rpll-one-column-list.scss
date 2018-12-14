@@ -8,11 +8,19 @@
 
   &__item {
     margin-bottom: get-spacing('l');
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--spacing-airy {
     #{$self}__item {
       margin-bottom: get-spacing('xl');
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
