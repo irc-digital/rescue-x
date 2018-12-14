@@ -36,12 +36,12 @@
                     dots_class = component_class + '__pager';
                 }
 
-                var variableWidth = false;
+                var variable_width = false;
                 var has_slides_to_show = slider.hasAttribute('data-rpl-slider-slides-to-show');
                 var slides_to_show = slider.getAttribute('data-rpl-slider-slides-to-show');
 
                 if (has_slides_to_show) {
-                    variableWidth = slides_to_show == 0;
+                    variable_width = slides_to_show == 0;
                     slides_to_show = 2; // doesnt matter for variable width, but
                 }
 
@@ -57,7 +57,7 @@
                     infinite: infinite,
                     slidesToShow: parseInt(1),
                     touchThreshold: 10,
-                    variableWidth: variableWidth,
+                    variableWidth: variable_width,
                     prevArrow: $('[data-rpl-slider-previous]')[key],
                     nextArrow: $('[data-rpl-slider-next]')[key],
                     customPaging: function (slick, i) {
