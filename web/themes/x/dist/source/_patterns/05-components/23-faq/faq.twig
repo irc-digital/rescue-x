@@ -1,4 +1,4 @@
-<div class="rplc-faq" data-rpl-canvas-color="neutral-white">
+<div{% if faq_id %} id="{{ faq_id }}"{% endif %} class="rplc-faq" data-rpl-canvas-color="neutral-white">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: faq_section_heading_title,
     section_heading_description: faq_section_heading_description,

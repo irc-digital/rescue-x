@@ -65,10 +65,6 @@
     }
   }
 
-  &__main {
-    @include standard-vertical-spacing(true);
-  }
-
   &--press-release {
     #{$self}__main {
       margin-bottom: get-spacing('l');
