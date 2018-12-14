@@ -14,7 +14,7 @@
   }
 
   &__item {
-    @include typography-vertical-spacing();
+    @include typography-vertical-spacing('standard');
 
     &:last-child {
       margin-bottom: 0;
@@ -24,10 +24,6 @@
   &__question {
     position: relative;
     text-indent: $faq-question-icon-size + get-spacing('s');
-
-    @include faq-question-is-opened {
-      margin-bottom: get-spacing();
-    }
 
     &::before {
       background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNOCAwQzMuNTkgMCAwIDMuNTkgMCA4czMuNTkgOCA4IDggOC0zLjU5IDgtOC0zLjU5LTgtOC04em0wIDE0LjRjLTMuNTMgMC02LjQtMi44Ny02LjQtNi40UzQuNDcgMS42IDggMS42czYuNCAyLjg3IDYuNCA2LjQtMi44NyA2LjQtNi40IDYuNHoiLz48cGF0aCBkPSJNMTAuNzMgNy41SDUuMjdjLS41IDAtLjkwOC0uMDAyLS45MDguNXMuNDA4LjUuOTEuNWg1LjQ1NmMuNTAzIDAgLjkxLjAwMi45MS0uNXMtLjQwOC0uNS0uOTEtLjV6Ii8+PC9zdmc+');
@@ -39,8 +35,13 @@
       left: 0;
       padding-right: get-spacing('s');
       position: absolute;
-      top: 0.45em;
+      top: .45em;
       width: $faq-question-icon-size;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include faq-question-is-opened {
+        margin-bottom: get-spacing();
+      }
 
       // sass-lint:disable-block mixins-before-declarations
       @include faq-question-is-closed {
