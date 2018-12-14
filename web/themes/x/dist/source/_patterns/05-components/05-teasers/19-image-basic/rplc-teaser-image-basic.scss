@@ -16,14 +16,16 @@
     margin-left: get-spacing();
     padding-bottom: get-spacing('s');
     padding-top: get-spacing('s');
+    position: relative;
     text-align: center;
-    transform: translateY(-50%);
-    width: calc(100% - #{get-spacing()} - #{get-spacing()});
+    top: map-get($teaser-image-basic-eat-in, 'mobile');
+    width: calc(100% - #{get-spacing('l')});
 
     // sass-lint:disable mixins-before-declarations
     @include breakpoint(phablet) {
       padding-bottom: get-spacing('m');
       padding-top: get-spacing('m');
+      top: map-get($teaser-image-basic-eat-in, 'phablet');
       @include font-size('m');
     }
 
