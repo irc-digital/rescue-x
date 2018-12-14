@@ -7,26 +7,26 @@
   }
 
   &__title {
-    @include line-height('2xs');
-    @include transition;
     @include typography-heading-medium;
+    @include line-height('none');
+    @include transition;
     @include font-size('xs');
 
     background-color: get-neutral-color('white');
+    bottom: map-get($teaser-image-basic-eat-in, 'mobile');
     margin-left: get-spacing();
-    padding-bottom: get-spacing('s');
-    padding-top: get-spacing('s');
+    padding-bottom: get-spacing('m');
+    padding-top: get-spacing('m');
     position: relative;
     text-align: center;
-    top: map-get($teaser-image-basic-eat-in, 'mobile');
     width: calc(100% - #{get-spacing('l')});
 
     // sass-lint:disable mixins-before-declarations
     @include breakpoint(phablet) {
-      padding-bottom: get-spacing('m');
-      padding-top: get-spacing('m');
-      top: map-get($teaser-image-basic-eat-in, 'phablet');
       @include font-size('m');
+      bottom: map-get($teaser-image-basic-eat-in, 'phablet');
+      padding-bottom: get-spacing('ml');
+      padding-top: get-spacing('ml');
     }
 
     // sass-lint:disable mixins-before-declarations
