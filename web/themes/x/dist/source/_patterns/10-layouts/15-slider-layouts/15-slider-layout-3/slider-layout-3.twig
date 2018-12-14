@@ -5,7 +5,7 @@
         icon_name: 'caret-left',
       } only %}
     </div>
-    <div class="rpll-slider-layout-3__slides" data-rpl-slider-slides data-rpl-slider-responsive='{{ slider_layout_3_responsive | default('[]') }}'>
+    <div class="rpll-slider-layout-3__slides" data-rpl-slider-slides data-rpl-slider-slides-to-show="{{ slider_layout_3_slides_to_show | default (3) }}" data-rpl-slider-responsive='{{ slider_layout_3_responsive | default('[]') }}'>
       {% for slider_layout_3_slide in slider_layout_3_slides %}
         <div class="rpll-slider-layout-3__slide">{{ slider_layout_3_slide }}</div>
       {% endfor %}

@@ -335,7 +335,7 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   &[data-rpl-content-type] {
     position: relative;
 
-    $background-transparency: rgba(0, 0, 0, .4);
+    $background-transparency: rgba(0, 0, 0, .2);
 
     &::before {
       background-color: $background-transparency;
