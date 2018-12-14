@@ -12,8 +12,7 @@
             $(window).on('resize', function() {
                 $('[data-rpl-slider-slides]').each(function(key, item) {
                     settings = getSlickSettings(this, key);
-                    var responsive_settings = JSON.parse(this.getAttribute('data-rpl-slider-responsive'));
-                    $.each(responsive_settings , function(key, val) {
+                    $.each(settings.responsive , function(key, val) {
                         if(val.settings == 'unslick') {
                             unslickBreakpoint = val.breakpoint;
                         }
