@@ -1,5 +1,5 @@
 more_outcomes_section_heading_title: "More outcomes"
-more_outcomes_slides:
+more_outcomes_items:
   - include():
       pattern: "components-teaser-image-basic"
       with:

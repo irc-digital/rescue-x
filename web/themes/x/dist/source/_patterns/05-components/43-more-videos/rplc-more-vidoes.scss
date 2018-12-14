@@ -1,0 +1,9 @@
+@import 'rplc-more-videos.variables';
+
+.rplc-more-videos {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file
