@@ -21,6 +21,12 @@
   &__slides {
     list-style: none;
   }
+  
+  &__wrapper {
+    @include breakpoint(desktop) {
+      margin-top: $goals-wrapper-pull-up;
+    }
+  }
 }
 
 
