@@ -41,11 +41,12 @@ config.styles = {
 };
 
 config.javascript = {
-  drupalDependencies: [
+  dependencies: [
     '../../core/assets/vendor/domready/ready.min.js',
     '../../core/assets/vendor/jquery/jquery.min.js',
     '../../core/misc/drupal.js',
     '../../core/misc/drupal.init.js',
+    'node_modules/videojs-youtube/dist/Youtube.min.js',
   ],
   externalLibraries: [
     '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js',
@@ -197,8 +198,8 @@ function get_canvas_colors (type) {
  * solutions - so it will have to suffice for a bit.
  */
 gulp.task('build:javascript:drupal-copy', function () {
-  return gulp.src(config.javascript.drupalDependencies)
-      .pipe(gulp.dest(config.javascript.jsDir + '/' + 'core'));
+  return gulp.src(config.javascript.dependencies)
+      .pipe(gulp.dest(config.javascript.jsDir + '/' + 'dependencies'));
 });
 
 /**
@@ -471,11 +472,11 @@ gulp.task('patternlab:javascript', function () {
   return gulp.src(config.patternLab.metaDir + config.patternLab.footFilename)
       .pipe(replace(/<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">(.*?)<\/div>/g, function(match, p1, offset, string) {
         var output = '<div id="do-not-replace-see-gulpfile" style="height: 0; width: 0; position: absolute; visibility: hidden">';
-        for (var full_path_idx in config.javascript.drupalDependencies) {
-          var full_path = config.javascript.drupalDependencies[full_path_idx];
+        for (var full_path_idx in config.javascript.dependencies) {
+          var full_path = config.javascript.dependencies[full_path_idx];
           var split_out = full_path.split('/');
           var file_name = split_out[split_out.length - 1];
-          output += '<script src="../../js/core/' + file_name + '"></script>';
+          output += '<script src="../../js/dependencies/' + file_name + '"></script>';
         }
 
         for (var i in config.javascript.externalLibraries) {

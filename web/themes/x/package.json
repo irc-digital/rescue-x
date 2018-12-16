@@ -41,6 +41,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "puppeteer": "^1.10.0"
+    "puppeteer": "^1.10.0",
+    "videojs-youtube": "^2.6.0"
   }
 }
