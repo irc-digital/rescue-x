@@ -5,23 +5,34 @@
             // Initialize sliders
             $('[data-rpl-slider-slides]').each(function(key, item) {
                 settings = getSlickSettings(this, key);
-                $(this).slick(settings);
+                var slickSlider = $(this);
+                // check to see if this slider unslicks itself at any breakpoint
+                $.each(settings.responsive , function(key, val) {
+                    if(val.settings == 'unslick') {
+                        // unslicks itself - initialzes again if we jump
+                        // above the breakpoint
+                        var unslick_breakpoint = val.breakpoint;
+                        $(window).on('resize', function(event) {
+                            if (event.target.outerWidth > unslick_breakpoint && !slickSlider.hasClass('slick-initialized')) {
+                                slickSlider.slick(settings);
+                            }
+                        });
+                        return false; // break out of each
+                    }
+                });
+                slickSlider.slick(settings);
             });
 
             // Reinitialize sliders if necessary
-            $(window).on('resize', function() {
-                $('[data-rpl-slider-slides]').each(function(key, item) {
-                    settings = getSlickSettings(this, key);
-                    $.each(settings.responsive , function(key, val) {
-                        if(val.settings == 'unslick') {
-                            unslick_breakpoint = val.breakpoint;
-                        }
-                    });
-                    if (typeof unslick_breakpoint !== 'undefined' && $(window).width() > unslick_breakpoint && !$(this).hasClass('slick-initialized')) {
-                        $(this).slick(settings);
-                    }
-                });
-            });
+            //$(window).on('resize', function() {
+                // $('[data-rpl-slider-slides]').each(function(key, item) {
+                //     settings = getSlickSettings(this, key);
+                //   if (typeof unslick_breakpoint !== 'undefined' && $(window).width() > unslick_breakpoint && !$(this).hasClass('slick-initialized')) {
+                //     $(this).slick(settings);
+                //   }
+                //
+                // });
+            //});
 
             function getSlickSettings(slider, key) {
                 var use_dots = slider.hasAttribute('data-rpl-slider-pager');
