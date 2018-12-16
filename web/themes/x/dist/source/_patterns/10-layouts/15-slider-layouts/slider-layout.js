@@ -17,22 +17,11 @@
                                 slickSlider.slick(settings);
                             }
                         });
-                        return false; // break out of each
+                        return false; // break out of settings each loop
                     }
                 });
                 slickSlider.slick(settings);
             });
-
-            // Reinitialize sliders if necessary
-            //$(window).on('resize', function() {
-                // $('[data-rpl-slider-slides]').each(function(key, item) {
-                //     settings = getSlickSettings(this, key);
-                //   if (typeof unslick_breakpoint !== 'undefined' && $(window).width() > unslick_breakpoint && !$(this).hasClass('slick-initialized')) {
-                //     $(this).slick(settings);
-                //   }
-                //
-                // });
-            //});
 
             function getSlickSettings(slider, key) {
                 var use_dots = slider.hasAttribute('data-rpl-slider-pager');
