@@ -1,0 +1,9 @@
+@import 'rplm-video-transcript.variables';
+
+.rplm-video-transcript {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file

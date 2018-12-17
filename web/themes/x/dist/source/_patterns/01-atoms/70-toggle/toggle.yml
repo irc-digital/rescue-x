@@ -1,0 +1,14 @@
+toggle_collapsed_text: 'See more'
+toggle_expanded_text: 'See less'
+toggle_content:
+  join():
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'

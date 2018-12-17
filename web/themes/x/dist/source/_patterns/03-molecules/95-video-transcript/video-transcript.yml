@@ -1,0 +1,22 @@
+video_transscipt_text:
+  join():
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
