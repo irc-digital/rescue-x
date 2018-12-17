@@ -1,4 +1,4 @@
-<div class="rpla-toggle" data-rpl-toggle-state="{{ toggle_initial_state | default('collapsed') }}" data-rpl-state-target>
+<div class="rpla-toggle{% for toggle_modifier in toggle_modifiers %} rpla-toggle--{{ toggle_modifier }}{% endfor %}" data-rpl-toggle-state="{{ toggle_initial_state | default('collapsed') }}" data-rpl-state-target>
   <div class="rpla-toggle__collapsed-text" data-rpl-state-type="toggle-state" data-rpl-state-values="expanded">
     {{ toggle_collapsed_text }}
   </div>

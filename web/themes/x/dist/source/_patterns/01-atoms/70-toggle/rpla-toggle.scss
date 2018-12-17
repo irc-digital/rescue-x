@@ -2,6 +2,8 @@
 @import 'rplc-toggle.mixins';
 
 .rpla-toggle {
+  $self: &;
+
   &__content {
     @include toggle-is-collapsed {
       display: none;
@@ -14,6 +16,7 @@
     @include font-weight('bold');
     @include letter-spacing('airy');
     font-size: .75em;
+    margin-bottom: get-spacing();
     position: relative;
     text-indent: $toggle-icon-size + .5em;
     text-transform: uppercase;
@@ -50,6 +53,13 @@
 
     @include toggle-is-collapsed {
       display: none;
+    }
+  }
+
+  &--body {
+    #{$self}__expanded-text,
+    #{$self}__collapsed-text {
+      @include body-text-row;
     }
   }
 }
