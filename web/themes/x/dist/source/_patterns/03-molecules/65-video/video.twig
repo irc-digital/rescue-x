@@ -6,7 +6,7 @@
     {% if video_poster is not empty %}poster="{{ video_poster }}"{% endif %}
     width="1084"
     height="610"
-    data-setup='{ "techOrder": ["youtube"] }'>
+    data-setup='{ "techOrder": ["html5", "youtube"] }'>
     {% for video_source in video_sources %}
       <source src="{{ video_source.source }}" type="{{ video_source.type }}" />
     {% endfor %}
