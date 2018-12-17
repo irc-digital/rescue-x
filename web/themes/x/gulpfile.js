@@ -46,7 +46,7 @@ config.javascript = {
     '../../core/assets/vendor/jquery/jquery.min.js',
     '../../core/misc/drupal.js',
     '../../core/misc/drupal.init.js',
-    'node_modules/slick-carousel/slick/slick.min.js',
+    'node_modules/slick-carousel-latest/slick/slick.min.js',
     'node_modules/video.js/dist/video.min.js',
     'node_modules/videojs-youtube/dist/Youtube.js',
   ],
