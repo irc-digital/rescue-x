@@ -3,7 +3,7 @@ video_page_navigation:
     pattern: "components-global-navigation"
 video_page_hero:
   include():
-    pattern: "components-hero-basic"
+    pattern: "components-hero-video"
     with:
       hero_basic_slug: 'Video'
       hero_basic_headline: "David Miliband: How to solve the refugee crisis"

@@ -10,12 +10,13 @@
 {% set layout_modifiers = hero_video_modifiers | merge(['no-image', 'no-second-blocks']) %}
 <div class="rplc-hero-video{% for hero_video_modifier in hero_video_modifiers %} rplc-hero-video--{{ hero_video_modifier }}{% endfor %}">
   <div class="rplc-hero-video__content">
-    {% include '@molescules/65-video/video.twig' with { video_sources: hero_video_video_sources } only %}
-
+    <div class="rplc-hero-video__video-wrapper">
+      {% include '@molecules/65-video/video.twig' with { video_sources: hero_video_video_sources } only %}
+    </div>
     {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% block hero_layout_1_primary_1_block %}
         <div class="rplc-hero-video__headline-treatment-wrapper">
-          {% include '@molecules/02-video-headline-treatments/10-stacked-2/stacked-headline-2.twig' with {
+          {% include '@molecules/02-basic-headline-treatments/10-stacked-2/stacked-headline-2.twig' with {
             stacked_headline_2_headline: hero_video_headline,
             stacked_headline_2_slug: hero_video_slug,
             stacked_headline_2_summary: hero_video_summary,

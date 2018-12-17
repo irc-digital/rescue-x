@@ -5,6 +5,13 @@
 
   @include standard-vertical-spacing(true);
 
+  &__video-wrapper {
+    @include well-row;
+
+    margin-bottom: get-spacing('2xl');
+    max-width: 1084px;
+  }
+
   &__headline-treatment-wrapper {
     @include typography-vertical-spacing;
   }
