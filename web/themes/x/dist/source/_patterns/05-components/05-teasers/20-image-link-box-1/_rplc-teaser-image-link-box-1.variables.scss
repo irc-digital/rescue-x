@@ -5,7 +5,7 @@ $teaser-image-link-box-1-decoration-color: (
   'alert': get-utility-color('alert'),
 );
 
-$teaser-image-medium-device-media-query: 'only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$smallest-desktop-size-less-gutters})';
+$teaser-image-medium-device-media-query: 'only screen and (min-width: #{$smallest-phablet-size}) and (max-width: #{$smallest-desktop-size-less-gutters - rem(1px)})';
 $teaser-image-link-box-1-caption-bottom-border-size: rem(6px);
 $teaser-image-link-box-1-caption-total-horizontal-margin: 2 * get-spacing();
 $teaser-image-link-box-1-caption-eats-in: -4rem;
