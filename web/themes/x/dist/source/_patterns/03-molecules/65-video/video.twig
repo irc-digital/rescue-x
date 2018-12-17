@@ -3,6 +3,7 @@
     class="rplm-video__player video-js vjs-16-9"
     controls
     preload="auto"
+    {% if video_poster is not empty %}poster="{{ video_poster }}"{% endif %}
     width="1084"
     height="610"
     data-setup='{ "techOrder": ["youtube"], }'>

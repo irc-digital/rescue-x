@@ -1,4 +1,4 @@
-video_poster: "//vjs.zencdn.net/v/oceans.png"
+video_poster: null
 video_sources:
   - source: 'https://www.youtube.com/watch?v=kGm-YK24-OE'
     type: 'video/youtube'
