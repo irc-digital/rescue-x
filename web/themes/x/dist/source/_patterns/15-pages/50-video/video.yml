@@ -5,8 +5,8 @@ video_page_hero:
   include():
     pattern: "components-hero-video"
     with:
-      hero_basic_slug: 'Video'
-      hero_basic_headline: "David Miliband: How to solve the refugee crisis"
+      hero_video_slug: 'RescueNow'
+      hero_video_headline: "Crisis news in 60 seconds: Oct 2018"
 video_page_content:
   join():
     - include():
