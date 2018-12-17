@@ -123,6 +123,18 @@ article_page_content:
           paragraph_modifiers:
             - 'body'
     - include():
+        pattern: "components-video"
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
         pattern: "atoms-paragraph"
         with:
           paragraph_modifiers:
