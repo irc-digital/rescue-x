@@ -6,10 +6,7 @@
     poster="{{ video_poster }}"
     width="1084"
     height="610"
-    data-setup='{}'>
-    {% for video_source in video_sources %}
-      <source src="{{ video_source.source }}" type="{{ video_source.type }}" />
-    {% endfor %}
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=kGm-YK24-OE"}] }'>
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a
       web browser that

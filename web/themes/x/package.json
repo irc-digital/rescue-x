@@ -42,6 +42,8 @@
   },
   "dependencies": {
     "puppeteer": "^1.10.0",
+    "slick-carousel": "^1.8.1",
+    "video.js": "^7.3.0",
     "videojs-youtube": "^2.6.0"
   }
 }
