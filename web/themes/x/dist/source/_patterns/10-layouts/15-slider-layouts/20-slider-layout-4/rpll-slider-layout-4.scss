@@ -30,19 +30,19 @@
   &__next,
   &__previous {
     background-color: get-brand-color();
-    flex: 0 0 48px;
-    height: 48px;
+    flex: 0 0 $slider-layout-4-arrow-size;
+    height: $slider-layout-4-arrow-size;
     padding: 10px;
-    width: 48px;
+    width: $slider-layout-4-arrow-size;
   }
 
   &__previous {
-    //margin-right: -50px;
+    transform: translateX($slider-layout-4-arrow-offset-prev);
     z-index: 100;
   }
 
   &__next {
-    //margin-left: -50px;
+    transform: translateX($slider-layout-4-arrow-offset-next);
     z-index: 100;
   }
 }

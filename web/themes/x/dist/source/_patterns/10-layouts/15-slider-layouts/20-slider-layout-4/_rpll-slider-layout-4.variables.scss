@@ -1,4 +1,7 @@
 @import '../../../../scss/core';
-$slider-layout-4-max-content-width: rem(1130px);
+$slider-layout-4-max-content-width: rem(1160px);
+$slider-layout-4-arrow-size: rem(48px);
+$slider-layout-4-arrow-offset-prev: calc(#{$slider-layout-4-arrow-size} / 2);
+$slider-layout-4-arrow-offset-next: calc(#{$slider-layout-4-arrow-offset-prev} * -1);
 
 // end of file
