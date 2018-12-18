@@ -1,6 +1,7 @@
 news_and_features_id: 'Faker.randomDigitNotNull'
 news_and_features_section_heading_title: "News and features"
 news_and_features_section_heading_description: "<p>This is the news and feature description. Phasellus magna. Sed in libero ut nibh placerat accumsan.</p><p>Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>"
+news_and_features_more: "Faker.words(5,true)"
 news_and_features_content:
   - include():
       pattern: "components-teaser-highlighted"

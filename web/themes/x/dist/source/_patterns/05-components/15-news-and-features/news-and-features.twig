@@ -11,5 +11,12 @@
       two_column_list_modifiers: ["highlighted"]
     } only %}
   </div>
+  {% if news_and_features_more is not empty %}
+    <div class="rplc-news-and-features__more-wrapper">
+      {% include '@molecules/53-pagers/50-more//more.twig' with {
+        more_text: news_and_features_more,
+      } only %}
+    </div>
+  {% endif %}
 </div>
 {% endif %}

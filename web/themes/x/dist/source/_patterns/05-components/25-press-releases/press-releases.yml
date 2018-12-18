@@ -1,4 +1,5 @@
 press_releases_section_heading_title: "Press updates"
+press_releases_more: "Faker.words(5,true)"
 press_releases_content:
   - include():
       pattern: "components-teaser-minimal"
