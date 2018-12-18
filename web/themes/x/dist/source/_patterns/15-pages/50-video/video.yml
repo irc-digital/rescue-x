@@ -27,9 +27,9 @@ video_page_content:
 video_page_content_footer:
   join():
     - include():
-        pattern: "components-related-news-and-features"
-    - include():
         pattern: "components-share-and-explore-related"
+    - include():
+        pattern: "components-related-news-and-features"
 video_page_footer:
   join():
     - include():
