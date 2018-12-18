@@ -1,25 +1,92 @@
 where_we_work_map_locations:
-  - title: 'New York, NY'
-    url: '#'
-    x: 280
-    y: 235
-  - title: 'Seattle, WA'
-    url: '#'
-    x: 40
-    y: 196
-  - title: 'Germany'
-    url: '#'
-    x: 674
-    y: 175
-  - title: 'Richmond, VA'
-    url: '#'
-    x: 260
-    y: 265
-  - title: 'San Jose, CA'
-    url: '#'
-    x: 46
-    y: 260
-  - title: 'Malaysia'
-    url: '#'
-    x: 1107
-    y: 424
+  - region_title: 'Africa'
+    items:
+      - title: 'Burundi'
+        url: '#'
+      - title: 'Cameroon'
+        url: '#'
+      - title: 'Central African Republic'
+        url: '#'
+      - title: 'Chad'
+        url: '#'
+      - title: 'Democratic Republic of Congo'
+        url: '#'
+      - title: 'Ethiopia'
+        url: '#'
+  - region_title: 'Central & South America'
+    items:
+      - title: 'Columbia'
+        url: '#'
+      - title: 'El Salvador'
+        url: '#'
+      - title: 'Venezuela'
+        url: '#'
+  - region_title: 'Asia'
+    items:
+      - title: 'Afghanistan'
+        url: '#'
+      - title: 'Bangladesh'
+        url: '#'
+      - title: 'Malaysia'
+        url: '#'
+        x: 1107
+        y: 424
+      - title: 'Myanmar'
+        url: '#'
+      - title: 'Pakistan'
+        url: '#'
+      - title: 'Thailand'
+        url: '#'
+  - region_title: 'Middle East'
+    items:
+      - title: 'Iraq'
+        url: '#'
+      - title: 'Libya'
+        url: '#'
+      - title: 'Jordan'
+        url: '#'
+      - title: 'Syria'
+        url: '#'
+      - title: 'Yemen'
+        url: '#'
+  - region_title: 'United States'
+    items:
+      - title: 'Abilene, TX'
+        url: '#'
+      - title: 'Atlanta, GA'
+        url: '#'
+      - title: 'Baltimore, MD'
+        url: '#'
+      - title: 'Boise, ID'
+        url: '#'
+      - title: 'Charlottesville, VA'
+        url: '#'
+      - title: 'Dallas, TX'
+        url: '#'
+      - title: 'Denver, CO'
+        url: '#'
+      - title: 'Elizabeth, NJ'
+        url: '#'
+      - title: 'Los Angeles, CA'
+        url: '#'
+      - title: 'Miami, FL'
+        url: '#'
+      - title: 'Missoula, MT'
+        url: '#'
+      - title: 'New York, NY'
+        url: '#'
+        x: 280
+        y: 235
+      - title: 'Richmond, VA'
+        url: '#'
+        x: 260
+        y: 265
+      - title: 'San Jose, CA'
+        url: '#'
+        x: 46
+        y: 260
+      - title: 'Seattle, WA'
+        url: '#'
+        x: 280
+        y: 235
+

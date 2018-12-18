@@ -1,14 +1,45 @@
+{% spaceless %}
+  {% set markers %}
+  {% endset %}
+
+  {% set menu %}
+  {% endset %}
+
+  {% for where_we_work_region in where_we_work_map_locations %}
+    {% set menu %}
+      {{ menu }}
+      <ul class="rplc-where-we-work-map__region">
+      {{ where_we_work_region.region_title }}
+    {% endset %}
+    {% set menu_left %}
+    {% endset %}
+    {% set menu_right%}
+    {% endset %}
+    {% for where_we_work_map_location in where_we_work_region.items %}
+      {% if where_we_work_map_location.x is not empty and where_we_work_map_location.y is not empty %}
+        {% set markers %}
+          {{ markers }}
+          <div class="rplc-where-we-work-map__marker" style="left: {{ where_we_work_map_location.x }}px; top: {{ where_we_work_map_location.y }}px">
+            <span class="rplc-where-we-work-map__dot"></span>
+            <div class="rplc-where-we-work-map__tooltip">
+              <a class="rplc-where-we-work-map__location" href="{{ where_we_work_map_location.url }}" >{{ where_we_work_map_location.title }}</a>
+            </div>
+          </div>
+        {% endset %}
+      {% endif %}
+    {% endfor %}
+    {% set menu %}
+      {{ menu }}
+      </ul>
+    {% endset %}
+  {% endfor %}
+
+{% endspaceless %}
 <div class="rplc-where-we-work-map">
   <div class="rplc-where-we-work-map__wrapper">
     <div class="rplc-where-we-work-map__inner-wrapper">
-      {% for where_we_work_map_location in where_we_work_map_locations %}
-        <div class="rplc-where-we-work-map__marker" style="left: {{ where_we_work_map_location.x }}px; top: {{ where_we_work_map_location.y }}px">
-          <span class="rplc-where-we-work-map__dot"></span>
-          <div class="rplc-where-we-work-map__tooltip">
-            <a class="rplc-where-we-work-map__location" href="{{ where_we_work_map_location.url }}" >{{ where_we_work_map_location.title }}</a>
-          </div>
-        </div>
-      {% endfor %}
+      <div class="rplc-where-we-work-map__map">{{ markers }}</div>
+      <div class="rplc-where-we-work-map__menu">{{ menu }}</div>
     </div>
   </div>
 </div>
