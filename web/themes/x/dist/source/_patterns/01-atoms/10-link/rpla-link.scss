@@ -98,6 +98,12 @@
 
   }
 
+  &--type-three {
+    @include link-hover-background-color(get-brand-color('primary'));
+    font-size: .75em;
+    text-transform: uppercase;
+  }
+
   &--type-javascript {
     @include link-color(get-neutral-color('black'));
     @include link-border(get-neutral-color('black'));
