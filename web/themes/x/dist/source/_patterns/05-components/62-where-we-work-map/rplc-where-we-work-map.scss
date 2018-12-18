@@ -1,0 +1,10 @@
+@import 'rplc-where-we-work-map.variables';
+
+.rplc-where-we-work-map {
+  &__wrapper {
+    background: $where-we-work-background-color url('../images/where-we-work-map.jpg') 50% 50% no-repeat;
+    min-height: 766px;
+  }
+}
+
+// end of file
