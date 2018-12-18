@@ -1,9 +1,7 @@
 @import 'rplm-video-transcript.variables';
 
 .rplm-video-transcript {
-  &__content {
-    @include well-row;
-  }
+  $self: &;
 }
 
 // end of file

@@ -1,4 +1,4 @@
-video_transscipt_text:
+video_transcript_text:
   join():
     - include():
         pattern: "atoms-paragraph"

@@ -1,9 +1,13 @@
 <div class="rpla-toggle{% for toggle_modifier in toggle_modifiers %} rpla-toggle--{{ toggle_modifier }}{% endfor %}" data-rpl-toggle-state="{{ toggle_initial_state | default('collapsed') }}" data-rpl-state-target>
-  <div class="rpla-toggle__collapsed-text" data-rpl-state-type="toggle-state" data-rpl-state-values="expanded">
-    {{ toggle_collapsed_text }}
+  <div class="rpla-toggle__collapsed-text-wrapper">
+    <div class="rpla-toggle__collapsed-text" data-rpl-state-type="toggle-state" data-rpl-state-values="expanded">
+      <div>{{ toggle_collapsed_text }}</div>
+    </div>
   </div>
-  <div class="rpla-toggle__expanded-text" data-rpl-state-type="toggle-state" data-rpl-state-values="collapsed">
-    {{ toggle_expanded_text }}
+  <div class="rpla-toggle__expanded-text-wrapper">
+    <div class="rpla-toggle__expanded-text" data-rpl-state-type="toggle-state" data-rpl-state-values="collapsed">
+      <div>{{ toggle_expanded_text }}</div>
+    </div>
   </div>
   <div class="rpla-toggle__content">{{ toggle_content }}</div>
 </div>
