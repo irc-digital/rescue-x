@@ -1,0 +1,13 @@
+where_we_work_map_locations:
+  - title: 'New York, NY'
+    url: '#'
+    x: 280
+    y: 235
+  - title: 'Seattle, WA'
+    url: '#'
+    x: 40
+    y: 196
+  - title: 'Germany'
+    url: '#'
+    x: 674
+    y: 175

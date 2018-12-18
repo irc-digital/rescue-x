@@ -1,5 +1,14 @@
 <div class="rplc-where-we-work-map">
   <div class="rplc-where-we-work-map__wrapper">
-
+    <div class="rplc-where-we-work-map__inner-wrapper">
+      {% for where_we_work_map_location in where_we_work_map_locations %}
+        <div class="rplc-where-we-work-map__marker" style="left: {{ where_we_work_map_location.x }}px; top: {{ where_we_work_map_location.y }}px">
+          <span class="rplc-where-we-work-map__dot"></span>
+          <div class="rplc-where-we-work-map__tooltip">
+            <a class="rplc-where-we-work-map__location" href="{{ where_we_work_map_location.url }}" >{{ where_we_work_map_location.title }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>

@@ -1,5 +1,12 @@
 @import '../../../scss/core';
 
 $where-we-work-background-color: #5c5c5c;
+$where-we-work-dot-size: rem(8px);
+$where-we-work-location-height: rem(36px);
+$where-we-work-tooltip-background: (
+  'default': get-neutral-color('white'),
+  'hover': get-neutral-color('gray'),
+);
+$where-we-work-tooltip-caret-border-size: 7px;
 
 // end of file

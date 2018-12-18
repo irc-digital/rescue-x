@@ -1,9 +1,77 @@
 @import 'rplc-where-we-work-map.variables';
 
 .rplc-where-we-work-map {
+  $self: &;
+
   &__wrapper {
     background: $where-we-work-background-color url('../images/where-we-work-map.jpg') 50% 50% no-repeat;
-    min-height: 766px;
+  }
+
+  &__inner-wrapper {
+    height: 766px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 1300px;
+  }
+
+  &__dot {
+    background-color: get-brand-color();
+    border-radius: 50%;
+    display: block;
+    height: $where-we-work-dot-size;
+    width: $where-we-work-dot-size;
+  }
+
+  &__marker {
+    position: absolute;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      #{$self}__tooltip {
+        display: block;
+      }
+    }
+  }
+
+  &__tooltip {
+    background-color: map-get($where-we-work-tooltip-background, 'default');
+    display: none;
+    left: 19px;
+    position: relative;
+    top: -23px;
+
+    &::before {
+      border-bottom: $where-we-work-tooltip-caret-border-size solid transparent;
+      border-left: 0;
+      border-right: $where-we-work-tooltip-caret-border-size solid map-get($where-we-work-tooltip-background, 'default');
+      border-top: $where-we-work-tooltip-caret-border-size solid transparent;
+      content: '';
+      left: -#{$where-we-work-tooltip-caret-border-size};
+      position: absolute;
+      top: 12px;
+    }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      background-color: map-get($where-we-work-tooltip-background, 'hover');
+
+      &::before {
+        border-right-color: map-get($where-we-work-tooltip-background, 'hover');
+      }
+    }
+  }
+
+  &__location {
+    @include font-size('xs');
+    @include font-weight('bold');
+
+    display: block;
+    height: $where-we-work-location-height;
+    line-height: $where-we-work-location-height;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
   }
 }
 
