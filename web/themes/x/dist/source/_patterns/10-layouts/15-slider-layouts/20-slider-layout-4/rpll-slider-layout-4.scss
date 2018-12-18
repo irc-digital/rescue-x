@@ -26,6 +26,15 @@
     margin: 0 auto;
     max-width: $slider-layout-4-max-content-width;
   }
+
+  &__next,
+  &__previous {
+    background-color: get-brand-color();
+    flex: 0 0 48px;
+    height: 48px;
+    padding: 10px;
+    width: 48px;
+  }
 }
 
 // end of file
