@@ -3,9 +3,17 @@ slideshow_section_heading_description: "Faker.sentences(6,true)"
 slideshow_items:
   - include():
       pattern: "components-slide"
+      with:
+        slide_caption_text: "Slide 1 caption"
   - include():
       pattern: "components-slide"
+      with:
+        slide_caption_text: "Slide 2 caption"
   - include():
       pattern: "components-slide"
+      with:
+        slide_caption_text: "Slide 3 caption"
   - include():
       pattern: "components-slide"
+      with:
+        slide_caption_text: "Slide 4 caption"

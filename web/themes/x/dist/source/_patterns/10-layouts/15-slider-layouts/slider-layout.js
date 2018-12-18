@@ -39,6 +39,8 @@
                 var variable_width = false;
                 var has_slides_to_show = slider.hasAttribute('data-rpl-slider-slides-to-show');
                 var slides_to_show = slider.getAttribute('data-rpl-slider-slides-to-show');
+                var fade = slider.hasAttribute('data-rpl-slider-fade');
+                console.log("fade: "+ fade);
 
                 if (has_slides_to_show) {
                     variable_width = slides_to_show == 0;
@@ -53,6 +55,7 @@
                 var slickSettings = {
                     dots: use_dots,
                     dotsClass: dots_class,
+                    fade: fade,
                     useTransform: false,
                     infinite: infinite,
                     slidesToShow: parseInt(1),
