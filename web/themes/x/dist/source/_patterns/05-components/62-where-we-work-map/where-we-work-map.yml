@@ -11,3 +11,11 @@ where_we_work_map_locations:
     url: '#'
     x: 674
     y: 175
+  - title: 'Richmond, VA'
+    url: '#'
+    x: 260
+    y: 265
+  - title: 'San Jose, CA'
+    url: '#'
+    x: 46
+    y: 260
