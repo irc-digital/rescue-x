@@ -4,16 +4,20 @@ slideshow_items:
   - include():
       pattern: "components-slide"
       with:
-        slide_caption_text: "Slide 1 caption"
+        slide_count_active: "1"
+        slide_count_total: "4"
   - include():
       pattern: "components-slide"
       with:
-        slide_caption_text: "Slide 2 caption"
+        slide_count_active: "2"
+        slide_count_total: "4"
   - include():
       pattern: "components-slide"
       with:
-        slide_caption_text: "Slide 3 caption"
+        slide_count_active: "3"
+        slide_count_total: "4"
   - include():
       pattern: "components-slide"
       with:
-        slide_caption_text: "Slide 4 caption"
+        slide_count_active: "4"
+        slide_count_total: "4"
