@@ -35,6 +35,16 @@
     padding: 10px;
     width: 48px;
   }
+
+  &__previous {
+    //margin-right: -50px;
+    z-index: 100;
+  }
+
+  &__next {
+    //margin-left: -50px;
+    z-index: 100;
+  }
 }
 
 // end of file
