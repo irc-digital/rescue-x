@@ -9,23 +9,30 @@
 {% if highlight_list_content %}
 <div class="rplc-highlight{% for highlight_modifier in highlight_modifiers %} rplc-highlight--{{ highlight_modifier }}{% endfor %}" data-rpl-highlight-state="collapsed">
   <div class="rplc-highlight__content">
-    <a href="#" class="rplc-highlight__show-hide" data-rpl-state-type="highlight-state" data-rpl-state-values="expanded, collapsed">
-      <h5 class="rplc-highlight__header">{{ "Highlights" | trans }}</h5>
-    </a>
-    <div class="rplc-highlight__list-wrapper">
-      {% include '@atoms/40-list/05-unordered/unordered-list.twig' with {
-        unordered_list_items: highlight_list_content,
-        unordered_list_modifiers: ['size-small']
-      } only %}
-
-      {% if highlight_link_url %}
-        {% include '@atoms/10-link/link.twig' with {
-          link_text: highlight_link_text,
-          link_url: highlight_link_url,
-          link_modifiers: ['type-two', 'subtype-inverse', 'subtype-no-hover-effect', 'size-small'],
+    {% set list_wrapper %}
+      <div class="rplc-highlight__list-wrapper">
+        {% include '@atoms/40-list/05-unordered/unordered-list.twig' with {
+          unordered_list_items: highlight_list_content,
+          unordered_list_modifiers: ['size-small']
         } only %}
-      {% endif %}
-    </div>
+
+        {% if highlight_link_url %}
+          {% include '@atoms/10-link/link.twig' with {
+            link_text: highlight_link_text,
+            link_url: highlight_link_url,
+            link_modifiers: ['type-two', 'subtype-inverse', 'subtype-no-hover-effect', 'size-small'],
+          } only %}
+        {% endif %}
+      </div>
+    {% endset %}
+
+    {% set highlights = ('Highlights' | trans) %}
+    {% include '@atoms/70-toggle/toggle.twig' with {
+      toggle_content: list_wrapper,
+      toggle_collapsed_text: highlights,
+      toggle_expanded_text: highlights,
+      toggle_modifiers: ['mobile-only'],
+    } only %}
   </div>
 </div>
 {% endif %}

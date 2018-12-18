@@ -18,7 +18,6 @@
 
     display: inline-block;
     font-size: .75em;
-    margin-bottom: get-spacing();
     position: relative;
     text-indent: $toggle-icon-size + .5em;
     text-transform: uppercase;
@@ -53,12 +52,46 @@
   }
 
   &__expanded-text {
+    margin-bottom: $toggle-expanded-bottom-margin;
+
     &::before {
       background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBkPSJNOCAwQzMuNTkgMCAwIDMuNTkgMCA4czMuNTkgOCA4IDggOC0zLjU5IDgtOC0zLjU5LTgtOC04em0wIDE0LjRjLTMuNTMgMC02LjQtMi44Ny02LjQtNi40UzQuNDcgMS42IDggMS42czYuNCAyLjg3IDYuNCA2LjQtMi44NyA2LjQtNi40IDYuNHoiLz48cGF0aCBkPSJNMTAuNzMgNy41SDUuMjdjLS41IDAtLjkwOC0uMDAyLS45MDguNXMuNDA4LjUuOTEuNWg1LjQ1NmMuNTAzIDAgLjkxLjAwMi45MS0uNXMtLjQwOC0uNS0uOTEtLjV6Ii8+PC9zdmc+');
     }
 
     @include toggle-is-collapsed {
       display: none;
+    }
+  }
+
+  &--mobile-only {
+    @include breakpoint(phablet) {
+      #{$self}__expanded-text,
+      #{$self}__collapsed-text {
+        pointer-events: none;
+
+        &::before {
+          content: none;
+        }
+
+        @include hover {
+          cursor: default;
+        }
+      }
+
+      #{$self}__expanded-text {
+        display: none;
+      }
+
+      #{$self}__collapsed-text {
+        display: block;
+        margin-bottom: $toggle-expanded-bottom-margin;
+        text-indent: 0;
+      }
+
+      #{$self}__content {
+        display: block;
+      }
+
     }
   }
 
