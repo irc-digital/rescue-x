@@ -40,7 +40,8 @@
                 var has_slides_to_show = slider.hasAttribute('data-rpl-slider-slides-to-show');
                 var slides_to_show = slider.getAttribute('data-rpl-slider-slides-to-show');
                 var fade = slider.hasAttribute('data-rpl-slider-fade');
-                console.log("fade: "+ fade);
+                var speed = slider.getAttribute('data-rpl-slider-speed');
+                console.log("speed " + speed);
 
                 if (has_slides_to_show) {
                     variable_width = slides_to_show == 0;
@@ -68,6 +69,7 @@
                         return slide[0].getAttribute('data-rpl-slider-slide-pager-item');
                     },
                     responsive: responsive_settings,
+                    speed: speed,
                 };
 
                 return slickSettings;

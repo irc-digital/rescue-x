@@ -14,7 +14,7 @@
             pager_item_1_title: slider_layout_1_slide_info.title,
           } only %}
         {% endset %}
-        <div class="rpll-slider-layout-1__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}">{{ slider_layout_1_slide_info.slide }}</div>
+        <div class="rpll-slider-layout-1__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}"  data-rpl-slider-responsive='{{ slider_layout_1_responsive | default('[]') }}'>{{ slider_layout_1_slide_info.slide }}</div>
       {% endfor %}
     </div>
     <div class="rpll-slider-layout-1__next" data-rpl-slider-next>

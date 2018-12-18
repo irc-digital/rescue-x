@@ -6,7 +6,7 @@
         icon_modifiers: ['fill-branded'],
       } only %}
     </div>
-    <div class="rpll-slider-layout-2__slides" data-rpl-slider-pager data-rpl-slider-slides data-rpl-slider-responsive='[{"breakpoint":"640", "settings":"unslick"}]'>
+    <div class="rpll-slider-layout-2__slides" data-rpl-slider-pager data-rpl-slider-slides data-rpl-slider-speed="{{ slider_layout_2_speed | default('300') }}" data-rpl-slider-responsive='[{"breakpoint":"640", "settings":"unslick"}]'>
       {% for slider_layout_2_slide_info in slider_layout_2_slides %}
         {% set slide_pager %}
           {% include '@molecules/53-pagers/05-pager-items/10-pager-item-2/pager-item-2.twig' with {
