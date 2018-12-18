@@ -10,5 +10,12 @@
       one_column_list_content: basic_teaser_list_content,
     } only %}
   </div>
+  {% if basic_teaser_list_more is not empty %}
+    <div class="rplc-basic-teaser-list__more-wrapper">
+      {% include '@molecules/53-pagers/50-more//more.twig' with {
+        more_text: basic_teaser_list_more,
+      } only %}
+    </div>
+  {% endif %}
 </div>
 {% endif %}
