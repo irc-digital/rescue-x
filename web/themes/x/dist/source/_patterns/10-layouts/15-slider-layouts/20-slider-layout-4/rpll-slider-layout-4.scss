@@ -15,6 +15,10 @@
   //
   &__slides {
     overflow: hidden; // 1
+    width: calc(100% - 2rem);
+    @media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
+      width: 100%;
+    }
   }
 
   //
@@ -38,7 +42,6 @@
     width: $slider-layout-4-arrow-size;
     z-index: 100;
   }
-
   @media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
     &__previous {
       transform: translateX($slider-layout-4-arrow-offset-prev);
@@ -51,11 +54,11 @@
   }
 
   &__previous {
-    margin-right: $slider-layout-4-arrow-offset-mobile;
+    margin-right: -2rem;
   }
 
   &__next {
-    margin-left: $slider-layout-4-arrow-offset-mobile;
+    margin-left: -2rem;
   }
 }
 
