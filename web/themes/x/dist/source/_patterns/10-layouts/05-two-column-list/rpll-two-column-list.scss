@@ -17,6 +17,14 @@
     @include two-column-grid-helper ($self, 'tablet');
   }
 
+  &--respond-laptop {
+    @include two-column-grid-helper ($self, 'laptop');
+  }
+
+  &--respond-desktop {
+    @include two-column-grid-helper ($self, 'desktop');
+  }
+
   &--highlighted {
     @include two-column-grid-helper ($self, 'laptop', $two-column-list-large-row-gutter);
   }
