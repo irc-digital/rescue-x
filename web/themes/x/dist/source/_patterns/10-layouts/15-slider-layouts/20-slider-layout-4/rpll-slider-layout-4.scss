@@ -3,6 +3,29 @@
 .rpll-slider-layout-4 {
   $self: &;
 
+  &__slides-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  //
+  // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
+  //
+  &__slides {
+    overflow: hidden; // 1
+  }
+
+  //
+  // 1) Overrides core Slick.
+  //
+  &__slide {
+    // sass-lint:disable-block no-important
+    display: block !important; // 1
+    margin: 0 auto;
+    max-width: $slider-layout-4-max-content-width;
+  }
 }
 
 // end of file
