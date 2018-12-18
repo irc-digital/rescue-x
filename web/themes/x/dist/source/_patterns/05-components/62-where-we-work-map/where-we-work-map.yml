@@ -19,3 +19,7 @@ where_we_work_map_locations:
     url: '#'
     x: 46
     y: 260
+  - title: 'Malaysia'
+    url: '#'
+    x: 1107
+    y: 424
