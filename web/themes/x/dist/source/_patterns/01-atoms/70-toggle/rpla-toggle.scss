@@ -18,6 +18,8 @@
 
     display: inline-block;
     font-size: .75em;
+    padding-bottom: .25em;
+    padding-top: .25em;
     position: relative;
     text-indent: $toggle-icon-size + .5em;
     text-transform: uppercase;
@@ -30,8 +32,10 @@
       cursor: pointer;
       height: $toggle-icon-size;
       left: 0;
+      padding-bottom: .25em;
+      padding-top: .25em;
       position: absolute;
-      top: .1em;
+      top: .25em;
       width: $toggle-icon-size;
     }
 
