@@ -65,6 +65,9 @@ article_page_content:
             - 'body'
     - include():
         pattern: "components-image-well-width"
+        with:
+          image_well_width_modifiers:
+            - 'caption-style-low-key'
     - include():
         pattern: "components-slideshow"
     - include():
