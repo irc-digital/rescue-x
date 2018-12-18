@@ -8,6 +8,10 @@
     } only %}
   </div>
   <div class="rplc-slide__caption-wrapper">
-    <div class="rpla-paragraph">{{ slide_caption_text }}</div>
+    {% include '@molecules/03-caption/caption.twig' with {
+      caption_text: slide_caption_text,
+      caption_credit: slide_caption_credit,
+      caption_modifiers: slide_caption_modifiers,
+    } only %}
   </div>
 </div>
