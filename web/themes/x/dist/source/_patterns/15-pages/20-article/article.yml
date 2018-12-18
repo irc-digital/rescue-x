@@ -64,7 +64,9 @@ article_page_content:
           paragraph_modifiers:
             - 'body'
     - include():
-        pattern: "components-image-partial-width-landscape"
+        pattern: "components-image-well-width"
+    - include():
+        pattern: "components-slideshow"
     - include():
         pattern: "atoms-paragraph"
         with:

@@ -1,0 +1,11 @@
+slideshow_section_heading_title: "Slideshow"
+slideshow_section_heading_description: "Faker.sentences(6,true)"
+slideshow_items:
+  - include():
+      pattern: "components-slide"
+  - include():
+      pattern: "components-slide"
+  - include():
+      pattern: "components-slide"
+  - include():
+      pattern: "components-slide"

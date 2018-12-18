@@ -1,0 +1,11 @@
+@import 'rplc-slideshow.variables';
+
+.rplc-slideshow {
+  $self: &;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(1208px);
+}
+
+// end of file
