@@ -7,9 +7,12 @@
 
   &__video-wrapper {
     margin-bottom: get-spacing('l');
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1084px;
+
+    @media #{$hero-video-large-device-media-query} {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $hero-video-max-width;
+    }
 
     @include breakpoint(tablet) {
       margin-bottom: get-spacing('xl');
