@@ -35,6 +35,8 @@ landing_page_1_content:
         with:
           video_section_heading_title: 'Faker.words(6,true)'
     - include():
+        pattern: "components-slideshow"
+    - include():
         pattern: "components-stories"
     - include():
         pattern: "components-pull-quote"
