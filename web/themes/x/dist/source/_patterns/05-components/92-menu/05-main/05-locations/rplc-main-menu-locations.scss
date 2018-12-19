@@ -60,7 +60,7 @@
     flex-basis: 50%;
 
     @include breakpoint(laptop) {
-      margin-bottom: get-spacing();
+      margin-bottom: get-spacing('m');
     }
 
     &--group-2 {
