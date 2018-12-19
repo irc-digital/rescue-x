@@ -38,5 +38,11 @@
   }
 }
 
+@mixin input-border ($element: &) {
+  #{$element}__field {
+    border: 1px solid get-neutral-color('gray');
+  }
+}
+
 // end of file
 

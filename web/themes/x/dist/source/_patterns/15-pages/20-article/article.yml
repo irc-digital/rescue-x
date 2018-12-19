@@ -234,18 +234,21 @@ article_page_footer:
             include():
               pattern: "components-efficiency"
           footer_layout_1_section_3:
-            include():
-              pattern: "molecules-social-share"
-              with:
-                social_share_title: 'Follow us'
-                social_share_sites:
-                  twitter: 'http://www.twitter.com'
-                  facebook: 'http://www.facebook.com'
-                  instagram: 'http://www.instagram.com'
-                  youtube: 'http://www.youtube.com'
-                social_share_modifiers:
-                  - 'subtype-small'
-              only: true
+            join():
+              - include():
+                  pattern: "molecules-email-signup"
+              - include():
+                  pattern: "molecules-social-share"
+                  with:
+                    social_share_title: 'Follow us'
+                    social_share_sites:
+                      twitter: 'http://www.twitter.com'
+                      facebook: 'http://www.facebook.com'
+                      instagram: 'http://www.instagram.com'
+                      youtube: 'http://www.youtube.com'
+                    social_share_modifiers:
+                      - 'subtype-small'
+                  only: true
         only: true
     - include():
         pattern: "layouts-footer-layout-2"

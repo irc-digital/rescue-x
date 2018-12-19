@@ -46,7 +46,8 @@ figure {
 // sass-lint:disable-block no-vendor-prefixes
 input {
   &[type='text'],
-  &[type='number'] {
+  &[type='number'],
+  &[type='email'] {
     -moz-appearance: textfield;
     width: 100%;
 

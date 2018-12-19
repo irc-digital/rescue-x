@@ -1,0 +1,12 @@
+@import 'rplm-email-signup.variables';
+
+.rplm-email-signup {
+  $self: &;
+
+  &__title {
+    @include typography-text-small;
+    @include standard-vertical-spacing;
+  }
+}
+
+// end of file
