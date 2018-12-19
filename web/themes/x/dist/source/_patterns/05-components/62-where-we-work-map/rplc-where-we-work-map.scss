@@ -22,14 +22,18 @@
     width: $where-we-work-map-width;
   }
 
-  &__legend {
-    align-items: center;
+  &__legend-wrapper {
     border-top: 1px solid get-neutral-color('white');
     bottom: 60px;
     display: none;
     left: 60px;
     padding-top: get-spacing('ml');
     position: absolute;
+  }
+
+  &__legend {
+    align-items: center;
+    display: inline-flex;
   }
 
   &__legend-text {
@@ -179,8 +183,8 @@
         display: block;
       }
 
-      #{$self}__legend {
-        display: inline-flex;
+      #{$self}__legend-wrapper {
+        display: block;
       }
     }
   }
