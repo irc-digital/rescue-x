@@ -13,18 +13,32 @@
     text-align: center;
   }
 
+  &__circle {
+    display: none;
+
+    @include breakpoint(phablet) {
+      background-color: $infographic-wheel-circle-background;
+      border: 2px dotted get-neutral-color('gray');
+      border-radius: 50%;
+      display: block;
+      height: $infographic-wheel-circle-size;
+      position: absolute;
+      width: $infographic-wheel-circle-size;
+    }
+  }
+
   &__item-wrapper {
     align-items: center;
     display: inline-flex;
-    margin-bottom: $infographic-item-gap-mobile;
+    margin-bottom: $infographic-wheel-item-gap-mobile;
     position: relative;
 
     &::after {
-      border-left: $infographic-item-gap-line-width dotted get-neutral-color('light-gray');
-      bottom: -#{$infographic-item-gap-mobile};
+      border-left: $infographic-wheel-item-gap-line-width dotted get-neutral-color('gray');
+      bottom: -#{$infographic-wheel-item-gap-mobile};
       content: '';
-      height: $infographic-item-gap-mobile;
-      left: ($infographic-wheel-icon-size - $infographic-item-gap-line-width)/ 2;
+      height: $infographic-wheel-item-gap-mobile;
+      left: ($infographic-wheel-icon-size - $infographic-wheel-item-gap-line-width)/ 2;
       position: absolute;
     }
 

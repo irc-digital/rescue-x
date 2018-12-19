@@ -1,4 +1,4 @@
-<div class="rplc-infographic-wheel" data-rpl-canvas-color='neutral-dark-gray'>
+<div class="rplc-infographic-wheel" data-rpl-canvas-color='neutral-very-dark-gray'>
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: infographic_wheel_section_heading_title,
     section_heading_description: infographic_wheel_section_heading_description,
@@ -6,6 +6,7 @@
   } only %}
   <div class="rplc-infographic-wheel__content">
     <div class="rplc-infographic-wheel__inner-wrapper">
+      <div class="rplc-infographic-wheel__circle"></div>
       {% for infographic_wheel_item in infographic_wheel_content %}
         <div class="rplc-infographic-wheel__item-wrapper">
           <div class="rplc-infographic-wheel__icon">
