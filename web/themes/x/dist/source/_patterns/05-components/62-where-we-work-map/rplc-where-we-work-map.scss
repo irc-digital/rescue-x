@@ -23,10 +23,11 @@
   }
 
   &__legend {
+    align-items: center;
     border-top: 1px solid get-neutral-color('white');
-    bottom: 50px;
+    bottom: 60px;
     display: none;
-    left: 50px;
+    left: 60px;
     padding-top: get-spacing('ml');
     position: absolute;
   }
@@ -34,6 +35,15 @@
   &__legend-text {
     @include typography-text-small;
     color: get-neutral-color('white');
+  }
+
+  &__legend-marker {
+    background-color: get-brand-color();
+    border-radius: 50%;
+    display: inline-block;
+    height: $where-we-work-legend-marker-size;
+    margin-right: get-spacing();
+    width: $where-we-work-legend-marker-size;
   }
 
   &__dot {
@@ -170,7 +180,7 @@
       }
 
       #{$self}__legend {
-        display: inline-block;
+        display: inline-flex;
       }
     }
   }
