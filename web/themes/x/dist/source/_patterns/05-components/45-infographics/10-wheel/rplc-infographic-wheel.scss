@@ -152,6 +152,13 @@
         }
       }
 
+      &:nth-child(5),
+      &:nth-child(6) {
+        &::after {
+          bottom: 103px;
+        }
+      }
+
       &:nth-child(2) {
         &::after {
           left: 388px;
@@ -177,7 +184,6 @@
 
       &:nth-child(5) {
         &::after {
-          bottom: 103px;
           left: -5px;
           transform: rotate(-30deg);
         }
@@ -185,7 +191,6 @@
 
       &:nth-child(6) {
         &::after {
-          bottom: 103px;
           left: 388px;
           transform: rotate(30deg);
         }
