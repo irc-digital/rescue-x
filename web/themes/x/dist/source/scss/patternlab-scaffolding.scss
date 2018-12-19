@@ -55,6 +55,11 @@ body > .rplc-teaser-story {
   position: relative;
 }
 
+#do-not-replace-see-gulpfile + .rplc-main-menu-locations, // fingerprint of a standalone pattern
+#components-main-menu-locations .sg-pattern-example > .rplc-modal {
+  background-color: black;
+}
+
 #do-not-replace-see-gulpfile + .rplc-sticky-footer, // fingerprint of a standalone pattern
 #components-sticky-footer .sg-pattern-example > .rplc-sticky-footer {
   display: block;

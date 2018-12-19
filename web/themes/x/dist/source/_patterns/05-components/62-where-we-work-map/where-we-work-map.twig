@@ -1,6 +1,16 @@
-<div class="rplc-where-we-work-map">
+<div class="rplc-where-we-work-map" data-rpl-where-we-work-map-view="map">
   <div class="rplc-where-we-work-map__wrapper">
-    <div class="rplc-where-we-work-map__inner-wrapper">
+    <div class="rplc-where-we-work-map__change-view-wrapper" data-rpl-state-type="where-we-work-map-view" data-rpl-state-values="map, list">
+      <div class="rplc-where-we-work-map__view-as-map">{{ 'View as map' | trans }}</div>
+      <div class="rplc-where-we-work-map__view-as-list">{{ 'View as list' | trans }}</div>
+      <span class="rplc-where-we-work-map__change-view-icon">
+        <span class="rplc-where-we-work-map__change-view-icon-line"></span>
+        <span class="rplc-where-we-work-map__change-view-icon-line"></span>
+        <span class="rplc-where-we-work-map__change-view-icon-line"></span>
+        <span class="rplc-where-we-work-map__change-view-icon-line"></span>
+      </span>
+    </div>
+    <div class="rplc-where-we-work-map__markers-wrapper">
       {% for where_we_work_region in where_we_work_map_locations %}
        {% for where_we_work_map_location in where_we_work_region.items %}
          {% if where_we_work_map_location.x is not empty and where_we_work_map_location.y is not empty %}
@@ -14,10 +24,12 @@
        {% endfor %}
       {% endfor %}
     </div>
-    <div>
-      {% include '@components/92-menu/05-main/05-locations/main-menu-locations.twig' with {
-        main_menu_locations: where_we_work_map_locations,
-      } only %}
+    <div class="rplc-where-we-work-map__menu-wrapper">
+      <div class="rplc-where-we-work-map__menu-inner-wrapper">
+        {% include '@components/92-menu/05-main/05-locations/main-menu-locations.twig' with {
+          main_menu_locations: where_we_work_map_locations,
+        } only %}
+      </div>
     </div>
   </div>
 </div>
