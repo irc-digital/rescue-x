@@ -48,6 +48,7 @@
   }
 
   &__icon {
+    @include z-index('up');
     background-color: get-brand-color();
     border-radius: 50%;
     height: $infographic-wheel-icon-size;
@@ -179,6 +180,14 @@
           bottom: 103px;
           left: -5px;
           transform: rotate(-30deg);
+        }
+      }
+
+      &:nth-child(6) {
+        &::after {
+          bottom: 103px;
+          left: 388px;
+          transform: rotate(30deg);
         }
       }
 
