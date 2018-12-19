@@ -1,0 +1,13 @@
+infographic_wheel_content:
+  - title: 'Improve our effectiveness'
+    icon: heart
+  - title: 'Increase our speed and timeliness'
+    icon: careers
+  - title: 'Be more responsive to the people we serve'
+    icon: volunteer
+  - title: 'Invest in research and development'
+    icon: food
+  - title: 'Expand our scale and reach'
+    icon: stopwatch
+  - title: 'Make the best use of resources'
+    icon: search

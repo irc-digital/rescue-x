@@ -1,0 +1,15 @@
+@import 'rplc-infographic-wheel.variables';
+
+.rplc-infographic-wheel {
+  $self: &;
+
+  &__icon {
+    background-color: get-brand-color();
+    border-radius: 50%;
+    height: $infographic-wheel-icon-size;
+    padding: $infographic-wheel-icon-padding;
+    width: $infographic-wheel-icon-size;
+  }
+}
+
+// end of file
