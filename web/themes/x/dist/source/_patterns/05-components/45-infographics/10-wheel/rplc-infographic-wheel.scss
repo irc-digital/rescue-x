@@ -54,6 +54,7 @@
     @include z-index('up');
     background-color: get-brand-color();
     border-radius: 50%;
+    flex-shrink: 0;
     height: $infographic-wheel-icon-size;
     margin-right: get-spacing('xl');
     padding: $infographic-wheel-icon-padding;
