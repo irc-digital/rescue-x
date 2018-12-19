@@ -132,7 +132,7 @@
 
       &:nth-child(5),
       &:nth-child(6) {
-        bottom: 42px;
+        bottom: 30px;
       }
 
       &:nth-child(4) {
@@ -151,18 +151,42 @@
         }
       }
 
-      &:nth-child(7) {
-        left: 53px;
-
+      &:nth-child(2) {
         &::after {
-          left: 465px;
-          transform: rotate(90deg);
+          left: 388px;
+          top: 113px;
+          transform: rotate(-30deg);
+        }
+      }
+
+      &:nth-child(3) {
+        &::after {
+          left: -4px;
+          top: 113px;
+          transform: rotate(30deg);
         }
       }
 
       &:nth-child(4) {
         &::after {
           left: -76px;
+          transform: rotate(90deg);
+        }
+      }
+
+      &:nth-child(5) {
+        &::after {
+          bottom: 103px;
+          left: -5px;
+          transform: rotate(-30deg);
+        }
+      }
+
+      &:nth-child(7) {
+        left: 53px;
+
+        &::after {
+          left: 465px;
           transform: rotate(90deg);
         }
       }
