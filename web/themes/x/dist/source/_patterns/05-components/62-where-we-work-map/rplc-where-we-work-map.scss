@@ -22,6 +22,20 @@
     width: $where-we-work-map-width;
   }
 
+  &__legend {
+    border-top: 1px solid get-neutral-color('white');
+    bottom: 50px;
+    display: none;
+    left: 50px;
+    padding-top: get-spacing('ml');
+    position: absolute;
+  }
+
+  &__legend-text {
+    @include typography-text-small;
+    color: get-neutral-color('white');
+  }
+
   &__dot {
     background-color: get-brand-color();
     border-radius: 50%;
@@ -153,6 +167,10 @@
 
       #{$self}__markers-wrapper {
         display: block;
+      }
+
+      #{$self}__legend {
+        display: inline-block;
       }
     }
   }
