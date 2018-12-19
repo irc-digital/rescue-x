@@ -6,6 +6,14 @@
 
   @include input-type-hide-label;
 
+  &--type-one {
+    @include input-type-one($self);
+  }
+
+  &--border {
+    @include input-border($self);
+  }
+
 }
 
 // end of file
