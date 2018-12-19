@@ -3,12 +3,39 @@
 .rplc-infographic-wheel {
   $self: &;
 
+  &__content {
+    @include well-row;
+  }
+
+  &__inner-wrapper {
+    padding-right: get-spacing('xl');
+    padding-top: get-spacing('l');
+    text-align: center;
+  }
+
+  &__item-wrapper {
+    align-items: center;
+    display: inline-flex;
+    margin-bottom: get-spacing('l');
+  }
+
   &__icon {
     background-color: get-brand-color();
     border-radius: 50%;
     height: $infographic-wheel-icon-size;
+    margin-right: get-spacing('xl');
     padding: $infographic-wheel-icon-padding;
     width: $infographic-wheel-icon-size;
+  }
+
+  &__title {
+    @include font-weight('bold');
+    @include letter-spacing('airy');
+    color: get-neutral-color('white');
+    font-size: 1.1em;
+    max-width: 311px;
+    text-align: left;
+    text-transform: uppercase;
   }
 }
 
