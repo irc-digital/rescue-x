@@ -1,0 +1,11 @@
+@import 'rpla-email-input.variables';
+@import '../rpl-form.mixins';
+
+.rpla-email-input {
+  $self: &;
+
+  @include input-type-hide-label;
+
+}
+
+// end of file
