@@ -1,0 +1,4 @@
+email_input_name: "email"
+email_input_label: "Email"
+email_input_placeholder: "Email address"
+email_input_required: true
