@@ -6,16 +6,20 @@
   position: relative;
 
   &__wrapper {
-    background: $where-we-work-background-color url('../images/where-we-work-map.jpg') 50% 50% no-repeat;
-    min-height: 766px;
+    background: $where-we-work-background-color url('../images/where-we-work-map.jpg') -193px 50% no-repeat;
+    min-height: $where-we-work-map-height;
+
+    @media only screen and (min-width: #{$where-we-work-map-width}) {
+      background-position-x: 50%;
+    }
   }
 
   &__markers-wrapper {
-    height: 766px;
+    height: $where-we-work-map-height;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 1300px;
+    width: $where-we-work-map-width;
   }
 
   &__dot {
@@ -79,7 +83,7 @@
 
   &__menu-wrapper {
     background-color: $where-we-work-menu-background;
-    min-height: 766px;
+    min-height: $where-we-work-map-height;
     padding-top: get-spacing('3xl');
   }
 

@@ -39,6 +39,7 @@
     border-bottom: 1px solid get-brand-color();
     cursor: pointer;
     position: relative;
+    user-select: none;
 
     &[data-rpl-main-menu-expanded-section] {
       #{$self}__level-4 {
@@ -80,18 +81,18 @@
     }
   }
 
-  &__level-4-menu-item {
-    line-height: 2;
-  }
-
   &__level-4-menu-item-link {
     @include font-size('s');
     @include font-weight('light');
     color: get-neutral-color('white');
 
     display: block;
-    line-height: 1.5;
+    line-height: 2;
     padding: get-spacing('s') get-spacing('l');
+
+    @include breakpoint(phablet) {
+      line-height: 3;
+    }
 
     @include breakpoint(laptop) {
       padding: get-spacing('xs') get-spacing('xl');

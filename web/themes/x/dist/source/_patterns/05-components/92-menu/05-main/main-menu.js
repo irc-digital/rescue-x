@@ -21,27 +21,29 @@
               child_adjustment = $(target).parent().position().top; //+ $(target).parent().parent().position().top; // + $(target).parent().parent().parent().position().top;
             }
 
-            var scroll_to = $(new_target).position().top + $(new_target).parent().position().top - $(new_target).parent().parent().position().top + child_adjustment;
+            if ($(new_target).parent().parent().length != 0) {
+              var scroll_to = $(new_target).position().top + $(new_target).parent().position().top - $(new_target).parent().parent().position().top + child_adjustment;
 
-            var scroll_target = $('html, body');
+              var scroll_target = $('html, body');
 
-            $(target).parents().each(function() {
-              var element = $(this);
+              $(target).parents().each(function() {
+                var element = $(this);
 
-              if (element.css('position') == 'fixed') {
-                scroll_target = element;
-                return false;
-              }
+                if (element.css('position') == 'fixed') {
+                  scroll_target = element;
+                  return false;
+                }
 
-              if ($(this).prop("tagName") == 'BODY') {
-                return false;
-              }
-            });
+                if ($(this).prop("tagName") == 'BODY') {
+                  return false;
+                }
+              });
 
-            scroll_target.animate({
-              scrollTop: scroll_to
-            }, 1000);
+              scroll_target.animate({
+                scrollTop: scroll_to
+              }, 1000);
 
+            }
           }, 300);
         }
       });
