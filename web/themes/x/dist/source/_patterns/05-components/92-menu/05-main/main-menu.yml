@@ -23,8 +23,6 @@ main_menu_items:
             items:
               - title: 'Burundi'
                 url: '#'
-              - title: 'Cameroon'
-                url: '#'
               - title: 'Central African Republic'
                 url: '#'
               - title: 'Chad'
@@ -35,7 +33,7 @@ main_menu_items:
                 url: '#'
           - title: 'Central & South America'
             items:
-              - title: 'Columbia'
+              - title: 'Colombia'
                 url: '#'
               - title: 'El Salvador'
                 url: '#'
@@ -76,8 +74,6 @@ main_menu_items:
               - title: 'Baltimore, MD'
                 url: '#'
               - title: 'Boise, ID'
-                url: '#'
-              - title: 'Charlottesville, VA'
                 url: '#'
               - title: 'Dallas, TX'
                 url: '#'
