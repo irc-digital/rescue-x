@@ -4,14 +4,22 @@
   $self: &;
 
   &__content {
-    @include well-row;
+    margin-left: auto;
+    margin-right: auto;
+    //max-width: $well-width-inner;
+    //width: calc(100% - #{get-spacing('m') * 2});
     position: relative;
+    transform: scale(1);
   }
 
   &__inner-wrapper {
-    padding-right: get-spacing('xl');
-    padding-top: get-spacing('l');
+    //padding-right: get-spacing('xl');
+    //padding-top: get-spacing('l');
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     text-align: center;
+    width: 1208px;
 
     @include breakpoint(phablet) {
       height: rem(540px);
@@ -19,7 +27,16 @@
   }
 
   &__circle {
+    background-color: $infographic-wheel-circle-background;
+    border: 2px dotted get-neutral-color('dark-gray');
+    border-radius: 50%;
     display: none;
+    height: $infographic-wheel-circle-size;
+    left: 50%;
+    position: absolute;
+    top: 32px;
+    transform: translateX(-50%);
+    width: $infographic-wheel-circle-size;
   }
 
   &__item-wrapper {
@@ -70,6 +87,7 @@
     @include letter-spacing('airy');
     color: get-neutral-color('white');
 
+    flex-shrink: 0;
     font-size: 1.1em;
     max-width: 300px;
     text-align: left;
@@ -83,15 +101,7 @@
 
   @include breakpoint(phablet) {
     &__circle {
-      background-color: $infographic-wheel-circle-background;
-      border: 2px dotted get-neutral-color('dark-gray');
-      border-radius: 50%;
       display: block;
-      height: $infographic-wheel-circle-size;
-      left: 50%;
-      position: absolute;
-      transform: translateX(-50%);
-      width: $infographic-wheel-circle-size;
     }
 
     &__item-wrapper {
@@ -102,9 +112,9 @@
         height: 150px;
       }
 
-      &:nth-child(2),
-      &:nth-child(6),
-      &:nth-child(7) {
+      &:nth-child(1),
+      &:nth-child(5),
+      &:nth-child(6) {
         #{$self}__title {
           order: -1;
           text-align: right;
@@ -120,50 +130,50 @@
         }
       }
 
-      &:nth-child(3),
-      &:nth-child(5) {
+      &:nth-child(2),
+      &:nth-child(4) {
         left: 647px;
       }
 
-      &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-child(1),
+      &:nth-child(2) {
         top: 0;
       }
 
-      &:nth-child(4),
-      &:nth-child(7) {
+      &:nth-child(3),
+      &:nth-child(6) {
         top: 200px;
       }
 
-      &:nth-child(5),
-      &:nth-child(6) {
+      &:nth-child(4),
+      &:nth-child(5) {
         bottom: 30px;
       }
 
-      &:nth-child(4) {
+      &:nth-child(3) {
         left: 758px;
       }
 
-      &:nth-child(2),
-      &:nth-child(6) {
+      &:nth-child(1),
+      &:nth-child(5) {
         left: 172px;
       }
 
-      &:nth-child(4),
-      &:nth-child(7) {
+      &:nth-child(3),
+      &:nth-child(6) {
         &::after {
           bottom: -16px;
         }
       }
 
-      &:nth-child(5),
-      &:nth-child(6) {
+      &:nth-child(4),
+      &:nth-child(5) {
         &::after {
           bottom: 103px;
         }
       }
 
-      &:nth-child(2) {
+      &:nth-child(1) {
         &::after {
           left: 388px;
           top: 113px;
@@ -171,7 +181,7 @@
         }
       }
 
-      &:nth-child(3) {
+      &:nth-child(2) {
         &::after {
           left: -4px;
           top: 113px;
@@ -179,28 +189,28 @@
         }
       }
 
-      &:nth-child(4) {
+      &:nth-child(3) {
         &::after {
           left: -76px;
           transform: rotate(90deg);
         }
       }
 
-      &:nth-child(5) {
+      &:nth-child(4) {
         &::after {
           left: -5px;
           transform: rotate(-30deg);
         }
       }
 
-      &:nth-child(6) {
+      &:nth-child(5) {
         &::after {
           left: 388px;
           transform: rotate(30deg);
         }
       }
 
-      &:nth-child(7) {
+      &:nth-child(6) {
         left: 53px;
 
         &::after {
