@@ -16,7 +16,25 @@
   &__item-wrapper {
     align-items: center;
     display: inline-flex;
-    margin-bottom: get-spacing('l');
+    margin-bottom: $infographic-item-gap-mobile;
+    position: relative;
+
+    &::after {
+      border-left: $infographic-item-gap-line-width dotted get-neutral-color('light-gray');
+      bottom: -#{$infographic-item-gap-mobile};
+      content: '';
+      height: $infographic-item-gap-mobile;
+      left: ($infographic-wheel-icon-size - $infographic-item-gap-line-width)/ 2;
+      position: absolute;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::after {
+        content: none;
+      }
+    }
   }
 
   &__icon {
