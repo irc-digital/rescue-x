@@ -9,10 +9,13 @@
   }
 
   &__inner-wrapper {
-    height: rem(540px);
     padding-right: get-spacing('xl');
     padding-top: get-spacing('l');
     text-align: center;
+
+    @include breakpoint(phablet) {
+      height: rem(540px);
+    }
   }
 
   &__circle {
