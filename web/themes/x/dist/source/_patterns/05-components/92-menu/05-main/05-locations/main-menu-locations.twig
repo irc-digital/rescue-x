@@ -1,0 +1,6 @@
+{% import '@components/92-menu/05-main/_main-menu.macros.twig' as main_menu %}
+<ul class="rplc-main-menu-locations">
+  {% for region in main_menu_locations %}
+    {{ main_menu.build_leveL_3(region, 'rplc-main-menu-locations') }}
+  {% endfor %}
+</ul>

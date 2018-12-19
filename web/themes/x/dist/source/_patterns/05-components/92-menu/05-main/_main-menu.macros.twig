@@ -5,13 +5,13 @@
 
   <ul class="{{ class }}">
     {% for item in items %}
-      {{ main_menu._build_leveL_1(item, loop.last, class) }}
+      {{ main_menu.build_leveL_1(item, loop.last, class) }}
     {% endfor %}
   </ul>
 {% endmacro %}
 
 
-{% macro _build_leveL_1(item, last, class) %}
+{% macro build_leveL_1(item, last, class) %}
   {% import _self as main_menu %}
 
   {% set has_level_4 = item.items is not empty and item.items[0].items is not empty and item.items[0].items[0].items is not empty %}
@@ -25,7 +25,7 @@
 
       <ul class="{{ class }}__level-2">
         {% for subitem in item.items %}
-          {{ main_menu._build_leveL_2(subitem, loop.last, class) }}
+          {{ main_menu.build_leveL_2(subitem, loop.last, class) }}
         {% endfor %}
       </ul>
     {% endif %}
@@ -35,7 +35,7 @@
 {% endmacro %}
 
 
-{% macro _build_leveL_2(item, last, class) %}
+{% macro build_leveL_2(item, last, class) %}
   {% import _self as main_menu %}
 
   {% set position = last ? ' ' ~ class ~ '__level-2-menu-item--last' : '' %}
@@ -46,7 +46,7 @@
     {% if item.items is not empty %}
       <ul class="{{ class }}__level-3">
         {% for subitem in item.items %}
-          {{ main_menu._build_leveL_3(subitem, class) }}
+          {{ main_menu.build_leveL_3(subitem, class) }}
         {% endfor %}
       </ul>
     {% endif %}
@@ -55,7 +55,7 @@
 
 {% endmacro %}
 
-{% macro _build_leveL_3(item, class) %}
+{% macro build_leveL_3(item, class) %}
   {% import _self as main_menu %}
 
   <li class="{{ class }}__level-3-menu-item{% if item.items is empty %} {{ class }}__level-3-menu-item--leaf{% endif %}" data-rpl-main-menu-level-3>
@@ -71,7 +71,7 @@
         {% for items_group in split_items %}
           <ul class="{{ class }}__level-4 {{ class }}__level-4--group-{{ loop.index }}">
             {% for subitem in items_group %}
-              {{ main_menu._build_leveL_4(subitem, class) }}
+              {{ main_menu.build_leveL_4(subitem, class) }}
             {% endfor %}
           </ul>
         {% endfor %}
@@ -83,7 +83,7 @@
 
 {% endmacro %}
 
-{% macro _build_leveL_4(item, class) %}
+{% macro build_leveL_4(item, class) %}
   <li class="{{ class }}__level-4-menu-item">
     <a class="{{ class }}__level-4-menu-item-link" href="{{ item.url }}">{{ item.title }}</a>
   </li>

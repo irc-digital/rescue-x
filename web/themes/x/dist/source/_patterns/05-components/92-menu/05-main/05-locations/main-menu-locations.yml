@@ -1,4 +1,4 @@
-where_we_work_map_locations:
+main_menu_locations:
   - title: 'Africa'
     items:
       - title: 'Burundi'
@@ -29,8 +29,6 @@ where_we_work_map_locations:
         url: '#'
       - title: 'Malaysia'
         url: '#'
-        x: 1107
-        y: 424
       - title: 'Myanmar'
         url: '#'
       - title: 'Pakistan'
@@ -75,18 +73,3 @@ where_we_work_map_locations:
         url: '#'
       - title: 'New York, NY'
         url: '#'
-        x: 280
-        y: 235
-      - title: 'Richmond, VA'
-        url: '#'
-        x: 260
-        y: 265
-      - title: 'San Jose, CA'
-        url: '#'
-        x: 46
-        y: 260
-      - title: 'Seattle, WA'
-        url: '#'
-        x: 280
-        y: 235
-

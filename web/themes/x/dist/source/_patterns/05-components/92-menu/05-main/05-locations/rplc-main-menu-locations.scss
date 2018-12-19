@@ -1,0 +1,70 @@
+@import 'rplc-main-menu-locations.variables';
+
+.rplc-main-menu-locations {
+  $self: &;
+
+  &,
+  &__level-4 {
+    list-style: none;
+  }
+
+  &__level-3-menu-item-title {
+    @include typography-heading-medium;
+    color: get-brand-color();
+    line-height: 72px;
+
+    @include breakpoint(phablet) {
+      line-height: 88px;
+    }
+  }
+
+  &__level-3-expand-toggle {
+    background: transparent url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath d="M16 9.15V6.82H9.296V0H6.674v6.82H0v2.33h6.674V16h2.622V9.15H16z" fill="' + $main-menu-location-expand-toggle-color + '"/%3E%3C/svg%3E%0A') no-repeat 50% 50%;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: $main-menu-location-expand-toggle-size;
+    padding: 0;
+    position: absolute;
+    right: rem(9px);
+    top: rem(28px);
+    width: $main-menu-location-expand-toggle-size;
+
+    @media #{$global-navigation-large-device-media-query} {
+      right: 0;
+    }
+  }
+
+  &__level-3-menu-item {
+    border-bottom: 1px solid get-brand-color();
+    cursor: pointer;
+    position: relative;
+
+    &[data-rpl-main-menu-expanded-section] {
+      #{$self}__level-4 {
+        display: block;
+      }
+
+      #{$self}__level-3-expand-toggle {
+        background-image: url('data:image/svg+xml,%0A%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath fill="' + $main-menu-location-expand-toggle-color + '" d="M0 6.872h16v2.255H0z"/%3E%3C/svg%3E');
+      }
+    }
+
+    @media #{$global-navigation-large-device-media-query} {
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  &__level-4 {
+    display: none;
+  }
+
+  &__level-4-wrapper {
+    display: flex;
+  }
+
+}
+
+// end of file
