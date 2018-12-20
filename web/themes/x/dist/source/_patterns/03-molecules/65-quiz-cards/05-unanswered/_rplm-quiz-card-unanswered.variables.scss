@@ -1,5 +1,8 @@
 @import '../../../../scss/core';
 
+$quiz-card-unanswered-background-color: get-brand-color();
+$quiz-card-unanswered-width: rem(1085px);
+$quiz-card-content-vertical-offset: rem(110px);
 $quiz-card-unanswered-image-size: (
   'mobile': rem(92px),
   'phablet': rem(140px),
