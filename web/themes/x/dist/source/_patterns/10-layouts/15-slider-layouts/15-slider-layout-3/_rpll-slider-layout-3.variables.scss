@@ -5,6 +5,8 @@ $slider-layout-3-previous-next-icon-size: (
   'phablet': rem(24px),
 );
 
+$slider-layout-3-arrow-offset: rem(-36px);
+
 //$slider-layout-3-previous-next-icon-gap: get-spacing('m');
 //$slider-layout-3-previous-icon-gap: -#{$slider-layout-3-previous-next-icon-gap};
 //$slider-layout-3-next-icon-gap: -#{$slider-layout-3-previous-next-icon-gap};
