@@ -17,11 +17,12 @@
   }
 
   &__email-input-wrapper {
-    margin-right: get-spacing('m');
+    flex-grow: 1;
   }
 
   &__submit-wrapper {
     font-size: get-font-size('s');
+    margin: 0 get-spacing('m');
   }
 }
 
