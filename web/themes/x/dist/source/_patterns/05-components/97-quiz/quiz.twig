@@ -1,0 +1,15 @@
+<div class="rplc-quiz">
+    {% for quiz_question in quiz_questions %}
+        <div class="rplc-quiz__question">
+            <div class="rplc-quiz__unanswered-wrapper">
+              {% include '@molecules/65-quiz-cards/05-unanswered/quiz-card-unanswered.twig' with {
+                quiz_card_unanswered_title: quiz_question.unanswered.title,
+                quiz_card_unanswered_description: quiz_question.unanswered.description,
+                quiz_card_unanswered_responsive_image_source_set: quiz_question.unanswered.responsive_image_source_set,
+                quiz_card_unanswered_responsive_image_fallback: quiz_question.unanswered.responsive_image_fallback,
+                quiz_card_unanswered_responsive_image_alt: quiz_question.unanswered.responsive_image_alt,
+              } only %}
+            </div>
+        </div>
+  {% endfor %}
+</div>
