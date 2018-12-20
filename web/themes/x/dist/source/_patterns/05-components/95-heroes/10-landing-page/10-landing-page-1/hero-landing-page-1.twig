@@ -1,9 +1,12 @@
 {% spaceless %}
+
   {% set cta_with_icons = false %}
   {% if hero_landing_page_1_calls_to_action is not empty and hero_landing_page_1_calls_to_action | length > 0 %}
-    {% if hero_landing_page_1_calls_to_action.icon_name is not empty %}
-      {% set cta_with_icons = true %}
-    {% endif %}
+    {% for hero_landing_page_1_call_to_action in hero_landing_page_1_calls_to_action if not cta_with_icons %}
+      {% if hero_landing_page_1_call_to_action.icon_name is not empty %}
+        {% set cta_with_icons = true %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
 {% endspaceless %}
