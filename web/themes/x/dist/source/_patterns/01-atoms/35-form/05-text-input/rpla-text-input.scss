@@ -13,20 +13,19 @@
     @include input-type-one($self);
   }
 
-  &--placeholder-bold {
-    #{$self}__field {
-      @include font-weight('bold');
-    }
+  &--type-two {
+    @include input-type-two($self);
   }
 
   &--type-three {
     @include input-type-three($self);
   }
 
-  //
-  //&--type-two {
-  //  @include input-type-two($self);
-  //}
+  &--placeholder-bold {
+    #{$self}__field {
+      @include font-weight('bold');
+    }
+  }
 }
 
 // end of file

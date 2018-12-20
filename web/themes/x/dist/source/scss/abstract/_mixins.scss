@@ -331,6 +331,14 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
+// sass-lint:disable-block no-vendor-prefixes
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
 @mixin image-content-type-decorator {
   &[data-rpl-content-type] {
     position: relative;

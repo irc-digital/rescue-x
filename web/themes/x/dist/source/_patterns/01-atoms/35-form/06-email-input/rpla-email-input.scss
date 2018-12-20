@@ -10,10 +10,6 @@
     @include input-type-one($self);
   }
 
-  &--border {
-    @include input-border($self);
-  }
-
 }
 
 // end of file
