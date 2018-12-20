@@ -3,6 +3,7 @@
 .rplc-infographic-wheel {
   $self: &;
 
+  overflow-x: hidden;
   padding-top: get-spacing('m');
 
   @include breakpoint(phablet) {
@@ -248,7 +249,7 @@
 
       &:nth-child(2),
       &:nth-child(4) {
-        &:after {
+        &::after {
           left: -4px;
         }
       }
