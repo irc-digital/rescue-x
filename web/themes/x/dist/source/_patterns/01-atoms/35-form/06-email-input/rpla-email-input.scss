@@ -18,6 +18,10 @@
     @include input-type-three($self);
   }
 
+  &--placeholder-small {
+    @include input-placeholder-small($self);
+  }
+
   &--with-border {
     @include input-border($self);
   }

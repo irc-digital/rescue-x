@@ -17,8 +17,8 @@
 @mixin input-type-one ($element: &) {
   #{$element}__field {
     border-width: 0;
-    font-size: 1.125em;
-    padding: .25em .5em;
+    font-size: 1em;
+    padding: .5em;
   }
 }
 
@@ -48,6 +48,16 @@
     border: 1px solid get-neutral-color('gray');
   }
 }
+
+@mixin input-placeholder-small ($element: &) {
+  #{$element}__field {
+    @include placeholder {
+      font-size: get-font-size('s');
+      font-weight: get-font-weight('light');
+    }
+  }
+}
+
 
 // end of file
 
