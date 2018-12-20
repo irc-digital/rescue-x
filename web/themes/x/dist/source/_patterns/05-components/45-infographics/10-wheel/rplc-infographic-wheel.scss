@@ -10,15 +10,15 @@
     //overflow-x: hidden;
 
     @include breakpoint(tablet) {
-      transform: scale(.63);
+      transform: scale(.63) translateY(-80px);
     }
 
     @include breakpoint(951) {
-      transform: scale(.78);
+      transform: scale(.78) translateY(-55px);
     }
 
     @include breakpoint(laptop) {
-      transform: scale(.85);
+      transform: scale(.85) translateY(-20px);
     }
 
     @include breakpoint(desktop) {
@@ -30,6 +30,18 @@
     position: relative;
 
     @include breakpoint(tablet) {
+      height: rem(360px);
+    }
+
+    @include breakpoint(951) {
+      height: rem(430px);
+    }
+
+    @include breakpoint(laptop) {
+      height: rem(490px);
+    }
+
+    @include breakpoint(desktop) {
       height: rem(540px);
     }
   }
