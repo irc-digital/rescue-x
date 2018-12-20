@@ -5,11 +5,12 @@
 
   #{$base}__summary {
     @include line-height('s');
-    @include standard-vertical-spacing;
+    @include typography-vertical-spacing;
   }
 
   #{$base}__main-cta {
-    @include standard-vertical-spacing;
+    @include font-size('s');
+    @include typography-vertical-spacing;
   }
 
   #{$base}__ctas-wrapper {
