@@ -26,16 +26,16 @@
         <div class="rplc-question__wrong-answer-message">{{ question_wrong_answer_message }}</div>
       </div>
       <div class="rplc-question__answer-wrapper">
+        {% if question_responsive_image_source_set %}
         <div class="rplc-question__answer-image-wrapper">
-          {% if question_responsive_image_source_set %}
-            {% include '@atoms/52-responsive-image/responsive-image.twig' with {
-              responsive_image_source_set: question_responsive_image_source_set,
-              responsive_image_sizes: "(min-width: 768px) 448px,(min-width: 321px) calc(100vw - 2rem),320px",
-              responsive_image_fallback: question_responsive_image_fallback,
-              responsive_image_alt: question_responsive_image_alt
-            } only %}
-          {% endif %}
+          {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+            responsive_image_source_set: question_responsive_image_source_set,
+            responsive_image_sizes: "(min-width: 768px) 448px,(min-width: 321px) calc(100vw - 2rem),320px",
+            responsive_image_fallback: question_responsive_image_fallback,
+            responsive_image_alt: question_responsive_image_alt
+          } only %}
         </div>
+        {% endif %}
         <div class="rplc-question__answer-info{% if not question_responsive_image_source_set %} rplc-question__answer-info--no-answer-image{% endif %}">{{ question_answer_info }}</div>
       </div>
     </div>

@@ -1,0 +1,11 @@
+<div class="rplm-card-incorrect">
+  <h4 class="rplm-card-incorrect__title">{{ quiz_card_incorrect_title }}</h4>
+  <p class="rplm-card-incorrect__description">{{ quiz_card_incorrect_description }}</p>
+  <div class="rplm-card-incorrect__link-wrapper">
+    {% include '@atoms/10-link/link.twig' with {
+      link_text: quiz_card_incorrect_link_title,
+      link_url: quiz_card_incorrect_link_url,
+      link_modifiers: ['type-two', 'subtype-inverse'],
+    } only %}
+  </div>
+</div>

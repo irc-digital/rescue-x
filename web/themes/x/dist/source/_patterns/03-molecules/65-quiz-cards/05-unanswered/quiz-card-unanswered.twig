@@ -1,0 +1,16 @@
+<div class="rplm-card-unanswered">
+  {% if quiz_card_unanswered_responsive_image_source_set %}
+  <div class="rplm-card-unanswered__image-wrapper">
+      {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+        responsive_image_source_set: quiz_card_unanswered_responsive_image_source_set,
+        responsive_image_sizes: "(min-width: 641px) 140px, 92px",
+        responsive_image_fallback: quiz_card_unanswered_responsive_image_fallback,
+        responsive_image_alt: quiz_card_unanswered_responsive_image_alt,
+      } only %}
+  </div>
+  {% endif %}
+  <h4 class="rplm-card-unanswered__title">{{ quiz_card_unanswered_title }}</h4>
+  <p class="rplm-card-unanswered__description">{{ quiz_card_unanswered_description }}</p>
+</div>
+
+
