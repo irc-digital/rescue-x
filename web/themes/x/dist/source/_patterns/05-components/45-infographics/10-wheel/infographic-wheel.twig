@@ -6,17 +6,19 @@
   } only %}
   <div class="rplc-infographic-wheel__content">
     <div class="rplc-infographic-wheel__circle"></div>
-    <div class="rplc-infographic-wheel__inner-wrapper">
-      {% for infographic_wheel_item in infographic_wheel_content %}
-        <div class="rplc-infographic-wheel__item-wrapper">
-          <div class="rplc-infographic-wheel__icon">
-            {% include '@atoms/05-icon/icon.twig' with {
-              icon_name: infographic_wheel_item.icon,
-            } only %}
+    <div class="rplc-infographic-wheel__outer-wrapper">
+      <div class="rplc-infographic-wheel__inner-wrapper">
+        {% for infographic_wheel_item in infographic_wheel_content %}
+          <div class="rplc-infographic-wheel__item-wrapper">
+            <div class="rplc-infographic-wheel__icon">
+              {% include '@atoms/05-icon/icon.twig' with {
+                icon_name: infographic_wheel_item.icon,
+              } only %}
+            </div>
+            <div class="rplc-infographic-wheel__title">{{ infographic_wheel_item.title }}</div>
           </div>
-          <div class="rplc-infographic-wheel__title">{{ infographic_wheel_item.title }}</div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
