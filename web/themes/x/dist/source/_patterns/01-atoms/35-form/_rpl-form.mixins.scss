@@ -24,6 +24,11 @@
 
 @mixin input-type-two ($element: &) {
   #{$element}__field {
+    @include placeholder {
+      color: get-neutral-color('gray');
+      font-size: get-font-size('m');
+    }
+    border-width: 0;
     font-size: 1em;
     padding: .5em;
   }
