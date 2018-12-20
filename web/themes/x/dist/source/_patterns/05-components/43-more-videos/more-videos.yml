@@ -5,7 +5,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos1 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos1 400w"
@@ -15,7 +14,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos2 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos2 400w"
@@ -25,7 +23,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos3 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos3 400w"
@@ -35,7 +32,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos4 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos4 400w"
@@ -45,7 +41,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos5 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos5 400w"
@@ -55,7 +50,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos6 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos6 400w"
@@ -65,7 +59,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos7 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos7 400w"
@@ -75,7 +68,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos8 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos8 400w"
@@ -85,7 +77,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos9 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos9 400w"
@@ -95,7 +86,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos10 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos10 400w"
@@ -105,7 +95,6 @@ more_videos_items:
       with:
         teaser_thumb_url: "#"
         teaser_thumb_title: "Faker.words(8,true)"
-        teaser_thumb_content_type: 'video'
         teaser_thumb_image_source_set:
           - "https://placem.at/things?w=200&h=112&random=morevideos11 200w"
           - "https://placem.at/things?w=400&h=224&random=morevideos11 400w"
