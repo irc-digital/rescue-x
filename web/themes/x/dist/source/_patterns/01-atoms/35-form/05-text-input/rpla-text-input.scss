@@ -26,6 +26,10 @@
       @include font-weight('bold');
     }
   }
+
+  &--with-border {
+    @include input-border($self);
+  }
 }
 
 // end of file

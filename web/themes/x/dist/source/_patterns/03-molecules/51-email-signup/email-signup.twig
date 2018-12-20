@@ -1,17 +1,19 @@
-{#
-/**
- * Available variables:
- *     email_signup_sites           - Used to generate social share icon
- *
- * Available blocks:
- * - none
- */
-#}
-
 <div class="rplm-email-signup">
   {% if email_signup_title is not empty %}
     <h6 class="rplm-email-signup__title">{{ email_signup_title }}</h6>
   {% endif %}
-  <div class="rplm-email-signup__wrapper">
+  <div class="rplm-email-signup__form-wrapper">
+    <div class="rplm-email-signup__email-input-wrapper">
+      {% include '@atoms/35-form/06-email-input/email-input.twig' with {
+        email_input_name: "email",
+        email_input_placeholder: ('Email address' | trans),
+        email_input_modifiers: ['type-two', 'with-border'],
+      } only %}
+    </div>
+    <div class="rplm-search-form__submit-wrapper">
+      {% include '@atoms/35-form/40-submit/05-link/link-submit.twig' with {
+        link_text: ('Subscribe' | trans),
+      } only %}
+    </div>
   </div>
 </div>

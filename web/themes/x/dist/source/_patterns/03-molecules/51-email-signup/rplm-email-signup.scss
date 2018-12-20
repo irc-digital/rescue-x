@@ -7,6 +7,10 @@
     @include typography-text-small;
     @include standard-vertical-spacing;
   }
+
+  &__form-wrapper {
+    display: flex;
+  }
 }
 
 // end of file

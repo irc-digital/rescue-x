@@ -10,6 +10,18 @@
     @include input-type-one($self);
   }
 
+  &--type-two {
+    @include input-type-two($self);
+  }
+
+  &--type-three {
+    @include input-type-three($self);
+  }
+
+  &--with-border {
+    @include input-border($self);
+  }
+
 }
 
 // end of file
