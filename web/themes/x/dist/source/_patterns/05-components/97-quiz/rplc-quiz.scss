@@ -2,6 +2,19 @@
 
 .rplc-quiz {
 
+  &__question {
+    @include font-size('3xl');
+    @include letter-spacing('compact');
+    @include font-weight('bold');
+    @include line-height('s');
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rem(800px);
+    padding-bottom: get-spacing('ml');
+    padding-top: get-spacing('ml');
+    text-align: center;
+  }
+
   &__question-outer-wrapper {
     background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="0 200 998.7 0 2e3 200" fill="#FDC513"/%3E%3C/svg%3E%0A') 50% 100% no-repeat;
     background-size: auto 240px;
