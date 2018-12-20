@@ -1,4 +1,4 @@
-quiz_card_unanswered_title: "Faker.words(10,true)"
+quiz_card_unanswered_title: "Faker.words(8,true)"
 quiz_card_unanswered_description: "Faker.words(16,true)"
 quiz_card_unanswered_responsive_image_source_set:
   - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=92&h=92&random=unansweredcard1 92w"

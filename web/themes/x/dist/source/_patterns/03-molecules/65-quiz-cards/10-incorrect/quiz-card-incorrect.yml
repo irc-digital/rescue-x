@@ -1,4 +1,4 @@
-quiz_card_unanswered_title: "Faker.words(10,true)"
+quiz_card_unanswered_title: "Faker.words(8,true)"
 quiz_card_unanswered_description: "Faker.words(16,true)"
 quiz_card_incorrect_link_url: '#'
 quiz_card_incorrect_link_title: "Faker.words(6,true)"

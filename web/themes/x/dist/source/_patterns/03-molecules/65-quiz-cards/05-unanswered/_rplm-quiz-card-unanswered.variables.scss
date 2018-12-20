@@ -1,3 +1,8 @@
 @import '../../../../scss/core';
 
+$quiz-card-unanswered-image-size: (
+  'mobile': rem(92px),
+  'phablet': rem(140px),
+);
+
 // end of file
