@@ -8,15 +8,17 @@
     @include standard-vertical-spacing;
   }
 
+  #{$base}__main-cta {
+    @include standard-vertical-spacing;
+  }
+
   #{$base}__ctas-wrapper {
     @include font-size('s');
     display: flex;
-    list-style: none;
     justify-content: space-between;
+    list-style: none;
   }
 
-  #{$base}__cta {
-  }
 }
 
 // end of file

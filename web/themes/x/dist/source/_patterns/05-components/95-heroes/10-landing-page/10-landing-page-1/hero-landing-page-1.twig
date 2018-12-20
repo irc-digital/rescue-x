@@ -25,6 +25,17 @@
       {{ hero_landing_page_1_summary }}
     </div>
 
+    {% if hero_landing_page_1_main_call_to_action_url is not empty %}
+      <div class="rplc-hero-landing-page__main-cta">
+        {% include '@atoms/12-link-icon/link-icon.twig' with {
+          link_icon_url: hero_landing_page_1_main_call_to_action_url,
+          link_icon_text: hero_landing_page_1_main_call_to_action_title,
+          link_icon_name: hero_landing_page_1_main_call_to_action_icon_name,
+          link_icon_modifiers: ['type-two'],
+        } only %}
+      </div>
+    {% endif %}
+
     {% if hero_landing_page_1_calls_to_action is not empty and hero_landing_page_1_calls_to_action | length > 0 %}
     <ul class="rplc-hero-landing-page__ctas-wrapper">
       {% for hero_landing_page_1_call_to_action in hero_landing_page_1_calls_to_action %}
