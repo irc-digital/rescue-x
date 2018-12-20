@@ -51,6 +51,10 @@
       border-color: $section-heading-inverse-left-border-color;
     }
   }
+
+  &--white {
+    color: get-neutral-color('white');
+  }
 }
 
 // end of file

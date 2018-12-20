@@ -3,14 +3,31 @@
 .rplc-infographic-wheel {
   $self: &;
 
+  padding-top: get-spacing('m');
+
+  @include breakpoint(phablet) {
+    padding-top: get-spacing('xl');
+  }
+
   &__content {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 16px;
+    min-width: 320px;
     position: relative;
-    //overflow-x: hidden;
+    transform: scale(.6) translate(-100px, -170px);
+
+    @media screen and (min-width: 480px) {
+      transform: scale(.68) translate(-100px, -150px);
+    }
+
+    @media screen and (min-width: 640px) {
+      transform: scale(1);
+    }
 
     @include breakpoint(tablet) {
+      margin-left: auto;
+      margin-right: auto;
       transform: scale(.63) translateY(-80px);
+      width: auto;
     }
 
     @include breakpoint(951) {
@@ -27,10 +44,21 @@
   }
 
   &__outer-wrapper {
+    height: rem(540px);
     position: relative;
+
+    @media screen and (min-width: 480px) {
+      height: rem(580px);
+    }
+
+    @media screen and (min-width: 640px) {
+      height: auto;
+      padding-bottom: get-spacing('l');
+    }
 
     @include breakpoint(tablet) {
       height: rem(360px);
+      padding-bottom: 0;
     }
 
     @include breakpoint(951) {
@@ -42,14 +70,13 @@
     }
 
     @include breakpoint(desktop) {
-      height: rem(540px);
+      height: rem(556px);
     }
   }
 
   &__inner-wrapper {
     margin-left: auto;
     margin-right: auto;
-    padding-right: get-spacing('xl');
     padding-top: get-spacing('l');
     position: relative;
     text-align: center;
@@ -128,7 +155,7 @@
 
     flex-shrink: 0;
     font-size: 1.1em;
-    max-width: 300px;
+    max-width: 350px;
     text-align: left;
     text-transform: uppercase;
 
@@ -195,7 +222,7 @@
 
       &:nth-child(1),
       &:nth-child(5) {
-        left: 172px;
+        left: 164px;
       }
 
       &:nth-child(3),
@@ -212,9 +239,22 @@
         }
       }
 
+      &:nth-child(1),
+      &:nth-child(5) {
+        &::after {
+          left: 397px;
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        &:after {
+          left: -4px;
+        }
+      }
+
       &:nth-child(1) {
         &::after {
-          left: 388px;
           top: 113px;
           transform: rotate(-30deg);
         }
@@ -222,7 +262,6 @@
 
       &:nth-child(2) {
         &::after {
-          left: -4px;
           top: 113px;
           transform: rotate(30deg);
         }
@@ -237,14 +276,12 @@
 
       &:nth-child(4) {
         &::after {
-          left: -5px;
           transform: rotate(-30deg);
         }
       }
 
       &:nth-child(5) {
         &::after {
-          left: 388px;
           transform: rotate(30deg);
         }
       }
