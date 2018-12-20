@@ -5,6 +5,17 @@
 
   #{$base}__summary {
     @include line-height('s');
+    @include standard-vertical-spacing;
+  }
+
+  #{$base}__ctas-wrapper {
+    @include font-size('s');
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  #{$base}__cta {
   }
 }
 
