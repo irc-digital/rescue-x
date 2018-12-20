@@ -1,6 +1,10 @@
 <div class="rplc-quiz">
     {% for quiz_question in quiz_questions %}
-        <div class="rplc-quiz__question">
+        <div class="rplc-quiz__question-wrapper">
+            <h3 class="rplc-quiz__question">{{ quiz_question.question }}</h3>
+            <div class="rplc-quiz__slider-wrapper">
+            </div>
+            <div class="rplc-quiz__help-message">{{ "Drag icon to make your choice" | trans }}</div>
             <div class="rplc-quiz__unanswered-wrapper">
               {% include '@molecules/65-quiz-cards/05-unanswered/quiz-card-unanswered.twig' with {
                 quiz_card_unanswered_title: quiz_question.unanswered.title,
