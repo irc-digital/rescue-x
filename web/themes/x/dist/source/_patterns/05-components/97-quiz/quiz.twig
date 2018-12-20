@@ -17,9 +17,19 @@
                   quiz_card_unanswered_responsive_image_alt: quiz_question.unanswered.responsive_image_alt,
                 } only %}
               </div>
+              <div class="rplc-quiz__incorrect-wrapper">
+                {% include '@molecules/65-quiz-cards/10-incorrect/quiz-card-incorrect.twig' with {
+                  quiz_card_incorrect_title: quiz_question.incorrect.title,
+                  quiz_card_incorrect_description: quiz_question.incorrect.description,
+                  quiz_card_incorrect_link_url: quiz_question.incorrect.urL,
+                  quiz_card_incorrect_link_title: quiz_question.incorrect.title,
+                } only %}
+              </div>
             </div>
         </div>
       </div>
     </div>
   {% endfor %}
 </div>
+
+

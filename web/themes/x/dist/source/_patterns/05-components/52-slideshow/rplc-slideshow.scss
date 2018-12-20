@@ -3,7 +3,7 @@
 .rplc-slideshow {
   $self: &;
 
-  @include standard-vertical-spacing(true);
+  @include standard-vertical-padding;
 
   margin-left: auto;
   margin-right: auto;
