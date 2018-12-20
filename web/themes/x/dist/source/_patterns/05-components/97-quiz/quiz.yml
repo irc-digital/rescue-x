@@ -1,7 +1,7 @@
 quiz_questions:
   - question: "Faker.words(8,true)"
     unanswered:
-      title: "Faker.words(8,true)"
+      title: "Faker.words(6,true)"
       description: "Faker.words(16,true)"
       responsive_image_source_set:
         - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=92&h=92&random=quizunansweredcard1 92w"

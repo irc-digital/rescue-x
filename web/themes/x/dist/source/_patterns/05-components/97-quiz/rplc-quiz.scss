@@ -2,6 +2,8 @@
 
 .rplc-quiz {
 
+  @include standard-vertical-padding;
+
   &__question {
     @include font-size('3xl');
     @include letter-spacing('compact');
