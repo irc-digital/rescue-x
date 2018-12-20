@@ -3,13 +3,25 @@
 .rplm-email-signup {
   $self: &;
 
+  @include standard-vertical-spacing;
+
   &__title {
     @include typography-text-small;
     @include standard-vertical-spacing;
   }
 
   &__form-wrapper {
+    align-items: center;
     display: flex;
+    justify-content: flex-start;
+  }
+
+  &__email-input-wrapper {
+    margin-right: get-spacing('m');
+  }
+
+  &__submit-wrapper {
+    font-size: get-font-size('s');
   }
 }
 
