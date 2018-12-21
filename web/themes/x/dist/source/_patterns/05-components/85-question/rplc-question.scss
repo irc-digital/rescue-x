@@ -1,4 +1,5 @@
 @import 'rplc-question.variables';
+@import '_rplc-question.mixins';
 
 .rplc-question {
 
@@ -97,14 +98,14 @@
     }
   }
 
-  &.js-rplc-right-question-answer {
-    #{$self}__right-answer-message {
+  @include question-answer-was-correct {
+    &__right-answer-message {
       display: block;
     }
   }
 
-  &.js-rplc-wrong-question-answer {
-    #{$self}__wrong-answer-message {
+  @include question-answer-was-incorrect {
+    &__wrong-answer-message {
       display: block;
       padding-top: 0;
     }
@@ -158,14 +159,17 @@
       background-color: get-neutral-color('black');
     }
 
-    &.js-rplc-question-answer-given {
+    @include question-is-answer-given {
       background-color: get-brand-color('primary');
 
+      // sass-lint:disable-block mixins-before-declarations
       @include hover {
         background-color: get-brand-color('primary');
       }
     }
   }
+
+
 }
 
 // end of file

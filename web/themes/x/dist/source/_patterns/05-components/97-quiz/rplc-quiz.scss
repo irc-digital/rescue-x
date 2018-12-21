@@ -4,6 +4,7 @@
 .rplc-quiz {
 
   @include standard-vertical-padding;
+  background-color: $quiz-main-color;
   position: relative;
 
   &__cta-wrapper {
@@ -15,22 +16,22 @@
   }
 
   &__question {
-    background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="2e3 0 1001.3 201 0 0" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') center top no-repeat;
-    background-size: auto 240px;
+    background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="2e3 0 1001.3 201 0 0" fill="' + encode-color($quiz-background-color) + '"/%3E%3C/svg%3E%0A') center top no-repeat;
+    background-size: auto $quiz-card-height;
     margin-top: get-spacing('xl');
-    transition: all .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
   }
 
   &__question-outer-wrapper {
-    background: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="0 201 998.7 0 2e3 200" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') 50% 100% no-repeat;
-    background-size: auto 240px;
+    background: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="0 201 998.7 0 2e3 200" fill="' + encode-color($quiz-background-color) + '"/%3E%3C/svg%3E%0A') 50% 100% no-repeat;
+    background-size: auto $quiz-card-height;
   }
 
   &__question-inner-wrapper {
     background-color: get-neutral-color('white');
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: $quiz-card-width;
     position: relative;
     width: calc(100vw - 3rem);
   }
@@ -70,6 +71,7 @@
     position: absolute;
     text-align: center;
     transform: translateX(-50%);
+    user-select: none;
   }
 
   &__next-question-icon-wrapper {
@@ -107,7 +109,7 @@
 
   @include quiz-question-is-answered-correctly {
     &__question {
-      background-color: get-brand-color('primary-tint-1');
+      background-color: $quiz-accent-color;
     }
 
     &__correct-wrapper {
@@ -117,7 +119,7 @@
 
   @include quiz-question-is-answered-incorrectly {
     &__question {
-      background-color: get-neutral-color('black');
+      background-color: $quiz-incorrect-answer-color;
     }
 
     &__incorrect-wrapper {

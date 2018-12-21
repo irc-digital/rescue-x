@@ -1,8 +1,8 @@
-<div class="rplc-quiz" data-rpl-canvas-color='brand-primary'>
-
+{% set quiz_id = quiz_id ?: 'quiz' %}
+<div id={{ quiz_id }} class="rplc-quiz">
   {% for quiz_question in quiz_questions %}
     <div class="rplc-quiz__question-state-wrapper" data-rpl-quiz-question-state="{{ loop.first ? 'unanswered' : 'hidden' }}">
-      <div class="rplc-quiz__question">
+      <div id="{{ quiz_id }}-question-{{ loop.index }}" class="rplc-quiz__question">
         <div class="rplc-quiz__question-outer-wrapper">
           <div class="rplc-quiz__question-inner-wrapper">
             {% if loop.first %}
@@ -45,7 +45,7 @@
                     quiz_card_correct_description: quiz_question.correct.description,
                   } only %}
                   {% if not loop.last %}
-                    <a class="rplc-quiz__next-question-link" href="#">
+                    <a class="rplc-quiz__next-question-link" href="#{{ quiz_id }}-question-{{ (loop.index + 1) }}" data-rpl-slow-scroll>
                       <div class="rplc-quiz__next-question-text">{{ "Next question" | trans }}</div>
                       <div class="rplc-quiz__next-question-icon-wrapper">
                         {% include '@atoms/05-icon/icon.twig' with {

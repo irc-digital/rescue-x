@@ -39,6 +39,49 @@ press_release_page_content:
         with:
           paragraph_modifiers:
             - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "layouts-aside-2"
+        with:
+          aside_2_content:
+            include():
+              pattern: "components-pull-quote"
+          aside_2_modifiers:
+            - 'position-right'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
+    - include():
+        pattern: "atoms-paragraph"
+        with:
+          paragraph_modifiers:
+            - 'body'
 press_release_page_content_footer:
   join():
     - include():

@@ -1,0 +1,24 @@
+@import '../../../scss/core';
+
+@mixin question-is-answer-given {
+  &[data-rpl-question-answer-given] {
+    @content ;
+  }
+}
+
+@mixin question-answer-was-correct {
+  @at-root {
+    [data-rpl-question-answer-was='correct'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin question-answer-was-incorrect {
+  @at-root {
+    [data-rpl-question-answer-was='incorrect'] & {
+      @content ;
+    }
+  }
+}
+// end of file

@@ -1,6 +1,7 @@
 @import '../../../scss/core';
+@import '../../03-molecules/65-quiz-cards/quiz-cards.variables';
 
-$quiz-background-color: get-brand-color();
+$quiz-background-color: $quiz-main-color;
 $quiz-next-question-icon-size: rem(25px);
 
 // end of file
