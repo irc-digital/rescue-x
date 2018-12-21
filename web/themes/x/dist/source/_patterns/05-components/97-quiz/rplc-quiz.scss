@@ -4,9 +4,19 @@
 .rplc-quiz {
   $self: &;
 
-  @include standard-vertical-padding;
   background-color: $quiz-main-color;
+  padding-bottom: get-spacing('ml');
+  padding-top: get-spacing('ml');
   position: relative;
+
+  @include breakpoint(phablet) {
+    padding-bottom: get-spacing('xl');
+    padding-top: get-spacing('xl');
+  }
+
+  @include breakpoint(tablet) {
+    padding-top: get-spacing('2xl');
+  }
 
   &__cta-wrapper {
     display: none;
@@ -25,6 +35,10 @@
     background-size: auto $quiz-card-height;
     margin-top: get-spacing('xl');
     transition: background-color .4s ease-in-out;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   &__question-outer-wrapper {
@@ -49,8 +63,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: rem(800px);
-    padding-bottom: get-spacing('ml');
-    padding-top: get-spacing('ml');
+    padding: get-spacing('ml') get-spacing('m');
     text-align: center;
   }
 
