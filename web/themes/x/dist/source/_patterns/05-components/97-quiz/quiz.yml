@@ -16,9 +16,11 @@ quiz_questions:
     correct:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'Yes'
     incorrect:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'No'
       urL: '#'
       title: "Faker.words(6,true)"
   - question: "Faker.words(8,true)"
@@ -36,9 +38,11 @@ quiz_questions:
     correct:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'Yes'
     incorrect:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'No'
       urL: '#'
       title: "Faker.words(6,true)"
   - question: "Faker.words(8,true)"
@@ -56,8 +60,10 @@ quiz_questions:
     correct:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'Yes'
     incorrect:
       title: "Faker.words(5,true)"
       description: "Faker.words(16,true)"
+      label: 'No'
       urL: '#'
       title: "Faker.words(6,true)"
