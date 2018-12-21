@@ -44,15 +44,20 @@
                   quiz_card_correct_description: quiz_question.correct.description,
                 } only %}
                 {% if not loop.last %}
-                  <a class="rplc-quiz__next-question-link" href="#{{ quiz_id }}-question-{{ (loop.index + 1) }}" data-rpl-slow-scroll>
-                    <div class="rplc-quiz__next-question-text">{{ "Next question" | trans }}</div>
-                    <div class="rplc-quiz__next-question-icon-wrapper">
-                      {% include '@atoms/05-icon/icon.twig' with {
-                        icon_name: 'caret-down',
-                      } only %}
-                    </div>
-                  </a>
+                  {% set url = '#' ~ quiz_id ~ '-question-' ~ (loop.index + 1) %}
+                  {% set link_title = ("Next question" | trans) %}
+                {% else %}
+                  {% set url = quiz_call_to_action_button_url %}
+                  {% set link_title = quiz_call_to_action_button_text %}
                 {% endif %}
+                <a class="rplc-quiz__next-question-link" href="{{ url }}" data-rpl-slow-scroll>
+                  <div class="rplc-quiz__next-question-text">{{ link_title }}</div>
+                  <div class="rplc-quiz__next-question-icon-wrapper">
+                    {% include '@atoms/05-icon/icon.twig' with {
+                      icon_name: 'caret-down',
+                    } only %}
+                  </div>
+                </a>
               </div>
             </div>
         </div>
