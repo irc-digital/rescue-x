@@ -84,6 +84,7 @@
     padding-top: get-spacing('l');
     text-align: center;
     text-transform: uppercase;
+    user-select: none;
   }
 
   &__next-question-link {

@@ -1,6 +1,8 @@
 @import 'rplm-range.variables';
 
 .rplm-range {
+  $self: &;
+
   align-items: center;
   display: flex;
 
@@ -14,6 +16,7 @@
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
+    user-select: none;
 
     // sass-lint:disable-block mixins-before-declarations
     @include hover {
@@ -39,6 +42,18 @@
   &__right-icon-wrapper {
     height: $range-caret-size;
     width: $range-caret-size;
+  }
+
+  &[data-rpl-range-state='left'] {
+    #{$self}__left-wrapper {
+      color: get-neutral-color('black');
+    }
+  }
+
+  &[data-rpl-range-state='right'] {
+    #{$self}__right-wrapper {
+      color: get-neutral-color('black');
+    }
   }
 }
 
