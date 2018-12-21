@@ -4,14 +4,23 @@
 .rplc-quiz {
 
   @include standard-vertical-padding;
+  position: relative;
+
+  &__cta-wrapper {
+    display: inline-block;
+    height: rem(59px);
+    position: absolute;
+    right: 24px;
+    top: -47px;
+  }
 
   &__question {
-    background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="2e3 0 1001.3 200 0 0" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') center top no-repeat;
+    background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="2e3 0 1001.3 201 0 0" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') center top no-repeat;
     background-size: auto 240px;
   }
 
   &__question-outer-wrapper {
-    background: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="0 200 998.7 0 2e3 200" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') 50% 100% no-repeat;
+    background: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="0 201 998.7 0 2e3 200" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') 50% 100% no-repeat;
     background-size: auto 240px;
   }
 
@@ -20,6 +29,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
+    position: relative;
     width: calc(100vw - 3rem);
   }
 
@@ -55,6 +65,12 @@
     display: none;
   }
 
+  @include quiz-question-is-hidden {
+    &__question {
+      display: none;
+    }
+  }
+
   @include quiz-question-is-unanswered {
     &__unanswered-wrapper {
       display: block;
@@ -62,6 +78,10 @@
   }
 
   @include quiz-question-is-answered-correctly {
+    &__question {
+      background-color: get-brand-color('primary-tint-1');
+    }
+
     &__correct-wrapper {
       display: block;
     }

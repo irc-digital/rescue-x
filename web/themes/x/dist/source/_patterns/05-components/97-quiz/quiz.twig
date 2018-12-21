@@ -1,10 +1,20 @@
 <div class="rplc-quiz" data-rpl-canvas-color='brand-primary'>
+
   {% for quiz_question in quiz_questions %}
-    <div class="rplc-quiz__question-state-wrapper" data-rpl-quiz-question-state="unanswered">
+    <div class="rplc-quiz__question-state-wrapper" data-rpl-quiz-question-state="{{ loop.first ? 'unanswered' : 'hidden' }}">
       <div class="rplc-quiz__question">
         <div class="rplc-quiz__question-outer-wrapper">
           <div class="rplc-quiz__question-inner-wrapper">
-              <h3 class="rplc-quiz__question-text">{{ quiz_question.question }}</h3>
+            {% if loop.first %}
+              <div class="rplc-quiz__cta-wrapper" data-rpl-rotate='10'>
+                {% include '@atoms/30-button/button.twig' with {
+                  button_url: quiz_call_to_action_button_url,
+                  button_text: quiz_call_to_action_button_text,
+                  button_modifiers: ['display-block', 'type-two'],
+                } only %}
+              </div>
+            {% endif %}
+            <h3 class="rplc-quiz__question-text">{{ quiz_question.question }}</h3>
               <div class="rplc-quiz__slider-wrapper">
                 <input type="radio" name="quiz" value="incorrect">Incorrect<br>
                 <input type="radio" name="quiz" value="unanswered" checked>Unanswered<br>
@@ -27,6 +37,12 @@
                     quiz_card_incorrect_description: quiz_question.incorrect.description,
                     quiz_card_incorrect_link_url: quiz_question.incorrect.urL,
                     quiz_card_incorrect_link_title: quiz_question.incorrect.title,
+                  } only %}
+                </div>
+                <div class="rplc-quiz__correct-wrapper">
+                  {% include '@molecules/65-quiz-cards/15-correct/quiz-card-correct.twig' with {
+                    quiz_card_correct_title: quiz_question.correct.title,
+                    quiz_card_correct_description: quiz_question.correct.description,
                   } only %}
                 </div>
               </div>

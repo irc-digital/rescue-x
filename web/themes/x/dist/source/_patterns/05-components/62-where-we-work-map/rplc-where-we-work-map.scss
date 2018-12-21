@@ -70,6 +70,7 @@
   }
 
   &__tooltip {
+    @include z-index('up');
     background-color: map-get($where-we-work-tooltip-background, 'default');
     display: none;
     left: 17px;

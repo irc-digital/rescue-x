@@ -5,6 +5,7 @@
   @include quiz-card-common;
 
   background-color: $quiz-card-background-color;
+  padding-top: get-spacing('l');
 
   &__content {
     text-align: center;

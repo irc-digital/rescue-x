@@ -22,4 +22,12 @@
   }
 }
 
+@mixin quiz-question-is-hidden {
+  @at-root {
+    [data-rpl-quiz-question-state='hidden'] & {
+      @content ;
+    }
+  }
+}
+
 // end of file
