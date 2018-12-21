@@ -17,6 +17,11 @@
   &__question {
     background: get-neutral-color('light-gray') url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 2000 200" version="1.1" viewBox="0 0 2000 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpolygon points="2e3 0 1001.3 201 0 0" fill="' + $quiz-background-color + '"/%3E%3C/svg%3E%0A') center top no-repeat;
     background-size: auto 240px;
+    margin-top: get-spacing('xl');
+
+    &:first-child {
+      //margin-top: 0;
+    }
   }
 
   &__question-outer-wrapper {
@@ -59,10 +64,36 @@
     text-transform: uppercase;
   }
 
+  &__next-question-link {
+    align-items: center;
+    bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    left: 49%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  &__next-question-icon-wrapper {
+    display: inline-block;
+    height: $quiz-next-question-icon-size;
+    width: $quiz-next-question-icon-size;
+  }
+
+  &__next-question-text {
+    @include font-size('xs');
+    text-transform: uppercase;
+  }
+
   &__correct-wrapper,
   &__incorrect-wrapper,
   &__unanswered-wrapper {
     display: none;
+  }
+
+  &__correct-wrapper {
+    position: relative;
   }
 
   @include quiz-question-is-hidden {
