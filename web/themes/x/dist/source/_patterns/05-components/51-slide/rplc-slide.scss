@@ -3,16 +3,11 @@
 .rplc-slide {
   $self: &;
 
-  &__count-wrapper {
-    font-size: get-font-size('s');
-  }
-
-  &__count-active {
-    font-weight: get-font-weight('bold');
-  }
-
   &__caption-wrapper {
-    margin-bottom: get-spacing('l');
+    @include breakpoint(tablet) {
+      margin-bottom: get-spacing('l');
+    }
+    margin-bottom: get-spacing('m');
   }
 }
 
