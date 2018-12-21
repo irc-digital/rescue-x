@@ -34,11 +34,13 @@
         </div>
       </div>
     </div>
-    <div class="rplc-testimonial__footer-wrapper">
-      {% include '@molecules/40-authority/authority.twig' with {
-        authority_message: testimonial_authority_message,
-      } only %}
-    </div>
+    {% if testimonial_authority_message is not empty %}
+      <div class="rplc-testimonial__footer-wrapper">
+        {% include '@molecules/40-authority/authority.twig' with {
+          authority_message: testimonial_authority_message,
+        } only %}
+      </div>
+    {{ endif }}
   </div>
 </div>
 
