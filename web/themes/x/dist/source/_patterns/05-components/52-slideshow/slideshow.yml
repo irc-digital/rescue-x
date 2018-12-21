@@ -4,8 +4,6 @@ slideshow_items:
   - include():
       pattern: "components-slide"
       with:
-        slide_count_active: 1
-        slide_count_total: 4
         slide_image_source_set:
           - "https://placem.at/places?w=640&h=443&random=slideshowslide1 640w"
           - "https://placem.at/places?w=1280&h=886&random=slideshowslide1 1280w"
@@ -15,8 +13,6 @@ slideshow_items:
   - include():
       pattern: "components-slide"
       with:
-        slide_count_active: 2
-        slide_count_total: 4
         slide_image_source_set:
           - "https://placem.at/places?w=640&h=443&random=slideshowslide2 640w"
           - "https://placem.at/places?w=1280&h=886&random=slideshowslide2 1280w"
@@ -26,8 +22,6 @@ slideshow_items:
   - include():
       pattern: "components-slide"
       with:
-        slide_count_active: 3
-        slide_count_total: 4
         slide_image_source_set:
           - "https://placem.at/places?w=640&h=443&random=slideshowslide3 640w"
           - "https://placem.at/places?w=1280&h=886&random=slideshowslide3 1280w"
@@ -37,8 +31,6 @@ slideshow_items:
   - include():
       pattern: "components-slide"
       with:
-        slide_count_active: 4
-        slide_count_total: 4
         slide_image_source_set:
           - "https://placem.at/places?w=640&h=443&random=slideshowslide4 640w"
           - "https://placem.at/places?w=1280&h=886&random=slideshowslide4 1280w"

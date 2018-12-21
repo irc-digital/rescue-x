@@ -10,6 +10,14 @@
     justify-content: center;
   }
 
+  &__count-wrapper {
+    font-size: get-font-size('s');
+  }
+
+  &__count-active {
+    font-weight: get-font-weight('bold');
+  }
+
   //
   // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
   //
@@ -24,7 +32,8 @@
   //
   // 1) Overrides core Slick.
   //
-  &__slide {
+  &__slide,
+  &__counter {
     // sass-lint:disable-block no-important
     display: block !important; // 1
     margin: 0 auto;
