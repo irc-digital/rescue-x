@@ -1,0 +1,25 @@
+@mixin quiz-question-is-unanswered {
+  @at-root {
+    [data-rpl-quiz-question-state='unanswered'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin quiz-question-is-answered-correctly {
+  @at-root {
+    [data-rpl-quiz-question-state='correct'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin quiz-question-is-answered-incorrectly {
+  @at-root {
+    [data-rpl-quiz-question-state='incorrect'] & {
+      @content ;
+    }
+  }
+}
+
+// end of file

@@ -1,31 +1,36 @@
 <div class="rplc-quiz" data-rpl-canvas-color='brand-primary'>
   {% for quiz_question in quiz_questions %}
-    <div class="rplc-quiz__question">
-      <div class="rplc-quiz__question-outer-wrapper">
-        <div class="rplc-quiz__question-inner-wrapper">
-            <h3 class="rplc-quiz__question-text">{{ quiz_question.question }}</h3>
-            <div class="rplc-quiz__slider-wrapper">
-            </div>
-            <div class="rplc-quiz__help-message">{{ "Drag icon to make your choice" | trans }}</div>
-            <div class="rplc-quiz__answer-state-wrapper">
-              <div class="rplc-quiz__unanswered-wrapper">
-                {% include '@molecules/65-quiz-cards/05-unanswered/quiz-card-unanswered.twig' with {
-                  quiz_card_unanswered_title: quiz_question.unanswered.title,
-                  quiz_card_unanswered_description: quiz_question.unanswered.description,
-                  quiz_card_unanswered_responsive_image_source_set: quiz_question.unanswered.responsive_image_source_set,
-                  quiz_card_unanswered_responsive_image_fallback: quiz_question.unanswered.responsive_image_fallback,
-                  quiz_card_unanswered_responsive_image_alt: quiz_question.unanswered.responsive_image_alt,
-                } only %}
+    <div class="rplc-quiz__question-state-wrapper" data-rpl-quiz-question-state="unanswered">
+      <div class="rplc-quiz__question">
+        <div class="rplc-quiz__question-outer-wrapper">
+          <div class="rplc-quiz__question-inner-wrapper">
+              <h3 class="rplc-quiz__question-text">{{ quiz_question.question }}</h3>
+              <div class="rplc-quiz__slider-wrapper">
+                <input type="radio" name="quiz" value="incorrect">Incorrect<br>
+                <input type="radio" name="quiz" value="unanswered" checked>Unanswered<br>
+                <input type="radio" name="quiz" value="correct">Correct<br>
               </div>
-              <div class="rplc-quiz__incorrect-wrapper">
-                {% include '@molecules/65-quiz-cards/10-incorrect/quiz-card-incorrect.twig' with {
-                  quiz_card_incorrect_title: quiz_question.incorrect.title,
-                  quiz_card_incorrect_description: quiz_question.incorrect.description,
-                  quiz_card_incorrect_link_url: quiz_question.incorrect.urL,
-                  quiz_card_incorrect_link_title: quiz_question.incorrect.title,
-                } only %}
+              <div class="rplc-quiz__help-message">{{ "Drag icon to make your choice" | trans }}</div>
+              <div class="rplc-quiz__answer-state-wrapper">
+                <div class="rplc-quiz__unanswered-wrapper">
+                  {% include '@molecules/65-quiz-cards/05-unanswered/quiz-card-unanswered.twig' with {
+                    quiz_card_unanswered_title: quiz_question.unanswered.title,
+                    quiz_card_unanswered_description: quiz_question.unanswered.description,
+                    quiz_card_unanswered_responsive_image_source_set: quiz_question.unanswered.responsive_image_source_set,
+                    quiz_card_unanswered_responsive_image_fallback: quiz_question.unanswered.responsive_image_fallback,
+                    quiz_card_unanswered_responsive_image_alt: quiz_question.unanswered.responsive_image_alt,
+                  } only %}
+                </div>
+                <div class="rplc-quiz__incorrect-wrapper">
+                  {% include '@molecules/65-quiz-cards/10-incorrect/quiz-card-incorrect.twig' with {
+                    quiz_card_incorrect_title: quiz_question.incorrect.title,
+                    quiz_card_incorrect_description: quiz_question.incorrect.description,
+                    quiz_card_incorrect_link_url: quiz_question.incorrect.urL,
+                    quiz_card_incorrect_link_title: quiz_question.incorrect.title,
+                  } only %}
+                </div>
               </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>

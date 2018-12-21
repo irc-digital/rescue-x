@@ -1,4 +1,5 @@
 @import 'rplc-quiz.variables';
+@import 'rplc-quiz.mixins';
 
 .rplc-quiz {
 
@@ -46,6 +47,34 @@
     padding-top: get-spacing('l');
     text-align: center;
     text-transform: uppercase;
+  }
+
+  &__correct-wrapper,
+  &__incorrect-wrapper,
+  &__unanswered-wrapper {
+    display: none;
+  }
+
+  @include quiz-question-is-unanswered {
+    &__unanswered-wrapper {
+      display: block;
+    }
+  }
+
+  @include quiz-question-is-answered-correctly {
+    &__correct-wrapper {
+      display: block;
+    }
+  }
+
+  @include quiz-question-is-answered-incorrectly {
+    &__question {
+      background-color: get-neutral-color('black');
+    }
+
+    &__incorrect-wrapper {
+      display: block;
+    }
   }
 }
 
