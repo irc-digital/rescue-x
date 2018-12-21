@@ -491,9 +491,9 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
-@mixin when-page-has-image-in-hero {
+@mixin when-page-hero-is-flush-with-top {
   @at-root {
-    [data-rpl-hero-has-image='yes'] & {
+    [data-rpl-hero-flush-with-top='yes'] & {
       @content ;
     }
   }

@@ -30,7 +30,7 @@
     }
 
     // sass-lint:disable-block mixins-before-declarations
-    @include when-page-has-image-in-hero {
+    @include when-page-hero-is-flush-with-top {
       padding-top: 0;
     }
   }

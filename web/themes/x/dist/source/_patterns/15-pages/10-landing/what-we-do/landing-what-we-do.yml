@@ -1,22 +1,40 @@
-landing_page_2_navigation:
+landing_page_what_we_do_navigation:
   include():
     pattern: "components-global-navigation"
-    with:
-      global_navigation_modifiers:
-        - 'no-desktop-navigation'
-landing_page_2_hero_has_image: true
-landing_page_2_hero:
+landing_page_what_we_do_hero_flush_with_top: true
+landing_page_what_we_do_hero:
   include():
-    pattern: "components-hero-b-roll-1"
-landing_page_2_content:
+    pattern: "components-hero-standard"
+    with:
+      hero_standard_art_directed_image_sources:
+        - source_set:
+          - "https://placem.at/places?w=640&h=640&random=landingpage4 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=landingpage4 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=landingpage4 3x"
+          media: "only screen and (max-width: 40em)"
+        - source_set:
+          - "https://placem.at/places?w=1029&h=441&random=landingpage4 1x"
+          - "https://placem.at/places?w=2058&h=882&random=landingpage4 2x"
+          media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+        - source_set:
+          - "https://placem.at/places?w=1925&h=825&random=landingpage4 1x"
+          - "https://placem.at/places?w=3850&h=1650&random=landingpage4 2x"
+          media: "only screen and (min-width: 64.063em)"
+      hero_standard_headline: "What we do"
+      hero_standard_slug: 'International Rescue Committee'
+landing_page_what_we_do_content:
   join():
     - include():
         pattern: "components-image-link-boxes-1"
     - include():
-        pattern: "components-testimonial"
+        pattern: "components-infographic-wheel"
     - include():
-        pattern: "components-call-to-action-4"
-landing_page_2_footer:
+        pattern: "components-quote"
+landing_page_what_we_do_content_footer:
+  join():
+    - include():
+        pattern: "components-top-stories"
+landing_page_what_we_do_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"

@@ -6,7 +6,7 @@ press_release_page_header:
 press_release_page_navigation:
   include():
     pattern: "components-global-navigation"
-press_release_page_hero_has_image: true
+press_release_page_hero_flush_with_top: true
 press_release_page_hero:
   include():
     pattern: "components-hero-basic"

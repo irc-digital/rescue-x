@@ -1,8 +1,8 @@
-landing_page_1_navigation:
+landing_page_home_navigation:
   include():
     pattern: "components-global-navigation"
-landing_page_1_hero_has_image: true
-landing_page_1_hero:
+landing_page_home_hero_flush_with_top: true
+landing_page_home_hero:
   include():
     pattern: "components-hero-standard"
     with:
@@ -20,7 +20,7 @@ landing_page_1_hero:
           - "https://placem.at/places?w=1925&h=825&random=landingpage1 1x"
           - "https://placem.at/places?w=3850&h=1650&random=landingpage1 2x"
           media: "only screen and (min-width: 64.063em)"
-landing_page_1_content:
+landing_page_home_content:
   join():
     - include():
         pattern: "components-infographic-standard"
@@ -55,7 +55,7 @@ landing_page_1_content:
         pattern: "components-question"
     - include():
         pattern: "components-call-to-action-2"
-landing_page_1_footer:
+landing_page_home_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"

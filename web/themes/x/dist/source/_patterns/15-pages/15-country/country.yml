@@ -1,7 +1,7 @@
 country_page_navigation:
   include():
     pattern: "components-global-navigation"
-country_page_hero_has_image: true
+country_page_hero_flush_with_top: true
 country_page_hero:
   include():
     pattern: "components-hero-landing-page-1"

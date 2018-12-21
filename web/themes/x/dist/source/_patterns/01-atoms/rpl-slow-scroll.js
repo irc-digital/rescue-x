@@ -4,7 +4,7 @@
       $("[data-rpl-slow-scroll]").click(function(e) {
         e.preventDefault();
         var target = this.hash;
-        $('html,body').animate({scrollTop: $(target).offset().top - 32}, 'slow');
+        $('html,body').animate({scrollTop: $(target).offset().top - 16}, 'slow');
       });
     }
   };

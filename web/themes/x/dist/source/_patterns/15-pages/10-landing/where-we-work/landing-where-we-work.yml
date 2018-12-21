@@ -1,8 +1,8 @@
-landing_page_3_navigation:
+landing_page_where_we_work_navigation:
   include():
     pattern: "components-global-navigation"
-landing_page_3_hero_has_image: false
-landing_page_3_hero:
+landing_page_where_we_work_hero_flush_with_top: false
+landing_page_where_we_work_hero:
   include():
     pattern: "components-hero-basic"
     with:
@@ -13,7 +13,7 @@ landing_page_3_hero:
       hero_basic_social_share: null
       hero_basic_modifiers:
         - 'transparent'
-landing_page_3_content:
+landing_page_where_we_work_content:
   join():
     - include():
         pattern: "components-where-we-work-map"
@@ -59,11 +59,11 @@ landing_page_3_content:
         pattern: "components-video"
     - include():
         pattern: "components-quote"
-landing_page_3_content_footer:
+landing_page_where_we_work_content_footer:
   join():
     - include():
         pattern: "components-top-stories"
-landing_page_3_footer:
+landing_page_where_we_work_footer:
   join():
     - include():
         pattern: "layouts-footer-layout-1"
