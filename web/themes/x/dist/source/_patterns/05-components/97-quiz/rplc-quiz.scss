@@ -69,12 +69,12 @@
 
   &__slider-wrapper {
     display: flex;
-    height: rem(160px);
     flex-direction: column;
+    height: rem(160px);
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: rem(733px)
+    width: rem(733px);
   }
 
   &__help-message {
