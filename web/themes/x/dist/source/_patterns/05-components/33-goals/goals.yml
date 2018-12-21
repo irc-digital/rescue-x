@@ -1,8 +1,7 @@
 goals_section_heading_title: "Goals"
 goals_section_heading_description: "Faker.sentences(6,true)"
 goals_items:
-  - title: "1"
-    slide:
+  - slide:
       include():
         pattern: "components-goal"
         with:
@@ -17,8 +16,7 @@ goals_items:
               media: "only screen and (min-width: 1024px)"
             - source_set:
               - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-  - title: "2"
-    slide:
+  - slide:
       include():
         pattern: "components-goal"
         with:
@@ -33,8 +31,7 @@ goals_items:
               media: "only screen and (min-width: 1024px)"
             - source_set:
               - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-  - title: "3"
-    slide:
+  - slide:
       include():
         pattern: "components-goal"
         with:
