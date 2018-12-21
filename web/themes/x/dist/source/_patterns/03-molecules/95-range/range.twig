@@ -1,4 +1,4 @@
-<div class="rplm-range">
+<div class="rplm-range" data-rpl-range>
   <div class="rplm-range__left-wrapper">
     <div class="rplm-range__left-text" data-rpl-range-key="{{ range_left_key }}">{{ range_left_label }}</div>
     <div class="rplm-range__left-icon-wrapper">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="rplm-range__slider-wrapper">
-    <input class="rplm-range__slider" type="range" min="-500" max="500" value="0" data-rpl-range-slider>
+    <input class="rplm-range__slider" type="range" min="-500" max="500" value="0" data-rpl-range-slider data-rpl-range-left-key="{{ range_left_key }}" data-rpl-range-center-key="{{ range_center_key }}" data-rpl-range-right-key="{{ range_right_key }}">
   </div>
   <div class="rplm-range__right-wrapper">
     <div class="rplm-range__right-icon-wrapper">

@@ -17,10 +17,10 @@
             <div class="rplc-quiz__slider-wrapper">
               {% include '@molecules/95-range/range.twig' with {
                 range_left_key: 'incorrect',
-                range_left_label: quiz_question.correct.label,
+                range_left_label: quiz_question.incorrect.label,
                 range_center_key: 'unanswered',
                 range_right_key: 'correct',
-                range_right_label: quiz_question.incorrect.label,
+                range_right_label: quiz_question.correct.label,
               } only %}
             </div>
             <div class="rplc-quiz__help-message">{{ "Drag icon to make your choice" | trans }}</div>

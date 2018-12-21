@@ -9,17 +9,21 @@
         var max_value = parseInt(this.max);
         var midway = (max_value - min_value) / 4;
 
+        var range_key = null;
+
         if (value < (min_value + midway)) {
           this.value = min_value;
-          //showAnswer($(this), 'incorrect');
+          range_key = this.getAttribute('data-rpl-range-left-key');
         } else if (value > (max_value - midway)) {
           this.value = max_value;
-          // showAnswer($(this), 'correct');
-          // showNextCard($(this));
+          range_key = this.getAttribute('data-rpl-range-right-key');
         } else {
+          range_key = this.getAttribute('data-rpl-range-center-key');
           this.value = 0;
-          //showAnswer($(this), 'unanswered');
         }
+
+        var event = new CustomEvent('rpl-range', { detail: range_key });
+        $(this).parents('[data-rpl-range]')[0].dispatchEvent(event);
       });
     }
   };
