@@ -2,17 +2,22 @@
 @import 'rplc-quiz.mixins';
 
 .rplc-quiz {
+  $self: &;
 
   @include standard-vertical-padding;
   background-color: $quiz-main-color;
   position: relative;
 
   &__cta-wrapper {
-    display: inline-block;
-    height: rem(59px);
-    position: absolute;
-    right: 24px;
-    top: -47px;
+    display: none;
+
+    @include breakpoint(tablet) {
+      display: inline-block;
+      height: rem(59px);
+      position: absolute;
+      right: 24px;
+      top: -47px;
+    }
   }
 
   &__question {
@@ -96,33 +101,33 @@
   }
 
   @include quiz-question-is-hidden {
-    &__question {
+    &#{$self}__question {
       display: none;
     }
   }
 
   @include quiz-question-is-unanswered {
-    &__unanswered-wrapper {
+    #{$self}__unanswered-wrapper {
       display: block;
     }
   }
 
   @include quiz-question-is-answered-correctly {
-    &__question {
+    &#{$self}__question {
       background-color: $quiz-accent-color;
     }
 
-    &__correct-wrapper {
+    #{$self}__correct-wrapper {
       display: block;
     }
   }
 
   @include quiz-question-is-answered-incorrectly {
-    &__question {
+    &#{$self}__question {
       background-color: $quiz-incorrect-answer-color;
     }
 
-    &__incorrect-wrapper {
+    #{$self}__incorrect-wrapper {
       display: block;
     }
   }

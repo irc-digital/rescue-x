@@ -1,4 +1,10 @@
 @import '../../../../scss/core';
 
+$hero-text-only-top-padding: (
+  'small': get-spacing(),
+  'large': rem(20px),
+);
+$hero-text-only-indent: rem(190px);
+
 // end of file
 

@@ -7,6 +7,17 @@
 
   &__content {
     @include well-row;
+    padding-top: map-get($hero-text-only-top-padding, 'small');
+
+    @media #{$global-navigation-large-device-media-query} {
+      left: $hero-text-only-indent;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: $well-width-inner - $hero-text-only-indent - get-spacing('2xl');
+      padding-top: map-get($hero-text-only-top-padding, 'large');
+      position: relative;
+      width: auto;
+    }
   }
 }
 

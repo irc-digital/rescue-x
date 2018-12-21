@@ -1,32 +1,30 @@
+@mixin _quiz-question-is($state) {
+  & [data-rpl-quiz-question-state='#{$state}'] {
+    @content ;
+  }
+}
+
 @mixin quiz-question-is-unanswered {
-  @at-root {
-    [data-rpl-quiz-question-state='unanswered'] & {
-      @content ;
-    }
+  @include _quiz-question-is('unanswered') {
+    @content ;
   }
 }
 
 @mixin quiz-question-is-answered-correctly {
-  @at-root {
-    [data-rpl-quiz-question-state='correct'] & {
-      @content ;
-    }
+  @include _quiz-question-is('correct') {
+    @content ;
   }
 }
 
 @mixin quiz-question-is-answered-incorrectly {
-  @at-root {
-    [data-rpl-quiz-question-state='incorrect'] & {
-      @content ;
-    }
+  @include  _quiz-question-is('incorrect') {
+    @content ;
   }
 }
 
 @mixin quiz-question-is-hidden {
-  @at-root {
-    [data-rpl-quiz-question-state='hidden'] & {
-      @content ;
-    }
+  @include _quiz-question-is('hidden') {
+    @content ;
   }
 }
 
