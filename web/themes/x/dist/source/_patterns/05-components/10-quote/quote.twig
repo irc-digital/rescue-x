@@ -1,4 +1,21 @@
-<div{% if quote_id %} id="{{ quote_id }}"{% endif %} class="rplc-quote{% for quote_modifier in quote_modifiers %} rplc-quote--{{ quote_modifier }}{% endfor %}">
+{#
+/**
+ * Available variables:
+ * - quote_id - Unique identifier.
+ * - quote_section_heading_title - Title text above the quote.
+ * - quote_section_heading_icon - Optional icon displayed in front of the title.
+ * - quote_section_heading_description - Short description of quote.
+ * - quote_responsive_image_source_set - Images for quote, displayed to the left of the text.
+ * - quote_responsive_image_fallback - Fallback image.
+ * - quote_responsive_image_alt - Alt text for image.
+ * - quote_text - Text of the quote. Should have a closing quotation mark.
+ * - quote_attribution - The name of the person to whom the quote is attributed.
+ * - quote_role - Role of the person. Could be a job title or similar description.
+ * - quote_url - URL for CTA link.
+ * - quote_cta - Text for CTA link.
+ */
+#}
+<div{% if quote_id %} id="{{ quote_id }}"{% endif %} class="rplc-quote">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: quote_section_heading_title,
     section_heading_description: quote_section_heading_description,
