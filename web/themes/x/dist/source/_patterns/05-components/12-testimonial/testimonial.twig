@@ -1,3 +1,20 @@
+{#
+/**
+ * Available variables:
+ * - testimonial_section_heading_title - Title text above the testimonial.
+ * - testimonial_section_heading_icon - Optional icon displayed in front of the title.
+ * - testimonialsection_heading_description - Short description of testimonial.
+ * - testimonial_id - Unique identifier.
+ * - testimonial_title - Large header text inside the testimonial block.
+ * - testimonial_person_name - Name of the person giving the testimonial.
+ * - testimonial_person_description - Brief description of the person.
+ * - testimonial_responsive_image_source_set - Images for person's headshot. Displayed as a circle.
+ * - testimonial_responsive_image_alt - Alt text for headshot.
+ * - testimonial_url - URL for CTA button.
+ * - testimonial_cta - Text for CTA button.
+ * - testimonial_authority_message - Optional authority message, which will be displayed with icons. If not provided, footer will not render at all.
+ */
+#}
 <div{% if testimonial_id %} id="{{ testimonial_id }}"{% endif %} class="rplc-testimonial{% for testimonial_modifier in testimonial_modifiers %} rplc-testimonial--{{ testimonial_modifier }}{% endfor %}">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: testimonial_section_heading_title,
@@ -18,8 +35,8 @@
           <blockquote class="rplc-testimonial__quote">
             <p class="rplc-testimonial__quote-text">{{ testimonial_quote_text }}</p>
             {% include '@molecules/05-person-info/05-person-info-1/person-info-1.twig' with {
-              person_info_1_name: testimonial_name,
-              person_info_1_title: testimonial_title,
+              person_info_1_name: testimonial_person_name,
+              person_info_1_title: testimonial_person_description,
               person_info_1_responsive_image_source_set: testimonial_responsive_image_source_set,
               person_info_1_responsive_image_alt: testimonial_responsive_image_alt,
             } only %}
