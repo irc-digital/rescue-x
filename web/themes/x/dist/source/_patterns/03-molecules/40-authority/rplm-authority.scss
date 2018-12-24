@@ -16,7 +16,7 @@
   }
 
   &__message {
-    @include typography-text-small;
+    @include typography-text-standard;
     @include breakpoint(phablet) {
       margin-bottom: 0;
       width: 60%;
