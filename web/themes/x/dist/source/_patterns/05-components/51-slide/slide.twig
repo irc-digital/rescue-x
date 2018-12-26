@@ -1,3 +1,13 @@
+{#
+/**
+ * Available variables:
+ * - slide_image_source_set - Image sources for slide.
+ * - slide_image_fallback - Fallback image.
+ * - slide_image_alt - Alt text for image.
+ * - slide_caption_text - Text of the caption below the image.
+ * - slide_caption_credit - Attribution for slide, typically a full name and / or organization.
+ */
+#}
 <div class="rplc-slide">
   <div class="rplc-slide__image-wrapper">
     {% include '@atoms/52-responsive-image/responsive-image.twig' with {
@@ -11,7 +21,7 @@
     {% include '@molecules/03-caption/caption.twig' with {
       caption_text: slide_caption_text,
       caption_credit: slide_caption_credit,
-      caption_modifiers: slide_caption_modifiers,
+      caption_modifiers: ['style-low-key'],
     } only %}
   </div>
 </div>

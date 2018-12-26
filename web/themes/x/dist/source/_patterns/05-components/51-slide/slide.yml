@@ -6,5 +6,3 @@ slide_image_source_set:
 slide_image_fallback: "https://placem.at/places?w=640&h=443&random=slide"
 slide_image_alt: "Faker.words(5,true)"
 slide_caption_text: "Faker.sentences(2,true)"
-slide_caption_modifiers:
-  - 'style-low-key'
