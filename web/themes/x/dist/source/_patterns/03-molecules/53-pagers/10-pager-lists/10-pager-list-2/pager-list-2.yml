@@ -1,7 +1,13 @@
 pager_list_2_items:
   - include():
       pattern: 'molecules-pager-item-2'
+      with:
+        pager_item_2_title: '1'
   - include():
       pattern: 'molecules-pager-item-2'
+      with:
+        pager_item_2_title: '2'
   - include():
       pattern: 'molecules-pager-item-2'
+      with:
+        pager_item_2_title: '3'
