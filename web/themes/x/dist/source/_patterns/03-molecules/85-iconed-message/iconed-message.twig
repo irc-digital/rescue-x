@@ -1,4 +1,12 @@
-<div class="rplm-iconed-message{% for iconed_message_modifier in iconed_message_modifiers %} rplm-iconed-message--{{ iconed_message_modifier }}{% endfor %}">
+{#
+/**
+ * Available variables:
+ * - iconed_message_icon_name - Icon displayed before the text.
+ * - iconed_message_icon_modifiers - Modifiers for the icon atom.
+ * - iconed_message_text - Text displayed to the right of icon.
+ */
+#}
+<div class="rplm-iconed-message">
   <div class="rplm-iconed-message__wrapper">
     <div class="rplm-iconed-message__text">
       <div class="rplm-iconed-message__icon">
