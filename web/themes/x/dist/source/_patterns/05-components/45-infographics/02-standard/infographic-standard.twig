@@ -1,5 +1,14 @@
+{#
+/**
+ * Available variables:
+ * - infographic_standard_section_heading_title - Title text above the component.
+ * - infographic_standard_section_heading_description - Short description of component content.
+ * - infographic_standard_section_heading_icon - Optional icon displayed in front of the title.
+  * - infographic_standard_content - An array of teaser icon components making up the content of the infographic.
+ */
+#}
 {% if infographic_standard_content %}
-<div class="rplc-infographic-standard{% for infographic_standard_modifier in infographic_standard_modifiers %} rplc-infographic-standard--{{ infographic_standard_modifier }}{% endfor %}" data-rpl-canvas-color="neutral-light-gray">
+<div class="rplc-infographic-standard" data-rpl-canvas-color="neutral-light-gray">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: infographic_standard_section_heading_title,
     section_heading_description: infographic_standard_section_heading_description,
