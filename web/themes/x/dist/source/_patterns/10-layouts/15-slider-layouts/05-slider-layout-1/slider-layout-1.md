@@ -1,4 +1,4 @@
 ---
 title: Slider layout 1
 ---
-TODO
+This layout is used to build the [stories](/?p=components-stories) slider.

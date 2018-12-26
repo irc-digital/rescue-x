@@ -1,4 +1,11 @@
-<div class="rpll-slider-layout-2{% for slider_layout_1_modifier in slider_layout_1_modifiers %} rpll-slider-layout-2--{{ slider_layout_1_modifier }}{% endfor %}">
+{#
+/**
+ * Available variables:
+ * - slider_layout_2_slides - An array of slide content.
+ * - slide_pager - Pager markup that is passed via data properties to slider-layout.js, which is used to generate a custom pager.
+ */
+#}
+<div class="rpll-slider-layout-2">
   <div class="rpll-slider-layout-2__slides-wrapper">
     <div class="rpll-slider-layout-2__previous" data-rpl-slider-previous>
       {% include '@atoms/05-icon/icon.twig' with {

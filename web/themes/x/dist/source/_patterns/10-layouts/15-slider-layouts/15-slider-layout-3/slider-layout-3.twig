@@ -1,4 +1,10 @@
-<div class="rpll-slider-layout-3{% for slider_layout_3_modifier in slider_layout_3_modifiers %} rpll-slider-layout-3--{{ slider_layout_3_modifier }}{% endfor %}">
+{#
+/**
+ * Available variables:
+ * - slider_layout_3_slides - An array of slide content.
+ */
+#}
+<div class="rpll-slider-layout-3">
   <div class="rpll-slider-layout-3__slides-wrapper">
     <div class="rpll-slider-layout-3__previous" data-rpl-slider-previous>
       {% include '@atoms/05-icon/icon.twig' with {

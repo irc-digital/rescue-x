@@ -1,4 +1,4 @@
 ---
 title: Slider layout 2
 ---
-TODO
+This layout is used to build the [goals](/?p=components-goals) slider.
