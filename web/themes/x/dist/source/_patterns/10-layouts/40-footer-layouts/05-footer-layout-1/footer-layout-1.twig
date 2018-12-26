@@ -1,4 +1,12 @@
-<div class="rpll-footer-layout-1{% for footer_layout_1_modifier in footer_layout_1_modifiers %} rpll-footer-layout-1--{{ footer_layout_1_modifier }}{% endfor %}">
+{#
+/**
+ * Available blocks:
+ * - footer_layout_1_section_1_block - Top section of the footer
+ * - footer_layout_1_section_2_block - Middle section of the footer
+ * - footer_layout_1_section_3_block - Bottom section of the footer
+ */
+#}
+<div class="rpll-footer-layout-1">
   <div class="rpll-footer-layout-1__inner-content-wrapper">
     <div class="rpll-footer-layout-1__section">
       {% block footer_layout_1_section_1_block %}
