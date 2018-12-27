@@ -1,21 +1,20 @@
 {#
 /**
+ * Person info 1
+ *
  * Available variables:
- *     contributor_modifiers                    - Modifier classes
- *     contributor_prefix                       - Text that comes before the contributor, usign to chain entries in a list. Will be translated.
- *     contributor_name                         - The name of the contributor
- *     contributor_title                        - The contributors role or title
- *     contributor_responsive_image_source_set  - The source set of the photo of the contributor. If this is left blank then a default image is used
- *     contributor_responsive_image_sizes       - The sizes media query for the images
- *     contributor_responsive_image_alt         - The alt attributor for the contributor image
- *     contributor_social                       - Links to their social accounts. This is an associative array:
- *        key                       - The social site key, used to generate the svg icon
- *        value                     - The URL of the contributor's social media account
- * Available blocks:
- *   none
+ *   person_info_1_responsive_image_source_set - Image source set
+ *   person_info_1_responsive_image_fallback - Fallback image
+ *   person_info_1_responsive_image_fallback - Image alt text
+ *   person_info_1_prefix - Prefix text
+ *   person_info_1_name - Name of person
+ *   person_info_1_modifiers - Modifier classes
+ *     small - Smaller photo size
+ *   person_info_1_social - Links to their social accounts. This is an associative array:
+ *     key - The social site key, used to generate the svg icon
+ *     value - The URL of the contributor's social media account
  */
 #}
-{% set contributor_first_in_list = contributor_first_in_list ? contributor_first_in_list : FALSE %}
 <figure class="rplm-person-info-1{% for person_info_1_modifier in person_info_1_modifiers %} rplm-person-info-1--{{ person_info_1_modifier }}{% endfor %}">
   {% if person_info_1_responsive_image_source_set %}
     <div class="rplm-person-info-1__image-wrapper">

@@ -1,12 +1,23 @@
-<div class="rplm-person-info-2{% for person_info_2_modifier in person_info_2_modifiers %} rplm-person-info-2--{{ person_info_2_modifier }}{% endfor %}">
+{#
+/**
+ * Person info 2
+ *
+ * Available variables:
+ *   person_info_2_name - Person's name
+ *   person_info_2_affiliation - Affiliated organization
+ *   person_info_2_telephone_number - Telephone number
+ *   person_info_2_email_Address - Email address
+ */
+#}
+<div class="rplm-person-info-2">
   {% if person_info_2_name is not empty %}<div class="rplm-person-info-2__name">{{ person_info_2_name }}{% endif %}</div>
   {% if person_info_2_affiliation is not empty %}<div class="rplm-person-info-2__affiliation">{{ person_info_2_affiliation }}{% endif %}</div>
   {% if person_info_2_telephone_number is not empty %}<div class="rplm-person-info-2__telephone-number">{{ person_info_2_telephone_number }}{% endif %}</div>
-  {% if person_info_2_enail_address is not empty %}
+  {% if person_info_2_email_address is not empty %}
     <div class="rplm-person-info-2__email">
       {% include '@atoms/10-link/link.twig' with {
-        link_text: person_info_2_enail_address,
-        link_url: person_info_2_enail_address,
+        link_text: person_info_2_email_address,
+        link_url: person_info_2_email_address,
         link_modifiers: ['type-one'],
       } only %}
     </div>
