@@ -1,14 +1,14 @@
 {#
 /**
  * Available variables:
- * - pull_quote_text - The text of the pull quote
- * - pull_quote_section_heading_title - Section title
- * - pull_quote_section_heading_description - Section description
- * - pull_quote_modifiers - The variation of the pull quote (if left or right are omitted the quote goes full well width)
+ *   pull_quote_text - The text of the pull quote
+ *   pull_quote_section_heading_title - Section title
+ *   pull_quote_section_heading_description - Section description
+ *   pull_quote_modifiers - The variation of the pull quote (if left or right are omitted the quote goes full well width)
  *           placement-left
  *           placement-right
  * Available blocks:
- * - none
+ *   none
  */
 #}
 <div class="rplc-pull-quote{% for pull_quote_modifier in pull_quote_modifiers %} rplc-pull-quote--{{ pull_quote_modifier }}{% endfor %}">
