@@ -1,4 +1,4 @@
 ---
 title: Contributors
 ---
-To do
+A list of contributors with headshots, personal information and social media links.
