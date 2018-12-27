@@ -336,14 +336,12 @@ body > .rplc-teaser-highlighted .rpla-responsive-image {
   background-color: get-utility-color('alert');
 }
 
-#molecules-ear {
+#molecules-ear .sg-pattern-example {
   max-width: 900px;
-
-  .sg-pattern-example {
-    margin-left: 1rem;
-    min-height: 300px;
-    background-color: white;
-  }
+  margin-left: 1rem;
+  min-height: 300px;
+  background-color: white;
+  position: relative;
 }
 
 #atoms-link-icon-type-3 .sg-pattern-example {
