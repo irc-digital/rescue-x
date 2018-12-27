@@ -1,4 +1,16 @@
-<div class="rplm-stacked-headline-4{% for stacked_headline_4_modifier in stacked_headline_4_modifiers %} rplm-stacked-headline-4--{{ stacked_headline_4_modifier }}{% endfor %}">
+{#
+/**
+ * Stacked headline 4
+ *
+ * Available variables:
+ *   stacked_headline_4_slug - Smaller text on top of headline
+ *   stacked_headline_4_headline - Larger header below
+ *   stacked_headline_4_summary - Summary text
+ *   stacked_headline_4_link_title - Text for link
+ *   stacked_headline_4_link_url - URL for link
+ */
+#}
+<div class="rplm-stacked-headline-4">
   {% include '@atoms/01-text/25-slug/slug.twig' with {
     slug_text: stacked_headline_4_slug,
     slug_modifiers: ['size-large'],
