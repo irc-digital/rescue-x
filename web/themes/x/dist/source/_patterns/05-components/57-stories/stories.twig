@@ -1,13 +1,15 @@
 {#
 /**
+ * Stories
+ *
  * Available variables:
- *   stories_section_heading_title - Title text above the component.
- *   stories_section_heading_icon - Optional icon displayed in front of the title.
- *   stories_section_heading_description - Short description of component content.
- *   stories_slides - Slider content.
+ *   stories_section_heading_title - Title text above the component
+ *   stories_section_heading_icon - Optional icon displayed in front of the title
+ *   stories_section_heading_description - Short description of component content
+ *   stories_slides - Array of teaser story components making up the slideshow content
  */
 #}
-<div class="rplc-stories">
+<div class="rplc-stories" data-rpl-canvas-color="brand-primary">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: stories_section_heading_title,
     section_heading_description: stories_section_heading_description,

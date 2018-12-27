@@ -2,7 +2,7 @@
 
 .rplc-stories {
   @include standard-vertical-padding;
-  background: get-brand-color('primary') url('../images/stories-background.jpg') no-repeat;
+  background: url('../images/stories-background.jpg') no-repeat;
   background-size: cover;
 
   &__content {
