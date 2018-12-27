@@ -1,4 +1,4 @@
-/**
+contributor_first_in_list/**
  *
  * Gulp file to build the theme
  *
