@@ -1,11 +1,16 @@
 {#
 /**
+ * Link
+ *
  * Available variables:
- *   link_text - text
- *   link_url  - the url to link to
+ *   link_text                - The text of the link
+ *   link_url                 - The URL. You only need to supply this is this component is actually a link - sometimes the link element can be higher up and this element is providing a visual link.
+ *   link_tag                 - The HTML element. Optional - this will be sensibly defaulted - mostly to the anchor tag, but it could be a div if no link_url is provided.
+ *   link_handler_javascript  - True or false (defaults to false). Handles clicking via Javascript.
+ *   link_modifiers           - Modifiers
  *
  * Available blocks:
- *   none
+ *   link_block               - The block containing the actual link. This allows considerable variablity in a child element.
  */
 #}
 {% spaceless %}
