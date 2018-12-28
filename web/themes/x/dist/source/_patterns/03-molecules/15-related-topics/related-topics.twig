@@ -1,3 +1,14 @@
+{#
+/**
+ * Related topics
+ *
+ * Available variables:
+ *   related_topics_label  - Label text
+ *   related_topics_values - Array
+ *     title               - Title text
+ *     url                 - URL of topic
+ */
+#}
 {% spaceless %}
   {% if related_topics_label is empty %}
     {% set related_topics_label = 'Explore related topics' | trans %}
