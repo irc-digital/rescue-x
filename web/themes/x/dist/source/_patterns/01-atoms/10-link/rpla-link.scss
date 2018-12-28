@@ -91,6 +91,7 @@
     &#{$self}--subtype-black {
       @include link-color(get-neutral-color('black'));
       @include link-border(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('white'));
     }
 
     &#{$self}--subtype-inverse {
