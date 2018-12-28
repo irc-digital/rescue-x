@@ -1,7 +1,7 @@
 quote:
   label: Testimonial
   description: A testimonial
-  use: "@components/12-testimonial/testimonial.twig"
+  use: "@components/90-testimonial/testimonial.twig"
   section: TRUE
   fields:
     testimonial_title:

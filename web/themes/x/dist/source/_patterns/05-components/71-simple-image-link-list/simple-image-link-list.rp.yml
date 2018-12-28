@@ -1,7 +1,7 @@
 simple_image_link_list:
   label: Simple image link list
   description: Todo
-  use: "@components/60-simple-image-link-list/simple-image-link-list.twig"
+  use: "@components/71-simple-image-link-list/simple-image-link-list.twig"
   section: TRUE
   fields:
     simple_image_link_list_content:

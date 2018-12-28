@@ -1,7 +1,7 @@
 image_window_width:
   label: "Image window width"
   description: "Outputs a window width image"
-  use: "@components/30-images/10-image-window-width/image-window-width.twig"
+  use: "@components/32-images/10-image-window-width/image-window-width.twig"
   section: TRUE
   fields:
     image_window_width_responsive_image_source_set:

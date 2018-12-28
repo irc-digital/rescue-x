@@ -1,7 +1,7 @@
 pull_quote:
   label: Pull quote
   description: A pull quote (TODO)
-  use: "@components/50-pull-quote/pull-quote.twig"
+  use: "@components/57-pull-quote/pull-quote.twig"
   section: TRUE
   fields:
     pull_quote_text:

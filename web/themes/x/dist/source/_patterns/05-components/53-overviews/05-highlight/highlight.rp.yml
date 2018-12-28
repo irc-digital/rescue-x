@@ -1,7 +1,7 @@
 highlight:
   label: Highlight
   description: Highlight
-  use: "@components/53/overviews/05-highlight/highlight.twig"
+  use: "@components/53-overviews/05-highlight/highlight.twig"
   fields:
     highlight_link_text:
       type: text

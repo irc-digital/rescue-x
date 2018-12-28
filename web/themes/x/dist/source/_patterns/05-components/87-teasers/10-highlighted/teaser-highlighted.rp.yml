@@ -1,7 +1,7 @@
 teaser_highlighted:
   label: Teaser (highlighted)
   description: The highlighted teaser (todo)
-  use: "@components/05-teasers/10-highlighted/teaser-highlighted.twig"
+  use: "@components/87-teasers/10-highlighted/teaser-highlighted.twig"
   fields:
     teaser_highlighted_url:
       type: url

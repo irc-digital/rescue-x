@@ -1,7 +1,7 @@
 news_and_features:
   label: News and features
   description:
-  use: "@components/15-news-and-features/news-and-features.twig"
+  use: "@components/51-news-and-features/news-and-features.twig"
   section: TRUE
   fields:
     news_and_features_content:

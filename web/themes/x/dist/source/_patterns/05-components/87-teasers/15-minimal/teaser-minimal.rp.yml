@@ -1,7 +1,7 @@
 teaser_minimal:
   label: Teaser (minimal)
   description: The minimal teaser (todo)
-  use: "@components/05-teasers/15-minimal/teaser-minimal.twig"
+  use: "@components/87-teasers/15-minimal/teaser-minimal.twig"
   fields:
     teaser_minimal_url:
       type: url

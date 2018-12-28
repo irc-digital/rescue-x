@@ -1,7 +1,7 @@
 quote:
   label: Quote
   description: A quote (TODO)
-  use: "@components/10-quote/quote.twig"
+  use: "@components/63-quote/quote.twig"
   section: TRUE
   fields:
     quote_text:

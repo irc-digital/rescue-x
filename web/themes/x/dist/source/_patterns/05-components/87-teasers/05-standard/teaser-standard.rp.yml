@@ -1,7 +1,7 @@
 teaser_standard:
   label: Teaser (standard)
   description: The standard teaser (todo)
-  use: "@components/05-teasers/05-standard/teaser-standard.twig"
+  use: "@components/87-teasers/05-standard/teaser-standard.twig"
   fields:
     teaser_standard_url:
       type: url

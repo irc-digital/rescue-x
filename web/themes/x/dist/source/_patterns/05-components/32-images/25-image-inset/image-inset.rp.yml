@@ -1,7 +1,7 @@
 image_inset:
   label: "Image inset"
   description: "Outputs a partial width image"
-  use: "@components/30-images/25-image-inset/image-inset.twig"
+  use: "@components/32-images/25-image-inset/image-inset.twig"
   section: TRUE
   fields:
     image_inset_responsive_image_source_set:

@@ -1,7 +1,7 @@
 image_partial_width_landscape:
   label: "Image partial width, landscape"
   description: "Outputs a partial width image with the image being oriented landscape"
-  use: "@components/30-images/05-image-partial-width-landscape/image-partial-width-landscape.twig"
+  use: "@components/32-images/05-image-partial-width-landscape/image-partial-width-landscape.twig"
   section: TRUE
   fields:
     image_partial_width_landscape_responsive_image_source_set:

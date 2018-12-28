@@ -1,7 +1,7 @@
 teaser_simple_image_link:
   label: Teaser (simple image link)
   description: Todo
-  use: "@components/05-teasers/50-simple-image-link/teaser-simple-image-link.twig"
+  use: "@components/87-teasers/50-simple-image-link/teaser-simple-image-link.twig"
   fields:
     teaser_simple_image_link_url:
       type: string

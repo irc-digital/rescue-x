@@ -1,7 +1,7 @@
 teaser_image_link_box_1:
   label: "Teaser (image link box)"
   description: "The image link box teaser (todo)"
-  use: "@components/05-teasers/20-image-link-box-1/teaser-image-link-box-1.twig"
+  use: "@components/87-teasers/20-image-link-box-1/teaser-image-link-box-1.twig"
   fields:
     teaser_image_link_box_1_url:
       type: url
