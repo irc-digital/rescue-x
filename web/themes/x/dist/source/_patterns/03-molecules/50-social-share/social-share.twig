@@ -1,7 +1,21 @@
 {#
 /**
+ * Social share
+ *
  * Available variables:
- *   social_share_sites - Used to generate social share icon
+ *   social_share_title     - Title displayed above social share icons
+ *   social_share_sites     - Array of social share sites
+ *     social_link          - Link to share page or to social media site
+ *     social_site          - Social site name for icon
+ *   social_share_modifiers - Array of modifiers
+ *     space-evenly         - Even spacing between icons
+ *     title-bold           - Bold title element
+ *     type-one             - Default version
+ *     type-two             - Circles around icons
+ *     type-three           - Yellow background
+ *     type-four            - Black background, square icons
+ *     subtype-inverse      - Black background
+ *
 #}
 
 {% set social_share_modifiers = social_share_modifiers ?: [] %}
