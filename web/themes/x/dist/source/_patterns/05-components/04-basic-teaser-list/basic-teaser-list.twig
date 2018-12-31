@@ -1,5 +1,18 @@
+{#
+/**
+ * Basic teaser list
+ *
+ * Available variables:
+ *   basic_teaser_list_id                          - Unique component ID
+ *   basic_teaser_list_section_heading_title       - Title text above the component
+ *   basic_teaser_list_section_heading_description - Short description for component content
+ *   basic_teaser_list_section_heading_icon        - Optional icon displayed in front of the title
+ *   basic_teaser_list_content                     - Array of teaser basic copmonents
+ *   basic_teaser_list_more                        - Link to read more content
+ */
+#}
 {% if basic_teaser_list_content %}
-<div{% if basic_teaser_list_id %} id="{{ basic_teaser_list_id }}"{% endif %} class="rplc-basic-teaser-list{% for basic_teaser_list_modifier in basic_teaser_list_modifiers %} rplc-basic-teaser-list--{{ basic_teaser_list_modifier }}{% endfor %}">
+<div{% if basic_teaser_list_id %} id="{{ basic_teaser_list_id }}"{% endif %} class="rplc-basic-teaser-list">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: basic_teaser_list_section_heading_title,
     section_heading_description: basic_teaser_list_section_heading_description,
