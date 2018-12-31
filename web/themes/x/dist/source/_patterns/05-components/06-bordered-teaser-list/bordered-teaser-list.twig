@@ -1,12 +1,16 @@
 {#
 /**
+ * Bordered teaser list
+ *
  * Available variables:
- *
- *
- * Available blocks:
+ *   bordered_teaser_list_id                          - Unique component ID
+ *   bordered_teaser_list_section_heading_title       - Title text above the component
+ *   bordered_teaser_list_section_heading_description - Short description for component content
+ *   bordered_teaser_list_section_heading_icon        - Optional icon displayed in front of the title
+ *   bordered_teaser_list_content                     - Array of teaser bordered components
  */
 #}
-<div{% if bordered_teaser_list_id %} id="{{ bordered_teaser_list_id }}"{% endif %} class="rplc-bordered-teaser-list{% for bordered_teaser_list_modifier in bordered_teaser_list_modifiers %} rplc-bordered-teaser-list--{{ bordered_teaser_list_modifier }}{% endfor %}">
+<div{% if bordered_teaser_list_id %} id="{{ bordered_teaser_list_id }}"{% endif %} class="rplc-bordered-teaser-list">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: bordered_teaser_list_section_heading_title,
     section_heading_description: bordered_teaser_list_list_section_heading_description,
