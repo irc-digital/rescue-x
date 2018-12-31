@@ -1,9 +1,27 @@
+{#
+/**
+ * Call to action 4
+ *
+ * Available variables:
+ *   call_to_action_4_section_heading_title       - Title text above the component
+ *   call_to_action_4_section_heading_description - Short description for component content
+ *   call_to_action_4_section_heading_icon        - Optional icon displayed in front of the title
+ *   call_to_action_4_url                         - Link from CTA
+ *   call_to_action_4_art_directed_image_sources  - Image sources
+ *   call_to_action_4_art_directed_image_fallback - Fallback image
+ *   call_to_action_4_art_directed_image_alt      - Image alt text
+ *   call_to_action_4_title                       - Title text inside component
+ *   call_to_action_4_subtitle                    - Subtitle text inside component
+ *   call_to_action_4_button_text                 - CTA button text
+ *   call_to_action_4_button_icon                 - CTA button icon
+ */
+#}
 {% spaceless %}
 
 {% set call_to_action_4_modifiers = call_to_action_4_modifiers ?: [] %}
 
 {% endspaceless %}
-<div{% if call_to_action_4_id %} id="{{ call_to_action_4_id }}"{% endif %} class="rplc-call-to-action-4{% for call_to_action_4_modifier in call_to_action_4_modifiers %} rplc-call-to-action-4--{{ call_to_action_4_modifier }}{% endfor %}">
+<div{% if call_to_action_4_id %} id="{{ call_to_action_4_id }}"{% endif %} class="rplc-call-to-action-4">
   {% include '@molecules/20-section-heading/section-heading.twig' with {
     section_heading_title: call_to_action_4_section_heading_title,
     section_heading_description: call_to_action_4_section_heading_description,
