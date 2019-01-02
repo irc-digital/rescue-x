@@ -16,11 +16,13 @@ services:
         image: ircdigital/irc-lando-build
         environment:
           PHP_IDE_CONFIG: "serverName=appserver"
-    # Install puppeteer as we do not want to commit
-    # massive chromium files in our project repo
+    # Install project dependencies:
+    # - Drupal core
+    # - Gulp
     run_as_root:
+      - "composer install -d /app"
       - "npm install -g gulp-cli -y"
-      - "npm install --prefix /app/web/themes/x puppeteer"
+      #- "npm install --prefix /app/web/themes/x puppeteer"
 tooling:
   gulp:
     service: appserver
