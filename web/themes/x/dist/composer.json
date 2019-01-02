@@ -33,9 +33,6 @@
 		"pattern-lab/plugin-faker": "dev-issue2"
 	},
 	"scripts": {
-		"post-install-cmd": [
-			"PatternLab\\Installer::postInstallCmd"
-		],
 		"post-update-cmd": [
 			"PatternLab\\Installer::postUpdateCmd"
 		],

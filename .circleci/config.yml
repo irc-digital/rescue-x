@@ -108,6 +108,10 @@ jobs:
                 command: composer -n build-assets
 
             - run:
+                name: Install Patternlab
+                command: ./.circleci/scripts/irc/install-patternlab
+
+            - run:
                 name: Build Patternlab assets
                 command: ./.circleci/scripts/irc/build-patternlab
 

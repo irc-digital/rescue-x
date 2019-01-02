@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Install patternlab
+
+echo "::::::::::::::::::::::::::::::::::::::::::::::::"
+echo "Installing PatternLab"
+echo "::::::::::::::::::::::::::::::::::::::::::::::::"
+
+# Go to base level of project
+cd "$(dirname $0)/../../../web/themes/x/dist"
+
+composer install
