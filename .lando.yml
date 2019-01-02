@@ -19,7 +19,7 @@ services:
     # Install project dependencies:
     # - Drupal core
     run_as_root:
-    #  - "composer install -d /app"
+      - "composer install -d /app"
     # - "npm install -g gulp-cli -y"
     # - "npm install /app/web/themes/x"
 tooling:
