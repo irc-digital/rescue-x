@@ -1,1 +1,1 @@
-{"listeners":["\\PatternLab\\Reload\\PatternLabListener","\\aleksip\\DataTransformPlugin\\PatternLabListener","\\PatternLab\\Faker\\PatternLabListener"]}
+{"listeners":{"1":"\\aleksip\\DataTransformPlugin\\PatternLabListener","2":"\\PatternLab\\Faker\\PatternLabListener"}}

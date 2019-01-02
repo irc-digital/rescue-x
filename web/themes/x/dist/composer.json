@@ -28,7 +28,6 @@
 		"pattern-lab/core": "^2.0.0",
 		"pattern-lab/patternengine-twig": "^2.0.0",
 		"pattern-lab/styleguidekit-twig-default": "^3.0.0",
-		"pattern-lab/plugin-reload": "^2.0",
 		"aleksip/plugin-data-transform": "^1.2",
 		"pattern-lab/plugin-faker": "dev-issue2"
 	},
