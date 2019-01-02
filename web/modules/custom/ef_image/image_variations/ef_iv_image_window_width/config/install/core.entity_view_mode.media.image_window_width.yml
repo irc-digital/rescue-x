@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_image_window_width
+id: media.image_window_width
+label: 'Image window width'
+targetEntityType: media
+cache: true

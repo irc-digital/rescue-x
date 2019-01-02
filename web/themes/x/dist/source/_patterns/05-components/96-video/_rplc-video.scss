@@ -1,0 +1,14 @@
+@import 'rplc-video.variables';
+
+.rplc-video {
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include breakpoint(desktop) {
+      @include well-row;
+    }
+  }
+}
+
+// end of file

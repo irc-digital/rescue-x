@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.widescreen_16x9
+  module:
+    - crop
+name: widescreen_16x9_1024px_wide
+label: 'Widescreen (16:9) 1024px wide'
+effects:
+  ac78eae3-9ef0-491c-b0b8-34e44353f238:
+    uuid: ac78eae3-9ef0-491c-b0b8-34e44353f238
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: widescreen_16x9
+  ce542be0-2077-4a79-ad1d-2394e19ac8c6:
+    uuid: ce542be0-2077-4a79-ad1d-2394e19ac8c6
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1024
+      height: 576

@@ -1,0 +1,4 @@
+text_input_name: "name"
+text_input_label: "Name"
+text_input_placeholder: "Please input your name"
+text_input_required: true

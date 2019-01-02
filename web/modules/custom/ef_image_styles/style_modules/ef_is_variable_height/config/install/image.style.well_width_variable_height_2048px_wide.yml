@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.variable_height
+  module:
+    - crop
+name: well_width_variable_height_2048px_wide
+label: 'Well width (variable height) 2048px wide'
+effects:
+  bbdf0d20-1c4f-4b61-9db2-b46445d1245d:
+    uuid: bbdf0d20-1c4f-4b61-9db2-b46445d1245d
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: variable_height
+  9ecb8507-f80f-467c-8810-89c4c4e2e3b0:
+    uuid: 9ecb8507-f80f-467c-8810-89c4c4e2e3b0
+    id: image_scale
+    weight: 2
+    data:
+      width: 2048
+      height: null
+      upscale: true

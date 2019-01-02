@@ -1,0 +1,10 @@
+@import 'rplc-bordered-teaser-list.variables';
+
+.rplc-bordered-teaser-list {
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file
+

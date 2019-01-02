@@ -1,0 +1,36 @@
+@import 'rpla-heading.variables';
+
+.rpla-heading {
+
+  @include typography-vertical-spacing('compact');
+
+  &--medium {
+    @include typography-heading-medium;
+  }
+
+  &--medium-large {
+    @include typography-heading-medium-large;
+  }
+
+  &--large {
+    @include typography-heading-large;
+  }
+
+  &--extra-large {
+    @include typography-heading-extra-large;
+  }
+
+  &--3x-large {
+    @include typography-heading-3xl;
+  }
+
+  &--4x-large {
+    @include typography-heading-4xl;
+  }
+
+  &--5x-large {
+    @include typography-heading-5xl;
+  }
+}
+
+// end of file

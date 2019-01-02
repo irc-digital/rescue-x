@@ -1,0 +1,5 @@
+name: Embeddale WYSIWYG embed module test
+type: module
+description: Support module for the ef_wysiwyg_test module
+core: 8.x
+package: Testing

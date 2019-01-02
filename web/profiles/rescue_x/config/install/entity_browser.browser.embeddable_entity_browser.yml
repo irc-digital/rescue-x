@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.embeddable_entity_browser
+  module:
+    - views
+name: embeddable_entity_browser
+label: 'Embeddable browser'
+display: iframe
+display_configuration:
+  width: '1070'
+  height: '840'
+  link_text: 'Select an embeddable'
+  auto_open: true
+  path: ''
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  f918fc4f-4dc9-4d60-97db-1f392279f72e:
+    settings:
+      view: embeddable_entity_browser
+      view_display: embeddable_entity_browser
+      submit_text: 'Select embeddable'
+      auto_select: false
+    uuid: f918fc4f-4dc9-4d60-97db-1f392279f72e
+    weight: 1
+    label: View
+    id: view

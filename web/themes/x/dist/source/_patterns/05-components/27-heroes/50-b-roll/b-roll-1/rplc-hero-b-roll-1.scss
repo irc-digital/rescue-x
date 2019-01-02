@@ -1,0 +1,16 @@
+@import 'rplc-hero-b-roll-1.variables';
+
+.rplc-hero-b-roll--type-1 {
+  $base: '.rplc-hero-b-roll';
+
+  #{$base}__text-wrapper {
+    @include z-index('up');
+    margin-top: map-get($hero-b-roll-1-eat-in, 'mobile');
+
+    @include breakpoint(phablet) {
+      margin-top: map-get($hero-b-roll-1-eat-in, 'phablet');
+    }
+  }
+}
+
+// end of file

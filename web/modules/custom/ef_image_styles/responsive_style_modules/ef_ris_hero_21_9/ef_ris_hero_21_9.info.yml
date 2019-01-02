@@ -1,0 +1,9 @@
+name: "EF Responsive image styles: Hero (21x9)"
+type: module
+description: 'Hero (21x9) responsive image styles'
+package: EF Responsive image styles
+core: 8.x
+dependencies:
+  - ef_image_styles
+  - ef_is_super_widescreen
+  - ef_is_square

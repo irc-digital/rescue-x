@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.image
+_core:
+  default_config_hash: XJyqrb-dVH2qqXwlxNYlLtC6b12SlQugMZqm74OINPo
+id: embeddable.image.default
+targetEntityType: embeddable
+bundle: image
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  used_on:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  uid: true

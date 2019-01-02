@@ -1,0 +1,533 @@
+// mixins
+// only create for really ubiquitous stuff
+// a rule-of-thumb would be 'does this feel like boilerplating' - if so, consider a mixin
+
+
+//
+// Tier 1 variables
+//
+// The main purpose of tier 1 is to set out the values for single CSS properties concepts, such as font size and color.
+//
+// This file is, essentially, a bunch of enumerations and represent the very core building blocks of the visual system.
+//
+// The enumerations are deliberately a little obfuscates to avoid direct array access. Access should all go through
+// the specific accessor function and/or mixin provided for each.
+//
+//
+
+@function safe-map-get($map, $option) {
+  @if map-has-key($map, $option) {
+    @return map-get($map, $option);
+  } @else {
+    @error '#{$map} does not contain the key #{$option}';
+    @return null;
+  }
+}
+
+//
+// Font family
+//
+$font-family-sans-serif: akzidenz-grotesk, Arial, Helvetica, sans-serif;
+
+//
+// Colors
+//
+
+//
+// Function to get a brand color
+//
+@function get-brand-color($option: 'primary') {
+  $brand-colors: (
+    'primary': #fdc513,
+    'primary-tint-1': #ffd44b,
+  );
+
+  @if $option != 'all' {
+    @return safe-map-get($brand-colors, $option);
+  } @else {
+    @return $brand-colors;
+  }
+}
+
+//
+// Function to get a neutral color
+//
+@function get-neutral-color($option: 'gray') {
+  $neutral-colors: (
+    'white': #fff,
+    'very-light-gray': #f6f6f6,
+    'light-gray': #e9e9e9,
+    'gray': #d1d1d1,
+    'dark-gray': #666,
+    'very-dark-gray': #383838,
+    'black': #000,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($neutral-colors, $option);
+  } @else {
+    @return $neutral-colors;
+  }
+}
+
+//
+// Function to get a utility color
+//
+@function get-utility-color($option: 'alert') {
+  $utility-colors: (
+    'alert': #ee2d14,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($utility-colors, $option);
+  } @else {
+    @return $utility-colors;
+  }
+}
+
+//
+// Function to get a social media color
+//
+@function get-social-color($option: 'standard') {
+  $social-colors: (
+    'twitter': #00aced,
+    'facebook': #3b5998,
+    'instagram': #125688,
+    'youtube': #cc181e,
+    'linkedin': #007bb6,
+    'mail': get-brand-color(),
+  );
+  @if $option != 'all' {
+    @return safe-map-get($social-colors, $option);
+  } @else {
+    @return $social-colors;
+  }
+}
+
+//
+// Font size
+//
+
+// Function to get a font size value from its array entry key
+@function get-font-size($option: 'm') {
+  // don't panic - these get converted to rem when they are returned
+  $font-sizes: (
+    '2xs': 12px,
+    'xs': 14px,
+    's': 16px,
+    'm': 18px,
+    'ml': 20px,
+    'l': 24px,
+    'xl': 28px,
+    '2xl': 36px,
+    '3xl': 44px,
+    '4xl': 52px,
+    '5xl': 60px,
+    '6xl': 72px,
+  );
+  @if $option != 'all' {
+    @return rem(safe-map-get($font-sizes, $option));
+  } @else {
+    @return $font-sizes;
+  }
+}
+
+//
+// Font size mixin
+//
+@mixin font-size($option: 'm') {
+  font-size: get-font-size($option);
+}
+
+//
+// Line height
+//
+
+// Function to get a line height value from its array entry key
+@function get-line-height($option: 'm') {
+  $line-heights: (
+    'none': 0,
+    '2xs': 1,
+    'xs': 1.2,
+    's': 1.4,
+    'm': 1.6,
+    'l': 1.75,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($line-heights, $option);
+  } @else {
+    @return $line-heights;
+  }
+}
+
+//
+// Line height mixin
+//
+@mixin line-height($option: 'm') {
+  line-height: get-line-height($option);
+}
+
+//
+// Letter spacing
+//
+
+// Function to get a letter spacing value from its array entry key
+@function get-letter-spacing($option: 'standard') {
+  $letter-spacings: (
+    'compact': -.03em,
+    'standard': -.01em,
+    'airy': .1em,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($letter-spacings, $option);
+  } @else {
+    @return $letter-spacings;
+  }
+}
+
+@mixin letter-spacing($option: 'standard') {
+  letter-spacing: get-letter-spacing($option);
+}
+
+//
+// Font weight
+//
+
+// Function to get a font weight value from its array entry key
+@function get-font-weight($option: 'normal') {
+  $font-weights: (
+    'light': 300,
+    'normal': 400,
+    'bold': 700,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($font-weights, $option);
+  } @else {
+    @return $font-weights;
+  }
+}
+
+@mixin font-weight($option: 'normal') {
+  font-weight: get-font-weight($option);
+}
+
+@mixin transition {
+  transition: .15s ease-in-out;
+  transition-property: background-color, border, color, box-shadow, fill;
+}
+
+//
+// Font style
+//
+
+// Function to get a font style value
+@function get-font-style($option: 'normal') {
+  $font-styles: (
+    'normal': normal,
+    'italic': italic,
+    'oblique': oblique,
+  );
+  @if $option != 'all' {
+    @return safe-map-get($font-styles, $option);
+  } @else {
+    @return $font-styles;
+  }
+}
+
+@mixin font-style($option: 'normal') {
+  font-style: get-font-style($option);
+}
+
+// generates a JSON array of font style to be used by PatternLab
+$xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.json', get-font-style('all'), (prefix: '{ "font_style":', suffix: '}'));
+
+// Function to get a spacing value from its array entry key
+@function get-spacing($option: 'm') {
+  // don't panic - these get converted to rem when they are returned
+  $space-unit: 16px;
+  $spacings: (
+    'xs': $space-unit / 4, // 4px
+    's': $space-unit / 2, // 8px
+    'm': $space-unit,  // 16px
+    'ml': 1.5 * $space-unit, // 24px
+    'l': 2 * $space-unit, // 32px
+    'xl': 3 * $space-unit, // 48px
+    '2xl': 4 * $space-unit, // 64px
+    '3xl': 5 * $space-unit, // 80px
+    '4xl': 6 * $space-unit, // 96px
+    '5xl': 7 * $space-unit, // 112px
+  );
+  @if $option != 'all' {
+    @return rem(safe-map-get($spacings, $option));
+  } @else {
+    @return $spacings;
+  }
+}
+// generates a JSON array of spacing to be used by PatternLab
+$xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', get-spacing('all'), (prefix: '{ "spacing":', suffix: '}'));
+
+@function get-z-index($option) {
+  $z-indices: (
+    'auto': auto,
+    'up': 5,
+    'up-more': 10,
+    'below-navigation-overlay': 500,
+    'navigation-overlay': 1000,
+    'above-navigation-overlay': 2000,
+    'overlay': 3000,
+    'above-overlay': 4000,
+  );
+  @if $option != 'all' {
+    @return rem(safe-map-get($z-indices, $option));
+  } @else {
+    @return $z-indices;
+  }
+}
+
+@mixin z-index ($option: 'auto') {
+  position: relative;
+  z-index: get-z-index($option);
+}
+
+@mixin hover ($target: '&') {
+  @if $target == '&' {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  } @else {
+    // sass-lint:disable-block force-pseudo-nesting
+    &:hover,
+    &:focus,
+    [#{$target}]:hover &,
+    [#{$target}]:focus & {
+      @content;
+    }
+  }
+}
+
+// generates a JSON array of letter spacing to be used by PatternLab
+//$xxx-tvs: export('dist/source/_patterns/00-subatoms/15-letter-spacing/letter-spacing.json', get-letter-spacing('all'), (prefix: '{ "letter_spacing":', suffix: '}'));
+
+// we can fill in more rotations as we need them
+@mixin rotate {
+  &[data-rpl-rotate='10'] {
+    transform: rotate(10deg);
+  }
+}
+
+@mixin vertical-fade ($start-color: rgba(0, 0, 0, 0), $end-color: rgba(0, 0, 0, 1), $start-percent: 0%, $end-percent: 100%) {
+  position: relative;
+
+  &::before {
+    background: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) repeat-x ;
+    bottom: 0;
+    content: '';
+    display: block;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+    height: 50%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+// sass-lint:disable-block no-vendor-prefixes
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin image-content-type-decorator {
+  &[data-rpl-content-type] {
+    position: relative;
+
+    $background-transparency: rgba(0, 0, 0, .2);
+
+    &::before {
+      background-color: $background-transparency;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 20%;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &[data-rpl-content-type='video'] {
+    &::before {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxLjQxNCI+PHBhdGggZD0iTTMxLjkgNTMuNmMtMTEuNyAwLTIxLjEtOS41LTIxLjEtMjEuMSAwLTExLjcgOS41LTIxLjEgMjEuMS0yMS4xIDExLjYgMCAyMS4xIDkuNCAyMS4xIDIxLjEgMCAxMS43LTkuNCAyMS4xLTIxLjEgMjEuMXptMC0zOC43Yy05LjcgMC0xNy42IDcuOS0xNy42IDE3LjYgMCA5LjcgNy45IDE3LjYgMTcuNiAxNy42IDkuNyAwIDE3LjYtNy45IDE3LjYtMTcuNiAwLTkuNy03LjktMTcuNi0xNy42LTE3LjZ6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNMjYgNDAuOVYyMy4zbDE0LjYgOC44TDI2IDQwLjl6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=');
+    }
+  }
+
+  &[data-rpl-content-type='slideshow'] {
+    &::before {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxLjQxNCI+PHBhdGggZD0iTTMzLjQgNDIuMkwzMS4xIDQwbC0uNC0uMmMtLjYtLjQtMS4yLS43LTEuOC0uN2gtLjVjLS42IDAtMSAuNS0xLjIuN2wtLjIuMmMtLjguNi0yIC44LTIuOC4ybC0uMi0uMy0uMi0uMmMtLjItLjItLjYtLjctMS4yLS43aC0uNGMtLjggMC0xLjUuNS0xLjkgMWwtMi4xIDIuMWMtLjUuNS0uOCAxLjItLjggMnYxYzAgMS40IDEuMSAyLjkgMi43IDIuOWgxMS4xYzEuMyAwIDMuMy0xLjIgMy4zLTIuOXYtMWMwLS44LS43LTEuNS0xLjEtMS45eiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTI3LjIgMzEuMWMtMS41LS42LTMuMS0uMy00LjEuNC0xIC43LTEuNSAxLjctMS43IDIuNC0uMS4zLS4xLjYtLjEuOHYuNmMwIC4yIDAgLjUuMS44LjIuNy43IDEuNyAxLjcgMi40IDEuMS44IDIuNyAxLjEgNC4xLjQgMS40LS43IDIuNS0yLjIgMi41LTMuOSAwLTEuNy0xLjEtMy4zLTIuNS0zLjl6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48ZyBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjxwYXRoIGQ9Ik00OCAyMS4xdjE4LjJsNCAzLjdWMjFjMC0uNi0uMi0xLjItLjUtMS43LS42LTEuMS0xLjYtMS45LTIuOC0yLjEtLjQtLjItLjgtLjItMS0uMkgxNWMtLjIgMC0uNiAwLS45LjEtLjYuMS0xLjIuNC0xLjcuOHMtLjkuOS0xLjEgMS41bC0uMy45VjI1aDR2LTIuN1YyMWgzMi45Yy4xIDAgLjEgMCAuMS4xeiIvPjxwYXRoIGQ9Ik00NiAyOWMwLTIuMi0xLjgtNC00LTRIMTBjLTIuMiAwLTQgMS44LTQgNHYyMGMwIDIuMiAxLjggNCA0IDRoMzJjMi4yIDAgNC0xLjggNC00VjI5ek0xMCA0OVYyOWgzMnYyMEgxMHoiLz48cGF0aCBkPSJNNTQgMTMuMXYxOC4ybDQgMy43VjEzYzAtLjYtLjItMS4yLS41LTEuNy0uNi0xLjEtMS42LTEuOS0yLjgtMi4xLS40LS4yLS44LS4yLTEtLjJIMjFjLS4yIDAtLjYgMC0uOS4xLS42LjEtMS4yLjQtMS43LjhzLS45LjktMS4xIDEuNWwtLjMuOVYxN2g0di0yLjdWMTNoMzIuOWMuMSAwIC4xIDAgLjEuMXoiLz48L2c+PC9zdmc+');
+    }
+  }
+
+}
+
+//
+// well-row mixin
+//
+// Useful when an element needs to fit into our well.
+//
+// Note: We've inherited using padding rather than margin for the breathing space from rescue.org
+//
+@mixin well-row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $well-width-inner;
+  width: calc(100% - #{get-spacing('m') * 2});
+}
+
+@mixin body-text-row {
+  @include z-index('up');
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-text-width;
+  width: calc(100% - #{get-spacing('m') * 2});
+
+  @include breakpoint(phablet) {
+    margin-left: get-spacing('xl');
+    width: 90vw;
+  }
+
+  @include breakpoint(951) {
+    left: -102px;
+    margin-left: auto;
+  }
+
+}
+@mixin standard-vertical-spacing ($airy: false) {
+  $spacing: 'standard';
+
+  @if $airy {
+    $spacing: 'airy';
+  }
+
+  $spacing-map: safe-map-get($vertical-spacing, $spacing);
+
+  margin-bottom: safe-map-get($spacing-map, 'mobile');
+
+  @include breakpoint(phablet) {
+    margin-bottom: safe-map-get($spacing-map, 'phablet');
+  }
+}
+
+@mixin standard-vertical-padding {
+
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
+
+  p + & {
+    margin-bottom: 1.2em;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  @include breakpoint(phablet) {
+    padding-bottom: get-spacing('xl');
+    padding-top: get-spacing('xl');
+  }
+}
+
+//
+// breakpoint mixin
+//
+// A mixin to help with our most common media queries
+//
+// accepts:  desktop, laptop, 951, tablet and phablet.
+//
+// 951 is a slightly odd case where it does not map onto a common device, but our design changes a bunch
+// of stuff at that point - think of it as a magic number for the rescue.org design
+//
+// mobile is not an option as our SCSS should be mobile-first
+//
+// you are encouraged to write your own media queries when you need to
+// do work outside of these common targets. if possible, use these variables when you
+// need to target a device in the broadest sense:
+//
+//    $smallest_phablet_size (start  of phablet)
+//    $smallest_tablet_size (start of tablet)
+//    $smallest_laptop_size (start of laptop)
+//    $smallest_desktop_size-width (start of desktop)
+//
+//
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media only screen and (min-width: #{$smallest-desktop-size}) { @content ; }
+  } @else if $point == laptop {
+    @media only screen and (min-width: #{$smallest-laptop-size}) { @content ; }
+  } @else if $point == 951 {
+    @media only screen and (min-width: rem(951px)) { @content ; }
+  } @else if $point == tablet {
+    @media only screen and (min-width: #{$smallest-tablet-size}) { @content ; }
+  } @else if $point == phablet {
+    @media only screen and (min-width: #{$smallest-phablet-size})  { @content ; }
+  }
+}
+
+@mixin when-modal-open {
+  @at-root {
+    [data-rpl-modal-opened] & {
+      @content ;
+    }
+  }
+}
+
+@mixin when-mobile-navigation-open {
+  @at-root {
+    [data-rpl-mobile-navigation-opened] & {
+      @content ;
+    }
+  }
+}
+
+@mixin when-page-hero-is-flush-with-top {
+  @at-root {
+    [data-rpl-hero-flush-with-top='yes'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin text-hide {
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+
+@mixin layout-separator {
+  border-bottom: 1px solid get-neutral-color('gray');
+  margin-bottom: 0;
+  padding-bottom: get-spacing();
+  padding-top: get-spacing();
+}
+
+@mixin prevent-scrolling {
+  height: 100%; //iOS scroll lock
+  overflow: hidden;
+  position: fixed; //iOS scroll lock
+  width: 100%; //iOS scroll lock
+}
+
+@function encode-color($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote('#{$hex}');
+  }
+  $string: '%23' + $string;
+  @return $string;
+}
+
+// end of file

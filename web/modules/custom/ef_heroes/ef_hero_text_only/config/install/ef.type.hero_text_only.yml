@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_hero_text_only
+id: hero_text_only
+label: 'Hero: text only'
+description: 'The simplest hero made up of just the slug, title and description'

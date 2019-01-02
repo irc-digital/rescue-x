@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.variable_height
+  module:
+    - crop
+name: inset_variable_height_1280px_wide
+label: 'Inset (variable height) 1280px wide'
+effects:
+  c09bb30f-1807-400c-ad93-6b4543f5a24a:
+    uuid: c09bb30f-1807-400c-ad93-6b4543f5a24a
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: variable_height
+  f9627730-b2fd-476a-8ed2-c2f37159c3c8:
+    uuid: f9627730-b2fd-476a-8ed2-c2f37159c3c8
+    id: image_scale
+    weight: 2
+    data:
+      width: 1280
+      height: null
+      upscale: true

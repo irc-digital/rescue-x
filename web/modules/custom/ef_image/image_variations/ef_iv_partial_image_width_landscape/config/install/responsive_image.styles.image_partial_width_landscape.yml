@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_4x3_1024px_wide
+    - image.style.landscape_4x3_2048px_wide
+    - image.style.landscape_4x3_3000px_wide
+    - image.style.landscape_4x3_368px_wide
+    - image.style.landscape_4x3_640px_wide
+  enforced:
+    module:
+      - ef_iv_partial_image_width_landscape
+id: image_partial_width_landscape
+label: 'Image partial width, landscape'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw'
+      sizes_image_styles:
+        - landscape_4x3_1024px_wide
+        - landscape_4x3_2048px_wide
+        - landscape_4x3_3000px_wide
+        - landscape_4x3_368px_wide
+        - landscape_4x3_640px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: landscape_4x3_640px_wide

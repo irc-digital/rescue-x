@@ -1,0 +1,6 @@
+fast_facts_list_1:
+  include():
+    pattern: "molecules-fact-list"
+fast_facts_list_2:
+  include():
+    pattern: "molecules-fact-list"

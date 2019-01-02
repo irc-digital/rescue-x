@@ -1,0 +1,64 @@
+{#
+/**
+ * Quote
+ *
+ * Available variables:
+ *   quote_id - Unique identifier.
+ *   quote_section_heading_title - Title text above the quote
+ *   quote_section_heading_icon - Optional icon displayed in front of the title
+ *   quote_section_heading_description - Short description of quote
+ *   quote_responsive_image_source_set - Images for quote, displayed to the left of the text
+ *   quote_responsive_image_fallback - Fallback image
+ *   quote_responsive_image_alt - Alt text for image
+ *   quote_text - Text of the quote. Should have a closing quotation mark
+ *   quote_attribution - The name of the person to whom the quote is attributed
+ *   quote_role - Role of the person, could be a job title or similar description
+ *   quote_url - URL for CTA link
+ *   quote_cta - Text for CTA link
+ */
+#}
+<div{% if quote_id %} id="{{ quote_id }}"{% endif %} class="rplc-quote">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: quote_section_heading_title,
+    section_heading_description: quote_section_heading_description,
+    section_heading_icon: quote_section_heading_icon,
+  } only %}
+  <div class="rplc-quote__content">
+    <div class="rplc-quote__image-text-wrapper">
+      <div class="rplc-quote__image-wrapper">
+        {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+          responsive_image_source_set: quote_responsive_image_source_set,
+          responsive_image_sizes: "(min-width: 641px) 328px,(min-width: 321px) calc(100vw - 2rem),320px",
+          responsive_image_fallback: quote_responsive_image_fallback,
+          responsive_image_alt: quote_responsive_image_alt
+        } only %}
+      </div>
+
+      <div class="rplc-quote__text-wrapper">
+        <div class="rplc-quote__icon-wrapper">
+          {% include '@atoms/05-icon/icon.twig' with {
+            icon_name: 'quote-mark',
+            icon_modifiers: ['fill-branded']
+          } only %}
+        </div>
+        <div class="rplc-quote__text-inner-wrapper">
+          <blockquote class="rplc-quote__quote">
+            <p class="rplc-quote__quote-text">{{ quote_text }}</p>
+            <div class="rplc-quote__attribution">
+              <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
+              <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
+            </div>
+          </blockquote>
+
+          {% include '@atoms/10-link/link.twig' with {
+            link_url: quote_url,
+            link_text: quote_cta,
+          } only %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

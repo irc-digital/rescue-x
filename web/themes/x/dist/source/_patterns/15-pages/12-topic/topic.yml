@@ -1,0 +1,99 @@
+topic_page_navigation:
+  include():
+    pattern: "components-global-navigation"
+topic_page_hero_flush_with_top: true
+topic_page_hero:
+  include():
+    pattern: "components-hero-landing-page-1"
+    with:
+      hero_landing_page_1_slug: 'Fighting outbreaks'
+      hero_landing_page_1_headline: 'Ebola'
+      hero_landing_page_1_crisis_mode: TRUE
+      hero_landing_page_1_summary: 'In 2014,  West Africa experienced the largest ever outbreak of Ebola, infecting over 28,000 people and claiming over 11,000 lives. The International Rescue Committee was at the forefront of the fight to stem the spread of the deadly Ebola virus and is now responding to the latest outbreak in the Democratic Republic of Congo.'
+      hero_landing_page_1_art_directed_image_fallback: "https://placem.at/places?w=1920&h=1080&random=topicpagehero"
+      hero_landing_page_1_art_directed_image_sources:
+        - source_set:
+          - "https://placem.at/places?w=640&h=640&random=topicpagehero 1x"
+          - "https://placem.at/places?w=1280&h=1280&random=topicpagehero 2x"
+          - "https://placem.at/places?w=1920&h=1920&random=topicpagehero 3x"
+          media: "only screen and (max-width: 40em)"
+        - source_set:
+          - "https://placem.at/places?w=1024&h=576&random=topicpagehero 1x"
+          - "https://placem.at/places?w=2048&h=1152&random=topicpagehero 2x"
+          media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+        - source_set:
+          - "https://placem.at/places?w=1920&h=1080&random=topicpagehero 1x"
+          - "https://placem.at/places?w=3840&h=2160&random=topicpagehero 2x"
+          media: "only screen and (min-width: 64.063em)"
+topic_page_content:
+  join():
+    - include():
+        pattern: "components-crisis-mode"
+    - include():
+        pattern: "components-news-and-features"
+        with:
+          news_and_features_section_heading_description: ''
+    - include():
+        pattern: "components-basic-teaser-list"
+        with:
+          basic_teaser_list_section_heading_title: "Related reports and resources"
+          basic_teaser_list_section_heading_description: ""
+          basic_teaser_list_content:
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+            - include():
+                pattern: "components-teaser-basic"
+                with:
+                  teaser_basic_slug: 'Report'
+        only: true
+topic_page_footer:
+  join():
+    - include():
+        pattern: "layouts-footer-layout-1"
+        with:
+          footer_layout_1_section_1:
+            join():
+              - include():
+                  pattern: "molecules-crisis-watch"
+              - include():
+                  pattern: "components-footer-menu"
+          footer_layout_1_section_2:
+            include():
+              pattern: "components-efficiency"
+          footer_layout_1_section_3:
+            join():
+              - include():
+                  pattern: "molecules-email-signup"
+              - include():
+                  pattern: "molecules-social-share"
+                  with:
+                    social_share_title: 'Follow us'
+                    social_share_sites:
+                      twitter: 'http://www.twitter.com'
+                      facebook: 'http://www.facebook.com'
+                      instagram: 'http://www.instagram.com'
+                      youtube: 'http://www.youtube.com'
+                    social_share_modifiers:
+                      - 'subtype-small'
+                  only: true
+        only: true
+    - include():
+        pattern: "layouts-footer-layout-2"
+        with:
+          footer_layout_2_section_1:
+            include():
+              pattern: "components-utility-menu"
+          footer_layout_2_section_2:
+            include():
+              pattern: "atoms-utility-text"
+              with:
+                utility_text: "International Rescue Committee is a 501(c)(3) not-for-profit organization. Copyright © International Rescue Committee, 2018"
+              only: true
+        only: true
+topic_page_sticky_footer:
+  include():
+    pattern: "components-sticky-footer"
+    with:
+      sticky_footer_test_mode: true

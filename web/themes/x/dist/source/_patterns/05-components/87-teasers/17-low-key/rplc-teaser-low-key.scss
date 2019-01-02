@@ -1,0 +1,61 @@
+@import 'rplc-teaser-low-key.variables';
+
+.rplc-teaser-low-key {
+  $self: &;
+
+  &__image-wrapper {
+    @include line-height('none');
+    flex-shrink: 0;
+  }
+
+  &__wrapper-link {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(phablet) {
+      border-top: 1px solid get-neutral-color('gray');
+    }
+
+    @include breakpoint(phablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @include typography-heading-medium;
+    @include typography-vertical-spacing;
+
+    max-width: rem(470px);
+
+    @include breakpoint(phablet) {
+      @include font-size('m');
+    }
+
+    @include breakpoint(phablet) {
+      max-height: rem(96px);
+      overflow: hidden;
+    }
+
+    @include breakpoint(desktop) {
+      max-height: rem(72px);
+    }
+  }
+
+  &__text-wrapper {
+    overflow: hidden;
+    padding: get-spacing('m');
+
+    @include breakpoint(phablet) {
+      max-height: rem(198px);
+      overflow: hidden;
+      padding: get-spacing('ml');
+    }
+
+    @include breakpoint(desktop) {
+      max-height: rem(162px);
+    }
+  }
+}
+
+
+// end of file

@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_is_variable_height_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addCropToMediaImageForm('variable_height');
+}
+
+function ef_is_variable_height_uninstall () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->removeCropFromMediaImageForm('variable_height');
+}

@@ -1,0 +1,14 @@
+<div class="rplc-teaser-video">
+  <a href="{{ teaser_video_url }}" class="rplc-teaser-video__wrapper-link">
+    <div class="rplc-teaser-video__image-wrapper" data-rpl-content-type="video">
+      {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+        responsive_image_source_set: teaser_video_image_source_set,
+        responsive_image_sizes: "(min-width: 641px) 256px, (min-width: 321px) calc(100vw - 2rem), 320px",
+        responsive_image_fallback: teaser_video_image_fallback,
+        responsive_image_alt: teaser_video_image_alt,
+      } only %}
+    </div>
+    <div class="rplc-teaser-video__slug">{{ "Video" | trans }}</div>
+    <h6 class="rplc-teaser-video__title">{{ teaser_video_title }}</h6>
+  </a>
+</div>

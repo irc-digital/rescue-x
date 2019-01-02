@@ -1,0 +1,90 @@
+{% import _self as main_menu %}
+
+{% macro build(items, class='rplc-main-menu') %}
+  {% import _self as main_menu %}
+
+  <ul class="{{ class }}">
+    {% for item in items %}
+      {{ main_menu.build_leveL_1(item, loop.last, class) }}
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+
+{% macro build_leveL_1(item, last, class) %}
+  {% import _self as main_menu %}
+
+  {% set has_level_4 = item.items is not empty and item.items[0].items is not empty and item.items[0].items[0].items is not empty %}
+  {% set type = class ~ "__level-1-menu-item--type-" ~ (has_level_4 ? '2' : '1') %}
+  {% set position = last ? ' ' ~ class ~ '__level-1-menu-item-link--last' : '' %}
+  <li class="{{ class }}__level-1-menu-item {{ type }}" data-rpl-main-menu-level-1>
+    <a class="{{ class }}__level-1-menu-item-link{{ position }}" href="{{ item.url }}">{{ item.title }}</a>
+
+    {% if item.items is not empty %}
+      <button class="{{ class }}__level-1-expand-toggle" data-rpl-main-menu-expanding-section-target></button>
+
+      <ul class="{{ class }}__level-2">
+        {% for subitem in item.items %}
+          {{ main_menu.build_leveL_2(subitem, loop.last, class) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </li>
+
+{% endmacro %}
+
+
+{% macro build_leveL_2(item, last, class) %}
+  {% import _self as main_menu %}
+
+  {% set position = last ? ' ' ~ class ~ '__level-2-menu-item--last' : '' %}
+
+  <li class="{{ class }}__level-2-menu-item{{ position }}"/>
+    <h5 class="{{ class }}__level-2-menu-item-title">{{ item.title }}</h5>
+
+    {% if item.items is not empty %}
+      <ul class="{{ class }}__level-3">
+        {% for subitem in item.items %}
+          {{ main_menu.build_leveL_3(subitem, class) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </li>
+
+{% endmacro %}
+
+{% macro build_leveL_3(item, class) %}
+  {% import _self as main_menu %}
+
+  <li class="{{ class }}__level-3-menu-item{% if item.items is empty %} {{ class }}__level-3-menu-item--leaf{% endif %}" data-rpl-main-menu-level-3>
+
+    {% if item.items is not empty %}
+      <div class="{{ class }}__level-3-menu-item-title" data-rpl-main-menu-expanding-section-target>{{ item.title }}</div>
+      <button class="{{ class }}__level-3-expand-toggle" data-rpl-main-menu-expanding-section-target></button>
+      {% set halfway = ((item.items | length) / 2) | round %}
+
+      {% set split_items = [item.items | slice(0, halfway), item.items | slice(halfway)] %}
+
+      <div class="{{ class }}__level-4-wrapper">
+        {% for items_group in split_items %}
+          <ul class="{{ class }}__level-4 {{ class }}__level-4--group-{{ loop.index }}">
+            {% for subitem in items_group %}
+              {{ main_menu.build_leveL_4(subitem, class) }}
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+    {% else %}
+      <a class="{{ class }}__level-3-menu-item-link" href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+  </li>
+
+{% endmacro %}
+
+{% macro build_leveL_4(item, class) %}
+  <li class="{{ class }}__level-4-menu-item">
+    <a class="{{ class }}__level-4-menu-item-link" href="{{ item.url }}">{{ item.title }}</a>
+  </li>
+{% endmacro %}

@@ -1,0 +1,9 @@
+@import '../../../../scss/core';
+
+$hero-layout-1-smallest-large-device-size: rem(981px);
+$hero-layout-1-largest-medium-device-size: $hero-layout-1-smallest-large-device-size - rem(1px);
+$hero-text-wrapper-eats-in: rem(-29px);
+$hero-text-wrapper-eats-in-phablet: rem(-36px);
+$hero-text-wrapper-eats-in-desktop: rem(-150px);
+
+// end of file

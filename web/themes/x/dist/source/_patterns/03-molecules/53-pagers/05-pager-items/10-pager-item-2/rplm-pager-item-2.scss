@@ -1,0 +1,21 @@
+@import 'rplm-pager-item-2.variables';
+
+.rplm-pager-item-2 {
+  border: 3px solid get-neutral-color('black');
+  border-radius: 50%;
+  display: inline-block;
+  font-size: get-font-size('xl');
+  font-weight: get-font-weight('bold');
+  height: $pager-item-2-size;
+  line-height: 2;
+  margin-right: get-spacing();
+  text-align: center;
+  width: $pager-item-2-size;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer;
+  }
+}
+
+// end of file

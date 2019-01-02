@@ -1,0 +1,9 @@
+@import '../../../../scss/core';
+
+$stacked-title-1-line-spacing: (
+  'mobile': get-spacing('s'),
+  'phablet': get-spacing('ml'),
+);
+$stacked-title-1-line-width: rem(3px);
+
+// end of file

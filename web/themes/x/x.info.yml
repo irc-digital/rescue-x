@@ -1,0 +1,40 @@
+#x.info.yml
+name: X
+type: theme
+description: 'Sample Rescue.org'
+core: 8.x
+# by adding global-styling and global-scripts here, the css/js files in the library become
+# available to every page presented by the theme
+libraries:
+  - x/global-styling
+base theme: stable
+regions:
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: Footer
+
+component-libraries:
+  atoms:
+    paths:
+      - dist/source/_patterns/01-atoms
+  molecules:
+    paths:
+      - dist/source/_patterns/03-molecules
+  components:
+    paths:
+      - dist/source/_patterns/05-components
+  layouts:
+    paths:
+      - dist/source/_patterns/10-layouts
+
+ef_icon_library:
+  symbol_path: dist/svg/individuals
+  symbol_prefix: 'symbol-'
+  exclude:
+    - map-marker.svg
+    - map-marker-capital.svg
+    - map-marker-empty-circle.svg
+    - map-marker-filled-circle.svg
+    - map-marker-filledsmall-circle.svg
+    - map-marker-pin.svg

@@ -1,0 +1,7 @@
+embeddable_option.configuration.embeddable_test_options:
+  type: mapping
+  label: 'Embeddable test option configuration'
+  mapping:
+    default_selected_button:
+      type: string
+      label: 'Default selected button'

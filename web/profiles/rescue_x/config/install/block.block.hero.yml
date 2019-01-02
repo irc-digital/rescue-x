@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - x
+id: hero
+theme: x
+region: header
+weight: 10
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: Hero
+  provider: ctools
+  label_display: '0'
+  view_mode: hero
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

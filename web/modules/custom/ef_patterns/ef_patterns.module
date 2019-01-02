@@ -1,0 +1,400 @@
+<?php
+
+use Drupal\Core\Logger\RfcLogLevel;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\ui_patterns\Element\Pattern;
+use Drupal\ef_patterns\PatternDefinitionModifier;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_ui_patterns_info_alter
+ *
+ * @param $patterns
+ */
+function ef_patterns_ui_patterns_info_alter (&$patterns) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(PatternDefinitionModifier::class)
+    ->modifyPatterns($patterns);
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function ef_patterns_theme() {
+  return [
+    'ui_patterns_responsive_image' => [
+      'variables' => [
+        'uri' => NULL,
+        'attributes' => [],
+        'responsive_image_style_id' => [],
+        'height' => NULL,
+        'width' => NULL,
+      ],
+    ],
+    'ui_patterns_responsive_image_formatter' => [
+      'variables' => [
+        'item' => NULL,
+        'item_attributes' => NULL,
+        'url' => NULL,
+        'responsive_image_style_id' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for UI Patterns version of responsive image.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - uri: The URI of the image.
+ *   - width: The width of the image (if known).
+ *   - height: The height of the image (if known).
+ *   - attributes: Associative array of attributes to be placed in the img tag.
+ *   - responsive_image_style_id: The ID of the responsive image style.
+ */
+function template_preprocess_ui_patterns_responsive_image(&$variables) {
+  template_preprocess_responsive_image ($variables);
+
+  if ($variables['output_image_tag']) {
+    $responsive_image_type = 'responsive_image';
+    $source_set_string = $variables['sources'][0]['srcset']->value();
+    $source_set_array = explode(',', $source_set_string);
+
+    $sizes_string = $variables['sources'][0]['sizes']->value();
+
+    $fields = [
+      'responsive_image_source_set' => $source_set_array,
+      'responsive_image_sizes' => $sizes_string,
+    ];
+
+  } else {
+    $responsive_image_type = 'art_directed_image';
+
+    $all_sources = [];
+    /** @var \Drupal\Core\Template\Attribute $source */
+    foreach ($variables['sources'] as $source) {
+      $entry = [];
+
+      $source_set_string = $source['srcset']->value();
+      $entry['source_set'] = explode(',', $source_set_string);
+
+      if (isset($source['media'])) {
+        $entry['media'] = $source['media']->value();
+      }
+
+      $all_sources[] = $entry;
+    }
+
+    $fields = [
+      'art_directed_image_sources' => $all_sources,
+    ];
+  }
+
+  $fields[$responsive_image_type . '_fallback'] = $variables['img_element']['#uri'];
+  $fields[$responsive_image_type . '_alt'] = $variables['img_element']['#alt'] ? $variables['img_element']['#alt'] : '';
+  $fields[$responsive_image_type . '_title'] = $variables['img_element']['#title'] ? $variables['img_element']['#title'] : '';
+
+  $variables['responsive_image'] = [
+    '#type' => 'pattern',
+    '#id' => $responsive_image_type,
+    '#fields' => $fields,
+  ];
+
+}
+
+/**
+ * Prepares variables for UI Patterns version of the responsive image formatter templates.
+ *
+ */
+function template_preprocess_ui_patterns_responsive_image_formatter (&$variables) {
+  template_preprocess_responsive_image_formatter($variables);
+
+  if (isset($variables['responsive_image']['#type']) && $variables['responsive_image']['#type'] == 'responsive_image') {
+    $variables['responsive_image']['#theme'] = 'ui_patterns_responsive_image';
+    unset($variables['responsive_image']['#type']);
+  } else if (isset($variables['responsive_image']['#theme']) && $variables['responsive_image']['#theme'] == 'image') {
+    $variables['responsive_image']['#type'] = 'pattern';
+    $variables['responsive_image']['#id'] = 'image';
+    $image_path = file_create_url($variables['responsive_image']['#uri']);
+
+    $variables['responsive_image']['#fields'] = [
+      'image_source' => $image_path,
+      'image_alt' => isset($variables['responsive_image']['#attributes']['alt']) ? $variables['responsive_image']['#attributes']['alt'] : '',
+      'image_width' => isset($variables['responsive_image']['#width']) ? $variables['responsive_image']['#width']: '',
+      'image_height' => isset($variables['responsive_image']['#height']) ? $variables['responsive_image']['#height'] : '',
+    ];
+  } else {
+    \Drupal::logger('ef_patterns')->log(RfcLogLevel::ERROR, 'Unexpected result from template_preprocess_responsive_image_formatter.');
+  }
+}
+
+function ef_patterns_get_responsive_image_element ($responsive_image_style_id, $image_element, $image_uri) {
+  $local_cache = &drupal_static(__FUNCTION__);
+
+  $key = sprintf('%s_%s', $responsive_image_style_id, $image_uri);
+
+  if (!isset($local_cache[$key])) {
+    $local_cache[$key] = [];
+
+    $responsive_image_style = ResponsiveImageStyle::load($responsive_image_style_id);
+
+    if ($responsive_image_style) {
+      $variables = [
+        'responsive_image_style_id' => $responsive_image_style_id,
+        'uri' => $image_uri,
+      ];
+
+      $image = \Drupal::service('image.factory')->get($variables['uri']);
+      $sources = [];
+      $breakpoints = array_reverse(\Drupal::service('breakpoint.manager')->getBreakpointsByGroup($responsive_image_style->getBreakpointGroup()));
+      foreach ($responsive_image_style->getKeyedImageStyleMappings() as $breakpoint_id => $multipliers) {
+        if (isset($breakpoints[$breakpoint_id])) {
+          // sadly we have to use a deprecated function here. there is a lot of complexity behind this stuff, and there is not a
+          // suggested replacement approach
+          // @see responsive_image_build_source_attributes
+          $sources[] = responsive_image_build_source_attributes($image, $variables, $breakpoints[$breakpoint_id], $multipliers);
+        }
+      }
+
+      if (count($sources) === 1 && !isset($sources[0]['media'])) {
+        // basic responsive image
+        $source_set_string = $sources[0]['srcset']->value();
+        $source_set_array = explode(',', $source_set_string);
+        $local_cache[$key]['srcset'] = $source_set_array;
+
+        $sizes_string = $sources[0]['sizes']->value();
+        $local_cache[$key]['sizes'] = $sizes_string;
+
+      } else {
+        // art-directed responsive image
+        $all_sources = [];
+        /** @var \Drupal\Core\Template\Attribute $source */
+        foreach ($sources as $source) {
+          $entry = [];
+
+          $source_set_string = $source['srcset']->value();
+          $entry['source_set'] = explode(',', $source_set_string);
+
+          if (isset($source['media'])) {
+            $entry['media'] = $source['media']->value();
+          }
+
+          $all_sources[] = $entry;
+        }
+
+        $local_cache[$key]['sources'] = $all_sources;
+      }
+
+      $fallback_image_uri = _responsive_image_image_style_url($responsive_image_style->getFallbackImageStyle(), $image_uri);
+      $local_cache[$key]['fallback_uri'] = $fallback_image_uri;
+
+    } else {
+      \Drupal::logger('ef_patterns')->log(RfcLogLevel::ERROR, 'Failed to load responsive image style: “@style“ while displaying responsive image.', ['@style' => $responsive_image_style_id]);
+    }
+  }
+
+  $result = '';
+
+  if (isset($local_cache[$key][$image_element])) {
+    $result = $local_cache[$key][$image_element];
+  }
+
+  return $result;
+}
+
+
+/**
+ * Implements hook_theme_register_alter
+ *
+ * Add a preprocessing hook for all patterns so that we can jump in and
+ * modify the pattern information to account for things like section title,
+ * which is not actually on the embeddable itself.
+ *
+ * @param $theme_registry
+ */
+function ef_patterns_theme_registry_alter(&$theme_registry) {
+  foreach ($theme_registry as $entry_name => $entry) {
+    if (strpos($entry_name, 'pattern_') === 0) {
+      $theme_registry[$entry_name]['preprocess functions'][] = 'ef_patterns_preprocess_pattern';
+    }
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function ef_patterns_element_info_alter(array &$types) {
+  if (isset($types['pattern'])) {
+    // we need to place our callback after processMultipleSources
+
+    $after = -1;
+    for ($i = 0; $i < count($types['pattern']['#pre_render']); $i++) {
+      $entry = $types['pattern']['#pre_render'][$i];
+      if (count($entry) == 2 && $entry[0] == 'Drupal\ui_patterns\Element\Pattern' && $entry[1] == 'processMultipleSources') {
+        $after = $i + 1;
+        break;
+      }
+    }
+
+    if ($after !== -1) {
+      array_splice( $types['pattern']['#pre_render'], $after, 0, ['_ef_patterns_pre_render_pattern_render_array'] );
+    } else {
+      throw new ErrorException('Unable to attach our prerender hook after processMultipleSources. This could mean the Patterns UI module has been updated in a manner that needs further reflection.');
+    }
+  }
+}
+
+/**
+ * Digs the specific markup out of the ImageAttributesField plugin.
+ *
+ * Because the information is being rendered via display suite we need this
+ * slightly ugly code to transform the data into soemthing that Pattern UI
+ * can handle
+ *
+ * @param array $element
+ * @return array
+ */
+function _ef_patterns_pre_render_pattern_render_array (array $element) {
+
+  if (Pattern::hasFields($element)) {
+    $fields = $element['#fields'];
+
+    /** @var \Drupal\ui_patterns\Element\PatternContext $pattern_context */
+    $pattern_context = $element['#context'];
+
+    foreach ($fields as $name => $field) {
+
+      if ($pattern_context->getType() == 'layout') {
+        $field = reset($field); // data is stored one level down in layouts
+      }
+
+      if (isset($field['#field_type']) && $field['#field_type'] == 'ds' &&
+        isset($field[0][0]['#ef_ds_custom_field_element']) && $field[0][0]['#ef_ds_custom_field_element']) {
+        $element['#fields'][$name] = $field[0][0]['#markup'];
+      }
+    }
+
+    /** @var \Drupal\ef_patterns\PatternsHelper $patternsHelper */
+    $patternsHelper = \Drupal::service('ef_patterns.patterns_helper');
+    $element = $patternsHelper->handleUnpackAttribute($element);
+  }
+
+  return $element;
+
+}
+
+/**
+ *
+ * Preprocess pattern
+ *
+ * If this is a layout pattern we jump in and see if we need to pass in any
+ * information that is usual stored on the reference (such as section title)
+ *
+ * @param array $variables
+ */
+function ef_patterns_preprocess_pattern (array &$variables) {
+  /** @var \Drupal\ef_patterns\SpecialPatternFieldsManagerInterface $specialPatternFieldManager */
+  $specialPatternFieldManager = \Drupal::service('ef_patterns.special_pattern_fields_manager');
+
+  $specialPatternFieldManager->transmitSpecialFieldsToPattern($variables);
+}
+
+/**
+ * The custom embeddable view call passes in the section title etc in a variable
+ * that is attached to the build array. This function takes those variables and
+ * reattaches them to a context setting that is then passed through to the pattern
+ * processing code (above)
+ *
+ * @param $variables
+ */
+function ef_patterns_preprocess_ds_entity_view (&$variables) {
+  /** @var \Drupal\ef_patterns\SpecialPatternFieldsManagerInterface $specialPatternFieldManager */
+  $specialPatternFieldManager = \Drupal::service('ef_patterns.special_pattern_fields_manager');
+
+  $specialPatternFieldManager->provideSpecialFieldsAsContext($variables);
+}
+
+
+function ef_patterns_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'layout_alter') { // ensure our layout alter hooks runs after ui_patterns
+    $group = $implementations['ef_patterns'];
+    unset($implementations['ef_patterns']);
+    $implementations['ef_patterns'] = $group;
+  }
+}
+
+/**
+ * Implements hook_layout_alter().
+ */
+function ef_patterns_layout_alter(&$definitions) {
+  /** @var \Drupal\ef_patterns\SpecialPatternFieldsManagerInterface $specialPatternFieldManager */
+  $specialPatternFieldManager = \Drupal::service('ef_patterns.special_pattern_fields_manager');
+
+  $specialPatternFieldManager->modifyPatternLayouts($definitions);
+
+  // reorder the patterns into alphabetical order
+  $pattern_defs = [];
+  /**
+   * @var string $definition_id
+   * @var \Drupal\Core\Layout\LayoutDefinition $definition
+   */
+  foreach ($definitions as $definition_id => $definition) {
+    if ($definition->getCategory() == 'Patterns') {
+      $pattern_defs[$definition_id] = $definition;
+      unset($definitions[$definition_id]);
+    }
+  }
+
+  uasort($pattern_defs, function ($pattern_one, $pattern_two) {
+    return strcmp($pattern_one->getLabel(),$pattern_two->getLabel());
+  });
+
+  $definitions += $pattern_defs;
+
+}
+
+function ef_patterns_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  $ds_layout = $display->getThirdPartySetting('ds', 'layout');
+
+  if ($ds_layout && isset($ds_layout['id']) && strpos($ds_layout['id'], 'pattern_') === 0) {
+    // the entity we are displaying is using a pattern as its layout
+    $pattern_name = substr($ds_layout['id'], 8);
+
+    /** @var \Drupal\ef_patterns\PatternsHelper $patternsHelper */
+    $patternsHelper = \Drupal::service('ef_patterns.patterns_helper');
+
+    $field_marked_as_pass_through_modifiers = $patternsHelper->getFieldsOnPatternContainingAttribute($pattern_name, 'pass_through_modifiers');
+
+    /** @var $pass_through_modifier_field \Drupal\ui_patterns\Definition\PatternDefinitionField */
+    foreach ($field_marked_as_pass_through_modifiers as $pass_through_modifier_field) {
+
+      // find which DS region is holding the field that we need to pass the modifiers through to
+      $pattern_field_name = $pass_through_modifier_field['name'];
+      $ds_regions = $display->getThirdPartySetting('ds', 'regions');
+
+      if (isset($ds_regions[$pattern_field_name]) && count($ds_regions[$pattern_field_name]) === 1) {
+        $entity_field_name = $ds_regions[$pattern_field_name][0];
+        $pass_through_modifiers_list = $pass_through_modifier_field['pass_through_modifiers'];
+
+        foreach ($pass_through_modifiers_list as $pass_through_modifier) {
+          _ef_patterns_transmit_modifier_to_child_field ($build, $entity_field_name, $pass_through_modifier);
+        }
+      }
+    }
+  }
+}
+
+function _ef_patterns_transmit_modifier_to_child_field (array &$build, $field_name, $modifier_stem) {
+  if (isset($build[$field_name]) && isset($build['#embeddable_reference_options']['embeddable_modifier_options'])) {
+    foreach ($build['#embeddable_reference_options']['embeddable_modifier_options'] as $key => $modifier) {
+      if (strpos($modifier, $modifier_stem . '-') === 0) {
+        $build[$field_name]['#embeddable_reference_options']['embeddable_modifier_options'][] = $build['#embeddable_reference_options']['embeddable_modifier_options'][$key];
+        unset($build['#embeddable_reference_options']['embeddable_modifier_options'][$key]);
+        $build['#embeddable_reference_options']['embeddable_modifier_options'] = array_values($build['#embeddable_reference_options']['embeddable_modifier_options']);
+      }
+    }
+  }
+}

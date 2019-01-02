@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.widescreen_16x9_1024px_wide
+    - image.style.widescreen_16x9_2048px_wide
+    - image.style.widescreen_16x9_528px_wide
+    - image.style.widescreen_16x9_208px_wide
+    - image.style.widescreen_16x9_736px_wide
+  enforced:
+    module:
+      - ef_ris_teasers
+id: teaser_standard
+label: 'Teaser (standard)'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), calc(100vw - 2rem)'
+      sizes_image_styles:
+        - widescreen_16x9_1024px_wide
+        - widescreen_16x9_2048px_wide
+        - widescreen_16x9_528px_wide
+        - widescreen_16x9_208px_wide
+        - widescreen_16x9_736px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: widescreen_16x9_2048px_wide

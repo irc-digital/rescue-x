@@ -1,0 +1,9 @@
+@import '../../../scss/core';
+@import '../../10-layouts/15-slider-layouts/10-slider-layout-2/rpll-slider-layout-2.shared.variables';
+
+$goal-large-screen-size: $slider-layout-2-large-screen-size;
+$goal-image-size: rem(500px);
+$goal-text-width: rem(560px);
+$goal-eat-in-breakpoint: 1208px;
+
+// end of file

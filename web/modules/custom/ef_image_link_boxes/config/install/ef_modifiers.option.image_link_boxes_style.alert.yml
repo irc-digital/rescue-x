@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image_link_boxes
+id: image_link_boxes_style.alter
+label: Alert
+class_name: alert
+target_embeddable_modifier: image_link_boxes_style
+weight: 15

@@ -1,0 +1,4 @@
+toggle_collapsed_text: 'Highlights'
+toggle_expanded_text: 'Highlights'
+toggle_modifiers:
+  - 'mobile-only'

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_partial_image_width_landscape
+id: media.image_partial_width_landscape
+label: 'Image partial width, landscape'
+targetEntityType: media
+cache: true

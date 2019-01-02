@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.test
+  module:
+    - ef
+    - ef_modifiers
+  enforced:
+    module:
+      - ef_modifiers_test
+third_party_settings:
+  ef:
+    editor_friendly_name: ''
+    view_mode_visibility:
+      field: field
+    embeddable_reference_options:
+      embeddable_modifier_options:
+        enabled: true
+        plugin: embeddable_modifier_options
+        configuration:
+          enabled_modifiers:
+            box_color: box_color
+            background_color: background_color
+id: embeddable.test.default
+targetEntityType: embeddable
+bundle: test
+mode: default

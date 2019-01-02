@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: background_color.red
+label: Red
+class_name: red
+target_embeddable_modifier: background_color
+weight: -6

@@ -1,0 +1,170 @@
+@import 'rpll-hero-layout-1.variables';
+@import 'rpll-hero-layout-1.shared.mixins';
+
+.rpll-hero-layout-1 {
+  $self: &;
+
+  &__inner-content-wrapper {
+    @include well-row;
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+  }
+
+  &__text-wrapper {
+    background-color: get-neutral-color('white');
+    display: block;
+    padding: get-spacing('ml');
+
+    @include breakpoint(phablet) {
+      display: grid;
+      grid-column-gap: get-spacing('m');
+      grid-row-gap: get-spacing('m');
+      grid-template-areas: 'primary_1 primary_1' 'primary_2 secondary_1' 'secondary_2 secondary_2';
+      grid-template-columns: 1fr 1fr;
+      padding: get-spacing('l');
+    }
+
+    //
+    // 1) Define template column widths and map each area to each column
+    // 2) Declare three grid rows and set to `auto`. `auto` results in different
+    // math than `1fr`, which is worth noting.
+    //
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      grid-template-areas: 'primary_1 secondary_1' 'primary_1 secondary_2' 'primary_2 .'; // 1
+      grid-template-columns: 66% 1fr; // 1
+      grid-template-rows: auto auto auto; // 2
+      padding: get-spacing('l') get-spacing('2xl');
+    }
+  }
+
+  &__primary-1 {
+    grid-area: primary_1;
+    margin-bottom: get-spacing('l');
+
+    @include breakpoint(phablet) {
+      margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+
+      //
+      // 1) Tell the primary-1 area to span two rows. This is important to prevent
+      // secondary-1 and secondary-2 from matching the height of primary-1.
+      //
+      grid-row: span 2; // 1
+      margin-right: get-spacing('l');
+    }
+  }
+
+  &__primary-2 {
+    grid-area: primary_2;
+
+    margin-bottom: get-spacing('l');
+
+    @include breakpoint(phablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__secondary-1 {
+    @include line-height('none');
+    grid-area: secondary_1;
+
+    @include breakpoint(phablet) {
+      text-align: right;
+    }
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      margin-top: 0;
+      text-align: initial;
+    }
+  }
+
+  &__secondary-2 {
+    border-top: 1px solid get-neutral-color('black');
+    grid-area: secondary_2;
+    margin-top: get-spacing();
+    padding-top: get-spacing();
+
+    @include breakpoint(phablet) {
+      margin-top: 0;
+    }
+
+    @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+      //
+      // 1) Tell secondary-2 to span two rows. This is important to prevent
+      // primary-1 from matching the height of secondary-1 and secondary-2,
+      // which can end up pushing primary-2 down too far.
+      //
+      border-width: 0;
+      grid-row: span 2; // 1
+      padding-top: 0;
+    }
+  }
+
+  // modifiers
+  &--has-image {
+    #{$self}__text-wrapper {
+      @include hero-text-wrapper-eat-in;
+    }
+  }
+
+  &--transparent {
+    #{$self}__text-wrapper {
+      background-color: transparent;
+      padding: 0 get-spacing('m');
+
+      @include breakpoint(phablet) {
+        padding-left: get-spacing('l');
+        padding-right: get-spacing('l');
+      }
+
+      @include breakpoint(desktop) {
+        padding-left: get-spacing('2xl');
+        padding-right: get-spacing('2xl');
+      }
+    }
+  }
+
+  &--no-second-blocks {
+    #{$self}__text-wrapper {
+      @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+        grid-template-areas: 'primary_1 secondary_1';
+        grid-template-rows: auto;
+      }
+    }
+
+    #{$self}__primary-1 {
+      @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+        grid-row: unset;
+      }
+    }
+  }
+
+  &--50-50 {
+    #{$self}__text-wrapper {
+      @include breakpoint(phablet) {
+        grid-template-areas: 'primary_1 secondary_1';
+        grid-template-columns: 50% 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    #{$self}__secondary-1 {
+      @include breakpoint(phablet) {
+        text-align: initial;
+      }
+    }
+
+    #{$self}__primary-1 {
+      @include breakpoint(phablet) {
+        grid-row: unset;
+      }
+    }
+  }
+}
+
+
+// end of file

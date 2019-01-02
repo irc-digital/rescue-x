@@ -1,0 +1,72 @@
+entity.embeddable_modifier.edit_form:
+  path: '/admin/config/content/embeddable-modifier/{embeddable_modifier}'
+  defaults:
+    _entity_form: 'embeddable_modifier.edit'
+    _title: 'Edit embeddable modifier'
+  requirements:
+    _permission: 'administer embeddable content'
+
+
+entity.embeddable_modifier.collection:
+  path: '/admin/config/content/embeddable-modifier'
+  defaults:
+    _entity_list: 'embeddable_modifier'
+    _title: 'Embeddable modifier configuration'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier.delete_form:
+  path: '/admin/config/content/embeddable-modifier/{embeddable_modifier}/delete'
+  defaults:
+    _entity_form: 'embeddable_modifier.delete'
+    _title: 'Delete embeddable modifier'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier.add_option:
+  path: '/admin/config/content/embeddable-modifier/manage/{embeddable_modifier}/add-option'
+  defaults:
+    _controller: '\Drupal\ef_modifiers\Controller\EmbeddableModifierController::addOptionForm'
+    _title: 'Add entry'
+  requirements:
+    _permission: 'administer embeddable content'
+
+embeddable_modifier_option.entry_add:
+  path: '/admin/config/content/embeddable-modifier/manage/{embeddable_modifier}/add-option'
+  defaults:
+    _controller: '\Drupal\ef_modifiers\Controller\EmbeddableModifierController::addOptionForm'
+    _title: 'Add entry'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier_option.edit_form:
+  path: '/admin/config/content/embeddable-modifier/option/{embeddable_modifier_option}/edit'
+  defaults:
+    _entity_form: 'embeddable_modifier_option.edit'
+    _title: 'Edit'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier_option.delete_form:
+  path: '/admin/config/content/embeddable-modifier/option/{embeddable_modifier_option}/delete'
+  defaults:
+    _entity_form: 'embeddable_modifier_option.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier.add_form:
+  path: '/admin/config/content/embeddable-modifier/add'
+  defaults:
+    _entity_form: 'embeddable_modifier.add'
+    _title: 'Add embeddable modifier'
+  requirements:
+    _permission: 'administer embeddable content'
+
+entity.embeddable_modifier.collection:
+  path: '/admin/config/content/embeddable-modifier'
+  defaults:
+    _entity_list: 'embeddable_modifier'
+    _title: 'Embeddable modifier configuration'
+  requirements:
+    _permission: 'administer embeddable content'

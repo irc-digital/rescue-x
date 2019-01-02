@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.test
+  module:
+    - ef
+    - ef_modifiers
+  enforced:
+    module:
+      - ef_test
+third_party_settings:
+  ef:
+    editor_friendly_name: ''
+    view_mode_visibility:
+      field: '0'
+id: embeddable.test.ef_variation_1
+targetEntityType: embeddable
+bundle: test
+mode: ef_variation_1

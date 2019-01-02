@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.widescreen_16x9_1024px_wide
+    - image.style.widescreen_16x9_2048px_wide
+    - image.style.widescreen_16x9_2576px_wide
+    - image.style.widescreen_16x9_736px_wide
+  enforced:
+    module:
+      - ef_iv_image_window_width
+id: image_window_width
+label: 'Image window width'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw'
+      sizes_image_styles:
+        - widescreen_16x9_1024px_wide
+        - widescreen_16x9_2048px_wide
+        - widescreen_16x9_2576px_wide
+        - widescreen_16x9_736px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: widescreen_16x9_736px_wide

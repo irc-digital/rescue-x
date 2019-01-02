@@ -1,0 +1,68 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ef_wysiwyg_embed\Plugin\EmbeddableViewModeVisibility\EmbeddableViewModeVisibilityWysiwyg;
+use Drupal\ef_wysiwyg_embed\EmbeddingOptionsElementHelper;
+
+/**
+ * Implements hook_entity_embed_display_plugins_for_context_alter.
+ *
+ * This hooks ensures that only our display options are presented as an option
+ * for admins on the entity embed configurations screen when editing the
+ * embeddable option. Further, it will remove our options for any non-embeddable
+ * type (as it will not work).
+ *
+ * @param array $definitions
+ * @param array $contexts
+ */
+function ef_wysiwyg_embed_entity_embed_display_plugins_for_context_alter(array &$definitions, array $contexts) {
+  // to simplify the administrative interface, get rid of all of the default entity embed options for embeddable content
+  // and just keep our embeddable field info
+  if (isset($contexts['entity_type']) && $contexts['entity_type'] == 'embeddable' && isset($definitions['entity_reference_embeddable_entity_display:entity_reference_embeddable_view'])) {
+    $keeper = $definitions['entity_reference_embeddable_entity_display:entity_reference_embeddable_view'];
+    $definitions = [
+      'entity_reference_embeddable_entity_display:entity_reference_embeddable_view' => $keeper,
+    ];
+  } else if (isset($definitions['entity_reference_embeddable_entity_display:entity_reference_embeddable_view'])) {
+    unset($definitions['entity_reference_embeddable_entity_display:entity_reference_embeddable_view']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * We modify the entity embed dialog because we drive the bundles to appear
+ * in the search based on the visibility settings.
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function ef_wysiwyg_embed_form_entity_embed_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_state->get('step') == 'select' && isset($form['entity_id'])) {
+    /** @var \Drupal\ef\EmbeddableViewModeVisibilityServiceInterface $ef_view_mode_visibility */
+    $ef_view_mode_visibility = \Drupal::service('ef.view_mode_visibility');
+    $enabled_bundles = $ef_view_mode_visibility->getAllVisibleBundles(EmbeddableViewModeVisibilityWysiwyg::class);
+
+    if (count($enabled_bundles) === 0) {
+      // this is very unlikely to happen, as it means that no bundles were marked
+      // for including in the WYSIWYG, probably implies missing config. however,
+      // in this scenario lets return something that never matches, otherwise
+      // all will be show and the misconfig may not be noticed.
+      $enabled_bundles = ['xxx_no_bundle_with_this_name_xxx'];
+    }
+
+    $form['entity_id']['#selection_settings']['target_bundles'] = $enabled_bundles;
+  }
+}
+
+/**
+ * Implements hook_element_info_alter.
+ *
+ * @param array $info
+ */
+function ef_wysiwyg_embed_element_info_alter(array &$info) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddingOptionsElementHelper::class)
+    ->alterElementInfo($info);
+}

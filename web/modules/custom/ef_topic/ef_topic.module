@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_dynamic_content_view_argument_field_for_BUNDLE
+ * @return string
+ */
+function ef_topic_dynamic_content_view_argument_field_for_topic () {
+  return 'field_topics';
+}

@@ -1,0 +1,38 @@
+{#
+/**
+ * Slider layout 1
+ *
+ * Available variables:
+ *   slider_layout_1_slides - Array of slide content
+ *     slug
+ *     title
+ *     slide
+ */
+#}
+<div class="rpll-slider-layout-1">
+  <div class="rpll-slider-layout-1__slides-wrapper">
+    <div class="rpll-slider-layout-1__previous" data-rpl-slider-previous>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-left',
+        icon_modifiers: ['fill-white'],
+      } only %}
+    </div>
+    <div class="rpll-slider-layout-1__slides" data-rpl-slider-pager data-rpl-slider-slides>
+      {% for slider_layout_1_slide_info in slider_layout_1_slides %}
+        {% set slide_pager %}
+          {% include '@molecules/53-pagers/05-pager-items/05-pager-item-1/pager-item-1.twig' with {
+            pager_item_1_slug: slider_layout_1_slide_info.slug,
+            pager_item_1_title: slider_layout_1_slide_info.title,
+          } only %}
+        {% endset %}
+        <div class="rpll-slider-layout-1__slide" data-rpl-slider-slide-pager-item="{{ slide_pager | escape('html') }}"  data-rpl-slider-responsive='{{ slider_layout_1_responsive | default('[]') }}'>{{ slider_layout_1_slide_info.slide }}</div>
+      {% endfor %}
+    </div>
+    <div class="rpll-slider-layout-1__next" data-rpl-slider-next>
+      {% include '@atoms/05-icon/icon.twig' with {
+        icon_name: 'caret-right',
+        icon_modifiers: ['fill-white'],
+      } only %}
+    </div>
+  </div>
+</div>

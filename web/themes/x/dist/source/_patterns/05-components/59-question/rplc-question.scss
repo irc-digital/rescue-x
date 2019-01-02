@@ -1,0 +1,175 @@
+@import 'rplc-question.variables';
+@import '_rplc-question.mixins';
+
+.rplc-question {
+
+  $self: &;
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+
+    background-color: get-neutral-color('white');
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__text-wrapper {
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('l');
+
+    @include breakpoint(tablet) {
+      padding: get-spacing('xl') get-spacing('xl') get-spacing('xl') get-spacing('l');
+    }
+
+    @include breakpoint(laptop) {
+      padding-left: rem(128px);
+    }
+  }
+
+  &__prefix {
+    @include typography-heading-medium-large;
+    @include typography-vertical-spacing;
+  }
+
+  &__question {
+    @include typography-heading-extra-large-light;
+    @include typography-vertical-spacing('airy');
+    max-width: rem(730px);
+    padding-right: get-spacing('l');
+
+    @include breakpoint(phablet) {
+      @include font-size('xl');
+      padding-right: get-spacing('3xl');
+    }
+
+    @include breakpoint(tablet) {
+      @include font-size('2xl');
+    }
+  }
+
+  &__question-wrapper {
+    padding-left: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+    }
+  }
+
+  &__answer-options {
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+    }
+  }
+
+  &__right-wrong-answer-wrapper {
+    @include typography-heading-medium-large;
+    @include typography-vertical-spacing;
+    @include font-style('italic');
+    display: none;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__wrong-answer-message,
+  &__right-answer-message {
+    display: none;
+  }
+
+  &__answer-wrapper {
+    display: none;
+    flex-direction: column;
+    padding-left: get-spacing();
+    padding-right: get-spacing();
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include question-answer-was-correct {
+    &__right-answer-message {
+      display: block;
+    }
+  }
+
+  @include question-answer-was-incorrect {
+    &__wrong-answer-message {
+      display: block;
+      padding-top: 0;
+    }
+  }
+
+  &__answer-image-wrapper {
+    @include line-height('none');
+
+    flex-shrink: 20;
+    margin-bottom: get-spacing();
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include breakpoint(tablet) {
+      margin-bottom: 0;
+      margin-left: get-spacing('l');
+      max-width: rem(448px);
+      order: 1;
+    }
+  }
+
+  &__answer-info {
+    flex-shrink: 10;
+    max-width: 100%;
+
+    @include breakpoint(tablet) {
+      max-width: rem(448px);
+
+      &--no-answer-image {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__answer-option {
+    @include typography-text-large;
+    @include font-weight('bold');
+    @include typography-vertical-spacing('airy');
+
+    background-color: get-neutral-color('dark-gray');
+    color: get-neutral-color('white');
+    cursor: pointer;
+    max-width: $max-text-width;
+    padding: get-spacing();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      background-color: get-neutral-color('black');
+    }
+
+    @include question-is-answer-given {
+      background-color: get-brand-color('primary');
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include hover {
+        background-color: get-brand-color('primary');
+      }
+    }
+  }
+
+
+}
+
+// end of file

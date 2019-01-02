@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_is_super_widescreen_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addCropToMediaImageForm('super_widescreen_21x9');
+}
+
+function ef_is_super_widescreen_uninstall () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->removeCropFromMediaImageForm('super_widescreen_21x9');
+}

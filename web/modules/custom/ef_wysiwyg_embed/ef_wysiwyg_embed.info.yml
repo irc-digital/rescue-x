@@ -1,0 +1,9 @@
+name: EF WYSIWYG embed
+type: module
+description: 'Allows embeddable content to be inserted into rich text elements.'
+package: EF Core
+core: 8.x
+dependencies:
+  - ef
+  - entity_embed
+  - ckeditor

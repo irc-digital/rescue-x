@@ -1,0 +1,524 @@
+<?php
+
+use Drupal\Core\Render\Element;
+use Drupal\ef\Entity\EmbeddableType;
+use Drupal\ef\EmbeddableTypeInterface;
+use Drupal\ef\EmbeddableInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Extension\Extension;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ef\EmbeddableFrameworkManagerInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\ef\Form\EmbeddableViewModeVisibilityInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\ef\Form\EmbeddableOptionsViewModeSettingsModifier;
+use Drupal\ef\EmbeddableViewModeOptions;
+use Drupal\ef\Form\EditorFriendlyNameFormAlterer;
+use Drupal\ef\Form\ViewModeVisibilityFormAlterer;
+use Drupal\ef\Form\ViewModeLayoutBorrowerAlterer;
+use Drupal\ef\Form\EmbeddableForm;
+use Drupal\ef\Form\ViewModeModifierNameFormAlterer;
+
+/**
+ * Implements hook_theme().
+ */
+function ef_theme() {
+  return [
+    'embeddable_add_list' => [
+      'variables' => ['content' => NULL],
+    ],
+    'embeddable' => [
+      'render element' => 'elements',
+    ],
+    'embedding_options' => [
+      'render element' => 'element',
+      'template' => 'embedding-options-element',
+    ],
+    'field__entity_reference_embeddable' => [
+      'base hook' => 'field',
+    ],
+    'media_image_thumbnails' => [
+      'variables' => [
+        'image_path' => '',
+        'image_styles' => []
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for embeddable templates.
+ *
+ * Default template: embeddable.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the embeddable information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_embeddable(array &$variables) {
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+function template_preprocess_media_image_thumbnails(array &$variables) {
+  $image_output = [];
+
+  $image_style_storage = \Drupal::entityTypeManager()->getStorage('image_style');
+  $crop_type_storage = \Drupal::entityTypeManager()->getStorage('crop_type');
+  $all_image_styles = $image_style_storage->loadMultiple($variables['image_styles']);
+
+  foreach ($variables['image_styles'] as $image_style_id) {
+
+    /** @var \Drupal\image\ImageStyleInterface $image_style */
+    $image_style = $all_image_styles[$image_style_id];
+
+    $effects = $image_style->getEffects();
+    $crop_type_label = '';
+
+    foreach ($effects as $effect) {
+      if ($effect->getPluginId() == 'crop_crop') {
+        $effect_config = $effect->getConfiguration();
+        $crop_type_id = $effect_config['data']['crop_type'];
+        $crop_type = $crop_type_storage->load($crop_type_id);
+        $crop_type_label = $crop_type->label();
+        break;
+      }
+    }
+
+    $image_output[] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'style' => 'display: inline-flex; flex-direction: column; font-weight: bold; text-align: center;'
+      ],
+      'image_style' => [
+        '#theme' => 'image_style',
+        '#style_name' => $image_style_id,
+        '#uri' => $variables['image_path'],
+      ],
+      'image_style_label' => [
+        '#markup' => '<div>' . $crop_type_label . '</div>',
+      ],
+    ];
+  }
+
+  $variables['image_output'] = $image_output;
+}
+
+/**
+ * Prepares variables for output in an embeddable content template
+ *
+ * These templates are the specific sub-type templates that output the specific
+ * content within the embeddable, excluding the stuff outside like header titles
+ * etc
+ *
+ * @param array $variables
+ */
+function template_preprocess_embeddable_content (array &$variables) {
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  if (isset($variables['elements']['#attributes'])) {
+    $variables['attributes'] = $variables['elements']['#attributes'];
+  }
+}
+
+/**
+ * Prepares variables for list of available embeddable type templates.
+ *
+ * Default template: embeddable-add-list.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - content: An array of embeddable types.
+ *
+ * @see embeddable_add_page()
+ */
+
+function template_preprocess_embeddable_add_list(&$variables) {
+  if (!empty($variables['content'])) {
+    foreach ($variables['content'] as $type) {
+      $variables['types'][$type->id()]['label'] = $type->label();
+      $variables['types'][$type->id()]['url'] = Url::fromRoute('entity.embeddable.add', array('embeddable_type' => $type->id()));
+      $variables['types'][$type->id()]['description'] = $type->getDescription();
+    }
+  }
+}
+
+/**
+ * Returns the embeddable type label for the passed node.
+ *
+ * @param \Drupal\ef\EmbeddableInterface $embeddable
+ *   An embeddable entity to return the type's label for.
+ *
+ * @return string|false
+ *   The embeddable type label or FALSE if the embeddable type is not found.
+ *
+ */
+function ef_get_embeddable_type_label(EmbeddableInterface $embeddable) {
+  $type = EmbeddableType::load($embeddable->bundle());
+  return $type ? $type->label() : FALSE;
+}
+
+/**
+ * Description callback: Returns the node type description.
+ *
+ * @param \Drupal\ef\EmbeddableTypeInterface $embeddable_type
+ *   The embeddable type object.
+ *
+ * @return string
+ *   The embeddable type description.
+ */
+function ef_embeddable_type_get_description(EmbeddableTypeInterface $embeddable_type) {
+  return $embeddable_type->getDescription();
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ef_theme_suggestions_embeddable_content(array $variables) {
+  $suggestions = [];
+  $embeddable = $variables['elements']['#embeddable'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'embeddable__' . $sanitized_view_mode;
+  $suggestions[] = 'embeddable__' . $embeddable->bundle();
+  $suggestions[] = 'embeddable__' . $embeddable->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'embeddable__' . $embeddable->id();
+  $suggestions[] = 'embeddable__' . $embeddable->id() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Alter the registry so that the ef module and any modules that
+ * depend on the ef module have their templates automatically available
+ *
+ * @param $theme_registry
+ */
+function ef_theme_registry_alter (&$theme_registry) {
+
+  $all_module_list = system_rebuild_module_data ();
+
+  $modules_requiring_embeddable_framework = $all_module_list['ef']->required_by;
+
+  $module_template_list = array_keys($modules_requiring_embeddable_framework);
+  array_push($module_template_list, 'ef');
+
+  /** @var Extension $module */
+  foreach ($module_template_list as $module_name) {
+    if ($module_name != 'ef' && $all_module_list[$module_name]->status) {
+      $module_path = $all_module_list[$module_name]->getPath();
+      $module_template_folder = $module_path . '/templates';
+      _ef_add_custom_templates_to_registry ($theme_registry, $module_template_folder);
+    }
+  }
+}
+
+/**
+ * Adds a specific path into the theme registry. This is used when adding in
+ * dependent modules into the registry
+ *
+ * @see ef_theme_registry_alter
+ * @param $theme_registry
+ * @param $path
+ */
+function _ef_add_custom_templates_to_registry (&$theme_registry, $path) {
+  // Find all .tpl.php files in this folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.html.twig', $path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    if (strpos($template_file_object['template'], 'embeddable--') === 0) {
+
+      // if a theme function has already overridden this template, then
+      // we dont need to do anything
+      if (!isset($theme_registry[$key])) {
+        $theme_registry[$key]['path'] = $path;
+        $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+        $theme_registry[$key]['type'] = 'module';
+      }
+
+      if (!isset($theme_registry[$key]['preprocess functions'])) {
+        $theme_registry[$key]['preprocess functions'][] = 'template_preprocess_embeddable_content';
+      } else if (!in_array('template_preprocess_embeddable_content', $theme_registry[$key]['preprocess functions'])) {
+        // we need to place this fairly high up in the pecking order
+        array_unshift($theme_registry[$key]['preprocess functions'], 'template_preprocess_embeddable_content');
+      }
+
+    }
+  }
+}
+
+/**d
+ * Implements hook_form_alter().
+ * Add some additional settings for embeddable view modes
+ */
+function ef_form_entity_view_display_edit_form_alter(&$form, FormStateInterface $form_state) {
+  if ($form['#entity_type'] == 'embeddable') {
+
+    \Drupal::classResolver()
+      ->getInstanceFromDefinition(EmbeddableViewModeOptions::class)
+      ->addOptions($form, $form_state);
+  }
+}
+
+/**
+ * Implements hook_ef_view_mode_settings
+ *
+ * This hook adds in the editor friendly name and the view mode visibility
+ * options to the view mode display page
+ *
+ * @param $form
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $entity_view_display
+ * @param $view_mode
+ * @param $form_state
+ */
+function ef_ef_view_mode_settings (&$form, EntityViewDisplayInterface $entity_view_display, $view_mode, FormStateInterface $form_state) {
+  $classes = [EditorFriendlyNameFormAlterer::class, ViewModeModifierNameFormAlterer::class, EmbeddableOptionsViewModeSettingsModifier::class, ViewModeLayoutBorrowerAlterer::class];
+
+  foreach ($classes as $class) {
+    \Drupal::classResolver()
+      ->getInstanceFromDefinition($class)
+      ->alterSettingsForm($form, $entity_view_display, $view_mode, $form_state);
+  }
+}
+
+/**
+ * Alters the menu local actions array to add in buttons to the content
+ * overview page, based on the rules setup by the site admin
+ *
+ * @param $local_actions
+ */
+function ef_menu_local_actions_alter(&$local_actions) {
+  /** @var EmbeddableFrameworkManagerInterface $embeddableFrameworkManager */
+  $embeddableFrameworkManager = \Drupal::service('ef.manager');
+  $embeddableFrameworkManager->addButtonsToEmbeddableOverviewPage($local_actions);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter()
+ *
+ * TODO:  MOVE THIS INTO EMBEDDABLEFORM?
+ *
+ * Changes vertical tabs to container.
+ */
+function ef_form_embeddable_form_alter(&$form, FormStateInterface $form_state) {
+  $current_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
+  if ($current_theme == 'seven') {
+    // Use Seven's slicker version of the node edit form for embeddables
+    $form['#theme'] = ['node_edit_form'];
+    $form['#attached']['library'][] = 'seven/node-form';
+  }
+
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_entity_presave (EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    \Drupal::service('ef.dependent_embeddable')->onPresave($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_insert
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_entity_insert (EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    \Drupal::service('ef.embeddable_usage')->onInsert($entity);
+    \Drupal::service('ef.dependent_embeddable')->onInsert($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_entity_update (EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    \Drupal::service('ef.embeddable_usage')->onUpdate($entity);
+    \Drupal::service('ef.dependent_embeddable')->onUpdate($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_delete
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_entity_delete (EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    \Drupal::service('ef.embeddable_usage')->onDelete($entity);
+    \Drupal::service('ef.dependent_embeddable')->onDelete($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_translation_delete
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_entity_translation_delete (EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    \Drupal::service('ef.dependent_embeddable')->onTranslationDelete($entity);
+  }
+}
+
+function ef_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (EmbeddableType::loadMultiple() as $bundle) {
+    $extra['embeddable'][$bundle->Id()]['form']['used_on'] = array(
+      'label' => t('Used on'),
+      'description' => t('Where is this embeddable used?'),
+      'weight' => 100,
+      'visible' => TRUE,
+    );
+  }
+
+  return $extra;
+}
+
+function ef_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof EmbeddableForm) {
+
+    $embeddable_id = $form_state->getFormObject()->getEntity()->id();
+
+    if(!empty($embeddable_id)) {
+      /** @var \Drupal\ef\EmbeddableUsageServiceInterface $embeddableUsageService */
+      $embeddableUsageService = \Drupal::service('ef.embeddable_usage');
+
+      $relations = $embeddableUsageService->getEmbeddableUsage($embeddable_id);
+
+      foreach ($relations as $relation_id => $relation_info) {
+        $rows[$relation_id]['link'] = $relation_info['link'];
+        $fields = implode(', ', array_unique($relation_info['fields']));
+        $rows[$relation_id]['fields'] = $fields;
+      }
+
+      if(!empty($rows)) {
+        $form['used_on'] = [
+          '#type' => 'table',
+          '#header' => [
+            t('Content page'),
+            t('Field')
+          ],
+          '#rows'=> $rows,
+          '#weight' => 100,
+          '#prefix' => '<h4 class="label">' . t('Used on') . '</h4>',
+        ];
+        return;
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_library_info_build
+ *
+ * Provide library entries for all embeddable types. This is used to provide
+ * the option of overriding in the theme layer. These are just dummy entries
+ * otherwise it is not possible to override in the theme.
+ *
+ * @return array
+ */
+function ef_library_info_build() {
+  return \Drupal::service('ef.theme_css_library_helper')->onLibraryInfoBuild();
+}
+
+/**
+ * Helper function targeted to be used in uninstall functions
+ *
+ * @param $entity_type_name
+ * @param $bundle_name
+ */
+function ef_delete_all ($entity_type_name, $bundle_name) {
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+  $storage = $entity_type_manager->getStorage($entity_type_name);
+
+  /** @var \Drupal\Core\Entity\EntityTypeInterface $entityType */
+  $entity_type = $entity_type_manager->getDefinition($entity_type_name);
+
+  $type_field_name = $entity_type->getKey('bundle');
+
+  $ids = $storage->getQuery()
+    ->condition($type_field_name, $bundle_name)
+    ->execute();
+
+  $all = $storage->loadMultiple($ids);
+
+  /** @var \Drupal\ef\EmbeddableInterface $embeddable */
+  foreach ($all as $item) {
+    $item->delete();
+  }
+}
+
+function ef_field_widget_info_alter(array &$info) {
+  $info['string_textfield']['field_types'][] = 'ef_string_dropdown';
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function ef_field_formatter_info_alter(array &$info) {
+  $info['string']['field_types'][] = 'ef_string_dropdown';
+}
+
+/**
+ * Add all the embeddable type add pages to the admin toolbar
+ * 
+ * Implements hook_menu_links_discovered_alter().
+ */
+function ef_menu_links_discovered_alter(&$links) {
+  $moduleHandler = \Drupal::moduleHandler();
+  $entityTypeManager = \Drupal::entityTypeManager();
+
+  if ($moduleHandler->moduleExists('admin_toolbar')) {
+    /** @var EmbeddableTypeInterface $type */
+    foreach ($entityTypeManager->getStorage('embeddable_type')->loadMultiple() as $type) {
+      if (!$type->isExcludedFromEmbeddableOverviewQuickAddList()) {
+        $links['entity.embeddable.add.' . $type->id()] = [
+          'title' => t($type->label()),
+          'route_name' => 'entity.embeddable.add',
+          'parent' => 'entity.embeddable.add_page',
+          'route_parameters' => ['embeddable_type' => $type->id()],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_modules_installed
+ * @param $modules
+ */
+function ef_modules_installed($modules) {
+  // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function ef_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() === 'embeddable_entity_browser') {
+    $variables['view_array']['#attached']['library'][] = 'ef/embeddable-entity-browser';
+  }
+}

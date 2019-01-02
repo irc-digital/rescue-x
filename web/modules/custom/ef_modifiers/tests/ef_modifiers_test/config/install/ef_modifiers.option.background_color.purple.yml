@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: background_color.purple
+label: Purple
+class_name: purple
+target_embeddable_modifier: background_color
+weight: -2

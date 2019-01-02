@@ -1,0 +1,32 @@
+@import 'rpll-aside.variables';
+
+.rpll-aside {
+
+  @include breakpoint(phablet) {
+    @include z-index('up-more');
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rem(1080px);
+    width: 77.5vw;
+  }
+
+  &__inner-wrapper {
+    @include breakpoint(phablet) {
+      border-left: 2px solid $aside-separator-border-color;
+      float: right;
+      margin-bottom: $aside-margin-bottom;
+      margin-left: get-spacing('m');
+      max-width: $aside-width;
+      padding-bottom: $aside-top-bottom-spacing;
+      padding-left: get-spacing('l');
+      padding-top: $aside-top-bottom-spacing;
+      width: $aside-width;
+
+      @include breakpoint(951) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// end of file

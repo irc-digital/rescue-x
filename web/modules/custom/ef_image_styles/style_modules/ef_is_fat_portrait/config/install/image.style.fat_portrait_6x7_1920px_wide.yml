@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.fat_portrait_6x7
+  module:
+    - crop
+name: fat_portrait_6x7_1920px_wide
+label: 'Fat portrait (6:7) 1920px wide'
+effects:
+  aa589931-df03-494b-a418-20bea7e66284:
+    uuid: aa589931-df03-494b-a418-20bea7e66284
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: fat_portrait_6x7
+  d921421b-1171-4c1f-a7a7-c913f7a0bcd5:
+    uuid: d921421b-1171-4c1f-a7a7-c913f7a0bcd5
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 2240

@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.highlight
+    - field.field.embeddable.highlight.field_ef_highlight_link
+    - field.field.embeddable.highlight.field_ef_highlight_list_item
+  module:
+    - link
+_core:
+  default_config_hash: Bk3ZG1UV1RBhsXT_BejNbOcJ6_RcC8_n6apkY_uoKu0
+id: embeddable.highlight.default
+targetEntityType: embeddable
+bundle: highlight
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ef_highlight_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ef_highlight_list_item:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  used_on:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true

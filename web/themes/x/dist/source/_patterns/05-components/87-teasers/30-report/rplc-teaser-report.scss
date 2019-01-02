@@ -1,0 +1,32 @@
+@import 'rplc-teaser-report.variables';
+
+.rplc-teaser-report {
+  $self: &;
+
+  @include standard-vertical-spacing;
+
+  @include breakpoint(phablet) {
+    margin-bottom: 0;
+  }
+
+  &__wrapper-link {
+    @include well-row;
+
+    display: block;
+
+    @include breakpoint(phablet) {
+      width: auto;
+    }
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+    margin-bottom: get-spacing('ml');
+  }
+
+  &__title-wrapper {
+    @include line-height('2xs');
+  }
+}
+
+// end of file

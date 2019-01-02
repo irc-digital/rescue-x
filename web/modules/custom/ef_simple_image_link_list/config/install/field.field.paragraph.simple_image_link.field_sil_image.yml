@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sil_image
+    - media.type.ef_image
+    - paragraphs.paragraphs_type.simple_image_link
+id: paragraph.simple_image_link.field_sil_image
+field_name: field_sil_image
+entity_type: paragraph
+bundle: simple_image_link
+label: Image
+description: 'The image or logo.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ef_image: ef_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

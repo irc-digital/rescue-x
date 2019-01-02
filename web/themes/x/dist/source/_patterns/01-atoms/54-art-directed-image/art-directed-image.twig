@@ -1,0 +1,10 @@
+<picture class='rpla-art-directed-image{% for art_directed_image_modifier in art_directed_image_modifiers %} rpla-art-directed-image--{{ art_directed_image_modifier }}{% endfor %}'>
+  {% for art_directed_image_source in art_directed_image_sources %}
+  <source srcset="{% for source_set in art_directed_image_source.source_set %}{{ source_set }},{% endfor %}"{% if art_directed_image_source.media %} media="{{ art_directed_image_source.media }}"{% endif %}>
+  {% endfor%}
+  <img src="{{ art_directed_image_fallback }}" alt="{{ art_directed_image_alt }}"/>
+</picture>
+
+
+
+

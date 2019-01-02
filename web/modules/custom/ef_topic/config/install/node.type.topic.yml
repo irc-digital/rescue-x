@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - ef_topic
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Topic
+type: topic
+description: 'A thematic page. Useful for grouping news-type content and otherwise focusing on a topic area particularly important to our work.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

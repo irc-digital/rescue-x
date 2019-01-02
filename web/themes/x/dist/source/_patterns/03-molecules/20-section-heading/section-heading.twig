@@ -1,0 +1,25 @@
+{#
+/**
+ * Section heading
+ *
+ * Available variables:
+ *   section_heading_title        - Smaller text on top of headline
+ *   section_heading_icon         - Larger header below
+ *   section_heading_description  - Summary text
+ *   section_heading_modifiers    - Array of modifiers
+ *     inverse                    - Yellow background
+ */
+#}
+{% if section_heading_title %}
+<div class="rplm-section-heading{% for section_heading_modifier in section_heading_modifiers %} rplm-section-heading--{{ section_heading_modifier }}{% endfor %}">
+    <div class="rplm-section-heading__title-icon-wrapper">
+{% if section_heading_icon %}
+      <svg class="rplm-section-heading__icon rplm-section-heading__icon--{{ section_heading_icon }}">
+        <use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#rpl-svg-{{ section_heading_icon }}'></use></svg>
+      </svg>
+{% endif %}
+      <h2 class="rplm-section-heading__title">{{ section_heading_title }}</h2>
+    </div>
+    {% if section_heading_description %}<div class="rpla-paragraph">{{ section_heading_description }}</div>{% endif %}
+</div>
+{% endif %}

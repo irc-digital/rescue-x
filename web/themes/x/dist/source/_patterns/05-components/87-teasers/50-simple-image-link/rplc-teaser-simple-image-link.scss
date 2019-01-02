@@ -1,0 +1,59 @@
+@import 'rplc-teaser-simple-image-link.variables';
+
+.rplc-teaser-simple-image-link {
+  $self: &;
+
+  display: flex;
+  flex-direction: column;
+  height: $teaser-simple-image-link-height;
+  justify-content: flex-end;
+
+  &__wrapper-link {
+    text-decoration: none;
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+    margin-bottom: get-spacing('l');
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+    max-width: 150px;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include font-weight('bold');
+  }
+
+  &__text-wrapper {
+    text-align: center;
+  }
+
+  &--display-images-not-on-mobile {
+    height: auto;
+
+    @include breakpoint(phablet) {
+      height: $teaser-simple-image-link-height;
+    }
+
+    #{ $self }__image-wrapper {
+      display: none;
+
+      @include breakpoint(phablet) {
+        display: block;
+      }
+    }
+  }
+
+  &--display-images-never {
+    height: auto;
+
+    #{ $self }__image-wrapper {
+      display: none;
+    }
+
+  }
+}
+
+// end of file

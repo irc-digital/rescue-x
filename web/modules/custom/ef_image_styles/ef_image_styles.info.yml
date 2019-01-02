@@ -1,0 +1,9 @@
+name: EF Image styles
+type: module
+description: 'Image styles used by the Embeddable Framework'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef
+  - drupal:responsive_image
+  - crop

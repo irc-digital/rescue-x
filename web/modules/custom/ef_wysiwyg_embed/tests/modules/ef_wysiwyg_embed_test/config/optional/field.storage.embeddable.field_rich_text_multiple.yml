@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - text
+  enforced:
+    module:
+      - ef_wysiwyg_embed_test
+id: embeddable.field_rich_text_multiple
+field_name: field_rich_text_multiple
+entity_type: embeddable
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

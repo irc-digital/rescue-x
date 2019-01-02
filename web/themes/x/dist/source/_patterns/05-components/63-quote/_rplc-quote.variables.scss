@@ -1,0 +1,33 @@
+@import '../../../scss/core';
+
+$quote-text-section-background: get-neutral-color('white');
+$quote-text-section-horizontal-margin: get-spacing();
+
+$quote-text-section-eats-in: (
+  'mobile': -#{get-spacing('xl')},
+  'phablet': -#{get-spacing('xl')},
+);
+
+$quote-text-section-padding: (
+  'mobile': get-spacing(),
+  'phablet': get-spacing('l'),
+  'laptop': get-spacing('xl'),
+);
+
+$quote-text-section-pushed-down: (
+  'phablet': get-spacing('xl'),
+  'laptop': get-spacing('2xl'),
+);
+
+
+$quote-margin: get-spacing('l');
+$quote-text-margin: get-spacing();
+$quote-text-attributed-person-margin: get-spacing('xs');
+
+$quote-icon-size: (
+  'phablet': rem(48px),
+  'laptop': rem(64px)
+);
+
+
+// end of file

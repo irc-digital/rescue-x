@@ -1,0 +1,15 @@
+@import '../../../../scss/core';
+
+$teaser-highlighted-text-section-background: get-brand-color();
+
+$teaser-highlighted-text-section-padding: (
+  'mobile': get-spacing(),
+  'phablet': get-spacing('l'),
+);
+
+$teaser-highlighted-text-eat-in-large: rem(-186px);
+$teaser-highlighted-text-width: rem(424px);
+$teaser-highlighted-text-section-horizontal-margin: get-spacing();
+$teaser-highlighted-text-section-eats-in: -#{get-spacing('l')};
+
+// end of file

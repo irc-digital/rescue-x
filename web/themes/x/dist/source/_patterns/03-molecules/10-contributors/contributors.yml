@@ -1,0 +1,27 @@
+contributors_list:
+  - include():
+      pattern: "molecules-person-info-1"
+      with:
+        person_info_1_modifiers:
+          - "small"
+        person_info_1_prefix: "by"
+        person_info_1_name: "Randy Hornton"
+        person_info_1_title: "Bounty Hunter"
+        person_info_1_social:
+          twitter: http://www.twitter.com
+          facebook: http://www.facebook.com
+      only: true
+  - include():
+      pattern: "molecules-person-info-1"
+      with:
+        person_info_1_modifiers:
+          - "small"
+        person_info_1_prefix: "and"
+        person_info_1_name: "Buzz Romhof"
+        person_info_1_title: "The Big Boss, International Rescue Committee "
+        person_info_1_responsive_image_source_set:
+          - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=contributor1b 72w"
+          - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=144&h=144&random=contributor1b 144w"
+        person_info_1_responsive_image_fallback: "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=72&h=72&random=contributor1b"
+        person_info_1_responsive_image_alt: "Faker.words(5,true)"
+      only: true

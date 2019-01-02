@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.entity_embed
+    - field.field.media.ef_image.field_ef_image
+    - image.style.media_entity_browser_thumbnail
+    - media.type.ef_image
+  enforced:
+    module:
+      - ef_image
+  module:
+    - ds
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_image_tag
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      image_tag_source:
+        - field_ef_image
+_core:
+  default_config_hash: 71Daz-8b81rI9TWLXmbq2aEMl2pZ8o5qIb1fuqi8CnQ
+id: media.ef_image.entity_embed
+targetEntityType: media
+bundle: ef_image
+mode: entity_embed
+content:
+  field_ef_image:
+    type: image_url
+    weight: 0
+    region: image_tag_source
+    label: hidden
+    settings:
+      image_style: media_entity_browser_thumbnail
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

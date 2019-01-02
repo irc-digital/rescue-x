@@ -1,0 +1,62 @@
+{#
+/**
+ * Link
+ *
+ * Available variables:
+ *   link_text                - The text of the link
+ *   link_url                 - The URL. You only need to supply this is this component is actually a link - sometimes the link element can be higher up and this element is providing a visual link.
+ *   link_tag                 - The HTML element. Optional - this will be sensibly defaulted - mostly to the anchor tag, but it could be a div if no link_url is provided.
+ *   link_handler_javascript  - True or false (defaults to false). Handles clicking via Javascript.
+ *   link_modifiers           - Modifiers
+ *     type-1                 - The default type. Is what we consider our standard link. The common link across all subtypes within this type is that the hover effect impacts the background color.
+ *        subtype-black       - Black bottom border
+ *        subtype-inverse     - White bottom border and white hover background color
+ *     size-2x-small          - Extra-extra small text
+ *     size-extra-small       - Extra small text
+ *     size-small             - Small text
+ *     size-medium            - Medium text
+ *     size-large             - Large text
+ *
+ * Available blocks:
+ *   link_block               - The block containing the actual link. This allows considerable variablity in a child element.
+ */
+#}
+{% spaceless %}
+
+  {% set link_modifiers = link_modifiers ?: [] %}
+
+  {% if link_handler_javascript %}
+    {% set link_javascript = 'data-rpl-link-javascript="' ~ link_url ~ '"' %}
+    {% set link_url = null %}
+    {% set link_tag = 'div' %}
+    {% set link_modifiers = link_modifiers | merge(['type-javascript']) %}
+  {% endif %}
+
+  {% set has_type = false %}
+  {% for link_modifier in link_modifiers %}
+    {% if link_modifier starts with 'type-' %}
+      {% set has_type = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_type %}
+    {% set link_modifiers = link_modifiers | merge(['type-one']) %}
+  {% endif %}
+
+  {% if link_tag is empty %}
+    {% if link_url is not empty %}
+      {% set link_tag = 'a' %}
+    {% else %}
+      {% set link_tag = 'div' %}
+    {% endif %}
+  {% endif %}
+
+{% endspaceless %}
+{% set link_classes = 'rpla-link' %}
+{% for link_modifier in link_modifiers %}
+  {% set link_classes = link_classes ~ ' rpla-link--' ~ link_modifier %}
+{% endfor %}
+
+{% block link_block %}
+<{{ link_tag }}{% if link_url %} href="{{ link_url }}"{% endif %} role="link" class="{{ link_classes }}"{{ link_javascript }}>{{ link_text }}</{{ link_tag }}>
+{% endblock link_block %}

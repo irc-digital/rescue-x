@@ -1,0 +1,12 @@
+hero_video_slug: "Faker.words(2,true)"
+hero_video_headline: "Faker.sentence(6, true)"
+hero_video_published: "August 2, 2018"
+hero_video_video_sources:
+  - source: 'https://www.youtube.com/watch?v=kGm-YK24-OE'
+    type: 'video/youtube'
+hero_video_social_share:
+  include():
+    pattern: "molecules-social-share"
+    with:
+      social_share_modifiers:
+        - 'type-two'

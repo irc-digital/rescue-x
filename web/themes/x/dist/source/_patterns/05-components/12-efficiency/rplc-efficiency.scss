@@ -1,0 +1,68 @@
+@import 'rplc-efficiency.variables';
+
+.rplc-efficiency {
+  $self: &;
+
+  max-width: rem(640px);
+
+  &__title {
+    @include typography-text-small;
+    @include standard-vertical-spacing;
+  }
+
+  &__list {
+    @include font-size('s');
+    flex-shrink: 0;
+    list-style: none;
+    margin-bottom: get-spacing('s');
+  }
+
+  &__icon-wrapper {
+    flex: 0 1 auto;
+    height: 138px;
+    margin-right: get-spacing('l');
+    width: 138px;
+  }
+
+  &__icon-text-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__list-item {
+    &::before {
+      @include font-size('2xl');
+      @include line-height('none');
+
+      content: '• ';
+      font-family: Arial;
+      position: relative;
+      top: 7px;
+    }
+  }
+
+  &__list-item--first {
+    &::before {
+      color: get-brand-color();
+    }
+  }
+
+  &__list-item--second {
+    &::before {
+      color: get-neutral-color('black');
+    }
+  }
+
+  &__list-item--third {
+    &::before {
+      color: get-neutral-color('gray');
+    }
+  }
+
+  &__percentage {
+    @include font-weight('bold');
+    @include font-size('m');
+  }
+}
+
+// end of file

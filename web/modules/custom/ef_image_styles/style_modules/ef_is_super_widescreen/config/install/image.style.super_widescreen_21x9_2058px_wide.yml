@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.super_widescreen_21x9
+  module:
+    - crop
+name: super_widescreen_21x9_2058px_wide
+label: 'Super widescreen (21:9) 2058px wide'
+effects:
+  7bfd2bff-f2f3-489c-8c18-d41ff4c0885c:
+    uuid: 7bfd2bff-f2f3-489c-8c18-d41ff4c0885c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: super_widescreen_21x9
+  de7e335b-0e5a-4c9e-b130-65fe6c14733b:
+    uuid: de7e335b-0e5a-4c9e-b130-65fe6c14733b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 2058
+      height: 882

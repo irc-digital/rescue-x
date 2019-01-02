@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_highlight
+  module:
+    - ef
+    - link
+id: embeddable.field_ef_highlight_link
+field_name: field_ef_highlight_link
+entity_type: embeddable
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

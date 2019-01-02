@@ -1,0 +1,15 @@
+<div class="rplc-impact-cards{% for impact_cards_modifier in impact_cards_modifiers %} rplc-impact-cards--{{ impact_cards_modifier }}{% endfor %}" data-rpl-canvas-color="brand-primary">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: impact_cards_section_heading_title,
+    section_heading_description: impact_cards_section_heading_description,
+    section_heading_icon: impact_cards_section_heading_icon,
+    section_heading_modifiers: ['inverse'],
+  } only %}
+  <div class="rplc-impact-cards__content">
+    <div class="rplc-impact-cards__inner-content-wrapper">
+      {% for impact_card in impact_cards %}
+        <div class="rplc-impact-cards__card-wrapper">{{ impact_card }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

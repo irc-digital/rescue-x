@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.mega_widescreen_30x9
+  module:
+    - crop
+name: mega_widescreen_30x9_2416px_wide
+label: 'Mega widescreen (30:9) 2416px wide'
+effects:
+  78719bc8-3177-400b-af78-c7c42710101c:
+    uuid: 78719bc8-3177-400b-af78-c7c42710101c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: mega_widescreen_30x9
+  07ceb78f-28e8-4f3a-9555-7ce49af30334:
+    uuid: 07ceb78f-28e8-4f3a-9555-7ce49af30334
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 2416
+      height: 725

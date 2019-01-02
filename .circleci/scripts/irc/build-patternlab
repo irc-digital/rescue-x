@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# We need to do some additional work for Visual regression testing, so
+# these extra packages are added.
+
+# Go to base level of project
+cd "$(dirname $0)/../../"
+
+echo "::::::::::::::::::::::::::::::::::::::::::::::::"
+echo "Installing Node.js"
+echo "::::::::::::::::::::::::::::::::::::::::::::::::"
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get --assume-yes install nodejs
+
+cd ../web/themes/x
+npm install
+node_modules/gulp/bin/gulp.js build --gulpfile gulpfile.js

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.landscape_4x3
+  module:
+    - crop
+name: landscape_4x3_368px_wide
+label: 'Landscape (4:3) 368px wide'
+effects:
+  d54b17f0-7514-4a5b-bc7b-e75b4baffef7:
+    uuid: d54b17f0-7514-4a5b-bc7b-e75b4baffef7
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: landscape_4x3
+  aea2412e-6f0f-4205-8bf9-06dafa5feffb:
+    uuid: aea2412e-6f0f-4205-8bf9-06dafa5feffb
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 368
+      height: 276

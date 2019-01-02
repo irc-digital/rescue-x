@@ -1,0 +1,15 @@
+{#
+/**
+ * Pager list 1
+ *
+ * Available variables:
+ *   pager_list_1_items - An array of pager-item-1 molecules that make up the pager
+ */
+#}
+<ul class="rplm-pager-list-1">
+  {% for pager_list_1_item in pager_list_1_items %}
+    <li class="rplm-pager-list-1__item-wrapper" data-rpl-pager-item>
+      {{ pager_list_1_item }}
+    </li>
+  {% endfor %}
+</ul>

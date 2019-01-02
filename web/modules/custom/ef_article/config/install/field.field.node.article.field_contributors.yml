@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contributors
+    - node.type.article
+    - node.type.person
+_core:
+  default_config_hash: GXu_pCB-5x9jTrL9fjsfCvjSQ0KKUW_qvj7DY1ULa5c
+id: node.article.field_contributors
+field_name: field_contributors
+entity_type: node
+bundle: article
+label: Contributors
+description: 'The author, or authors, of this article. Please place them in the order you wish them to appear.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: title
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+quiz_card_unanswered_title: "Faker.words(8,true)"
+quiz_card_unanswered_description: "Faker.words(16,true)"
+quiz_card_unanswered_responsive_image_source_set:
+  - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=92&h=92&random=unansweredcard1 92w"
+  - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=140&h=140&random=unansweredcard1 140w"
+  - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=184&h=184&random=unansweredcard1 184w"
+  - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=200&h=200&random=unansweredcard1 200w"
+  - "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=280&h=280&random=unansweredcard1 280w"
+quiz_card_unanswered_responsive_image_fallback: "https://placem.at/person?overlay_color=FFFFFFFF&txt=0&w=140&h=140&random=unansweredcard1"
+quiz_card_unanswered_responsive_image_alt: "Faker.words(5,true)"

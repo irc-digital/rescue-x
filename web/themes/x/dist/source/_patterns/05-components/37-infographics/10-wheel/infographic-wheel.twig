@@ -1,0 +1,25 @@
+<div class="rplc-infographic-wheel" data-rpl-canvas-color='neutral-very-dark-gray'>
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: infographic_wheel_section_heading_title,
+    section_heading_description: infographic_wheel_section_heading_description,
+    section_heading_icon: infographic_wheel_section_heading_icon,
+    section_heading_modifiers: ['white'],
+  } only %}
+  <div class="rplc-infographic-wheel__content">
+    <div class="rplc-infographic-wheel__circle"></div>
+    <div class="rplc-infographic-wheel__outer-wrapper">
+      <div class="rplc-infographic-wheel__inner-wrapper">
+        {% for infographic_wheel_item in infographic_wheel_content %}
+          <div class="rplc-infographic-wheel__item-wrapper">
+            <div class="rplc-infographic-wheel__icon">
+              {% include '@atoms/05-icon/icon.twig' with {
+                icon_name: infographic_wheel_item.icon,
+              } only %}
+            </div>
+            <div class="rplc-infographic-wheel__title">{{ infographic_wheel_item.title }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

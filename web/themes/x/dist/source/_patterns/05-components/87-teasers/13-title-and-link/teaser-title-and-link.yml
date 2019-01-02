@@ -1,0 +1,3 @@
+teaser_title_and_link_title: 'Faker.words(5,true)'
+teaser_title_and_link_link_text: 'Faker.sentence(2,true)'
+teaser_title_and_link_link_url: '#'

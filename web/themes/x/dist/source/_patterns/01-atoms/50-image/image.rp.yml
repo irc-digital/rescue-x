@@ -1,0 +1,25 @@
+image_tag:
+  label: Image (basic)
+  description: Todo
+  use: "@atoms/50-image/image.twig"
+  fields:
+    image_tag_source:
+      type: url
+      label: Path
+      description: Path to image
+      preview: "https://placem.at/places?w=700&h=500&random=1"
+    image_tag_alt:
+      type: string
+      label: Alt
+      description: Value for the alt tag
+      preview: "A nice image"
+    image_tag_width:
+      type: string
+      label: Title
+      description: Value for the width attribute
+      preview: "700"
+    image_tag_height:
+      type: string
+      label: Height
+      description: Value for the height attribute
+      preview: "500"

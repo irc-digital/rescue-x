@@ -1,0 +1,8 @@
+<div class="rplc-teaser-bordered">
+  <a href="{{ teaser_bordered_url }}" class="rplc-teaser-bordered__wrapper-link">
+    <div class="rpla-slug">{{ teaser_bordered_slug }}</div>
+    <h3 class="rpla-heading rpla-heading--medium">{{ teaser_bordered_title }}</h3>
+    {% if teaser_bordered_date %}<div class="rplc-teaser-bordered__date">{% include '@atoms/01-text/35-meta/meta.twig' with { meta_prefix: teaser_bordered_label, meta_text: teaser_bordered_date } only %}{% endif %}</div>
+    <div class="rplc-teaser-bordered__summary">{{ teaser_bordered_summary }}</div>
+  </a>
+</div>

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_headshot_photo
+    - media.type.ef_image
+    - node.type.person
+id: node.person.field_person_headshot_photo
+field_name: field_person_headshot_photo
+entity_type: node
+bundle: person
+label: 'Headshot photo'
+description: 'Used on articles pages and other pieces of content when this person is tagged as a contributor. Defaults to a generic icon on articles if left empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ef_image: ef_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

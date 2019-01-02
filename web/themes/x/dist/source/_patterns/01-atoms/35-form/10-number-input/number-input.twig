@@ -1,0 +1,20 @@
+{% spaceless %}
+
+{% set number_input_modifiers = number_input_modifiers ?: [] %}
+
+{% set has_type = false %}
+{% for number_input_modifier in number_input_modifiers %}
+  {% if number_input_modifier starts with 'type-' %}
+    {% set has_type = true %}
+  {% endif %}
+{% endfor %}
+
+{% if not has_type %}
+  {% set number_input_modifiers = number_input_modifiers | merge(['type-one']) %}
+{% endif %}
+
+{% endspaceless %}
+<div class="rpla-number-input{% for number_input_modifier in number_input_modifiers %} rpla-number-input--{{ number_input_modifier }}{% endfor %}">
+  <label class="rpla-number-input__label" for="{{ number_input_name }}">{{ number_input_label }}</label>
+  <input class="rpla-number-input__field" type="number" name="{{ number_input_name }}"{% if number_input_default_value %} value="{{ number_input_default_value }}"{% endif %}{% if number_input_placeholder %} placeholder="{{ number_input_placeholder }}"{% endif %}{% if number_input_required %} required{% endif %}>
+</div>

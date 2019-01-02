@@ -1,0 +1,7 @@
+name: "EF Image styles: Mega widescreen (30x9)"
+type: module
+description: 'Mega widescreen image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: box_color.yellow
+label: Yellow
+class_name: yellow
+target_embeddable_modifier: box_color
+weight: -10

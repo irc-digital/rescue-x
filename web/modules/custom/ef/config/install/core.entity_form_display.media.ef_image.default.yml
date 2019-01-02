@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.ef_image.field_ef_image
+    - image.style.thumbnail
+    - media.type.ef_image
+  module:
+    - image_widget_crop
+id: media.ef_image.default
+targetEntityType: media
+bundle: ef_image
+mode: default
+content:
+  field_ef_image:
+    type: image_widget_crop
+    weight: 1
+    region: content
+    settings:
+      show_default_crop: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: original_image
+      crop_list: { }
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+      warn_multiple_usages: false
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true

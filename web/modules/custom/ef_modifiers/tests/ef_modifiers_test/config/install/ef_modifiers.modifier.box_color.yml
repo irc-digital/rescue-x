@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers_test
+id: box_color
+label: 'Box color'
+weight: 0
+class_name: box-color
+editorial_name: 'Box color editorial name'
+description: 'What color should the box be?'
+tooltip: 'Box tooltip'
+promote: false
+default_option: box_color.yellow

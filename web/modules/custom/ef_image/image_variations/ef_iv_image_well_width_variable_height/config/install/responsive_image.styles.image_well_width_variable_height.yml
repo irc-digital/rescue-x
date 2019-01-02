@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.well_width_variable_height_1024px_wide
+    - image.style.well_width_variable_height_1280px_wide
+    - image.style.well_width_variable_height_2048px_wide
+    - image.style.well_width_variable_height_640px_wide
+  enforced:
+    module:
+      - ef_iv_image_well_width_variable_height
+id: image_well_width_variable_height
+label: 'Image well width (variable height)'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1200px) 819px,(min-width: 640px) 70vw,100vw'
+      sizes_image_styles:
+        - well_width_variable_height_1024px_wide
+        - well_width_variable_height_1280px_wide
+        - well_width_variable_height_2048px_wide
+        - well_width_variable_height_640px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: well_width_variable_height_640px_wide

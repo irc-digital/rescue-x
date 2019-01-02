@@ -1,0 +1,108 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.image_inset
+    - field.field.media.ef_image.field_ef_image
+    - field.field.media.ef_image.field_image_caption
+    - field.field.media.ef_image.field_image_credit
+    - field.field.media.ef_image.field_image_embeddable
+    - media.type.ef_image
+  enforced:
+    module:
+      - ef_iv_image_inset
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_image_inset
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      image_inset_responsive_image_source_set:
+        - 'image_attributes_field:media_ef_image_field_ef_image_srcset'
+      image_inset_responsive_image_sizes:
+        - 'image_attributes_field:media_ef_image_field_ef_image_sizes'
+      image_inset_responsive_image_fallback:
+        - 'image_attributes_field:media_ef_image_field_ef_image_fallback_uri'
+      image_inset_responsive_image_alt:
+        - 'image_attributes_field:media_ef_image_field_ef_image_alt'
+      image_inset_caption_text:
+        - field_image_caption
+      image_inset_caption_credit:
+        - field_image_credit
+    fields:
+      'image_attributes_field:media_ef_image_field_ef_image_srcset':
+        plugin_id: 'image_attributes_field:media_ef_image_field_ef_image_srcset'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: image_inset
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'image_attributes_field:media_ef_image_field_ef_image_sizes':
+        plugin_id: 'image_attributes_field:media_ef_image_field_ef_image_sizes'
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: image_inset
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'image_attributes_field:media_ef_image_field_ef_image_fallback_uri':
+        plugin_id: 'image_attributes_field:media_ef_image_field_ef_image_fallback_uri'
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: image_inset
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'image_attributes_field:media_ef_image_field_ef_image_alt':
+        plugin_id: 'image_attributes_field:media_ef_image_field_ef_image_alt'
+        weight: 3
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: Z0lFOlvmbexfz9vhUMPC5pp-vPHZW8cpjJ3r6g5Ogt8
+id: media.ef_image.image_inset
+targetEntityType: media
+bundle: ef_image
+mode: image_inset
+content:
+  field_image_caption:
+    type: basic_string
+    weight: 4
+    region: image_inset_caption_text
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image_credit:
+    type: string
+    weight: 5
+    region: image_inset_caption_credit
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_ef_image: true
+  field_image_embeddable: true
+  field_media_image: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

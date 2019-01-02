@@ -1,0 +1,5 @@
+@import '../../../scss/core';
+
+$three-column-list-column-gutter: get-spacing();
+$three-column-list-row-gutter: get-spacing() * 3;
+// end of file

@@ -1,0 +1,5 @@
+<?php
+
+function ef_dynamic_content_uninstall () {
+  ef_delete_all ('embeddable', 'dynamic_content');
+}

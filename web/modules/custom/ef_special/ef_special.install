@@ -1,0 +1,8 @@
+<?php
+
+function ef_special_install () {
+}
+
+function ef_special_uninstall () {
+  ef_delete_all ('embeddable', 'special');
+}

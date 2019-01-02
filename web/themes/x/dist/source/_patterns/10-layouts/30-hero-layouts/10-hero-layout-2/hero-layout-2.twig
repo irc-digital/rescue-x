@@ -1,0 +1,21 @@
+<div class="rpll-hero-layout-2{% for hero_layout_2_modifier in hero_layout_2_modifiers %} rpll-hero-layout-2--{{ hero_layout_2_modifier }}{% endfor %}">
+  <div class="rpll-hero-layout-2__image-wrapper">
+    {% block hero_layout_2_image_block %}
+      {{ hero_layout_2_image }}
+    {% endblock %}
+  </div>
+  <div class="rpll-hero-layout-2__outer-text-wrapper">
+    <div class="rpll-hero-layout-2__text-wrapper">
+      <div class="rpll-hero-layout-2__primary">
+        {% block hero_layout_2_primary_block %}
+          {{ hero_layout_2_primary }}
+        {% endblock %}
+      </div>
+      <div class="rpll-hero-layout-2__secondary">
+        {% block hero_layout_2_secondary_block %}
+          {{ hero_layout_2_secondary }}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

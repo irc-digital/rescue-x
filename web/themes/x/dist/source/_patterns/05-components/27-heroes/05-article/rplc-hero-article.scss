@@ -1,0 +1,13 @@
+@import 'rplc-hero-article.variables';
+
+.rplc-hero-article {
+  $self: &;
+
+  @include standard-vertical-spacing(true);
+
+  &__dates-wrapper {
+    margin-bottom: get-spacing('ml');
+  }
+}
+
+// end of file

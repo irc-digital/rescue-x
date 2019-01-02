@@ -1,0 +1,19 @@
+social_share:
+  label: Social share
+  description: A list social icons that allow users to share content
+  use: "@molecules/50-social-share/01-share/social-share.twig"
+  fields:
+    social_share_sites:
+      type: array
+      label: 'Social share sites'
+      description: 'List of social share sites'
+      preview:
+        - icon_name: "twitter"
+        - icon_name: "facebook"
+        - icon_name: "linkedIn"
+        - icon_name: "mail"
+  libraries:
+    - social_share_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-social-share.css: {}

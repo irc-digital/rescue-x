@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.embeddable.entity_embed
+    - ef.type.pull_quote
+    - field.field.embeddable.pull_quote.field_ef_pull_quote_text
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      wysiwyg: wysiwyg
+      field: '0'
+    editor_friendly_name: Default
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_modifier_options:
+        enabled: true
+        plugin: embeddable_modifier_options
+        configuration:
+          enabled_modifiers:
+            pull_quote_placement: pull_quote_placement
+            background_color_3: '0'
+            image_caption_position: '0'
+            image_caption_style_2: '0'
+            image_caption_style: '0'
+            image_placement: '0'
+    borrowed_layout: none
+    view_mode_modifier_name: ''
+  ds:
+    layout:
+      id: pattern_pull_quote
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      pull_quote_text:
+        - field_ef_pull_quote_text
+_core:
+  default_config_hash: BrRqj4ZYLuLVkfgxz67EAV1bwJoe3lkpLjr84mwauBw
+id: embeddable.pull_quote.entity_embed
+targetEntityType: embeddable
+bundle: pull_quote
+mode: entity_embed
+content:
+  field_ef_pull_quote_text:
+    type: basic_string
+    weight: 5
+    region: pull_quote_text
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

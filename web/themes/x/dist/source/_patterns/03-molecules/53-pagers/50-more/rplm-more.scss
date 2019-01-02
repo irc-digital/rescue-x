@@ -1,0 +1,9 @@
+@import 'rplm-more.variables';
+
+.rplm-more {
+  @include well-row;
+
+  text-align: center;
+}
+
+// end of file

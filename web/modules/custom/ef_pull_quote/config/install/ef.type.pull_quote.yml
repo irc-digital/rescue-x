@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_pull_quote
+id: pull_quote
+label: 'Pull quote'
+description: 'Embeddable type that can be used to provide pull quote functionality'

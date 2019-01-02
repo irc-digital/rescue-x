@@ -1,0 +1,10 @@
+@import '../../../scss/core';
+
+$four-column-list-column-gutter: 2 * get-spacing();
+$four-column-list-row-gutter: 2 * get-spacing();
+$four-column-list-item-margin-bottom: get-spacing() * 1.5;
+
+$four-column-list-three-to-four-border-column-gutter: get-spacing();
+$four-column-list-three-to-four-border-row-gutter: get-spacing();
+$four-column-list-three-to-four-border-item-margin-bottom: get-spacing() * 1.5;
+// end of file

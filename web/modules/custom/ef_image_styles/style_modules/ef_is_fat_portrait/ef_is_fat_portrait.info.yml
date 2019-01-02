@@ -1,0 +1,7 @@
+name: "EF Image styles: Fat portrait (6x7)"
+type: module
+description: 'Fat portrait image styles'
+package: EF Image styles
+core: 8.x
+dependencies:
+  - ef_image_styles

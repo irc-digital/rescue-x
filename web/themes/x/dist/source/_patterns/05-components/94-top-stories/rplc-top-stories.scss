@@ -1,0 +1,12 @@
+@import 'rplc-top-stories.variables';
+
+.rplc-top-stories {
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+  }
+}
+
+
+// end of file

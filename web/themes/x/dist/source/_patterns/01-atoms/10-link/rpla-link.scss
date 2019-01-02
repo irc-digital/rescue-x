@@ -1,0 +1,154 @@
+@import 'rpla-link.variables';
+@import 'rpla-link.mixins';
+
+.rpla-link {
+  $self: &;
+
+  @include transition;
+  background-color: transparent;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  color: currentColor;
+  display: inline;
+  text-decoration: none;
+
+  &:not(#{$self}--weight-normal) {
+    @include font-weight('bold');
+  }
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer;
+  }
+
+  &--type-one {
+    @include link-hover-background-color(get-brand-color('primary'));
+
+    &:not(#{$self}--subtype-no-underline) {
+      @include link-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-white {
+      @include link-color(get-neutral-color('white'));
+    }
+
+    &#{$self}--subtype-black {
+      @include link-border(get-neutral-color('black'));
+      @include link-hover-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-yellow {
+      @include link-color(get-brand-color('primary'));
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-background-color(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('black'));
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-background-color(get-neutral-color('white'));
+      @include link-hover-border(get-neutral-color('white'));
+    }
+  }
+
+  &--type-two {
+    @include link-color(get-neutral-color('white'));
+
+    &:not(#{$self}--subtype-no-hover-effect) {
+      @include link-hover-color(get-brand-color('primary'));
+    }
+
+    &:not(#{$self}--subtype-no-underline) {
+      @include link-border(get-brand-color('primary'));
+    }
+
+    &#{$self}--subtype-alert {
+      @include link-color(get-neutral-color('black'));
+      @include link-border(get-utility-color('alert'));
+      @include link-hover-color(get-utility-color('alert'));
+    }
+
+    &#{$self}--subtype-alert-white {
+      @include link-color(get-neutral-color('white'));
+      @include link-border(get-utility-color('alert'));
+      @include link-hover-color(get-utility-color('alert'));
+    }
+
+    &#{$self}--subtype-white {
+      @include link-color(get-neutral-color('white'));
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('black'));
+      @include link-hover-border(get-neutral-color('black'));
+    }
+
+    // sass-lint:disable-block empty-args
+    &#{$self}--subtype-gray {
+      @include link-color(get-neutral-color());
+      @include link-border(get-neutral-color());
+    }
+
+    &#{$self}--subtype-black {
+      @include link-color(get-neutral-color('black'));
+      @include link-border(get-neutral-color('white'));
+      @include link-hover-color(get-neutral-color('white'));
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-color(get-neutral-color('black'));
+    }
+
+  }
+
+  &--type-three {
+    @include link-hover-background-color(get-brand-color('primary'));
+    @include letter-spacing('airy');
+    font-size: .75em;
+    text-transform: uppercase;
+  }
+
+  &--type-javascript {
+    @include link-color(get-neutral-color('black'));
+    @include link-border(get-neutral-color('black'));
+
+    &:not(#{$self}--subtype-inverse) {
+      @include link-hover-border(get-brand-color('primary'), $link-default-border-width, '&');
+
+      @include hover {
+        background-color: get-brand-color('primary');
+      }
+    }
+
+    &#{$self}--subtype-inverse {
+      @include link-hover-border(get-neutral-color('white'), $link-default-border-width, '&');
+
+      @include hover {
+        background-color: get-neutral-color('white');
+      }
+    }
+  }
+
+  &--size-2x-small {
+    @include link-size('2xs');
+  }
+
+  &--size-extra-small {
+    @include link-size('xs');
+  }
+
+  &--size-small {
+    @include link-size('s');
+  }
+
+  &--size-medium {
+    @include link-size('m');
+  }
+
+  &--size-large {
+    @include link-size('l');
+  }
+}
+
+// end of file
+
+

@@ -1,0 +1,16 @@
+@import 'rpll-hero-layout-1.shared.variables';
+
+@mixin hero-text-wrapper-eat-in {
+  @include z-index('up');
+  margin-top: $hero-text-wrapper-eats-in;
+
+  @include breakpoint(phablet) {
+    margin-top: $hero-text-wrapper-eats-in-phablet;
+  }
+
+  @media only screen and (min-width: #{$hero-layout-1-smallest-large-device-size}) {
+    margin-top: $hero-text-wrapper-eats-in-desktop;
+  }
+}
+
+// end of file

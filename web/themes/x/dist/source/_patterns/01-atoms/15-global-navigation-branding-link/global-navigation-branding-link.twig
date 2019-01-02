@@ -1,0 +1,21 @@
+{% spaceless %}
+
+  {% set global_navigation_branding_modifiers = global_navigation_branding_modifiers ?: [] %}
+
+  {% set has_context = false %}
+  {% for global_navigation_branding_modifiers in global_navigation_branding_modifiers %}
+    {% if global_navigation_branding_modifiers starts with 'context-' %}
+      {% set has_context = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_context %}
+    {% set global_navigation_branding_modifiers = global_navigation_branding_modifiers | merge(['context-usa']) %}
+  {% endif %}
+
+  {% if global_navigation_branding_link_url is empty %}
+    {% set global_navigation_branding_link_url = '/' %}
+  {% endif %}
+
+{% endspaceless %}
+<a href="{{ global_navigation_branding_link_url }}" class="rpla-global-navigation-branding-link{% for global_navigation_branding_modifier in global_navigation_branding_modifiers %} rpla-global-navigation-branding-link--{{ global_navigation_branding_modifier }}{% endfor %}">{{ "Home" | trans }}</a>

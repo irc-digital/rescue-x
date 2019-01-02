@@ -1,0 +1,46 @@
+@import 'rplc-teaser-highlighted.variables';
+
+.rplc-teaser-highlighted {
+  $self: &;
+
+  &__summary {
+    @include typography-text-small;
+    margin-bottom: get-spacing('l');
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+
+    @media only screen and (min-width: #{$well-width-inner}) {
+      width: rem(976px);
+    }
+  }
+
+  &__wrapper-link {
+    @media only screen and (min-width: #{$well-width-inner}) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__text-wrapper {
+    @include z-index('up');
+    background-color: $teaser-highlighted-text-section-background;
+    margin: $teaser-highlighted-text-section-eats-in $teaser-highlighted-text-section-horizontal-margin 0;
+    padding: safe-map-get($teaser-highlighted-text-section-padding, 'mobile');
+
+    @include breakpoint(phablet) {
+      padding: safe-map-get($teaser-highlighted-text-section-padding, 'phablet');
+    }
+
+    @media only screen and (min-width: #{$well-width-inner}) {
+      margin-left: $teaser-highlighted-text-eat-in-large;
+      margin-right: 0;
+      margin-top: 0;
+      width: $teaser-highlighted-text-width;
+    }
+  }
+
+}
+// end of file
+

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1x1_50px_wide
+    - image.style.square_1x1_100px_wide
+    - image.style.square_1x1_200px_wide
+    - image.style.square_1x1_400px_wide
+  enforced:
+    module:
+      - ef_person
+id: contributor_facial
+label: 'Contributor facial'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 641px) 72px, 48px'
+      sizes_image_styles:
+        - square_1x1_400px_wide
+        - square_1x1_200px_wide
+        - square_1x1_100px_wide
+        - square_1x1_50px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: square_1x1_100px_wide

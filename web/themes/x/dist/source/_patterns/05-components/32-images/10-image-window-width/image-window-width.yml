@@ -1,0 +1,9 @@
+image_window_width_responsive_image_source_set:
+  - "https://placem.at/places?w=736&h=414random=windowwidth 736w"
+  - "https://placem.at/places?w=1024&h=576&random=windowwidth 1024w"
+  - "https://placem.at/places?w=2048&h=1152&random=windowwidth 2048w"
+  - "https://placem.at/places?w=2576&h=1449&random=windowwidth 2576w"
+image_window_width_responsive_image_fallback: "https://placem.at/places?w=736&h=414&random=windowwidth"
+image_window_width_responsive_image_alt: "Faker.words(5,true)"
+image_window_width_caption_text: "Faker.paragraph(4, true)"
+image_window_width_caption_credit: "Faker.name()"

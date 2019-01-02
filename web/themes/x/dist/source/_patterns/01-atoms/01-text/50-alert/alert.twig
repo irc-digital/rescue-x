@@ -1,0 +1,11 @@
+<div class="rpla-alert">
+  <span class="rpla-alert__icon-wrapper">
+    {% include '@atoms/05-icon/icon.twig' with {
+      icon_name: 'crisis',
+      icon_modifiers: ['fill-alert'],
+    } only %}
+  </span>
+  <span class="rpla-alert__text-wrapper">
+    {{ alert_text }}
+  </span>
+</div>

@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_is_portrait_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addCropToMediaImageForm('portrait_3x4');
+}
+
+function ef_is_portrait_uninstall () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->removeCropFromMediaImageForm('portrait_3x4');
+}

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.referer
+    - field.storage.embeddable.field_rich_text_single
+  module:
+    - text
+  enforced:
+    module:
+      - ef_wysiwyg_embed_test
+id: embeddable.referer.field_rich_text_single
+field_name: field_rich_text_single
+entity_type: embeddable
+bundle: referer
+label: 'Rich text (single)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

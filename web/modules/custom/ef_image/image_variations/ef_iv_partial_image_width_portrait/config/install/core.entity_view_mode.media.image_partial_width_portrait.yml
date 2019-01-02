@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_partial_image_width_portrait
+id: media.image_partial_width_portrait
+label: 'Image partial width, portrait'
+targetEntityType: media
+cache: true

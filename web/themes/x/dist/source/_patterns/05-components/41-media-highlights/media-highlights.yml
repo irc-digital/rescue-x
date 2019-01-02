@@ -1,0 +1,34 @@
+media_highlights_section_heading_title: "Media highlights"
+media_highlights_content:
+  - include():
+      pattern: "components-teaser-minimal"
+      with:
+        teaser_minimal_url: "#"
+        teaser_minimal_slug: "Faker.words(2,true)"
+        teaser_minimal_title: "Faker.sentence(7,true)"
+        teaser_minimal_date: "January 31, 2018"
+      only: true
+  - include():
+      pattern: "components-teaser-minimal"
+      with:
+        teaser_minimal_url: "#"
+        teaser_minimal_slug: "Faker.words(2,true)"
+        teaser_minimal_title: "Faker.sentence(7,true)"
+        teaser_minimal_date: "March 1, 2018"
+      only: true
+  - include():
+      pattern: "components-teaser-minimal"
+      with:
+        teaser_minimal_url: "#"
+        teaser_minimal_slug: "Faker.words(2,true)"
+        teaser_minimal_title: "Faker.sentence(7,true)"
+        teaser_minimal_date: "September 10, 2017"
+      only: true
+  - include():
+      pattern: "components-teaser-minimal"
+      with:
+        teaser_minimal_url: "#"
+        teaser_minimal_slug: "Faker.words(2,true)"
+        teaser_minimal_title: "Faker.sentence(7,true)"
+        teaser_minimal_date: "September 5, 2017"
+      only: true

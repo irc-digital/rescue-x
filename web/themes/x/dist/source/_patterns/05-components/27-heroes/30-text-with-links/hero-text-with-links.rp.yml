@@ -1,0 +1,30 @@
+hero_text_with_links:
+  label: Hero (text with links)
+  description: A hero that has a headline, slug and description, along with some optional links
+  use: "@components/27-heroes/30-text-with-links/hero-text-with-links.twig"
+  fields:
+    hero_text_with_links_headline:
+      type: text
+      label: "Headline"
+      description: "The title of the hero"
+      preview: "Suspendisse non nisl sit amet"
+    hero_text_with_links_slug:
+      type: text
+      label: "Slug"
+      description: "Slug"
+    hero_text_with_links_description:
+      type: text
+      label: "Description"
+      description: "A piece of summary text"
+      preview: "Praesent nonummy mi in odio. Quisque id mi. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor."
+    hero_text_with_links_links:
+      type: text
+      label: "Links"
+      unpack: true
+      description: "Rendered links"
+  libraries:
+    - hero_text_with_links:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-text-with-links.css: {}
+

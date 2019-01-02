@@ -1,0 +1,61 @@
+@import 'rplm-section-heading.variables';
+
+.rplm-section-heading {
+  $self: &;
+
+  @include well-row;
+
+  margin-bottom: get-spacing();
+
+  //
+  // 1) Ensures that the icon does not get too squished
+  //
+  &__title {
+    @include typography-heading-large;
+    border-left: $section-heading-left-border-width solid get-brand-color();
+    display: inline-block;
+    max-width: 75%; // 1
+    padding-bottom: get-spacing('s');
+    padding-left: $section-heading-title-left-padding;
+    padding-top: get-spacing('s');
+
+    @include breakpoint(phablet) {
+      max-width: 85%;
+    }
+  }
+
+  &__title-icon-wrapper {
+    align-items: center;
+    display: flex;
+    margin-bottom: get-spacing();
+
+    @include breakpoint(phablet) {
+      margin-bottom: get-spacing('ml');
+    }
+  }
+
+  &__description {
+    @include line-height('m');
+  }
+
+  &__icon {
+    display: inline-block;
+    fill: get-neutral-color('black');
+    height: $section-heading-icon-size;
+    margin-right: get-spacing('ml');
+    width: $section-heading-icon-size;
+  }
+
+  &--inverse {
+    #{ $self }__title {
+      border-color: $section-heading-inverse-left-border-color;
+    }
+  }
+
+  &--white {
+    color: get-neutral-color('white');
+  }
+}
+
+// end of file
+

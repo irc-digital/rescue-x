@@ -1,0 +1,5 @@
+embeddable.type_add:
+  route_name: embeddable.type_add
+  title: 'Add embeddable type'
+  appears_on:
+    - entity.embeddable_type.collection

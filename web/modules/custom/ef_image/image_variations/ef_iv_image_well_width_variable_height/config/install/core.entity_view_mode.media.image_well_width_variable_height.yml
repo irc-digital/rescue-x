@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ef_iv_image_well_width_variable_height
+id: media.image_well_width_variable_height
+label: 'Image well width, variable height'
+targetEntityType: media
+cache: true

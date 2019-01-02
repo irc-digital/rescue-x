@@ -1,0 +1,38 @@
+<div class="rpll-hero-layout-1{% for hero_layout_1_modifier in hero_layout_1_modifiers %} rpll-hero-layout-1--{{ hero_layout_1_modifier }}{% endfor %}">
+  {% if 'no-image' not in hero_layout_1_modifiers and 'transparent' not in hero_layout_1_modifiers %}
+    <div class="rpll-hero-layout-1__image-wrapper">
+      {% block hero_layout_1_image_block %}
+        {{ hero_layout_1_image }}
+      {% endblock %}
+    </div>
+  {% endif %}
+
+  <div class="rpll-hero-layout-1__inner-content-wrapper">
+    <div class="rpll-hero-layout-1__text-wrapper">
+      <div class="rpll-hero-layout-1__primary-1">
+        {% block hero_layout_1_primary_1_block %}
+          {{ hero_layout_1_primary_1 }}
+        {% endblock %}
+      </div>
+      {% if 'no-second-blocks' not in hero_layout_1_modifiers and '50-50' not in hero_layout_1_modifiers %}
+        <div class="rpll-hero-layout-1__primary-2">
+          {% block hero_layout_1_primary_2_block %}
+            {{ hero_layout_1_primary_2 }}
+          {% endblock %}
+        </div>
+      {% endif %}
+      <div class="rpll-hero-layout-1__secondary-1">
+        {% block hero_layout_1_secondary_1_block %}
+          {{ hero_layout_1_secondary_1 }}
+        {% endblock %}
+      </div>
+      {% if 'no-second-blocks' not in hero_layout_1_modifiers and 'no-secondary-second-block' not in hero_layout_1_modifiers and '50-50' not in hero_layout_1_modifiers %}
+        <div class="rpll-hero-layout-1__secondary-2">
+          {% block hero_layout_1_secondary_2_block %}
+            {{ hero_layout_1_secondary_2 }}
+          {% endblock %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

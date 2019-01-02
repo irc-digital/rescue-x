@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_embeddables
+    - field.field.node.landing_page.field_hero_embeddable
+    - node.type.landing_page
+  module:
+    - ds
+    - ef
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_hero_embeddable
+id: node.landing_page.hero
+targetEntityType: node
+bundle: landing_page
+mode: hero
+content:
+  field_hero_embeddable:
+    weight: 101
+    label: hidden
+    settings:
+      embedding_options: {  }
+    third_party_settings: {  }
+    type: entity_reference_embeddable_view
+    region: ds_content
+hidden:
+  body: true
+  field_embeddables: true
+  langcode: true
+  links: true

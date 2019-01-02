@@ -1,0 +1,3 @@
+views.filter.ef_embeddable_in_wysiwyg:
+  type: views.filter.in_operator
+  label: 'Embeddable in WYSIWYG'

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image_link_boxes
+id: image_link_boxes
+label: 'Image link boxes'
+description: 'A set of image link box teasers'
+exclude_from_embeddable_overview_quick_add_list: false

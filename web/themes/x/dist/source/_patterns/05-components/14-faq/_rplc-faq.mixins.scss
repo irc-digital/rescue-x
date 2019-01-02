@@ -1,0 +1,19 @@
+@import 'rplc-faq.variables';
+
+@mixin faq-question-is-opened {
+  @at-root {
+    [data-rpl-faq-question-state='expanded'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin faq-question-is-closed {
+  @at-root {
+    [data-rpl-faq-question-state='collapsed'] & {
+      @content ;
+    }
+  }
+}
+
+// end of file

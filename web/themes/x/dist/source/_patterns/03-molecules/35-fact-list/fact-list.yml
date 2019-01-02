@@ -1,0 +1,6 @@
+fact_list_title: "Faker.words(3,true)"
+fact_list_content:
+  - "Faker.words(8,true)"
+  - "Faker.words(8,true)"
+  - "Faker.words(8,true)"
+  - "Faker.words(8,true)"

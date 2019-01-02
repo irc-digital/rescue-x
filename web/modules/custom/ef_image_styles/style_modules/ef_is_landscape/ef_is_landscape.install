@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_is_landscape_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addCropToMediaImageForm('landscape_4x3');
+}
+
+function ef_is_landscape_uninstall () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->removeCropFromMediaImageForm('landscape_4x3');
+}

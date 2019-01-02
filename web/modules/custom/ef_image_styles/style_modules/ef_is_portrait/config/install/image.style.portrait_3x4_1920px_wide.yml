@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.portrait_3x4
+  module:
+    - crop
+name: portrait_3x4_1920px_wide
+label: 'Portrait (3:4) 1920px wide'
+effects:
+  dbc40f9d-14b5-4936-8a1e-acbb0c895971:
+    uuid: dbc40f9d-14b5-4936-8a1e-acbb0c895971
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: portrait_3x4
+  d38aa56d-f9e5-4ce5-bdf0-269c4561227b:
+    uuid: d38aa56d-f9e5-4ce5-bdf0-269c4561227b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 2560

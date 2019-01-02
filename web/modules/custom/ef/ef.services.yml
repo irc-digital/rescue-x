@@ -1,0 +1,51 @@
+services:
+  ef.manager:
+    class: Drupal\ef\EmbeddableFrameworkManager
+    arguments: ['@config.factory']
+
+  ef.view_mode_visibility:
+    class: Drupal\ef\EmbeddableViewModeVisibility
+    arguments: ['@plugin.manager.embeddable_view_mode_visibility', '@entity_type.bundle.info']
+
+  plugin.manager.embeddable_reference_options:
+    class: Drupal\ef\Plugin\EmbeddableReferenceOptionsPluginManager
+    parent: default_plugin_manager
+
+  plugin.manager.embeddable_view_mode_visibility:
+    class: Drupal\ef\Plugin\EmbeddableViewModeVisibilityPluginManager
+    parent: default_plugin_manager
+
+  ef.embeddable_reference_mode:
+    class: Drupal\ef\EmbeddableReferenceMode
+    arguments: ['@string_translation']
+
+  ef.html_class_decorator.factory:
+    class: Drupal\ef\Decorator\BEMHTMLClassDecoratorFactory
+
+  ef.html_class_decorator.twig_extension:
+    arguments: ['@ef.html_class_decorator.factory']
+    class: Drupal\ef\Decorator\HTMLClassDecoratorTwigExtension
+    tags:
+      - { name: twig.extension }
+
+  ef.embeddable_usage:
+    class: Drupal\ef\EmbeddableUsageService
+    arguments: ['@entity_type.manager', '@plugin.manager.embeddable_usage_plugin_manager']
+
+  ef.dependent_embeddable:
+    class: Drupal\ef\DependentEmbeddableService
+    arguments: ['@string_translation', '@module_handler']
+
+  plugin.manager.embeddable_usage_plugin_manager:
+    class: Drupal\ef\Plugin\EmbeddableUsagePluginManager
+    parent: default_plugin_manager
+
+  access_check.embeddable.revision:
+    class: Drupal\ef\Access\EmbeddableRevisionAccessCheck
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: access_check, applies_to: _access_embeddable_revision }
+
+  ef.theme_css_library_helper:
+    class: Drupal\ef\Theme\ThemeCSSLibraryHelper
+    arguments: ['@entity_display.repository', '@entity_type.bundle.info', '@theme.manager']

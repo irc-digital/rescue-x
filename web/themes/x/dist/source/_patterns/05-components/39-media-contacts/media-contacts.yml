@@ -1,0 +1,5 @@
+media_contacts_content:
+  - include():
+      pattern: "molecules-person-info-2"
+  - include():
+      pattern: "molecules-person-info-2"

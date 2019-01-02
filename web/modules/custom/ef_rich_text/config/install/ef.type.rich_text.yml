@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_rich_text
+id: rich_text
+label: 'Rich text'
+description: 'Embeddable type allows an editor to use a rich text editor'

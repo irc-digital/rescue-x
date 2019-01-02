@@ -1,0 +1,6 @@
+<?php
+
+function ef_simple_image_link_list_uninstall () {
+  ef_delete_all ('embeddable', 'simple_image_link_list');
+  ef_delete_all ('embeddable', 'simple_image_link');
+}

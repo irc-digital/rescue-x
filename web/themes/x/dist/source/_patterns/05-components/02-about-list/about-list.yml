@@ -1,0 +1,11 @@
+about_list_content:
+  - include():
+      pattern: "molecules-about"
+      with:
+        about_title: 'About the IRC'
+        about_description: "The International Rescue Committee responds to the world’s worst humanitarian crises, helping to restore health, safety, education, economic wellbeing, and power to people devastated by conflict and disaster. Founded in 1933 at the call of Albert Einstein, the IRC is at work in over 40 countries and 28 offices across the U.S. helping people to survive, reclaim control of their future, and strengthen their communities. Learn more at <a class='rpla-link rpla-link--type-one' href='http://www.rescue.org'>www.rescue.org</a>"
+  - include():
+      pattern: "molecules-about"
+      with:
+        about_title: 'About the LEGO Foundation'
+        about_description: "The LEGO Foundation aims to inspire and develop the builders of tomorrow; a mission that it shares with the LEGO Group. The LEGO Foundation is dedicated to building a future where learning through play empowers children to become creative, engaged, lifelong learners. Its work is about re-defining play and re-imagining learning. In collaboration with thought leaders, influencers, educators and parents the LEGO Foundation aims to equip, inspire and activate champions for play. Learn more on <a class='rpla-link rpla-link--type-one' href='http://www.LEGOfoundation.com'>www.LEGOfoundation.com</a>"

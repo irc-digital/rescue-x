@@ -1,0 +1,19 @@
+@import 'rplc-teaser-thumb.variables';
+
+.rplc-teaser-thumb {
+
+  max-width: rem(200px);
+
+  &__image-wrapper {
+    @include line-height('none');
+    @include typography-vertical-spacing('compact');
+  }
+
+  &__text-wrapper {
+    @include font-size('s');
+    @include font-weight('light');
+    @include line-height('s');
+  }
+}
+
+// end of file

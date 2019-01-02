@@ -1,0 +1,26 @@
+{#
+/**
+ * Slideshow
+ *
+ * Available variables:
+ *   slideshow_section_heading_title - Title text above the slider
+ *   slideshow_section_heading_icon - Optional icon displayed in front of the title
+ *   slideshow_section_heading_description - Short description of slider content
+ *   slideshow_items - Array of slide components making up the slideshow
+ */
+#}
+<div class="rplc-slideshow">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: slideshow_section_heading_title,
+    section_heading_description: slideshow_section_heading_description,
+    section_heading_icon: slideshow_section_heading_icon,
+  } only %}
+  <div class="rplc-slideshow__content">
+    <div class="rplc-slideshow__wrapper">
+      {% embed '@layouts/15-slider-layouts/20-slider-layout-4/slider-layout-4.twig' with {
+        slider_layout_4_slides: slideshow_items,
+      } %}
+      {% endembed %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_image
+id: image_placement.right
+label: Left
+class_name: right
+target_embeddable_modifier: image_placement
+weight: -10

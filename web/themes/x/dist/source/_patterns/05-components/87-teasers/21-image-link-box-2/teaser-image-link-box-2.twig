@@ -1,0 +1,22 @@
+<div class="rplc-teaser-image-link-box-2{% for teaser_image_link_box_2_modifier in teaser_image_link_box_2_modifiers %} rplc-teaser-image-link-box-2--{{ teaser_image_link_box_2_modifier }}{% endfor %}">
+  <a href="{{ teaser_image_link_box_2_url }}" class="rplc-teaser-image-link-box-2__wrapper-link">
+    <figure class="rplc-teaser-image-link-box-2__inner-wrapper">
+      <div class="rplc-teaser-image-link-box-2__image-wrapper">
+        {% block teaser_image_link_box_2_image_block %}
+        {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+          responsive_image_source_set: teaser_image_link_box_2_image_source_set,
+          responsive_image_sizes: "(min-width: 641px) 146px, 96px",
+          responsive_image_fallback: teaser_image_link_box_2_image_fallback,
+          responsive_image_alt: teaser_image_link_box_2_image_alt
+        } only %}
+        {% endblock %}
+      </div>
+      <figcaption class="rplc-teaser-image-link-box-2__text-wrapper">
+        <div class="rplc-teaser-image-link-box-2__caption-wrapper">
+          <h3 class="rplc-teaser-image-link-box-2__title">{{ teaser_image_link_box_2_title }}</h3>
+          <p class="rplc-teaser-image-link-box-2__summary">{{ teaser_image_link_box_2_summary }}</p>
+        </div>
+      </figcaption>
+    </figure>
+  </a>
+</div>

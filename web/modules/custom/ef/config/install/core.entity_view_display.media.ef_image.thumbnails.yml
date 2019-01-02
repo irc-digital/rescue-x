@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnails
+    - field.field.media.ef_image.field_ef_image
+    - media.type.ef_image
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - media_image_thumbnails
+    fields:
+      media_image_thumbnails:
+        plugin_id: media_image_thumbnails
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          image_styles:
+            - square_1x1_117px_wide
+            - super_widescreen_21x9_273px_wide
+            - widescreen_16x9_208px_wide
+        ft:
+          id: reset
+          settings:
+            lb: ''
+_core:
+  default_config_hash: 1t2g1NK-RR8jkN8_375RboEpcW1x7GRbaL1WGSbgCe8
+id: media.ef_image.thumbnails
+targetEntityType: media
+bundle: ef_image
+mode: thumbnails
+content: {  }
+hidden:
+  created: true
+  field_ef_image: true
+  field_media_image: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

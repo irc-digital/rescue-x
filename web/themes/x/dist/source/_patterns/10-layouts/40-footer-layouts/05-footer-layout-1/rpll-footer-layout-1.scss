@@ -1,0 +1,55 @@
+@import 'rpll-footer-layout-1.variables';
+
+.rpll-footer-layout-1 {
+  $self: &;
+
+  background-color: get-neutral-color('light-gray');
+  padding-bottom: get-spacing('m');
+  padding-top: get-spacing('m');
+
+  @include breakpoint(phablet) {
+    padding-bottom: get-spacing('l');
+    padding-top: get-spacing('l');
+  }
+
+  &__inner-content-wrapper {
+    @include well-row;
+
+    //
+    // 1) two column grid on tablet but ...
+    // 2) .. final section spans the full width and therefore becomes its own row
+    // 3) once we get to larger device we layout as three columns and ensure the last column lays out naturally
+    @include breakpoint(phablet) {
+      display: grid;
+      grid-column-gap: get-spacing('m');
+      grid-row-gap: get-spacing('m');
+      grid-template-columns: 1fr 1fr; // 1
+    }
+
+    @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
+      grid-template-columns: 1fr 1fr 1fr; // 3
+    }
+  }
+
+  &__section {
+    //
+    // 4) This is controlling the final section so that it inlines on phablet
+    //
+    @include breakpoint(phablet) {
+      &:last-child {
+        display: grid; // 4
+        grid-column-end: 3; // 2
+        grid-column-start: 1; // 2
+        grid-template-columns: 1fr 1fr; // 4
+
+        @media only screen and (min-width: #{$footer-layout-1-desktop-start}) {
+          display: block;
+          grid-column-start: 3; // 3
+        }
+      }
+    }
+
+  }
+}
+
+// end of file

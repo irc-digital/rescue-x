@@ -1,0 +1,73 @@
+@import 'rpla-unordered-list.variables';
+
+.rpla-unordered-list {
+  $self: &;
+
+  @include typography-text-standard;
+  list-style: none;
+
+  &__item {
+    margin-bottom: get-spacing();
+    padding-left: get-spacing('l');
+    text-indent: -.85em;
+
+    &::before {
+      @include font-size('l');
+      color: get-brand-color();
+      content: '• ';
+      font-family: Arial;
+      left: -#{get-spacing()};
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  &--size-small {
+    @include typography-text-small;
+  }
+
+  &--color-dark {
+    #{$self}__item {
+      &::before {
+        color: get-neutral-color('black');
+      }
+    }
+  }
+
+  &--color-light {
+    #{$self}__item {
+      color: get-neutral-color('white');
+
+      &::before {
+        color: get-neutral-color('white');
+      }
+    }
+  }
+
+  &--spacing-compact {
+    @include line-height('s');
+
+    #{$self}__item {
+      margin-bottom: get-spacing('s');
+      padding-left: get-spacing('ml');
+      text-indent: -.75em;
+
+      &::before {
+        left: -#{get-spacing('s')};
+      }
+    }
+  }
+
+  &--contains-markup {
+    #{$self}__item {
+      display: flex;
+
+      &::before {
+        top: -2px;
+      }
+    }
+  }
+}
+
+
+// end of file

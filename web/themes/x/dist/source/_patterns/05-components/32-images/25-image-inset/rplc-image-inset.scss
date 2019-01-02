@@ -1,0 +1,46 @@
+@import 'rplc-image-inset.variables';
+
+.rplc-image-inset {
+  $self: &;
+
+  &__image-wrapper {
+    @include line-height('none');
+  }
+
+  &--caption-style-2-low-key {
+    #{$self}__caption-wrapper {
+      @include well-row;
+
+      @include breakpoint(phablet) {
+        width: auto;
+      }
+    }
+  }
+
+  &--caption-style-2-box {
+    #{$self}__content {
+      margin-bottom: -#{$image-inset-caption-style-2-box-eat-in};
+    }
+
+    #{$self}__image-wrapper {
+      @include z-index('up');
+      padding-left: get-spacing('m');
+      padding-right: get-spacing('m');
+
+      @include breakpoint(phablet) {
+        padding-left: get-spacing('s');
+        padding-right: get-spacing('s');
+      }
+    }
+
+    #{$self}__caption-wrapper {
+      background-color: get-neutral-color('white');
+      padding-top: $image-inset-caption-style-2-box-eat-in;
+      position: relative;
+      top: -#{$image-inset-caption-style-2-box-eat-in};
+    }
+  }
+
+}
+
+// end of file

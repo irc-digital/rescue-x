@@ -1,0 +1,30 @@
+@import 'rplc-share-and-explore-related.variabes';
+
+.rplc-share-and-explore-related {
+
+  background-color: get-neutral-color('white');
+  padding: get-spacing('xl') get-spacing('ml');
+
+  &__content {
+    @include line-height('2xs');
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include breakpoint(laptop) {
+      @include well-row;
+
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__share {
+    margin-bottom: get-spacing('xl');
+
+    @include breakpoint(laptop) {
+      margin-bottom: 0;
+      margin-right: get-spacing('3xl');
+    }
+  }
+}
+
+// end of file

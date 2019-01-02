@@ -1,0 +1,8 @@
+slide_image_source_set:
+  - "https://placem.at/places?w=640&h=443&random=slide 640w"
+  - "https://placem.at/places?w=1280&h=886&random=slide 1280w"
+  - "https://placem.at/places?w=1920&h=1329&random=slide 1920w"
+  - "https://placem.at/places?w=2400&h=1662&random=slide 2400w"
+slide_image_fallback: "https://placem.at/places?w=640&h=443&random=slide"
+slide_image_alt: "Faker.words(5,true)"
+slide_caption_text: "Faker.sentences(2,true)"

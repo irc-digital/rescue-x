@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square_1x1
+  module:
+    - crop
+name: square_1x1_640px_wide
+label: 'Square (1:1) 640px wide'
+effects:
+  f6445f44-a360-4a36-b0dd-8176016bec4b:
+    uuid: f6445f44-a360-4a36-b0dd-8176016bec4b
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square_1x1
+  f6445f44-a360-4a36-b0dd-8176016bec4b:
+    uuid: f6445f44-a360-4a36-b0dd-8176016bec4b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 640
+      height: 640
