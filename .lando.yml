@@ -18,11 +18,10 @@ services:
           PHP_IDE_CONFIG: "serverName=appserver"
     # Install project dependencies:
     # - Drupal core
-    # - Gulp
     run_as_root:
       - "composer install -d /app"
-      - "npm install -g gulp-cli -y"
-      #- "npm install --prefix /app/web/themes/x puppeteer"
+    # - "npm install -g gulp-cli -y"
+    # - "npm install /app/web/themes/x"
 tooling:
   gulp:
     service: appserver
