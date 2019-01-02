@@ -4,9 +4,10 @@
  * These styles will not be our production CSS.
  */
 
-@import 'variables';
+@import 'core';
 
 @import '../_patterns/10-layouts/30-hero-layouts/10-hero-layout-2/rpll-hero-layout-2.shared.variables';
+@import '../_patterns/10-layouts/15-slider-layouts/05-slider-layout-1/rpll-slider-layout-1.shared.variables';
 
 //
 // rescue styles only for PatternLab
@@ -15,22 +16,120 @@
 // habitat" so to speak. These style do not get used in a production environment, so use sparingly and document them
 // in the appropriate twig and .md files
 //
+.sg-pattern-example > .rpll-one-column-list,
 .sg-pattern-example > .rpll-two-column-list,
 .sg-pattern-example > .rpll-four-column-list,
 .sg-pattern-example > .rpll-three-column-list,
+.sg-pattern-example > .rpll-slider-layout-1,
+.sg-pattern-example > .rpll-slider-layout-2,
+body > .rpll-one-column-list,
 body > .rpll-two-column-list,
 body > .rpll-four-column-list,
-body > .rpll-three-column-list {
-  @include standard-row;
+body > .rpll-three-column-list,
+body > .rpll-slider-layout-1,
+body > .rpll-slider-layout-2 {
+  @include well-row;
 }
 
+.sg-pattern-example > .rplm-stacked-headline-3,
+body > .rplm-stacked-headline-3 {
+  background-color: black;
+  max-width: 574px;
+}
+
+.sg-pattern-example > .rplc-teaser-story,
+body > .rplc-teaser-story {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $slider-layout-1-max-content-width;
+}
+
+[id^="molecules-stacked-headline-3"] {
+  background-color: black;
+}
+
+#do-not-replace-see-gulpfile + .rplc-modal, // fingerprint of a standalone pattern
+#components-search-modal .sg-pattern-example > .rplc-modal {
+  display: block;
+  overflow: auto;
+  position: relative;
+}
+
+#do-not-replace-see-gulpfile + .rplc-main-menu-locations, // fingerprint of a standalone pattern
+#components-main-menu-locations .sg-pattern-example > .rplc-modal {
+  background-color: black;
+}
+
+#do-not-replace-see-gulpfile + .rplc-sticky-footer, // fingerprint of a standalone pattern
+#components-sticky-footer .sg-pattern-example > .rplc-sticky-footer {
+  display: block;
+  position: relative;
+}
+
+#do-not-replace-see-gulpfile + .rplc-header, // fingerprint of a standalone pattern
+#components-header .sg-pattern-example > .rplc-header {
+  display: block;
+}
+
+#components-teaser-image-basic {
+  max-width: 374px;
+}
+
+#components-search-modal .sg-pattern-example > .rplc-modal  .rplc-modal__content {
+  top: 0;
+}
+
+.sg-pattern ~ #components-search-modal {
+//  display: none;
+}
+
+.sg-pattern-example > .rplc-teaser-bordered,
+body > .rplc-teaser-bordered {
+  max-width: 594px;
+}
+
+.sg-pattern-example > .rplc-teaser-button,
+body > .rplc-teaser-button {
+  max-width: 350px;
+}
+
+.sg-pattern-example > .rplc-teaser-video,
+body > .rplc-teaser-video {
+  max-width: 640px;
+
+  @include breakpoint(phablet) {
+    max-width: 256px;
+  }
+}
+
+//
+// 1) Hack for Pattern Lab to make the highlight teaser look right when it is view entirely standalone
+//
+body > .rplc-teaser-highlighted .rpla-responsive-image {
+  width: 100% // 1)
+}
+
+.rplm-donation-teaser,
 .rplc-teaser-simple-image-link {
-  max-width: rem(265px);
+  max-width: rem(640px);
 }
 
-.rplc-teaser-standard, .rplc-teaser-minimal {
+//
+// 1) Dodges around oddity related to responsive image handling when we are outside of a legit container (grid)
+//
+.rplc-teaser-standard,
+.rplc-teaser-minimal {
+  img {
+    width: 100%; // 1
+  }
+
   @include breakpoint(desktop) {
     max-width: rem(590px);
+  }
+}
+.rplc-teaser-basic {
+  @include breakpoint(desktop) {
+    max-width: rem(1092px);
   }
 }
 
@@ -40,7 +139,7 @@ body > .rpll-three-column-list {
   }
 }
 
-.rplc-teaser-image-link-box {
+.rplc-teaser-image-link-box-1 {
   @media only screen and (min-width: #{$smallest-desktop-size-less-gutters}) {
     max-width: rem(392px);
   }
@@ -49,35 +148,87 @@ body > .rpll-three-column-list {
 // PatternLab stuff
 #sg-patterns {
   -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
+  box-sizing: border-box !important;
   max-width: 100%;
   padding: 0;
 }
 
 // make all patterns have some padding left and right (to make it look nice) ...
 .sg-subtype, .sg-pattern > * {
-  padding-left: .5rem !important;
-  padding-right: .5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.patternlab-slider-two-content {
+  background-color: #d7d7d7;
+  border: 4px dashed #333;
+  height:400px;
+  line-height: 400px;
+  text-align:center;
+  width: 90vw;
+
+  @include breakpoint(phablet) {
+    width: auto;
+  }
 }
 
 // ... except for the ones that are supposed to go window width
+#atoms-paragraph-body,
 #components-image-window-width,
-#components-hero-article,
-#components-hero-standard,
-#components-hero-landing-page,
-#components-hero-landing-page-crisis-watch,
-#components-hero-text-only,
-#layouts-hero-layout-1,
-#layouts-hero-layout-2,
-#layouts-hero-layout-1-simpler {
+#components-news-and-features,
+#components-image-link-boxes,
+#molecules-authority,
+#components-impact-card,
+#components-fast-facts,
+#molecules-b-roll,
+#components-crisis-mode,
+#components-quote,
+#components-testimonial,
+[id^="components-global-navigation"],
+[id^="components-image-window-width"],
+[id^="components-image-partial-width-portrait"],
+[id^="components-image-partial-width-landscape"],
+[id^="components-image-well-width"],
+[id^="components-question"],
+[id^="components-image-link-boxes"],
+[id^="components-call-to-action-1"],
+[id^="components-call-to-action-2"],
+[id^="components-call-to-action-3"],
+[id^="components-call-to-action-4"],
+[id^="components-hero"],
+[id^="components-pull-quote"],
+[id^="components-basic-teaser-list"],
+[id^="components-related-news-and-features"],
+[id^="pages-"],
+[id^="layouts-"] {
   & > .sg-pattern-example {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 }
 
+#components-main-menu {
+  min-height: 400px;
+}
+
+.rplc-main-menu {
+  max-width: 320px;
+
+  @media #{$global-navigation-large-device-media-query} {
+    max-width: 1011px;
+  }
+}
+
+[id^="pages-"].sg-pattern {
+  margin-bottom: 0;
+}
+
 #atoms-social-share-standard {
-  background-color: $white;
+  background-color: get-neutral-color('white');
+}
+
+#molecules-section-heading-inverse {
+  background-color: get-brand-color();
 }
 
 // style to make a responsive div for the hero layouts
@@ -104,7 +255,7 @@ body > .rpll-three-column-list {
 }
 
 .patternlab-faux-hero-2-text {
-  background-color: $black;
+  background-color: get-neutral-color('black');
   border: 4px dashed #333;
   height:200px;
   line-height: 200px;
@@ -115,6 +266,89 @@ body > .rpll-three-column-list {
   }
 }
 
+.patternlab-faux-hero-3-text {
+  //background-color: get-neutral-color('black');
+  border: 4px dashed get-neutral-color('white');
+  color: get-neutral-color('white');
+  height:200px;
+  line-height: 200px;
+  text-align:center;
+
+  @media only screen and (min-width: #{$hero-layout-2-smallest-large-device-size}) {
+    background-color: transparent;
+  }
+}
+
+#atoms-link-type-2,
+#atoms-link-type-2-no-underline,
+#atoms-link-type-1-yellow,
+#atoms-link-type-2-no-hover,
+#atoms-link-icon-type-2,
+#atoms-link-icon-type-5,
+#molecules-social-share-type-1-inverse,
+#atoms-icon-link-inverse,
+#atoms-icon-only-link-inverse,
+#molecules-social-share-type-4,
+#atoms-icon-link-type-4,
+#atoms-link-type-2-alert-white,
+#atoms-responsive-title-inverse,
+#molecules-stacked-headline-1,
+#molecules-two-column-headline-1,
+#atoms-link-type-1-white,
+#molecules-crisis-watch-type-2,
+#components-call-to-action-5,
+#components-call-to-action-6,
+#atoms-link-icon-type-4-inverse,
+#atoms-link-icon-type-4-prefix,
+#atoms-link-type-2-no-hover-gray-weight-normal,
+#molecules-crisis-watch-type-3 {
+  background-color: get-neutral-color('black');
+
+  .patternLink:hover {
+    color: white !important;
+  }
+}
+
+#atoms-link-type-1-black-inverse,
+#layouts-slider-layout-1,
+#molecules-social-share-type-3,
+#molecules-pager-item-1,
+#atoms-link-type-2-black,
+#molecules-pager-list-1,
+#atoms-icon-white-fill,
+#components-teaser-story,
+#atoms-icon-link-type-3,
+#atoms-link-handler-javascript-inverse,
+#molecules-stacked-headline-2-type-2,
+#atoms-link-type-1-inverse {
+  background-color: get-brand-color('primary');
+}
+
+#molecules-pager-item-1 {
+  color: transparent;
+
+  @include breakpoint(phablet) {
+    color: initial;
+  }
+}
+
+#atoms-link-type-2-white,
+#atoms-unordered-list-color-light {
+  background-color: get-utility-color('alert');
+}
+
+#molecules-ear .sg-pattern-example {
+  max-width: 900px;
+  margin-left: 1rem;
+  min-height: 300px;
+  background-color: white;
+  position: relative;
+}
+
+#atoms-link-icon-type-3 .sg-pattern-example {
+  max-width: 600px;
+}
+
 .demo-animate {
   background: #ddd;
   padding: 1em;
@@ -122,6 +356,28 @@ body > .rpll-three-column-list {
   text-align: center;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.patternlab-icon-library {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 3rem;
+}
+
+.patternlab-icon-library-icon-wrapper {
+  flex-basis: 256px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.patternlab-icon-library-icon {
+  margin-left: auto;
+  margin-right: auto;
+  width:64px;
+  height:64px;
 }
 
 .sg-colors {
@@ -141,7 +397,7 @@ body > .rpll-three-column-list {
   padding: 0.3em;
   margin: 0 0.5em 0.5em 0;
   min-width: 5em;
-  max-width: 14em;
+  max-width: 17em;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
@@ -159,14 +415,14 @@ body > .rpll-three-column-list {
 }
 
 #patternlab-screen-size {
-  background: $primary-color;
+  background: get-brand-color();
   font-weight: bold;
   opacity: 0.5;
-  padding: $standard-gutter/4 $standard-gutter;
+  padding: get-spacing('xs') get-spacing();
   position: fixed;
-  right: $standard-gutter * 2;
-  top: $standard-gutter;
-  z-index: 5;
+  right: get-spacing() * 2;
+  top: get-spacing();
+  z-index: -50;
 
   &::before {
     content: 'mobile';
@@ -199,4 +455,142 @@ body > .rpll-three-column-list {
 
 .sg-tabs-panel {
   min-height: 20em !important;
+}
+
+.sg-buttons-type-label {
+  @include typography-heading-medium;
+  text-align: left;
+}
+
+.sg-buttons-hot-container {
+  background-color: get-neutral-color('white');
+  display: block;
+  max-width: 500px;
+  padding: get-spacing('l');
+}
+
+.sg-buttons-type {
+  margin-bottom: get-spacing('xl');
+}
+
+.sg-buttons-type-row-label {
+  padding-right: get-spacing();
+}
+
+.sg-buttons-type-row-cell {
+  padding-right: get-spacing('m');
+  padding-bottom: get-spacing('m');
+}
+
+.sg-buttons-constraining-button-demo {
+  width: 200px;
+  height: 100px;
+}
+
+body > .rplc-mobile-bottom-menu,
+#components-mobile-bottom-menu .rplc-mobile-bottom-menu {
+  background-color: get-neutral-color('black');
+  max-width: $global-navigation-mobile-width;
+}
+
+body > .rplc-secondary-menu,
+#components-secondary-menu .rplc-secondary-menu {
+  background-color: rgba(0, 0, 0, .6);
+  max-width: 500px;
+}
+
+[data-rpl-mobile-navigation-open] {
+
+  > .rpll-page {
+    .rplc-global-navigation__bottom-wrapper {
+      height: calc(100vh - 101px);
+    }
+  }
+
+  [id^="components-global-navigation"],
+  [id^="pages-"] {
+    .rplc-global-navigation__bottom-wrapper {
+      height: calc(100vh - 188px);
+    }
+  }
+
+  @media #{$global-navigation-large-device-media-query} {
+    .rplc-global-navigation__bottom-wrapper {
+      height: auto !important;
+    }
+  }
+}
+
+.sg-pattern-example > .rplc-global-navigation,
+> .rplc-global-navigation {
+  min-height: 300px;
+  position: relative;
+  right: 0;
+  transition: right $global-navigation-mobile-menu-transition-time ease-in-out;
+
+  @include when-mobile-navigation-open {
+    right: $global-navigation-mobile-width;
+
+    @media #{$global-navigation-large-device-media-query} {
+      position: static;
+    }
+  }
+}
+
+#molecules-social-share-space-evenly {
+  .rplm-social-share {
+    max-width: 400px;
+  }
+}
+
+.xxx-typography-text-2x-small {
+  @include typography-text-2x-small
+}
+
+.xxx-typography-text-extra-small {
+  @include typography-text-extra-small;
+}
+
+.xxx-typography-text-small {
+  @include typography-text-small;
+}
+
+.xxx-typography-text-large {
+  @include typography-text-large;
+}
+
+.xxx-typography-heading-medium {
+  @include typography-heading-medium;
+}
+
+.xxx-typography-heading-medium-large-standard {
+  @include typography-heading-medium-large-standard;
+}
+
+.xxx-typography-heading-medium-large {
+  @include typography-heading-medium-large;
+}
+
+.xxx-typography-heading-large {
+  @include typography-heading-large;
+}
+
+.xxx-typography-heading-extra-large {
+  @include typography-heading-extra-large;
+}
+
+.xxx-typography-heading-extra-large-light {
+  @include typography-heading-extra-large-light;
+}
+
+.xxx-typography-heading-3xl {
+  @include typography-heading-3xl;
+}
+
+.xxx-typography-heading-4xl {
+  @include typography-heading-4xl;
+}
+
+.xxx-typography-heading-5xl {
+  @include typography-heading-5xl;
 }

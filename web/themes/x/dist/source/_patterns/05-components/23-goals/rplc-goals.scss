@@ -1,0 +1,29 @@
+@import 'rplc-goals.variables';
+
+.rplc-goals {
+  $self: &;
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+
+    #{$self}__intro {
+      padding-bottom: $goals-intro-bottom-padding;
+
+      @include breakpoint(desktop) {
+        padding-bottom: 0;
+        padding-right: $goals-intro-right-padding;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include breakpoint(desktop) {
+      margin-top: $goals-wrapper-pull-up;
+    }
+  }
+}
+
+
+// end of file

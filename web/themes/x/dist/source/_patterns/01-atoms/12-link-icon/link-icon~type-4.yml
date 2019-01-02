@@ -1,0 +1,4 @@
+link_icon_name: 'food'
+link_icon_text: "Faker.words(2,true)"
+link_icon_modifiers:
+  - 'type-four'

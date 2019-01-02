@@ -1,0 +1,21 @@
+@import '../../../scss/core';
+
+$pull-quote-background-color: get-neutral-color('white');
+$pull-quote-icon-size: (
+  'mobile': rem(40px),
+  'phablet': rem(48px),
+  'desktop': rem(72px),
+);
+
+$pull-quote-icon-right-margin: (
+  'phablet': get-spacing('m'),
+  'desktop': get-spacing('ml')
+);
+
+$pull-quote-text-padding: (
+  'mobile': get-spacing('l') get-spacing('ml'),
+  'phablet': get-spacing('ml'),
+);
+
+// end of file
+

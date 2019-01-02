@@ -1,0 +1,23 @@
+{#
+/**
+ * Footer layout 2
+ *
+ * Available blocks:
+ *   footer_layout_2_section_1_block - Top section of the lower footer
+ *   footer_layout_3_section_2_block - Bottom section of the lower footer
+ */
+#}
+<div class="rpll-footer-layout-2">
+  <div class="rpll-footer-layout-2__inner-content-wrapper">
+    <div class="rpll-footer-layout-2__section">
+      {% block footer_layout_2_section_1_block %}
+        {{ footer_layout_2_section_1 }}
+      {% endblock %}
+    </div>
+    <div class="rpll-footer-layout-2__section">
+      {% block footer_layout_2_section_2_block %}
+        {{ footer_layout_2_section_2 }}
+      {% endblock %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+@import 'rpll-slider-layout-1.variables';
+@import '../../../03-molecules/53-pagers/10-pager-lists/05-pager-list-1/rplm-pager-list-1.mixins';
+
+.rpll-slider-layout-1 {
+  $self: &;
+
+  &__slides-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  //
+  // 1) Fix for adding slick element within flexbox. See https://github.com/kenwheeler/slick/issues/2378
+  //
+  &__slides {
+    overflow: hidden; // 1
+  }
+
+  //
+  // 1) Overrides core Slick.
+  //
+  &__slide {
+    // sass-lint:disable-block no-important
+    display: block !important; // 1
+    margin: 0 auto;
+    max-width: $slider-layout-1-max-content-width;
+  }
+
+  &__next,
+  &__previous {
+    //
+    // 1) done with height rather than display as slick uses display
+    //
+    height: 0; // 1
+    user-select: none;
+
+    @include breakpoint(tablet) {
+      height: 24px;
+      position: relative;
+      top: -46px;
+    }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
+  }
+
+  &__pager {
+    @include pager-list-1;
+    margin-top: get-spacing('l');
+  }
+}
+
+// end of file

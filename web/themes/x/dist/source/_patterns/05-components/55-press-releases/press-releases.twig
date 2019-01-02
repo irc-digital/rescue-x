@@ -1,0 +1,20 @@
+<div{% if press_releases_id %} id="{{ press_releases_id }}"{% endif %} class="rplc-press-releases{% for press_release_modifier in press_release_modifiers %} rplc-press-releases--{{ press_release_modifier }}{% endfor %}" data-rpl-canvas-color='neutral-white'>
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: press_releases_section_heading_title,
+    section_heading_description: press_releases_section_heading_description,
+    section_heading_icon: press_releases_section_heading_icon
+  } only %}
+  <div class="rplc-press-releases__content">
+    {% include '@layouts/05-two-column-list/two-column-list.twig' with {
+      two_column_list_content: press_releases_content,
+      two_column_list_modifiers: ["plus-separators"]
+    } only %}
+  </div>
+  {% if press_releases_more is not empty %}
+    <div class="rplc-press-releases__more-wrapper">
+      {% include '@molecules/53-pagers/50-more//more.twig' with {
+        more_text: press_releases_more,
+      } only %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,69 @@
+@import 'rplc-call-to-action-2.variables';
+
+.rplc-call-to-action-2 {
+  $self: &;
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include breakpoint(desktop) {
+      @include well-row;
+    }
+  }
+
+  &__content-wrapper {
+    background-color: get-neutral-color('white');
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(desktop) {
+      flex-direction: row;
+    }
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+  }
+
+  &__message-wrapper {
+    padding: get-spacing('l');
+
+    @include breakpoint(desktop) {
+      flex-basis: rem(512px);
+      max-height: rem(522px);
+      padding: get-spacing('2xl') get-spacing('3xl');
+    }
+  }
+
+  &__title {
+    @include typography-heading-3xl;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__subtitle {
+    @include typography-text-large;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &--image-right {
+    @include breakpoint(desktop) {
+      #{$self}__message-wrapper {
+        order: -1;
+      }
+    }
+  }
+
+  &--background-dark {
+    #{$self}__content-wrapper {
+      background-color: get-neutral-color('black');
+    }
+
+    #{$self}__title,
+    #{$self}__subtitle {
+      color: get-neutral-color('white');
+    }
+  }
+
+}
+
+// end of file

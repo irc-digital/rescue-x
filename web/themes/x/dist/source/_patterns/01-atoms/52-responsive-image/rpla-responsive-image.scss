@@ -1,0 +1,15 @@
+@import 'rpla-responsive-image.variables';
+
+.rpla-responsive-image {
+  $self: &;
+
+  &--permit-upscaling {
+    @media #{$global-navigation-full-width-media-query} {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// end of file

@@ -1,0 +1,5 @@
+range_left_key: 'incorrect'
+range_left_label: "No"
+range_center_key: 'unanswered'
+range_right_key: 'correct'
+range_right_label: "Yes"

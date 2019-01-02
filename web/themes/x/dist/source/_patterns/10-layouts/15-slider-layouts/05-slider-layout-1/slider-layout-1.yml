@@ -1,0 +1,10 @@
+slider_layout_1_slides:
+  - slug: "Faker.words(3,true)"
+    title: "Faker.words(2,true)"
+    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div>"
+  - slug: "Faker.words(3,true)"
+    title: "Faker.words(2,true)"
+    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div>"
+  - slug: "Faker.words(3,true)"
+    title: "Faker.words(2,true)"
+    slide: "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"

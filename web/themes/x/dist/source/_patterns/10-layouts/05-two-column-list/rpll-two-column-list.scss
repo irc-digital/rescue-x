@@ -1,54 +1,44 @@
 @import 'rpll-two-column-list.variables';
+@import 'rpll-two-column-list.mixins';
 
 .rpll-two-column-list {
   $self: &;
 
+  @include two-column-grid-helper ($self, 'laptop');
+
   list-style-type: none;
   padding-left: 0;
 
-  @include breakpoint(desktop) {
-    display: grid;
-    grid-column-gap: $two-column-list-column-gutter;
-    grid-row-gap: $two-column-list-row-gutter;
-    grid-template-columns: 1fr 1fr;
+  &--respond-phablet {
+    @include two-column-grid-helper ($self, 'phablet');
   }
 
-  &__item {
-    margin-bottom: $two-column-list-stacked-margin-bottom;
+  &--respond-tablet {
+    @include two-column-grid-helper ($self, 'tablet');
+  }
 
-    @include breakpoint(desktop) {
-      margin-bottom: 0;
-    }
+  &--respond-laptop {
+    @include two-column-grid-helper ($self, 'laptop');
+  }
+
+  &--respond-desktop {
+    @include two-column-grid-helper ($self, 'desktop');
   }
 
   &--highlighted {
-    #{ $self }__item {
-      &:nth-child(1) {
-        @include breakpoint(desktop) {
-          grid-column-end: 3;
-          grid-column-start: 1;
-        }
-      }
-    }
+    @include two-column-grid-helper ($self, 'laptop', $two-column-list-large-row-gutter);
   }
 
   &--plus-separators {
-    @include breakpoint(tablet) { // hold the grid longer when we are doing this version
-      display: grid;
-      grid-column-gap: $two-column-list-column-gutter;
-      grid-row-gap: 0;
-      grid-template-columns: 1fr 1fr;
-    }
+    @include two-column-grid-helper ($self, 'tablet', 0);
 
     #{ $self }__item {
-      @include normalize-rhythm(padding, 1 0, $two-column-list-plus-separators-vertical-rhythm-relative-to);
-      border-bottom: 1px solid $gray;
-      margin-bottom: 0;
+      @include layout-separator;
 
       @include breakpoint(tablet) {
         &:nth-child(1),
         &:nth-child(2) {
-          border-top: 1px solid $gray;
+          border-top: 1px solid get-neutral-color('gray');
         }
       }
     }

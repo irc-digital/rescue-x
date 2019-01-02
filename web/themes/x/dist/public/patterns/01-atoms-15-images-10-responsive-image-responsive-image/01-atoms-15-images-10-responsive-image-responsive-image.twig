@@ -1,6 +1,0 @@
-<img class='rpla-responsive-image'
-     src="{{ responsive_image_fallback }}"
-     {% if responsive_image_alt %} alt="{{ responsive_image_alt }}"{% endif %}
-     srcset="{% for responsive_image_source in responsive_image_source_set %}{{ responsive_image_source }},{% endfor %}"
-     sizes="{{ responsive_image_sizes }}"
-/>

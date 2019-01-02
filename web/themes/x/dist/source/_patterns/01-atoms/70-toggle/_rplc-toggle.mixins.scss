@@ -1,0 +1,19 @@
+@import 'rpla-toggle.variables';
+
+@mixin toggle-is-expanded {
+  @at-root {
+    [data-rpl-toggle-state='expanded'] & {
+      @content ;
+    }
+  }
+}
+
+@mixin toggle-is-collapsed {
+  @at-root {
+    [data-rpl-toggle-state='collapsed'] & {
+      @content ;
+    }
+  }
+}
+
+// end of file

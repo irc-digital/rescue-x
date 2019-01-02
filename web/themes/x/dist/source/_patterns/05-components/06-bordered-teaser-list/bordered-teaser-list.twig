@@ -1,0 +1,25 @@
+{#
+/**
+ * Bordered teaser list
+ *
+ * Available variables:
+ *   bordered_teaser_list_id                          - Unique component ID
+ *   bordered_teaser_list_section_heading_title       - Title text above the component
+ *   bordered_teaser_list_section_heading_description - Short description for component content
+ *   bordered_teaser_list_section_heading_icon        - Optional icon displayed in front of the title
+ *   bordered_teaser_list_content                     - Array of teaser bordered components
+ */
+#}
+<div{% if bordered_teaser_list_id %} id="{{ bordered_teaser_list_id }}"{% endif %} class="rplc-bordered-teaser-list">
+  {% include '@molecules/20-section-heading/section-heading.twig' with {
+    section_heading_title: bordered_teaser_list_section_heading_title,
+    section_heading_description: bordered_teaser_list_list_section_heading_description,
+    section_heading_icon: bordered_teaser_list_section_heading_icon
+  } only %}
+  <div class="rplc-bordered-teaser-list__content">
+    {% include '@layouts/05-two-column-list/two-column-list.twig' with {
+      two_column_list_content: bordered_teaser_list_content,
+      two_column_list_modifiers: ['respond-phablet'],
+    } only %}
+  </div>
+</div>

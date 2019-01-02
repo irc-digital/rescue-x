@@ -1,4 +1,4 @@
 ---
-title: List (four-column)
+title: List (four column)
 ---
 TODO

@@ -1,0 +1,24 @@
+@import 'rplc-fast-facts.variables';
+
+.rplc-fast-facts {
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+
+    @include breakpoint(laptop) {
+      display: grid;
+      grid-column-gap: get-spacing('m');
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-1 {
+    margin-bottom: get-spacing('xl');
+
+    @include breakpoint(laptop) {
+      margin-bottom: 0;
+    }
+  }
+}

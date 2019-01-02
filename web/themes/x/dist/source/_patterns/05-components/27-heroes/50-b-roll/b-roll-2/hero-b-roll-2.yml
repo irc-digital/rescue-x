@@ -1,0 +1,9 @@
+hero_b_roll_2_headline: "Faker.words(3,true)"
+hero_b_roll_2_summary: "Faker.sentences(3,true)"
+hero_b_roll_2_slug: "Faker.words(3,true)"
+hero_b_roll_2_image_alt: "Faker.words(7,true)"
+hero_b_roll_2_image_url_mobile: '../../images/b-roll/traffic_mobile.jpg'
+hero_b_roll_2_video_url_mobile: '../../images/b-roll/traffic-animation-bg-mobile.mp4'
+hero_b_roll_2_image_url_desktop: '../../images/b-roll/traffic_desktop.jpg'
+hero_b_roll_2_video_url_desktop: '../../images/b-roll/traffic-animation-bg-desktop.mp4'
+

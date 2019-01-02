@@ -1,0 +1,19 @@
+mobile_bottom_menu_crisis_watch_url: '#'
+mobile_bottom_menu_items:
+  - title: 'Search'
+    icon: 'search'
+    url: "#"
+  - title: 'Log in'
+    icon: 'login'
+    url: "#"
+  - title: 'Careers'
+    icon: 'careers'
+    url: "#"
+  - title: 'Volunteer'
+    icon: 'volunteer'
+    url: "#"
+mobile_bottom_menu_social_share_sites:
+  twitter: 'http://www.twitter.com'
+  facebook: 'http://www.facebook.com'
+  instagram: 'http://www.instagram.com'
+  youtube: 'http://www.youtube.com'

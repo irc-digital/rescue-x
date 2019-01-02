@@ -1,0 +1,62 @@
+{% spaceless %}
+
+  {% set cta_with_icons = false %}
+  {% if hero_landing_page_1_calls_to_action is not empty and hero_landing_page_1_calls_to_action | length > 0 %}
+    {% for hero_landing_page_1_call_to_action in hero_landing_page_1_calls_to_action if not cta_with_icons %}
+      {% if hero_landing_page_1_call_to_action.icon_name is not empty %}
+        {% set cta_with_icons = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+{% endspaceless %}
+{% embed '@components/27-heroes/10-landing-page/_hero-landing-page.twig' with {
+  hero_landing_page_slug: hero_landing_page_1_slug,
+  hero_landing_page_headline: hero_landing_page_1_headline,
+  hero_landing_page_art_directed_image_fallback: hero_landing_page_1_art_directed_image_fallback,
+  hero_landing_page_art_directed_image_sources: hero_landing_page_1_art_directed_image_sources,
+  hero_landing_page_art_directed_image_alt: hero_landing_page_1_art_directed_image_alt,
+  hero_landing_page_social_share_sites: hero_landing_page_1_social_share_sites,
+  hero_landing_page_crisis_mode: hero_landing_page_1_crisis_mode,
+  hero_landing_page_modifiers: ['type-1'],
+} %}
+  {% block hero_landing_page_secondary_block %}
+    <div class="rplc-hero-landing-page__summary">
+      {{ hero_landing_page_1_summary }}
+    </div>
+
+    {% if hero_landing_page_1_main_call_to_action_url is not empty %}
+      <div class="rplc-hero-landing-page__main-cta">
+        {% include '@atoms/12-link-icon/link-icon.twig' with {
+          link_icon_url: hero_landing_page_1_main_call_to_action_url,
+          link_icon_text: hero_landing_page_1_main_call_to_action_title,
+          link_icon_name: hero_landing_page_1_main_call_to_action_icon_name,
+          link_icon_modifiers: ['type-two'],
+        } only %}
+      </div>
+    {% endif %}
+
+    {% if hero_landing_page_1_calls_to_action is not empty and hero_landing_page_1_calls_to_action | length > 0 %}
+    <ul class="rplc-hero-landing-page__ctas-wrapper">
+      {% for hero_landing_page_1_call_to_action in hero_landing_page_1_calls_to_action %}
+        <li class="rplc-hero-landing-page__cta">
+          {% if cta_with_icons %}
+            {% include '@atoms/12-link-icon/link-icon.twig' with {
+              link_icon_url: hero_landing_page_1_call_to_action.url,
+              link_icon_text: hero_landing_page_1_call_to_action.title,
+              link_icon_name: hero_landing_page_1_call_to_action.icon_name,
+              link_icon_modifiers: ['type-two'],
+            } only %}
+          {% else %}
+            {% include '@atoms/10-link/link.twig' with {
+              link_url: hero_landing_page_1_call_to_action.url,
+              link_text: hero_landing_page_1_call_to_action.title,
+              link_modifiers: ['type-two'],
+            } only %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endblock %}
+{% endembed %}

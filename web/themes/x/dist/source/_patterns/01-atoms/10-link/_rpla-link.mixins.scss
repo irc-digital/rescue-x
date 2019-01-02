@@ -1,0 +1,62 @@
+@import 'rpla-link.variables';
+
+$link-default-border-width: .1em;
+$link-default-border-color: get-brand-color('primary');
+
+$link-default-color: get-neutral-color('black');
+
+$link-default-background-color: transparent;
+$link-default-hover-background-color: get-brand-color('primary');
+
+@mixin link-border ($color: $link-default-border-color) {
+  border-bottom: $link-default-border-width solid $color;
+}
+
+@mixin link-hover-border ($color: $link-default-border-color, $border-width: $link-default-border-width, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
+    border-bottom: $border-width solid $color;
+  }
+}
+
+@mixin link-color ($color: $link-default) {
+  color: $color;
+}
+
+@mixin link-hover-color ($color: $link-default, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
+    color: $color;
+  }
+}
+
+@mixin link-background-color ($color: $link-default-background-color) {
+  background-color: $color;
+}
+
+@mixin link-hover-background-color ($color: $link-default-hover-background-color, $hover-target: 'data-rpla-hover-target') {
+  @include hover ($hover-target) {
+    background-color: $color;
+    box-shadow: 0 0 0 .2em $color;
+  }
+}
+
+@mixin link-size ($size: 'm') {
+  @if $size == '2xs' {
+    @include typography-text-2x-small;
+  } @else if $size == 'xs' {
+    @include typography-text-extra-small;
+  } @else if $size == 's' {
+    @include typography-text-small;
+  } @else if $size == 'm' {
+    @include typography-text-standard;
+  } @else if $size == 'l' {
+    @include typography-text-large;
+  } @else {
+    @error '#{$size} is not a support size of the link-size mixin';
+  }
+
+  @include font-weight('bold');
+
+}
+
+
+// end of file

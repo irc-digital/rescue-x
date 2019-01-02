@@ -1,0 +1,18 @@
+{#
+/**
+ * Stacked headline 1
+ *
+ * Available variables:
+ *   stacked_headline_1_summary  - Smaller text on top of headline
+ *   stacked_headline_1_headline - Larger header below
+ */
+#}
+{% import '@atoms/_rpl.macros.twig' as rpl %}
+
+<div class="rplm-stacked-headline-1">
+  <div class="rplm-stacked-headline-1__content">
+    <h6 class="rplm-stacked-headline-1__summary">{{ stacked_headline_1_summary }}</h6>
+    <div class="rplm-stacked-headline-1__line"></div>
+    <h1 class="rplm-stacked-headline-1__headline">{{ rpl.markdown(stacked_headline_1_headline) }}</h1>
+  </div>
+</div>

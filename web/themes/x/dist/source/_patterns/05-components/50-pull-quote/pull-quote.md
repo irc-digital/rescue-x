@@ -1,4 +1,0 @@
----
-title: Pull quote 
----
-TODO

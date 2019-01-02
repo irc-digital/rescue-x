@@ -1,0 +1,18 @@
+
+<div class="rplc-teaser-low-key{% for teaser_low_key_modifier in teaser_low_key_modifiers %} rplc-teaser-low-key--{{ teaser_low_key_modifier }}{% endfor %}">
+  <a href="{{ teaser_low_key_url }}" class="rplc-teaser-low-key__wrapper-link">
+    <div class="rplc-teaser-low-key__image-wrapper"{% if teaser_low_key_content_type %} data-rpl-content-type="{{ teaser_standard_content_type }}"{% endif %}>
+      {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+        responsive_image_source_set: teaser_low_key_image_source_set,
+        responsive_image_sizes: '(min-width: 1240px) 288px, (min-width: 641px) 352px, (min-width: 321px) calc(100vw - 3rem), 320px',
+        responsive_image_fallback: teaser_low_key_image_fallback,
+        responsive_image_alt: teaser_low_key_image_alt
+      } only %}
+    </div>
+    <div class="rplc-teaser-low-key__text-wrapper">
+      <div class="rpla-slug">{{ teaser_low_key_slug }}</div>
+      <h6 class="rplc-teaser-low-key__title">{{ teaser_low_key_title }}</h6>
+      {% include '@atoms/01-text/35-meta/meta.twig' with { meta_text: teaser_low_key_date } only %}
+    </div>
+  </a>
+</div>

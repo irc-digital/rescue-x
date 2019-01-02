@@ -1,0 +1,50 @@
+{#
+/**
+ * Available variables:
+ *
+ *
+ * Available blocks:
+ */
+#}
+{% set layout_modifiers = hero_article_art_directed_image_sources is not empty ? ['has-image'] : ['no-image'] %}
+{% if hero_article_contributors is empty %}
+ {% set layout_modifiers = layout_modifiers | merge (['no-secondary-second-block']) %}
+{% endif %}
+<div class="rplc-hero-article{% for hero_article_modifier in hero_article_modifiers %} rplc-hero-article--{{ hero_article_modifier }}{% endfor %}">
+  <div class="rplc-hero-article__content">
+    {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
+      {% if hero_article_art_directed_image_sources is not empty %}
+        {% block hero_layout_1_image_block %}
+          {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
+            art_directed_image_fallback: hero_article_art_directed_image_fallback,
+            art_directed_image_sources: hero_article_art_directed_image_sources,
+            art_directed_image_alt: hero_article_art_directed_image_alt,
+            art_directed_image_modifiers: ['permit-upscaling'],
+          } only %}
+        {% endblock %}
+      {% endif %}
+      {% block hero_layout_1_primary_1_block %}
+        {% include '@molecules/02-basic-headline-treatments/10-stacked-2/stacked-headline-2.twig' with {
+          stacked_headline_2_headline: hero_article_headline,
+          stacked_headline_2_slug: hero_article_slug,
+          stacked_headline_2_summary: hero_article_summary,
+        } only %}
+      {% endblock %}
+      {% block hero_layout_1_primary_2_block %}
+        <div class="rplc-hero-article__dates-wrapper">
+          {% include '@atoms/01-text/35-meta/meta.twig' with { meta_text: hero_article_published } only %}
+          {% if hero_article_last_updated and hero_article_last_updated != hero_article_published %}{% include '@atoms/01-text/35-meta/meta.twig' with { meta_prefix: "Last updated:" | trans, meta_text: hero_article_last_updated } only %}{% endif %}
+        </div>
+        {% if hero_article_photographer %}{% include '@atoms/01-text/35-meta/meta.twig' with { meta_prefix: "Photo:" | trans, meta_text: hero_article_photographer } only %}{% endif %}
+      {% endblock %}
+      {% block hero_layout_1_secondary_1_block %}
+        {{ hero_article_social_share }}
+      {% endblock %}
+      {% if hero_article_contributors is empty %}
+        {% block hero_layout_1_secondary_2_block %}
+          {{ hero_article_contributors }}
+        {% endblock %}
+      {% endif %}
+    {% endembed %}
+  </div>
+</div>

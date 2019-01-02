@@ -1,3 +1,0 @@
-hero_text_only_headline: "Faker.words(10,true)"
-hero_text_only_slug: "Faker.words(5,true)"
-hero_text_only_description: "Faker.sentences(3,true)"

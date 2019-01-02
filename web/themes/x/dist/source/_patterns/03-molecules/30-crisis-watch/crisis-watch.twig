@@ -1,4 +1,50 @@
-<div class="rplm-crisis-watch">
-  <div class="rplm-crisis-watch__icon-wrapper">{% include '@atoms/15-images/20-icon/icon.twig' with { icon_name: 'crisis'} %}</div>
-  <div class="rplm-crisis-watch__text-wrapper">{{ "Crisis Watch" | trans }}</div>
+{#
+/**
+ * Crisis watch
+ *
+ * Available variables:
+ *   crisis_watch_url                   - URL for crisis watch link icon
+ *   crisis_watch_link_icon_name        - Icon for crisis watch link icon
+ *   crisis_watch_link_icon_prefix_text - Optional prefix text before crisis watch link
+ *   crisis_watch_modifiers
+ *     type-1                           - Simple red alert icon and link
+ *     type-2                           - Larger version
+ *     type-3                           - Prefix with yellow link
+ */
+#}
+{% spaceless %}
+  {% set type = null %}
+
+  {% for crisis_watch_modifier in crisis_watch_modifiers %}
+    {% if crisis_watch_modifier starts with 'type-' %}
+      {% set type = crisis_watch_modifier %}
+    {% endif %}
+  {% endfor %}
+
+  {% if type != 'type-three' %}
+    {% set crisis_watch_text = 'Crisis Watch' %}
+  {% endif %}
+
+  {% set crisis_watch_link_icon_name = 'crisis' %}
+
+  {% if type == 'type-two' %}
+    {% set crisis_watch_link_icon_modifiers = ['type-four', 'size-2x-small', 'subtype-inverse'] %}
+  {% elseif type == 'type-three' %}
+    {% set crisis_watch_link_icon_prefix_text = "Crisis watch" %}
+    {% set crisis_watch_link_icon_modifiers = ['type-four', 'subtype-prefix'] %}
+  {% else %}
+    {% set crisis_watch_link_icon_modifiers = ['type-four'] %}
+  {% endif %}
+
+{% endspaceless %}
+<div class="rplm-crisis-watch{% for crisis_watch_modifier in crisis_watch_modifiers %} rplm-crisis-watch--{{ crisis_watch_modifier }}{% endfor %}">
+  <div class="rplm-crisis-watch__wrapper">
+    {% include '@atoms/12-link-icon/link-icon.twig' with {
+      link_icon_url: crisis_watch_url,
+      link_icon_text: crisis_watch_text | trans,
+      link_icon_name: crisis_watch_link_icon_name,
+      link_icon_prefix_text: crisis_watch_link_icon_prefix_text,
+      link_icon_modifiers: crisis_watch_link_icon_modifiers
+    } only %}
+  </div>
 </div>

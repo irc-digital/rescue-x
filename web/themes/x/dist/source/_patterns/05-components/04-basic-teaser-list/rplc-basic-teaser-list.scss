@@ -1,0 +1,23 @@
+@import 'rplc-basic-teaser-list.variables';
+
+.rplc-basic-teaser-list {
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+
+    &:not(:last-child) {
+      margin-bottom: get-spacing('m');
+
+      @include breakpoint(phablet) {
+        margin-bottom: get-spacing('l');
+      }
+    }
+  }
+
+  &__more-wrapper {
+    @include line-height('2xs');
+  }
+}
+
+// end of file

@@ -1,0 +1,15 @@
+secondary_menu_menu_items:
+  - title: 'Log in'
+    icon: 'login'
+    url: "#"
+  - title: 'Careers'
+    icon: 'careers'
+    url: "#"
+  - title: 'Volunteer'
+    icon: 'volunteer'
+    url: "#"
+secondary_menu_social_share_sites:
+  twitter: 'http://www.twitter.com'
+  facebook: 'http://www.facebook.com'
+  instagram: 'http://www.instagram.com'
+  youtube: 'http://www.youtube.com'

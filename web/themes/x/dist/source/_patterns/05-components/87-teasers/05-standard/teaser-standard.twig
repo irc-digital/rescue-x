@@ -1,0 +1,40 @@
+{#
+/**
+ * Available variables:
+ *   teaser_standard_url - The URL of the resource being teased
+ *   teaser_standard_slug - Slug
+ *   teaser_standard_title - Title
+ *   teaser_standard_cta - Call to action text
+ *
+ * Available blocks:
+ *   teaser_image_block
+ *   teaser_text_block
+ */
+#}
+<div class="rplc-teaser-standard">
+  <a href="{{ teaser_standard_url }}" class="rplc-teaser-standard__wrapper-link" data-rpla-hover-target>
+    <div class="rplc-teaser-standard__image-wrapper"{% if teaser_standard_content_type %} data-rpl-content-type="{{ teaser_standard_content_type }}"{% endif %}>
+    {% block teaser_image_block %}
+      {% include '@atoms/52-responsive-image/responsive-image.twig' with {
+        responsive_image_source_set: teaser_standard_image_source_set,
+        responsive_image_sizes: "(min-width: 1208px) 592px, (min-width: 641px) calc(100vw - 3rem), (min-width: 321px) calc(100vw - 2rem), 320px",
+        responsive_image_fallback: teaser_standard_image_fallback,
+        responsive_image_alt: teaser_standard_image_alt
+      } only %}
+    {% endblock teaser_image_block %}
+    </div>
+    <div class="rplc-teaser-standard__text-wrapper">
+    {% block teaser_text_block %}
+      <div class="rpla-slug">{{ teaser_standard_slug }}</div>
+      <div class="rplc-teaser-standard__title">
+        <h3 class="rpla-heading rpla-heading--medium-large">{{ teaser_standard_title }}</h3>
+      </div>
+      <div class="rplc-teaser-standard__cta-wrapper">
+        {% include '@atoms/10-link/link.twig' with {
+          link_text: teaser_standard_cta,
+        } only %}
+      </div>
+    {% endblock teaser_text_block %}
+    </div>
+  </a>
+</div>

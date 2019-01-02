@@ -1,0 +1,39 @@
+@import 'rpla-text-input.variables';
+@import '../rpl-form.mixins';
+
+.rpla-text-input {
+  $self: &;
+
+  @include input-type-hide-label;
+
+  //@include input-type;
+  //
+
+  &--type-one {
+    @include input-type-one($self);
+  }
+
+  &--type-two {
+    @include input-type-two($self);
+  }
+
+  &--type-three {
+    @include input-type-three($self);
+  }
+
+  &--placeholder-bold {
+    #{$self}__field {
+      @include font-weight('bold');
+    }
+  }
+
+  &--placeholder-small {
+    @include input-placeholder-small($self);
+  }
+
+  &--with-border {
+    @include input-border($self);
+  }
+}
+
+// end of file

@@ -1,0 +1,12 @@
+goal_title: "Faker.words(10,true)"
+goal_subtitle: "Faker.words(6,true)"
+goal_description: "Faker.sentences(6,true)"
+goal_art_directed_image_fallback: "https://placem.at/places?w=500&h=500&random=goal"
+goal_art_directed_image_sources:
+  - source_set:
+    - "https://placem.at/places?w=500&h=500&random=goal 1x"
+    - "https://placem.at/places?w=1000&h=1000&random=goal 2x"
+    media: "only screen and (min-width: 1108px)"
+  - source_set:
+    - "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+goal_art_directed_image_alt: "Faker.words(5,true)"

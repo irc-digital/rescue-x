@@ -1,0 +1,32 @@
+hero_article_art_directed_image_fallback: "https://placem.at/places?w=1925&h=825&random=heroarticle"
+hero_article_art_directed_image_sources:
+  - source_set:
+    - "https://placem.at/places?w=640&h=640&random=heroarticle 1x"
+    - "https://placem.at/places?w=1280&h=1280&random=heroarticle 2x"
+    - "https://placem.at/places?w=1920&h=1920&random=heroarticle 3x"
+    media: "only screen and (max-width: 40em)"
+  - source_set:
+    - "https://placem.at/places?w=1029&h=441&random=heroarticle 1x"
+    - "https://placem.at/places?w=2058&h=882&random=heroarticle 2x"
+    media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+  - source_set:
+    - "https://placem.at/places?w=1925&h=825&random=heroarticle 1x"
+    - "https://placem.at/places?w=3850&h=1650&random=heroarticle 2x"
+    media: "only screen and (min-width: 64.063em)"
+hero_article_art_directed_image_alt: "Faker.words(5,true)"
+hero_article_slug: "Faker.words(2,true)"
+hero_article_headline: "Faker.sentence(6, true)"
+hero_article_summary: "Faker.sentences(3,true)"
+hero_article_published: "August 2, 2018"
+hero_article_last_updated: "August 5, 2018"
+hero_article_photographer: "Faker.name()"
+hero_article_social_share:
+  include():
+    pattern: "molecules-social-share"
+    with:
+      social_share_modifiers:
+        - 'type-two'
+hero_article_contributors:
+  include():
+    pattern: "molecules-contributors"
+

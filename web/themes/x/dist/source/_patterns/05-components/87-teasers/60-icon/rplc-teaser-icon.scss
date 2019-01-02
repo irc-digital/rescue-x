@@ -1,0 +1,80 @@
+@import 'rplc-teaser-icon.variables';
+
+.rplc-teaser-icon {
+  $self: &;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(desktop) {
+    flex-direction: column;
+  }
+
+  &__icon {
+    height: $teaser-icon-icon-height;
+    padding-right: $teaser-icon-icon-padding;
+    width: $teaser-icon-icon-width;
+
+    @include breakpoint(phablet) {
+      height: 9vw;
+    }
+
+    @include breakpoint(desktop) {
+      padding-right: 0;
+      width: $teaser-icon-icon-width-desktop;
+    }
+  }
+
+  &__text-wrapper {
+    width: $teaser-icon-text-width;
+
+    @include breakpoint(desktop) {
+      width: $teaser-icon-text-width-desktop;
+    }
+  }
+
+  &--type-one {
+    #{$self}__title {
+      @include typography-heading-extra-large;
+    }
+
+    #{$self}__summary {
+      @include typography-text-small;
+    }
+
+    @include breakpoint(phablet) {
+      align-items: flex-start;
+    }
+  }
+
+  &--type-two {
+    #{$self}__icon {
+      width: $teaser-icon-icon-width-type-two;
+
+      @include breakpoint(desktop) {
+        height: $teaser-icon-icon-width-desktop-type-two;
+        width: $teaser-icon-icon-width-desktop-type-two;
+      }
+    }
+
+    #{$self}__text-wrapper {
+      width: $teaser-icon-text-width-type-two;
+
+      @include breakpoint(desktop) {
+        width: $teaser-icon-text-width-desktop-type-two;
+      }
+    }
+
+    @include breakpoint(phablet) {
+      align-items: center;
+    }
+
+    @include breakpoint(desktop) {
+      align-items: start;
+    }
+  }
+}
+
+// end of file
+

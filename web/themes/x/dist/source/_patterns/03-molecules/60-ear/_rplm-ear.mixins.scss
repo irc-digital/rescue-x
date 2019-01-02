@@ -1,0 +1,21 @@
+@import 'rplm-ear.variables';
+
+@mixin ear-align ($size: 'mobile') {
+  right: map-get($ear-triangle-size, $size) * 1.35;
+}
+
+@mixin ear-triangle ($size: 'mobile') {
+  border-bottom: map-get($ear-triangle-size, $size) solid get-brand-color('primary');
+  border-left: map-get($ear-triangle-size, $size) solid transparent;
+  border-right: map-get($ear-triangle-size, $size) solid transparent;
+  top: map-get($ear-triangle-top, $size);
+}
+
+@mixin ear-icon-wrapper ($size: 'mobile') {
+  height: map-get($ear-triangle-icon-wrapper-size, $size);
+  left: map-get($ear-triangle-icon-wrapper-left, $size);
+  top: map-get($ear-triangle-icon-wrapper-top, $size);
+  width: map-get($ear-triangle-icon-wrapper-size, $size);
+}
+
+// end of file

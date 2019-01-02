@@ -1,0 +1,21 @@
+@import 'rplc-call-to-action-3.variables';
+
+@mixin call-to-action-3-text-position-helper ($self, $align: 'left') {
+  $opposite: 'right';
+
+  @if $align == 'right' {
+    $opposite: 'left';
+  }
+
+  text-align: $align;
+
+  #{$self}__message-wrapper {
+    margin-#{$opposite}: 20vw;
+
+    @include breakpoint(desktop) {
+      margin-#{$opposite}: 0;
+      padding-#{$opposite}: 40vw;
+    }
+  }
+}
+// end of file

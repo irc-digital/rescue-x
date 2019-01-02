@@ -1,0 +1,60 @@
+{% spaceless %}
+
+  {% set button_modifiers = button_modifiers ?: [] %}
+
+  {% if button_url is not empty %}
+    {% set button_tag = 'a' %}
+  {% elseif button_tag is empty %}
+    {% set button_tag = 'button' %}
+  {% endif %}
+
+  {% if button_tag == 'input' %}
+    {% set button_tag = 'button' %}
+    {% if button_input_type is empty %}
+      {% set button_input_type = 'submit' %}
+    {% endif %}
+  {% endif %}
+
+  {% if button_tag != 'button' and button_tag != 'a' %}
+    {% set aria_role = 'link' %}
+  {% endif %}
+  
+  {#
+   # Ensure we have sensible default for size and type
+  #}
+  {% set has_size = false %}
+  {% set has_type = false %}
+  {% for button_modifier in button_modifiers %}
+    {% if button_modifier starts with 'size-' %}
+      {% set has_size = true %}
+    {% endif %}
+    {% if button_modifier starts with 'type-' %}
+      {% set has_type = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_size %}
+    {% set button_modifiers = button_modifiers | merge(['size-medium']) %}
+  {% endif %}
+
+  {% if not has_type %}
+    {% set button_modifiers = button_modifiers | merge(['type-one']) %}
+  {% endif %}
+
+  {% if button_icon_name is not empty %}
+    {% set button_icon_position = 'icon-position-' ~ (button_icon_position ? button_icon_position : 'after') %}
+    {% set button_modifiers = button_modifiers | merge(['with-icon', button_icon_position]) %}
+  {% endif %}
+
+{% endspaceless %}
+<{{ button_tag }}{% if button_input_type is not empty %} type="{{ button_input_type }}"{% endif %}{% if button_url is not empty %} href={{ button_url }}{% endif %} class="rpla-button{% for button_modifier in button_modifiers %} rpla-button--{{ button_modifier }}{% endfor %}"{% if aria_role %} role="{{ aria_role }}{% endif %}">
+  <span class="rpla-button__text">{{ button_text }}</span>
+  {% if button_icon_name is not empty %}
+    <div class="rpla-button__icon-wrapper">
+    {% include '@atoms/05-icon/icon.twig' with {
+      icon_name: button_icon_name,
+    } only %}
+    </div>
+  {% endif %}
+</{{ button_tag }}>
+

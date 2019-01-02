@@ -1,0 +1,14 @@
+@import 'rplc-slide.variables';
+
+.rplc-slide {
+  $self: &;
+
+  &__caption-wrapper {
+    @include breakpoint(tablet) {
+      margin-bottom: get-spacing('l');
+    }
+    margin-bottom: get-spacing('m');
+  }
+}
+
+// end of file

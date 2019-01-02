@@ -1,0 +1,53 @@
+@import 'rplm-ear.variables';
+@import 'rplm-ear.mixins';
+
+.rplm-ear {
+
+  @include ear-align;
+  position: absolute;
+
+  @include breakpoint(tablet) {
+    @include ear-align('tablet');
+  }
+
+  @include breakpoint(laptop) {
+    @include ear-align('laptop');
+  }
+
+  &__content {
+    display: block;
+    position: relative;
+  }
+
+  &__triangle {
+    @include ear-triangle;
+    height: 0;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 0;
+
+    @include breakpoint(tablet) {
+      @include ear-triangle('tablet');
+    }
+
+    @include breakpoint(laptop) {
+      @include ear-triangle('laptop');
+    }
+  }
+
+  &__icon-wrapper {
+    @include ear-icon-wrapper;
+    @include z-index('up');
+    position: absolute;
+
+    @include breakpoint(tablet) {
+      @include ear-icon-wrapper('tablet');
+    }
+
+    @include breakpoint(laptop) {
+      @include ear-icon-wrapper('laptop');
+    }
+  }
+}
+
+// end of file

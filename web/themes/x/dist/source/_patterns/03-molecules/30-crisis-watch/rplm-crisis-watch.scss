@@ -1,14 +1,19 @@
 @import 'rplm-crisis-watch.variables';
 
 .rplm-crisis-watch {
-  color: $alert;
-  display: flex;
-  stroke: $alert;
+  $self: &;
 
-  &__icon-wrapper {
-    height: 26px;
-    width: 26px;
+  &--type-one {
+    @include standard-vertical-spacing;
+    @include font-size('s');
   }
+
+  &--type-three {
+    #{$self}__wrapper {
+      @include font-size('2xs');
+    }
+  }
+
 }
 
 // end of file

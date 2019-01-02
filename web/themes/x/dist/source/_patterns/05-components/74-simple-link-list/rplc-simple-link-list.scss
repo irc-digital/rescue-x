@@ -1,0 +1,12 @@
+@import 'rplc-simple-link-list.variables';
+
+.rplc-simple-link-list {
+  @include standard-vertical-spacing;
+
+  &__content {
+    @include well-row;
+    @include font-size('xl');
+  }
+}
+
+// end of file

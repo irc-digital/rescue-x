@@ -1,0 +1,14 @@
+{% embed "@atoms/16-icon-only-link/icon-only-link.twig" with {
+}
+%}
+  {% block icon_only_link_block %}
+    <button type="submit" class="{{ icon_only_link_classes }}">
+      <span class="rpla-icon-only-link__icon-wrapper">
+        {% include '@atoms/05-icon/icon.twig' with {
+          icon_name: icon_only_link_name,
+          icon_modifiers: icon_only_link_icon_modifiers,
+        } only %}
+      </span>
+    </button>
+  {% endblock %}
+{% endembed %}

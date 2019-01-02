@@ -1,0 +1,145 @@
+@import 'rplc-impact-card.variables';
+
+.rplc-impact-card {
+  $self: &;
+
+  background-color: get-brand-color();
+  padding-bottom: $impact-card-spacing-around-card;
+
+  @include breakpoint(phablet) {
+    max-width: map-get($impact-card-outer-max-width, 'phablet');
+  }
+
+  @include breakpoint(951) {
+    max-width: map-get($impact-card-outer-max-width, '951');
+  }
+
+  &__inner-wrapper {
+    background-color: get-brand-color();
+  }
+
+  &__heading-text-wrapper {
+    padding: map-get($impact-card-heading-description-padding, 'mobile');
+
+    @include breakpoint(phablet) {
+      padding: map-get($impact-card-heading-description-padding, 'phablet');
+    }
+  }
+
+  &__heading-title {
+    @include typography-heading-large;
+    @include typography-vertical-spacing('tight');
+  }
+
+  &__heading-description {
+    @include typography-text-standard;
+    margin-bottom: get-spacing();
+  }
+
+  &__scene {
+    height: $impact-card-height;
+    min-width: $minimum-site-width;
+    perspective: 980px;
+    width: map-get($impact-card-width, 'mobile');
+
+    @include breakpoint(phablet) {
+      width: map-get($impact-card-width, 'phablet');
+    }
+
+    @include breakpoint(951) {
+      width: map-get($impact-card-width, '951');
+    }
+  }
+
+  &__card {
+    height: 100%;
+    margin-left: $impact-card-spacing-around-card;
+    margin-right: $impact-card-spacing-around-card;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    width: 100%;
+  }
+
+  &__front {
+    background-color: get-neutral-color('white');
+  }
+
+  &__front,
+  &__rear {
+    backface-visibility: hidden;
+    height: 100%;
+    padding: get-spacing('ml');
+    position: absolute;
+    width: 100%;
+  }
+
+  &__front-figure {
+    @include typography-heading-5xl;
+    @include typography-vertical-spacing('compact');
+
+    overflow: hidden;
+  }
+
+  &__front-description {
+    @include typography-text-small;
+  }
+
+  &__icon-link-wrapper {
+    @include font-size('2xl');
+    @include line-height('none');
+
+    bottom: get-spacing();
+    position: absolute;
+    right: get-spacing();
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
+  }
+
+  &__rear {
+    background-color: get-neutral-color('black');
+    color: get-neutral-color('white');
+    transform: rotateY(180deg);
+  }
+
+  &__rear-description {
+    @include typography-vertical-spacing;
+  }
+
+  &[data-rpl-show-card-side='rear'] {
+
+    #{$self}__card {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &--part-of-set {
+    background-color: transparent;
+    padding-bottom: 0;
+
+    #{$self}__card {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    #{$self}__inner-wrapper {
+      background-color: transparent;
+    }
+
+    #{$self}__scene {
+      width: map-get($impact-card-width, 'mobile-part-of-set');
+
+      @include breakpoint(phablet) {
+        width: map-get($impact-card-width, 'phablet');
+      }
+
+      @include breakpoint(951) {
+        width: map-get($impact-card-width, '951');
+      }
+    }
+  }
+}
+
+// end file

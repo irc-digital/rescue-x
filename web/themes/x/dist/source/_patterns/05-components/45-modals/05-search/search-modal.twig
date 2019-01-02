@@ -1,0 +1,11 @@
+{% embed '@components/45-modals/_modal.twig' with {
+  modal_id: 'search',
+  modal_modifiers: ['type-search'],
+} %}
+  {% block modal_content_block %}
+    <div class="rplc-search-modal">
+      {% include '@molecules/55-search/05-form/search-form.twig' %}
+    </div>
+  {% endblock %}
+{% endembed %}
+

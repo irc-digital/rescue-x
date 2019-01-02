@@ -1,0 +1,53 @@
+@import 'rpll-slider-layout-3.variables';
+
+.rpll-slider-layout-3 {
+  $self: &;
+
+  &__slides-wrapper {
+    position: relative;
+  }
+
+  &__next,
+  &__previous {
+    height: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
+    margin-top: $slider-layout-3-arrow-offset;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    width: map-get($slider-layout-3-previous-next-icon-size, 'mobile');
+
+    @include breakpoint(phablet) {
+      height: map-get($slider-layout-3-previous-next-icon-size, 'phablet');
+      width: map-get($slider-layout-3-previous-next-icon-size, 'phablet');
+    }
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      cursor: pointer;
+    }
+
+    &.slick-disabled {
+      // sass-lint:disable-block no-important
+      display: none !important; // grrr - slick
+    }
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  &__previous {
+    left: 0;
+  }
+
+  &__slide {
+    padding-right: get-spacing();
+  }
+
+  &__slides {
+    margin: 0 2.3rem;
+  }
+}
+
+// end of file

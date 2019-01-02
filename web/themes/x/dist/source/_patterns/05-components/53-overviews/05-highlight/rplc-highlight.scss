@@ -1,0 +1,22 @@
+@import 'rplc-highlight.variables';
+
+.rplc-highlight {
+  $self: &;
+
+  @include well-row;
+  @include standard-vertical-spacing;
+
+  width: calc(100% - #{get-spacing('m') * 2});
+
+  @include breakpoint(phablet) {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  &__list-wrapper {
+    color: get-neutral-color('dark-gray');
+  }
+
+}
+
+// end of file

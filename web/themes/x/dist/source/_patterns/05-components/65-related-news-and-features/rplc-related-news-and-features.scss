@@ -1,0 +1,12 @@
+@import 'rplc-related-news-and-features.variables';
+
+.rplc-related-news-and-features {
+
+  @include standard-vertical-padding;
+
+  &__content {
+    @include well-row;
+  }
+}
+
+// end of file

@@ -1,0 +1,64 @@
+@import 'rpla-icon-only-link.variables';
+
+.rpla-icon-only-link {
+  $self: &;
+
+  //
+  // 1) For buttons
+  //
+  @include line-height('none');
+  background-color: transparent; // 1
+  border-width: 0; // 1
+  display: inline-block;
+  font-size: 1em; // 1
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include hover {
+    cursor: pointer; // 1
+  }
+
+  #{$self}__icon-wrapper {
+    display: inline-block;
+  }
+
+  &--type-one {
+    #{$self}__icon-wrapper {
+      height: 1em;
+      width: 1em;
+    }
+  }
+
+  &--type-two {
+    #{$self}__icon-wrapper {
+      border: 1px solid get-neutral-color('light-gray');
+      border-radius: 100%;
+      height: 2.5em;
+      padding: .7em;
+      width: 2.5em;
+    }
+  }
+
+  &--type-three {
+    #{$self}__icon-wrapper {
+      background-color: get-neutral-color('white');
+      border-radius: 100%;
+      height: 2.5em;
+      padding: .5em;
+      width: 2.5em;
+    }
+  }
+
+  &--type-four {
+    #{$self}__icon-wrapper {
+      background-color: $icon-only-link-type-four-background-color;
+      height: 2.5em;
+      padding: .4em;
+      width: 2.5em;
+
+      // sass-lint:disable-block mixins-before-declarations
+      @include hover {
+        background-color: get-neutral-color('white');
+      }
+    }
+  }
+}

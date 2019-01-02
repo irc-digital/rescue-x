@@ -1,0 +1,37 @@
+hero_donation_form_art_directed_image_fallback: "https://placem.at/places?w=1925&h=825&random=herodonationform"
+hero_donation_form_directed_image_sources:
+  - source_set:
+    - "https://placem.at/places?w=640&h=640&random=herodonationform 1x"
+    - "https://placem.at/places?w=1280&h=1280&random=herodonationform 2x"
+    - "https://placem.at/places?w=1920&h=1920&random=herodonationform 3x"
+    media: "only screen and (max-width: 40em)"
+  - source_set:
+    - "https://placem.at/places?w=1029&h=441&random=herodonationform 1x"
+    - "https://placem.at/places?w=2058&h=882&random=herodonationform 2x"
+    media: "only screen and (min-width: 40.063em) and (max-width: 64em)"
+  - source_set:
+    - "https://placem.at/places?w=1925&h=825&random=herodonationform 1x"
+    - "https://placem.at/places?w=3850&h=1650&random=herodonationform 2x"
+    media: "only screen and (min-width: 64.063em)"
+hero_donation_form_art_directed_image_alt: "Faker.words(5,true)"
+hero_donation_form_slug: "Faker.words(2,true)"
+hero_donation_form_headline: "Faker.sentence(6, true)"
+hero_donation_form_summary: "Faker.sentences(3,true)"
+hero_donation_form_link_title: "Faker.words(3,true)"
+hero_donation_form_link_url: '#'
+hero_donation_form_donation_text: "Faker.sentence(10,true)"
+hero_donation_form_donation_input_name: "amount"
+hero_donation_form_donation_input_label: "Donation amount"
+hero_donation_form_donation_input_placeholder: "Donation amount"
+hero_donation_form_donation_input_default_value: 30
+hero_donation_form_donation_input_prefix: '$'
+hero_donation_form_donation_input_suffix: 'USD'
+hero_donation_form_donation_buttons:
+  - include():
+      pattern: "atoms-button"
+      with:
+        button_text: 'Donate now'
+        button_url: null
+        button_tag: 'input'
+        button_modifiers:
+          - 'type-two'

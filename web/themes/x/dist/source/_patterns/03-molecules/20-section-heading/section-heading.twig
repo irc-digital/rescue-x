@@ -1,15 +1,13 @@
 {#
 /**
+ * Section heading
+ *
  * Available variables:
- * - section_heading_modifier array optional
- *     inverse: switch to a different treatment when placed on a yellow background. Left
- *     border of title field is switched to white.
- * - section_heading_title text mandatory
- *     The title of the section
- * - section_heading_description text optional
- &     A basic text description.
- * Available blocks:
- * - None
+ *   section_heading_title        - Smaller text on top of headline
+ *   section_heading_icon         - Larger header below
+ *   section_heading_description  - Summary text
+ *   section_heading_modifiers    - Array of modifiers
+ *     inverse                    - Yellow background
  */
 #}
 {% if section_heading_title %}
@@ -22,6 +20,6 @@
 {% endif %}
       <h2 class="rplm-section-heading__title">{{ section_heading_title }}</h2>
     </div>
-    {% if section_heading_description %}<p class="rplm-section-heading__description">{{ section_heading_description }}</p>{% endif %}
+    {% if section_heading_description %}<div class="rpla-paragraph">{{ section_heading_description }}</div>{% endif %}
 </div>
 {% endif %}

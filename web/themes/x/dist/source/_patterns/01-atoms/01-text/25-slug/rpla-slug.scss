@@ -1,0 +1,41 @@
+@import 'rpla-slug.variables';
+
+.rpla-slug {
+  $self: &;
+
+  @include typography-text-extra-small;
+
+  &:not(:last-child) {
+    @include typography-vertical-spacing('compact');
+  }
+
+  &__slug {
+    @include breakpoint(phablet) {
+      display: inline-block;
+    }
+  }
+
+  &__sub-slug {
+    display: inline-block;
+  }
+
+  &__sub-slug-text {
+    @include font-weight('bold');
+    display: inline-block;
+
+    @include breakpoint(phablet) {
+      border-left: 1px solid get-neutral-color('black');
+      left: -.2em;
+      margin-left: $slug-sub-spacing;
+      padding-left: $slug-sub-spacing;
+      padding-right: $slug-sub-spacing;
+      position: relative;
+    }
+  }
+
+  &--size-large {
+    @include typography-text-standard;
+  }
+}
+
+// end of file

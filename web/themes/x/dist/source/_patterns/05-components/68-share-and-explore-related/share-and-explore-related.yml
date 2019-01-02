@@ -1,0 +1,24 @@
+share_and_explore_related_share:
+  include():
+    pattern: "molecules-social-share"
+    with:
+      social_share_sites:
+        'twitter': '#'
+        'facebook': '#'
+        'linked-in': '#'
+        'mail': '#'
+      social_share_modifiers:
+        - 'type-two'
+    only: true
+share_and_explore_related_related:
+  include():
+    pattern: "molecules-related-topics"
+    with:
+      related_topics_values:
+        - url: '#'
+          title: "Faker.words(1,true)"
+        - url: '#'
+          title: "Faker.words(1,true)"
+        - url: '#'
+          title: "Faker.words(1,true)"
+    only: true

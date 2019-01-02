@@ -1,8 +1,0 @@
-{% if two_column_list_content %}
-<ul class="rpll-two-column-list{% for two_column_list_modifier in two_column_list_modifiers %} rpll-two-column-list--{{ two_column_list_modifier }}{% endfor %}">
-{% for two_column_list_item in two_column_list_content %}
-  <li class="rpll-two-column-list__item">{{ two_column_list_item }}</li>
-{% endfor %}
-</ul>
-{% endif %}
-

@@ -1,0 +1,16 @@
+teaser_report__url: "#"
+teaser_report_title: "Faker.sentence(10,true)"
+teaser_report_image_source_set:
+  - "https://placem.at/things?w=256&h=331&random=teaserreportimage 256w"
+  - "https://placem.at/things?w=512&h=663&random=teaserreportimage 512w"
+  - "https://placem.at/things?w=640&h=828&random=teaserreportimage 640w"
+  - "https://placem.at/things?w=1280&h=1656&random=teaserreportimage 1280w"
+  - "https://placem.at/things?w=1920&h=2485&random=teaserreportimage 1920w"
+teaser_report_image_fallback: "https://placem.at/things?w=640&h=828&random=teaserreportimage"
+teaser_report_image_alt: "Faker.words(4, true)"
+
+
+
+
+
+

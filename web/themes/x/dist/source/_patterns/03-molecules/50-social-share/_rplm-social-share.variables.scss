@@ -1,0 +1,17 @@
+@import '../../../scss/core';
+
+// type one
+$social-share-type-one-font-size: 1.5em; // using ems so that can 'default' to a large-ish style but the contain can size up and down
+$social-share-type-one-gutter: 1em;
+
+// type two
+$social-share-type-two-gutter: get-typography-spacing('compact');
+
+// type three
+$social-share-type-three-gutter: get-typography-spacing('compact');
+
+// type four
+$social-share-type-four-gutter: get-typography-spacing('tight');
+
+// end of file
+

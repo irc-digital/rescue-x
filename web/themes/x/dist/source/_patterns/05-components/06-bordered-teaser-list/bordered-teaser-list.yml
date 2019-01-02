@@ -1,0 +1,43 @@
+bordered_teaser_list_section_heading_title: 'Faker.words(5,true)'
+bordered_teaser_list_section_heading_description: 'Faker.sentences(3,true)'
+bordered_teaser_list_content:
+  - include():
+      pattern: "components-teaser-bordered"
+      with:
+        teaser_bordered_url: "#"
+        teaser_bordered_slug: "Faker.words(2,true)"
+        teaser_bordered_title: "Faker.sentence(7,true)"
+        teaser_bordered_date: "April 9th, 2018"
+        teaser_bordered_label: "Start date: "
+        teaser_bordered_summary: "Faker.paragraph(3,true)"
+      only: true
+  - include():
+      pattern: "components-teaser-bordered"
+      with:
+        teaser_bordered_url: "#"
+        teaser_bordered_slug: "Faker.words(2,true)"
+        teaser_bordered_title: "Faker.sentence(7,true)"
+        teaser_bordered_date: "September 20th, 2019"
+        teaser_bordered_label: "Start date: "
+        teaser_bordered_summary: "Faker.paragraph(3,true)"
+      only: true
+  - include():
+      pattern: "components-teaser-bordered"
+      with:
+        teaser_bordered_url: "#"
+        teaser_bordered_slug: "Faker.words(2,true)"
+        teaser_bordered_title: "Faker.sentence(7,true)"
+        teaser_bordered_date: "January 8th, 2015"
+        teaser_bordered_label: "Start date: "
+        teaser_bordered_summary: "Faker.paragraph(3,true)"
+      only: true
+  - include():
+      pattern: "components-teaser-bordered"
+      with:
+        teaser_bordered_url: "#"
+        teaser_bordered_slug: "Faker.words(2,true)"
+        teaser_bordered_title: "Faker.sentence(7,true)"
+        teaser_bordered_date: "December 1th, 2020"
+        teaser_bordered_label: "Start date: "
+        teaser_bordered_summary: "Faker.paragraph(3,true)"
+      only: true

@@ -1,0 +1,18 @@
+@import 'rplm-quiz-card-correct.variables';
+@import '../quiz-cards.mixins';
+
+.rplm-card-correct {
+  @include quiz-card-common;
+
+  background: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg enable-background="new 0 0 1200 240" preserveAspectRatio="xMinYMax slice" version="1.1" viewBox="0 0 1200 240" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="1200" height="240" fill="' + encode-color($quiz-main-color) + '"/%3E%3Cpolygon points="0 0 1200 0 1200 122 587 240 0 122" fill="' + encode-color($quiz-card-background-color) + '"/%3E%3C/svg%3E%0A') 50% 0 no-repeat;
+  background-size: auto 240px;
+  padding-top: get-spacing('m');
+
+  &__content {
+    text-align: center;
+  }
+
+}
+
+
+// end of file

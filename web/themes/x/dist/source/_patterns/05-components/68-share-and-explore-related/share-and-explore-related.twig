@@ -1,0 +1,30 @@
+{% spaceless %}
+
+  {% if has_share_and_explore_related_share is empty %}
+    {% set has_share_and_explore_related_share = share_and_explore_related_share is not empty %}
+  {% endif %}
+
+  {% if has_share_and_explore_related_related is empty %}
+    {% set has_share_and_explore_related_related = share_and_explore_related_related is not empty %}
+  {% endif %}
+
+{% endspaceless %}
+<div class="rplc-share-and-explore-related{% for social_related_modifier in social_related_modifiers %} rplc-share-and-explore-related--{{ social_related_modifier }}{% endfor %}">
+  <div class="rplc-share-and-explore-related__content">
+    {% if has_share_and_explore_related_share %}
+      <div class="rplc-share-and-explore-related__share">
+        {% block share_and_explore_related_share_block %}
+          {{ share_and_explore_related_share }}
+        {% endblock share_and_explore_related_share_block %}
+      </div>
+    {% endif %}
+    {% if has_share_and_explore_related_related %}
+      <div class="rplc-share-and-explore-related__related">
+        {% block share_and_explore_related_related_block %}
+          {{ share_and_explore_related_related }}
+        {% endblock share_and_explore_related_related_block %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+

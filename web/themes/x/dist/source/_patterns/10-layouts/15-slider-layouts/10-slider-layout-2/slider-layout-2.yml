@@ -1,0 +1,4 @@
+slider_layout_2_slides:
+  - slide: "<div class='patternlab-slider-two-content'>SLIDE 1</div>"
+  - slide: "<div class='patternlab-slider-two-content'>SLIDE 2</div>"
+  - slide: "<div class='patternlab-slider-two-content'>SLIDE 3</div>"

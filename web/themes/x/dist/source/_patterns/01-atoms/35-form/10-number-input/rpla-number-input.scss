@@ -1,0 +1,18 @@
+@import 'rpla-number-input.variables';
+@import '../rpl-form.mixins';
+
+.rpla-number-input {
+  $self: &;
+
+  @include input-type-hide-label;
+
+  &--type-one {
+    @include input-type-one($self);
+  }
+
+  &--type-two {
+    @include input-type-two($self);
+  }
+}
+
+// end of file

@@ -1,0 +1,77 @@
+@import 'rplc-call-to-action-3.variables';
+@import 'rplc-call-to-action-3.mixins';
+
+.rplc-call-to-action-3 {
+  $self: &;
+
+  @include standard-vertical-spacing;
+
+  &__content {
+    @include breakpoint(desktop) {
+      @include well-row;
+    }
+  }
+
+  &__content-wrapper {
+    color: get-neutral-color('white');
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include breakpoint(desktop) {
+      flex-direction: row;
+    }
+  }
+
+  &__image-wrapper {
+    @include line-height('none');
+  }
+
+  &__message-wrapper {
+    background-color: transparent;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 0;
+    overflow: hidden;
+    padding: get-spacing('l') get-spacing('m');
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include breakpoint(phablet) {
+      justify-content: center;
+      padding: get-spacing('l');
+    }
+
+    @include breakpoint(desktop) {
+      padding: get-spacing('xl');
+    }
+  }
+
+  &__title {
+    @include typography-heading-3xl;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &__subtitle {
+    @include typography-text-large;
+    @include standard-vertical-spacing('standard');
+  }
+
+  &--text-position-center {
+    text-align: center;
+  }
+
+  &--text-position-left {
+    @include call-to-action-3-text-position-helper($self, 'left');
+  }
+
+  &--text-position-right {
+    @include call-to-action-3-text-position-helper($self, 'right');
+  }
+
+}
+
+// end of file

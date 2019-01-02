@@ -1,0 +1,28 @@
+{#
+/**
+ * Goal
+ *
+ * Available variables:
+ *   goal_art_directed_image_fallback - Fallback image
+ *   goal_art_directed_image_sources - Image sources
+ *   goal_art_directed_image_alt - Alt text for image
+ *   goal_title - Title on top of the card, separated with a horizontal rule
+ *   goal_subtitle - Subtitle text below the title
+ *   goal_description - Description text
+ */
+#}
+<div class="rplc-goal">
+  <div class="rplc-goal__image-wrapper">
+    {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
+      art_directed_image_fallback: goal_art_directed_image_fallback,
+      art_directed_image_sources: goal_art_directed_image_sources,
+      art_directed_image_alt: goal_art_directed_image_alt,
+    } only %}
+  </div>
+  <div class="rplc-goal__text-wrapper">
+    <h3 class="rpla-heading rpla-heading--medium">{{ goal_title }}</h3>
+    <hr>
+    <h4 class="rpla-heading rpla-heading--medium">{{ goal_subtitle }}</h4>
+    <div class="rpla-paragraph">{{ goal_description }}</div>
+  </div>
+</div>

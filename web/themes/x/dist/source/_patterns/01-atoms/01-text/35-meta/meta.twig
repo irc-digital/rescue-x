@@ -1,0 +1,3 @@
+{% if meta_text %}
+  <div class="rpla-meta{% for meta_modifier in meta_modifiers %} rpla-meta--{{ meta_modifier }}{% endfor %}">{{ meta_prefix }} {{ meta_text }}</div>
+{% endif %}

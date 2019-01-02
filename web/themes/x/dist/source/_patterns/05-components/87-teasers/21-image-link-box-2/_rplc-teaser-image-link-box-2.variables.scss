@@ -1,0 +1,12 @@
+@import '../../../../scss/core';
+
+$teaser-image-link-box-2-caption-bottom-border-size: rem(6px);
+$teaser-image-link-box-2-caption-eats-in: (
+  'mobile': get-spacing(),
+  'phablet': get-spacing('xl'),
+);
+$teaser-image-link-box-2-image-width-tablet: rem(288px);
+$teaser-image-link-box-2-caption-height-tablet: $teaser-image-link-box-2-image-width-tablet / 4 * 3;
+
+// end of file
+

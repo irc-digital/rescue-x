@@ -1,0 +1,24 @@
+@import 'rplm-b-roll.variables';
+
+.rplm-b-roll {
+  $self: &;
+
+  &__video {
+    display: none;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &[data-rpl-b-roll-loaded] {
+    #{$self}__image-wrapper {
+      display: none;
+    }
+
+    #{$self}__video {
+      display: block;
+    }
+  }
+
+}
+
+// end of file

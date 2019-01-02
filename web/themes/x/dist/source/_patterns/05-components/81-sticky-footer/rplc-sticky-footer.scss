@@ -1,0 +1,60 @@
+@import 'rplc-sticky-footer.variables';
+
+.rplc-sticky-footer {
+  $self: &;
+
+  @include z-index('below-navigation-overlay');
+  background-color: get-neutral-color('black');
+  bottom: 0;
+  box-shadow: $sticky-footer-box-shadow;
+  color: get-neutral-color('white');
+  padding-right: get-spacing('xl');
+  position: fixed;
+  transition: transform .3s ease-out;
+  width: 100%;
+
+  &__content {
+    @include well-row;
+  }
+
+  &__close {
+    @include font-size('2xl');
+    @include font-weight('light');
+    @include line-height('2xs');
+    @include z-index('up');
+
+    color: get-neutral-color('gray');
+    position: absolute;
+    right: rem(24px);
+    top: rem(8px);
+    user-select: none;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include hover {
+      color: get-neutral-color('white');
+      cursor: pointer;
+    }
+  }
+
+  &[data-rpl-sticky-footer-state='closed'] {
+    display: none;
+  }
+
+  &[data-rpl-sticky-footer-state='dismissed'] {
+    box-shadow: none;
+    transform: translateY(100%);
+  }
+
+  &[data-rpl-sticky-footer-state='opened'] {
+    display: block;
+  }
+
+  &[data-rpl-sticky-footer-stuck] {
+    border-top: 1px solid get-neutral-color('dark-gray');
+    box-shadow: none;
+    position: static;
+  }
+
+}
+
+// end of file

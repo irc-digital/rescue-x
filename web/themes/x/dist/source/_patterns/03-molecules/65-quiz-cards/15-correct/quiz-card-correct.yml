@@ -1,0 +1,2 @@
+quiz_card_correct_title: "Faker.words(8,true)"
+quiz_card_correct_description: "Faker.words(16,true)"

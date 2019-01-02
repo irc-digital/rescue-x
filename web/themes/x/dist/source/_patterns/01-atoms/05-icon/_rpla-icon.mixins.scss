@@ -1,0 +1,30 @@
+@import '../../../scss/core';
+
+@mixin social-fill ($selector: '') {
+
+  &#{$selector}--twitter {
+    color: get-social-color('twitter');
+  }
+
+  &#{$selector}--facebook {
+    color: get-social-color('facebook');
+  }
+
+  &#{$selector}--instagram {
+    color: get-social-color('instagram');
+  }
+
+  &#{$selector}--youtube {
+    color: get-social-color('youtube');
+  }
+
+  &#{$selector}--linked-in {
+    color: get-social-color('linkedin');
+  }
+
+  &#{$selector}--mail {
+    color: get-social-color('mail');
+  }
+}
+
+// end of file

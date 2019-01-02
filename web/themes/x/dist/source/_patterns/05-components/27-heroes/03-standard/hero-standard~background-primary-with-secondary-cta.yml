@@ -1,0 +1,4 @@
+hero_standard_secondary_cta_url: '#'
+hero_standard_secondary_cta_text: "Faker.words(3,true)"
+hero_standard_modifiers:
+  - 'background-color-primary'

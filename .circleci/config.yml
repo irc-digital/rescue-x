@@ -104,8 +104,12 @@ jobs:
                 command: ./.circleci/scripts/pantheon/01-prepare
 
             - run:
-                name: Build assets
+                name: Build Drupal assets
                 command: composer -n build-assets
+
+            - run:
+                name: Build Patternlab assets
+                command: ./.circleci/scripts/irc/build-patternlab
 
             - run:
                 name: Push to IRC monthly branch
@@ -116,7 +120,7 @@ jobs:
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
 
                 # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
-
+#
 #            - run:
 #               name: Dev dependencies
 #               command: composer install
@@ -124,7 +128,7 @@ jobs:
 #            - run:
 #                name: Run functional tests with Behat
 #                command: ./tests/scripts/run-behat
-#
+
 #            - run:
 #                name: Install additional dependencies
 #                command: ./.circleci/scripts/irc/install-additional-dependencies

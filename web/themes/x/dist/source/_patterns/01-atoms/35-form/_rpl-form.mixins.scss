@@ -1,0 +1,63 @@
+@import '../../../scss/core';
+
+@mixin input-type-hide-label ($element: &) {
+  #{$element}__label {
+    display: none;
+  }
+}
+
+@mixin input-type ($element: &) {
+  font-size: 1em;
+
+  @include breakpoint(phablet) {
+    font-size: 1em;
+  }
+}
+
+@mixin input-type-one ($element: &) {
+  #{$element}__field {
+    border-width: 0;
+    font-size: 1em;
+    padding: .5em;
+  }
+}
+
+@mixin input-type-two ($element: &) {
+  #{$element}__field {
+    @include placeholder {
+      color: get-neutral-color('gray');
+      font-size: get-font-size('m');
+    }
+    border-width: 0;
+    font-size: 1em;
+    padding: .5em;
+  }
+}
+
+@mixin input-type-three ($element: &) {
+  #{$element}__field {
+    background-color: transparent;
+    border-width: 0;
+    font-size: 1em;
+    padding: .25em 0;
+  }
+}
+
+@mixin input-border ($element: &) {
+  #{$element}__field {
+    border: 1px solid get-neutral-color('gray');
+  }
+}
+
+@mixin input-placeholder-small ($element: &) {
+  #{$element}__field {
+    @include placeholder {
+      font-size: get-font-size('s');
+      font-weight: get-font-weight('light');
+    }
+  }
+}
+
+
+// end of file
+
