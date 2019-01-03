@@ -13,7 +13,7 @@ services:
       - "cd $LANDO_MOUNT && composer install"
     overrides:
       services:
-        # Latest version of node and other dependencies.
+        # Latest version of node and other dependencies. 
         # See: https://hub.docker.com/r/ircdigital/irc-lando-build
         # Image is based on https://hub.docker.com/r/devwithlando/pantheon-appserver
         image: ircdigital/irc-lando-build
