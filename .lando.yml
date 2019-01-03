@@ -5,16 +5,16 @@ config:
   site: rescue-x
   id: c8430b75-4272-4aca-bfcd-206b12279315
 services:
-#  database:
-#    portforward: 3307
+  database:
+    portforward: 3308
   appserver:
     xdebug: true
     run:
       - "cd $LANDO_MOUNT && composer install"
     overrides:
       services:
-        # Latest version of node and other puppeteer dependencies
-        # are included in this Docker container
+        # Latest version of node and other dependencies.
+        # This image is based off of https://hub.docker.com/r/devwithlando/pantheon-appserver/
         image: ircdigital/irc-lando-build
         environment:
           PHP_IDE_CONFIG: "serverName=appserver"
