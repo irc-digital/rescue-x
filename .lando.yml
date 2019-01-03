@@ -5,10 +5,12 @@ config:
   site: rescue-x
   id: c8430b75-4272-4aca-bfcd-206b12279315
 services:
-  database:
-    portforward: 3307
+#  database:
+#    portforward: 3307
   appserver:
     xdebug: true
+    run:
+      - "cd $LANDO_MOUNT && composer install"
     overrides:
       services:
         # Latest version of node and other puppeteer dependencies
@@ -16,12 +18,6 @@ services:
         image: ircdigital/irc-lando-build
         environment:
           PHP_IDE_CONFIG: "serverName=appserver"
-    # Install project dependencies:
-    # - Drupal core
-    run_as_root:
-      - "composer install -d /app"
-    # - "npm install -g gulp-cli -y"
-    # - "npm install /app/web/themes/x"
 tooling:
   gulp:
     service: appserver
