@@ -8,7 +8,7 @@ set -eo pipefail
 # Use EITHER this script OR the clone-existing script; do not run both.
 #
 
-# Create a new multidev site to test on
+# Create a new multidev site to test on.
 terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
 
 # Re-run the site installation process
