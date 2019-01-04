@@ -5,6 +5,7 @@ namespace Drupal\ef_icon_library;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
+use Drupal\ui_patterns\Definition\PatternDefinition;
 use Drupal\ui_patterns\UiPatternsManager;
 
 /**
@@ -107,7 +108,7 @@ class IconLibrary implements IconLibraryInterface {
     if ($in_use_size > 0) {
       $count = 0;
 
-      foreach ($this->icons as $icon) {
+      foreach ($this->getIcons() as $icon) {
         if (in_array($icon->id, $this->iconsBeingUsed)) {
           $icons_in_use[] = $icon;
           $count++;
@@ -132,11 +133,26 @@ class IconLibrary implements IconLibraryInterface {
     $patternDefinition = $patternsManager->getDefinition($pattern_name);
 
     if ($patternDefinition) {
-      $additional_info = $patternDefinition->getAdditional();
+      $this->processIconLibraryField ($patternDefinition, $variables);
+      $this->processIconsInPattern ($patternDefinition, $variables);
+    }
+  }
 
-      if (isset($additional_info['icon_library_field'])) {
-        $icon_library_field = $additional_info['icon_library_field'];
-        $this->iconsBeingUsed[] = $variables[$icon_library_field];
+  protected function processIconLibraryField (PatternDefinition $patternDefinition, array $variables) {
+    $additional_info = $patternDefinition->getAdditional();
+
+    if (isset($additional_info['icon_library_field'])) {
+      $icon_library_field = $additional_info['icon_library_field'];
+      $this->iconsBeingUsed[] = $variables[$icon_library_field];
+    }
+  }
+
+  protected function processIconsInPattern (PatternDefinition $patternDefinition, array $variables) {
+    $additional_info = $patternDefinition->getAdditional();
+
+    if (isset($additional_info['icons']) && is_array($additional_info['icons'])) {
+      foreach ($additional_info['icons'] as $icon_name) {
+        $this->iconsBeingUsed[] = $icon_name;
       }
     }
   }

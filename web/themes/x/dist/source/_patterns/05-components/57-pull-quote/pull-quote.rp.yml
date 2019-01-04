@@ -14,3 +14,5 @@ pull_quote:
        css:
          theme:
            dist/public/css/patterns/rplc-pull-quote.css: {}
+  icons:
+    - 'quote-mark'
