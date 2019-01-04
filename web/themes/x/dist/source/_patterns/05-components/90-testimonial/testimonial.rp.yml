@@ -1,4 +1,4 @@
-quote:
+testimonial:
   label: Testimonial
   description: A testimonial
   use: "@components/90-testimonial/testimonial.twig"
