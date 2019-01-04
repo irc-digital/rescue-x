@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.quote
+    - field.storage.embeddable.field_ef_quote_attribution_role
+id: embeddable.quote.field_ef_quote_attribution_role
+field_name: field_ef_quote_attribution_role
+entity_type: embeddable
+bundle: quote
+label: 'Role / description'
+description: 'A short two or three word description of the person. e.g. <em>Afghan refugee</em>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

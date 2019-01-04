@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.quote
+    - field.storage.embeddable.field_ef_quote_attribution
+id: embeddable.quote.field_ef_quote_attribution
+field_name: field_ef_quote_attribution
+entity_type: embeddable
+bundle: quote
+label: 'Attributed to'
+description: 'The name of the person to whom the quote is attributed.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

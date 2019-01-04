@@ -1,0 +1,132 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.quote
+    - field.field.embeddable.quote.field_ef_quote_attribution
+    - field.field.embeddable.quote.field_ef_quote_attribution_role
+    - field.field.embeddable.quote.field_ef_quote_cta
+    - field.field.embeddable.quote.field_ef_quote_image
+    - field.field.embeddable.quote.field_ef_quote_text
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_quote
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      quote_text:
+        - field_ef_quote_text
+      quote_attribution:
+        - field_ef_quote_attribution
+      quote_attribution_role:
+        - field_ef_quote_attribution_role
+      quote_cta:
+        - 'link_attributes_field:embeddable_quote_field_ef_quote_cta_link_text'
+      quote_url:
+        - 'link_attributes_field:embeddable_quote_field_ef_quote_cta_url'
+      quote_responsive_image_source_set:
+        - 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_srcset'
+      quote_responsive_image_fallback:
+        - 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_fallback_uri'
+      quote_responsive_image_alt:
+        - 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_alt'
+    fields:
+      'link_attributes_field:embeddable_quote_field_ef_quote_cta_url':
+        plugin_id: 'link_attributes_field:embeddable_quote_field_ef_quote_cta_url'
+        weight: 4
+        label: hidden
+        formatter: default
+      'link_attributes_field:embeddable_quote_field_ef_quote_cta_link_text':
+        plugin_id: 'link_attributes_field:embeddable_quote_field_ef_quote_cta_link_text'
+        weight: 3
+        label: hidden
+        formatter: default
+      'media_image_attributes_field:embeddable_quote_field_ef_quote_image_srcset':
+        plugin_id: 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_srcset'
+        weight: 5
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: quote_headshot
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:embeddable_quote_field_ef_quote_image_fallback_uri':
+        plugin_id: 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_fallback_uri'
+        weight: 6
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: quote_headshot
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:embeddable_quote_field_ef_quote_image_alt':
+        plugin_id: 'media_image_attributes_field:embeddable_quote_field_ef_quote_image_alt'
+        weight: 7
+        label: hidden
+        formatter: default
+id: embeddable.quote.default
+targetEntityType: embeddable
+bundle: quote
+mode: default
+content:
+  field_ef_quote_attribution:
+    type: string
+    weight: 1
+    region: quote_attribution
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_ef_quote_attribution_role:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: quote_attribution_role
+  field_ef_quote_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: quote_text
+hidden:
+  changed: true
+  created: true
+  field_ef_quote_cta: true
+  field_ef_quote_image: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

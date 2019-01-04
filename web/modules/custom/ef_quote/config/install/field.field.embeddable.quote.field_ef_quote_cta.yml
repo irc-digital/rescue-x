@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.quote
+    - field.storage.embeddable.field_ef_quote_cta
+  module:
+    - link
+id: embeddable.quote.field_ef_quote_cta
+field_name: field_ef_quote_cta
+entity_type: embeddable
+bundle: quote
+label: Link
+description: 'An optional link at the bottom of the quote. May be either internal or external.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

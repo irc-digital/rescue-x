@@ -21,19 +21,17 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      teaser_image_link_box_url:
+      teaser_image_link_box_1_url:
         - field_ilbt_link
-      teaser_image_link_box_title:
+      teaser_image_link_box_1_title:
         - field_ilbt_title
-      teaser_image_link_box_summary:
+      teaser_image_link_box_1_summary:
         - field_ilbt_blurb
-      teaser_image_link_box_image_source_set:
+      teaser_image_link_box_1_image_source_set:
         - 'media_image_attributes_field:paragraph_image_link_box_field_ilbt_image_srcset'
-      teaser_image_link_box_image_sizes:
-        - 'media_image_attributes_field:paragraph_image_link_box_field_ilbt_image_sizes'
-      teaser_image_link_box_image_fallback:
+      teaser_image_link_box_1_image_fallback:
         - 'media_image_attributes_field:paragraph_image_link_box_field_ilbt_image_fallback_uri'
-      teaser_image_link_box_image_alt:
+      teaser_image_link_box_1_image_alt:
         - 'media_image_attributes_field:paragraph_image_link_box_field_ilbt_image_alt'
     fields:
       'media_image_attributes_field:paragraph_image_link_box_field_ilbt_image_srcset':
@@ -84,7 +82,7 @@ content:
   field_ilbt_blurb:
     type: basic_string
     weight: 2
-    region: teaser_image_link_box_summary
+    region: teaser_image_link_box_1_summary
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -104,11 +102,11 @@ content:
           settings:
             lb: ''
     type: link
-    region: teaser_image_link_box_url
+    region: teaser_image_link_box_1_url
   field_ilbt_title:
     type: string
     weight: 1
-    region: teaser_image_link_box_title
+    region: teaser_image_link_box_1_title
     label: hidden
     settings:
       link_to_entity: false
