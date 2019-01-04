@@ -1,5 +1,5 @@
 <?php
 
-function ef_pull_quote_uninstall () {
+function ef_quote_uninstall () {
   ef_delete_all ('embeddable', 'quote');
 }
