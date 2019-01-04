@@ -36,7 +36,7 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      image_link_boxes_content:
+      image_link_boxes_1_content:
         - field_ilb_entries
 id: embeddable.image_link_boxes.default
 targetEntityType: embeddable
@@ -51,7 +51,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: image_link_boxes_content
+    region: image_link_boxes_1_content
 hidden:
   changed: true
   created: true

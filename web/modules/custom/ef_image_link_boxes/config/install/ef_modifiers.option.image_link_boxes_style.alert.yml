@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - ef_image_link_boxes
-id: image_link_boxes_style.alter
+id: image_link_boxes_style.alert
 label: Alert
 class_name: alert
 target_embeddable_modifier: image_link_boxes_style

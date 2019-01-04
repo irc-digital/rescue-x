@@ -46,14 +46,16 @@
             <p class="rplc-quote__quote-text">{{ quote_text }}</p>
             <div class="rplc-quote__attribution">
               <div class="rplc-quote__attributed-person">{{ quote_attribution }}</div>
-              <div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>
+              {% if quote_attribution_role %}<div class="rplc-quote__attributed-person-role">{{ quote_attribution_role }}</div>{% endif %}
             </div>
           </blockquote>
 
-          {% include '@atoms/10-link/link.twig' with {
-            link_url: quote_url,
-            link_text: quote_cta,
-          } only %}
+          {% if quote_url and quote_cta %}
+            {% include '@atoms/10-link/link.twig' with {
+              link_url: quote_url,
+              link_text: quote_cta,
+            } only %}
+          {% endif %}
         </div>
 
       </div>

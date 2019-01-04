@@ -1,0 +1,8 @@
+name: EF Quote
+type: module
+description: 'Provides a quote embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_is_square
