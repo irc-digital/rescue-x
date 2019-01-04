@@ -13,7 +13,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_teaser_image_link_box
+      id: pattern_teaser_image_link_box_1
       library: null
       disable_css: false
       entity_classes: no_classes
