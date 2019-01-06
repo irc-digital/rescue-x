@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - ef_infographic_standard
-id: teaser_icon
+id: teaser_icon_1
 label: 'Teaser icon 1'
 icon_uuid: null
 description: 'The icon with text used by the standard infographic.'

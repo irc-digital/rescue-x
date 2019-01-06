@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_teaser_icon_icon
-    - paragraphs.paragraphs_type.teaser_icon
+    - field.storage.paragraph.field_teaser_icon_1_icon
+    - paragraphs.paragraphs_type.teaser_icon_1
   module:
     - ef_icon_library
-id: paragraph.teaser_icon.field_teaser_icon_icon
-field_name: field_teaser_icon_icon
+id: paragraph.teaser_icon_1.field_teaser_icon_1_icon
+field_name: field_teaser_icon_1_icon
 entity_type: paragraph
-bundle: teaser_icon
+bundle: teaser_icon_1
 label: Icon
 description: 'The icon to be used for this infographic entry'
 required: true

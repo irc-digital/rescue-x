@@ -2,19 +2,19 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ef_icon_library
     - paragraphs
   enforced:
     module:
       - ef_infographic_standard
-id: paragraph.field_teaser_icon_icon
-field_name: field_teaser_icon_icon
+id: paragraph.field_teaser_icon_1_title
+field_name: field_teaser_icon_1_title
 entity_type: paragraph
-type: list_icon
+type: string
 settings:
-  allowed_values: {  }
-  allowed_values_function: ef_icon_library_allowed_icon_values_function
-module: ef_icon_library
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

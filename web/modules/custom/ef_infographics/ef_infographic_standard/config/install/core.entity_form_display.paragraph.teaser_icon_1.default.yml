@@ -2,18 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.teaser_icon.field_teaser_icon_description
-    - field.field.paragraph.teaser_icon.field_teaser_icon_icon
-    - field.field.paragraph.teaser_icon.field_teaser_icon_title
-    - paragraphs.paragraphs_type.teaser_icon
+    - field.field.paragraph.teaser_icon_1.field_teaser_icon_1_description
+    - field.field.paragraph.teaser_icon_1.field_teaser_icon_1_icon
+    - field.field.paragraph.teaser_icon_1.field_teaser_icon_1_title
+    - paragraphs.paragraphs_type.teaser_icon_1
   module:
     - chosen_field
-id: paragraph.teaser_icon.default
+id: paragraph.teaser_icon_1.default
 targetEntityType: paragraph
-bundle: teaser_icon
+bundle: teaser_icon_1
 mode: default
 content:
-  field_teaser_icon_description:
+  field_teaser_icon_1_description:
     weight: 2
     settings:
       size: 60
@@ -21,13 +21,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_teaser_icon_icon:
+  field_teaser_icon_1_icon:
     weight: 1
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
-  field_teaser_icon_title:
+  field_teaser_icon_1_title:
     weight: 0
     settings:
       size: 60

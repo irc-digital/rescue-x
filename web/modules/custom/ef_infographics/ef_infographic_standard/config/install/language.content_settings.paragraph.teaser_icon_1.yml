@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.teaser_icon
+    - paragraphs.paragraphs_type.teaser_icon_1
   module:
     - content_translation
 third_party_settings:
@@ -10,8 +10,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: paragraph.teaser_icon
+id: paragraph.teaser_icon_1
 target_entity_type_id: paragraph
-target_bundle: teaser_icon
+target_bundle: teaser_icon_1
 default_langcode: site_default
 language_alterable: false

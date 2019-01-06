@@ -2,5 +2,5 @@
 
 function ef_infographic_standard_uninstall () {
   ef_delete_all ('embeddable', 'infographic_standard');
-  ef_delete_all ('paragraph', 'image_link_box');
+  ef_delete_all ('paragraph', 'teaser_icon_1');
 }

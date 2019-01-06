@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_teaser_icon_title
-    - paragraphs.paragraphs_type.teaser_icon
-id: paragraph.teaser_icon.field_teaser_icon_title
-field_name: field_teaser_icon_title
+    - field.storage.paragraph.field_teaser_icon_1_title
+    - paragraphs.paragraphs_type.teaser_icon_1
+id: paragraph.teaser_icon_1.field_teaser_icon_1_title
+field_name: field_teaser_icon_1_title
 entity_type: paragraph
-bundle: teaser_icon
+bundle: teaser_icon_1
 label: Title
 description: 'The title of the infographic item.'
 required: true
