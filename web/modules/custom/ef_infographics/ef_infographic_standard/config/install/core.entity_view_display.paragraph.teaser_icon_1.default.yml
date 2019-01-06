@@ -12,7 +12,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_teaser_icon_1
+      id: pattern_teaser_icon
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -20,11 +20,11 @@ third_party_settings:
         pattern:
           field_templates: default
     regions:
-      teaser_icon_1_title:
+      teaser_icon_title:
         - field_teaser_icon_1_title
-      teaser_icon_1_summary:
+      teaser_icon_summary:
         - field_teaser_icon_1_description
-      teaser_icon_1_icon_name:
+      teaser_icon_icon_name:
         - field_teaser_icon_1_icon
 id: paragraph.teaser_icon_1.default
 targetEntityType: paragraph
@@ -38,14 +38,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: teaser_icon_1_summary
+    region: teaser_icon_summary
   field_teaser_icon_1_icon:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_icon_key
-    region: teaser_icon_1_icon_name
+    region: teaser_icon_icon_name
   field_teaser_icon_1_title:
     weight: 0
     label: hidden
@@ -53,5 +53,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: teaser_icon_1_title
+    region: teaser_icon_title
 hidden: {  }
