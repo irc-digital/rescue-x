@@ -3,6 +3,9 @@ status: true
 dependencies:
   module:
     - ef
+  enforced:
+    module:
+      - ef_quote
 id: embeddable.field_ef_quote_text
 field_name: field_ef_quote_text
 entity_type: embeddable

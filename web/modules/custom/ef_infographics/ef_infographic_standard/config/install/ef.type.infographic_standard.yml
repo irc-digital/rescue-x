@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - ef_infographic_standard
 id: infographic_standard
 label: 'Infographic - standard'
 description: 'The standard infographic (the one originally used for the ''rescuing lives worldwide'' infographic). This infographic is made up of four icons, each with a title and a short piece of descriptive text.'

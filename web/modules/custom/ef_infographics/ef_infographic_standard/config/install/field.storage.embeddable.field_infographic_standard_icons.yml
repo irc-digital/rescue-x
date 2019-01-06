@@ -5,6 +5,9 @@ dependencies:
     - ef
     - entity_reference_revisions
     - paragraphs
+  enforced:
+    module:
+      - ef_infographic_standard
 id: embeddable.field_infographic_standard_icons
 field_name: field_infographic_standard_icons
 entity_type: embeddable

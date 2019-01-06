@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - ef_quote
 id: quote
 label: Quote
 description: 'The quote embeddable displays a quotation, some attribution of an image.'

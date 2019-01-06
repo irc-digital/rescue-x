@@ -4,6 +4,9 @@ dependencies:
   module:
     - ef
     - link
+  enforced:
+    module:
+      - ef_quote
 id: embeddable.field_ef_quote_cta
 field_name: field_ef_quote_cta
 entity_type: embeddable

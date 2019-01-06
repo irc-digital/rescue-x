@@ -4,6 +4,9 @@ dependencies:
   module:
     - ef
     - media
+  enforced:
+    module:
+      - ef_quote
 id: embeddable.field_ef_quote_image
 field_name: field_ef_quote_image
 entity_type: embeddable

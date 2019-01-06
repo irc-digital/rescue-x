@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - ef_infographic_standard
 id: teaser_icon
 label: 'Teaser icon 1'
 icon_uuid: null
