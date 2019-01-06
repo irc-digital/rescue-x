@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser_icon.field_teaser_icon_description
+    - field.field.paragraph.teaser_icon.field_teaser_icon_icon
+    - field.field.paragraph.teaser_icon.field_teaser_icon_title
+    - paragraphs.paragraphs_type.teaser_icon
+  module:
+    - ds
+    - ef_icon_library
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_teaser_icon
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      teaser_icon_title:
+        - field_teaser_icon_title
+      teaser_icon_summary:
+        - field_teaser_icon_description
+      teaser_icon_icon_name:
+        - field_teaser_icon_icon
+id: paragraph.teaser_icon.default
+targetEntityType: paragraph
+bundle: teaser_icon
+mode: default
+content:
+  field_teaser_icon_description:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_icon_summary
+  field_teaser_icon_icon:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_icon_key
+    region: teaser_icon_icon_name
+  field_teaser_icon_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_icon_title
+hidden: {  }

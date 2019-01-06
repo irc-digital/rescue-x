@@ -1,0 +1,20 @@
+infographic_standard:
+  label: "Infographic - standard"
+  description: "The standard infographic"
+  use: "@components/37-infographics/02-standard/infographic-standard.twig"
+  section: TRUE
+  fields:
+    infographic_standard_content:
+      type: list
+      label: "Icons"
+      description: "The icon teasers"
+      unpack: TRUE
+  libraries:
+    - infographic_standard_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-infographic-standard.css: {}
+    - four_column_list_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-four-column-list.css: {}

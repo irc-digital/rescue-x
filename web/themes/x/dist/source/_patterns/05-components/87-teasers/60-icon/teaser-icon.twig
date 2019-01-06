@@ -29,7 +29,7 @@
 <div class="rplc-teaser-icon{% for teaser_icon_modifier in teaser_icon_modifiers %} rplc-teaser-icon--{{ teaser_icon_modifier }}{% endfor %}">
   {% if teaser_icon_url %}
   <a href="{{ teaser_icon_url }}" class="rplc-teaser-icon__wrapper-link">
-  {%  endif %}
+  {% endif %}
     <div class="rplc-teaser-icon__icon">
       {% include '@atoms/05-icon/icon.twig' with {
         icon_name: teaser_icon_icon_name,
@@ -44,5 +44,5 @@
     </div>
   {% if teaser_icon_url %}
   </a>
-  {%  endif %}
+  {% endif %}
 </div>

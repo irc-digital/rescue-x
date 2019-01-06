@@ -1,0 +1,26 @@
+teaser_icon:
+  label: Teaser (icon)
+  description: A icon-based teaser used predominately for infographics
+  use: "@components/87-teasers/60-icon/teaser-icon.twig"
+  icon_library_field: 'teaser_icon_icon_name'
+  fields:
+    teaser_icon_title:
+      type: text
+      label: "Teaser title"
+      description: ""
+      preview: "Aenean imperdiet"
+    teaser_icon_summary:
+      type: text
+      label: "Teaser description"
+      description: ""
+      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam"
+    teaser_icon_icon_name:
+      type: text
+      label: "Teaser icon"
+      description: ""
+      preview: "heart"
+  libraries:
+    - teaser_icon_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-icon.css: {}

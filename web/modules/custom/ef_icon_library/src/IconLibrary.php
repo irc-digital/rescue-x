@@ -4,6 +4,7 @@ namespace Drupal\ef_icon_library;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
 use Drupal\ui_patterns\Definition\PatternDefinition;
 use Drupal\ui_patterns\UiPatternsManager;
@@ -33,6 +34,9 @@ class IconLibrary implements IconLibraryInterface {
    */
   protected $moduleHandler;
 
+  /** @var RendererInterface */
+  protected $renderer;
+
   protected $icons;
 
   protected $iconList;
@@ -42,12 +46,13 @@ class IconLibrary implements IconLibraryInterface {
 
   protected $iconsBeingUsed = [];
 
-  public function __construct(IconProviderManagerInterface $iconProviderManager, TranslationInterface $translation, CacheBackendInterface $cache, ModuleHandlerInterface $moduleHandler, UiPatternsManager $patternsManager) {
+  public function __construct(IconProviderManagerInterface $iconProviderManager, TranslationInterface $translation, CacheBackendInterface $cache, ModuleHandlerInterface $moduleHandler, UiPatternsManager $patternsManager, RendererInterface $renderer) {
     $this->iconProviderManager = $iconProviderManager;
     $this->translation = $translation;
     $this->cache = $cache;
     $this->moduleHandler = $moduleHandler;
     $this->patternsManager = $patternsManager;
+    $this->renderer = $renderer;
   }
 
   public function getIconInformation($key) {
@@ -143,7 +148,12 @@ class IconLibrary implements IconLibraryInterface {
 
     if (isset($additional_info['icon_library_field'])) {
       $icon_library_field = $additional_info['icon_library_field'];
-      $this->iconsBeingUsed[] = $variables[$icon_library_field];
+
+      if (is_array($variables[$icon_library_field])) {
+        $this->iconsBeingUsed[] = $this->renderer->render($variables[$icon_library_field]);
+      } else {
+        $this->iconsBeingUsed[] = $variables[$icon_library_field];
+      }
     }
   }
 
