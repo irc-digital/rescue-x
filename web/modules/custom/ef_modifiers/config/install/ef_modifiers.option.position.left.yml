@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
 id: position.left
 label: Left
 class_name: left
