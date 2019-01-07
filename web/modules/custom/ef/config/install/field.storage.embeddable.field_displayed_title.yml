@@ -3,7 +3,7 @@ status: true
 dependencies:
   enforced:
     module:
-      - ef_image
+      - ef
 id: embeddable.field_displayed_title
 field_name: field_displayed_title
 entity_type: embeddable
