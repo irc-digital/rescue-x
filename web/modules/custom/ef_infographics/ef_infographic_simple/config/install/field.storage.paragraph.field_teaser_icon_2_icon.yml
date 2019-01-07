@@ -4,9 +4,9 @@ dependencies:
   module:
     - ef_icon_library
     - paragraphs
- enforced:
-   module:
-     - ef_infographic_simple
+  enforced:
+    module:
+      - ef_infographic_simple
 id: paragraph.field_teaser_icon_2_icon
 field_name: field_teaser_icon_2_icon
 entity_type: paragraph

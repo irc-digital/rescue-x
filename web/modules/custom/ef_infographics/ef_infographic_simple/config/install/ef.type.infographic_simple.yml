@@ -1,9 +1,9 @@
 langcode: en
 status: true
 dependencies:
- enforced:
-   module:
-     - ef_infographic_simple
+  enforced:
+    module:
+      - ef_infographic_simple
 id: infographic_simple
 label: 'Infographic - simple'
 description: 'The simple infographic (the one originally used for the volunteer page infographic). This infographic is made up of four icons, each with a title.'

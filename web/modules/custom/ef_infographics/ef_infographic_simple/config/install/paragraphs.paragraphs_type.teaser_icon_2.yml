@@ -1,9 +1,9 @@
 langcode: en
 status: true
 dependencies:
- enforced:
-   module:
-     - ef_infographic_simple
+  enforced:
+    module:
+      - ef_infographic_simple
 id: teaser_icon_2
 label: 'infographic entry'
 icon_uuid: null

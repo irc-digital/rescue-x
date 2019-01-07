@@ -3,9 +3,9 @@ status: true
 dependencies:
   module:
     - paragraphs
- enforced:
-   module:
-     - ef_infographic_simple
+  enforced:
+    module:
+      - ef_infographic_simple
 id: paragraph.field_teaser_icon_2_title
 field_name: field_teaser_icon_2_title
 entity_type: paragraph
