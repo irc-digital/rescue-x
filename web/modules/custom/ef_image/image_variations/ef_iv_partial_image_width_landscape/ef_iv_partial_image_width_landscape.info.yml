@@ -1,4 +1,4 @@
-name: EF Image (partial image width, landscaope)
+name: EF Image (partial image width, landscape)
 type: module
 description: 'Provides a partial width landscape image variation for the image embeddable.'
 package: EF Embeddable
