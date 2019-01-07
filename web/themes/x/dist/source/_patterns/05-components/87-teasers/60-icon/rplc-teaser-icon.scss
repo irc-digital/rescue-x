@@ -74,6 +74,12 @@
       align-items: start;
     }
   }
+
+  &--odd {
+    @media only screen and (max-width: #{$teaser-icon-reverse-max-width}) {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 // end of file
