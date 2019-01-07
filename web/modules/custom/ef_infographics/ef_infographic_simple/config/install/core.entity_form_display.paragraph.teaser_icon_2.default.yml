@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser_icon_2.field_teaser_icon_2_icon
+    - field.field.paragraph.teaser_icon_2.field_teaser_icon_2_title
+    - paragraphs.paragraphs_type.teaser_icon_2
+  module:
+    - chosen_field
+id: paragraph.teaser_icon_2.default
+targetEntityType: paragraph
+bundle: teaser_icon_2
+mode: default
+content:
+  field_teaser_icon_2_icon:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_teaser_icon_2_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true
+  uid: true

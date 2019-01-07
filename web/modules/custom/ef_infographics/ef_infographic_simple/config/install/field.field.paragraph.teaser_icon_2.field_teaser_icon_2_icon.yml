@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser_icon_2_icon
+    - paragraphs.paragraphs_type.teaser_icon_2
+  module:
+    - ef_icon_library
+id: paragraph.teaser_icon_2.field_teaser_icon_2_icon
+field_name: field_teaser_icon_2_icon
+entity_type: paragraph
+bundle: teaser_icon_2
+label: Icon
+description: 'The icon to be used for this infographic entry'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_icon
