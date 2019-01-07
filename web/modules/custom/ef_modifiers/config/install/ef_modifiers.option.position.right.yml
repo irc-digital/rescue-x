@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: position.right
+label: Right
+class_name: right
+target_embeddable_modifier: position
+weight: -10
