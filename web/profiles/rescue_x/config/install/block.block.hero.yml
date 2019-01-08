@@ -7,7 +7,7 @@ dependencies:
     - x
 id: hero
 theme: x
-region: header
+region: hero
 weight: 10
 provider: null
 plugin: 'entity_view:node'

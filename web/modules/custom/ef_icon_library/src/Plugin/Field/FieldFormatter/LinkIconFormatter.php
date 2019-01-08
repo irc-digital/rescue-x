@@ -109,7 +109,7 @@ class LinkIconFormatter extends LinkFormatter {
             ],
           ];
           break;
-          
+
         default:
           $element[] = [
             '#type' => 'pattern',

@@ -9,10 +9,13 @@ libraries:
   - x/global-styling
 base theme: stable
 regions:
-  header: Header
-  content: Content
-  sidebar_first: 'Sidebar first'
-  footer: Footer
+  header: 'Header'
+  navigation: 'Navigation'
+  hero: 'Hero'
+  content: 'Content'
+  content_footer: 'Content footer'
+  footer: 'Footer'
+  sticky_footer: 'Sticky footer'
 
 component-libraries:
   atoms:
