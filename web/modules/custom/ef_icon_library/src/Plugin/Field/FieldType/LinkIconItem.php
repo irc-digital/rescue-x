@@ -26,10 +26,6 @@ class LinkIconItem extends LinkItem implements LinkIconInterface {
    */
   public static function defaultFieldSettings() {
     return parent::defaultFieldSettings();;
-//    return [
-//      'title' => DRUPAL_OPTIONAL,
-//      'link_type' => LinkItemInterface::LINK_GENERIC
-//    ] + parent::defaultFieldSettings();
   }
 
   /**
@@ -37,15 +33,6 @@ class LinkIconItem extends LinkItem implements LinkIconInterface {
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties = parent::propertyDefinitions($field_definition);
-
-//    $properties['uri'] = DataDefinition::create('uri')
-//      ->setLabel(t('URI'));
-//
-//    $properties['title'] = DataDefinition::create('string')
-//      ->setLabel(t('Link text'));
-//
-//    $properties['options'] = MapDataDefinition::create()
-//      ->setLabel(t('Options'));
 
     return $properties;
   }
@@ -55,30 +42,6 @@ class LinkIconItem extends LinkItem implements LinkIconInterface {
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     return parent::schema($field_definition);
-
-//    return [
-//      'columns' => [
-//        'uri' => [
-//          'description' => 'The URI of the link.',
-//          'type' => 'varchar',
-//          'length' => 2048,
-//        ],
-//        'title' => [
-//          'description' => 'The link text.',
-//          'type' => 'varchar',
-//          'length' => 255,
-//        ],
-//        'options' => [
-//          'description' => 'Serialized array of options for the link.',
-//          'type' => 'blob',
-//          'size' => 'big',
-//          'serialize' => TRUE,
-//        ],
-//      ],
-//      'indexes' => [
-//        'uri' => [['uri', 30]],
-//      ],
-//    ];
   }
 
   /**
@@ -86,55 +49,6 @@ class LinkIconItem extends LinkItem implements LinkIconInterface {
    */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     return parent::fieldSettingsForm($form, $form_state);
-//    $element = [];
-//
-//    $element['link_type'] = [
-//      '#type' => 'radios',
-//      '#title' => t('Allowed link type'),
-//      '#default_value' => $this->getSetting('link_type'),
-//      '#options' => [
-//        static::LINK_INTERNAL => t('Internal links only'),
-//        static::LINK_EXTERNAL => t('External links only'),
-//        static::LINK_GENERIC => t('Both internal and external links'),
-//      ],
-//    ];
-//
-//    $element['title'] = [
-//      '#type' => 'radios',
-//      '#title' => t('Allow link text'),
-//      '#default_value' => $this->getSetting('title'),
-//      '#options' => [
-//        DRUPAL_DISABLED => t('Disabled'),
-//        DRUPAL_OPTIONAL => t('Optional'),
-//        DRUPAL_REQUIRED => t('Required'),
-//      ],
-//    ];
-//
-//    return $element;
   }
-
-//  /**
-//   * {@inheritdoc}
-//   */
-//  public function setValue($values, $notify = TRUE) {
-//    // Treat the values as property value of the main property, if no array is
-//    // given.
-//    if (isset($values) && !is_array($values)) {
-//      $values = [static::mainPropertyName() => $values];
-//    }
-//    if (isset($values)) {
-//      $values += [
-//        'options' => [],
-//      ];
-//    }
-//    // Unserialize the values.
-//    // @todo The storage controller should take care of this, see
-//    //   SqlContentEntityStorage::loadFieldItems, see
-//    //   https://www.drupal.org/node/2414835
-//    if (is_string($values['options'])) {
-//      $values['options'] = unserialize($values['options']);
-//    }
-//    parent::setValue($values, $notify);
-//  }
 
 }

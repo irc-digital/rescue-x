@@ -76,9 +76,17 @@ class LinkAttributesField extends DsFieldBase {
     $entity = $this->entity();
     $link_field_name = $config['field']['field_name'];
 
-    $output = '';
+    $output = $this->processAttribute($config['field']['field_attribute'], $entity, $link_field_name);
 
-    switch ($config['field']['field_attribute']) {
+    return [
+      '#markup' => $output,
+      '#ef_ds_custom_field_element' => TRUE,
+    ];
+  }
+
+  protected function processAttribute ($attribute_name, $entity, $link_field_name) {
+    $output = '';
+    switch ($attribute_name) {
       case 'link_text':
         $output = $entity->{$link_field_name}->title;
         break;
@@ -87,10 +95,6 @@ class LinkAttributesField extends DsFieldBase {
         break;
     }
 
-    return [
-      '#markup' => $output,
-      '#ef_ds_custom_field_element' => TRUE,
-    ];
+    return $output;
   }
-
 }

@@ -55,8 +55,8 @@ class LinkIconWidget extends LinkWidget implements ContainerFactoryPluginInterfa
    */
   public static function defaultSettings() {
     return [
-        'available_link_styles' => ['button'],
-        'available_positions' => ['before', 'after'],
+        'available_link_styles' => ['button' => 'button', 'text' => 'text'],
+        'available_positions' => ['before' => 'before', 'after' => 'after'],
       ] + parent::defaultSettings();
   }
 
@@ -90,7 +90,7 @@ class LinkIconWidget extends LinkWidget implements ContainerFactoryPluginInterfa
       '#options' => $available_styles_list,
     ];
 
-    if (count($available_styles_list) == 1) {
+    if (count($available_styles_list) < 2) {
       $element['link_style']['#wrapper_attributes']['class'][] = 'visually-hidden';
     }
 
@@ -121,7 +121,7 @@ class LinkIconWidget extends LinkWidget implements ContainerFactoryPluginInterfa
       ],
     ];
 
-    if (count($available_positions) == 1) {
+    if (count($available_positions) < 2) {
       $element['link_icon_position']['#wrapper_attributes']['class'][] = 'visually-hidden';
     }
 
@@ -139,18 +139,18 @@ class LinkIconWidget extends LinkWidget implements ContainerFactoryPluginInterfa
       '#type' => 'checkboxes',
       '#title' => $this->t('Available link styles'),
       '#default_value' => $this->getSetting('available_link_styles'),
-      '#required' => TRUE,
+      '#required' => FALSE,
       '#options' => $this->getAvailableStyles(),
-      '#description' => $this->t('Which style of link can the editor pick from? If you pick only one then the field will be visually hidden from the editor.'),
+      '#description' => $this->t('Which style of link can the editor pick from? If you pick only one then the field will be visually hidden from the editor. If neither are picked then it is assumed that this is handled in the pattern template.'),
     ];
 
     $elements['available_positions'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Available icon positions'),
       '#default_value' => $this->getSetting('available_positions'),
-      '#required' => TRUE,
+      '#required' => FALSE,
       '#options' => $this->getAvailablePositions(),
-      '#description' => $this->t('Which icon positions are available to the editor? If you pick only one then the field will be visually hidden from the editor.'),
+      '#description' => $this->t('Which icon positions are available to the editor? If you pick only one then the field will be visually hidden from the editor. If neither are picked then it is assumed that this is handled in the pattern template.'),
     ];
 
     return $elements;
@@ -176,11 +176,14 @@ class LinkIconWidget extends LinkWidget implements ContainerFactoryPluginInterfa
   public function settingsSummary() {
     $summary = parent::settingsSummary();
 
-    $available_link_styles = $this->getSetting('available_link_styles');
-    $available_positions = $this->getSetting('available_positions');
+    $available_link_styles = array_filter($this->getSetting('available_link_styles'));
+    $available_positions = array_filter($this->getSetting('available_positions'));
 
-    $summary[] = $this->t('Available link styles: @available_link_styles', ['@available_link_styles' => implode(', ', array_filter($available_link_styles))]);
-    $summary[] = $this->t('Available positions: @available_positions', ['@available_positions' => implode(', ', array_filter($available_positions))]);
+    $available_link_styles_text = sizeof($available_link_styles) > 0 ? implode(', ', $available_link_styles) : 'none';
+    $available_positions_text = sizeof($available_positions) ? implode(', ', $available_positions) : 'none';
+
+    $summary[] = $this->t('Available link styles: @available_link_styles', ['@available_link_styles' => $available_link_styles_text]);
+    $summary[] = $this->t('Available positions: @available_positions', ['@available_positions' => $available_positions_text]);
 
     return $summary;
   }
