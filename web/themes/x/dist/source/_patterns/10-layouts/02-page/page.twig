@@ -4,18 +4,26 @@
   {% set page_hero_flush_with_top = page_hero_flush_with_top ? 'yes' : 'no' %}
 
 {% endspaceless %}
-{% if page_header is not empty %}
+{% set page_header_rendered %}
+  {{ page_header }}
+{% endset %}
+{%- if page_header_rendered | trim is not empty -%}
   <div class="rpll-page__header-wrapper">
-    {{ page_header }}
+    {{ page_header_rendered }}
   </div>
-{% endif %}
+{%- endif -%}
 <div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}" data-rpl-hero-flush-with-top="{{ page_hero_flush_with_top }}">
 
   {{ page_navigation }}
 
-  <div class="rpll-page__hero-wrapper">
+  {% set page_hero_rendered %}
     {{ page_hero }}
-  </div>
+  {% endset %}
+  {%- if page_hero_rendered | trim is not empty -%}
+    <div class="rpll-page__hero-wrapper">
+      {{ page_hero_rendered }}
+    </div>
+  {%- endif -%}
 
   <main class="rpll-page__main" role="main" tabindex="-1">
     {{ page_content }}
@@ -27,20 +35,29 @@
     }
   </script>
 
-  {% if page_content_footer is not empty %}
+  {% set page_content_footer_rendered %}
+    {{ page_content_footer }}
+  {% endset %}
+  {% if page_content_footer_rendered | trim is not empty %}
     <div class="rpll-page__content-footer">
-      {{ page_content_footer }}
+      {{ page_content_footer_rendered }}
     </div>
   {% endif %}
 
-  {% if page_footer is not empty %}
+  {% set page_footer_rendered %}
+    {{ page_footer }}
+  {% endset %}
+  {% if page_footer_rendered | trim is not empty %}
     <div class="rpll-page__footer">
-      {{ page_footer }}
+      {{ page_footer_rendered }}
     </div>
   {% endif %}
 
-  {% if page_sticky_footer is not empty %}
+  {% set page_sticky_footer_rendered %}
     {{ page_sticky_footer }}
+  {% endset %}
+  {% if page_sticky_footer_rendered | trim is not empty %}
+    {{ page_sticky_footer_rendered }}
   {% endif %}
 
 </div>
