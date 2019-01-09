@@ -1,0 +1,5 @@
+services:
+  ef_sitewide_settings.route_subscriber:
+    class: Drupal\ef_sitewide_settings\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
