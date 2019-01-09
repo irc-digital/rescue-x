@@ -1,0 +1,15 @@
+aside_2:
+  label: Aside 2
+  description: ''
+  use: "@layouts/55-aside-2/aside-2.twig"
+  fields:
+    aside_2_content:
+      type: text
+      label: "Aside content"
+      description: "The content to be placed in the aside"
+      preview: "<div>Hello</div>"
+  libraries:
+    - aside_2_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-aside-2.css: {}

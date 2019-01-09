@@ -1,0 +1,8 @@
+name: EF Crisis Watch
+type: module
+description: 'Provides a mechanism to set the crisis watch link.'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

@@ -55,6 +55,9 @@ press_release_page_content:
           aside_2_content:
             include():
               pattern: "components-pull-quote"
+              with:
+                pull_quote_modifiers:
+                  - 'position-right'
           aside_2_modifiers:
             - 'position-right'
     - include():

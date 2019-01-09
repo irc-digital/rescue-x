@@ -26,12 +26,7 @@ third_party_settings:
         plugin: embeddable_modifier_options
         configuration:
           enabled_modifiers:
-            pull_quote_placement: pull_quote_placement
-            background_color_3: '0'
-            image_caption_position: '0'
-            image_caption_style_2: '0'
-            image_caption_style: '0'
-            image_placement: '0'
+            position: position
     borrowed_layout: none
     view_mode_modifier_name: ''
   ds:

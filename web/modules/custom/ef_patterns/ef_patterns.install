@@ -15,7 +15,7 @@ function ef_patterns_add_format_filter() {
       [
         'provider' => 'ef_patterns',
         'settings' => [
-          'config' =>  'p|rpla-text|paragraph|first-paragraph',
+          'config' =>  'p|rpla-paragraph|body|lead',
         ],
       ],
       'entity_embed'

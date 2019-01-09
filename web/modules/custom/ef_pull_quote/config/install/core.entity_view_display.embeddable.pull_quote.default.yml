@@ -22,8 +22,7 @@ third_party_settings:
         plugin: embeddable_modifier_options
         configuration:
           enabled_modifiers:
-            pull_quote_placement: pull_quote_placement
-            image_caption_position: '0'
+            position: position
     borrowed_layout: none
   ds:
     layout:

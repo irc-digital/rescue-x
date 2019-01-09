@@ -41,7 +41,7 @@ class RichTextContentPatternDecorator extends FilterBase {
           $bom_first_modifiers = $entry_count == 4 ? $row_values[3] : FALSE;
 
           /** @var \DOMNodeList $nodeList */
-          $node_list = $dom_document->getElementsByTagName($html_element);
+          $node_list = $this->getChildElementsByTagName($dom_document, $html_element);
 
           /** @var \DOMElement $node */
           foreach ($node_list as $key => $node) {
@@ -72,6 +72,34 @@ class RichTextContentPatternDecorator extends FilterBase {
     }
 
     return new FilterProcessResult($result);
+  }
+
+  /**
+   * Only looks at the child elements of the body tag for elements that match the supplied html_element
+   *
+   * @param \DOMDocument $dom_document
+   * @param $html_element
+   * @return array
+   */
+  protected static function getChildElementsByTagName (\DOMDocument $dom_document, $html_element) {
+    $node_list = $dom_document->getElementsByTagName('body');
+
+    $result = [];
+
+    if ($node_list->length == 1) {
+      /** @var \DOMNode $body_node */
+      $body_node = $node_list[0];
+
+      /** @var \DOMElement $childNode */
+      foreach ($body_node->childNodes as $childNode) {
+        if ($childNode->tagName == $html_element) {
+          $result[] = $childNode;
+        }
+      }
+    }
+
+    return $result;
+
   }
 
   protected function getModifiers ($bem_block, $modifier_config_string) {

@@ -4,7 +4,6 @@
 .rplc-pull-quote {
   $self: &;
 
-  @include standard-vertical-padding;
   background-color: $pull-quote-background-color;
   width: 100%;
 
@@ -52,65 +51,12 @@
     position: relative;
   }
 
-  &--placement-left,
-  &--placement-right {
-    #{ $self }__text-wrapper {
-      background-color: $pull-quote-background-color;
-      margin: 0;
-
-      @include breakpoint(phablet) {
-        max-width: rem(450px);
-      }
-
-      @include breakpoint(951) {
-        max-width: rem(550px);
-      }
-    }
-
-    #{ $self }__icon-wrapper {
-      @include breakpoint(phablet) {
-        height: safe-map-get($pull-quote-icon-size, 'phablet');
-        margin-right: safe-map-get($pull-quote-icon-right-margin, 'phablet');
-        width: safe-map-get($pull-quote-icon-size, 'phablet');
-      }
-
-      @include breakpoint(951) {
-        height: safe-map-get($pull-quote-icon-size, 'desktop');
-        margin-right: safe-map-get($pull-quote-icon-right-margin, 'desktop');
-        width: safe-map-get($pull-quote-icon-size, 'desktop');
-      }
-    }
-
-  }
-
-  &--placement-left {
-
-    @include breakpoint(phablet) {
-      #{ $self }__text-wrapper {
-        float: left;
-        margin-right: rem(140px);
-      }
-    }
-  }
-
-  &--placement-right {
-
-    @include breakpoint(phablet) {
-      #{ $self }__text-wrapper {
-        float: right;
-        margin-left: get-spacing('xl');
-      }
-
-      @include breakpoint(desktop) {
-        #{ $self }__text-wrapper {
-          margin-left: -#{rem(90px)};
-        }
-      }
-    }
-  }
-
   &--background-transparent {
     background-color: transparent;
+  }
+
+  &:not(&--position-right):not(&--position-left) {
+    @include standard-vertical-padding;
   }
 }
 
