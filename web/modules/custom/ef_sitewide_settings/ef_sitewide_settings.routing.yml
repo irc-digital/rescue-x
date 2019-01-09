@@ -1,0 +1,25 @@
+entity.sitewide_settings_type.collection:
+  path: '/admin/structure/sitewide_settings_type'
+  defaults:
+    _entity_list: 'sitewide_settings_type'
+    _title: 'Site-wide settings types'
+  requirements:
+    _permission: 'administer sitewide settings content'
+
+sitewide_settings.type_add:
+  path: '/admin/structure/sitewide_settings_type/add'
+  defaults:
+    _entity_form: 'sitewide_settings_type.add'
+    _title: 'Add site-wide settings type'
+  requirements:
+    _permission: 'administer sitewide settings content'
+
+entity.sitewide_settings.add:
+  path: '/sitewide-settings/add/{sitewide_settings_type}'
+  defaults:
+    _controller: '\Drupal\ef_sitewide_settings\Controller\SitewideSettingsController::addSitewideSettings'
+    _title_callback: '\Drupal\ef_sitewide_settings\Controller\SitewideSettingsController::addPageTitle'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer sitewide settings content'

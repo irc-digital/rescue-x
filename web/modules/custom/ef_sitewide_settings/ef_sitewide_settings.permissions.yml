@@ -1,0 +1,3 @@
+administer sitewide settings content:
+  title: 'Administer site-wide settings content'
+  restrict access: true
