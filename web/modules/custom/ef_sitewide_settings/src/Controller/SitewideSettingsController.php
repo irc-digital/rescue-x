@@ -6,6 +6,7 @@ namespace Drupal\ef_sitewide_settings\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\ef\EmbeddableTypeInterface;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -39,6 +40,7 @@ class SitewideSettingsController extends ControllerBase implements ContainerInje
   public function addPageTitle(SitewideSettingsType $sitewide_settings_type) {
     return $this->t('Create @name sitewide settings', ['@name' => $sitewide_settings_type->label()]);
   }
-
-
+  public function editPageTitle(SitewideSettings $sitewide_settings) {
+    return $this->t('Edit site-wide setting: @name', ['@name' => $sitewide_settings->type->entity->label()]);
+  }
 }

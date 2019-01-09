@@ -24,7 +24,8 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
  *     },
- *     "translation" = "Drupal\content_translation\ContentTranslationHandler"
+ *     "translation" = "Drupal\content_translation\ContentTranslationHandler",
+ *     "list_builder" = "Drupal\ef\EmbeddableListBuilder",
  *   },
  *   base_table = "sitewide_settings",
  *   data_table = "sitewide_settings_field_data",

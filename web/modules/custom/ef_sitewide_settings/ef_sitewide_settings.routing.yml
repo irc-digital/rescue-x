@@ -1,3 +1,4 @@
+# setting configuration or admin routes
 entity.sitewide_settings_type.collection:
   path: '/admin/structure/sitewide_settings_type'
   defaults:
@@ -14,6 +15,7 @@ sitewide_settings.type_add:
   requirements:
     _permission: 'administer sitewide settings content'
 
+# setting routes
 entity.sitewide_settings.add:
   path: '/sitewide-settings/add/{sitewide_settings_type}'
   defaults:
@@ -23,3 +25,14 @@ entity.sitewide_settings.add:
     _admin_route: TRUE
   requirements:
     _permission: 'administer sitewide settings content'
+
+entity.sitewide_settings.edit_form:
+  path: '/sitewide-settings/{sitewide_settings}/edit'
+  defaults:
+    _entity_form: sitewide_settings.edit
+    _title_callback: '\Drupal\ef_sitewide_settings\Controller\SitewideSettingsController::editPageTitle'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_access: sitewide_settings.update
+    sitewide_settings: \d+
