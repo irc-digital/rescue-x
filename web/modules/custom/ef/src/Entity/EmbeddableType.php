@@ -33,11 +33,11 @@ use Drupal\ef\EmbeddableTypeInterface;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/advertiser_type/{advertiser_type}",
+ *     "canonical" = "/admin/structure/embeddable_type/{embeddable_type}",
  *     "edit-form" = "/admin/structure/embeddable_type/{embeddable_type}/edit",
  *     "add-form" = "/admin/structure/embeddable_type/add",
  *     "delete-form" = "/admin/structure/embeddable_type/{embeddable_type}/delete",
- *     "collection" = "/admin/structure/embeddable_type"
+ *     "collection" = "/admin/structure/embeddable"
  *   },
  *   config_export = {
  *     "id",

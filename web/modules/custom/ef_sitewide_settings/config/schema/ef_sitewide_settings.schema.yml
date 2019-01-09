@@ -1,0 +1,13 @@
+ef_sitewide_settings.type.*:
+  type: config_entity
+  label: 'Site-wide settings type'
+  mapping:
+    label:
+      type: label
+      label: 'Name'
+    id:
+      type: string
+      label: 'Machine-readable name'
+    description:
+      type: text
+      label: 'Description'
