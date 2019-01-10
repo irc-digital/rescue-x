@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
+id: background_1
+label: 'Background (light, dark)'
+weight: 0
+class_name: background
+editorial_name: Background
+description: 'A simple light or dark background color'
+tooltip: 'Should the background color be light or dark?'
+promote: false
+default_option: background_1.light
