@@ -13,6 +13,7 @@ use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Url;
 
 /**
  * Provides a list controller for the site-wide settings
@@ -144,6 +145,19 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
   public function getOperations(EntityInterface $entity) {
     if ($entity instanceof ContentEntityInterface) {
       return parent::getOperations($entity);
+    } else {
+      $operations = [];
+      if (\Drupal::currentUser()->hasPermission('administer sitewide settings')) {
+        $operations['add'] = [
+          'title' => $this->t('Add'),
+          'weight' => 10,
+          'url' => $this->ensureDestination(Url::fromRoute('entity.sitewide_settings.add', ['sitewide_settings_type' => $entity->id()])),
+        ];
+      }
+
+      uasort($operations, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
+
+      return $operations;
     }
     return [];
   }
