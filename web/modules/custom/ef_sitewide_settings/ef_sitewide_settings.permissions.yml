@@ -1,3 +1,6 @@
-administer sitewide settings content:
-  title: 'Administer site-wide settings content'
+administer sitewide settings:
+  title: 'Administer site-wide settings'
   restrict access: true
+
+permission_callbacks:
+  - Drupal\ef_sitewide_settings\SitewideSettingsPermissions::sitewideSettingsTypePermissions

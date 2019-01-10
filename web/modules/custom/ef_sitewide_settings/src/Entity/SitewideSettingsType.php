@@ -23,7 +23,7 @@ use Drupal\ef_sitewide_settings\SitewideSettingsTypeInterface;
  *     },
  *    "list_builder" = "Drupal\ef_sitewide_settings\SitewideSettingsTypeListBuilder",
  *   },
- *   admin_permission = "administer sitewide settings content",
+ *   admin_permission = "administer sitewide settings",
  *   config_prefix = "type",
  *   bundle_of = "sitewide_settings",
  *   entity_keys = {

@@ -7,7 +7,7 @@ use Drupal\Core\Routing\RoutingEvents;
 use Symfony\Component\Routing\RouteCollection;
 
 /**
- * Listens to the dynamic route events.
+ * Makes sures the sitewide display settings are not made available to an admin
  */
 class RouteSubscriber extends RouteSubscriberBase {
 
@@ -15,7 +15,12 @@ class RouteSubscriber extends RouteSubscriberBase {
    * {@inheritdoc}
    */
   protected function alterRoutes(RouteCollection $collection) {
-    $collection->remove('entity.entity_view_display.sitewide_settings.default');
+    /** @var \Symfony\Component\Routing\Route $route */
+    $route = $collection->get('entity.entity_view_display.sitewide_settings.default');
+    $route->setRequirement('access', 'FALSE');
+    //$route->setCondition('FALSE');
+    $route = $collection->get('entity.entity_view_display.sitewide_settings.default');
+
     $collection->remove('entity.entity_view_display.sitewide_settings.view_mode');
   }
 

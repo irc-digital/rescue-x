@@ -40,7 +40,12 @@ class SitewideSettingsController extends ControllerBase implements ContainerInje
   public function addPageTitle(SitewideSettingsType $sitewide_settings_type) {
     return $this->t('Create @name sitewide settings', ['@name' => $sitewide_settings_type->label()]);
   }
+
   public function editPageTitle(SitewideSettings $sitewide_settings) {
     return $this->t('Edit site-wide setting: @name', ['@name' => $sitewide_settings->type->entity->label()]);
+  }
+
+  public function deletePageTitle(SitewideSettings $sitewide_settings) {
+    return $this->t('Delete site-wide setting: @name', ['@name' => $sitewide_settings->type->entity->label()]);
   }
 }
