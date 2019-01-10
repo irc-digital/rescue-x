@@ -92,7 +92,7 @@ class RichTextContentPatternDecorator extends FilterBase {
 
       /** @var \DOMElement $childNode */
       foreach ($body_node->childNodes as $childNode) {
-        if ($childNode->tagName == $html_element) {
+        if (isset($childNode->tagName) && $childNode->tagName == $html_element) {
           $result[] = $childNode;
         }
       }
