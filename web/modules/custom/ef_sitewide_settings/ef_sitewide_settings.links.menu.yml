@@ -3,3 +3,9 @@ entity.sitewide_settings_type.collection:
   description: 'Create and manage fields and forms for site-wide settings.'
   route_name:  entity.sitewide_settings_type.collection
   parent: system.admin_structure
+
+entity.sitewide_settings.collection:
+  title: 'Site-wide settings'
+  description: 'View and modify site-wide settings'
+  route_name: entity.sitewide_settings.collection
+  parent: system.admin_content

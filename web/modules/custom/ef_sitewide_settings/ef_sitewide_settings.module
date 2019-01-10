@@ -2,6 +2,8 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Access\AccessResult;
 
 function ef_sitewide_settings_menu_links_discovered_alter(&$links) {
   $entityTypeManager = \Drupal::entityTypeManager();

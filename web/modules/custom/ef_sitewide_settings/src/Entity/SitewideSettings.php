@@ -25,7 +25,8 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
  *     },
  *     "translation" = "Drupal\content_translation\ContentTranslationHandler",
- *     "list_builder" = "Drupal\ef\EmbeddableListBuilder",
+ *     "list_builder" = "Drupal\ef_sitewide_settings\SitewideSettingsListBuilder",
+ *     "access" = "Drupal\ef_sitewide_settings\Access\SitewideSettingsAccessControlHandler",
  *   },
  *   base_table = "sitewide_settings",
  *   data_table = "sitewide_settings_field_data",
@@ -46,9 +47,11 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *   },
  *   permission_granularity = "bundle",
  *   admin_permission = "administer sitewide settings",
- *   field_ui_base_route = "entity.sitewide_settings_type.edit_form"
+ *   field_ui_base_route = "entity.sitewide_settings_type.edit_form",
  * )
  */
 class SitewideSettings extends ContentEntityBase implements SitewideSettingsInterface {
-
+  public function label() {
+    return $this->type->entity->label();
+  }
 }

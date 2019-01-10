@@ -15,7 +15,15 @@ sitewide_settings.type_add:
   requirements:
     _permission: 'administer sitewide settings'
 
-# setting entitiy routes
+# setting entity routes
+entity.sitewide_settings.collection:
+  path: '/admin/content/sitewide-settings'
+  defaults:
+    _entity_list: 'sitewide_settings'
+    _title: 'Site-wide settings'
+  requirements:
+    _permission: 'access sitewide settings overview'
+
 entity.sitewide_settings.add:
   path: '/sitewide-settings/add/{sitewide_settings_type}'
   defaults:
