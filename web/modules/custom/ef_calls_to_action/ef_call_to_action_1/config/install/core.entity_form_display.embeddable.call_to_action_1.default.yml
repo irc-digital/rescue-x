@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.call_to_action_1
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_link
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_subtitle
+    - field.field.embeddable.call_to_action_1.field_displayed_title
+  module:
+    - ef_icon_library
+id: embeddable.call_to_action_1.default
+targetEntityType: embeddable
+bundle: call_to_action_1
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_call_to_action_1_link:
+    weight: 4
+    settings:
+      available_link_styles:
+        - button
+      available_positions:
+        - before
+        - after
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_icon_default
+    region: content
+  field_call_to_action_1_subtitle:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_displayed_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  used_on:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true

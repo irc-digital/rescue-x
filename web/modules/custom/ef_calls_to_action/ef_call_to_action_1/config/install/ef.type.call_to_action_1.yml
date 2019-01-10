@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_call_to_action_1
+id: call_to_action_1
+label: 'Call to action - 1'
+description: 'A simpler, stripped back CTA embeddable with a title, description text, and button link.'
+exclude_from_embeddable_overview_quick_add_list: false
+dependent_embeddable: false
+only_dependent_embeddable: false
