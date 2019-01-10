@@ -1,0 +1,5 @@
+sitewide_settings.type_add:
+  route_name: sitewide_settings.type_add
+  title: 'Add site-wide setting type'
+  appears_on:
+    - entity.sitewide_settings_type.collection

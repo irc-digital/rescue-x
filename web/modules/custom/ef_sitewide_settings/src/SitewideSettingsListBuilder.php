@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -29,6 +30,9 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
    */
   protected $redirectDestination;
 
+  /** @var \Drupal\Core\Language\LanguageManagerInterface */
+  protected $languageManager;
+
   /**
    * Constructs a new SitewideSettingsListBuilder object.
    *
@@ -41,10 +45,11 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
    * @param \Drupal\Core\Routing\RedirectDestinationInterface $redirect_destination
    *   The redirect destination service.
    */
-  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, DateFormatterInterface $date_formatter, RedirectDestinationInterface $redirect_destination) {
+  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, DateFormatterInterface $date_formatter, RedirectDestinationInterface $redirect_destination, LanguageManagerInterface $languageManager) {
     parent::__construct($entity_type, $storage);
     $this->dateFormatter = $date_formatter;
     $this->redirectDestination = $redirect_destination;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -55,7 +60,8 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
       $entity_type,
       $container->get('entity_type.manager')->getStorage($entity_type->id()),
       $container->get('date.formatter'),
-      $container->get('redirect.destination')
+      $container->get('redirect.destination'),
+      $container->get('language_manager')
     );
   }
 
@@ -93,9 +99,13 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
+    $activeLanguageCode = $this->languageManager->getCurrentLanguage()->getId();
+
+    $entity = $entity->getTranslation($activeLanguageCode);
+
     $langcode = $entity->language()->getId();
 
-    $row['type'] = $entity->bundle();
+    $row['type'] = $entity->label();
 
     $language_manager = \Drupal::languageManager();
     if ($language_manager->isMultilingual()) {
@@ -115,6 +125,29 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
       $operations[$key]['query'] = $destination;
     }
     return $operations;
+  }
+
+  /**
+   * Loads entity IDs using a pager sorted by the entity id.
+   *
+   * @return array
+   *   An array of entity IDs.
+   */
+  protected function getEntityIds() {
+
+    $user = \Drupal::currentUser();
+
+    $is_admin = $user->hasPermission('administer sitewide settings');
+
+    $query = $this->getStorage()->getQuery()
+      ->sort($this->entityType->getKey('id'));
+
+//    if (!$is_admin) {
+//      // only list the sitewide settings that the editor is permitted to edit
+//      $query->condition();
+//    }
+
+    return $query->execute();
   }
 
 }
