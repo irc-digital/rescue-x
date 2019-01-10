@@ -1,11 +1,11 @@
-# setting configuration or admin routes
+# configuration or admin routes
 entity.sitewide_settings_type.collection:
   path: '/admin/structure/sitewide_settings_type'
   defaults:
     _entity_list: 'sitewide_settings_type'
     _title: 'Site-wide settings types'
   requirements:
-    _permission: 'administer sitewide settings content'
+    _permission: 'administer sitewide settings'
 
 sitewide_settings.type_add:
   path: '/admin/structure/sitewide_settings_type/add'
@@ -13,9 +13,9 @@ sitewide_settings.type_add:
     _entity_form: 'sitewide_settings_type.add'
     _title: 'Add site-wide settings type'
   requirements:
-    _permission: 'administer sitewide settings content'
+    _permission: 'administer sitewide settings'
 
-# setting routes
+# setting entitiy routes
 entity.sitewide_settings.add:
   path: '/sitewide-settings/add/{sitewide_settings_type}'
   defaults:
@@ -24,7 +24,7 @@ entity.sitewide_settings.add:
   options:
     _admin_route: TRUE
   requirements:
-    _permission: 'administer sitewide settings content'
+    _permission: 'administer sitewide settings'
 
 entity.sitewide_settings.edit_form:
   path: '/sitewide-settings/{sitewide_settings}/edit'
@@ -36,3 +36,13 @@ entity.sitewide_settings.edit_form:
   requirements:
     _entity_access: sitewide_settings.update
     sitewide_settings: \d+
+
+entity.sitewide_settings.delete_form:
+  path: '/sitewide-settings/{sitewide_settings}/delete'
+  defaults:
+    _entity_form: sitewide_settings.delete
+    _title_callback: '\Drupal\ef_sitewide_settings\Controller\SitewideSettingsController::deletePageTitle'
+  requirements:
+    _entity_access: sitewide_settings.delete
+  options:
+    _admin_route: TRUE

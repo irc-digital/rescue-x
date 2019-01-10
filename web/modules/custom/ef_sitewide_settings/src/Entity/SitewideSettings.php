@@ -18,7 +18,7 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
  *     "form" = {
  *       "default" = "Drupal\Core\Entity\ContentEntityForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityConfirmFormBase",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "edit" = "Drupal\Core\Entity\ContentEntityForm"
  *     },
  *     "route_provider" = {
@@ -39,9 +39,13 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *     "langcode" = "langcode",
  *   },
  *   bundle_entity_type = "sitewide_settings_type",
+ *   links = {
+ *     "canonical" = "/sitewide-settings/{sitewide_settings}",
+ *     "edit-form" = "/sitewide-settings/{sitewide_settings}/edit",
+ *     "delete-form" = "/sitewide-settings/{sitewide_settings}/delete",
+ *   },
  *   permission_granularity = "bundle",
- *   admin_permission = "administer sitewide settings content",
- *   links = {},
+ *   admin_permission = "administer sitewide settings",
  *   field_ui_base_route = "entity.sitewide_settings_type.edit_form"
  * )
  */
