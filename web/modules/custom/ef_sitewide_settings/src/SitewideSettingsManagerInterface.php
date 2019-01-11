@@ -12,8 +12,8 @@ namespace Drupal\ef_sitewide_settings;
  */
 interface SitewideSettingsManagerInterface {
   /**
-   * @param $sitewide_settings_type
+   * @param $sitewide_settings_type_id The id of the sitewide settings type
    * @return \Drupal\ef_sitewide_settings\Entity\SitewideSettings entity|null
    */
-  public function getSitewideSettingsForType ($sitewide_settings_type);
+  public function getSitewideSettingsForType ($sitewide_settings_type_id);
 }

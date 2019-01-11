@@ -1,7 +1,7 @@
 services:
   ef_sitewide_settings.manager:
     class: Drupal\ef_sitewide_settings\SitewideSettingsManager
-    arguments: []
+    arguments: ['@entity_type.manager']
 
   ef_sitewide_settings.route_subscriber:
     class: Drupal\ef_sitewide_settings\Routing\RouteSubscriber

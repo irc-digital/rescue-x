@@ -4,6 +4,7 @@
 namespace Drupal\ef_sitewide_settings\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
 
 /**
@@ -53,5 +54,12 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
 class SitewideSettings extends ContentEntityBase implements SitewideSettingsInterface {
   public function label() {
     return $this->type->entity->label();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    parent::preSave($storage);
   }
 }

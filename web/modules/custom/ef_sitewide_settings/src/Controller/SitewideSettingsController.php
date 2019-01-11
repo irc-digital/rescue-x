@@ -47,7 +47,7 @@ class SitewideSettingsController extends ControllerBase implements ContainerInje
       \Drupal::messenger()->addMessage($this->t('We only permit one instance of each site-wide settings type. You may edit the single %name instance below.', ['%name' => $sitewide_settings_type->label()]));
       return $this->redirect('entity.sitewide_settings.edit_form', ['sitewide_settings' => key($query_result)]);
     } else {
-      $sitewide_settings = $this->entityTypeManager()->getStorage('sitewide_settings')->create([
+      $sitewide_settings = $this->sitewideSettingsStorage->create([
         'type' => $sitewide_settings_type->id(),
       ]);
 
