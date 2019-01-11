@@ -21,3 +21,9 @@ field.widget.settings.link_icon_default:
         type: string
         label: 'Available position'
 
+
+field.storage_settings.ef_string_dropdown:
+  type: field.storage_settings.string
+
+field.field_settings.link_icon:
+  type: field.field_settings.link

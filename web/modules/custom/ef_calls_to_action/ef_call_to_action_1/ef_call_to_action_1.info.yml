@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_patterns
   - ef_modifiers
+  - ef_icon_library
