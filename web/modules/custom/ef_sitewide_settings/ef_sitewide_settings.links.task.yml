@@ -18,3 +18,4 @@ entity.sitewide_settings.collection:
   title: 'Site-wide settings'
   route_name: entity.sitewide_settings.collection
   base_route: system.admin_content
+  weight: 100

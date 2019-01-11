@@ -17,9 +17,9 @@ use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
  *     "form" = {
- *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *       "default" = "Drupal\ef_sitewide_settings\Form\SitewideSettingsForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *       "edit" = "Drupal\Core\Entity\ContentEntityForm"
+ *       "edit" = "Drupal\ef_sitewide_settings\Form\SitewideSettingsForm"
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
