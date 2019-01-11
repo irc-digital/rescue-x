@@ -5,6 +5,7 @@ namespace Drupal\ef_sitewide_settings\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\ef_sitewide_settings\Exception\DuplicateSettingNotPermittedException;
 use Drupal\ef_sitewide_settings\SitewideSettingsInterface;
 
 /**
@@ -61,5 +62,15 @@ class SitewideSettings extends ContentEntityBase implements SitewideSettingsInte
    */
   public function preSave(EntityStorageInterface $storage) {
     parent::preSave($storage);
+
+    // check that we do not already have setting for the type
+
+    $type = $this->bundle();
+
+    $existing_setting = \Drupal::service('ef_sitewide_settings.manager')->getSitewideSettingsForType($type);
+
+    if (!is_null($existing_setting) && $existing_setting->id() != $this->id()) {
+      throw new DuplicateSettingNotPermittedException($this);
+    }
   }
 }

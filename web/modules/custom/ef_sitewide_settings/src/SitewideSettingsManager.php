@@ -27,6 +27,10 @@ class SitewideSettingsManager implements SitewideSettingsManagerInterface {
 
     $ids = $storage->getQuery()->condition('type', $sitewide_settings_type_id, '=')->execute();
 
-    return $storage->loadMultiple($ids);
+    if (sizeof($ids) > 0) {
+      return $storage->load(key($ids));
+    } else {
+      return NULL;
+    }
   }
 }

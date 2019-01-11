@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+id: sitewide_settings.field_sws_test_1_text
+field_name: field_sws_test_1_text
+entity_type: sitewide_settings
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

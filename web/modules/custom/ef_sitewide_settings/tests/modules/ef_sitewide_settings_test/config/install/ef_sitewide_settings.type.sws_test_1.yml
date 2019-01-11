@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_sitewide_settings_test
+id: sws_test_1
+label: 'SWS Test 1'
+description: 'Test One site-wide settings'

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.sws_test_1
+    - field.field.sitewide_settings.sws_test_1.field_sws_test_1_text
+id: sitewide_settings.sws_test_1.default
+targetEntityType: sitewide_settings
+bundle: sws_test_1
+mode: default
+content:
+  field_sws_test_1_text:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
