@@ -166,6 +166,6 @@ workflows:
   build_and_test:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
-      # - build
+      - build
       # Build deploy and test on Pantheon
       - build_deploy_and_test
