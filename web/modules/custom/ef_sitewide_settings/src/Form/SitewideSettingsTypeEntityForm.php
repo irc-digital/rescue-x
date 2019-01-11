@@ -39,6 +39,7 @@ class SitewideSettingsTypeEntityForm extends BundleEntityFormBase {
     $form['description'] = [
       '#title' => t('Description'),
       '#type' => 'textarea',
+      '#description' => $this->t("This description is placed at the top of the entity edit/add form."),
       '#default_value' => $entity_type->getDescription(),
     ];
 

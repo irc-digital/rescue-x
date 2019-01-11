@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -27,6 +28,23 @@ class SitewideSettingsForm extends ContentEntityForm {
       $container->get('entity_type.bundle.info'),
       $container->get('datetime.time')
     );
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function form(array $form, FormStateInterface $form_state) {
+    $form = parent::form($form, $form_state);
+
+    $sitewide_setting_type = SitewideSettingsType::load($this->entity->bundle());
+    $description = $sitewide_setting_type->getDescription();
+
+    $form['type_description'] = [
+      '#markup' => $description,
+      '#weight' => -100,
+    ];
+
+    return $form;
   }
 
   /**
