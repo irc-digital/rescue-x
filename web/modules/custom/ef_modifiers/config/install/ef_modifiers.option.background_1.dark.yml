@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
+id: background_1.dark
+label: Dark
+class_name: dark
+target_embeddable_modifier: background_1
+weight: -10

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - ef_icon_library
+id: embeddable.field_call_to_action_1_link
+field_name: field_call_to_action_1_link
+entity_type: embeddable
+type: link_icon
+settings: {  }
+module: ef_icon_library
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

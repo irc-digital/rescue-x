@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.call_to_action_1
+    - field.storage.embeddable.field_call_to_action_1_subtitle
+id: embeddable.call_to_action_1.field_call_to_action_1_subtitle
+field_name: field_call_to_action_1_subtitle
+entity_type: embeddable
+bundle: call_to_action_1
+label: Subtitle
+description: 'Optional call-to-action type text that is displayed beneath the main title'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

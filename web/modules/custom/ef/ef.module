@@ -254,7 +254,7 @@ function _ef_add_custom_templates_to_registry (&$theme_registry, $path) {
   }
 }
 
-/**d
+/**
  * Implements hook_form_alter().
  * Add some additional settings for embeddable view modes
  */

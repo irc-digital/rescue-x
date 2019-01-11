@@ -20,6 +20,7 @@
   {% set call_to_action_1_modifiers = call_to_action_1_modifiers ?: [] %}
 
   {% set has_background = false %}
+
   {% for call_to_action_1_modifier in call_to_action_1_modifiers %}
     {% if call_to_action_1_modifier starts with 'background-' %}
       {% set has_background = true %}
@@ -28,6 +29,18 @@
 
   {% if not has_background %}
     {% set call_to_action_1_modifiers = call_to_action_1_modifiers | merge (['background-light']) %}
+  {% endif %}
+
+  {% set has_position = false %}
+
+  {% for call_to_action_1_modifier in call_to_action_1_modifiers %}
+    {% if call_to_action_1_modifier starts with 'position-' %}
+      {% set has_position = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_position %}
+    {% set call_to_action_1_modifiers = call_to_action_1_modifiers | merge (['position-middle']) %}
   {% endif %}
 
 {% endspaceless %}
