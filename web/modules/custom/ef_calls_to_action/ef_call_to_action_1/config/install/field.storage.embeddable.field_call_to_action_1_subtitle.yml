@@ -3,6 +3,9 @@ status: true
 dependencies:
   module:
     - ef
+  enforced:
+    module:
+      - ef_call_to_action_1
 id: embeddable.field_call_to_action_1_subtitle
 field_name: field_call_to_action_1_subtitle
 entity_type: embeddable

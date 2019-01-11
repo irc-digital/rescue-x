@@ -30,11 +30,6 @@ third_party_settings:
         configuration:
           enabled_modifiers:
             background_1: background_1
-            background_color_3: '0'
-            image_caption_position: '0'
-            image_caption_style_2: '0'
-            image_caption_style: '0'
-            image_placement: '0'
             position: '0'
     borrowed_layout: none
   ds:

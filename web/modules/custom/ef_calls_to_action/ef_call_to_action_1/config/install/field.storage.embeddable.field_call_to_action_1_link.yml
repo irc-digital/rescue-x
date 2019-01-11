@@ -4,6 +4,9 @@ dependencies:
   module:
     - ef
     - ef_icon_library
+  enforced:
+    module:
+      - ef_call_to_action_1
 id: embeddable.field_call_to_action_1_link
 field_name: field_call_to_action_1_link
 entity_type: embeddable
