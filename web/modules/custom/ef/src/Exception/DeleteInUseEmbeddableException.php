@@ -8,7 +8,7 @@ class DeleteInUseEmbeddableException extends \RuntimeException  {
   /** @var EmbeddableInterface */
   private $embeddable;
 
-  public function __construct(EmbeddableInterface $embeddable, string $message = "", int $code = 0, \Throwable $previous = NULL) {
+  public function __construct(EmbeddableInterface $embeddable, $message = "", $code = 0, \Throwable $previous = NULL) {
     parent::__construct($message, $code, $previous);
 
     $this->embeddable = $embeddable;

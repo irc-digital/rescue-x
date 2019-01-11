@@ -1,0 +1,10 @@
+ds.field_plugin.media_image_thumbnails:
+  type: mapping
+  label: 'Mapping for the media_image_thumbnails field settings'
+  mapping:
+    image_styles:
+      type: sequence
+      label: 'Image styles'
+      sequence:
+        type: string
+        label: 'Image style'

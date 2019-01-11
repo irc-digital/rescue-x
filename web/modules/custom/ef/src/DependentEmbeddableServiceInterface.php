@@ -23,7 +23,7 @@ interface DependentEmbeddableServiceInterface {
    * @param string $embeddable_type
    * @return boolean
    */
-  public function isDependentEmbeddableType (string $embeddable_type);
+  public function isDependentEmbeddableType ($embeddable_type);
 
   /**
    * Hook to be called when the supplied entity is presaved. This gives the

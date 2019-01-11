@@ -18,6 +18,7 @@
         "drupal/chosen": "^2.6",
         "drupal/components": "^1.0",
         "drupal/config_direct_save": "^1.0",
+        "drupal/config_inspector": "^1.0@beta",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/core": "^8",

@@ -26,7 +26,7 @@ class DependentEmbeddableService implements DependentEmbeddableServiceInterface 
     $this->moduleHandler = $moduleHandler;
   }
 
-  public function isDependentEmbeddableType (string $embeddable_type) {
+  public function isDependentEmbeddableType ($embeddable_type) {
     $embeddableType = EmbeddableType::load($embeddable_type);
 
     return $embeddableType->isDependentType();

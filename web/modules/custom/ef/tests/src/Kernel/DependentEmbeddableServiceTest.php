@@ -16,7 +16,7 @@ use Drupal\KernelTests\KernelTestBase;
  */
 class DependentEmbeddableServiceTest extends KernelTestBase {
 
-  public static $modules = ['field', 'user', 'filter', 'ef', 'ef_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test'];
 
   /**
    * The mocked language manager.
@@ -28,7 +28,7 @@ class DependentEmbeddableServiceTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['ef', 'ef_test']);
+    $this->installConfig(['system', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
     $this->installEntitySchema('user');
@@ -105,8 +105,15 @@ class DependentEmbeddableServiceTest extends KernelTestBase {
     /** @var \Drupal\ef\EmbeddableInterface $dependent_embeddable */
     $dependent_embeddable = $parent_embeddable->field_dependent_embeddable_ref->entity;
 
-    $this->expectException(EntityStorageException::class);
-    $dependent_embeddable->delete();
+    $exception_test_passed = FALSE;
+
+    try {
+      $dependent_embeddable->delete();
+    } catch (EntityStorageException $exception) {
+      $exception_test_passed = TRUE;
+    }
+
+    $this->assertTrue($exception_test_passed);
   }
 
   /**

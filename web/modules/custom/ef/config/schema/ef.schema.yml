@@ -151,3 +151,6 @@ embeddable_option.configuration.embeddable_count_option:
     default_value:
       type: integer
       label: 'Default value'
+
+field.storage_settings.ef_string_dropdown:
+  type: field.storage_settings.string

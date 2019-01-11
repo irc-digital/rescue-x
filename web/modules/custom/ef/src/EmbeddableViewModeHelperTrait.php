@@ -14,7 +14,6 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  * @package Drupal\ef
  */
 trait EmbeddableViewModeHelperTrait {
-  use StringTranslationTrait;
 
   protected function getThirdPartySettingForEmbeddableBundle ($embeddableBundleName, $settingName) {
     $result = [];
@@ -75,7 +74,7 @@ trait EmbeddableViewModeHelperTrait {
       } else if (isset($viewModeBundleOptions[$viewMode])) {
         $displayName = $viewModeBundleOptions[$viewMode];
       } else {
-        $displayName = $this->t('Unknown');
+        $displayName = \Drupal::translation()->t('Unknown');
       }
 
       if (true) {

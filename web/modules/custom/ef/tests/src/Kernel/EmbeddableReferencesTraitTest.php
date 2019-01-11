@@ -18,14 +18,17 @@ use Drupal\ef\EmbeddableReferencesTrait;
  * @group ef
  */
 class EmbeddableReferencesTraitTest extends KernelTestBase {
-  public static $modules = ['field', 'user', 'filter', 'ef', 'ef_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test'];
 
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['ef', 'ef_test']);
+    $this->installConfig(['system', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
+    $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
+    $this->installEntitySchema('embeddable_relation');
   }
+
 
   public function testGetAllEntityReferenceEmbeddableItemFields () {
     /** @var EmbeddableReferencesTrait $embeddableReferencesTrait */
