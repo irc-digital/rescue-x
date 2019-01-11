@@ -19,7 +19,7 @@ use Drupal\ef\Plugin\EmbeddableReferenceOptionsPluginInterface;
  * @group ef
  */
 class EmbeddableModifierOptionsTest extends KernelTestBase {
-  public static $modules = ['user', 'ef', 'ef_modifiers', 'ef_test', 'ef_modifiers_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_modifiers', 'ef_test', 'ef_modifiers_test'];
 
   public function setUp() {
     parent::setUp();

@@ -23,7 +23,7 @@ trait RequiresEmbeddableReferenceOptionTrait {
    * @return array EmbeddableReferenceOptionsPluginInterface
    * @throws \Drupal\Component\Plugin\Exception\PluginException
    */
-  protected function getEnabledReferenceOptions (string $embeddable_bundle, string $view_mode) {
+  protected function getEnabledReferenceOptions ($embeddable_bundle, $view_mode) {
     $options = [];
 
     /** @var $embeddableReferenceOptionsPluginManager \Drupal\ef\Plugin\EmbeddableReferenceOptionsPluginManager */

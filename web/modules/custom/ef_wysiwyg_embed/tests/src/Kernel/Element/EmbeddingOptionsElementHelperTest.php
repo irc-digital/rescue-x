@@ -16,7 +16,7 @@ use Drupal\KernelTests\KernelTestBase;
  * @coversDefaultClass \Drupal\ef_wysiwyg_embed\EmbeddingOptionsElementHelper
  */
 class EmbeddingOptionsElementHelperTest extends KernelTestBase {
-  public static $modules = ['system', 'user', 'ef', 'ef_test', 'ef_wysiwyg_embed'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test', 'ef_wysiwyg_embed', 'ef_wysiwyg_embed_test'];
 
   public function setUp() {
     parent::setUp();

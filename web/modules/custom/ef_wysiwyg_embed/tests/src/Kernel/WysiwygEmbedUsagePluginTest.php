@@ -13,7 +13,7 @@ use Drupal\KernelTests\KernelTestBase;
  * @package Drupal\Tests\ef_wysiwyg_embed\Kernel
  */
 class WysiwygEmbedUsagePluginTest extends KernelTestBase  {
-  public static $modules = ['user', 'field', 'filter', 'text', 'embed', 'entity_embed', 'ef', 'ef_test', 'ef_wysiwyg_embed', 'ef_wysiwyg_embed_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'embed', 'entity_embed', 'ef', 'ef_test', 'ef_wysiwyg_embed', 'ef_wysiwyg_embed_test'];
 
   public function setUp() {
     parent::setUp();

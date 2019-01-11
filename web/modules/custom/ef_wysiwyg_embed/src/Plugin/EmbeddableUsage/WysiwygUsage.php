@@ -86,7 +86,7 @@ class WysiwygUsage extends PluginBase implements EmbeddableUsageInterface, Conta
    * @return array of embeddable ids
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
-  protected function extractEmbeddableIdsFromText (string $text) {
+  protected function extractEmbeddableIdsFromText ($text) {
     $result = [];
 
     $embeddable_uuids = [];

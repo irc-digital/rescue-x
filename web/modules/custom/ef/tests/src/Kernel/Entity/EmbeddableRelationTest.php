@@ -17,7 +17,7 @@ use Drupal\KernelTests\KernelTestBase;
  * @group ef
  */
 class EmbeddableRelationTest extends KernelTestBase {
-  public static $modules = ['user', 'ef', 'ef_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test'];
 
   public function setUp() {
     parent::setUp();
@@ -66,8 +66,15 @@ class EmbeddableRelationTest extends KernelTestBase {
 
     // attempt to delete the embeddable
 
-    $this->expectException(EntityStorageException::class);
-    $testEmbeddable->delete();
+    $exception_test_passed = FALSE;
+
+    try {
+      $testEmbeddable->delete();
+    } catch (EntityStorageException $exception) {
+      $exception_test_passed = TRUE;
+    }
+
+    $this->assertTrue($exception_test_passed);
   }
 
   /**

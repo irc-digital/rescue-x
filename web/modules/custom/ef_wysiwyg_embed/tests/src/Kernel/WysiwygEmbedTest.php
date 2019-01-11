@@ -7,7 +7,7 @@ use Drupal\ef_wysiwyg_embed\Plugin\EmbeddableViewModeVisibility\EmbeddableViewMo
 use Drupal\KernelTests\KernelTestBase;
 
 class WysiwygEmbedTest extends KernelTestBase  {
-  public static $modules = ['user', 'ef', 'ef_wysiwyg_embed', 'ef_wysiwyg_embed_test'];
+  public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test', 'ef_wysiwyg_embed', 'ef_wysiwyg_embed_test'];
 
   public function setUp() {
     parent::setUp();

@@ -38,7 +38,7 @@ class CountOption extends EmbeddableReferenceOptionsPluginBase {
     return $formElement;
   }
 
-  protected static function parsePermittedValues (string $permitted_values_string) {
+  protected static function parsePermittedValues ($permitted_values_string) {
     $pos_open = strpos($permitted_values_string, '[');
 
     while ($pos_open !== FALSE) {
