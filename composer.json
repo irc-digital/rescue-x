@@ -61,7 +61,7 @@
         "jcalderonzumba/gastonjs": "^1.0.2",
         "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
         "drupal/drupal-extension": "^3.1",
-        "phpunit/phpunit": "^4.8",
+        "phpunit/phpunit": "^6.5.13",
         "symfony/css-selector": "^2.8"
     },
     "conflict": {
@@ -81,7 +81,7 @@
         ],
         "lint": "find web/modules/custom web/themes/x -name '*.php' -exec php -l {} \\;",
         "code-sniff": "echo 'No code sniff step defined.'",
-        "unit-test": "echo 'No unit test step defined.'",
+        "unit-test": "vendor/bin/phpunit",
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
         "post-install-cmd": [
