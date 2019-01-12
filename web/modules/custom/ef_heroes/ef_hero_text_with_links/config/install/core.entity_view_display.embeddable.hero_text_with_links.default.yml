@@ -72,9 +72,9 @@ content:
     region: hero_text_with_links_links
     label: hidden
     settings:
-      trim_length: '80'
-      url_only: ''
-      url_plain: ''
+      trim_length: 80
+      url_only: true
+      url_plain: true
       rel: ''
       target: ''
     third_party_settings: {  }
