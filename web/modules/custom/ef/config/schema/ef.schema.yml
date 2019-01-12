@@ -140,6 +140,9 @@ field.widget.settings.entity_reference_embeddable_widget:
     placeholder:
       type: label
       label: 'Placeholder'
+    show_edit_button:
+      type: boolean
+      label: 'Show edit button'
 
 embeddable_option.configuration.embeddable_count_option:
   type: mapping
@@ -151,6 +154,14 @@ embeddable_option.configuration.embeddable_count_option:
     default_value:
       type: integer
       label: 'Default value'
+
+embeddable_option.configuration.embeddable_sticky_option:
+  type: mapping
+  label: 'Embeddable sticky option configuration'
+  mapping:
+    entity_type:
+      type: string
+      label: 'Entity type'
 
 field.storage_settings.ef_string_dropdown:
   type: field.storage_settings.string

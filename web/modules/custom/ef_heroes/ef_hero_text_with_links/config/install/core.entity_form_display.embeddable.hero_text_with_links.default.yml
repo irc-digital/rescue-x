@@ -46,10 +46,8 @@ content:
       placeholder_title: ''
       available_link_styles:
         text: text
-        button: 0
       available_positions:
         before: before
-        after: 0
     third_party_settings: {  }
     type: link_icon_default
     region: content
