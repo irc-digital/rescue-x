@@ -1,4 +1,4 @@
-ds.field_plugin.image_attributes_field.*:
+ds.field_plugin.image_attributes_field:
   type: mapping
   label: 'Mapping for the image_attributes_field field settings'
   mapping:
@@ -6,7 +6,7 @@ ds.field_plugin.image_attributes_field.*:
       type: string
       label: 'Responsive image style'
 
-ds.field_plugin.media_image_attributes_field.*:
+ds.field_plugin.media_image_attributes_field:
   type: mapping
   label: 'Mapping for the media_image_attributes_field field settings'
   mapping:
