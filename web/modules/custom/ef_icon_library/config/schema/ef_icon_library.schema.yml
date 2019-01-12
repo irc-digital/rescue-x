@@ -1,5 +1,5 @@
 field.widget.settings.link_icon_default:
-  type: field.widget.settings.link_default:
+  type: field.widget.settings.link_default
   label: 'Link icon widget settings'
   mapping:
     available_link_styles:
