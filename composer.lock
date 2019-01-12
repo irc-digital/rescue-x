@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eff1430f0670e5b59ccd871429cc9a94",
+    "content-hash": "f4a53051207828cdd1626590736e4d9b",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -3673,11 +3673,17 @@
         },
         {
             "name": "drupal/ui_patterns",
-            "version": "dev-1.x",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/ui_patterns",
-                "reference": "17e1596342b04fc23fd3bc60ff1dce894382eb51"
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "34fd89231ba3e2fbc19a32fb15f232e7d69743f8"
             },
             "require": {
                 "drupal/core": "^8.3.0"
@@ -3707,11 +3713,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0+0-dev",
-                    "datestamp": "1542049980",
+                    "version": "8.x-1.0",
+                    "datestamp": "1542050281",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "composer-exit-on-patch-failure": true,
@@ -3780,8 +3786,7 @@
             ],
             "support": {
                 "source": "http://cgit.drupalcode.org/ui_patterns"
-            },
-            "time": "2018-11-18 08:56:59"
+            }
         },
         {
             "name": "drush-ops/behat-drush-endpoint",
@@ -6730,11 +6735,6 @@
         {
             "name": "webflo/drupal-core-strict",
             "version": "8.0.0-beta15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webflo/drupal-core-strict.git",
-                "reference": "1eb044b722ebe44bc6af86a03888415d7f31c057"
-            },
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -9519,8 +9519,7 @@
     "stability-flags": {
         "drupal/config_inspector": 10,
         "drupal/inline_entity_form": 5,
-        "drupal/simple_block": 10,
-        "drupal/ui_patterns": 20
+        "drupal/simple_block": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -165,3 +165,10 @@ embeddable_option.configuration.embeddable_sticky_option:
 
 field.storage_settings.ef_string_dropdown:
   type: field.storage_settings.string
+  mapping:
+    dropdown_options:
+      type: string
+      label: 'Slug options'
+    dropdown_default:
+      type: string
+      label: 'Slug default option'
