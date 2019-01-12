@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="web/core/tests/bootstrap.php">
+    <php>
+        <env name="SIMPLETEST_DB" value="sqlite://localhost/sites/default/files/db.sqlite"/>
+    </php>
+    <testsuites>
+        <testsuite name="IRC">
+            <directory>web/modules/custom</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
