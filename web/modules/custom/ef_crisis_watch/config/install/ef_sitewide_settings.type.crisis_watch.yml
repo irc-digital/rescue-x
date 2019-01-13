@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_crisis_watch
+id: crisis_watch
+label: 'Crisis watch'
+description: 'We tend to highlight a single country, topic or other page in the header or footer of the site - our ''crisis watch''. This may differ across languages on the site. These site-wide settings control the crisis watch element. '

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.crisis_watch
+    - field.storage.sitewide_settings.field_crisis_watch_link
+    - node.type.announcement
+id: sitewide_settings.crisis_watch.field_crisis_watch_link
+field_name: field_crisis_watch_link
+entity_type: sitewide_settings
+bundle: crisis_watch
+label: 'Crisis Watch link'
+description: 'The page being linked to by the Crisis Watch element. Leave this blank if you do not wish to have any one particular page ''in crisis watch''.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

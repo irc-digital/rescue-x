@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.crisis_watch
+    - field.storage.sitewide_settings.field_cw_title_override
+id: sitewide_settings.crisis_watch.field_cw_title_override
+field_name: field_cw_title_override
+entity_type: sitewide_settings
+bundle: crisis_watch
+label: 'Title override'
+description: 'The title of the page being linked to may not always work in the context of the Crisis Watch element - you may use this field to override the title.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.crisis_watch
+    - field.field.sitewide_settings.crisis_watch.field_crisis_watch_link
+    - field.field.sitewide_settings.crisis_watch.field_cw_title_override
+    - field.field.sitewide_settings.crisis_watch.field_cw_type
+id: sitewide_settings.crisis_watch.default
+targetEntityType: sitewide_settings
+bundle: crisis_watch
+mode: default
+content:
+  field_crisis_watch_link:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_cw_title_override:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cw_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
