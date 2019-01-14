@@ -3,7 +3,11 @@
 .rplm-person-info-1 {
   $self: &;
 
-  align-items: center;
+  @include breakpoint(tablet) {
+    align-items: center;
+  }
+
+  align-items: flex-start;
   display: flex;
   margin: 0;
 
