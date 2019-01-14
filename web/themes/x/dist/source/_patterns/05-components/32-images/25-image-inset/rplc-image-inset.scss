@@ -10,6 +10,10 @@
   &--caption-style-2-low-key {
     #{$self}__caption-wrapper {
       @include well-row;
+
+      @include breakpoint(desktop) {
+        width: auto;
+      }
     }
   }
 
