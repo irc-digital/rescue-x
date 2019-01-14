@@ -150,6 +150,7 @@ article_page_content:
               with:
                 call_to_action_1_modifiers:
                   - 'background-dark'
+                  - 'position-left'
           aside_2_modifiers:
             - 'position-left'
     - include():
