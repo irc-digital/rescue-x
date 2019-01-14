@@ -20,7 +20,12 @@
 
   &--style-low-key {
     #{$self}__text-wrapper {
-      @include line-height('s');
+      @include body-text-row;
+      @include line-height('xs');
+
+      @include breakpoint(phablet) {
+        @include line-height('s');
+      }
     }
 
     #{$self}__text,
