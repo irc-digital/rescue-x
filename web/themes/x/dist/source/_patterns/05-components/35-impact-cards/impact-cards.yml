@@ -5,7 +5,7 @@ impact_cards:
       with:
         impact_card_heading_title: ''
         impact_card_heading_description: ''
-        impact_card_front_figure: "Faker.words(2,true)"
+        impact_card_front_figure: "Faker.numberBetween(1000, 1000000)"
         impact_card_front_description: "Faker.sentence(10,true)"
         impact_card_rear_description: "Faker.sentence(10,true)"
         impact_card_rear_link_url: "#"
@@ -17,7 +17,7 @@ impact_cards:
       with:
         impact_card_heading_title: ''
         impact_card_heading_description: ''
-        impact_card_front_figure: "Faker.words(2,true)"
+        impact_card_front_figure: "Faker.numberBetween(1000, 1000000)"
         impact_card_front_description: "Faker.sentence(10,true)"
         impact_card_rear_description: "Faker.sentence(10,true)"
         impact_card_rear_link_url: "#"
@@ -29,7 +29,7 @@ impact_cards:
       with:
         impact_card_heading_title: ''
         impact_card_heading_description: ''
-        impact_card_front_figure: "Faker.words(2,true)"
+        impact_card_front_figure: "Faker.numberBetween(1000, 1000000)"
         impact_card_front_description: "Faker.sentence(10,true)"
         impact_card_rear_description: "Faker.sentence(10,true)"
         impact_card_rear_link_url: "#"

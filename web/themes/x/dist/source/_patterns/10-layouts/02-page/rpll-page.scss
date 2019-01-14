@@ -65,7 +65,13 @@
     }
   }
 
-  &--press-release {
+  &--with-standard-separator {
+    #{$self}__main {
+      margin-bottom: get-spacing('l');
+    }
+  }
+
+  &--with-bar-separator {
     #{$self}__main {
       margin-bottom: get-spacing('l');
 

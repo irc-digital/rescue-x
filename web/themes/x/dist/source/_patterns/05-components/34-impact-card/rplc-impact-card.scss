@@ -27,7 +27,7 @@
   }
 
   &__heading-title {
-    @include typography-heading-large;
+    @include typography-heading-3xl;
     @include typography-vertical-spacing('tight');
   }
 
