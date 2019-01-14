@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\ef_crisis_watch\CrisisWatchConfigurationHelper;
+
+/**
+ * Implements hook_modules_installed
+ *
+ * Makes sure that any new node types added are including in the crisis watch link reference target bundle list
+ *
+ * @param $modules
+ */
+function ef_crisis_watch_modules_installed($modules) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(CrisisWatchConfigurationHelper::class)
+    ->ensureAllContentTypesEnabledOnCrisisWatchLinkReferenceField();
+}

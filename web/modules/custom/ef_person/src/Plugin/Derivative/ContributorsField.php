@@ -7,7 +7,6 @@ use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
-use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -45,7 +44,7 @@ class ContributorsField extends DeriverBase implements ContainerDeriverInterface
   protected $entityFieldManager;
 
   /**
-   * The entity field manager
+   * The entity type bundle manager
    *
    * @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface
    */
