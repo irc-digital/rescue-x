@@ -92,6 +92,50 @@ class EmbeddableConfigurationHelper {
     }
   }
 
+  /**
+   * Some entity reference fields should include all bundles of the type they
+   * are refering to. This helper function supports doing that. It should
+   * probably be called from a hook_modules_enabled hook on the module that
+   * provides the reference field
+   *
+   * @param $entity_type
+   * @param $bundle
+   * @param $reference_field
+   * @return $this
+   */
+  function ensureAllTargetBundlesAreSetOnReferenceField ($entity_type, $bundle, $reference_field) {
+    /** @var \Drupal\field\FieldStorageConfigInterface $field_config */
+    $field_config = FieldStorageConfig::loadByName($entity_type, $reference_field);
+
+    if (!is_null($field_config)) {
+      /** @var \Drupal\Core\Config\ConfigFactoryInterface $configurationFactory */
+      $configurationFactory = \Drupal::configFactory();
+
+      /** EntityTypeBundleInfoInterface $entityTypeBundleInfo */
+      $entityTypeBundleInfo = \Drupal::service('entity_type.bundle.info');
+
+      $storage_config_name = sprintf('field.storage.%s.%s', $entity_type, $reference_field);
+      $field_storage_settings = $configurationFactory->get($storage_config_name)->get('settings');
+      $target_entity_type = $field_storage_settings['target_type'];
+
+      $all_target_type_bundles = $entityTypeBundleInfo->getBundleInfo($target_entity_type);
+      $bundle_keys = array_keys($all_target_type_bundles);
+
+      $config_name = sprintf('field.field.%s.%s.%s', $entity_type, $bundle, $reference_field);
+
+      $field_settings = $configurationFactory->getEditable($config_name)->get('settings');
+      $current_bundle_keys = is_array($field_settings['handler_settings']['target_bundles']) ? array_keys($field_settings['handler_settings']['target_bundles']) : [];
+
+      if ($bundle_keys != $current_bundle_keys) {
+        $bundles = array_combine ($bundle_keys, $bundle_keys);
+        $field_settings['handler_settings']['target_bundles'] = $bundles;
+        $configurationFactory->getEditable($config_name)->set('settings', $field_settings)->save(TRUE);
+      }
+    }
+
+    return $this;
+  }
+
   protected function addToField ($embeddable_type, $field_name) {
     /** @var \Drupal\field\FieldStorageConfigInterface $field_config */
     $field_config = FieldStorageConfig::loadByName('node', $field_name);

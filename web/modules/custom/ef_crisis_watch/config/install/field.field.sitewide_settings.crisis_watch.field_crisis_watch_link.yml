@@ -4,7 +4,6 @@ dependencies:
   config:
     - ef_sitewide_settings.type.crisis_watch
     - field.storage.sitewide_settings.field_crisis_watch_link
-    - node.type.announcement
 id: sitewide_settings.crisis_watch.field_crisis_watch_link
 field_name: field_crisis_watch_link
 entity_type: sitewide_settings

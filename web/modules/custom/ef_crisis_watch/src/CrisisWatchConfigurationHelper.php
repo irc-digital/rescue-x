@@ -8,6 +8,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 
+/**
+ * Class CrisisWatchConfigurationHelper
+ *
+ * A helper classed used at module-enabling time to ensure that the crisis watch
+ * link field includes all bundles in it reference bundle list
+ *
+ * @package Drupal\ef_crisis_watch
+ */
 class CrisisWatchConfigurationHelper implements ContainerInjectionInterface {
 
   /**
@@ -58,7 +66,7 @@ class CrisisWatchConfigurationHelper implements ContainerInjectionInterface {
       if ($bundle_keys != $current_bundle_keys) {
         $bundles = array_combine ($bundle_keys, $bundle_keys);
         $field_crisis_watch_link_settings['handler_settings']['target_bundles'] = $bundles;
-        \Drupal::configFactory()->getEditable($config_name)->set('settings', $field_crisis_watch_link_settings)->save(TRUE);
+        $this->configurationFactory->getEditable($config_name)->set('settings', $field_crisis_watch_link_settings)->save(TRUE);
       }
 
     }
