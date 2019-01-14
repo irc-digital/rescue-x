@@ -20,7 +20,6 @@
 
   &--style-low-key {
     #{$self}__text-wrapper {
-      @include body-text-row;
       @include line-height('xs');
 
       @include breakpoint(phablet) {

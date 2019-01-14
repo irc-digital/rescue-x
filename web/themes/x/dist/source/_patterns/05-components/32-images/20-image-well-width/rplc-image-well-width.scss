@@ -19,6 +19,12 @@
     }
   }
 
+  &--caption-style-low-key {
+    #{$self}__caption-wrapper {
+      @include body-text-row;
+    }
+  }
+
 }
 
 // end of file

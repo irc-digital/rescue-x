@@ -112,9 +112,6 @@ article_page_content:
           aside_2_content:
             include():
               pattern: "components-image-inset"
-              with:
-                image_inset_modifiers:
-                  - 'caption-style-2-box'
           aside_2_modifiers:
             - 'position-left'
     - include():
