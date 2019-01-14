@@ -12,7 +12,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_teaser_icon
+      id: pattern_infographic_standard_teaser_icon
       library: null
       disable_css: false
       entity_classes: all_classes

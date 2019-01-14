@@ -1,23 +1,16 @@
 highlight:
-  label: Highlight
-  description: Highlight
+  label: ''
   use: "@components/53-overviews/05-highlight/highlight.twig"
   fields:
     highlight_link_text:
       type: text
-      label: Link text
-      description: The text of the link
-      preview: "Read more"
+      label: ''
     highlight_link_url:
       type: text
-      label: URL
-      description: The URL of the link
-      preview: "#"
+      label: ''
     highlight_list_content:
       type: list
-      label: List content
-      description: Unordered, bulleted list of summary items
-      preview: "#"
+      label: ''
       unpack: TRUE
   libraries:
     - highlight_library:

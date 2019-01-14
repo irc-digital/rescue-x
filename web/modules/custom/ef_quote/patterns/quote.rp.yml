@@ -1,53 +1,32 @@
 quote:
-  label: Quote
-  description: A quote (TODO)
+  label: ''
   use: "@components/63-quote/quote.twig"
   section: TRUE
   fields:
     quote_text:
       type: text
-      label: "Quote text"
-      description: "The main text of the quote"
-      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+      label: ""
     quote_attribution:
       type: text
-      label: "Attributed to"
-      description: "Who said this quote?"
-      preview: "A person"
+      label: ""
     quote_attribution_role:
       type: text
-      label: "Role / description"
-      description: "What role or subtitle should accompany the person who said the quote"
-      preview: "Vice president"
+      label: ""
     quote_cta:
       type: text
-      label: "Call to action text"
-      description: "The call to action presented at the bottom of the quote"
-      preview: "Learn more"
+      label: ""
     quote_url:
       type: url
-      label: "Call to action URL"
-      description: "#"
-      preview: "Where the visitor is taken when the click on the quote link"
+      label: ""
     quote_responsive_image_source_set:
       type: array
-      label: "Headshot image source set"
-      description: "The set of images used for the responsive picture"
-      preview:
-        - "https://placem.at/places?w=328&h=328&random=quote 328w"
-        - "https://placem.at/places?w=640&h=640&random=quote 640w"
-        - "https://placem.at/places?w=1280&h=1280&random=quote 1280w"
-        - "https://placem.at/places?w=1920&h=1920&random=quote 1920w"
+      label: ""
     quote_responsive_image_fallback:
       type: string
-      label: "Headshot image fallback"
-      description: "Fallback image if the browser does not support responsive images"
-      preview: "https://placem.at/places?w=640&h=640&random=quote 640w"
+      label: ""
     quote_responsive_image_alt:
       type: string
-      label: "Headshot image alt attribute"
-      description: "Image alt attribute"
-      preview: "Alt value"
+      label: ""
   libraries:
     - quote_library:
        css:

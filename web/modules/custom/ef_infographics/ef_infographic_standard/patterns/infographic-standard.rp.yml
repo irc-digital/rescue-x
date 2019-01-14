@@ -1,13 +1,11 @@
 infographic_standard:
-  label: "Infographic - standard"
-  description: "The standard infographic"
+  label: ""
   use: "@components/37-infographics/02-standard/infographic-standard.twig"
   section: TRUE
   fields:
     infographic_standard_content:
       type: list
-      label: "Icons"
-      description: "The icon teasers"
+      label: ""
       unpack: TRUE
   libraries:
     - infographic_standard_library:

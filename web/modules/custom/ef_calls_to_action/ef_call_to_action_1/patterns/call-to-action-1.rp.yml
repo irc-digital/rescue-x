@@ -1,35 +1,24 @@
 call_to_action_1:
-  label: Call to action (1)
-  description: Call to action 1
+  label: ''
   use: "@components/08-calls-to-action/10-call-to-action-1/call-to-action-1.twig"
   icon_library_field: "call_to_action_1_button_icon"
   section: TRUE
   fields:
     call_to_action_1_title:
       type: text
-      label: "Title"
-      description: "Bold title text inside the embeddable, positioned at the top"
-      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+      label: ""
     call_to_action_1_subtitle:
       type: text
-      label: "Subtitle"
-      description: "Lighter text below the title."
-      preview: "Aenean imperdiet. Curabitur nisi. Duis lobortis massa imperdiet quam."
+      label: ""
     call_to_action_1_url:
       type: url
-      label: "URL"
-      description: "CTA link"
-      preview: "#"
+      label: ""
     call_to_action_1_button_text:
       type: text
-      label: "Text for button"
-      description: "#"
-      preview: "Aenean imperdiet."
+      label: ""
     call_to_action_1_button_icon:
       type: text
-      label: "Icon for button"
-      description: "#"
-      preview: "#"
+      label: ""
   libraries:
     - call_to_action_1_library:
        css:

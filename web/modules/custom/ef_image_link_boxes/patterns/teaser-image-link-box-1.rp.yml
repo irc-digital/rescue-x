@@ -1,44 +1,25 @@
 teaser_image_link_box_1:
-  label: "Teaser (image link box)"
-  description: "The image link box teaser (todo)"
+  label: ""
   use: "@components/87-teasers/20-image-link-box-1/teaser-image-link-box-1.twig"
   fields:
     teaser_image_link_box_1_url:
       type: url
-      label: "URL"
-      description: "The URL of the resource being teased"
-      preview: "#"
+      label: ""
     teaser_image_link_box_1_title:
       type: text
-      label: "Title"
-      description: "The title"
-      preview: "An image link box"
+      label: ""
     teaser_image_link_box_1_summary:
       type: text
-      label: "Blurb"
-      description: "The blurb"
-      preview: "Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum."
+      label: ""
     teaser_image_link_box_1_image_source_set:
        type: array
-       label: "Image source set"
-       description: "The set of images used for the responsive picture"
-       preview:
-        - "https://placem.at/places?w=288&h=216&random=teaserimagelinkbox 288w"
-        - "https://placem.at/places?w=392&h=294&random=teaserimagelinkbox 392w"
-        - "https://placem.at/places?w=640&h=480&random=teaserimagelinkbox 640w"
-        - "https://placem.at/places?w=784&h=588&random=teaserimagelinkbox 784w"
-        - "https://placem.at/places?w=1280&h=960&random=teaserimagelinkbox 1280w"
-        - "https://placem.at/places?w=1920&h=1440&random=teaserimagelinkbox 1920w"
+       label: ""
     teaser_image_link_box_1_image_fallback:
       type: url
-      label: "Image fallback"
-      description: "Fallback image if the browser does not support responsive images"
-      preview: "https://placem.at/places?w=640&h=480&random=teaserimagelinkbox"
+      label: ""
     teaser_image_link_box_1_image_alt:
       type: text
-      label: "Image alt attribute"
-      description: "Image alt attribute"
-      preview: "Maecenas tempus"
+      label: ""
   libraries:
     - teaser_image_link_box_1_library:
        css:

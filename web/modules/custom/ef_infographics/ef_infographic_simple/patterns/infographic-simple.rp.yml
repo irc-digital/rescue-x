@@ -6,8 +6,7 @@ infographic_simple:
   fields:
     infographic_simple_content:
       type: list
-      label: "Icons"
-      description: "The icon teasers"
+      label: ""
       unpack: TRUE
   libraries:
     - infographic_simple_library:
