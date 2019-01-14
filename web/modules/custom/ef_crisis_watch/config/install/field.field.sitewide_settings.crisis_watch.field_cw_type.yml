@@ -14,7 +14,9 @@ label: Type
 description: 'This controls how the Crisis Watch element is treated in the header section. You may either display the full title of the page being linked to or just a simple link (saying ''crisis watch'')'
 required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 1
 default_value_callback: ''
 settings: {  }
 field_type: list_integer
