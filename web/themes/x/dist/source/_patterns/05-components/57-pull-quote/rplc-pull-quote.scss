@@ -55,6 +55,7 @@
     background-color: transparent;
   }
 
+  // sass-lint:disable-block force-pseudo-nesting
   &:not(&--position-right):not(&--position-left) {
     @include standard-vertical-padding;
   }

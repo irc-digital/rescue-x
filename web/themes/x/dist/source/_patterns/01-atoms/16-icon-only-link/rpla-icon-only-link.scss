@@ -17,8 +17,11 @@
     cursor: pointer; // 1
   }
 
+  //
+  // 1) A bit odd, but seems to work in all browsers - inline-block broke in Safari
+  //
   #{$self}__icon-wrapper {
-    display: inline-block;
+    display: table; // 1
   }
 
   &--type-one {
