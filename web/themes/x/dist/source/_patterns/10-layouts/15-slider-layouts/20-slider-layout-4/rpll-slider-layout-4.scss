@@ -30,6 +30,9 @@
     //@media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
     //  width: 100%;
     //}
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
   }
 
   //
