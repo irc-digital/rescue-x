@@ -5,9 +5,9 @@
 
   &__caption-wrapper {
     @include breakpoint(tablet) {
-      margin-bottom: get-spacing('l');
+      margin-bottom: get-spacing('m');
     }
-    margin-bottom: get-spacing('m');
+    margin-bottom: get-spacing('s');
   }
 }
 
