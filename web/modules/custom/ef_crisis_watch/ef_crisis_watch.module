@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\ef\EmbeddableConfigurationHelper;
+use Drupal\ef_crisis_watch\CrisisWatchThemeHelper;
 
 /**
  * Implements hook_modules_installed
@@ -32,18 +33,7 @@ function ef_crisis_watch_theme() {
 }
 
 function template_preprocess_ef_crisis_watch (&$variables) {
-  /** @var \Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface $settingsManager */
-  $settings_manager = \Drupal::service('ef_sitewide_settings.manager');
-
-  /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $crisis_watch_settings */
-  $crisis_watch_settings = $settings_manager->getSitewideSettingsForType('crisis_watch');
-
-  if ($crisis_watch_settings) {
-    $crisis_watch_linked_page = $crisis_watch_settings->field_crisis_watch_link->entity;
-
-    if ($crisis_watch_linked_page) {
-      $a = 1;
-    }
-  }
-
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(CrisisWatchThemeHelper::class)
+    ->preprocessCrisisWatch($variables);
 }

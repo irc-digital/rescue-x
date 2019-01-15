@@ -10,7 +10,7 @@ id: sitewide_settings.crisis_watch.field_cw_type
 field_name: field_cw_type
 entity_type: sitewide_settings
 bundle: crisis_watch
-label: Type
+label: Header treatment
 description: 'This controls how the Crisis Watch element is treated in the header section. You may either display the full title of the page being linked to or just a simple link (saying ''crisis watch'')'
 required: true
 translatable: true
