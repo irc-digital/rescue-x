@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.donation_link
+    - field.storage.sitewide_settings.field_donation_link_link
+  module:
+    - ef_icon_library
+id: sitewide_settings.donation_link.field_donation_link_link
+field_name: field_donation_link_link
+entity_type: sitewide_settings
+bundle: donation_link
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link_icon

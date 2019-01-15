@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_icon_library
+    - ef_sitewide_settings
+  enforced:
+    module:
+      - ef_global_navigation
+id: sitewide_settings.field_donation_link_link
+field_name: field_donation_link_link
+entity_type: sitewide_settings
+type: link_icon
+settings: {  }
+module: ef_icon_library
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
