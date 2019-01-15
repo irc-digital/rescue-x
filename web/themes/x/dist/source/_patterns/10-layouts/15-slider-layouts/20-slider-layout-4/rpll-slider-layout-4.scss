@@ -4,6 +4,9 @@
   $self: &;
 
   &__slides-wrapper {
+    @include breakpoint(tablet) {
+      margin-right: 40%;
+    }
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -24,9 +27,9 @@
   &__slides {
     overflow: hidden; // 1
     width: calc(100% - 2rem);
-    @media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
-      width: 100%;
-    }
+    //@media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
+    //  width: 100%;
+    //}
   }
 
   //
@@ -37,9 +40,9 @@
     // sass-lint:disable-block no-important
     display: block !important; // 1
     margin: 0 auto;
-    @media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
-      max-width: $slider-layout-4-max-content-width;
-    }
+    //@media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
+    //  max-width: $slider-layout-4-max-content-width;
+    //}
   }
 
   &__next,
@@ -53,16 +56,16 @@
     z-index: 100;
   }
 
-  @media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
-    &__previous {
-      transform: translateX($slider-layout-4-arrow-offset-prev);
-    }
-
-    &__next {
-      transform: translateX($slider-layout-4-arrow-offset-next);
-    }
-
-  }
+  //@media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
+  //  &__previous {
+  //    transform: translateX($slider-layout-4-arrow-offset-prev);
+  //  }
+  //
+  //  &__next {
+  //    transform: translateX($slider-layout-4-arrow-offset-next);
+  //  }
+  //
+  //}
 
   &__previous {
     margin-right: -2rem;
