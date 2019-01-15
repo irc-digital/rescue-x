@@ -6,5 +6,6 @@ $slider-layout-4-arrow-offset-mobile: -2rem;
 $slider-layout-4-arrow-padding: rem(10px);
 $slider-layout-4-arrow-offset-prev: calc(#{$slider-layout-4-arrow-size} / 2);
 $slider-layout-4-arrow-offset-next: calc(#{$slider-layout-4-arrow-offset-prev} * -1);
-$slider-layout-4-arrow-vertical-offset: -#{get-spacing('3xl')}
+$slider-layout-4-arrow-vertical-offset: -#{get-spacing('3xl')};
+$slider-layout-4-arrow-vertical-offset-tablet: -#{.5rem};
 // end of file

@@ -59,16 +59,16 @@
     z-index: 100;
   }
 
-  //@media only screen and (min-width: #{$slider-layout-4-large-screen-minimum}) {
-  //  &__previous {
-  //    transform: translateX($slider-layout-4-arrow-offset-prev);
-  //  }
-  //
-  //  &__next {
-  //    transform: translateX($slider-layout-4-arrow-offset-next);
-  //  }
-  //
-  //}
+  @include breakpoint(tablet) {
+    &__previous {
+      transform: translateY($slider-layout-4-arrow-vertical-offset-tablet);
+    }
+
+    &__next {
+      transform: translateY($slider-layout-4-arrow-vertical-offset-tablet);
+    }
+
+  }
 
   &__previous {
     margin-right: -2rem;
