@@ -49,6 +49,7 @@ config.javascript = {
     'node_modules/slick-carousel-latest/slick/slick.min.js',
     'node_modules/video.js/dist/video.min.js',
     'node_modules/videojs-youtube/dist/Youtube.js',
+    'misc/css-grid-polyfill/bin/css-polyfills.min.js',
   ],
 
   pattern_javascript: [
