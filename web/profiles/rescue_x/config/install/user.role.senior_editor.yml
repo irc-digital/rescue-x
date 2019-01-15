@@ -1,0 +1,9 @@
+uuid: 4de899d0-e696-41e8-9ac8-a77e5ea7a387
+langcode: en
+status: true
+dependencies: {  }
+id: senior_editor
+label: 'Senior editor'
+weight: 3
+is_admin: null
+permissions: {  }
