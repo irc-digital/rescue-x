@@ -3,13 +3,14 @@
 .rplm-person-info-1 {
   $self: &;
 
-  @include breakpoint(tablet) {
-    align-items: center;
-  }
-
   align-items: flex-start;
   display: flex;
   margin: 0;
+
+  // sass-lint:disable-block mixins-before-declarations
+  @include breakpoint(tablet) {
+    align-items: center;
+  }
 
   &__image-wrapper {
     border-radius: 100%;
