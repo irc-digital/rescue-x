@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\ef_global_navigation\GlobalNavigationThemeHelper;
+
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_global_navigation_theme() {
+
+  return [
+    'ef_global_navigation' => [
+      'variables' => [],
+    ]
+  ];
+}
+
+function template_preprocess_ef_global_navigation (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(GlobalNavigationThemeHelper::class)
+    ->preprocessGlobalNavigation($variables);
+}
