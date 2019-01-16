@@ -8,23 +8,29 @@ global_navigation:
     global_navigation_cta_text:
       type: string
       label: ""
+    global_navigation_cta_icon_name:
+      type: string
+      label: ""
     global_navigation_crisis_watch:
-      type: rendered pattern
+      type: pattern
       label: ""
     global_navigation_secondary_menu:
-      type: rendered pattern
+      type: pattern
       label: ""
     global_navigation_main_menu:
-      type: rendered pattern
+      type: pattern
       label: ""
     global_navigation_mobile_secondary_menu:
-      type: rendered pattern
+      type: pattern
       label: ""
     global_navigation_branding:
-      type: rendered pattern
+      type: pattern
       label: ""
   libraries:
     - global_navigation_library:
        css:
          theme:
            dist/public/css/patterns/rplc-global-navigation.css: {}
+  icons:
+    - 'search'
+    - 'heart'

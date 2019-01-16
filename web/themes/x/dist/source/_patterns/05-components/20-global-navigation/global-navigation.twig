@@ -1,6 +1,6 @@
 {% spaceless %}
 
-  {% set cta_button_icon_name = cta_button_icon_name ?: 'heart' %}
+  {% set cta_button_icon_name = global_navigation_cta_icon_name ?: 'heart' %}
 
 {% endspaceless %}
 <nav class="rplc-global-navigation{% for global_navigation_modifier in global_navigation_modifiers %} rplc-global-navigation--{{ global_navigation_modifier }}{% endfor %}">
