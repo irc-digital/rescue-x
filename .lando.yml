@@ -16,7 +16,7 @@ services:
         # Latest version of node and other dependencies.
         # See: https://hub.docker.com/r/ircdigital/irc-lando-build
         # Image is based on https://hub.docker.com/r/devwithlando/pantheon-appserver
-        image: ircdigital/irc-lando-build:7.2-2
+        image: ircdigital/irc-lando-build
         environment:
           PHP_IDE_CONFIG: "serverName=appserver"
 tooling:
