@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_global_navigation
+  theme:
+    - x
+id: globalnavigation
+theme: x
+region: navigation
+weight: 0
+provider: null
+plugin: global_navigation_block
+settings:
+  id: global_navigation_block
+  label: 'Global navigation'
+  provider: ef_global_navigation
+  label_display: '0'
+visibility: {  }

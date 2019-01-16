@@ -265,15 +265,16 @@ $xxx-fst: export('dist/source/_patterns/00-subatoms/27-font-style/font-style.jso
 $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', get-spacing('all'), (prefix: '{ "spacing":', suffix: '}'));
 
 @function get-z-index($option) {
+  // for Drupal it makes sense to keep these below 501 (as the admin menu uses that z-index)
   $z-indices: (
     'auto': auto,
     'up': 5,
     'up-more': 10,
-    'below-navigation-overlay': 500,
-    'navigation-overlay': 1000,
-    'above-navigation-overlay': 2000,
-    'overlay': 3000,
-    'above-overlay': 4000,
+    'below-navigation-overlay': 50,
+    'navigation-overlay': 100,
+    'above-navigation-overlay': 200,
+    'overlay': 300,
+    'above-overlay': 400,
   );
   @if $option != 'all' {
     @return rem(safe-map-get($z-indices, $option));
