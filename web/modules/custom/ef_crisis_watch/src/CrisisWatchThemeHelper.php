@@ -5,6 +5,7 @@ namespace Drupal\ef_crisis_watch;
 
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -22,15 +23,22 @@ class CrisisWatchThemeHelper implements ContainerInjectionInterface {
    */
   protected $sitewideSettingsManager;
 
-  public function __construct(SitewideSettingsManagerInterface $sitewideSettingsManager, AliasManagerInterface $aliasManager) {
+  /**
+   * @var LanguageManagerInterface
+   */
+  protected $languageManager;
+
+  public function __construct(SitewideSettingsManagerInterface $sitewideSettingsManager, AliasManagerInterface $aliasManager, LanguageManagerInterface $languageManager) {
     $this->aliasManager = $aliasManager;
     $this->sitewideSettingsManager = $sitewideSettingsManager;
+    $this->languageManager = $languageManager;
   }
 
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('ef_sitewide_settings.manager'),
-      $container->get('path.alias_manager')
+      $container->get('path.alias_manager'),
+      $container->get('language_manager')
     );
   }
 
@@ -40,26 +48,32 @@ class CrisisWatchThemeHelper implements ContainerInjectionInterface {
     $crisis_watch_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('crisis_watch');
 
     if ($crisis_watch_settings) {
-      $crisis_watch_linked_page = $crisis_watch_settings->field_crisis_watch_link->entity;
+      $current_language = $this->languageManager->getCurrentLanguage()->getId();
 
-      if ($crisis_watch_linked_page) {
-        $url = $this->aliasManager->getAliasByPath($crisis_watch_linked_page->url());
+      if ($crisis_watch_settings->hasTranslation($current_language)) {
+        $crisis_watch_settings = $crisis_watch_settings->getTranslation($current_language);
+        $crisis_watch_linked_page = $crisis_watch_settings->field_crisis_watch_link->entity;
 
-        $overridden_title = $crisis_watch_settings->field_cw_title_override->value;
+        if ($crisis_watch_linked_page) {
+          $url = $this->aliasManager->getAliasByPath($crisis_watch_linked_page->url());
 
-        $title = $overridden_title && strlen($overridden_title) > 0 ? $overridden_title : $crisis_watch_linked_page->getTitle();
+          $overridden_title = $crisis_watch_settings->field_cw_title_override->value;
 
-        $variables['crisis_watch'] = [
-          '#type' => 'pattern',
-          '#id' => 'crisis_watch',
-          '#fields' => [
-            'crisis_watch_text' => $title,
-            'crisis_watch_url' => $url,
-            'crisis_watch_modifiers' => [
-              'type-three'
+          $title = $overridden_title && strlen($overridden_title) > 0 ? $overridden_title : $crisis_watch_linked_page->getTitle();
+
+          $variables['crisis_watch'] = [
+            '#type' => 'pattern',
+            '#id' => 'crisis_watch',
+            '#fields' => [
+              'crisis_watch_text' => $title,
+              'crisis_watch_url' => $url,
+              'crisis_watch_modifiers' => [
+                'type-three'
+              ],
             ],
-          ],
-        ];
+          ];
+        }
+
       }
     }
   }

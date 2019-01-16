@@ -4,6 +4,7 @@
 namespace Drupal\ef_global_navigation;
 
 
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
 use Drupal\ef_icon_library\IconLibraryInterface;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
@@ -17,9 +18,15 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
    */
   protected $iconLibrary;
 
-  public function __construct(SitewideSettingsManagerInterface $sitewideSettingsManager, IconLibraryInterface $iconLibrary) {
+  /**
+   * @var LanguageManagerInterface
+   */
+  protected $languageManager;
+
+  public function __construct(SitewideSettingsManagerInterface $sitewideSettingsManager, IconLibraryInterface $iconLibrary, LanguageManagerInterface $languageManager) {
     $this->sitewideSettingsManager = $sitewideSettingsManager;
     $this->iconLibrary = $iconLibrary;
+    $this->languageManager = $languageManager;
   }
 
   /**
