@@ -52,6 +52,7 @@ dependencies:
   - views_ui
   - ds
   - ds_extras
+  - menu_item_extras
   - ui_patterns
   - ui_patterns_library
   - ui_patterns_ds

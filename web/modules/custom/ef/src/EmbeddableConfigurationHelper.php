@@ -5,6 +5,7 @@ namespace Drupal\ef;
 
 
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\user\Entity\Role;
 
 class EmbeddableConfigurationHelper {
 
@@ -93,6 +94,23 @@ class EmbeddableConfigurationHelper {
   }
 
   /**
+   * Grant the permissions supplied to the roles supplied
+   *
+   * @param array $permissions
+   * @param array $roles
+   */
+  public function grantPermissions (array $permissions, array $roles) {
+    $role_objects = Role::loadMultiple($roles);
+
+    foreach ($role_objects as $role) {
+      foreach ($permissions as $permission) {
+        $role->grantPermission($permission);
+        $role->save();
+      }
+    }
+  }
+
+  /**
    * Some entity reference fields should include all bundles of the type they
    * are refering to. This helper function supports doing that. It should
    * probably be called from a hook_modules_enabled hook on the module that
@@ -103,7 +121,7 @@ class EmbeddableConfigurationHelper {
    * @param $reference_field
    * @return $this
    */
-  function ensureAllTargetBundlesAreSetOnReferenceField ($entity_type, $bundle, $reference_field) {
+  public function ensureAllTargetBundlesAreSetOnReferenceField ($entity_type, $bundle, $reference_field) {
     /** @var \Drupal\field\FieldStorageConfigInterface $field_config */
     $field_config = FieldStorageConfig::loadByName($entity_type, $reference_field);
 

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_icon_library
+    - menu_link_content
+  enforced:
+    module:
+      - ef_secondary_menu
+id: menu_link_content.field_icon
+field_name: field_icon
+entity_type: menu_link_content
+type: list_icon
+settings:
+  allowed_values: {  }
+  allowed_values_function: ef_icon_library_allowed_icon_values_function
+module: ef_icon_library
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

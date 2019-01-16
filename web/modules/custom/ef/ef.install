@@ -12,5 +12,4 @@ use Drupal\views\Views;
  * Implements hook_install().
  */
 function ef_install() {
-  //\Drupal::service('module_installer')->install(['ef_pull_quote']);
 }

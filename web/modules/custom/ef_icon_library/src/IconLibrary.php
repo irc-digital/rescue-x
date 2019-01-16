@@ -131,11 +131,8 @@ class IconLibrary implements IconLibraryInterface {
   public function patternIsBeingRendered ($variables) {
     $pattern_name = substr($variables['theme_hook_original'], 8);
 
-    /** @var \Drupal\ui_patterns\UiPatternsManager $patternsManager */
-    $patternsManager = \Drupal::service('plugin.manager.ui_patterns');
-
     /** @var \Drupal\ui_patterns\Definition\PatternDefinition $plugin */
-    $patternDefinition = $patternsManager->getDefinition($pattern_name);
+    $patternDefinition = $this->patternsManager->getDefinition($pattern_name);
 
     if ($patternDefinition) {
       $this->processIconLibraryField ($patternDefinition, $variables);
@@ -149,11 +146,19 @@ class IconLibrary implements IconLibraryInterface {
     if (isset($additional_info['icon_library_field'])) {
       $icon_library_field = $additional_info['icon_library_field'];
 
-      if (is_array($variables[$icon_library_field])) {
-        $this->iconsBeingUsed[] = $this->renderer->render($variables[$icon_library_field]);
+      if (strpos($icon_library_field, '.')) {
+        list ($field_name, $subfield_name) = explode('.', $icon_library_field);
+        foreach ($variables[$field_name] as $field) {
+          $this->iconsBeingUsed[] = $field[$subfield_name];
+        }
       } else {
-        $this->iconsBeingUsed[] = $variables[$icon_library_field];
+        if (is_array($variables[$icon_library_field])) {
+          $this->iconsBeingUsed[] = $this->renderer->render($variables[$icon_library_field]);
+        } else {
+          $this->iconsBeingUsed[] = $variables[$icon_library_field];
+        }
       }
+
     }
   }
 
