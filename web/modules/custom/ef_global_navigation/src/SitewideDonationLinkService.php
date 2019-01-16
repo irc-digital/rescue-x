@@ -39,25 +39,31 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
     $donation_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('donation_link');
 
     if ($donation_settings) {
-      $donation_link_field = $donation_settings->field_donation_link_link;
+      $active_language = $this->languageManager->getCurrentLanguage()->getId();
 
-      if ($donation_link_field) {
-        $uri = $donation_link_field->uri;
-        $title = $donation_link_field->title;
-        $icon = $donation_link_field->options['link_icon'];
+      if ($donation_settings->hasTranslation($active_language)) {
+        $donation_settings = $donation_settings->getTranslation($active_language);
+        $donation_link_field = $donation_settings->field_donation_link_link;
 
-        $url = Url::fromUri($uri);
+        if ($donation_link_field) {
+          $uri = $donation_link_field->uri;
+          $title = $donation_link_field->title;
+          $icon = $donation_link_field->options['link_icon'];
 
-        $result = [
-          'url' => $url->toString(),
-          'title' => $title,
-          'icon' => $icon,
-        ];
+          $url = Url::fromUri($uri);
 
-        // put a hook here to allow other parts of the system to alter the info
+          $result = [
+            'url' => $url->toString(),
+            'title' => $title,
+            'icon' => $icon,
+          ];
 
-        $icon_info = $this->iconLibrary->getIconInformation($result['icon']);
-        $result['icon'] = $icon_info->name;
+          // put a hook here to allow other parts of the system to alter the info
+
+          $icon_info = $this->iconLibrary->getIconInformation($result['icon']);
+          $result['icon'] = $icon_info->name;
+        }
+
       }
 
     }

@@ -1,14 +1,296 @@
 <?php
 
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
-use Drupal\media\Entity\Media;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
 
 function ef_demo_global_navigation_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
+
+  _ef_demo_global_navigation_add_main_menu_items(_ef_demo_global_navigation_get_main_menu());
+  _ef_demo_global_navigation_add_secondary_menu_items();
+  _ef_demo_global_navigation_add_crisis_watch();
+  _ef_demo_global_navigation_add_sitewide_donation_link();
 }
 
+function _ef_demo_global_navigation_add_crisis_watch () {
+  $announcement = Node::create([
+    'title' => 'Test announcement',
+    'type' => 'announcement',
+  ]);
 
-function ef_demo_uninstall () {
-//  ef_delete_all ('node', 'article');
+  $announcement->save();
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'crisis_watch',
+    'field_crisis_watch_link' => [
+      'target_id' => $announcement->id(),
+    ],
+    'field_cw_type' => 1,
+  ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_global_navigation_add_sitewide_donation_link () {
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'donation_link',
+    'field_donation_link_link' => [
+      'uri' => 'internal:/',
+      'title' => 'Donate',
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
+      ],
+    ],
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_donation_link_link' => [
+      'uri' => 'internal:/',
+      'title' => 'Donate (DE)',
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
+      ],
+    ],
+  ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_global_navigation_get_main_menu () {
+  return [
+    [
+      'title' => 'Who we are',
+      'children' => [
+        [
+          'title' => 'About Us',
+          'children' => [
+            [
+              'title' => 'At a glance',
+              'title' => 'Annual report',
+            ],
+          ]
+        ],
+        [
+          'title' => 'Our People',
+          'children' => [
+            [
+              'title' => 'President David Miliband',
+              'title' => 'Staff Leaders',
+            ],
+          ]
+        ],
+      ],
+    ],
+    [
+      'title' => 'Where we work',
+      'children' => [
+        [
+          'title' => 'Location',
+          'children' => [
+            [
+              'title' => 'Africa',
+              'children' => [
+                ['title' => 'Africa'],
+                ['title' => 'Burundi'],
+                ['title' => 'Central African Republic'],
+                ['title' => 'Democratic Republic of Congo'],
+                ['title' => 'Ethiopia'],]
+              ],
+            [
+              'title' => 'Central & South America',
+              'children' => [
+                ['title' => 'El Salvadore'],
+                ['title' => 'Venezuela'],
+              ],
+            ],
+            [
+              'title' => 'Asia',
+              'children' => [
+                ['title' => 'Bangladesh'],
+                ['title' => 'Malaysia'],
+                ['title' => 'Myanmar'],
+                ['title' => 'Pakistan'],
+                ['title' => 'Thailand'],
+              ],
+            ],
+            [
+              'title' => 'Middle East',
+              'children' => [
+                ['title' => 'Iraq'],
+                ['title' => 'Libya'],
+                ['title' => 'Jordan'],
+                ['title' => 'Syria'],
+                ['title' => 'Yemen'],
+              ],
+            ],
+            [
+              'title' => 'United States',
+              'children' => [
+                ['title' => 'Abilene, TX'],
+                ['title' => 'Atlanta, GA'],
+                ['title' => 'Baltimore, MD'],
+                ['title' => 'Boise, ID'],
+                ['title' => 'Dallas, TX'],
+                ['title' => 'Denver, CO'],
+                ['title' => 'Elizabeth, NJ'],
+                ['title' => 'Los Angeles, CA'],
+                ['title' => 'Miami, FL'],
+                ['title' => 'Missoula, MT'],
+                ['title' => 'New York, NY'],
+              ],
+            ],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'Who we are',
+      'children' => [
+        [
+          'title' => 'Where We Focus',
+          'children' => [
+            ['title' => 'Heath'],
+            ['title' => 'Safety'],
+          ],
+        ],
+        [
+          'title' => 'Our Approach',
+          'children' => [
+            ['title' => 'Better Aid'],
+            ['title' => 'Ideas & Impact'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'How to help',
+      'children' => [
+        [
+          'title' => 'Give',
+          'children' => [
+            ['title' => 'Donate'],
+            ['title' => 'Shop Rescue Gifts'],
+          ],
+        ],
+        [
+          'title' => 'Join Us',
+          'children' => [
+            ['title' => 'Take Action'],
+            ['title' => 'Become a Corporate Partner'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'Latest',
+      'children' => [
+        ['title' => 'Latest'],
+        ['title' => 'Media Center'],
+        ['title' => 'Crises & Issues'],
+        ['title' => 'Ebola'],
+      ]
+    ],
+  ];
+}
+
+function _ef_demo_global_navigation_add_main_menu_items ($menu, $parent = NULL) {
+
+  $index = 0;
+
+  foreach ($menu as $menu_item) {
+    $menu_link = MenuLinkContent::create([
+      'title' => $menu_item['title'],
+      'link' => ['uri' => 'internal:/'],
+      'menu_name' => 'main',
+      'parent' => $parent,
+      'weight' => $index,
+      'expanded' => FALSE,
+    ]);
+
+//    $menu_link->addTranslation('de', [
+//      'title' => $menu_item['title'] . ' (DE)',
+//      'field_icon' => [
+//        'value' => 'themes/x/dist/svg/individuals/symbol-' . $icon . '.svg',
+//      ],
+//    ]);
+
+    $menu_link->save();
+    
+    $uuid = $menu_link->uuid();
+    
+    if (isset($menu_item['children'])) {
+      _ef_demo_global_navigation_add_main_menu_items($menu_item['children'], sprintf('menu_link_content:%s', $uuid));
+    }
+    
+    $index++;
+  }
+}
+
+function _ef_demo_global_navigation_add_secondary_menu_items () {
+  $items = [
+    ['Log in', 'login', FALSE],
+    ['Careers', 'careers', TRUE],
+    ['Volunteering', 'volunteer', TRUE],
+  ];
+
+  $index = 0;
+
+  foreach ($items as $item) {
+    list($title, $icon, $translate) = $item;
+    $menu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'internal:/'],
+      'menu_name' => 'secondary',
+      'weight' => $index,
+      'expanded' => TRUE,
+      'field_icon' => [
+        'value' => 'themes/x/dist/svg/individuals/symbol-' . $icon . '.svg',
+      ],
+    ]);
+
+    if ($translate) {
+      $menu_link->addTranslation('de', [
+        'title' => $title . ' (DE)',
+        'field_icon' => [
+          'value' => 'themes/x/dist/svg/individuals/symbol-' . $icon . '.svg',
+        ],
+      ]);
+    }
+
+    $menu_link->save();
+    $index++;
+  }
+
+}
+
+function ef_demo_global_navigation_uninstall () {
+  ef_delete_all ('node', 'announcement');
+  ef_delete_all ('sitewide_settings', 'crisis_watch');
+  ef_delete_all ('sitewide_settings', 'donation_link');
+
+  foreach (['secondary', 'main'] as $menu) {
+    /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+    $entity_type_manager = \Drupal::service('entity_type.manager');
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+    $storage = $entity_type_manager->getStorage('menu_link_content');
+
+    $ids = $storage->getQuery()
+      ->condition('menu_name', $menu)
+      ->execute();
+
+    $all = $storage->loadMultiple($ids);
+
+    foreach ($all as $item) {
+      $item->delete();
+    }
+  }
+
 }

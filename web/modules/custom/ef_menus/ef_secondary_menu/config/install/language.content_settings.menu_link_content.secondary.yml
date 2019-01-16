@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.secondary-navigation
+    - system.menu.secondary
   module:
     - content_translation
 third_party_settings:
@@ -10,8 +10,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '1'
-id: menu_link_content.secondary-navigation
+id: menu_link_content.secondary
 target_entity_type_id: menu_link_content
-target_bundle: secondary-navigation
+target_bundle: secondary
 default_langcode: site_default
 language_alterable: true

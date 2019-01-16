@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.menu_link_content.field_icon
-    - system.menu.secondary-navigation
+    - system.menu.secondary
   module:
     - ef_icon_library
-id: menu_link_content.secondary-navigation.field_icon
+id: menu_link_content.secondary.field_icon
 field_name: field_icon
 entity_type: menu_link_content
-bundle: secondary-navigation
+bundle: secondary
 label: Icon
 description: 'Which icon should be placed next to this menu item?'
 required: true

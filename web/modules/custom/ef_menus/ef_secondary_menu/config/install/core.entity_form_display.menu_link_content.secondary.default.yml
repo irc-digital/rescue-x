@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.secondary-navigation.field_icon
-    - system.menu.secondary-navigation
+    - field.field.menu_link_content.secondary.field_icon
+    - system.menu.secondary
   module:
     - link
     - menu_item_extras
-id: menu_link_content.secondary-navigation.default
+id: menu_link_content.secondary.default
 targetEntityType: menu_link_content
-bundle: secondary-navigation
+bundle: secondary
 mode: default
 content:
   field_icon:
