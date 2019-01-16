@@ -191,11 +191,21 @@ function _ef_demo_global_navigation_get_main_menu () {
     [
       'title' => 'Latest',
       'children' => [
-        ['title' => 'Latest'],
-        ['title' => 'Media Center'],
-        ['title' => 'Crises & Issues'],
-        ['title' => 'Ebola'],
-      ]
+        [
+          'title' => 'Latest',
+          'children' => [
+            ['title' => 'News & Features'],
+            ['title' => 'Media Center'],
+          ],
+        ],
+        [
+          'title' => 'Crises & Issues',
+          'children' => [
+            ['title' => 'Central American caravans'],
+            ['title' => 'Ebola'],
+          ],
+        ],
+      ],
     ],
   ];
 }
@@ -214,12 +224,14 @@ function _ef_demo_global_navigation_add_main_menu_items ($menu, $parent = NULL) 
       'expanded' => FALSE,
     ]);
 
-//    $menu_link->addTranslation('de', [
-//      'title' => $menu_item['title'] . ' (DE)',
-//      'field_icon' => [
-//        'value' => 'themes/x/dist/svg/individuals/symbol-' . $icon . '.svg',
-//      ],
-//    ]);
+    $menu_link->addTranslation('de', [
+      'title' => $menu_item['title'] . ' (DE)',
+      'link' => ['uri' => 'internal:/'],
+      'menu_name' => 'main',
+      'parent' => $parent,
+      'weight' => $index,
+      'expanded' => FALSE,
+    ]);
 
     $menu_link->save();
     

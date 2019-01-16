@@ -1,0 +1,8 @@
+name: EF Main menu
+type: module
+description: 'Config and function for rendering the global navigation main menu.'
+package: EF Menu
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

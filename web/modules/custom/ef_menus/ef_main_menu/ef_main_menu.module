@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\ef_main_menu\MainMenuThemeHelper;
+
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_main_menu_theme() {
+
+  return [
+    'ef_main_menu' => [
+      'variables' => [],
+    ]
+  ];
+}
+
+function template_preprocess_ef_main_menu (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(MainMenuThemeHelper::class)
+    ->preprocessMainMenu($variables);
+}

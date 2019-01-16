@@ -39,6 +39,9 @@ class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
           '#theme' => 'ef_crisis_watch',
           '#location' => 'header',
         ],
+        'global_navigation_main_menu' => [
+          '#theme' => 'ef_main_menu',
+        ],
         'global_navigation_secondary_menu' => [
           '#theme' => 'ef_secondary_menu',
         ],

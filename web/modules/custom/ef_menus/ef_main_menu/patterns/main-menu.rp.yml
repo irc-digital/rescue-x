@@ -1,0 +1,12 @@
+main_menu:
+  label: ''
+  use: "@components/43-menu/05-main/main-menu.twig"
+  fields:
+    main_menu_items:
+      type: array
+      label: ""
+  libraries:
+    - main_menu_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-main-menu.css: {}

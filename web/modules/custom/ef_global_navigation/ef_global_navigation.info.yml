@@ -9,4 +9,5 @@ dependencies:
   - ef_sitewide_settings
   - ef_crisis_watch
   - ef_icon_library
+  - ef_main_menu
   - ef_secondary_menu

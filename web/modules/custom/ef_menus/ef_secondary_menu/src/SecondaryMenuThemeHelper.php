@@ -50,7 +50,7 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
   public function preprocessSecondaryMenu (&$variables) {
     $menu_links = $this->menuStorage->getQuery()
       ->condition('menu_name', 'secondary',  '=')
-      ->sort('weight')->sort('id')
+      ->sort('weight')->sort('title')
       ->execute();
 
     $menu_links = $this->menuStorage->loadMultiple($menu_links);
