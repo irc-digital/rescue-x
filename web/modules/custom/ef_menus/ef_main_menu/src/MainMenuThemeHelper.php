@@ -5,7 +5,6 @@ namespace Drupal\ef_main_menu;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\Menu\MenuLinkTree;
 use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
@@ -57,9 +56,9 @@ class MainMenuThemeHelper implements ContainerInjectionInterface {
 
     /** @var \Drupal\Core\Menu\MenuLinkTreeElement $menu_tree_entry */
     foreach ($menu_tree as $menu_tree_entry) {
-      $menu_items[] = $this->convertMenuTreeToPatternInput($menu_tree_entry);
+      $entry = $this->convertMenuTreeToPatternInput($menu_tree_entry);
+      $menu_items[] = $entry;
     }
-//    $active_language = $this->languageManager->getCurrentLanguage()->getId();
 
     $variables['main_menu'] = [
       '#type' => "pattern",
@@ -71,8 +70,11 @@ class MainMenuThemeHelper implements ContainerInjectionInterface {
   }
 
   protected function convertMenuTreeToPatternInput (MenuLinkTreeElement $menuLinkTree) {
-    $title = $menuLinkTree->link->getTitle();
-    $url = $menuLinkTree->link->getUrlObject()->toString();
+    /** @var \Drupal\menu_link_content\MenuLinkContentInterface $link */
+    $link = $menuLinkTree->link;
+
+    $title = $link->getTitle();
+    $url = $link->getUrlObject()->toString();
 
     $entry = [
       'title' => $title,
@@ -83,7 +85,8 @@ class MainMenuThemeHelper implements ContainerInjectionInterface {
       $children = [];
 
       foreach ($menuLinkTree->subtree as $subtree) {
-        $children[] = $this->convertMenuTreeToPatternInput($subtree);
+        $subtree_entry = $this->convertMenuTreeToPatternInput($subtree);
+        $children[] = $subtree_entry;
       }
 
       $entry['items'] = $children;
