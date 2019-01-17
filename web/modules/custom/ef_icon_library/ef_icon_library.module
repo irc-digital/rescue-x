@@ -9,21 +9,35 @@ use Drupal\Core\Entity\ContentEntityInterface;
 function ef_icon_library_theme() {
   return [
     'icon_library_icons' => [
-      'variables' => ['in_use_icons' => []],
+      'variables' => [],
     ],
   ];
 }
 
 function template_preprocess_icon_library_icons(&$variables) {
-  $in_use_icons = $variables['in_use_icons'];
+
+  /** @var \Drupal\ef_icon_library\IconLibraryInterface $iconLibrary */
+  $iconLibrary = \Drupal::service('ef.icon_library');
+
+  $icons_in_use = $iconLibrary->getInUseIcons();
 
   $inlined_icons = '';
 
-  foreach ($in_use_icons as $in_use_icon) {
+  foreach ($icons_in_use as $in_use_icon) {
     $file_path = $in_use_icon->uri;
     $inlined_icons .= file_get_contents($file_path);
   }
+
   $variables['inlined_icons'] = $inlined_icons;
+}
+
+/**
+ * Implements hook_page_bottom().
+ */
+function ef_icon_library_page_bottom(array &$page_bottom) {
+  $page_bottom['inlined_svg_icons'] = [
+    '#theme' => 'icon_library_icons',
+  ];
 }
 
 function ef_icon_library_theme_registry_alter(&$theme_registry) {
@@ -38,21 +52,6 @@ function ef_icon_library_preprocess_icon_pattern (array &$variables) {
   /** @var \Drupal\ef_icon_library\IconLibraryInterface $iconLibrary */
   $iconLibrary = \Drupal::service('ef.icon_library');
   $iconLibrary->patternIsBeingRendered ($variables);
-
-}
-
-function ef_icon_library_preprocess_html (&$variables) {
-  /** @var \Drupal\ef_icon_library\IconLibraryInterface $iconLibrary */
-  $iconLibrary = \Drupal::service('ef.icon_library');
-
-  $icons_in_use = $iconLibrary->getInUseIcons();
-
-  if (count($icons_in_use) > 0) {
-    $variables['inlined_svg_icons'] = [
-      '#theme' => 'icon_library_icons',
-      '#in_use_icons' => $icons_in_use,
-    ];
-  }
 }
 
 /**
@@ -67,11 +66,8 @@ function ef_icon_library_allowed_icon_values_function(FieldStorageConfig $defini
   /** @var \Drupal\ef_icon_library\IconLibraryInterface $icon_library */
   $icon_library = \Drupal::service('ef.icon_library');
 
-  $a = $icon_library->getIconList();;
-
   return $icon_library->getIconList();
 }
-
 
 /**
  * Implements hook_field_widget_info_alter().
