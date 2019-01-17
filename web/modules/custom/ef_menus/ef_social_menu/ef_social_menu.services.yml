@@ -1,0 +1,4 @@
+services:
+  ef_social_menu_service:
+    class: Drupal\ef_social_menu\SocialMenuService
+    arguments: ['@ef_sitewide_settings.manager', '@ef.icon_library', '@language_manager']

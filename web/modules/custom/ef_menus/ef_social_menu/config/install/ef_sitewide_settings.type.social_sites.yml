@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_social_menu
+id: social_sites
+label: 'Social sites'
+description: 'Links to social sites - is used in the global navigation.'

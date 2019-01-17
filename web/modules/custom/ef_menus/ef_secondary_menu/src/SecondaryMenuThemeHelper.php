@@ -6,6 +6,7 @@ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\ef_icon_library\IconLibraryInterface;
+use Drupal\ef_social_menu\SocialMenuServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
@@ -24,13 +25,21 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
   protected $iconLibrary;
 
   /**
+   * The social menu service
+   *
+   * @var SocialMenuServiceInterface
+   */
+  protected $socialMenuService;
+
+  /**
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected $languageManager;
 
-  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, LanguageManagerInterface $languageManager) {
+  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, SocialMenuServiceInterface $socialMenuService, LanguageManagerInterface $languageManager) {
     $this->menuStorage = $menuStorage;
     $this->iconLibrary = $iconLibrary;
+    $this->socialMenuService = $socialMenuService;
     $this->languageManager = $languageManager;
   }
 
@@ -38,6 +47,7 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
     return new static(
       $container->get('entity_type.manager')->getStorage('menu_link_content'),
       $container->get('ef.icon_library'),
+      $container->get('ef_social_menu_service'),
       $container->get('language_manager')
     );
   }
@@ -76,12 +86,14 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
       }
     }
 
+    $social_sites = $this->socialMenuService->getSocialSites();
+
     $variables['secondary_menu'] = [
       '#type' => "pattern",
       '#id' => 'secondary_menu',
       '#fields' => [
         'secondary_menu_menu_items' => $menu_items,
-        'secondary_menu_social_share_sites' => [],
+        'secondary_menu_social_share_sites' => $social_sites,
       ],
     ];
   }

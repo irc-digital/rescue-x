@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.social_sites
+    - field.storage.sitewide_settings.field_social_sites
+  module:
+    - ef_icon_library
+id: sitewide_settings.social_sites.field_social_sites
+field_name: field_social_sites
+entity_type: sitewide_settings
+bundle: social_sites
+label: Sites
+description: 'The social share sites. While there is no limit to the number you can include here, you should probably keep it to four or less.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link_icon

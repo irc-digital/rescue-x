@@ -55,10 +55,13 @@ class IconLibrary implements IconLibraryInterface {
     $this->renderer = $renderer;
   }
 
-  public function getIconInformation($key) {
+  public function getIconInformation($key, $mark_as_in_use = FALSE) {
     $icons = $this->getIcons();
 
     if (isset($icons[$key])) {
+      if ($mark_as_in_use) {
+        $this->iconsBeingUsed[] = $icons[$key]->id;
+      }
       return $icons[$key];
     }
 

@@ -12,6 +12,7 @@ function ef_demo_global_navigation_install () {
   _ef_demo_global_navigation_add_secondary_menu_items();
   _ef_demo_global_navigation_add_crisis_watch();
   _ef_demo_global_navigation_add_sitewide_donation_link();
+  _ef_demo_global_navigation_add_social_menu();
 }
 
 function _ef_demo_global_navigation_add_crisis_watch () {
@@ -58,6 +59,40 @@ function _ef_demo_global_navigation_add_sitewide_donation_link () {
       ],
     ],
   ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_global_navigation_add_social_menu () {
+
+  $social_sites = [];
+
+  foreach (['twitter', 'facebook','instagram','youtube'] as $site) {
+    $social_sites[] = [
+      'uri' => 'https://bbc.co.uk/news',
+      'title' => $site,
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-' . $site . '.svg',
+      ],
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'social_sites',
+    'field_social_sites' => $social_sites,
+  ]);
+
+//  $settings->addTranslation('de', [
+//    'field_donation_link_link' => [
+//      'uri' => 'internal:/',
+//      'title' => 'Donate (DE)',
+//      'options' => [
+//        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
+//      ],
+//    ],
+//  ]);
 
   $settings->save();
 

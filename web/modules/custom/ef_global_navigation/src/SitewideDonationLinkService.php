@@ -35,7 +35,7 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
   public function getSitewideDonationLinkInformation () {
     $result = NULL;
 
-    /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $crisis_watch_settings */
+    /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $donation_settings */
     $donation_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('donation_link');
 
     if ($donation_settings) {
