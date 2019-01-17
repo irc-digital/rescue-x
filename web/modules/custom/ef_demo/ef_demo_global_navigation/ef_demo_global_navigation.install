@@ -84,15 +84,12 @@ function _ef_demo_global_navigation_add_social_menu () {
     'field_social_sites' => $social_sites,
   ]);
 
-//  $settings->addTranslation('de', [
-//    'field_donation_link_link' => [
-//      'uri' => 'internal:/',
-//      'title' => 'Donate (DE)',
-//      'options' => [
-//        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
-//      ],
-//    ],
-//  ]);
+  $social_sites = array_splice($social_sites,0,2);
+
+  // just include the first two social sites on DE, to demonstrate that
+  $settings->addTranslation('de', [
+    'field_social_sites' => $social_sites,
+  ]);
 
   $settings->save();
 
@@ -321,6 +318,7 @@ function ef_demo_global_navigation_uninstall () {
   ef_delete_all ('node', 'announcement');
   ef_delete_all ('sitewide_settings', 'crisis_watch');
   ef_delete_all ('sitewide_settings', 'donation_link');
+  ef_delete_all ('sitewide_settings', 'social_sites');
 
   foreach (['secondary', 'main'] as $menu) {
     /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
