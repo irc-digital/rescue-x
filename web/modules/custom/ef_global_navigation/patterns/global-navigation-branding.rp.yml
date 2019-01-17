@@ -1,0 +1,8 @@
+global_navigation_branding_link:
+  label: ''
+  use: "@atoms/15-global-navigation-branding-link/global-navigation-branding-link.twig"
+  libraries:
+    - global_navigation_branding_link_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpla-global-navigation-branding-link.css: {}

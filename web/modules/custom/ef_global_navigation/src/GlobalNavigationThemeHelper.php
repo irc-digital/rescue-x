@@ -48,6 +48,13 @@ class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
         'global_navigation_mobile_secondary_menu' => [
           '#theme' => 'ef_secondary_menu_mobile',
         ],
+        'global_navigation_branding' => [
+          '#type' => 'pattern',
+          '#id' => 'global_navigation_branding_link',
+          '#fields' => [
+            'global_navigation_branding_link_modifiers' => ['context-usa'],
+          ],
+        ],
       ],
     ];
   }
