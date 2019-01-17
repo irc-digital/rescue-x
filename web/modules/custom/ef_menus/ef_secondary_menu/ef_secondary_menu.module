@@ -13,7 +13,10 @@ function ef_secondary_menu_theme() {
   return [
     'ef_secondary_menu' => [
       'variables' => [],
-    ]
+    ],
+    'ef_secondary_menu_mobile' => [
+      'variables' => [],
+    ],
   ];
 }
 
@@ -21,4 +24,10 @@ function template_preprocess_ef_secondary_menu (&$variables) {
   \Drupal::classResolver()
     ->getInstanceFromDefinition(SecondaryMenuThemeHelper::class)
     ->preprocessSecondaryMenu($variables);
+}
+
+function template_preprocess_ef_secondary_menu_mobile (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(SecondaryMenuThemeHelper::class)
+    ->preprocessSecondaryMenuMobile($variables);
 }

@@ -1,4 +1,4 @@
-video_poster: ''
-video_sources:
+video_atom_poster: ''
+video_atom_sources:
   - source: 'https://www.youtube.com/watch?v=kGm-YK24-OE'
     type: 'video/youtube'

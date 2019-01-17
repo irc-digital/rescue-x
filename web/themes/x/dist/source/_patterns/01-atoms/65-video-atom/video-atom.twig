@@ -1,14 +1,14 @@
-<div{% if video_id %} id="{{ video_id }}"{% endif %} class="rpla-video">
+<div{% if video_atom_id %} id="{{ video_atom_id }}"{% endif %} class="rpla-video-atom">
   <video
-    class="rpla-video__player video-js vjs-16-9"
+    class="rpla-video-atom__player video-js vjs-16-9"
     controls
     preload="auto"
-    {% if video_poster is not empty %}poster="{{ video_poster }}"{% endif %}
+    {% if video_atom_poster is not empty %}poster="{{ video_atom_poster }}"{% endif %}
     width="1084"
     height="610"
     data-setup='{ "techOrder": ["html5", "youtube"] }'>
-    {% for video_source in video_sources %}
-      <source src="{{ video_source.source }}" type="{{ video_source.type }}" />
+    {% for video_atom_source in video_atom_sources %}
+      <source src="{{ video_atom_source.source }}" type="{{ video_atom_source.type }}" />
     {% endfor %}
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a

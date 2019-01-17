@@ -11,7 +11,7 @@
 <div class="rplc-hero-video{% for hero_video_modifier in hero_video_modifiers %} rplc-hero-video--{{ hero_video_modifier }}{% endfor %}">
   <div class="rplc-hero-video__content">
     <div class="rplc-hero-video__video-wrapper">
-      {% include '@atoms/65-video/video.twig' with { video_sources: hero_video_video_sources } only %}
+      {% include '@atoms/65-video-atom/video-atom.twig' with { video_atoms_sources: hero_video_video_sources } only %}
     </div>
     {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% block hero_layout_1_primary_1_block %}

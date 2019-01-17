@@ -13,3 +13,5 @@ crisis_watch:
        css:
          theme:
            dist/public/css/patterns/rplm-crisis-watch.css: {}
+  icons:
+    - 'crisis'

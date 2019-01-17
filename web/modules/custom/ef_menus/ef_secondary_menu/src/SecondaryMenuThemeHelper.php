@@ -5,6 +5,7 @@ namespace Drupal\ef_secondary_menu;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\ef_crisis_watch\CrisisWatchServiceInterface;
 use Drupal\ef_icon_library\IconLibraryInterface;
 use Drupal\ef_social_menu\SocialMenuServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -32,14 +33,22 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
   protected $socialMenuService;
 
   /**
+   * The crisis watch service
+   *
+   * @var CrisisWatchServiceInterface
+   */
+  protected $crisisWatchService;
+
+  /**
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected $languageManager;
 
-  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, SocialMenuServiceInterface $socialMenuService, LanguageManagerInterface $languageManager) {
+  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, SocialMenuServiceInterface $socialMenuService, CrisisWatchServiceInterface $crisisWatchService, LanguageManagerInterface $languageManager) {
     $this->menuStorage = $menuStorage;
     $this->iconLibrary = $iconLibrary;
     $this->socialMenuService = $socialMenuService;
+    $this->crisisWatchService = $crisisWatchService;
     $this->languageManager = $languageManager;
   }
 
@@ -48,16 +57,12 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
       $container->get('entity_type.manager')->getStorage('menu_link_content'),
       $container->get('ef.icon_library'),
       $container->get('ef_social_menu_service'),
+      $container->get('ef_crisis_watch_service'),
       $container->get('language_manager')
     );
   }
 
-  /**
-   * Ready the secondary menu to be rendered as a pattern
-   *
-   * @param $variables
-   */
-  public function preprocessSecondaryMenu (&$variables) {
+  protected function getSecondaryMenu () {
     $menu_links = $this->menuStorage->getQuery()
       ->condition('menu_name', 'secondary',  '=')
       ->sort('weight')->sort('title')
@@ -65,7 +70,7 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
 
     $menu_links = $this->menuStorage->loadMultiple($menu_links);
 
-    $menu_items= [];
+    $menu_items = [];
 
     $active_language = $this->languageManager->getCurrentLanguage()->getId();
 
@@ -86,6 +91,17 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
       }
     }
 
+    return $menu_items;
+  }
+
+  /**
+   * Ready the secondary menu to be rendered as a pattern
+   *
+   * @param $variables
+   */
+  public function preprocessSecondaryMenu (&$variables) {
+
+    $menu_items = $this->getSecondaryMenu();
     $social_sites = $this->socialMenuService->getSocialSites();
 
     $variables['secondary_menu'] = [
@@ -94,6 +110,27 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
       '#fields' => [
         'secondary_menu_menu_items' => $menu_items,
         'secondary_menu_social_share_sites' => $social_sites,
+      ],
+    ];
+  }
+
+  /**
+   * Ready the mobile version of the secondary menu to be rendered as a pattern
+   *
+   * @param $variables
+   */
+  public function preprocessSecondaryMenuMobile (&$variables) {
+    $menu_items = $this->getSecondaryMenu();
+    $social_sites = $this->socialMenuService->getSocialSites();
+    $crisis_watch = $this->crisisWatchService->getCrisisWatch();
+
+    $variables['secondary_menu_mobile'] = [
+      '#type' => "pattern",
+      '#id' => 'secondary_menu_mobile',
+      '#fields' => [
+        'mobile_bottom_menu_crisis_watch_url' => !is_null($crisis_watch) ? $crisis_watch['title'] : NULL,
+        'mobile_bottom_menu_items' => $menu_items,
+        'mobile_bottom_menu_social_share_sites' => $social_sites,
       ],
     ];
   }

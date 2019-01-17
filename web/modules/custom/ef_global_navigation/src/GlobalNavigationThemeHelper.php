@@ -45,6 +45,9 @@ class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
         'global_navigation_secondary_menu' => [
           '#theme' => 'ef_secondary_menu',
         ],
+        'global_navigation_mobile_secondary_menu' => [
+          '#theme' => 'ef_secondary_menu_mobile',
+        ],
       ],
     ];
   }

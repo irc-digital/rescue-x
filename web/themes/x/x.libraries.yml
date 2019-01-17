@@ -3,3 +3,5 @@ global-styling:
   css:
     component:
       dist/public/css/rpl.css: { }
+  js:
+    dist/public/js/patterns/rpl.min.js: {}

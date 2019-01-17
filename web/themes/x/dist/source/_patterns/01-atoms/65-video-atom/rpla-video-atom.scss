@@ -1,0 +1,12 @@
+@import 'rpla-video-atom.variables';
+@import 'rpla-video-atom.mixins';
+
+.rpla-video-atom {
+
+  &__player {
+    @include video-js-mixin;
+  }
+
+}
+
+// end of file
