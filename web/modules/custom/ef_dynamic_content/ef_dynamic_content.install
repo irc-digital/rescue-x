@@ -1,5 +1,13 @@
 <?php
 
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_dynamic_content_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('dynamic_content');
+}
+
 function ef_dynamic_content_uninstall () {
   ef_delete_all ('embeddable', 'dynamic_content');
 }

@@ -7,63 +7,63 @@ function ef_demo_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
   
-  //ef_demo_add_articles();
+  ef_demo_add_articles();
 
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Boomshanka',
-//    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Neal 1',
-//    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Rik 1',
-//    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Rik 2',
-//    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Rik 3',
-//    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Rik 4',
-//    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Neal 2',
-//    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
-//    'language' => 'en',
-//  ])->save();
-//
-//  Embeddable::create([
-//    'type' => 'pull_quote',
-//    'title' => 'Vyvyan 1',
-//    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
-//    'language' => 'en',
-//  ])->save();
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Boomshanka',
+    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Neal 1',
+    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Rik 1',
+    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Rik 2',
+    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Rik 3',
+    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Rik 4',
+    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Neal 2',
+    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
+    'language' => 'en',
+  ])->save();
+
+  Embeddable::create([
+    'type' => 'pull_quote',
+    'title' => 'Vyvyan 1',
+    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
+    'language' => 'en',
+  ])->save();
 
 }
 

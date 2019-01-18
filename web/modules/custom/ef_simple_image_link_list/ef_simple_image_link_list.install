@@ -1,5 +1,13 @@
 <?php
 
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_simple_image_link_list_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('simple_image_link_list');
+}
+
 function ef_simple_image_link_list_uninstall () {
   ef_delete_all ('embeddable', 'simple_image_link_list');
   ef_delete_all ('embeddable', 'simple_image_link');

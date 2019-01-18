@@ -1,5 +1,13 @@
 <?php
 
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_infographic_simple_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('infographic_simple');
+}
+
 function ef_infographic_simple_uninstall () {
   ef_delete_all ('embeddable', 'infographic_simple');
   ef_delete_all ('paragraph', 'teaser_icon_2');

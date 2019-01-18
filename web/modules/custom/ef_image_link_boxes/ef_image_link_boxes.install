@@ -1,5 +1,13 @@
 <?php
 
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_image_link_boxes_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('image_link_boxes');
+}
+
 function ef_image_link_boxes_uninstall () {
   ef_delete_all ('embeddable', 'image_link_boxes');
   ef_delete_all ('paragraph', 'image_link_box');

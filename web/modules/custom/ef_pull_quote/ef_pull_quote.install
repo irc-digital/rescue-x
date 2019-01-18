@@ -1,5 +1,13 @@
 <?php
 
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_pull_quote_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('pull_quote');
+}
+
 function ef_pull_quote_uninstall () {
   ef_delete_all ('embeddable', 'pull_quote');
 }
