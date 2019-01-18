@@ -7,7 +7,7 @@ function ef_demo_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
   
-  ef_demo_add_articles();
+  //ef_demo_add_articles();
 
 //  Embeddable::create([
 //    'type' => 'pull_quote',

@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Place the highlight in an aside
+ */
+function ef_highlight_preprocess_embeddable(array &$variables) {
+  if ($variables['elements']['#embeddable']->getType() == 'highlight') {
+    $variables['content'] = [
+      '#type' => 'pattern',
+      '#id' => 'aside',
+      '#fields' => [
+        'aside_content' => $variables['content']['embeddable_content'],
+      ],
+    ];
+  }
+}
