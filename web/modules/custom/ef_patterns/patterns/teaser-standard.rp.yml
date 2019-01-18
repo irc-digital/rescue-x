@@ -1,0 +1,30 @@
+teaser_standard:
+  label: ''
+  use: "@components/87-teasers/05-standard/teaser-standard.twig"
+  fields:
+    teaser_standard_url:
+      type: url
+      label: ''
+    teaser_standard_slug:
+      type: text
+      label: ''
+    teaser_standard_title:
+      type: text
+      label: ''
+    teaser_standard_cta:
+      type: text
+      label: ''
+    teaser_standard_image_source_set:
+       type: array
+       label: ''
+    teaser_standard_image_fallback:
+      type: url
+      label: ''
+    teaser_standard_image_alt:
+      type: text
+      label: ''
+  libraries:
+    - teaser_standard_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-standard.css: {}

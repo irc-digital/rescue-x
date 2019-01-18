@@ -1,0 +1,33 @@
+teaser_highlighted:
+  label: ''
+  use: "@components/87-teasers/10-highlighted/teaser-highlighted.twig"
+  fields:
+    teaser_highlighted_url:
+      type: url
+      label: ''
+    teaser_highlighted_slug:
+      type: text
+      label: ''
+    teaser_highlighted_title:
+      type: text
+      label: ''
+    teaser_highlighted_summary:
+      type: text
+      label: ''
+    teaser_highlighted_cta:
+      type: text
+      label: ''
+    teaser_highlighted_image_source_set:
+       type: array
+       label: ''
+    teaser_highlighted_image_fallback:
+      type: url
+      label: ''
+    teaser_highlighted_image_alt:
+      type: text
+      label: ''
+  libraries:
+    - teaser_highlighted_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-highlighted.css: {}

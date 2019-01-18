@@ -1,0 +1,34 @@
+testimonial:
+  label: ''
+  use: "@components/90-testimonial/testimonial.twig"
+  section: TRUE
+  fields:
+    testimonial_title:
+      type: text
+      label: ''
+    testimonial_quote_text:
+      type: text
+      label: ''
+    testimonial_cta:
+      type: text
+      label: ''
+    testimonial_url:
+      type: url
+      label: ""
+    testimonial_responsive_image_source_set:
+      type: array
+      label: ''
+    testimonial_responsive_image_fallback:
+      type: string
+      label: ''
+    testimonial_responsive_image_alt:
+      type: string
+      label: ''
+    testimonial_authority_message:
+      type: string
+      label: ''
+  libraries:
+    - testimonial_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-testimonial.css: {}

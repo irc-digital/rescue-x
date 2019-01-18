@@ -78,11 +78,11 @@ class ContributorsField extends DsFieldBase {
 
       $contributors[] = [
         '#type' => 'pattern',
-        '#id' => 'contributor',
+        '#id' => 'person_info_1',
         '#fields' => [
-          'contributor_prefix' => $prefix . " ",
-          'contributor_name' => $person->title->value,
-          'contributor_title' => $person->field_person_role->value,
+          'person_info_1_prefix' => $prefix . " ",
+          'person_info_1_name' => $person->title->value,
+          'person_info_1_title' => $person->field_person_role->value,
         ] + $contributor_headshot_content,
       ];
 

@@ -1,23 +1,16 @@
 teaser_minimal:
-  label: Teaser (minimal)
-  description: The minimal teaser (todo)
+  label: ''
   use: "@components/87-teasers/15-minimal/teaser-minimal.twig"
   fields:
     teaser_minimal_url:
       type: url
-      label: URL
-      description: The URL of the resource being teased
-      preview: "#"
+      label: ''
     teaser_minimal_slug:
       type: text
-      label: Slug
-      description: The slug
-      preview: "Slugface"
+      label: ''
     teaser_minimal_title:
       type: text
-      label: Title
-      description: The title
-      preview: "Test title"
+      label: ''
   libraries:
     - teaser_minimal_library:
        css:
