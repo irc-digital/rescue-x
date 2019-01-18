@@ -1,0 +1,14 @@
+link_icon:
+  label: ''
+  use: "@atoms/12-link-icon/link-icon.twig"
+  icon_library_field: 'link_icon_name'
+  fields:
+    link_icon_url:
+      type: text
+      label: ''
+    link_icon_text:
+      type: text
+      label: ''
+    link_icon_name:
+      type: text
+      label: ''

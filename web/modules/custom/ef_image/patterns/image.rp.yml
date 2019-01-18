@@ -1,0 +1,16 @@
+image_tag:
+  label: ''
+  use: "@atoms/50-image/image.twig"
+  fields:
+    image_tag_source:
+      type: url
+      label: ''
+    image_tag_alt:
+      type: string
+      label: ''
+    image_tag_width:
+      type: string
+      label: ''
+    image_tag_height:
+      type: string
+      label: ''
