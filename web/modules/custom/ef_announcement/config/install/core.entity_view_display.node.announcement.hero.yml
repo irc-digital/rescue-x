@@ -34,6 +34,16 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
+        settings:
+          wrapper: ''
+          class: ''
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
+_core:
+  default_config_hash: Q-_VysOtMRsHbDVG3lzH-uAYqC7vpI93JYcJN96P7TA
 id: node.announcement.hero
 targetEntityType: node
 bundle: announcement

@@ -4,14 +4,6 @@ dependencies:
   enforced:
     module:
       - ef_article
-  module:
-    - menu_ui
-third_party_settings:
-  menu_ui:
-    available_menus: {  }
-    parent: ''
-_core:
-  default_config_hash: TvgTWVZm5_93OqutANEQxP491Q0n4AK8emzLATLszpg
 name: Article
 type: article
 description: 'Use articles to create rich feature experiences. '
