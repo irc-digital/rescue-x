@@ -1,3 +1,6 @@
-{% if meta_text %}
-  <div class="rpla-meta{% for meta_modifier in meta_modifiers %} rpla-meta--{{ meta_modifier }}{% endfor %}">{{ meta_prefix }} {{ meta_text }}</div>
+{% set rendered_meta_text %}
+  {{ meta_text }}
+{% endset %}
+{% if rendered_meta_text | trim is not empty %}
+  <div class="rpla-meta{% for meta_modifier in meta_modifiers %} rpla-meta--{{ meta_modifier }}{% endfor %}">{{ meta_prefix }}{{ rendered_meta_text }}</div>
 {% endif %}
