@@ -492,14 +492,6 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
 }
 
-@mixin when-page-hero-is-flush-with-top {
-  @at-root {
-    [data-rpl-hero-flush-with-top='yes'] & {
-      @content ;
-    }
-  }
-}
-
 @mixin text-hide {
   border: 0;
   color: transparent;
@@ -529,6 +521,21 @@ $xxx-spac: export('dist/source/_patterns/00-subatoms/30-spacing/spacing.json', g
   }
   $string: '%23' + $string;
   @return $string;
+}
+
+@mixin common-hero-top-spacing {
+  margin-top: rem(68px);
+  padding-top: rem(50px);
+
+  @media #{$global-navigation-large-device-media-query} {
+    margin-top: 0;
+    padding-top: rem(210px);
+  }
+
+  &[data-rpl-hero-flush-with-top='yes'] {
+    padding-top: 0;
+  }
+
 }
 
 // end of file

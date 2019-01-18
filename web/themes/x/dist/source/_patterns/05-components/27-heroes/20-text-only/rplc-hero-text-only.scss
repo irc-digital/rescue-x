@@ -3,6 +3,8 @@
 .rplc-hero-text-only {
   $self: &;
 
+  @include common-hero-top-spacing;
+
   background-color: get-brand-color();
 
   &__content {

@@ -1,7 +1,6 @@
 {% spaceless %}
 
   {% set page_modifiers = page_modifiers ?: [] %}
-  {% set page_hero_flush_with_top = page_hero_flush_with_top ? 'yes' : 'no' %}
 
 {% endspaceless %}
 {% set page_header_rendered %}
@@ -12,7 +11,7 @@
     {{ page_header_rendered }}
   </div>
 {%- endif -%}
-<div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}" data-rpl-hero-flush-with-top="{{ page_hero_flush_with_top }}">
+<div class="rpll-page{% for page_modifier in page_modifiers %} rpll-page--{{ page_modifier }}{% endfor %}">
 
   {{ page_navigation }}
 

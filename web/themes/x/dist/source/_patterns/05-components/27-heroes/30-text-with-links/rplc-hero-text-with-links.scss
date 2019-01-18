@@ -3,6 +3,7 @@
 .rplc-hero-text-with-links {
   $self: &;
 
+  @include common-hero-top-spacing;
   @include well-row;
 
   &__link-list {

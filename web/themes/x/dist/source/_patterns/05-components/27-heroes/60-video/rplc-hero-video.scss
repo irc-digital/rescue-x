@@ -3,6 +3,7 @@
 .rplc-hero-video {
   $self: &;
 
+  @include common-hero-top-spacing;
   @include standard-vertical-spacing(true);
 
   &__video-wrapper {

@@ -1,7 +1,6 @@
 outcome_page_navigation:
   include():
     pattern: "components-global-navigation"
-outcome_page_hero_flush_with_top: true
 outcome_page_hero:
   include():
     pattern: "components-hero-landing-page-1"

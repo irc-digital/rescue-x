@@ -2,6 +2,8 @@
 
 .rplc-hero-landing-page {
   $self: &;
+
+  @include common-hero-top-spacing;
 }
 
 // end of file

@@ -1,6 +1,7 @@
 @import 'rplc-hero-b-roll-base.variables';
 
 .rplc-hero-b-roll {
+  @include common-hero-top-spacing;
   background-color: get-neutral-color('black');
 
   &__content {

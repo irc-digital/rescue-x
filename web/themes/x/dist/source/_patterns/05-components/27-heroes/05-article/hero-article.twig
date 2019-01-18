@@ -10,7 +10,8 @@
 {% if hero_article_contributors is empty %}
  {% set layout_modifiers = layout_modifiers | merge (['no-secondary-second-block']) %}
 {% endif %}
-<div class="rplc-hero-article{% for hero_article_modifier in hero_article_modifiers %} rplc-hero-article--{{ hero_article_modifier }}{% endfor %}">
+{% set hero_flush_with_top = hero_article_art_directed_image_sources is not empty %}
+<div class="rplc-hero-article{% for hero_article_modifier in hero_article_modifiers %} rplc-hero-article--{{ hero_article_modifier }}{% endfor %}" data-rpl-hero-flush-with-top="{{ hero_flush_with_top }}">
   <div class="rplc-hero-article__content">
     {% embed '@layouts/30-hero-layouts/05-hero-layout-1/hero-layout-1.twig' with { hero_layout_1_modifiers : layout_modifiers } %}
       {% if hero_article_art_directed_image_sources is not empty %}

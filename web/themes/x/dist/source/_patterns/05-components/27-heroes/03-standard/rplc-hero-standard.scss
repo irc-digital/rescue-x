@@ -4,6 +4,8 @@
 .rplc-hero-standard {
   $self: &;
 
+  @include common-hero-top-spacing;
+
   &__inner-content-wrapper {
     @include well-row;
   }

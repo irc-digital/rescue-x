@@ -27,7 +27,7 @@
   {% endif %}
 
 {% endspaceless %}
-<div class="rplc-hero-standard{% for hero_standard_modifier in hero_standard_modifiers %} rplc-hero-standard--{{ hero_standard_modifier }}{% endfor %}">
+<div class="rplc-hero-standard{% for hero_standard_modifier in hero_standard_modifiers %} rplc-hero-standard--{{ hero_standard_modifier }}{% endfor %}" data-rpl-hero-flush-with-top="yes">
   <div class="rplc-hero-standard__content">
     <div class="rplc-hero-standard__image-wrapper">
       {% include '@atoms/54-art-directed-image/art-directed-image.twig' with {
