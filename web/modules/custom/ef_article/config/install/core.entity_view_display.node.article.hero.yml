@@ -28,30 +28,30 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      hero_article_art_directed_image_sources:
-        - 'media_image_attributes_field:node_article_field_hero_image_sources'
-      hero_article_art_directed_image_alt:
-        - 'media_image_attributes_field:node_article_field_hero_image_alt'
-      hero_article_art_directed_image_fallback:
-        - 'media_image_attributes_field:node_article_field_hero_image_fallback_uri'
       hero_article_headline:
         - node_title
       hero_article_slug:
         - field_slug
-      hero_article_description:
+      hero_article_summary:
         - field_subtitle
-      hero_article_photographer:
-        - field_hero_credit
-      hero_article_contributors:
-        - 'contributors_field:node_article_field_contributors_pattern'
       hero_article_published:
         - node_post_date
       hero_article_last_updated:
         - node_changed_date
+      hero_article_photographer:
+        - field_hero_credit
+      hero_article_art_directed_image_sources:
+        - 'media_image_attributes_field:node_article_field_hero_image_sources'
+      hero_article_art_directed_image_fallback:
+        - 'media_image_attributes_field:node_article_field_hero_image_fallback_uri'
+      hero_article_art_directed_image_alt:
+        - 'media_image_attributes_field:node_article_field_hero_image_alt'
+      hero_article_contributors:
+        - 'contributors_field:node_article_field_contributors_pattern'
     fields:
       'media_image_attributes_field:node_article_field_hero_image_sources':
         plugin_id: 'media_image_attributes_field:node_article_field_hero_image_sources'
-        weight: 0
+        weight: 6
         label: hidden
         formatter: default
         settings:
@@ -62,7 +62,7 @@ third_party_settings:
             lb: ''
       'media_image_attributes_field:node_article_field_hero_image_fallback_uri':
         plugin_id: 'media_image_attributes_field:node_article_field_hero_image_fallback_uri'
-        weight: 0
+        weight: 7
         label: hidden
         formatter: default
         settings:
@@ -73,38 +73,46 @@ third_party_settings:
             lb: ''
       'media_image_attributes_field:node_article_field_hero_image_alt':
         plugin_id: 'media_image_attributes_field:node_article_field_hero_image_alt'
-        weight: 0
+        weight: 8
         label: hidden
         formatter: default
       'contributors_field:node_article_field_contributors_pattern':
         plugin_id: 'contributors_field:node_article_field_contributors_pattern'
-        weight: 13
+        weight: 9
         label: hidden
         formatter: default
       node_changed_date:
         plugin_id: node_changed_date
-        weight: 15
+        weight: 4
         label: hidden
         formatter: ds_post_date_long_date_only
       node_post_date:
         plugin_id: node_post_date
-        weight: 14
+        weight: 3
         label: hidden
         formatter: ds_post_date_long_date_only
       node_title:
         plugin_id: node_title
-        weight: 6
+        weight: 0
         label: hidden
         formatter: default
+        settings:
+          wrapper: ''
+          class: ''
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
 _core:
-  default_config_hash: Giu1YXNNCQqDAMY2-oa4LYR7DlhUGPyVNrlugSSW0tY
+  default_config_hash: ncQnyRUT4z2GzIeh4fMMomFU5chDC8wloz5xW1G4tKY
 id: node.article.hero
 targetEntityType: node
 bundle: article
 mode: hero
 content:
   field_hero_credit:
-    weight: 12
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
@@ -112,7 +120,7 @@ content:
     type: string
     region: hero_article_photographer
   field_slug:
-    weight: 7
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
@@ -120,13 +128,13 @@ content:
     type: string
     region: hero_article_slug
   field_subtitle:
-    weight: 8
+    type: string
+    weight: 2
+    region: hero_article_summary
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: hero_article_description
 hidden:
   body: true
   field_call_to_action_text: true

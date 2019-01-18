@@ -1,0 +1,8 @@
+name: EF Hero (article)
+type: module
+description: 'Configuration for the article hero.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

@@ -11,3 +11,4 @@ dependencies:
   - ef_ris_teasers
   - ef_highlight
   - ef_topic
+  - ef_hero_article

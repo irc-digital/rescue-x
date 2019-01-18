@@ -19,6 +19,12 @@ view-mode-display-embeddable-reference-fieldset:
     component:
       css/view-mode-display-embeddable-reference-fieldset.css: {}
 
+page-action-icon:
+  version: 1.x
+  css:
+    component:
+      css/page-action-icon.css: {}
+
 embeddable-entity-browser:
   css:
     theme:

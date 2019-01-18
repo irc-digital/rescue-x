@@ -19,6 +19,7 @@ use Drupal\ef\Form\ViewModeVisibilityFormAlterer;
 use Drupal\ef\Form\ViewModeLayoutBorrowerAlterer;
 use Drupal\ef\Form\EmbeddableForm;
 use Drupal\ef\Form\ViewModeModifierNameFormAlterer;
+use Drupal\ef\LocalActionToToolbarHelper;
 
 /**
  * Implements hook_theme().
@@ -521,4 +522,13 @@ function ef_preprocess_views_view(&$variables) {
   if ($variables['view']->id() === 'embeddable_entity_browser') {
     $variables['view_array']['#attached']['library'][] = 'ef/embeddable-entity-browser';
   }
+}
+
+/**
+ * Implements hook_toolbar().
+ */
+function ef_toolbar() {
+  return \Drupal::classResolver()
+    ->getInstanceFromDefinition(LocalActionToToolbarHelper::class)
+    ->moveLocalActionsToToolbar();
 }

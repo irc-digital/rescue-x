@@ -1,6 +1,6 @@
-name: Rescue X
+name: Rescue X Core
 type: profile
-description: "Profile for Rescue X sites."
+description: "Profile for a Rescue X sites."
 version: VERSION
 core: 8.x
 dependencies:
