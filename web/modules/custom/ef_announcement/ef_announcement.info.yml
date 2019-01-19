@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_modifiers
   - ef_patterns
+  - ef_hero_article

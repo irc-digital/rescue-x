@@ -9,7 +9,7 @@ footer_layout_2:
       type: pattern
       label: ""
   libraries:
-    - utility_menu_library:
+    - footer_layout_2_library:
        css:
          theme:
            dist/public/css/patterns/rpll-footer-layout-2.css: {}

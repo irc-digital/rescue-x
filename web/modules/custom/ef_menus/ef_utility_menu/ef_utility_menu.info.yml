@@ -1,0 +1,9 @@
+name: EF Utility menu
+type: module
+description: 'The utility links displayed in the upper part of the standard footer'
+package: EF Menu
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_sitewide_settings

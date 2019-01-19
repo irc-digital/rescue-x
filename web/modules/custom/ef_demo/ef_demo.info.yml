@@ -5,6 +5,11 @@ package: EF Demo
 core: 8.x
 dependencies:
   - ef
+  - ef_sitewide_settings
+  - ef_crisis_watch
+  - ef_icon_library
+  - ef_main_menu
+  - ef_social_menu
 #  - ef_article
 #  - ef_pull_quote
 #  - ef_image

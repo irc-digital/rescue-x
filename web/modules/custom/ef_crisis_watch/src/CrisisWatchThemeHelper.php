@@ -28,15 +28,24 @@ class CrisisWatchThemeHelper implements ContainerInjectionInterface {
     $crisis_watch = $this->crisisWatchService->getCrisisWatch();
 
     if (!is_null($crisis_watch)) {
+      $crisis_watch_modifiers = [];
+
+      switch ($variables['location']) {
+        case 'header':
+          $crisis_watch_modifiers[] = 'type-three';
+          break;
+        case 'footer':
+          $crisis_watch_modifiers[] = 'type-one';
+          break;
+      }
+
       $variables['crisis_watch'] = [
         '#type' => 'pattern',
         '#id' => 'crisis_watch',
         '#fields' => [
           'crisis_watch_text' => $crisis_watch['title'],
           'crisis_watch_url' => $crisis_watch['url'],
-          'crisis_watch_modifiers' => [
-            'type-three'
-          ],
+          'crisis_watch_modifiers' => $crisis_watch_modifiers,
         ],
       ];
     }

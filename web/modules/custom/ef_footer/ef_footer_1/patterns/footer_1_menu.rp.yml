@@ -1,0 +1,15 @@
+footer_1_menu:
+  label: ''
+  use: "@components/43-menu/35-footer/footer-menu.twig"
+  fields:
+    footer_menu_main_menu_items:
+      type: array
+      label: ""
+    footer_menu_utility_menu_items:
+      type: array
+      label: ""
+  libraries:
+    - footer_1_menu_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-footer-menu.css: {}

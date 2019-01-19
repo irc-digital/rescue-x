@@ -5,4 +5,5 @@ package: EF Demo
 core: 8.x
 dependencies:
   - ef_demo
+  - ef_footer_1
   - ef_footer_2

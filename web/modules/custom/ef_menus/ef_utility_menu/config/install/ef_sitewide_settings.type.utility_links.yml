@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_utility_menu
+id: utility_links
+label: 'Utility links'
+description: 'The utility links displayed in the upper part of the standard footer'

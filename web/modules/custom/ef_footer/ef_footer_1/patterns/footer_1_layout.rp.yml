@@ -1,0 +1,18 @@
+footer_layout_1:
+  label: ''
+  use: "@layouts/40-footer-layouts/05-footer-layout-1/footer-layout-1.twig"
+  fields:
+    footer_layout_1_section_1:
+      type: pattern
+      label: ""
+    footer_layout_1_section_2:
+      type: pattern
+      label: ""
+    footer_layout_1_section_3:
+      type: pattern
+      label: ""
+  libraries:
+    - footer_layout_1_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-footer-layout-1.css: {}

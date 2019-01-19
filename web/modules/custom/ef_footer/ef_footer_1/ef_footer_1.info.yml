@@ -10,5 +10,4 @@ dependencies:
   - ef_crisis_watch
   - ef_icon_library
   - ef_main_menu
-  - ef_affiliates_menu
-  - ef_legal_menu
+  - ef_utility_menu

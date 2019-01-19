@@ -6,7 +6,7 @@ utility_text:
       type: string
       label: ""
   libraries:
-    - utility_menu_library:
+    - utility_text_library:
        css:
          theme:
            dist/public/css/patterns/rpla-utility-text.css: {}

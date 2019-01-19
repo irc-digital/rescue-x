@@ -11,7 +11,9 @@ function ef_demo_footer_install () {
   _ef_demo_footer_add_affiliates_menu();
   _ef_demo_footer_add_legal_menu();
   _ef_demo_add_footer_legal_formation_text();
+  _ef_demo_footer_add_utility_menu();
 }
+
 function _ef_demo_add_footer_legal_formation_text () {
   /** @var SitewideSettings $testSettings */
   $settings = SitewideSettings::create([
@@ -21,7 +23,7 @@ function _ef_demo_add_footer_legal_formation_text () {
 
 
   $settings->addTranslation('de', [
-    'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization. (DE)',,
+    'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization. (DE)',
   ]);
 
   $settings->save();
@@ -88,8 +90,41 @@ function _ef_demo_footer_add_legal_menu () {
   $settings->save();
 }
 
+function _ef_demo_footer_add_utility_menu () {
+  $items = ['Careers', 'Contact Us', 'Code of Conduct', 'Ethics Hotline'];
+
+  $english_links = $german_links = [];
+
+  foreach ($items as $title) {
+    $english_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title,
+    ];
+
+    $german_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title . ' (DE)',
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'utility_links',
+    'field_utility_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_utility_links' => $german_links,
+  ]);
+
+  $settings->save();
+}
+
+
+
 function ef_demo_footer_uninstall () {
   ef_delete_all ('sitewide_settings', 'footer_legal_formation_text');
   ef_delete_all ('sitewide_settings', 'legal_links');
   ef_delete_all ('sitewide_settings', 'affiliate_links');
+  ef_delete_all ('sitewide_settings', 'utility_links');
 }

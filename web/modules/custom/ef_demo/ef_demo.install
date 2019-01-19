@@ -2,71 +2,441 @@
 
 use Drupal\node\Entity\Node;
 use Drupal\media\Entity\Media;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
 
-/*
 function ef_demo_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
-  
-  ef_demo_add_articles();
 
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Boomshanka',
-    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
-    'language' => 'en',
-  ])->save();
+  _ef_demo_add_main_menu();
+  _ef_demo_add_crisis_watch();
+  _ef_demo_add_social_menu();
 
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Neal 1',
-    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Rik 1',
-    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Rik 2',
-    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Rik 3',
-    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Rik 4',
-    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Neal 2',
-    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
-    'language' => 'en',
-  ])->save();
-
-  Embeddable::create([
-    'type' => 'pull_quote',
-    'title' => 'Vyvyan 1',
-    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
-    'language' => 'en',
-  ])->save();
+//  ef_demo_add_articles();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Boomshanka',
+//    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Neal 1',
+//    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 1',
+//    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 2',
+//    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 3',
+//    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 4',
+//    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Neal 2',
+//    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
+//    'language' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Vyvyan 1',
+//    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
+//    'language' => 'en',
+//  ])->save();
 
 }
+
+function _ef_demo_add_main_menu () {
+  _ef_demo_add_main_menu_sitewide_settings ();
+  _ef_demo_add_main_menu_items('main', 'en', _ef_demo_get_main_menu());
+  _ef_demo_add_main_menu_items('main_de', 'de', _ef_demo_get_main_menu_de());
+}
+
+function _ef_demo_add_social_menu () {
+
+  $social_sites = [];
+
+  foreach (['twitter', 'facebook','instagram','youtube'] as $site) {
+    $social_sites[] = [
+      'uri' => 'https://bbc.co.uk/news',
+      'title' => $site,
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-' . $site . '.svg',
+      ],
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'social_sites',
+    'field_social_sites' => $social_sites,
+  ]);
+
+  $social_sites = array_splice($social_sites,0,2);
+
+  // just include the first two social sites on DE, to demonstrate that
+  $settings->addTranslation('de', [
+    'field_social_sites' => $social_sites,
+  ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_add_crisis_watch () {
+  $announcement = Node::create([
+    'title' => 'Test announcement',
+    'type' => 'announcement',
+  ]);
+
+  $announcement->save();
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'crisis_watch',
+    'field_crisis_watch_link' => [
+      'target_id' => $announcement->id(),
+    ],
+    'field_cw_type' => 1,
+  ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_add_main_menu_sitewide_settings () {
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'main_menu',
+    'field_main_menu' => [
+      'target_id' => 'main',
+    ],
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_main_menu' => [
+      'target_id' => 'main_de',
+    ],
+  ]);
+  $settings->save();
+}
+
+function _ef_demo_get_main_menu () {
+  return [
+    [
+      'title' => 'Who We Are',
+      'children' => [
+        [
+          'title' => 'About Us',
+          'children' => [
+            [
+              'title' => 'At a glance',
+              'title' => 'Annual report',
+            ],
+          ]
+        ],
+        [
+          'title' => 'Our People',
+          'children' => [
+            [
+              'title' => 'President David Miliband',
+              'title' => 'Staff Leaders',
+            ],
+          ]
+        ],
+      ],
+    ],
+    [
+      'title' => 'Where We Work',
+      'children' => [
+        [
+          'title' => 'Location',
+          'children' => [
+            [
+              'title' => 'Africa',
+              'children' => [
+                ['title' => 'Burundi'],
+                ['title' => 'Central African Republic'],
+                ['title' => 'Democratic Republic of Congo'],
+                ['title' => 'Ethiopia'],]
+            ],
+            [
+              'title' => 'Central & South America',
+              'children' => [
+                ['title' => 'El Salvadore'],
+                ['title' => 'Venezuela'],
+              ],
+            ],
+            [
+              'title' => 'Asia',
+              'children' => [
+                ['title' => 'Bangladesh'],
+                ['title' => 'Malaysia'],
+                ['title' => 'Myanmar'],
+                ['title' => 'Pakistan'],
+                ['title' => 'Thailand'],
+              ],
+            ],
+            [
+              'title' => 'Middle East',
+              'children' => [
+                ['title' => 'Iraq'],
+                ['title' => 'Libya'],
+                ['title' => 'Jordan'],
+                ['title' => 'Syria'],
+                ['title' => 'Yemen'],
+              ],
+            ],
+            [
+              'title' => 'United States',
+              'children' => [
+                ['title' => 'Abilene, TX'],
+                ['title' => 'Atlanta, GA'],
+                ['title' => 'Baltimore, MD'],
+                ['title' => 'Boise, ID'],
+                ['title' => 'Dallas, TX'],
+                ['title' => 'Denver, CO'],
+                ['title' => 'Elizabeth, NJ'],
+                ['title' => 'Los Angeles, CA'],
+                ['title' => 'Miami, FL'],
+                ['title' => 'Missoula, MT'],
+                ['title' => 'New York, NY'],
+              ],
+            ],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'Who We Are',
+      'children' => [
+        [
+          'title' => 'Where We Focus',
+          'children' => [
+            ['title' => 'Heath'],
+            ['title' => 'Safety'],
+          ],
+        ],
+        [
+          'title' => 'Our Approach',
+          'children' => [
+            ['title' => 'Better Aid'],
+            ['title' => 'Ideas & Impact'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'How To Help',
+      'children' => [
+        [
+          'title' => 'Give',
+          'children' => [
+            ['title' => 'Donate'],
+            ['title' => 'Shop Rescue Gifts'],
+          ],
+        ],
+        [
+          'title' => 'Join Us',
+          'children' => [
+            ['title' => 'Take Action'],
+            ['title' => 'Become a Corporate Partner'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'Latest',
+      'children' => [
+        [
+          'title' => 'Latest',
+          'children' => [
+            ['title' => 'News & Features'],
+            ['title' => 'Media Center'],
+          ],
+        ],
+        [
+          'title' => 'Crises & Issues',
+          'children' => [
+            ['title' => 'Central American caravans'],
+            ['title' => 'Ebola'],
+          ],
+        ],
+      ],
+    ],
+  ];
+}
+
+function _ef_demo_get_main_menu_de () {
+  return [
+    [
+      'title' => 'Who We Are (DE)',
+      'children' => [
+        [
+          'title' => 'About Us (DE)',
+          'children' => [
+            [
+              'title' => 'At a glance (DE)',
+              'title' => 'Annual report (DE)',
+            ],
+          ]
+        ],
+        [
+          'title' => 'Our People (DE)',
+          'children' => [
+            [
+              'title' => 'President David Miliband (DE)',
+              'title' => 'Staff Leaders (DE)',
+            ],
+          ]
+        ],
+      ],
+    ],
+    [
+      'title' => 'Where We Work (DE)',
+      'children' => [
+        [
+          'title' => 'Organizational Priorities (DE)',
+          'children' => [
+            [
+              'title' => 'Yemen (DE)',
+              'title' => 'Syria (DE)',
+            ],
+          ]
+        ],
+        [
+          'title' => 'More (DE)',
+          'children' => [
+            [
+              'title' => 'Other areas of focus (DE)',
+            ],
+          ]
+        ],
+      ],
+    ],
+    [
+      'title' => 'Who We Are (DE)',
+      'children' => [
+        [
+          'title' => 'Where We Focus (DE)',
+          'children' => [
+            ['title' => 'Heath (DE)'],
+            ['title' => 'Safety (DE)'],
+          ],
+        ],
+        [
+          'title' => 'Our Approach (DE)',
+          'children' => [
+            ['title' => 'Better Aid (DE)'],
+            ['title' => 'Ideas & Impact (DE)'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'How To Help (DE)',
+      'children' => [
+        [
+          'title' => 'Give (DE)',
+          'children' => [
+            ['title' => 'Donate (DE)'],
+            ['title' => 'Shop Rescue Gifts (DE)'],
+          ],
+        ],
+        [
+          'title' => 'Join Us (DE)',
+          'children' => [
+            ['title' => 'Take Action (DE)'],
+            ['title' => 'Become a Corporate Partner (DE)'],
+          ],
+        ],
+      ],
+    ],
+    [
+      'title' => 'Latest (DE)',
+      'children' => [
+        [
+          'title' => 'Latest (DE)',
+          'children' => [
+            ['title' => 'News & Features (DE)'],
+            ['title' => 'Media Center (DE)'],
+          ],
+        ],
+        [
+          'title' => 'Crises & Issues (DE)',
+          'children' => [
+            ['title' => 'Central American caravans (DE)'],
+            ['title' => 'Ebola (DE)'],
+          ],
+        ],
+      ],
+    ],
+  ];
+}
+
+function _ef_demo_add_main_menu_items ($menu_name, $lang, $menu, $parent = NULL) {
+
+  $index = 0;
+
+  foreach ($menu as $menu_item) {
+    $menu_link = MenuLinkContent::create([
+      'title' => $menu_item['title'],
+      'link' => ['uri' => 'internal:/'],
+      'menu_name' => $menu_name,
+      'language' => $lang,
+      'parent' => $parent,
+      'weight' => $index,
+      'expanded' => FALSE,
+    ]);
+
+//    $menu_link->addTranslation('de', [
+//      'title' => $menu_item['title'] . ' (DE)',
+//      'link' => ['uri' => 'internal:/'],
+//      'menu_name' => $menu_name,
+//      'parent' => $parent,
+//      'weight' => $index,
+//      'expanded' => FALSE,
+//    ]);
+
+    $menu_link->save();
+
+    $uuid = $menu_link->uuid();
+
+    if (isset($menu_item['children'])) {
+      _ef_demo_add_main_menu_items($menu_name, $lang, $menu_item['children'], sprintf('menu_link_content:%s', $uuid));
+    }
+
+    $index++;
+  }
+}
+
 
 function ef_demo_add_articles () {
   for ($i = 0; $i < 10; $i++) {
@@ -163,11 +533,31 @@ function ef_demo_get_random_word($len = 10) {
 }
 
 function ef_demo_uninstall () {
-  ef_delete_all ('node', 'article');
-  ef_delete_all ('media', 'ef_image');
+  ef_delete_all ('sitewide_settings', 'crisis_watch');
+  ef_delete_all ('sitewide_settings', 'social_sites');
+  ef_delete_all ('sitewide_settings', 'main_menu');
+
+  foreach (['main', 'main_de'] as $menu) {
+    /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+    $entity_type_manager = \Drupal::service('entity_type.manager');
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+    $storage = $entity_type_manager->getStorage('menu_link_content');
+
+    $ids = $storage->getQuery()
+      ->condition('menu_name', $menu)
+      ->execute();
+
+    $all = $storage->loadMultiple($ids);
+
+    foreach ($all as $item) {
+      $item->delete();
+    }
+  }
+//  ef_delete_all ('node', 'article');
+//  ef_delete_all ('media', 'ef_image');
 //  ef_delete_all ('taxonomy_term', 'country');
 //  ef_delete_all ('embeddable', 'rich_text');
 //  ef_delete_all ('embeddable', 'dynamic_content');
 //  ef_delete_all ('embeddable', 'pull_quote');
 }
-*/
