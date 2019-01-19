@@ -19,6 +19,11 @@ function _ef_demo_add_footer_legal_formation_text () {
     'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization.',
   ]);
 
+
+  $settings->addTranslation('de', [
+    'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization. (DE)',,
+  ]);
+
   $settings->save();
 
 }
@@ -26,66 +31,65 @@ function _ef_demo_add_footer_legal_formation_text () {
 function _ef_demo_footer_add_affiliates_menu () {
   $items = ['IRC US', 'Stichting Vluchteling'];
 
-  $index = 0;
+  $english_links = $german_links = [];
 
   foreach ($items as $title) {
-    $menu_link = MenuLinkContent::create([
+    $english_links[] = [
+      'uri' => 'internal:/',
       'title' => $title,
-      'link' => ['uri' => 'internal:/'],
-      'menu_name' => 'affiliates',
-      'weight' => $index,
-      'expanded' => TRUE,
-    ]);
+    ];
 
-    $menu_link->addTranslation('de', [
+    $german_links[] = [
+      'uri' => 'internal:/',
       'title' => $title . ' (DE)',
-    ]);
-    $menu_link->save();
-    $index++;
+    ];
   }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'affiliate_links',
+    'field_affiliate_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_affiliate_links' => $german_links,
+  ]);
+
+  $settings->save();
 }
 
 function _ef_demo_footer_add_legal_menu () {
   $items = ['Respecting Your Privacy', 'Terms and Conditions'];
 
-  $index = 0;
+  $english_links = $german_links = [];
 
   foreach ($items as $title) {
-    $menu_link = MenuLinkContent::create([
+    $english_links[] = [
+      'uri' => 'internal:/',
       'title' => $title,
-      'link' => ['uri' => 'internal:/'],
-      'menu_name' => 'legal',
-      'weight' => $index,
-      'expanded' => TRUE,
-    ]);
+    ];
 
-    $menu_link->addTranslation('de', [
+    $german_links[] = [
+      'uri' => 'internal:/',
       'title' => $title . ' (DE)',
-    ]);
-    $menu_link->save();
-    $index++;
+    ];
   }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'legal_links',
+    'field_legal_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_legal_links' => $german_links,
+  ]);
+
+  $settings->save();
 }
 
-function ef_demo_global_navigation_uninstall () {
+function ef_demo_footer_uninstall () {
   ef_delete_all ('sitewide_settings', 'footer_legal_formation_text');
-
-  foreach (['legal', 'affiliates'] as $menu) {
-    /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
-    $entity_type_manager = \Drupal::service('entity_type.manager');
-
-    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
-    $storage = $entity_type_manager->getStorage('menu_link_content');
-
-    $ids = $storage->getQuery()
-      ->condition('menu_name', $menu)
-      ->execute();
-
-    $all = $storage->loadMultiple($ids);
-
-    foreach ($all as $item) {
-      $item->delete();
-    }
-  }
-
+  ef_delete_all ('sitewide_settings', 'legal_links');
+  ef_delete_all ('sitewide_settings', 'affiliate_links');
 }

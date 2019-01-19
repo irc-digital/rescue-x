@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.affiliate_links
+    - field.storage.sitewide_settings.field_affiliate_links
+  module:
+    - link
+id: sitewide_settings.affiliate_links.field_affiliate_links
+field_name: field_affiliate_links
+entity_type: sitewide_settings
+bundle: affiliate_links
+label: 'Affiliate links'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -5,6 +5,7 @@ namespace Drupal\ef_footer_2;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Url;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,20 +21,13 @@ class Footer2ThemeHelper implements ContainerInjectionInterface {
    */
   protected $languageManager;
 
-  /**
-   * @var EntityStorageInterface
-   */
-  protected $menuStorage;
-
-  public function __construct(EntityStorageInterface $menuStorage, SitewideSettingsManagerInterface $sitewideSettingsManager, LanguageManagerInterface $languageManager) {
-    $this->menuStorage = $menuStorage;
+  public function __construct(SitewideSettingsManagerInterface $sitewideSettingsManager, LanguageManagerInterface $languageManager) {
     $this->sitewideSettingsManager = $sitewideSettingsManager;
     $this->languageManager = $languageManager;
   }
 
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager')->getStorage('menu_link_content'),
       $container->get('ef_sitewide_settings.manager'),
       $container->get('language_manager')
     );
@@ -54,8 +48,8 @@ class Footer2ThemeHelper implements ContainerInjectionInterface {
           '#type' => 'pattern',
           '#id' => 'utility_menu',
           '#fields' => [
-            'utility_menu_affiliates_items' => $this->getMenuContent('affiliates'),
-            'utility_menu_legal_items' => $this->getMenuContent('legal'),
+            'utility_menu_affiliates_items' => $this->getLinks('affiliate_links'),
+            'utility_menu_legal_items' => $this->getLinks('legal_links'),
           ],
         ],
         'footer_layout_2_section_2' => [
@@ -87,33 +81,33 @@ class Footer2ThemeHelper implements ContainerInjectionInterface {
     }
   }
 
-  protected function getMenuContent ($menu_name) {
-    $menu_links = $this->menuStorage->getQuery()
-      ->condition('menu_name', $menu_name,  '=')
-      ->sort('weight')->sort('title')
-      ->execute();
+  protected function getLinks ($menu_name) {
+    $result = NULL;
 
-    $menu_links = $this->menuStorage->loadMultiple($menu_links);
+    /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $donation_settings */
+    $links = $this->sitewideSettingsManager->getSitewideSettingsForType($menu_name);
 
-    $menu_items = [];
+    if ($links) {
+      $active_language = $this->languageManager->getCurrentLanguage()->getId();
 
-    $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      if ($links->hasTranslation($active_language)) {
+        $links = $links->getTranslation($active_language);
 
-    /** @var \Drupal\menu_link_content\MenuLinkContentInterface $menu_link */
-    foreach ($menu_links as $menu_link) {
-      if ($menu_link->hasTranslation($active_language)) {
-        $menu_link= $menu_link->getTranslation($active_language);
-        $title = $menu_link->getTitle();
-        $url = $menu_link->getUrlObject()->toString();
-
-        $menu_items[] = [
-          'title' => $title,
-          'url' => $url,
-        ];
+        $link_field = $links->get('field_' . $menu_name);
+        foreach ($link_field as $link) {
+          $uri = $link->uri;
+          $url = Url::fromUri($uri);
+          $result[] = [
+            'title' => $link->title,
+            'url' => $url->toString(),
+          ];
+        }
       }
     }
 
-    return $menu_items;
+    return $result;
+
   }
+
 
 }

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.legal
+    - ef_sitewide_settings.type.affiliate_links
   module:
     - content_translation
 third_party_settings:
@@ -10,8 +10,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '1'
-id: menu_link_content.legal
-target_entity_type_id: menu_link_content
-target_bundle: legal
+id: sitewide_settings.affiliate_links
+target_entity_type_id: sitewide_settings
+target_bundle: affiliate_links
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

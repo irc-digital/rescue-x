@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.affiliate_links
+    - field.field.sitewide_settings.affiliate_links.field_affiliate_links
+  module:
+    - link
+id: sitewide_settings.affiliate_links.default
+targetEntityType: sitewide_settings
+bundle: affiliate_links
+mode: default
+content:
+  field_affiliate_links:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true
