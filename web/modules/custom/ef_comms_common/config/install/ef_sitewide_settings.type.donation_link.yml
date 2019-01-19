@@ -3,7 +3,7 @@ status: true
 dependencies:
   enforced:
     module:
-      - ef_global_navigation
+      - ef_comms_common
 id: donation_link
 label: 'Donation link'
 description: 'The default site-wide donation link. This is used in the header and footer and can be a sensible default in other places. Note: it is possible for the header donation link to be overridden on certain pages, based on various business rules. '

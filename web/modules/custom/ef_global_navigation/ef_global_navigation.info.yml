@@ -7,6 +7,7 @@ dependencies:
   - ef
   - ef_patterns
   - ef_sitewide_settings
+  - ef_comms_common
   - ef_crisis_watch
   - ef_icon_library
   - ef_main_menu

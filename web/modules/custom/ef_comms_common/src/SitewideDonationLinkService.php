@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Drupal\ef_global_navigation;
+namespace Drupal\ef_comms_common;
 
 
 use Drupal\Core\Language\LanguageManagerInterface;

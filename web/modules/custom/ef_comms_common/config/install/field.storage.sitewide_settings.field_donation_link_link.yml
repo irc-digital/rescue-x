@@ -6,7 +6,7 @@ dependencies:
     - ef_sitewide_settings
   enforced:
     module:
-      - ef_global_navigation
+      - ef_comms_common
 id: sitewide_settings.field_donation_link_link
 field_name: field_donation_link_link
 entity_type: sitewide_settings
