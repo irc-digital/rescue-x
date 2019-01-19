@@ -5,6 +5,6 @@ package: EF Demo
 core: 8.x
 dependencies:
   - ef
-  - ef_article
-  - ef_pull_quote
-  - ef_image
+#  - ef_article
+#  - ef_pull_quote
+#  - ef_image

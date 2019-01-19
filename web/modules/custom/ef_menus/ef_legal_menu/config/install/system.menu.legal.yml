@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_legal_menu
+id: legal
+label: Legal
+description: 'The legal links displayed in the standard footer'
+locked: false

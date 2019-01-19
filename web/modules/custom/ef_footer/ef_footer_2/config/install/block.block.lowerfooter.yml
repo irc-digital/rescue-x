@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_footer_2
+  theme:
+    - x
+id: lowerfooter
+theme: x
+region: footer
+weight: 20
+provider: null
+plugin: footer_2_block
+settings:
+  id: footer_2_block
+  label: 'Lower footer'
+  provider: ef_footer_2
+  label_display: '0'
+visibility: {  }

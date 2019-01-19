@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_legal_formation_text
+    - field.field.sitewide_settings.footer_legal_formation_text.field_legal_formation_text
+id: sitewide_settings.footer_legal_formation_text.default
+targetEntityType: sitewide_settings
+bundle: footer_legal_formation_text
+mode: default
+content:
+  field_legal_formation_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

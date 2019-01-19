@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_footer_2
+id: footer_legal_formation_text
+label: 'Footer legal formation text'
+description: 'The text in the footer that describes the formation or legal registration of the IRC.'

@@ -1,0 +1,8 @@
+name: EF Affiliates menu
+type: module
+description: 'The affiliates links displayed in the standard footer'
+package: EF Menu
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

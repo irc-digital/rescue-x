@@ -1,0 +1,14 @@
+name: EF Footer 1
+type: module
+description: 'The top footer'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_sitewide_settings
+  - ef_crisis_watch
+  - ef_icon_library
+  - ef_main_menu
+  - ef_affiliates_menu
+  - ef_legal_menu

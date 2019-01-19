@@ -3,6 +3,7 @@
 use Drupal\node\Entity\Node;
 use Drupal\media\Entity\Media;
 
+/*
 function ef_demo_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
@@ -169,3 +170,4 @@ function ef_demo_uninstall () {
 //  ef_delete_all ('embeddable', 'dynamic_content');
 //  ef_delete_all ('embeddable', 'pull_quote');
 }
+*/

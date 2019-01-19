@@ -1,0 +1,8 @@
+name: EF Demo (Footer)
+type: module
+description: 'Provides supporting content to demo the footer.'
+package: EF Demo
+core: 8.x
+dependencies:
+  - ef_demo
+  - ef_footer_2

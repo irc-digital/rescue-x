@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_affiliates_menu
+id: affiliates
+label: Affiliates
+description: 'The affiliates links displayed in the standard footer'
+locked: false
