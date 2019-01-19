@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.efficiency_graphic_entry
+  module:
+    - content_translation
+  enforced:
+    module:
+      - ef_efficiency_graphic
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: paragraph.efficiency_graphic_entry
+target_entity_type_id: paragraph
+target_bundle: efficiency_graphic_entry
+default_langcode: site_default
+language_alterable: true

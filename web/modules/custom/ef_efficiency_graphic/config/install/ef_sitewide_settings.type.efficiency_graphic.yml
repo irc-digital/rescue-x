@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_efficiency_graphic
+id: efficiency_graphic
+label: 'Efficiency graphic'
+description: 'Data structures that support the labelling of the efficiency graphic.'

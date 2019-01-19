@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_efficiency_graphic
+id: efficiency_graphic_entry
+label: 'Efficiency graphic entry'
+icon_uuid: null
+description: 'A label and percentage as used by the efficiency graphic'
+behavior_plugins: {  }

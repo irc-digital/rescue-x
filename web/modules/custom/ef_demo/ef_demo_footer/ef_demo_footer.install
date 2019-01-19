@@ -1,8 +1,8 @@
 <?php
 
-use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+use Drupal\paragraphs\Entity\Paragraph;
 
 function ef_demo_footer_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
@@ -12,6 +12,7 @@ function ef_demo_footer_install () {
   _ef_demo_footer_add_legal_menu();
   _ef_demo_add_footer_legal_formation_text();
   _ef_demo_footer_add_utility_menu();
+  _ef_demo_footer_add_efficiency_graphic();
 }
 
 function _ef_demo_add_footer_legal_formation_text () {
@@ -28,6 +29,42 @@ function _ef_demo_add_footer_legal_formation_text () {
 
   $settings->save();
 
+}
+
+function _ef_demo_footer_add_efficiency_graphic () {
+  $entries = [
+    'Program services' => 89,
+    'Management & general' => 7,
+    'Fundraising' => 4,
+  ];
+
+  $entries_paragraph = [];
+
+  foreach ($entries as $label => $percentage) {
+    $paragraph = Paragraph::create([
+      'type' => 'efficiency_graphic_entry',
+      'field_ege_label' => $label,
+      'field_ege_percentage' => $percentage,
+    ]);
+
+    $paragraph->addTranslation('de', [
+        'field_ege_label' => $label . ' (DE)',
+    ]);
+
+    $paragraph->save();
+
+    $entries_paragraph[] = $paragraph;
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'efficiency_graphic',
+    'field_efficiency_graphic_entries' => $entries_paragraph,
+  ]);
+
+  $settings->addTranslation('de');
+
+  $settings->save();
 }
 
 function _ef_demo_footer_add_affiliates_menu () {

@@ -1,0 +1,17 @@
+efficiency_graphic:
+  label: ''
+  use: "@components/12-efficiency/efficiency.twig"
+  fields:
+    efficiency:
+      type: array
+      label: ""
+    efficiency_below:
+      type: pattern
+      label: ""
+  libraries:
+    - utility_menu_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-efficiency.css: {}
+  icons:
+    - efficiency

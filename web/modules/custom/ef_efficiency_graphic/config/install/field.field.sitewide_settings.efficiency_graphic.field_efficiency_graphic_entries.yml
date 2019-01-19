@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.efficiency_graphic
+    - field.storage.sitewide_settings.field_efficiency_graphic_entries
+    - paragraphs.paragraphs_type.efficiency_graphic_entry
+  module:
+    - entity_reference_revisions
+id: sitewide_settings.efficiency_graphic.field_efficiency_graphic_entries
+field_name: field_efficiency_graphic_entries
+entity_type: sitewide_settings
+bundle: efficiency_graphic
+label: 'Efficiency graphic entries'
+description: 'Entries in the efficiency graphic. This needs to line up with the visual representation in the SVG.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      efficiency_graphic_entry: efficiency_graphic_entry
+    target_bundles_drag_drop:
+      efficiency_graphic_entry:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

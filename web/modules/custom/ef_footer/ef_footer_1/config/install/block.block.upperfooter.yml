@@ -5,6 +5,9 @@ dependencies:
     - ef_footer_1
   theme:
     - x
+  enforced:
+    module:
+      - ef_footer_1
 id: upperfooter
 theme: x
 region: footer

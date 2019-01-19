@@ -4,6 +4,7 @@ use Drupal\node\Entity\Node;
 use Drupal\media\Entity\Media;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+use Drupal\node\NodeInterface;
 
 function ef_demo_install () {
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
@@ -114,6 +115,7 @@ function _ef_demo_add_crisis_watch () {
   $announcement = Node::create([
     'title' => 'Test announcement',
     'type' => 'announcement',
+    'status' => NodeInterface::PUBLISHED,
     'body' => [
       'format' => 'basic_html',
       'value' => '<p class="rpla-paragraph rpla-paragraph--body rpla-paragraph--lead">Nullam dictum felis eu pede mollis pretium. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Vivamus aliquet elit ac nisl. Curabitur turpis. In auctor lobortis lacus.</p>' .

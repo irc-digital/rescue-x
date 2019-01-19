@@ -57,7 +57,7 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
   public function preprocessFooter1 (&$variables) {
 
     $variables['footer_1'] = [
-      '#type' => "pattern",
+      '#type' => 'pattern',
       '#id' => 'footer_layout_1',
       '#fields' => [
         'footer_layout_1_section_1' => [
@@ -65,12 +65,17 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
           '#theme' => 'ef_crisis_watch',
           '#location' => 'footer',
           ], [
-            '#type' => "pattern",
+            '#type' => 'pattern',
             '#id' => 'footer_1_menu',
             '#fields' => [
               'footer_menu_main_menu_items' => $this->getFooterMenuMainData(),
               'footer_menu_utility_menu_items' => $this->getFooterMenuUtilityData(),
             ],
+          ],
+        ],
+        'footer_layout_1_section_2' => [
+          [
+            '#theme' => 'ef_efficiency_graphic',
           ],
         ],
       ],
