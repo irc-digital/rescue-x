@@ -1,6 +1,6 @@
 name: EF Comms common
 type: module
-description: 'A small amount of configuration that has no other logical home.'
+description: 'A small amount of configuration that has no other logical home. Developers should use this as a storage location very sparingly.'
 package: EF Other
 core: 8.x
 dependencies:

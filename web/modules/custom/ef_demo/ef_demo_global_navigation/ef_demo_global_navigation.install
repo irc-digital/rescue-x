@@ -8,35 +8,6 @@ function ef_demo_global_navigation_install () {
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
 
   _ef_demo_global_navigation_add_secondary_menu_items();
-  _ef_demo_global_navigation_add_sitewide_donation_link();
-}
-
-function _ef_demo_global_navigation_add_sitewide_donation_link () {
-
-  /** @var SitewideSettings $testSettings */
-  $settings = SitewideSettings::create([
-    'type' => 'donation_link',
-    'field_donation_link_link' => [
-      'uri' => 'internal:/',
-      'title' => 'Donate',
-      'options' => [
-        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
-      ],
-    ],
-  ]);
-
-  $settings->addTranslation('de', [
-    'field_donation_link_link' => [
-      'uri' => 'internal:/',
-      'title' => 'Donate (DE)',
-      'options' => [
-        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
-      ],
-    ],
-  ]);
-
-  $settings->save();
-
 }
 
 function _ef_demo_global_navigation_add_secondary_menu_items () {

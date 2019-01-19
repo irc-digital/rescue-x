@@ -48,7 +48,7 @@ function _ef_demo_footer_add_efficiency_graphic () {
     ]);
 
     $paragraph->addTranslation('de', [
-        'field_ege_label' => $label . ' (DE)',
+      'field_ege_label' => $label . ' (DE)',
     ]);
 
     $paragraph->save();
@@ -62,7 +62,9 @@ function _ef_demo_footer_add_efficiency_graphic () {
     'field_efficiency_graphic_entries' => $entries_paragraph,
   ]);
 
-  $settings->addTranslation('de');
+  $settings->addTranslation('de', [
+    'field_efficiency_graphic_entries' => $entries_paragraph,
+  ]);
 
   $settings->save();
 }

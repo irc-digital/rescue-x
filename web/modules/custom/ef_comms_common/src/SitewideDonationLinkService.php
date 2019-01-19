@@ -54,18 +54,16 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
 
           $result = [
             'url' => $url->toString(),
-            'title' => $title,
+            'title' => !is_null($title) ? $title : t('Donate'),
             'icon' => $icon,
           ];
 
           // put a hook here to allow other parts of the system to alter the info
 
-          $icon_info = $this->iconLibrary->getIconInformation($result['icon']);
+          $icon_info = $this->iconLibrary->getIconInformation($result['icon'], TRUE);
           $result['icon'] = $icon_info->id;
         }
-
       }
-
     }
 
     return $result;

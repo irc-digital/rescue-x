@@ -13,6 +13,7 @@ function ef_demo_install () {
   _ef_demo_add_main_menu();
   _ef_demo_add_crisis_watch();
   _ef_demo_add_social_menu();
+  _ef_demo_add_sitewide_donation_link();
 
 //  ef_demo_add_articles();
 //
@@ -71,6 +72,34 @@ function ef_demo_install () {
 //    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
 //    'language' => 'en',
 //  ])->save();
+
+}
+
+function _ef_demo_add_sitewide_donation_link () {
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'donation_link',
+    'field_donation_link_link' => [
+      'uri' => 'internal:/',
+      'title' => 'Donate',
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
+      ],
+    ],
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_donation_link_link' => [
+      'uri' => 'internal:/',
+      'title' => 'Donate (DE)',
+      'options' => [
+        'link_icon' => 'themes/x/dist/svg/individuals/symbol-heart.svg',
+      ],
+    ],
+  ]);
+
+  $settings->save();
 
 }
 

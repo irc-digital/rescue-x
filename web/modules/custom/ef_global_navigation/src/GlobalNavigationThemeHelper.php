@@ -3,6 +3,7 @@
 namespace Drupal\ef_global_navigation;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\ef_comms_common\SitewideDonationLinkServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
@@ -26,15 +27,11 @@ class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
    * @param $variables
    */
   public function preprocessGlobalNavigation (&$variables) {
-    $global_navigation_cta = $this->sitewideDonationLinkService->getSitewideDonationLinkInformation();
 
     $variables['global_navigation'] = [
       '#type' => "pattern",
       '#id' => 'global_navigation',
       '#fields' => [
-        'global_navigation_cta_url' => $global_navigation_cta['url'],
-        'global_navigation_cta_text' => $global_navigation_cta['title'],
-        'global_navigation_cta_icon_name' => $global_navigation_cta['icon'],
         'global_navigation_crisis_watch' => [
           '#theme' => 'ef_crisis_watch',
           '#location' => 'header',
@@ -57,5 +54,15 @@ class GlobalNavigationThemeHelper implements ContainerInjectionInterface {
         ],
       ],
     ];
+
+    $global_navigation_cta = $this->sitewideDonationLinkService->getSitewideDonationLinkInformation();
+
+    if (!is_null($global_navigation_cta)) {
+      $variables['global_navigation']['#fields'] += [
+        'global_navigation_cta_url' => $global_navigation_cta['url'],
+        'global_navigation_cta_text' => $global_navigation_cta['title'],
+        'global_navigation_cta_icon_name' => $global_navigation_cta['icon'],
+      ];
+    }
   }
 }
