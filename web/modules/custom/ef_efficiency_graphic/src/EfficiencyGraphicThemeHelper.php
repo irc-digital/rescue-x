@@ -55,8 +55,8 @@ class EfficiencyGraphicThemeHelper implements ContainerInjectionInterface {
         $efficiency_graphic = $efficiency_graphic->getTranslation($active_language);
 
         foreach ($efficiency_graphic->field_efficiency_graphic_entries as $entry) {
-          $label = $entry->field_ege_label->value;
-          $percentage = $entry->field_ege_percentage->value;
+          $label = $entry->entity->field_ege_label->value;
+          $percentage = $entry->entity->field_ege_percentage->value;
           $efficiency_graphic_info[] = [
             'label' => $label,
             'percentage' => $percentage . '%',
