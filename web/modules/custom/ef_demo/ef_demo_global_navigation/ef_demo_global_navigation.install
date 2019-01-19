@@ -1,7 +1,6 @@
 <?php
 
 use Drupal\menu_link_content\Entity\MenuLinkContent;
-use Drupal\node\Entity\Node;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
 
 function ef_demo_global_navigation_install () {
@@ -78,11 +77,8 @@ function _ef_demo_global_navigation_add_secondary_menu_items () {
 }
 
 function ef_demo_global_navigation_uninstall () {
-  ef_delete_all ('node', 'announcement');
-  ef_delete_all ('sitewide_settings', 'crisis_watch');
   ef_delete_all ('sitewide_settings', 'donation_link');
   ef_delete_all ('sitewide_settings', 'social_sites');
-  ef_delete_all ('sitewide_settings', 'main_menu');
 
   foreach (['secondary', 'main', 'main_de'] as $menu) {
     /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
