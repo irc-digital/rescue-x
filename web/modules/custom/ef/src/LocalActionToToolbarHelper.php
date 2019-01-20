@@ -47,6 +47,8 @@ class LocalActionToToolbarHelper implements ContainerInjectionInterface {
     /** @var \Drupal\Core\Theme\ActiveTheme $active_theme */
     $active_theme = $this->themeManager->getActiveTheme();
 
+    $items = [];
+
     if ($active_theme->getName() != 'seven') {
       $local_tasks = $this->localTaskManager->getLocalTasks($this->routeMatch->getRouteName());
 

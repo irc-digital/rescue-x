@@ -127,6 +127,7 @@ function _ef_demo_add_social_menu () {
   $settings = SitewideSettings::create([
     'type' => 'social_sites',
     'field_social_sites' => $social_sites,
+    'field_social_sites_follow_text' => 'Follow us',
   ]);
 
   $social_sites = array_splice($social_sites,0,2);
@@ -134,6 +135,7 @@ function _ef_demo_add_social_menu () {
   // just include the first two social sites on DE, to demonstrate that
   $settings->addTranslation('de', [
     'field_social_sites' => $social_sites,
+    'field_social_sites_follow_text' => 'Follow us (DE)',
   ]);
 
   $settings->save();

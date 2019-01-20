@@ -12,5 +12,12 @@ interface SocialMenuServiceInterface {
    *
    * @return mixed
    */
-  function getSocialSites ();
+  public function getSocialSites ();
+
+  /**
+   * Returns the default 'follow us' type text for the social icons
+   *
+   * @return mixed
+   */
+  public function getFollowText ();
 }

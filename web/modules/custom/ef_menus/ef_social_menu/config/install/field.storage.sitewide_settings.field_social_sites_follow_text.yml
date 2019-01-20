@@ -1,0 +1,24 @@
+uuid: 4dc22970-ea80-432a-9d74-4dbb9cf1a983
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+  enforced:
+    module:
+      - ef_social_menu
+id: sitewide_settings.field_social_sites_follow_text
+field_name: field_social_sites_follow_text
+entity_type: sitewide_settings
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.social_sites
+    - field.storage.sitewide_settings.field_social_sites_follow_text
+id: sitewide_settings.social_sites.field_social_sites_follow_text
+field_name: field_social_sites_follow_text
+entity_type: sitewide_settings
+bundle: social_sites
+label: 'Follow text'
+description: 'This text is used in as a preamble to the social icons in some context. For example, this text will be displayed in the standard footer before the social icons.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -30,6 +30,29 @@ class SocialMenuService implements SocialMenuServiceInterface {
   /**
    * @inheritdoc
    */
+  public function getFollowText () {
+    $social_sites_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('social_sites');
+
+    if ($social_sites_settings) {
+      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+
+      if ($social_sites_settings->hasTranslation($active_language)) {
+        $social_sites_settings = $social_sites_settings->getTranslation($active_language);
+
+        $field_social_sites_follow_text = $social_sites_settings->field_social_sites_follow_text;
+
+        if ($field_social_sites_follow_text) {
+          return $field_social_sites_follow_text->value;
+        }
+      }
+    }
+
+    return "";
+  }
+
+  /**
+   * @inheritdoc
+   */
   public function getSocialSites () {
     $result = [];
 

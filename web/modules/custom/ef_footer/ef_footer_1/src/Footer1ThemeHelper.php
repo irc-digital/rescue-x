@@ -78,9 +78,15 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
             '#theme' => 'ef_efficiency_graphic',
           ],
         ],
+        'footer_layout_1_section_3' => [
+          [
+            '#theme' => 'ef_social_follow',
+          ],
+        ],
       ],
     ];
   }
+
 
   protected function getFooterMenuMainData () {
     $menu_items = [];

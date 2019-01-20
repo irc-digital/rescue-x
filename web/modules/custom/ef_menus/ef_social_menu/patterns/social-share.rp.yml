@@ -1,0 +1,17 @@
+social_share:
+  label: ''
+  use: "@molecules/50-social-share/social-share.twig"
+  fields:
+    social_share_sites:
+      type: array
+      label: ""
+    social_share_title:
+      type: text
+      label: ""
+  libraries:
+    - social_share_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-social-share.css: {}
+
+
