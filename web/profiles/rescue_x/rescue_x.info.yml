@@ -16,7 +16,6 @@ dependencies:
   - dynamic_page_cache
   - editor
   - field
-  - field_ui
   - file
   - filter
   - image
@@ -29,7 +28,6 @@ dependencies:
   - linkit
   - tweetext
   - media
-  - menu_ui
   - options
   - path
   - page_cache
@@ -49,7 +47,6 @@ dependencies:
   - chosen
   - chosen_field
   - views
-  - views_ui
   - ds
   - ds_extras
   - menu_item_extras

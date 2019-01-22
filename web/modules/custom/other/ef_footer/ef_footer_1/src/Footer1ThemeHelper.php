@@ -80,6 +80,10 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
         ],
         'footer_layout_1_section_3' => [
           [
+            '#type' => 'webform',
+            '#webform' => 'simple_help_sign_up_form',
+          ],
+          [
             '#theme' => 'ef_social_follow',
           ],
         ],

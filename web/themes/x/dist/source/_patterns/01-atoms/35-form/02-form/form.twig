@@ -1,0 +1,8 @@
+{% spaceless %}
+  {% if form_method is empty %}
+    {% set form_method = 'POST' %}
+  {% endif %}
+{% endspaceless %}
+<form action="{{ form_action }}" method="{{ form_method }}" accept-charset="UTF-8">
+  {{ form_content }}
+</form>

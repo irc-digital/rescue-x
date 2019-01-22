@@ -1,0 +1,20 @@
+form:
+  label: ''
+  use: "@atoms/35-form/02-form/form.twig"
+  fields:
+    form_action:
+      type: text
+      label: ''
+    form_method:
+      type: text
+      label: ''
+    form_content:
+      type: array
+      label: ''
+  libraries:
+    - aside_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpla-form.css: {}
+
+

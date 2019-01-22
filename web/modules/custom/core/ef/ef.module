@@ -202,24 +202,24 @@ function ef_theme_suggestions_embeddable_content(array $variables) {
  *
  * @param $theme_registry
  */
-function ef_theme_registry_alter (&$theme_registry) {
-
-  $all_module_list = system_rebuild_module_data ();
-
-  $modules_requiring_embeddable_framework = $all_module_list['ef']->required_by;
-
-  $module_template_list = array_keys($modules_requiring_embeddable_framework);
-  array_push($module_template_list, 'ef');
-
-  /** @var Extension $module */
-  foreach ($module_template_list as $module_name) {
-    if ($module_name != 'ef' && $all_module_list[$module_name]->status) {
-      $module_path = $all_module_list[$module_name]->getPath();
-      $module_template_folder = $module_path . '/templates';
-      _ef_add_custom_templates_to_registry ($theme_registry, $module_template_folder);
-    }
-  }
-}
+//function ef_theme_registry_alter (&$theme_registry) {
+//
+//  $all_module_list = system_rebuild_module_data ();
+//
+//  $modules_requiring_embeddable_framework = $all_module_list['ef']->required_by;
+//
+//  $module_template_list = array_keys($modules_requiring_embeddable_framework);
+//  array_push($module_template_list, 'ef');
+//
+//  /** @var Extension $module */
+//  foreach ($module_template_list as $module_name) {
+//    if ($module_name != 'ef' && $all_module_list[$module_name]->status) {
+//      $module_path = $all_module_list[$module_name]->getPath();
+//      $module_template_folder = $module_path . '/templates';
+//      _ef_add_custom_templates_to_registry ($theme_registry, $module_template_folder);
+//    }
+//  }
+//}
 
 /**
  * Adds a specific path into the theme registry. This is used when adding in
@@ -229,31 +229,31 @@ function ef_theme_registry_alter (&$theme_registry) {
  * @param $theme_registry
  * @param $path
  */
-function _ef_add_custom_templates_to_registry (&$theme_registry, $path) {
-  // Find all .tpl.php files in this folder recursively.
-  $template_file_objects = drupal_find_theme_templates($theme_registry, '.html.twig', $path);
-  // Iterate through all found template file objects.
-  foreach ($template_file_objects as $key => $template_file_object) {
-    if (strpos($template_file_object['template'], 'embeddable--') === 0) {
-
-      // if a theme function has already overridden this template, then
-      // we dont need to do anything
-      if (!isset($theme_registry[$key])) {
-        $theme_registry[$key]['path'] = $path;
-        $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
-        $theme_registry[$key]['type'] = 'module';
-      }
-
-      if (!isset($theme_registry[$key]['preprocess functions'])) {
-        $theme_registry[$key]['preprocess functions'][] = 'template_preprocess_embeddable_content';
-      } else if (!in_array('template_preprocess_embeddable_content', $theme_registry[$key]['preprocess functions'])) {
-        // we need to place this fairly high up in the pecking order
-        array_unshift($theme_registry[$key]['preprocess functions'], 'template_preprocess_embeddable_content');
-      }
-
-    }
-  }
-}
+//function _ef_add_custom_templates_to_registry (&$theme_registry, $path) {
+//  // Find all .tpl.php files in this folder recursively.
+//  $template_file_objects = drupal_find_theme_templates($theme_registry, '.html.twig', $path);
+//  // Iterate through all found template file objects.
+//  foreach ($template_file_objects as $key => $template_file_object) {
+//    if (strpos($template_file_object['template'], 'embeddable--') === 0) {
+//
+//      // if a theme function has already overridden this template, then
+//      // we dont need to do anything
+//      if (!isset($theme_registry[$key])) {
+//        $theme_registry[$key]['path'] = $path;
+//        $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+//        $theme_registry[$key]['type'] = 'module';
+//      }
+//
+//      if (!isset($theme_registry[$key]['preprocess functions'])) {
+//        $theme_registry[$key]['preprocess functions'][] = 'template_preprocess_embeddable_content';
+//      } else if (!in_array('template_preprocess_embeddable_content', $theme_registry[$key]['preprocess functions'])) {
+//        // we need to place this fairly high up in the pecking order
+//        array_unshift($theme_registry[$key]['preprocess functions'], 'template_preprocess_embeddable_content');
+//      }
+//
+//    }
+//  }
+//}
 
 /**
  * Implements hook_form_alter().
