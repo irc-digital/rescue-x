@@ -1,4 +1,4 @@
-simple_email_sign_up:
+email_signup:
   label: ''
   use: "@molecules/51-email-signup/email-signup.twig"
   fields:
