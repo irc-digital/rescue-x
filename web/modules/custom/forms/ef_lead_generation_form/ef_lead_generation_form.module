@@ -3,17 +3,6 @@
 use Drupal\Core\Render\Element;
 
 /**
- * Implements hook_theme().
- */
-function ef_lead_generation_form_theme($existing, $type, $theme, $path) {
-  return [
-    'webform_submission_form__simple_help_sign_up_form' => [
-      'base hook' => 'webform_submission_form',
-    ],
-  ];
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  */
 function ef_lead_generation_form_preprocess_webform_submission_form__simple_help_sign_up_form (&$variables) {
@@ -23,6 +12,7 @@ function ef_lead_generation_form_preprocess_webform_submission_form__simple_help
 
   foreach (Element::children($variables['form']) as $key) {
     $email_signup_form_hidden_field[$key] = $variables['form'][$key];
+    unset($variables['form'][$key]);
   }
 
   $variables['form']['elements']['simple_help_sign_up_form'] = [
