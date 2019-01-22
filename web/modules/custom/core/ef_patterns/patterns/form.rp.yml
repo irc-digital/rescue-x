@@ -12,7 +12,7 @@ form:
       type: array
       label: ''
   libraries:
-    - aside_library:
+    - form_library:
        css:
          theme:
            dist/public/css/patterns/rpla-form.css: {}

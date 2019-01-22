@@ -6,22 +6,38 @@
  *   email_signup_title - Optional header for email signup form.
  */
 #}
+{% spaceless %}
+  {% if email_signup_form_action is empty %}
+    {% set email_signup_form_action = '/' %}
+  {% endif %}
+
+  {% if email_signup_form_method is empty %}
+    {% set email_signup_form_method = 'POST' %}
+  {% endif %}
+{% endspaceless %}
 <div class="rplm-email-signup">
   {% if email_signup_title is not empty %}
     <h6 class="rplm-email-signup__title">{{ email_signup_title }}</h6>
   {% endif %}
-  <form class="rplm-email-signup__form-wrapper" accept-charset="UTF-8">
-    <div class="rplm-email-signup__email-input-wrapper">
-      {% include '@atoms/35-form/06-email-input/email-input.twig' with {
-        email_input_name: "email",
-        email_input_placeholder: ('Email address' | trans),
-        email_input_modifiers: ['with-border', 'placeholder-small'],
-      } only %}
+  {% set email_signup_form_content %}
+    <div class="rplm-email-signup__form-content-wrapper">
+      <div class="rplm-email-signup__email-input-wrapper">
+        {% include '@atoms/35-form/06-email-input/email-input.twig' with {
+          email_input_name: "email",
+          email_input_placeholder: ('Email address' | trans),
+          email_input_modifiers: ['with-border', 'placeholder-small'],
+        } only %}
+      </div>
+      <div class="rplm-email-signup__submit-wrapper">
+        {% include '@atoms/35-form/40-submit/05-link/link-submit.twig' with {
+          link_text: ('Subscribe' | trans),
+        } only %}
+      </div>
     </div>
-    <div class="rplm-email-signup__submit-wrapper">
-      {% include '@atoms/35-form/40-submit/05-link/link-submit.twig' with {
-        link_text: ('Subscribe' | trans),
-      } only %}
-    </div>
-  </form>
+  {% endset %}
+  {% include '@atoms/35-form/02-form/form.twig' with {
+    form_action: email_signup_form_action,
+    form_method: email_signup_form_method,
+    form_content: email_signup_form_content
+  } only %}
 </div>

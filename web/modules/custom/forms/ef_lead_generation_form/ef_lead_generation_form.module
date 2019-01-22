@@ -17,10 +17,11 @@ function ef_lead_generation_form_theme($existing, $type, $theme, $path) {
 function ef_lead_generation_form_preprocess_webform__simple_help_sign_up_form (&$variables) {
   $variables['simple_help_sign_up_form'] = [
     '#type' => "pattern",
-    '#id' => 'button',
+    '#id' => 'simple_email_sign_up',
     '#fields' => [
-      'button_text' => 'hello',
-      'button_url' => '/',
+      'email_signup_title' => 'Join our mailing list',
+      'email_signup_form_action' => '/',
+      'email_signup_form_method' => 'GET',
     ],
   ];
 }
