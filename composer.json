@@ -49,6 +49,7 @@
         "drush/drush": "~8",
         "harvesthq/chosen": "^1.8",
         "pantheon-systems/quicksilver-pushback": "~1",
+        "rescue/rpl": "dev-master",
         "rvtraveller/qs-composer-installer": "^1.1",
         "webflo/drupal-core-strict": "^8",
         "wikimedia/composer-merge-plugin": "^1.4"
@@ -68,7 +69,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "alpha",
+  "minimum-stability": "alpha",
     "prefer-stable": true,
     "autoload": {
         "classmap": [

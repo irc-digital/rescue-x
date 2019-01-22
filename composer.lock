@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2c58d2a1076c54f66b9db428a73555d",
+    "content-hash": "51a955bcb8e5173213036694e8ab9125",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -5031,6 +5031,41 @@
             "time": "2016-02-11T07:05:27+00:00"
         },
         {
+            "name": "rescue/rpl",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irc-digital/rescue-rpl.git",
+                "reference": "c6b96ba20e9afe79d82669a48cf1851b0b3a0254"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irc-digital/rescue-rpl/zipball/c6b96ba20e9afe79d82669a48cf1851b0b3a0254",
+                "reference": "c6b96ba20e9afe79d82669a48cf1851b0b3a0254",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Thornton",
+                    "email": "andrew.thornton@rescue.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Russ Bomhof",
+                    "email": "russ.bomhof@rescue.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of shared components and styles for International Rescue Committee web properties",
+            "homepage": "https://www.rescue.org",
+            "time": "2019-01-22 15:28:46"
+        },
+        {
             "name": "rvtraveller/qs-composer-installer",
             "version": "1.1",
             "source": {
@@ -6803,6 +6838,11 @@
         {
             "name": "webflo/drupal-core-strict",
             "version": "8.0.0-beta15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-core-strict.git",
+                "reference": "1eb044b722ebe44bc6af86a03888415d7f31c057"
+            },
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -9587,7 +9627,8 @@
     "stability-flags": {
         "drupal/config_inspector": 10,
         "drupal/inline_entity_form": 5,
-        "drupal/simple_block": 10
+        "drupal/simple_block": 10,
+        "rescue/rpl": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
