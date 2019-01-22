@@ -11,6 +11,9 @@ simple_email_sign_up:
     email_signup_form_method:
       type: array
       label: ''
+    email_signup_form_hidden_field:
+      type: array
+      label: ''
   libraries:
     - email_signup_library_library:
        css:

@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Render\Element;
+
 /**
  * Implements hook_theme().
  */
@@ -14,14 +16,21 @@ function ef_lead_generation_form_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function ef_lead_generation_form_preprocess_webform__simple_help_sign_up_form (&$variables) {
-  $variables['simple_help_sign_up_form'] = [
-    '#type' => "pattern",
+function ef_lead_generation_form_preprocess_webform_submission_form__simple_help_sign_up_form (&$variables) {
+  unset ($variables['form']['elements']);
+
+  $email_signup_form_hidden_field = [];
+
+  foreach (Element::children($variables['form']) as $key) {
+    $email_signup_form_hidden_field[$key] = $variables['form'][$key];
+  }
+
+  $variables['form']['elements']['simple_help_sign_up_form'] = [
+    '#type' => 'pattern',
     '#id' => 'simple_email_sign_up',
     '#fields' => [
+      'email_signup_form_hidden_field' => $email_signup_form_hidden_field,
       'email_signup_title' => 'Join our mailing list',
-      'email_signup_form_action' => '/',
-      'email_signup_form_method' => 'GET',
     ],
   ];
 }
