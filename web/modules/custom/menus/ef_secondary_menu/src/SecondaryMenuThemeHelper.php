@@ -81,7 +81,12 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
         $title = $menu_link->getTitle();
         $url = $menu_link->getUrlObject()->toString();
         $icon_field = $menu_link->field_icon->value;
-        $icon = $this->iconLibrary->getIconInformation($icon_field)->id;
+        $icon_info = $this->iconLibrary->getIconInformation($icon_field);
+        $icon = '';
+
+        if (!is_null($icon_info)) {
+          $icon = $icon_info->id;
+        }
 
         $menu_items[] = [
           'title' => $title,
