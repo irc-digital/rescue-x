@@ -8,6 +8,8 @@ services:
   database:
     portforward: 3308
   appserver:
+    config:
+      conf: php.ini
     xdebug: true
     run:
       - "cd $LANDO_MOUNT && composer install"
