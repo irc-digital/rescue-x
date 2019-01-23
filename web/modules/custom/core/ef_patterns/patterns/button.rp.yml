@@ -1,19 +1,16 @@
 button:
-  label: ''
+  label: 'Button'
   use: "@atoms/30-button/button.twig"
   fields:
     button_text:
       type: text
-      label: ''
+      label: 'Text'
     button_url:
       type: text
-      label: ''
-    button_url:
-      type: text
-      label: ''
+      label: 'URL'
     button_icon_name:
       type: text
-      label: ''
+      label: 'Icon name'
   libraries:
     - aside_library:
        css:

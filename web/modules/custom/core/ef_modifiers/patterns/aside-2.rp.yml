@@ -1,10 +1,10 @@
 aside_2:
-  label: ''
+  label: 'Aside 2'
   use: "@layouts/55-aside-2/aside-2.twig"
   fields:
     aside_2_content:
       type: text
-      label: ''
+      label: 'Content'
   libraries:
     - aside_2_library:
        css:

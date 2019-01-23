@@ -1,14 +1,14 @@
 infographic_simple_teaser_icon:
   use: "@components/87-teasers/60-icon/teaser-icon.twig"
-  label: ""
+  label: "Infographic - simple teaser icon"
   icon_library_field: "teaser_icon_icon_name"
   fields:
     teaser_icon_title:
       type: text
-      label: ""
+      label: "Title"
     teaser_icon_icon_name:
       type: text
-      label: ""
+      label: "Icon name"
   libraries:
     - teaser_icon_library:
        css:

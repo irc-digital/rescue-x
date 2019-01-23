@@ -1,28 +1,28 @@
 teaser_standard:
-  label: ''
+  label: 'Teaser- standard'
   use: "@components/87-teasers/05-standard/teaser-standard.twig"
   fields:
     teaser_standard_url:
       type: url
-      label: ''
+      label: 'URL'
     teaser_standard_slug:
       type: text
-      label: ''
+      label: 'Slug'
     teaser_standard_title:
       type: text
-      label: ''
+      label: 'Title'
     teaser_standard_cta:
       type: text
-      label: ''
+      label: 'CTA'
     teaser_standard_image_source_set:
        type: array
-       label: ''
+       label: 'Responsive image source set'
     teaser_standard_image_fallback:
       type: url
-      label: ''
+      label: 'Responsive image fallback'
     teaser_standard_image_alt:
       type: text
-      label: ''
+      label: 'Responsive image alt'
   libraries:
     - teaser_standard_library:
        css:

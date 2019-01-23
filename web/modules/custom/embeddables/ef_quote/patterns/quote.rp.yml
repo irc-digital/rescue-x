@@ -1,32 +1,32 @@
 quote:
-  label: ''
+  label: 'Quote'
   use: "@components/63-quote/quote.twig"
   section: TRUE
   fields:
     quote_text:
       type: text
-      label: ""
+      label: "Text"
     quote_attribution:
       type: text
-      label: ""
+      label: "Attribution"
     quote_attribution_role:
       type: text
-      label: ""
+      label: "Attribution role"
     quote_cta:
       type: text
-      label: ""
+      label: "Call to action text"
     quote_url:
       type: url
-      label: ""
+      label: "Call to action URL"
     quote_responsive_image_source_set:
       type: array
-      label: ""
+      label: "Responsive image source set"
     quote_responsive_image_fallback:
       type: string
-      label: ""
+      label: "Responsive image fallback"
     quote_responsive_image_alt:
       type: string
-      label: ""
+      label: "Responsive image alt"
   libraries:
     - quote_library:
        css:

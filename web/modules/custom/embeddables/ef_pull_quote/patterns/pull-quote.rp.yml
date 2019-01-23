@@ -1,12 +1,11 @@
 pull_quote:
-  label: Pull quote
-  description: A pull quote (TODO)
+  label: "Pull quote"
   use: "@components/57-pull-quote/pull-quote.twig"
   section: TRUE
   fields:
     pull_quote_text:
       type: text
-      label: "Pull quote text"
+      label: "Text"
   libraries:
     - pull_quote_library:
        css:

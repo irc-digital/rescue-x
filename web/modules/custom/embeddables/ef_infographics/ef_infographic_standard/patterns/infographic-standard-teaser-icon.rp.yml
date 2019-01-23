@@ -1,17 +1,17 @@
 infographic_standard_teaser_icon:
-  label: ''
+  label: "Infographic - standard teaser icon"
   use: "@components/87-teasers/60-icon/teaser-icon.twig"
   icon_library_field: "teaser_icon_icon_name"
   fields:
     teaser_icon_title:
       type: text
-      label: ""
+      label: "Title"
     teaser_icon_summary:
       type: text
-      label: ""
+      label: "Summary"
     teaser_icon_icon_name:
       type: text
-      label: ""
+      label: "Icon name"
   libraries:
     - teaser_icon_library:
        css:

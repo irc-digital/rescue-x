@@ -1,22 +1,22 @@
 teaser_simple_image_link:
-  label: ''
+  label: 'Simple image link'
   use: "@components/87-teasers/50-simple-image-link/teaser-simple-image-link.twig"
   fields:
     teaser_simple_image_link_url:
       type: string
-      label: ''
+      label: 'URL'
     teaser_simple_image_link_title:
       type: string
-      label: ''
+      label: 'Title'
     teaser_simple_image_link_image_source_set:
       type: array
-      label: ""
+      label: "Responsive image source set"
     teaser_simple_image_link_image_fallback:
       type: string
-      label: ''
+      label: 'Responsive image fallback'
     teaser_simple_image_link_image_alt:
       type: string
-      label: ''
+      label: 'Responsive image alt'
   libraries:
     - simple_image_link_library:
        css:

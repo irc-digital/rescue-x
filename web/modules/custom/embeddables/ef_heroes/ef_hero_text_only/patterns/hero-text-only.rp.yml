@@ -1,16 +1,16 @@
 hero_text_only:
-  label: ''
+  label: 'Hero - text only'
   use: "@components/27-heroes/20-text-only/hero-text-only.twig"
   fields:
     hero_text_only_headline:
       type: text
-      label: ""
+      label: "Headline"
     hero_text_only_slug:
       type: text
-      label: ""
+      label: "Slug"
     hero_text_only_description:
       type: text
-      label: ""
+      label: "Description"
   libraries:
     - hero_text_only:
        css:

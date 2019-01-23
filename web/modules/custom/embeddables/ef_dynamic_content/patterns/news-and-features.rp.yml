@@ -6,8 +6,7 @@ news_and_features:
   fields:
     news_and_features_content:
       type: array
-      label: News content
-      description: An array of rendered news items
+      label: 'News content'
       unpack: TRUE
   libraries:
     - news_and_features_library:

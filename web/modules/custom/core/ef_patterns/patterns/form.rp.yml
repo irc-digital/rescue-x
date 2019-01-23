@@ -1,16 +1,16 @@
 form:
-  label: ''
+  label: 'Form'
   use: "@atoms/35-form/02-form/form.twig"
   fields:
     form_action:
       type: text
-      label: ''
+      label: 'Action'
     form_method:
       type: text
-      label: ''
+      label: 'Method'
     form_content:
       type: array
-      label: ''
+      label: 'Content'
   libraries:
     - form_library:
        css:

@@ -51,7 +51,7 @@ class LinkWithIconAttributesField extends LinkAttributesField {
     if ($attribute_name == 'link_icon') {
       $icon_id = $entity->{$link_field_name}->options['link_icon'];
       $icon_info = $this->iconLibrary->getIconInformation($icon_id);
-      return !is_null($icon_info) ? $icon_info->id : NULL;
+      return !is_null($icon_info) ? $icon_info->id : '';
     } else {
       return parent::processAttribute($attribute_name, $entity, $link_field_name);
     }

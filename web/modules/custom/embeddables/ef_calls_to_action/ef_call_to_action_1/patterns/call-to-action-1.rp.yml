@@ -1,24 +1,24 @@
 call_to_action_1:
-  label: ''
+  label: 'Call to action 1'
   use: "@components/08-calls-to-action/10-call-to-action-1/call-to-action-1.twig"
   icon_library_field: "call_to_action_1_button_icon"
   section: TRUE
   fields:
     call_to_action_1_title:
       type: text
-      label: ""
+      label: "Title"
     call_to_action_1_subtitle:
       type: text
-      label: ""
+      label: "Subtitle"
     call_to_action_1_url:
       type: url
-      label: ""
+      label: "URL"
     call_to_action_1_button_text:
       type: text
-      label: ""
+      label: "Button text"
     call_to_action_1_button_icon:
       type: text
-      label: ""
+      label: "Button icon"
   libraries:
     - call_to_action_1_library:
        css:

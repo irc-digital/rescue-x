@@ -1,13 +1,13 @@
 social_share:
-  label: ''
+  label: 'Social share'
   use: "@molecules/50-social-share/social-share.twig"
   fields:
     social_share_sites:
       type: array
-      label: ""
+      label: "Sites"
     social_share_title:
       type: text
-      label: ""
+      label: "Share text"
   libraries:
     - social_share_library:
        css:

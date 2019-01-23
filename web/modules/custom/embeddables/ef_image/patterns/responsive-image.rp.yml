@@ -1,16 +1,16 @@
 responsive_image:
-  label: ''
+  label: 'Responsive image'
   use: "@atoms/52-responsive-image/responsive-image.twig"
   fields:
     responsive_image_source_set:
       type: array
-      label: ''
+      label: 'Responsive image source set'
     responsive_image_sizes:
       type: string
-      label: ''
+      label: 'Responsive image sizes'
     responsive_image_fallback:
       type: string
-      label: ''
+      label: 'Responsive image fallback'
     responsive_image_alt:
       type: string
-      label: ''
+      label: 'Responsive image alt'

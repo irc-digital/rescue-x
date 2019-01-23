@@ -1,13 +1,11 @@
 simple_image_link_list:
-  label: Simple image link list
-  description: Todo
+  label: "Simple image link list"
   use: "@components/71-simple-image-link-list/simple-image-link-list.twig"
   section: TRUE
   fields:
     simple_image_link_list_content:
       type: list
-      label: "List content"
-      description: "A bunch of simple image link teasers"
+      label: "Content"
       unpack: TRUE
       pass_through_modifiers:
         - "display-images"

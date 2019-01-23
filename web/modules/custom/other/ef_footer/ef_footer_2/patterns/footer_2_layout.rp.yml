@@ -1,13 +1,13 @@
 footer_layout_2:
-  label: ''
+  label: 'Footer layout 2'
   use: "@layouts/40-footer-layouts/10-footer-layout-2/footer-layout-2.twig"
   fields:
     footer_layout_2_section_1:
       type: pattern
-      label: ""
+      label: "Section 1"
     footer_layout_2_section_2:
       type: pattern
-      label: ""
+      label: "Section 2"
   libraries:
     - footer_layout_2_library:
        css:

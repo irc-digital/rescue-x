@@ -1,13 +1,13 @@
 efficiency_graphic:
-  label: ''
+  label: 'Efficiency graphic'
   use: "@components/12-efficiency/efficiency.twig"
   fields:
     efficiency:
       type: array
-      label: ""
+      label: "Efficiency"
     efficiency_below:
       type: pattern
-      label: ""
+      label: "Below graphic"
   libraries:
     - utility_menu_library:
        css:

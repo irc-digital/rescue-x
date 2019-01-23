@@ -1,10 +1,10 @@
 main_menu:
-  label: ''
+  label: 'Main menu'
   use: "@components/43-menu/05-main/main-menu.twig"
   fields:
     main_menu_items:
       type: array
-      label: ""
+      label: "Items"
   libraries:
     - main_menu_library:
        css:

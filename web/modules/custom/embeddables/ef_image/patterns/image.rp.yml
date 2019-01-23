@@ -1,16 +1,16 @@
 image_tag:
-  label: ''
+  label: 'Image'
   use: "@atoms/50-image/image.twig"
   fields:
     image_tag_source:
       type: url
-      label: ''
+      label: 'Source'
     image_tag_alt:
       type: string
-      label: ''
+      label: 'Alt'
     image_tag_width:
       type: string
-      label: ''
+      label: 'Width'
     image_tag_height:
       type: string
-      label: ''
+      label: 'Height'

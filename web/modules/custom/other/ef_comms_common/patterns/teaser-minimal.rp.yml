@@ -1,16 +1,16 @@
 teaser_minimal:
-  label: ''
+  label: 'Teaser - minimal'
   use: "@components/87-teasers/15-minimal/teaser-minimal.twig"
   fields:
     teaser_minimal_url:
       type: url
-      label: ''
+      label: 'URL'
     teaser_minimal_slug:
       type: text
-      label: ''
+      label: 'Slug'
     teaser_minimal_title:
       type: text
-      label: ''
+      label: 'Title'
   libraries:
     - teaser_minimal_library:
        css:

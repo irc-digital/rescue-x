@@ -1,10 +1,10 @@
 contributors:
-  label: ''
+  label: 'Contributors'
   use: "@molecules/10-contributors/contributors.twig"
   fields:
     contributors_list:
       type: array
-      label: ''
+      label: 'Contributor list'
   libraries:
     - contributors_library:
        css:

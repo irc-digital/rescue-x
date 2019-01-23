@@ -1,13 +1,13 @@
 crisis_watch:
-  label: ''
+  label: 'Crisis watch'
   use: "@molecules/30-crisis-watch/crisis-watch.twig"
   fields:
     crisis_watch_text:
       type: string
-      label: ""
+      label: "Text"
     crisis_watch_url:
       type: url
-      label: ""
+      label: "URL"
   libraries:
     - crisis_watch_library:
        css:

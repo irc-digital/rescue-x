@@ -1,16 +1,16 @@
 footer_layout_1:
-  label: ''
+  label: 'Footer layout 1'
   use: "@layouts/40-footer-layouts/05-footer-layout-1/footer-layout-1.twig"
   fields:
     footer_layout_1_section_1:
       type: pattern
-      label: ""
+      label: "Section 1"
     footer_layout_1_section_2:
       type: pattern
-      label: ""
+      label: "Section 2"
     footer_layout_1_section_3:
       type: pattern
-      label: ""
+      label: "Section 3"
   libraries:
     - footer_layout_1_library:
        css:

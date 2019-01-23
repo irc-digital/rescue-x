@@ -1,32 +1,32 @@
 testimonial:
-  label: ''
+  label: 'Testimonial'
   use: "@components/90-testimonial/testimonial.twig"
   section: TRUE
   fields:
     testimonial_title:
       type: text
-      label: ''
+      label: 'Title'
     testimonial_quote_text:
       type: text
-      label: ''
+      label: 'Quote text'
     testimonial_cta:
       type: text
-      label: ''
+      label: 'Call to action text'
     testimonial_url:
       type: url
-      label: ""
+      label: "Call to action URL"
     testimonial_responsive_image_source_set:
       type: array
-      label: ''
+      label: 'Responsive image source set'
     testimonial_responsive_image_fallback:
       type: string
-      label: ''
+      label: 'Responsive image fallback'
     testimonial_responsive_image_alt:
       type: string
-      label: ''
+      label: 'Responsive image alt'
     testimonial_authority_message:
       type: string
-      label: ''
+      label: 'Authority message'
   libraries:
     - testimonial_library:
        css:

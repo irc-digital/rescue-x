@@ -74,7 +74,10 @@ class SocialMenuService implements SocialMenuServiceInterface {
             $url = Url::fromUri($uri);
 
             $icon_info = $this->iconLibrary->getIconInformation($icon, TRUE);
-            $result[$icon_info->id] = $url->toString();
+
+            if (!is_null($icon_info)) {
+              $result[$icon_info->id] = $url->toString();
+            }
           }
         }
       }

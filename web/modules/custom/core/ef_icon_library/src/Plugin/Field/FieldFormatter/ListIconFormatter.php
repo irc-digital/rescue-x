@@ -86,7 +86,7 @@ class ListIconFormatter extends OptionsKeyFormatter implements ContainerFactoryP
 
     foreach ($items as $delta => $item) {
       $icon = $this->iconLibrary->getIconInformation($item->value);
-      $link_icon = $icon->id;
+      $link_icon = !is_null($icon) ? $icon->id : '';
 
       $elements[$delta] = [
         '#markup' => $link_icon,

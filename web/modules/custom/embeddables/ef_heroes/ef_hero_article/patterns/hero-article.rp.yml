@@ -1,40 +1,40 @@
 hero_article:
-  label: ''
+  label: 'Hero - article'
   use: "@components/27-heroes/05-article/hero-article.twig"
   fields:
     hero_article_headline:
       type: text
-      label: ''
+      label: 'Headline'
     hero_article_slug:
       type: text
-      label: ''
+      label: 'Slug'
     hero_article_summary:
       type: text
-      label: ''
+      label: 'Summary'
     hero_article_published:
       type: date
-      label: ''
+      label: 'Published date'
     hero_article_last_updated:
       type: date
-      label: ''
+      label: 'Last updated date'
     hero_article_photographer:
       type: text
-      label: ''
+      label: 'Photographer'
     hero_article_art_directed_image_sources:
       type: array
-      label: ''
+      label: 'Art directed image sources'
     hero_article_art_directed_image_fallback:
       type: string
-      label: ''
+      label: 'Art directed image fallback'
     hero_article_art_directed_image_alt:
       type: string
-      label: ''
+      label: 'Art directed image alt'
     hero_article_social_share:
       type: text
-      label: ''
+      label: 'Social share'
     hero_article_contributors:
       type: text
-      label: ''
+      label: 'Contributors'
 
   libraries:
     - hero_article_library:

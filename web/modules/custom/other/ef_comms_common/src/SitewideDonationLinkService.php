@@ -61,7 +61,8 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
           // put a hook here to allow other parts of the system to alter the info
 
           $icon_info = $this->iconLibrary->getIconInformation($result['icon'], TRUE);
-          $result['icon'] = $icon_info->id;
+
+          $result['icon'] = !is_null($icon_info) ? $icon_info->id : '';
         }
       }
     }
