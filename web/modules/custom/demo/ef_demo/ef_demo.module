@@ -1,0 +1,56 @@
+<?php
+
+
+function ef_demo_get_random_paragraphs ($min_paragraphs = 4, $max_paragraphs = 10) {
+  $paragraph_array = [];
+
+  $len = mt_rand ($min_paragraphs, $max_paragraphs);
+
+  for ($i = 0; $i <= $len; $i++) {
+    $para = ef_demo_get_random_paragraph();
+
+    if ($i == 0) {
+      $para = '<p class="rpla-paragraph rpla-paragraph--body rpla-paragraph--lead">' . $para . '</p>';
+    } else {
+      $para = '<p class="rpla-paragraph rpla-paragraph--body">' . $para . '</p>';
+    }
+    $paragraph_array[] = $para;
+  }
+
+  return implode('', $paragraph_array);
+}
+
+function ef_demo_get_random_paragraph ($min_sentences = 1, $max_sentences = 3) {
+  $sentence_array = [];
+
+  $len = mt_rand ($min_sentences, $max_sentences);
+
+  for ($i = 0; $i <= $len; $i++) {
+    $sentence_array[] = ef_demo_get_random_sentence();
+  }
+
+  return implode(' ', $sentence_array);
+}
+
+function ef_demo_get_random_sentence($min_words = 4, $max_words = 10, $include_period = TRUE) {
+  $word_array = [];
+
+  $len = mt_rand ($min_words, $max_words);
+
+  for ($i = 0; $i <= $len; $i++) {
+    $word_array[] = ef_demo_get_random_word();
+
+    if ($i == 0) {
+      $word_array[0] = ucfirst($word_array[0]);
+    }
+  }
+
+  return implode(' ', $word_array) . ($include_period ? '.' : '');
+}
+
+function ef_demo_get_random_word($len = 10) {
+  $word = array_merge(range('a', 'z'), range('A', 'Z'));
+  shuffle($word);
+  $len = mt_rand (min(5, $len) , $len);
+  return strtolower(substr(implode($word), 0, $len));
+}

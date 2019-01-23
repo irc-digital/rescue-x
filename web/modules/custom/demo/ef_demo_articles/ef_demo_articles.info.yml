@@ -1,0 +1,12 @@
+name: EF Demo (articles)
+type: module
+description: 'Provides some sample articles.'
+package: EF Demo
+core: 8.x
+dependencies:
+  - ef
+  - ef_demo
+  - ef_comms_common
+  - ef_article
+#  - ef_pull_quote
+  - ef_image

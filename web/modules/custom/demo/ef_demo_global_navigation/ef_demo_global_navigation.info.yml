@@ -4,6 +4,5 @@ description: 'Provides supporting content to demo the global navigation.'
 package: EF Demo
 core: 8.x
 dependencies:
-  - ef_demo
+  - ef_demo_nav_common
   - ef_global_navigation
-  - ef_announcement
