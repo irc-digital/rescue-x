@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_patterns
   - ef_webform_common
+  - ef_sitewide_settings

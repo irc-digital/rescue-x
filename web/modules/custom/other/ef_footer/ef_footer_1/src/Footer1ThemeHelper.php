@@ -62,9 +62,10 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
       '#fields' => [
         'footer_layout_1_section_1' => [
           [
-          '#theme' => 'ef_crisis_watch',
-          '#location' => 'footer',
-          ], [
+            '#theme' => 'ef_crisis_watch',
+            '#location' => 'footer',
+          ],
+          [
             '#type' => 'pattern',
             '#id' => 'footer_1_menu',
             '#fields' => [
@@ -80,8 +81,7 @@ class Footer1ThemeHelper implements ContainerInjectionInterface {
         ],
         'footer_layout_1_section_3' => [
           [
-            '#type' => 'webform',
-            '#webform' => 'simple_help_sign_up_form',
+            '#theme' => 'ef_simple_lead_generation_form',
           ],
           [
             '#theme' => 'ef_social_follow',

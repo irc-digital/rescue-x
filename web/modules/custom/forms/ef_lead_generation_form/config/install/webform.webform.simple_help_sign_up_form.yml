@@ -1,6 +1,9 @@
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - ef_lead_generation_form
 open: null
 close: null
 weight: 0

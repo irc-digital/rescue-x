@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_lead_generation
+    - field.storage.sitewide_settings.field_flg_form
+id: sitewide_settings.footer_lead_generation.field_flg_form
+field_name: field_flg_form
+entity_type: sitewide_settings
+bundle: footer_lead_generation
+label: Form
+description: 'The webform that is setup to handle capturing the person''s email address in the footer. If you leave this blank no email subscription will be shown in the footer. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

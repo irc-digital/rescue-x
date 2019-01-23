@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_lead_generation
+    - field.storage.sitewide_settings.field_flg_submit_link
+id: sitewide_settings.footer_lead_generation.field_flg_submit_link
+field_name: field_flg_submit_link
+entity_type: sitewide_settings
+bundle: footer_lead_generation
+label: 'Submit link text'
+description: 'The text on the submission link button.'
+required: true
+translatable: true
+default_value:
+  -
+    value: Subscribe
+default_value_callback: ''
+settings: {  }
+field_type: string

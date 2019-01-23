@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_lead_generation
+    - field.field.sitewide_settings.footer_lead_generation.field_flg_form
+    - field.field.sitewide_settings.footer_lead_generation.field_flg_placeholder_text
+    - field.field.sitewide_settings.footer_lead_generation.field_flg_submit_link
+    - field.field.sitewide_settings.footer_lead_generation.field_flg_title
+  module:
+    - chosen_field
+id: sitewide_settings.footer_lead_generation.default
+targetEntityType: sitewide_settings
+bundle: footer_lead_generation
+mode: default
+content:
+  field_flg_form:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_flg_placeholder_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_flg_submit_link:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_flg_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

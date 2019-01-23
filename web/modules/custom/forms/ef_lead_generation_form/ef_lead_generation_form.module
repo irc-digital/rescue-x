@@ -1,27 +1,33 @@
 <?php
 
-use Drupal\Core\Render\Element;
+use Drupal\ef_lead_generation_form\LeadGenerationFormThemeHelper;
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_lead_generation_form_theme() {
+
+  return [
+    'ef_simple_lead_generation_form' => [
+      'variables' => [],
+    ]
+  ];
+}
+
+function template_preprocess_ef_simple_lead_generation_form (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(LeadGenerationFormThemeHelper::class)
+    ->preprocessSimpleLeadGenerationForm('simple_lead_generation_form', $variables);
+}
+
 
 /**
  * Implements hook_preprocess_HOOK().
  */
 function ef_lead_generation_form_preprocess_webform_submission_form__simple_help_sign_up_form (&$variables) {
-  unset ($variables['form']['elements']);
-
-  $email_signup_form_hidden_field = [];
-
-  foreach (Element::children($variables['form']) as $key) {
-    $email_signup_form_hidden_field[$key] = $variables['form'][$key];
-    unset($variables['form'][$key]);
-  }
-
-  $variables['form']['elements']['simple_help_sign_up_form'] = [
-    '#weight' => -10,
-    '#type' => "pattern",
-    '#id' => 'email_signup',
-    '#fields' => [
-      'email_signup_form_hidden_fields' => $email_signup_form_hidden_field,
-      'email_signup_title' => 'Join our mailing list',
-    ],
-  ];
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(LeadGenerationFormThemeHelper::class)
+    ->preprocessSimpleHelpSignUpWebform($variables);
 }

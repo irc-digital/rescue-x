@@ -2,6 +2,12 @@ email_signup:
   label: ''
   use: "@molecules/51-email-signup/email-signup.twig"
   fields:
+    email_signup_email_field_placeholder:
+      type: text
+      label: ''
+    email_signup_email_subscribe_button_text:
+      type: text
+      label: ''
     email_signup_title:
       type: text
       label: ''

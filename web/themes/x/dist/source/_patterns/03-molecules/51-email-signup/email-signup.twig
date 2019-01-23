@@ -16,14 +16,6 @@
     {% set email_signup_email_field_name = 'email' %}
   {% endif %}
 
-  {% if email_signup_email_field_placeholder is empty %}
-    {% set email_signup_email_field_placeholder = 'Email address' | trans %}
-  {% endif %}
-
-  {% if email_signup_email_subscribe_button_text is empty %}
-    {% set email_signup_email_subscribe_button_text = 'Subscribe' | trans %}
-  {% endif %}
-
   {% set email_signup_form_content %}
     {{ email_signup_form_hidden_fields }}
     <div class="rplm-email-signup__form-content-wrapper">

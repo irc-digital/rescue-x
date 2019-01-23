@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_lead_generation
+    - field.storage.sitewide_settings.field_flg_placeholder_text
+id: sitewide_settings.footer_lead_generation.field_flg_placeholder_text
+field_name: field_flg_placeholder_text
+entity_type: sitewide_settings
+bundle: footer_lead_generation
+label: 'Placeholder text'
+description: 'The text used as the placeholder text for the field. As no label is presented for this element this text is mandatory.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Email address'
+default_value_callback: ''
+settings: {  }
+field_type: string
