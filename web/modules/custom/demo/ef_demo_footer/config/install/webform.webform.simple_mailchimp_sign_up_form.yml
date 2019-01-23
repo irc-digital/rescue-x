@@ -3,7 +3,7 @@ status: open
 dependencies:
   enforced:
     module:
-      - ef_lead_generation_form
+      - ef_demo_footer
 _core:
   default_config_hash: v7b2veFvTYsSBmXxy0czoHTGAw6-c-RR2ATGCW3nQ40
 open: null
@@ -12,10 +12,10 @@ weight: 0
 uid: 2
 template: false
 archive: false
-id: simple_help_sign_up_form
-title: 'Simple lead generation form (teaser to help.rescue.org''s sign-up form)'
-description: 'A lead generation form only containing a single email address field. The form serves as a teaser to the main help.rescue.org email sign-up form. The email address input into this form is passed over to the Springboard form.'
-category: 'Rescue X - Springboard'
+id: simple_mailchimp_sign_up_form
+title: 'Simple lead generation form (teaser to sample MailChimp sign-up form)'
+description: 'A lead generation form only containing a single email address field. The form serves as a teaser to the a sample MailChimp form and is only for demo purposes'
+category: 'Rescue X - MailChimp'
 elements: "'#ef_form_type': simple_sign_up\nemail:\n  '#type': email\n  '#title': Email\n  '#placeholder': 'Email address'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Subscribe"
 css: ''
 javascript: ''
@@ -99,7 +99,7 @@ settings:
   confirmation_type: url
   confirmation_title: ''
   confirmation_message: ''
-  confirmation_url: 'https://help.rescue.org/signup?mail=[webform_submission:values:email]'
+  confirmation_url: 'https://rescue.us20.list-manage.com/subscribe?EMAIL=[webform_submission:values:email]&u=1d715c24016ef0d739df73d75&id=4cf61c9911'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

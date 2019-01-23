@@ -46,7 +46,7 @@ function _ef_demo_footer_lead_generation () {
 
   $settings->addTranslation('de', [
     'field_flg_form' => [
-      'target_id' => 'simple_help_sign_up_form',
+      'target_id' => 'simple_mailchimp_sign_up_form',
     ],
     'field_flg_placeholder_text' => 'Email address (DE)',
     'field_flg_submit_link' => 'Subscribe (DE)',

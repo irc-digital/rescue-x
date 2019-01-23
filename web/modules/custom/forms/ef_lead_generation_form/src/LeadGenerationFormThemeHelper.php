@@ -56,7 +56,7 @@ class LeadGenerationFormThemeHelper implements ContainerInjectionInterface {
    *
    * @param $variables
    */
-  public function preprocessSimpleHelpSignUpWebform (&$variables) {
+  public function preprocessSimpleSignUpWebform (&$variables) {
     unset ($variables['form']['elements']);
 
     $email_signup_form_hidden_field = [];
