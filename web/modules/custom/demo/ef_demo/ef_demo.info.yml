@@ -1,6 +1,6 @@
-name: EF Demo data
+name: EF Demo (base)
 type: module
-description: 'Provides some sample stuff to make it easier to recycle the framework.'
+description: 'Base demo module that most/all full demo modules should depend on.'
 package: EF Demo
 core: 8.x
 dependencies:

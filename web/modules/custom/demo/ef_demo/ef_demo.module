@@ -54,3 +54,49 @@ function ef_demo_get_random_word($len = 10) {
   $len = mt_rand (min(5, $len) , $len);
   return strtolower(substr(implode($word), 0, $len));
 }
+
+//function ef_demo_get_random_paragraphs ($min_paragraphs = 4, $max_paragraphs = 10) {
+//
+//  $len = mt_rand ($min_paragraphs, $max_paragraphs);
+//
+//  $paragraph_array = ef_demo_get_faker()->paragraphs($len) ;
+//
+//  for ($i = 0; $i <= sizeof($paragraph_array); $i++) {
+//    if ($i == 0) {
+//      $paragraph_array[$i] = '<p class="rpla-paragraph rpla-paragraph--body rpla-paragraph--lead">' . $paragraph_array[$i] . '</p>';
+//    } else {
+//      $paragraph_array[$i] = '<p class="rpla-paragraph rpla-paragraph--body">' . $paragraph_array[$i] . '</p>';
+//    }
+//  }
+//
+//  return implode('', $paragraph_array);
+//}
+//
+//function ef_demo_get_random_sentence($min_words = 4, $max_words = 10, $include_period = TRUE) {
+//
+//  $len = mt_rand ($min_words, $max_words);
+//
+//  $sentence = ef_demo_get_faker()->sentence($len, false);
+//
+//  if (!$include_period) {
+//    $sentence = substr($sentence, 0, strlen($sentence) - 1);
+//  }
+//
+//  return $sentence;
+//}
+//
+//function ef_demo_get_random_word() {
+//  return ef_demo_get_faker()->word;
+//}
+//
+//function ef_demo_get_faker () {
+//  static $faker;
+//
+//  if (is_null($faker)) {
+//    require_once DRUPAL_ROOT . '/themes/x/dist/vendor/fzaninotto/faker/src/autoload.php';
+//
+//    $faker = \Faker\Factory::create();
+//  }
+//
+//  return $faker;
+//}
