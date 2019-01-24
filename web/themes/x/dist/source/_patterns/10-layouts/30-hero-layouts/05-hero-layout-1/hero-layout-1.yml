@@ -1,7 +1,0 @@
-hero_layout_1_image: "<div class='patternlab-faux-hero-image-21-9' style='text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>IMAGE</div>"
-hero_layout_1_primary_1: "<div style='height:350px; line-height: 250px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>PRIMARY 1</div>"
-hero_layout_1_primary_2: "<div style='height:128px; line-height: 128px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>PRIMARY 2</div>"
-hero_layout_1_secondary_1: "<div style='height:100px; background-color: #d7d7d7; line-height: 100px; text-align:center; border: 4px dashed #333;'>SECONDARY 1</div>"
-hero_layout_1_secondary_2: "<div style='height:274px; line-height: 174px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SECONDARY 2</div>"
-hero_layout_1_modifiers:
-  - 'has-image'

@@ -1,7 +1,0 @@
-slider_layout_3_slides:
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 1</div>"
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 2</div>"
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 3</div>"
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 4</div>"
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 5</div>"
-  - "<div style='height:400px; line-height: 400px; text-align:center; background-color: #d7d7d7; border: 4px dashed #333;'>SLIDE 6</div>"

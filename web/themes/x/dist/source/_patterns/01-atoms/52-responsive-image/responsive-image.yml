@@ -1,8 +1,0 @@
-responsive_image_source_set:
-  - "https://placem.at/places?w=320&h=240&random=responsiveimage 320w"
-  - "https://placem.at/places?w=640&h=480&random=responsiveimage 640w"
-  - "https://placem.at/places?w=1200&h=900&random=responsiveimage 1200w"
-  - "https://placem.at/places?w=2400&h=1800&random=responsiveimage 2400w"
-responsive_image_sizes: "(min-width: 1200px) 1200px, (min-width: 800px) 640px, 320px"
-responsive_image_fallback: "https://placem.at/places?w=1200&h=900&random=responsiveimage"
-responsive_image_alt: "Test alt test"

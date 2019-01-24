@@ -1,6 +1,0 @@
-article_page_hero:
-  include():
-    pattern: "components-hero-article"
-    with:
-      hero_article_art_directed_image_fallback: ''
-      hero_article_art_directed_image_sources: null

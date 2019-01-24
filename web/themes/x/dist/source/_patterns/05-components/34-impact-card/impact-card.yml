@@ -1,7 +1,0 @@
-impact_card_heading_title: "Faker.words(4,true)"
-impact_card_heading_description: "Faker.sentence(5,true)"
-impact_card_front_figure: "Faker.numberBetween(1000, 1000000)"
-impact_card_front_description: "Faker.sentence(10,true)"
-impact_card_rear_description: "Faker.sentence(10,true)"
-impact_card_rear_link_url: "#"
-impact_card_rear_link_text: "Faker.words(4,true)"

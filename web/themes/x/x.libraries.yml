@@ -2,6 +2,6 @@ global-styling:
   version: 1.x
   css:
     component:
-      dist/public/css/rpl.css: { }
+      rpl/css/rpl.css: { }
   js:
-    dist/public/js/patterns/rpl.min.js: {}
+    rpl/js/patterns/rpl.min.js: {}

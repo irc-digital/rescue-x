@@ -1,4 +1,0 @@
-link_icon_name: 'map-marker-empty-circle'
-link_icon_text: "Faker.words(5,true)"
-link_icon_modifiers:
-  - 'type-three'

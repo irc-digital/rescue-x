@@ -20,19 +20,19 @@ regions:
 component-libraries:
   atoms:
     paths:
-      - dist/source/_patterns/01-atoms
+      - rpl/templates/01-atoms
   molecules:
     paths:
-      - dist/source/_patterns/03-molecules
+      - rpl/templates/03-molecules
   components:
     paths:
-      - dist/source/_patterns/05-components
+      - rpl/templates/05-components
   layouts:
     paths:
-      - dist/source/_patterns/10-layouts
+      - rpl/templates/10-layouts
 
 ef_icon_library:
-  symbol_path: dist/svg/individuals
+  symbol_path: rpl/svg/individuals
   symbol_prefix: 'symbol-'
   exclude:
     - map-marker.svg
