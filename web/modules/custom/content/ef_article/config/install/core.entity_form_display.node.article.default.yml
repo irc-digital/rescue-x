@@ -18,6 +18,7 @@ dependencies:
     - chosen_field
     - ef
     - entity_browser
+    - ef_mandatory_field_summary
     - field_group
     - path
     - text
@@ -81,7 +82,9 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ef_mandatory_field_summary:
+        textarea_summary_required: true
   created:
     type: datetime_timestamp
     weight: 4

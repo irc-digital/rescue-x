@@ -8,3 +8,4 @@ dependencies:
   - ef_patterns
   - ef_modifiers
   - ef_is_square
+  - ef_comms_common

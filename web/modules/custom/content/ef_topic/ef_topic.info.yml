@@ -10,3 +10,4 @@ dependencies:
   - ef_dynamic_content
   - ef_ris_teasers
   - ef_ris_hero_16_9
+  - ef_comms_common

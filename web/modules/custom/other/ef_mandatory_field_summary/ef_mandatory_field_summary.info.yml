@@ -1,0 +1,5 @@
+name: Mandatory field summary
+type: module
+description: 'Small module that allows administrators to make the summary in a textarea with summary field as mandatory.'
+package: EF Other
+core: 8.x

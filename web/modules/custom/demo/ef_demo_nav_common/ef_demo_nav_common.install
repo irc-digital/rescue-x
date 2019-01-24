@@ -91,6 +91,7 @@ function _ef_demo_add_crisis_watch () {
     'body' => [
       'format' => 'basic_html',
       'value' => ef_demo_get_random_paragraphs(),
+      'summary' => ef_demo_get_random_paragraph(1,2),
     ],
   ]);
 

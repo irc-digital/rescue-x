@@ -118,6 +118,7 @@ function ef_demo_add_article () {
     'body' => [
       'format' => 'basic_html',
       'value' => ef_demo_get_random_paragraphs(),
+      'summary' => ef_demo_get_random_paragraph(1,2),
     ],
     'language' => 'en',
     'field_teaser_image' => [
@@ -129,6 +130,24 @@ function ef_demo_add_article () {
     'field_slug' => ef_demo_get_random_word(),
     'status' => TRUE,
   ]);
+
+  $node->addTranslation('de', [
+    'title' => ef_demo_get_random_sentence(2, 10, false),
+    'body' => [
+      'format' => 'basic_html',
+      'value' => ef_demo_get_random_paragraphs(),
+      'summary' => ef_demo_get_random_paragraph(1,2),
+    ],
+    'field_teaser_image' => [
+      'target_id' => $teaser->id(),
+    ],
+    'field_hero_image' => [
+      'target_id' => $hero->id(),
+    ],
+    'field_slug' => ef_demo_get_random_word(),
+    'status' => TRUE,
+  ]);
+
   $node->save();
 }
 

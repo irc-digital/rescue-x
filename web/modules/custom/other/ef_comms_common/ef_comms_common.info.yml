@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_patterns
   - ef_sitewide_settings
+  - ef_mandatory_field_summary

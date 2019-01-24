@@ -1,0 +1,50 @@
+<?php
+
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryHelper;
+
+/**
+ * Implements hook_field_widget_third_party_settings_form
+ *
+ * @param \Drupal\Core\Field\WidgetInterface $plugin
+ * @param \Drupal\Core\Field\FieldDefinitionInterface $field_definition
+ * @param $form_mode
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @return array
+ */
+function ef_mandatory_field_summary_field_widget_third_party_settings_form (WidgetInterface $plugin, FieldDefinitionInterface $field_definition, $form_mode, $form, FormStateInterface $form_state) {
+  if ($plugin->getPluginId() == 'text_textarea_with_summary') {
+    return \Drupal::classResolver()
+      ->getInstanceFromDefinition(MandatoryFieldSummaryHelper::class)
+      ->modifyFieldSettingsForm($plugin, $field_definition, $form_mode, $form, $form_state);
+  } else {
+    return [];
+  }
+
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ */
+function ef_mandatory_field_summary_field_widget_settings_summary_alter(&$summary, $context) {
+  /** @var \Drupal\text\Plugin\Field\FieldWidget\TextareaWithSummaryWidget $plugin */
+  $plugin = $context['widget'];
+
+  if ($plugin->getPluginId() == 'text_textarea_with_summary') {
+    return \Drupal::classResolver()
+      ->getInstanceFromDefinition(MandatoryFieldSummaryHelper::class)
+      ->generateFieldSettingSummary($summary, $context);
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function ef_mandatory_field_summary_field_widget_text_textarea_with_summary_form_alter(&$element, FormStateInterface $form_state, $context) {
+  return \Drupal::classResolver()
+    ->getInstanceFromDefinition(MandatoryFieldSummaryHelper::class)
+    ->textareaFormFieldAlter($element, $form_state, $context);
+}
