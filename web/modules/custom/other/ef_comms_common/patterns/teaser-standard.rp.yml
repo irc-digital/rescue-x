@@ -1,5 +1,5 @@
 teaser_standard:
-  label: 'Teaser- standard'
+  label: 'Teaser - standard'
   use: "@components/87-teasers/05-standard/teaser-standard.twig"
   fields:
     teaser_standard_url:

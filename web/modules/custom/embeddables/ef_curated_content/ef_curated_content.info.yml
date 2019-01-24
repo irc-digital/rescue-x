@@ -1,0 +1,9 @@
+name: EF Curated Content
+type: module
+description: 'Provides a curated news content embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_reach_through_content
+  - ef_patterns

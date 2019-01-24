@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains ef_reach_through_content.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ef_reach_through_content_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ef_reach_through_content module.
+    case 'help.page.ef_reach_through_content':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Base functionality that supports our curated content functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ef_reach_through_content_theme() {
+  $theme = [];
+  $theme['reach_through'] = [
+    'render element' => 'elements',
+    'file' => 'reach_through.page.inc',
+    'template' => 'reach_through',
+  ];
+  $theme['reach_through_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'reach_through.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function ef_reach_through_content_theme_suggestions_reach_through(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#reach_through'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'reach_through__' . $sanitized_view_mode;
+  $suggestions[] = 'reach_through__' . $entity->bundle();
+  $suggestions[] = 'reach_through__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'reach_through__' . $entity->id();
+  $suggestions[] = 'reach_through__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

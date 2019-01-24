@@ -1,0 +1,12 @@
+ef_reach_through_content.reach_through_type.*:
+  type: config_entity
+  label: 'Reach-through entry type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

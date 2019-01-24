@@ -1,0 +1,18 @@
+# Reach-through entry routing definition
+
+entity.reach_through.canonical:
+  route_name: entity.reach_through.canonical
+  base_route: entity.reach_through.canonical
+  title: 'View'
+
+entity.reach_through.edit_form:
+  route_name: entity.reach_through.edit_form
+  base_route: entity.reach_through.canonical
+  title: 'Edit'
+
+entity.reach_through.delete_form:
+  route_name:  entity.reach_through.delete_form
+  base_route:  entity.reach_through.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,18 @@
+
+# Reach-through entry menu items definition
+entity.reach_through.collection:
+  title: 'Reach-through entry list'
+  route_name: entity.reach_through.collection
+  description: 'List Reach-through entry entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Reach-through entry type menu items definition
+entity.reach_through_type.collection:
+  title: 'Reach-through entry type'
+  route_name: entity.reach_through_type.collection
+  description: 'List Reach-through entry type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

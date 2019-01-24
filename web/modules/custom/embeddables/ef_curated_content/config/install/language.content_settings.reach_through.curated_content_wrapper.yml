@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_reach_through_content.reach_through_type.curated_content_wrapper
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: reach_through.curated_content_wrapper
+target_entity_type_id: reach_through
+target_bundle: curated_content_wrapper
+default_langcode: site_default
+language_alterable: true
