@@ -2,6 +2,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityDisplayInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for \Drupal\node\NodeTypeForm.
@@ -10,17 +13,17 @@ use Drupal\node\NodeTypeInterface;
  *
  */
 function ef_curated_content_wrapper_form_node_type_form_alter(&$form, FormStateInterface $form_state) {
-  /** @var \Drupal\ef_curated_content\CuratedContentServiceInterface $curated_content_service */
-  $curated_content_service = \Drupal::service('ef.curated_content');
+  /** @var \Drupal\ef_reach_through_content\ReachThroughServiceInterface $reach_through_service */
+  $reach_through_service = \Drupal::service('ef.reach_through_service');
 
-  $curated_content_mappable_fields = $curated_content_service->getCuratedContentFields();
+  $curated_content_mappable_fields = $reach_through_service->geReachThroughFields('curated_content_wrapper');
 
   /** @var \Drupal\node\NodeTypeInterface $type */
   $type = $form_state->getFormObject()->getEntity();
 
   $node_fields = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', $type->id());
 
-  $node_fields = array_filter($node_fields, function (\Drupal\Core\Field\FieldDefinitionInterface $node_field_definition) {
+  $node_fields = array_filter($node_fields, function (FieldDefinitionInterface $node_field_definition) {
     return $node_field_definition->isDisplayConfigurable('form');
   });
 
@@ -50,10 +53,10 @@ function ef_curated_content_wrapper_form_node_type_form_alter(&$form, FormStateI
   foreach ($curated_content_mappable_fields as $field_id => $field_name) {
     $form['curated_content']['curated_content_field_mapping'][$field_id] = [
       '#type' => 'select',
-      '#title' => t($field_name . ' mapping'),
+      '#title' => t('Field for @field_name', ['@field_name' => strtolower($field_name)]),
       '#default_value' => isset($current_values[$field_id]) ? $current_values[$field_id] : 'not_mapped',
       '#options' => $options,
-      '#description' => t('Field to use for the curated content ' . strtolower($field_name) . ' field.'),
+      '#description' => t('Field to use for the curated content @field_name field.', ['@field_name' => strtolower($field_name)]),
     ];
   }
 
@@ -87,4 +90,19 @@ function _ef_curated_content_wrapper_make_associative_array ($settings) {
   }
 
   return $result;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function ef_curated_content_wrapper_entity_view_alter(&$build, EntityInterface $entity, EntityDisplayInterface $display) {
+
+  if ($entity->getEntityType()->id() == 'reach_through' && $entity->bundle() == 'curated_content_wrapper') {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $entity->reach_through_ref->entity;
+
+    $build["field_ccw_slug"][0]["#context"]["value"] = 'Blah';
+    //$render_array = $node->field_slug->view('teaser');
+    //$build["field_ccw_slug"] = $render_array;
+  }
 }

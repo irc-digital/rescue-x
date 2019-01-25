@@ -1,12 +1,13 @@
 <?php
 
-namespace Drupal\ef_curated_content_wrapper;
+namespace Drupal\ef_reach_through_content;
 
 use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldConfigInterface;
+use Drupal\ef_reach_through_content\ReachThroughServiceInterface;
 
-class CuratedContentService implements CuratedContentServiceInterface {
+class ReachThroughService implements ReachThroughServiceInterface {
 
   /**
    * @var EntityTypeManagerInterface
@@ -20,14 +21,14 @@ class CuratedContentService implements CuratedContentServiceInterface {
   /**
    * @inheritdoc
    */
-  public function getCuratedContentFields() {
+  public function geReachThroughFields($reach_through_bundle) {
     $mappable_fields = [];
 
-    $fields = $this->entityFieldManager->getFieldDefinitions('reach_through', 'curated_content_wrapper');
+    $fields = $this->entityFieldManager->getFieldDefinitions('reach_through', $reach_through_bundle);
 
     /** @var \Drupal\Core\Field\FieldDefinitionInterface $field */
     foreach ($fields as $field) {
-      if ($field instanceof FieldConfigInterface && $field->getName() != 'field_ccw_reference') {
+      if ($field instanceof FieldConfigInterface) {
         $mappable_fields[$field->getName()] = $field->label();
       }
     }
