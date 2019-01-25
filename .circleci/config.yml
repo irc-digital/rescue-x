@@ -107,13 +107,13 @@ jobs:
                 name: Build Drupal assets
                 command: composer -n build-assets
 
-            - run:
-                name: Install Patternlab
-                command: ./.circleci/scripts/irc/install-patternlab
-
-            - run:
-                name: Build Patternlab assets
-                command: ./.circleci/scripts/irc/build-patternlab
+#            - run:
+#                name: Install Patternlab
+#                command: ./.circleci/scripts/irc/install-patternlab
+#
+#            - run:
+#                name: Build Patternlab assets
+#                command: ./.circleci/scripts/irc/build-patternlab
 
             - run:
                 name: Push to IRC monthly branch
