@@ -14,4 +14,10 @@ use Drupal\ef_patterns\Plugin\DsField\MediaImageAttributesField;
  * )
  */
 class ReachThroughMediaImageAttributesField extends MediaImageAttributesField {
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    return parent::build();
+  }
 }
