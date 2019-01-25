@@ -42,10 +42,11 @@ class CrisisWatchService implements CrisisWatchServiceInterface {
 
       if ($crisis_watch_settings->hasTranslation($current_language)) {
         $crisis_watch_settings = $crisis_watch_settings->getTranslation($current_language);
+        /** @var \Drupal\Core\Entity\EntityInterface $crisis_watch_linked_page */
         $crisis_watch_linked_page = $crisis_watch_settings->field_crisis_watch_link->entity;
 
         if ($crisis_watch_linked_page) {
-          $url = $this->aliasManager->getAliasByPath($crisis_watch_linked_page->url());
+          $url = $this->aliasManager->getAliasByPath($crisis_watch_linked_page->toUrl()->toString());
 
           $overridden_title = $crisis_watch_settings->field_cw_title_override->value;
 

@@ -89,7 +89,9 @@ abstract class UnpackedAttributeField extends DeriverBase implements ContainerDe
    */
   public function getDerivativeDefinitions($base_plugin_definition) {
     foreach ($this->entityTypeManager->getDefinitions() as $entity_type_id => $entity_type) {
-
+      if (!$this->supportsEntityType($entity_type_id)) {
+        continue;
+      }
       $original_class = $entity_type->getOriginalClass();
 
       if (in_array(FieldableEntityInterface::class, class_implements($original_class))) {
@@ -116,7 +118,7 @@ abstract class UnpackedAttributeField extends DeriverBase implements ContainerDe
                 $key = str_replace('.', '_', sprintf('%s_%s', $field->id(), $attribute_key));
 
                 $this->derivatives[$key] = [
-                  'title' => sprintf ('%s (%s)', $field->label(), $attribute_label),
+                  'title' => $this->generateTitle($field, $attribute_label),
                   'entity_type' => $entity_type_id,
                   'ui_limit' => [sprintf("%s|*", $bundle_id)],
                   'field_attribute' => $attribute_key,
@@ -137,5 +139,13 @@ abstract class UnpackedAttributeField extends DeriverBase implements ContainerDe
   abstract protected function fieldMatchesCriteria (FieldDefinitionInterface $fieldDefinition);
 
   abstract protected function getFieldAttributes ();
+
+  protected function supportsEntityType ($entity_type_id) {
+    return TRUE;
+  }
+
+  protected function generateTitle (FieldConfigInterface $field, $attribute_label) {
+    return t('@label (@attribute)', ['@label' => $field->label(), '@attribute' => $attribute_label]);
+  }
 
 }
