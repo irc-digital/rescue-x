@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
-    - field.field.reach_through.curated_content_wrapper.field_ccw_reference
+    - field.field.reach_through.curated_content_wrapper.field_ccw_image
     - field.field.reach_through.curated_content_wrapper.field_ccw_slug
     - field.field.reach_through.curated_content_wrapper.field_ccw_title
   module:
@@ -19,10 +19,46 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
+      teaser_standard_image_source_set:
+        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+      teaser_standard_image_fallback:
+        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+      teaser_standard_image_alt:
+        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
       teaser_standard_slug:
         - field_ccw_slug
       teaser_standard_title:
         - field_ccw_title
+    fields:
+      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset':
+        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_standard
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri':
+        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_standard
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt':
+        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: crUzFLbPgGkTABe513-yz_6rb-4TA2NwRP0etor-6YY
 id: reach_through.curated_content_wrapper.default
 targetEntityType: reach_through
 bundle: curated_content_wrapper
@@ -45,7 +81,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  field_ccw_reference: true
+  field_ccw_image: true
   langcode: true
   name: true
   user_id: true

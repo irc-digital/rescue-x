@@ -5,9 +5,9 @@ dependencies:
     module:
       - ef_article
   module:
-    - ef_curated_content
+    - ef_curated_content_wrapper
 third_party_settings:
-  ef_curated_content:
+  ef_curated_content_wrapper:
     mapped_fields:
       -
         curated_content_field: field_ccw_slug

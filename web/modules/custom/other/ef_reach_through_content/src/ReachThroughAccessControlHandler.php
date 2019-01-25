@@ -21,10 +21,7 @@ class ReachThroughAccessControlHandler extends EntityAccessControlHandler {
     /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $entity */
     switch ($operation) {
       case 'view':
-        if (!$entity->isPublished()) {
-          return AccessResult::allowedIfHasPermission($account, 'view unpublished reach-through entry entities');
-        }
-        return AccessResult::allowedIfHasPermission($account, 'view published reach-through entry entities');
+        return AccessResult::allowedIfHasPermission($account, 'view reach-through entry entities');
 
       case 'update':
         return AccessResult::allowedIfHasPermission($account, 'edit reach-through entry entities');

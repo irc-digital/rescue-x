@@ -3,16 +3,16 @@ status: true
 dependencies:
   module:
     - ef_reach_through_content
-    - node
+    - media
   enforced:
     module:
       - ef_curated_content_wrapper
-id: reach_through.field_ccw_reference
-field_name: field_ccw_reference
+id: reach_through.field_ccw_image
+field_name: field_ccw_image
 entity_type: reach_through
 type: entity_reference
 settings:
-  target_type: node
+  target_type: media
 module: core
 locked: false
 cardinality: 1

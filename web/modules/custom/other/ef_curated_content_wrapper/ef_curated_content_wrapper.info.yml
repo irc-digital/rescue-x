@@ -7,3 +7,5 @@ dependencies:
   - ef
   - ef_reach_through_content
   - ef_patterns
+  - ef_ris_teasers
+  - ef_comms_common

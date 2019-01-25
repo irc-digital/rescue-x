@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
-    - field.field.reach_through.curated_content_wrapper.field_ccw_reference
     - field.field.reach_through.curated_content_wrapper.field_ccw_slug
     - field.field.reach_through.curated_content_wrapper.field_ccw_title
 id: reach_through.curated_content_wrapper.default
@@ -11,15 +10,6 @@ targetEntityType: reach_through
 bundle: curated_content_wrapper
 mode: default
 content:
-  field_ccw_reference:
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_ccw_slug:
     weight: 6
     settings:

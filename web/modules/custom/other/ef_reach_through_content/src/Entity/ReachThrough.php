@@ -46,7 +46,6 @@ use Drupal\user\UserInterface;
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
  *     "langcode" = "langcode",
- *     "status" = "status",
  *   },
  *   links = {
  *     "canonical" = "/reach_through/{reach_through}",
@@ -137,21 +136,6 @@ class ReachThrough extends ContentEntityBase implements ReachThroughInterface {
   /**
    * {@inheritdoc}
    */
-  public function isPublished() {
-    return (bool) $this->getEntityKey('status');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function setPublished($published) {
-    $this->set('status', $published ? TRUE : FALSE);
-    return $this;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -201,15 +185,6 @@ class ReachThrough extends ContentEntityBase implements ReachThroughInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['status'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Publishing status'))
-      ->setDescription(t('A boolean indicating whether the Reach-through entry is published.'))
-      ->setDefaultValue(TRUE)
-      ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
-
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));
@@ -217,6 +192,31 @@ class ReachThrough extends ContentEntityBase implements ReachThroughInterface {
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the entity was last edited.'));
+
+    $fields['reach_through_ref'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Reach-through entity reference'))
+      ->setDescription(t('The reference to the node this is reaching through to.'))
+      ->setSetting('target_type', 'node')
+      ->setSetting('handler', 'default')
+      ->setTranslatable(FALSE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'entity_reference_label',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     return $fields;
   }

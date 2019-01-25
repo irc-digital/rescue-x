@@ -12,8 +12,5 @@ delete reach-through entry entities:
 edit reach-through entry entities:
   title: 'Edit Reach-through entry entities'
 
-view published reach-through entry entities:
-  title: 'View published Reach-through entry entities'
-
-view unpublished reach-through entry entities:
-  title: 'View unpublished Reach-through entry entities'
+view reach-through entry entities:
+  title: 'View Reach-through entry entities'

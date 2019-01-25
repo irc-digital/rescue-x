@@ -3,20 +3,23 @@ status: true
 dependencies:
   config:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
-    - field.storage.reach_through.field_ccw_reference
-id: reach_through.curated_content_wrapper.field_ccw_reference
-field_name: field_ccw_reference
+    - field.storage.reach_through.field_ccw_image
+    - media.type.ef_image
+id: reach_through.curated_content_wrapper.field_ccw_image
+field_name: field_ccw_image
 entity_type: reach_through
 bundle: curated_content_wrapper
-label: Reference
+label: Image
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'default:media'
   handler_settings:
+    target_bundles:
+      ef_image: ef_image
     sort:
       field: _none
     auto_create: false
