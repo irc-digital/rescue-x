@@ -6,21 +6,18 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_help().
+ * Implements hook_form_FORM_ID_alter() for \Drupal\node\NodeTypeForm.
+ *
+ * Adds reach-through options to the node type form.
+ *
  */
-function ef_reach_through_content_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the ef_reach_through_content module.
-    case 'help.page.ef_reach_through_content':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Base functionality that supports our curated content functionality') . '</p>';
-      return $output;
-
-    default:
-  }
+function ef_reach_through_content_form_node_type_form_alter(&$form, FormStateInterface $form_state) {
+  /** @var \Drupal\ef_reach_through_content\ReachThroughServiceInterface $reach_through_service */
+  $reach_through_service = \Drupal::service('ef.reach_through_service');
+  $reach_through_service->alterNodeForm($form, $form_state);
 }
 
 /**

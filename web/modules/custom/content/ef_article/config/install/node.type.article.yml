@@ -7,14 +7,21 @@ dependencies:
   module:
     - ef_curated_content_wrapper
 third_party_settings:
-  ef_curated_content_wrapper:
-    mapped_fields:
+  ef_reach_through_content:
+    reach_through_details:
       -
-        curated_content_field: field_ccw_slug
-        node_field: field_slug
-      -
-        curated_content_field: field_ccw_title
-        node_field: title
+        reach_through_bundle_id: curated_content_wrapper
+        settings:
+          mapped_fields:
+            -
+              reach_through_bundle_field: field_ccw_image
+              node_field: field_teaser_image
+            -
+              reach_through_bundle_field: field_ccw_slug
+              node_field: field_slug
+            -
+              reach_through_bundle_field: field_ccw_title
+              node_field: title
 name: Article
 type: article
 description: 'Use articles to create rich feature experiences. '

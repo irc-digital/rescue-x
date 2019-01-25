@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "5cbec8c9e70388873b1cd246cbf4d9de",
@@ -5295,7 +5295,7 @@
             ],
             "description": "A collection of shared components and styles for International Rescue Committee web properties",
             "homepage": "https://www.rescue.org",
-            "time": "2019-01-23 15:24:22"
+            "time": "2019-01-23T15:24:22+00:00"
         },
         {
             "name": "rvtraveller/qs-composer-installer",
@@ -7110,11 +7110,6 @@
         {
             "name": "webflo/drupal-core-strict",
             "version": "8.0.0-beta15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webflo/drupal-core-strict.git",
-                "reference": "1eb044b722ebe44bc6af86a03888415d7f31c057"
-            },
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
