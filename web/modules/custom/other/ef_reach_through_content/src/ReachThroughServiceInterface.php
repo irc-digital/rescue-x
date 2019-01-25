@@ -34,4 +34,5 @@ interface ReachThroughServiceInterface {
    */
   public function viewReachThroughEntity (array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode);
 
+  public function getReachThoughtFieldMappings (EntityInterface $entity);
 }

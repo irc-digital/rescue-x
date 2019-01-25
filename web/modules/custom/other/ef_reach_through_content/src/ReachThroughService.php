@@ -53,6 +53,25 @@ class ReachThroughService implements ReachThroughServiceInterface {
     }
   }
 
+  public function getReachThoughtFieldMappings (EntityInterface $entity) {
+    $bundle = $entity->bundle();
+    $reach_through_details_for_bundle = [];
+
+    /** @var \Drupal\node\NodeInterface $wrapped_entity */
+    $wrapped_entity = $entity->reach_through_ref->entity;
+
+    /** @var \Drupal\node\NodeTypeInterface $node_type */
+    $node_type = NodeType::load($wrapped_entity->bundle());
+
+    $reach_through_details = $this->make_associative_array($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+
+    if (isset($reach_through_details[$bundle]['mapped_fields'])) {
+      $reach_through_details_for_bundle = $this->make_associative_array($reach_through_details[$bundle]['mapped_fields']);
+    }
+
+    return $reach_through_details_for_bundle;
+  }
+
   /**
    * @inheritdoc
    */
