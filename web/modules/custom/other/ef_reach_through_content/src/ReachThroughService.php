@@ -2,13 +2,15 @@
 
 namespace Drupal\ef_reach_through_content;
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldConfigInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
-use Drupal\ef_reach_through_content\ReachThroughServiceInterface;
+use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeTypeInterface;
 
 class ReachThroughService implements ReachThroughServiceInterface {
@@ -51,6 +53,42 @@ class ReachThroughService implements ReachThroughServiceInterface {
     }
   }
 
+  /**
+   * @inheritdoc
+   */
+  public function viewReachThroughEntity (array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+    $bundle = $entity->bundle();
+
+    $reach_through_fields = $this->geReachThroughFields($bundle);
+
+    /** @var \Drupal\node\NodeInterface $wrapped_entity */
+    $wrapped_entity = $entity->reach_through_ref->entity;
+
+    /** @var \Drupal\node\NodeTypeInterface $node_type */
+    $node_type = NodeType::load($wrapped_entity->bundle());
+
+    $current_reach_through_details = $this->make_associative_array($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+
+    if (isset($current_reach_through_details[$bundle]['mapped_fields'])) {
+      $reach_through_details_for_bundle = $this->make_associative_array($current_reach_through_details[$bundle]['mapped_fields']);
+
+      foreach ($reach_through_fields as $reach_through_field_id => $field_label) {
+        if ($reach_through_field_id == 'field_ccw_image') {
+          continue;
+        }
+        if (!isset($build[$reach_through_field_id][0]['#context']['value'])) {
+          if (isset($reach_through_details_for_bundle[$reach_through_field_id]) && $reach_through_details_for_bundle[$reach_through_field_id] != 'not_mapped') {
+            $field_on_node = $reach_through_details_for_bundle[$reach_through_field_id];
+            $value_on_node = $wrapped_entity->{$field_on_node}->value;
+            $entity->{$reach_through_field_id}->value = $value_on_node;
+            $render_array = $entity->{$reach_through_field_id}->view($view_mode);
+            $build[$reach_through_field_id] = $render_array;
+          }
+        }
+      }
+    }
+
+  }
   /**
    * @inheritdoc
    */

@@ -24,7 +24,7 @@ third_party_settings:
               node_field: title
 name: Article
 type: article
-description: 'Use articles to create rich feature experiences. '
+description: 'Use articles to create rich feature experiences.'
 help: ''
 new_revision: true
 preview_mode: 0

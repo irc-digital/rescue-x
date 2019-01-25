@@ -19,7 +19,7 @@ use Drupal\user\UserInterface;
  *   label = @Translation("Reach-through entry"),
  *   bundle_label = @Translation("Reach-through entry type"),
  *   handlers = {
- *     "view_builder" = "Drupal\ef_reach_through_content\ReachThroughViewBuilder",
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\ef_reach_through_content\ReachThroughListBuilder",
  *     "views_data" = "Drupal\ef_reach_through_content\Entity\ReachThroughViewsData",
  *     "translation" = "Drupal\ef_reach_through_content\ReachThroughTranslationHandler",

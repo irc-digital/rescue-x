@@ -5,8 +5,9 @@
  * Contains ef_reach_through_content.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for \Drupal\node\NodeTypeForm.
@@ -18,6 +19,19 @@ function ef_reach_through_content_form_node_type_form_alter(&$form, FormStateInt
   /** @var \Drupal\ef_reach_through_content\ReachThroughServiceInterface $reach_through_service */
   $reach_through_service = \Drupal::service('ef.reach_through_service');
   $reach_through_service->alterNodeForm($form, $form_state);
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function ef_reach_through_content_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  if ($entity->getEntityType()->id() == 'reach_through') {
+    /** @var \Drupal\ef_reach_through_content\ReachThroughServiceInterface $reach_through_service */
+    $reach_through_service = \Drupal::service('ef.reach_through_service');
+
+    $reach_through_service->viewReachThroughEntity($build, $entity, $display,$view_mode);
+  }
 }
 
 /**
