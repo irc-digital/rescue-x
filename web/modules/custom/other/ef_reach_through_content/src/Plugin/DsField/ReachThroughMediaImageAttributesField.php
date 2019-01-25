@@ -21,9 +21,7 @@ class ReachThroughMediaImageAttributesField extends MediaImageAttributesField {
     $outer_entity = $reach_through_entity->reach_through_ref->entity;
 
     $reach_through_fields = \Drupal::service('ef.reach_through_service')->getReachThoughtFieldMappings($reach_through_entity);
-
-
-
+    
 //    $outer_entity = $this->entity();
 
     $config = $this->getConfiguration();
