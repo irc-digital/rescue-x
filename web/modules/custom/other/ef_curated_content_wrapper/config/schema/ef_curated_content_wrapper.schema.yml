@@ -1,0 +1,16 @@
+node.type.*.third_party.ef_curated_content_wrapper:
+  type: mapping
+  label: 'Per-content type curated content wrapper settings'
+  mapping:
+    mapped_fields:
+      type: sequence
+      label: 'Mapped fields'
+      sequence:
+       type: mapping
+       mapping:
+        curated_content_field:
+          type: string
+          label: 'The field name on the curated content type'
+        node_field:
+          type: string
+          label: 'The mapped field name on the node type'

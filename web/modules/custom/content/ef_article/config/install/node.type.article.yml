@@ -4,6 +4,17 @@ dependencies:
   enforced:
     module:
       - ef_article
+  module:
+    - ef_curated_content
+third_party_settings:
+  ef_curated_content:
+    mapped_fields:
+      -
+        curated_content_field: field_ccw_slug
+        node_field: field_slug
+      -
+        curated_content_field: field_ccw_title
+        node_field: title
 name: Article
 type: article
 description: 'Use articles to create rich feature experiences. '

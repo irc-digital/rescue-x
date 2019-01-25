@@ -5,9 +5,9 @@ dependencies:
     - ef_reach_through_content
   enforced:
     module:
-      - ef_curated_content
-id: reach_through.field_ccw_slug
-field_name: field_ccw_slug
+      - ef_curated_content_wrapper
+id: reach_through.field_ccw_title
+field_name: field_ccw_title
 entity_type: reach_through
 type: string
 settings:

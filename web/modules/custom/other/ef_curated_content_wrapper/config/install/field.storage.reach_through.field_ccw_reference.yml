@@ -6,7 +6,7 @@ dependencies:
     - node
   enforced:
     module:
-      - ef_curated_content
+      - ef_curated_content_wrapper
 id: reach_through.field_ccw_reference
 field_name: field_ccw_reference
 entity_type: reach_through

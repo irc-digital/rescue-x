@@ -1,0 +1,9 @@
+name: EF Curated content wrapper
+type: module
+description: 'Provides the reach-through wrapper bundle and other functionality to support curated content wrappers.'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_reach_through_content
+  - ef_patterns

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_reach_through_content
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+id: reach_through.highlighted_teaser
+label: 'Highlighted teaser'
+targetEntityType: reach_through
+cache: true

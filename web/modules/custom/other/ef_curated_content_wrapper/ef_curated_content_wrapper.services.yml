@@ -1,0 +1,4 @@
+services:
+  ef.curated_content:
+    class: Drupal\ef_curated_content_wrapper\CuratedContentService
+    arguments: ['@entity_field.manager']

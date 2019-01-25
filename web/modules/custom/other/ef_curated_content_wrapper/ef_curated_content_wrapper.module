@@ -1,0 +1,90 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeTypeInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for \Drupal\node\NodeTypeForm.
+ *
+ * Adds curated content options to the node type form.
+ *
+ */
+function ef_curated_content_wrapper_form_node_type_form_alter(&$form, FormStateInterface $form_state) {
+  /** @var \Drupal\ef_curated_content\CuratedContentServiceInterface $curated_content_service */
+  $curated_content_service = \Drupal::service('ef.curated_content');
+
+  $curated_content_mappable_fields = $curated_content_service->getCuratedContentFields();
+
+  /** @var \Drupal\node\NodeTypeInterface $type */
+  $type = $form_state->getFormObject()->getEntity();
+
+  $node_fields = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', $type->id());
+
+  $node_fields = array_filter($node_fields, function (\Drupal\Core\Field\FieldDefinitionInterface $node_field_definition) {
+    return $node_field_definition->isDisplayConfigurable('form');
+  });
+
+  $options = ['not_mapped' => t('-- Not mapped --')];
+
+  /**
+   * @var  \Drupal\Core\Field\FieldDefinitionInterface $field_details
+   */
+  foreach ($node_fields as $field_id => $field_details) {
+    $options[$field_id] = $field_details->getLabel();
+  }
+
+  asort($options);
+
+  $form['curated_content'] = [
+    '#type' => 'details',
+    '#title' => t('Curated content'),
+    '#group' => 'additional_settings',
+  ];
+
+  $current_values = _ef_curated_content_wrapper_make_associative_array($type->getThirdPartySetting('ef_curated_content_wrapper', 'mapped_fields', []));
+
+  $form['curated_content']['curated_content_field_mapping'] = [
+    '#tree' => TRUE,
+  ];
+
+  foreach ($curated_content_mappable_fields as $field_id => $field_name) {
+    $form['curated_content']['curated_content_field_mapping'][$field_id] = [
+      '#type' => 'select',
+      '#title' => t($field_name . ' mapping'),
+      '#default_value' => isset($current_values[$field_id]) ? $current_values[$field_id] : 'not_mapped',
+      '#options' => $options,
+      '#description' => t('Field to use for the curated content ' . strtolower($field_name) . ' field.'),
+    ];
+  }
+
+  $form['#entity_builders'][] = 'ef_curated_content_node_type_form_builder';
+}
+
+/**
+ * Entity builder for the node type form with curated content options.
+ *
+ * @see ef_curated_content_form_node_type_form_alter()
+ */
+function ef_curated_content_wrapper_node_type_form_builder($entity_type, NodeTypeInterface $type, &$form, FormStateInterface $form_state) {
+  $transformed_field_mappings = [];
+  $field_mappings = $form_state->getValue('curated_content_field_mapping');
+
+  foreach ($field_mappings as $curated_content_field_name => $node_field_name) {
+    $transformed_field_mappings[] = [
+      'curated_content_field' => $curated_content_field_name,
+      'node_field' => $node_field_name,
+    ];
+  }
+
+  $type->setThirdPartySetting('ef_curated_content_wrapper', 'mapped_fields', $transformed_field_mappings);
+}
+
+function _ef_curated_content_wrapper_make_associative_array ($settings) {
+  $result = [];
+
+  foreach ($settings as $setting) {
+    $result[$setting['curated_content_field']] = $setting['node_field'];
+  }
+
+  return $result;
+}
