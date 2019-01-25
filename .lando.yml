@@ -4,28 +4,25 @@ config:
   framework: drupal8
   site: rescue-x
   id: c8430b75-4272-4aca-bfcd-206b12279315
+  webroot: web
 services:
-  database:
-    portforward: 3308
   appserver:
     xdebug: true
     run:
       - "cd $LANDO_MOUNT && composer install"
     overrides:
       services:
-        # Latest version of node and other dependencies.
-        # See: https://hub.docker.com/r/ircdigital/irc-lando-build
-        # Image is based on https://hub.docker.com/r/devwithlando/pantheon-appserver
-        image: ircdigital/irc-lando-build
         environment:
           PHP_IDE_CONFIG: "serverName=appserver"
+  database:
+       portforward: 3308
 tooling:
+  drush:
+    cmd: /app/vendor/bin/drush
   gulp:
     service: appserver
   drupal:
+    service: appserver
     cmd:
       - "/app/vendor/bin/drupal"
       - "--root=/app/web"
-proxy:
-  appserver:
-    - rpl.rescuex.lndo.site:3000

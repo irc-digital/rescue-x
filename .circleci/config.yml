@@ -137,7 +137,7 @@ jobs:
 #                name: Install additional dependencies
 #                command: ./.circleci/scripts/irc/install-additional-dependencies
 #
-#            - run:
+#                  - run:
 #                name: Backstop visual regression test
 #                command: ./.circleci/scripts/irc/backstop-visual-regression-test
 #
