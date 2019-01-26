@@ -271,8 +271,8 @@ class ReachThroughService implements ReachThroughServiceInterface {
     foreach ($translation_languages as $language_code => $language) {
       $node = $node->getTranslation($language_code);
       $reach_through->addTranslation($language_code, [
-        'langcode' => $language_code,
         'name' => $node->getTitle(),
+        'user_id' => \Drupal::currentUser()->id(),
       ]);
     }
 
