@@ -183,6 +183,7 @@ class ReachThrough extends ContentEntityBase implements ReachThroughInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
+      ->setTranslatable(TRUE)
       ->setRequired(TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')

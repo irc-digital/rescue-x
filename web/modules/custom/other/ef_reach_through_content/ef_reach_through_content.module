@@ -112,3 +112,12 @@ function ef_reach_through_content_node_translation_delete (EntityInterface $enti
     \Drupal::service('ef.reach_through_service')->onTranslationDelete($entity);
   }
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_translation_insert().
+ */
+function ef_reach_through_content_node_translation_insert(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    \Drupal::service('ef.reach_through_service')->onTranslationInsert($entity);
+  }
+}

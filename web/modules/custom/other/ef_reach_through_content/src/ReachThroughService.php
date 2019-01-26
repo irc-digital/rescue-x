@@ -10,6 +10,7 @@ use Drupal\Core\Field\FieldConfigInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface;
+use Drupal\ef_reach_through_content\Entity\ReachThrough;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeInterface;
@@ -196,17 +197,60 @@ class ReachThroughService implements ReachThroughServiceInterface {
    * @inheritdoc
    */
   public function onInsert(NodeInterface $node) {
-    $all_reach_through_types = ReachThroughType::loadMultiple();
+
     /** @var \Drupal\node\NodeTypeInterface $node_type */
     $node_type = NodeType::load($node->bundle());
 
+    $all_reach_through_types = ReachThroughType::loadMultiple();
+
     /** @var ReachThroughType $reach_through_type */
     foreach ($all_reach_through_types as $reach_through_type) {
-      if ($this->isFullyMapped($node_type, $reach_through_type->id())) {
-        $a = 1;
+      $reach_through_bundle = $reach_through_type->id();
+      if ($this->isFullyMapped($node_type, $reach_through_bundle)) {
+        $reach_through_entity = $this->generateReachThroughEntity($reach_through_bundle, $node);
+        $reach_through_entity->save();
+      }
+    }
+  }
+
+  public function onTranslationInsert (NodeInterface $node) {
+    $all_reach_through_types = ReachThroughType::loadMultiple();
+
+    /** @var ReachThroughType $reach_through_type */
+    foreach ($all_reach_through_types as $reach_through_type) {
+      $reach_through_bundle = $reach_through_type->id();
+
+      $result = $this->entityTypeManager->getStorage('reach_through')->getQuery()
+        ->condition('type', $reach_through_bundle, '=')
+        ->condition('reach_through_ref', $node->id(), '=')
+        ->execute();
+
+      if (sizeof($result) != 0) {
+        $reach_throughs = ReachThrough::loadMultiple($result);
+
+        /** @var ReachThrough $reach_through_entity */
+        $reach_through_entity = reset($reach_throughs);
+        $language_code = $node->language()->getId();
+
+        $reach_through_entity->addTranslation($language_code, [
+          'name' => $node->getTitle(),
+          'user_id' => \Drupal::currentUser()->id(),
+        ]);
+        $reach_through_entity->save();
       }
     }
 
+  }
+
+  protected function generateReachThroughEntity ($reach_through_bundle_name, NodeInterface $node) {
+
+    $reach_through = ReachThrough::create([
+      'type' => $reach_through_bundle_name,
+      'name' => $node->getTitle(),
+      'reach_through_ref' => $node,
+    ]);
+
+    return $reach_through;
   }
 
   /**
@@ -268,7 +312,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
   }
 
-  public function getFieldPlaceholder ($node_bundle, $field_name) {
+  protected function getFieldPlaceholder ($node_bundle, $field_name) {
     $form_storage = $this->entityTypeManager->getStorage('entity_form_display');
     /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
     $form_display = $form_storage->load('node.' . $node_bundle . '.default');
