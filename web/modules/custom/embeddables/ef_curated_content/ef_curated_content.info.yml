@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_patterns
   - ef_curated_content_wrapper
+  - ef_dynamic_content
