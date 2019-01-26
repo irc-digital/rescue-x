@@ -1,11 +1,14 @@
+uuid: 05448bec-4fdc-46dd-95af-8c3f781b7c96
 langcode: en
 status: true
 dependencies:
-  module:
-    - ef_reach_through_content
   enforced:
     module:
       - ef_curated_content_wrapper
+  module:
+    - ef_reach_through_content
+_core:
+  default_config_hash: AB2Gj6we80Y6IRNYzRahlBUT9WyXvAdfck20WeCYN4c
 id: reach_through.highlighted_teaser
 label: 'Highlighted teaser'
 targetEntityType: reach_through

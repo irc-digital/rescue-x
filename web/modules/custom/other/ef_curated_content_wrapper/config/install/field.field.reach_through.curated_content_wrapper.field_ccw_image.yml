@@ -1,3 +1,4 @@
+uuid: a95dea2d-be25-4930-88d2-809ac907047c
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
     - field.storage.reach_through.field_ccw_image
     - media.type.ef_image
+_core:
+  default_config_hash: WYdfA3amKb08m7BICcTt24zyrg8viLIKi9T5hzk7bzE
 id: reach_through.curated_content_wrapper.field_ccw_image
 field_name: field_ccw_image
 entity_type: reach_through

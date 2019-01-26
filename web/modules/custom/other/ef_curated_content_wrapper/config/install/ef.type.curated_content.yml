@@ -1,0 +1,13 @@
+uuid: 8ab562f5-419f-47ab-a66a-1eed4572772c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+id: curated_content
+label: 'Curated content'
+description: 'Manually selected news and features'
+exclude_from_embeddable_overview_quick_add_list: true
+dependent_embeddable: false
+only_dependent_embeddable: false

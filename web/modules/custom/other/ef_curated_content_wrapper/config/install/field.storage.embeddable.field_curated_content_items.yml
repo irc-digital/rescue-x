@@ -1,0 +1,23 @@
+uuid: fd277bc8-4b9e-4725-97dd-dd1ca0591502
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - ef_reach_through_content
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+id: embeddable.field_curated_content_items
+field_name: field_curated_content_items
+entity_type: embeddable
+type: entity_reference
+settings:
+  target_type: reach_through
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

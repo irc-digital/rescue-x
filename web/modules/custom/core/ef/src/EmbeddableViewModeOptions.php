@@ -47,7 +47,7 @@ class EmbeddableViewModeOptions {
         '#title' => t('View mode visibility'),
         '#description' => t('Where should editors be able to use this variation of the embeddable?'),
         '#options' => $options,
-        '#default_value' => $mode_visibility_values,
+        '#default_value' => !is_null($mode_visibility_values) ? $mode_visibility_values : [],
         '#weight' => -10,
         '#ajax' => [
           'event' => 'change',
@@ -62,7 +62,7 @@ class EmbeddableViewModeOptions {
         '#tree' => FALSE,
       ];
 
-      if (count(array_filter($mode_visibility_values)) > 0) {
+      if (!is_null($mode_visibility_values) && count(array_filter($mode_visibility_values)) > 0) {
         $module_handler = \Drupal::moduleHandler();
         $module_handler->invokeAll('ef_view_mode_settings', [&$form['ef_options']['container'], $entity_view_display, $view_mode, $form_state]);
       }

@@ -1,0 +1,18 @@
+uuid: 1c7750f2-77ef-4097-b5a5-71c4d866e8dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.curated_content
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: embeddable.curated_content
+target_entity_type_id: embeddable
+target_bundle: curated_content
+default_langcode: site_default
+language_alterable: true

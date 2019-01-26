@@ -1,0 +1,28 @@
+uuid: 9e24b8b1-a64e-44fe-98d4-83d6fa37e1ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.curated_content
+    - ef_reach_through_content.reach_through_type.curated_content_wrapper
+    - field.storage.embeddable.field_curated_content_items
+id: embeddable.curated_content.field_curated_content_items
+field_name: field_curated_content_items
+entity_type: embeddable
+bundle: curated_content
+label: Items
+description: 'A list of newsie-type items.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:reach_through'
+  handler_settings:
+    target_bundles:
+      curated_content_wrapper: curated_content_wrapper
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,11 +1,14 @@
+uuid: dffd7df6-a97d-47dd-bc5a-b36c8768174e
 langcode: en
 status: true
 dependencies:
-  module:
-    - ef_reach_through_content
   enforced:
     module:
       - ef_curated_content_wrapper
+  module:
+    - ef_reach_through_content
+_core:
+  default_config_hash: 8yzBNlL4aqHgksdq2CRDihT430FEtqA6KIwGMq1FCDU
 id: reach_through.field_ccw_title
 field_name: field_ccw_title
 entity_type: reach_through

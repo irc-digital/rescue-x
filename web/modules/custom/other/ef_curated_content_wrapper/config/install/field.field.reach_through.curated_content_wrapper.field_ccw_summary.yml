@@ -1,21 +1,19 @@
-uuid: 80c3e284-37f6-4837-9f5f-d81177a76521
+uuid: 2fcfc25b-de9b-488f-84d1-d775b3905f93
 langcode: en
 status: true
 dependencies:
   config:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
-    - field.storage.reach_through.field_ccw_slug
-_core:
-  default_config_hash: bcXYJ62DdUnMrCygPRee51XC79v35NcBgRAJhrigkIw
-id: reach_through.curated_content_wrapper.field_ccw_slug
-field_name: field_ccw_slug
+    - field.storage.reach_through.field_ccw_summary
+id: reach_through.curated_content_wrapper.field_ccw_summary
+field_name: field_ccw_summary
 entity_type: reach_through
 bundle: curated_content_wrapper
-label: Slug
+label: 'Summary / description'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: string_long

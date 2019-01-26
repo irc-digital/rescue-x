@@ -1,10 +1,13 @@
+uuid: e55a5d06-9698-4e98-b3b6-5091a0085281
 langcode: en
 status: true
 dependencies:
   config:
     - ef_reach_through_content.reach_through_type.curated_content_wrapper
+    - field.field.reach_through.curated_content_wrapper.field_ccw_call_to_action_text
     - field.field.reach_through.curated_content_wrapper.field_ccw_image
     - field.field.reach_through.curated_content_wrapper.field_ccw_slug
+    - field.field.reach_through.curated_content_wrapper.field_ccw_summary
     - field.field.reach_through.curated_content_wrapper.field_ccw_title
   module:
     - ds
@@ -19,20 +22,24 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      teaser_standard_image_source_set:
-        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
-      teaser_standard_image_fallback:
-        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
-      teaser_standard_image_alt:
-        - 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+      teaser_standard_url:
+        - reach_through_url
       teaser_standard_slug:
         - field_ccw_slug
       teaser_standard_title:
         - field_ccw_title
+      teaser_standard_cta:
+        - field_ccw_call_to_action_text
+      teaser_standard_image_source_set:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+      teaser_standard_image_fallback:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+      teaser_standard_image_alt:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
     fields:
-      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset':
-        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
-        weight: 0
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+        weight: 4
         label: hidden
         formatter: default
         settings:
@@ -41,9 +48,9 @@ third_party_settings:
           id: reset
           settings:
             lb: ''
-      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri':
-        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
-        weight: 0
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+        weight: 5
         label: hidden
         formatter: default
         settings:
@@ -52,18 +59,31 @@ third_party_settings:
           id: reset
           settings:
             lb: ''
-      'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt':
-        plugin_id: 'media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+        weight: 6
+        label: hidden
+        formatter: default
+      reach_through_url:
+        plugin_id: reach_through_url
         weight: 0
         label: hidden
         formatter: default
 _core:
-  default_config_hash: crUzFLbPgGkTABe513-yz_6rb-4TA2NwRP0etor-6YY
+  default_config_hash: zct5LAKz2Vt4pU7o5eP91Uo37rLoSUpLYMSOCDj5QXY
 id: reach_through.curated_content_wrapper.default
 targetEntityType: reach_through
 bundle: curated_content_wrapper
 mode: default
 content:
+  field_ccw_call_to_action_text:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_standard_cta
   field_ccw_slug:
     type: string
     weight: 1
@@ -72,6 +92,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_ccw_summary:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_ccw_title:
     type: string
     weight: 2
@@ -84,4 +111,5 @@ hidden:
   field_ccw_image: true
   langcode: true
   name: true
+  reach_through_ref: true
   user_id: true

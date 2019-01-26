@@ -14,11 +14,17 @@ third_party_settings:
         settings:
           mapped_fields:
             -
+              reach_through_bundle_field: field_ccw_call_to_action_text
+              node_field: field_call_to_action_text
+            -
               reach_through_bundle_field: field_ccw_image
               node_field: field_teaser_image
             -
               reach_through_bundle_field: field_ccw_slug
               node_field: field_slug
+            -
+              reach_through_bundle_field: field_ccw_summary
+              node_field: body
             -
               reach_through_bundle_field: field_ccw_title
               node_field: title

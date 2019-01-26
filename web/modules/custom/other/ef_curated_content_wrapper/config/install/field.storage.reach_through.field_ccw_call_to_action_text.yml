@@ -1,16 +1,14 @@
-uuid: 84945a90-5ea1-437f-b5ba-8442b1335ecc
+uuid: e9a1f2a5-b2e1-47fe-aa37-b92e214490c9
 langcode: en
 status: true
 dependencies:
+  module:
+    - ef_reach_through_content
   enforced:
     module:
       - ef_curated_content_wrapper
-  module:
-    - ef_reach_through_content
-_core:
-  default_config_hash: '-k_hgpYgSE_Du_P3aLd4AS5N2rfikdeeAHQDt36ghyY'
-id: reach_through.field_ccw_slug
-field_name: field_ccw_slug
+id: reach_through.field_ccw_call_to_action_text
+field_name: field_ccw_call_to_action_text
 entity_type: reach_through
 type: string
 settings:

@@ -175,9 +175,11 @@ class EntityReferenceEmbeddableItem extends EntityReferenceItem {
       ],
     ];
 
-    $target_bundles = $form_state->getValue(['handler_settings', 'target_bundles'], $field->getSetting('handler_settings')['target_bundles']);
+    $handler_settings = $field->getSetting('handler_settings');
 
-    $enabled_bundles = array_filter($target_bundles);
+    $target_bundles = $form_state->getValue(['handler_settings', 'target_bundles'], isset($handler_settings['target_bundles'])) ? $handler_settings['target_bundles'] : [];
+
+    $enabled_bundles = !is_null($target_bundles) ? array_filter($target_bundles) : [];
 
     $one_bundle_set = !(empty($target_bundles) || count($enabled_bundles) > 1);
 
