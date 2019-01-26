@@ -147,13 +147,15 @@ class DependentEmbeddableService implements DependentEmbeddableServiceInterface 
       if ($dependent_embeddable) {
         $entity_language = $entity->language()->getId();
 
-        $dependent_embeddable_translated_version = $dependent_embeddable->getTranslation($entity_language);
+        if ($dependent_embeddable->hasTranslation($entity_language)) {
+          $dependent_embeddable_translated_version = $dependent_embeddable->getTranslation($entity_language);
 
-        if (!$dependent_embeddable_translated_version->isDefaultTranslation()) {
-          $dependent_embeddable->removeTranslation($entity_language);
-          $dependent_embeddable->save();
-        } else {
-          $dependent_embeddable->delete();
+          if (!$dependent_embeddable_translated_version->isDefaultTranslation()) {
+            $dependent_embeddable->removeTranslation($entity_language);
+            $dependent_embeddable->save();
+          } else {
+            $dependent_embeddable->delete();
+          }
         }
       }
     }
@@ -168,10 +170,25 @@ class DependentEmbeddableService implements DependentEmbeddableServiceInterface 
 
   protected function generateDependentEmbeddable ($embeddable_bundle_name, ContentEntityInterface $parent_entity) {
 
+    $language_code = $parent_entity->language()->getId();
+
     $dependent_embeddable = Embeddable::create([
       'type' => $embeddable_bundle_name,
+      'langcode' => $language_code,
       'title' => $this->generateDependentEmbeddableTitle($embeddable_bundle_name, $parent_entity),
     ]);
+
+    $translation_languages = $parent_entity->getTranslationLanguages();
+
+    unset($translation_languages[$language_code]);
+
+    foreach ($translation_languages as $language_code => $language) {
+      $parent_entity = $parent_entity->getTranslation($language_code);
+      $parent_entity->addTranslation($language_code, [
+        'langcode' => $language_code,
+        'title' => $this->generateDependentEmbeddableTitle($embeddable_bundle_name, $parent_entity),
+      ]);
+    }
 
     $this->moduleHandler->alter('dependent_embeddable_presave_' . $embeddable_bundle_name, $dependent_embeddable, $parent_entity);
     $this->moduleHandler->alter('dependent_embeddable_presave', $dependent_embeddable, $parent_entity);

@@ -56,4 +56,12 @@ interface ReachThroughServiceInterface {
    * @inheritdoc
    */
   public function onTranslationDelete(NodeInterface $entity);
+
+  /**
+   * Returns the reach-through entity for the supplied node
+   *
+   * @param \Drupal\node\NodeInterface $node
+   * @return mixed
+   */
+  public function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id);
 }

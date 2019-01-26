@@ -208,6 +208,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
       $reach_through_bundle = $reach_through_type->id();
       if ($this->isFullyMapped($node_type, $reach_through_bundle)) {
         $reach_through_entity = $this->generateReachThroughEntity($reach_through_bundle, $node);
+
         $reach_through_entity->save();
       }
     }
@@ -220,16 +221,9 @@ class ReachThroughService implements ReachThroughServiceInterface {
     foreach ($all_reach_through_types as $reach_through_type) {
       $reach_through_bundle = $reach_through_type->id();
 
-      $result = $this->entityTypeManager->getStorage('reach_through')->getQuery()
-        ->condition('type', $reach_through_bundle, '=')
-        ->condition('reach_through_ref', $node->id(), '=')
-        ->execute();
+      $reach_through_entity = $this->getReachThroughEntityForNode($node, $reach_through_bundle);
 
-      if (sizeof($result) != 0) {
-        $reach_throughs = ReachThrough::loadMultiple($result);
-
-        /** @var ReachThrough $reach_through_entity */
-        $reach_through_entity = reset($reach_throughs);
+      if (!is_null($reach_through_entity)) {
         $language_code = $node->language()->getId();
 
         $reach_through_entity->addTranslation($language_code, [
@@ -242,13 +236,45 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
   }
 
+  public function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id) {
+    $reach_through_entity = NULL;
+
+    $result = $this->entityTypeManager->getStorage('reach_through')->getQuery()
+      ->condition('type', $reach_though_bundle_id, '=')
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->execute();
+
+    if (sizeof($result) != 0) {
+      $reach_throughs = ReachThrough::loadMultiple($result);
+
+      /** @var ReachThrough $reach_through_entity */
+      $reach_through_entity = reset($reach_throughs);
+    }
+
+    return $reach_through_entity;
+  }
+
   protected function generateReachThroughEntity ($reach_through_bundle_name, NodeInterface $node) {
+    $language_code = $node->language()->getId();
 
     $reach_through = ReachThrough::create([
       'type' => $reach_through_bundle_name,
+      'langcode' => $language_code,
       'name' => $node->getTitle(),
       'reach_through_ref' => $node,
     ]);
+
+    $translation_languages = $node->getTranslationLanguages();
+
+    unset($translation_languages[$language_code]);
+
+    foreach ($translation_languages as $language_code => $language) {
+      $node = $node->getTranslation($language_code);
+      $reach_through->addTranslation($language_code, [
+        'langcode' => $language_code,
+        'name' => $node->getTitle(),
+      ]);
+    }
 
     return $reach_through;
   }
@@ -263,12 +289,35 @@ class ReachThroughService implements ReachThroughServiceInterface {
    * @inheritdoc
    */
   public function onDelete(NodeInterface $node) {
+    $all_reach_through_types = ReachThroughType::loadMultiple();
+
+    /** @var ReachThroughType $reach_through_type */
+    foreach ($all_reach_through_types as $reach_through_type) {
+      $reach_through_bundle = $reach_through_type->id();
+
+      $reach_through_entity = $this->getReachThroughEntityForNode($node, $reach_through_bundle);
+
+      if (!is_null($reach_through_entity)) {
+        $entity_language = $node->language()->getId();
+
+        if ($reach_through_entity->hasTranslation($entity_language)) {
+          $reach_through_entity_translated_version = $reach_through_entity->getTranslation($entity_language);
+          if (!$reach_through_entity_translated_version->isDefaultTranslation()) {
+            $reach_through_entity->removeTranslation($entity_language);
+            $reach_through_entity->save();
+          } else {
+            $reach_through_entity->delete();
+          }
+        }
+      }
+    }
   }
 
   /**
    * @inheritdoc
    */
   public function onTranslationDelete(NodeInterface $node) {
+    $this->onDelete($node);
   }
 
   protected function isFullyMapped (NodeTypeInterface $node_type, $reach_through_type) {
