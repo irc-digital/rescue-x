@@ -113,6 +113,10 @@ class ReachThroughService implements ReachThroughServiceInterface {
           if (isset($reach_through_details_for_bundle[$reach_through_field_id]) && $reach_through_details_for_bundle[$reach_through_field_id] != 'not_mapped') {
             $field_on_node = $reach_through_details_for_bundle[$reach_through_field_id];
             $value_on_node = $wrapped_entity->{$field_on_node}->value;
+
+            if (is_null($value_on_node)) {
+              $value_on_node = $this->getFieldPlaceholder($wrapped_entity->bundle(), $field_on_node);
+            }
             $entity->{$reach_through_field_id}->value = $value_on_node;
             $render_array = $entity->{$reach_through_field_id}->view($view_mode);
             $build[$reach_through_field_id] = $render_array;
