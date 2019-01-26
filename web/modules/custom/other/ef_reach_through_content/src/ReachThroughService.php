@@ -109,10 +109,17 @@ class ReachThroughService implements ReachThroughServiceInterface {
         /** @var FieldConfigInterface $field_definition */
         $field_definition = $entity->getFieldDefinition($reach_through_field_id);
 
-        if (in_array($field_definition->getType(), ['string']) && !isset($build[$reach_through_field_id][0]['#context']['value'])) {
+        if (in_array($field_definition->getType(), ['string', 'string_long']) && !isset($build[$reach_through_field_id][0]['#context']['value'])) {
           if (isset($reach_through_details_for_bundle[$reach_through_field_id]) && $reach_through_details_for_bundle[$reach_through_field_id] != 'not_mapped') {
             $field_on_node = $reach_through_details_for_bundle[$reach_through_field_id];
-            $value_on_node = $wrapped_entity->{$field_on_node}->value;
+            $value_value = 'value';
+
+            if (strpos($field_on_node, '.summary') !== FALSE) {
+              $field_on_node = str_replace('.summary', '', $field_on_node);
+              $value_value = 'summary';
+            }
+
+            $value_on_node = $wrapped_entity->{$field_on_node}->{$value_value};
 
             if (is_null($value_on_node)) {
               $value_on_node = $this->getFieldPlaceholder($wrapped_entity->bundle(), $field_on_node);
