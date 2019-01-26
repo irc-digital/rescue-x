@@ -1,4 +1,3 @@
-uuid: fd277bc8-4b9e-4725-97dd-dd1ca0591502
 langcode: en
 status: true
 dependencies:
@@ -7,7 +6,7 @@ dependencies:
     - ef_reach_through_content
   enforced:
     module:
-      - ef_curated_content_wrapper
+      - ef_curated_content
 id: embeddable.field_curated_content_items
 field_name: field_curated_content_items
 entity_type: embeddable

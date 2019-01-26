@@ -1,10 +1,9 @@
-uuid: 8ab562f5-419f-47ab-a66a-1eed4572772c
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
-      - ef_curated_content_wrapper
+      - ef_curated_content
 id: curated_content
 label: 'Curated content'
 description: 'Manually selected news and features'
