@@ -5,6 +5,7 @@ namespace Drupal\ef_reach_through_content;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 interface ReachThroughServiceInterface {
   /**
@@ -35,4 +36,24 @@ interface ReachThroughServiceInterface {
   public function viewReachThroughEntity (array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode);
 
   public function getReachThoughtFieldMappings (EntityInterface $entity);
+
+  /**
+   * Called when an entity is inserted
+   */
+  public function onInsert(NodeInterface $parent_entity);
+
+  /**
+   * @inheritdoc
+   */
+  public function onUpdate(NodeInterface $parent_entity);
+
+  /**
+   * @inheritdoc
+   */
+  public function onDelete(NodeInterface $entity);
+
+  /**
+   * @inheritdoc
+   */
+  public function onTranslationDelete(NodeInterface $entity);
 }

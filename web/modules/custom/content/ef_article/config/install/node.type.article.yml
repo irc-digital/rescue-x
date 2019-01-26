@@ -24,7 +24,7 @@ third_party_settings:
               node_field: field_slug
             -
               reach_through_bundle_field: field_ccw_summary
-              node_field: body
+              node_field: body.summary
             -
               reach_through_bundle_field: field_ccw_title
               node_field: title

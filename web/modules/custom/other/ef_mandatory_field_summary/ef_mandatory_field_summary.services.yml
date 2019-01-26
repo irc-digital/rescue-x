@@ -1,0 +1,4 @@
+services:
+  ef.mandatory_field_summary:
+    class: Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryService
+    arguments: ['@entity_type.manager']

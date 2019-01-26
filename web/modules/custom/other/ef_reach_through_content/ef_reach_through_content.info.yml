@@ -6,3 +6,4 @@ package: 'EF Other'
 dependencies:
   - ef
   - ef_patterns
+  - ef_mandatory_field_summary

@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for \Drupal\node\NodeTypeForm.
@@ -66,4 +67,48 @@ function ef_reach_through_content_theme_suggestions_reach_through(array $variabl
   $suggestions[] = 'reach_through__' . $entity->id();
   $suggestions[] = 'reach_through__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
+}
+
+/**
+ * Implements hook_entity_insert
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_reach_through_content_node_insert (EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    \Drupal::service('ef.reach_through_service')->onInsert($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_reach_through_content_node_update (EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    \Drupal::service('ef.reach_through_service')->onUpdate($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_delete
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_reach_through_content_node_delete (EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    \Drupal::service('ef.reach_through_service')->onDelete($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_translation_delete
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function ef_reach_through_content_node_translation_delete (EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    \Drupal::service('ef.reach_through_service')->onTranslationDelete($entity);
+  }
 }

@@ -1,4 +1,4 @@
 services:
   ef.reach_through_service:
     class: Drupal\ef_reach_through_content\ReachThroughService
-    arguments: ['@entity_field.manager']
+    arguments: ['@entity_field.manager', '@entity_type.manager', '@ef.mandatory_field_summary']

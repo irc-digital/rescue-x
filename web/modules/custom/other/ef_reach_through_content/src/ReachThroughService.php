@@ -9,19 +9,33 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldConfigInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
 use Drupal\node\Entity\NodeType;
+use Drupal\node\NodeInterface;
 use Drupal\node\NodeTypeInterface;
 
 class ReachThroughService implements ReachThroughServiceInterface {
 
   /**
-   * @var EntityTypeManagerInterface
+   * @var EntityFieldManagerInterface
    */
   protected $entityFieldManager;
 
-  public function __construct(EntityFieldManagerInterface $entityFieldManager) {
+  /**
+   * @var EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * @var \Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface
+   */
+  protected $mandatoryFieldSummaryService;
+
+  public function __construct(EntityFieldManagerInterface $entityFieldManager, EntityTypeManagerInterface $entityTypeManager, MandatoryFieldSummaryServiceInterface $mandatoryFieldSummaryService) {
     $this->entityFieldManager = $entityFieldManager;
+    $this->entityTypeManager = $entityTypeManager;
+    $this->mandatoryFieldSummaryService = $mandatoryFieldSummaryService;
   }
 
   /**
@@ -63,10 +77,10 @@ class ReachThroughService implements ReachThroughServiceInterface {
     /** @var \Drupal\node\NodeTypeInterface $node_type */
     $node_type = NodeType::load($wrapped_entity->bundle());
 
-    $reach_through_details = $this->make_associative_array($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+    $reach_through_details = $this->makeAssociativeArray($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
 
     if (isset($reach_through_details[$bundle]['mapped_fields'])) {
-      $reach_through_details_for_bundle = $this->make_associative_array($reach_through_details[$bundle]['mapped_fields']);
+      $reach_through_details_for_bundle = $this->makeAssociativeArray($reach_through_details[$bundle]['mapped_fields']);
     }
 
     return $reach_through_details_for_bundle;
@@ -86,10 +100,10 @@ class ReachThroughService implements ReachThroughServiceInterface {
     /** @var \Drupal\node\NodeTypeInterface $node_type */
     $node_type = NodeType::load($wrapped_entity->bundle());
 
-    $current_reach_through_details = $this->make_associative_array($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+    $current_reach_through_details = $this->makeAssociativeArray($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
 
     if (isset($current_reach_through_details[$bundle]['mapped_fields'])) {
-      $reach_through_details_for_bundle = $this->make_associative_array($current_reach_through_details[$bundle]['mapped_fields']);
+      $reach_through_details_for_bundle = $this->makeAssociativeArray($current_reach_through_details[$bundle]['mapped_fields']);
 
       foreach ($reach_through_fields as $reach_through_field_id => $field_label) {
         /** @var FieldConfigInterface $field_definition */
@@ -118,7 +132,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
     /** @var \Drupal\node\NodeTypeInterface $type */
     $type = $form_state->getFormObject()->getEntity();
 
-    $node_fields = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', $type->id());
+    $node_fields = $this->entityFieldManager->getFieldDefinitions('node', $type->id());
 
     $node_fields = array_filter($node_fields, function (FieldDefinitionInterface $node_field_definition) {
       return $node_field_definition->isDisplayConfigurable('form');
@@ -131,6 +145,11 @@ class ReachThroughService implements ReachThroughServiceInterface {
      */
     foreach ($node_fields as $field_id => $field_details) {
       $options[$field_id] = $field_details->getLabel();
+
+      if ($field_details->getType() == 'text_with_summary') {
+        // for text with summary fields we need to break them out so we can refer to the summary too
+        $options[$field_id . '.summary'] = $field_details->getLabel() . ' (summary)';
+      }
     }
 
     asort($options);
@@ -141,9 +160,9 @@ class ReachThroughService implements ReachThroughServiceInterface {
       '#group' => 'additional_settings',
     ];
 
-    $current_reach_through_details = $this->make_associative_array($type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+    $current_reach_through_details = $this->makeAssociativeArray($type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
 
-    $current_values = isset($current_reach_through_details[$reach_through_type_id]['mapped_fields']) ? $this->make_associative_array($current_reach_through_details[$reach_through_type_id]['mapped_fields']) : [];
+    $current_values = isset($current_reach_through_details[$reach_through_type_id]['mapped_fields']) ? $this->makeAssociativeArray($current_reach_through_details[$reach_through_type_id]['mapped_fields']) : [];
 
     $form[$reach_through_type_id][$reach_through_type_id . '_field_mapping'] = [
       '#tree' => TRUE,
@@ -159,7 +178,93 @@ class ReachThroughService implements ReachThroughServiceInterface {
       ];
     }
 
-    $form['#entity_builders'][] = [ReachThroughService::class, 'reach_through_node_type_form_builder_callback'];
+    $form['#entity_builders'][] = [ReachThroughService::class, 'nodeTypeFormBuilderCallback'];
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function onInsert(NodeInterface $node) {
+    $all_reach_through_types = ReachThroughType::loadMultiple();
+    /** @var \Drupal\node\NodeTypeInterface $node_type */
+    $node_type = NodeType::load($node->bundle());
+
+    /** @var ReachThroughType $reach_through_type */
+    foreach ($all_reach_through_types as $reach_through_type) {
+      if ($this->isFullyMapped($node_type, $reach_through_type->id())) {
+        $a = 1;
+      }
+    }
+
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function onUpdate(NodeInterface $node) {
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function onDelete(NodeInterface $node) {
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function onTranslationDelete(NodeInterface $node) {
+  }
+
+  protected function isFullyMapped (NodeTypeInterface $node_type, $reach_through_type) {
+    $is_fully_mapped = FALSE;
+
+    $reach_through_details = $this->makeAssociativeArray($node_type->getThirdPartySetting('ef_reach_through_content', 'reach_through_details', []));
+
+    if (isset($reach_through_details[$reach_through_type]['mapped_fields'])) {
+      $reach_through_details_for_bundle = $this->makeAssociativeArray($reach_through_details[$reach_through_type]['mapped_fields']);
+
+      $node_bundle = $node_type->id();
+
+      /** @var \Drupal\Core\Field\FieldDefinitionInterface[] $field_definitions */
+      $field_definitions = $this->entityFieldManager->getFieldDefinitions('node', $node_bundle);
+
+      foreach ($reach_through_details_for_bundle as $reach_through_field_name => $mapped_node_field) {
+        if ($mapped_node_field == 'not_mapped') {
+          return FALSE;
+        }
+
+        if (strpos($mapped_node_field, '.summary') !== FALSE) {
+          $mapped_node_field = str_replace('.summary', '', $mapped_node_field);
+
+          if (!$this->mandatoryFieldSummaryService->isSummaryRequired('node', $node_bundle, $mapped_node_field)) {
+            return FALSE;
+          }
+        } else {
+          /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
+          $field_definition = $field_definitions[$mapped_node_field];
+
+          if (!($field_definition->isRequired() || strlen($this->getFieldPlaceholder($node_bundle, $field_definition->getName())) > 0)) {
+            return FALSE;
+          }
+        }
+      }
+
+      $is_fully_mapped = TRUE;
+    }
+
+    return $is_fully_mapped;
+
+  }
+
+  public function getFieldPlaceholder ($node_bundle, $field_name) {
+    $form_storage = $this->entityTypeManager->getStorage('entity_form_display');
+    /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
+    $form_display = $form_storage->load('node.' . $node_bundle . '.default');
+
+    $form_field_components = $form_display->getComponent($field_name);
+
+    return isset($form_field_components['settings']['placeholder']) ? $form_field_components['settings']['placeholder'] : '';
   }
 
   /**
@@ -167,7 +272,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
    *
    * @see ef_curated_content_form_node_type_form_alter()
    */
-  public static function reach_through_node_type_form_builder_callback($entity_type, NodeTypeInterface $type, &$form, FormStateInterface $form_state) {
+  public static function nodeTypeFormBuilderCallback($entity_type, NodeTypeInterface $type, &$form, FormStateInterface $form_state) {
     $all_reach_through_types = ReachThroughType::loadMultiple();
 
     $reach_through_details = [];
@@ -196,7 +301,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
     $type->setThirdPartySetting('ef_reach_through_content', 'reach_through_details', $reach_through_details);
   }
 
-  protected function make_associative_array ($settings) {
+  protected function makeAssociativeArray ($settings) {
     $result = [];
 
     foreach ($settings as $setting) {
