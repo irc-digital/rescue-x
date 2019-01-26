@@ -184,7 +184,7 @@ class DependentEmbeddableService implements DependentEmbeddableServiceInterface 
 
     foreach ($translation_languages as $language_code => $language) {
       $parent_entity = $parent_entity->getTranslation($language_code);
-      $parent_entity->addTranslation($language_code, [
+      $dependent_embeddable->addTranslation($language_code, [
         'title' => $this->generateDependentEmbeddableTitle($embeddable_bundle_name, $parent_entity),
       ]);
     }
