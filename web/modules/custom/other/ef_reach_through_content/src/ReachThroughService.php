@@ -281,7 +281,6 @@ class ReachThroughService implements ReachThroughServiceInterface {
     $reach_through = ReachThrough::create([
       'type' => $reach_through_bundle_name,
       'langcode' => $language_code,
-      'name' => $node->getTitle(),
       'reach_through_ref' => $node,
     ]);
 
@@ -292,7 +291,6 @@ class ReachThroughService implements ReachThroughServiceInterface {
     foreach ($translation_languages as $language_code => $language) {
       $node = $node->getTranslation($language_code);
       $reach_through->addTranslation($language_code, [
-        'name' => $node->getTitle(),
         'user_id' => \Drupal::currentUser()->id(),
       ]);
     }
@@ -304,6 +302,28 @@ class ReachThroughService implements ReachThroughServiceInterface {
    * @inheritdoc
    */
   public function onUpdate(NodeInterface $node) {
+    $all_reach_through_types = ReachThroughType::loadMultiple();
+
+    $node_language = $node->language()->getId();
+
+    /** @var ReachThroughType $reach_through_type */
+    foreach ($all_reach_through_types as $reach_through_type) {
+      $reach_through_bundle = $reach_through_type->id();
+
+      $reach_through_entity = $this->getReachThroughEntityForNode($node, $reach_through_bundle);
+
+      if (!is_null($reach_through_entity) && $reach_through_entity->hasTranslation($node_language)) {
+        $reach_through_entity = $reach_through_entity->getTranslation($node_language);
+
+        $new_reach_through_title = $this->generateTitleForReachThroughEntity($node);
+        $existing_reach_through_title = $reach_through_entity->getName();
+
+        if ($new_reach_through_title != $existing_reach_through_title) {
+          $reach_through_entity->save();
+        }
+      }
+    }
+
   }
 
   /**
@@ -360,16 +380,19 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
     if ($wrapped_node->hasTranslation($language_code)) {
       $wrapped_node = $wrapped_node->getTranslation($language_code);
-
-      $node_title = $wrapped_node->getTitle();
-
-      /** @var NodeTypeInterface $node_type */
-      $node_type = NodeType::load($wrapped_node->bundle());
-
-      $node_bundle_label = $node_type->label();
-
-      $reachThrough->setName(sprintf('%s: %s', $node_bundle_label, $node_title));
+      $reachThrough->setName($this->generateTitleForReachThroughEntity($wrapped_node));
     }
+  }
+
+  protected function generateTitleForReachThroughEntity ($wrapped_node) {
+    $node_title = $wrapped_node->getTitle();
+
+    /** @var NodeTypeInterface $node_type */
+    $node_type = NodeType::load($wrapped_node->bundle());
+
+    $node_bundle_label = $node_type->label();
+
+    return sprintf('%s: %s', $node_bundle_label, $node_title);
   }
 
   protected function isFullyMapped (NodeTypeInterface $node_type, $reach_through_type) {

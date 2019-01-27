@@ -70,7 +70,7 @@ class ReachThroughMediaImageAttributesField extends MediaImageAttributesField {
       if ($outer_entity->hasTranslation($current_language_code)) {
         $outer_entity = $outer_entity->getTranslation($current_language_code);
       }
-      
+
       $reach_through_fields = $this->reachThroughService->getReachThoughtFieldMappings($reach_through_entity);
       $outer_field_name = $reach_through_fields[$field_name];
       $media_image_entity = $outer_entity->{$outer_field_name}->entity;

@@ -3,6 +3,7 @@
 namespace Drupal\Tests\ef;
 
 use Drupal\Core\Entity\EntityStorageException;
+use Drupal\Core\Language\Language;
 use Drupal\ef\EmbeddableInterface;
 use Drupal\ef\Entity\Embeddable;
 use Drupal\KernelTests\KernelTestBase;
@@ -54,6 +55,19 @@ class DependentEmbeddableServiceTest extends KernelTestBase {
     $this->languageManager->expects($this->any())
       ->method('getDefaultLanguage')
       ->will($this->returnValue($english));
+
+    $map = [
+      ['en', $english],
+      ['de', $german]
+    ];
+
+    $this->languageManager->method('getLanguage')
+      ->will($this->returnValueMap($map));
+
+//    $this->languageManager->expects($this->at(1))
+//      ->method('getLanguage')
+//      ->with($this->equalTo('en'))
+//      ->will($this->returnValue(new Language(['id' => 'en'])));
 
     \Drupal::getContainer()->set('language_manager', $this->languageManager);
   }
@@ -214,5 +228,22 @@ class DependentEmbeddableServiceTest extends KernelTestBase {
     $dependent_embeddable = Embeddable::load($dependent_embeddable_id);
 
     $this->assertNull($dependent_embeddable);
+  }
+
+  public function testMultilingualNonPrimaryLanguageCreate () {
+    $german_parent = Embeddable::create([
+      'type' => 'referer',
+      'title' => 'Test title (DE)',
+      'langcode' => 'de',
+    ]);
+
+    $german_parent->save();
+
+    $this->assertNotNull($german_parent->field_dependent_embeddable_ref);
+
+    /** @var EmbeddableInterface $dependent_embeddable */
+    $dependent_embeddable = $german_parent->field_dependent_embeddable_ref->entity;
+
+    $this->assertEquals('de', $dependent_embeddable->language()->getId());
   }
 }
