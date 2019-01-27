@@ -64,4 +64,15 @@ interface ReachThroughServiceInterface {
    * @return mixed
    */
   public function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id);
+
+  /**
+   * Modify the reach-through entity add or edit form to (mostly) account for
+   * whether a field need to be marked as required
+   *
+   * @param $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * @param $form_id
+   * @return mixed
+   */
+  public function alterReachThroughAddEditForm (&$form, FormStateInterface $form_state, $form_id);
 }

@@ -195,8 +195,8 @@ class ReachThrough extends ContentEntityBase implements ReachThroughInterface {
       ->setDescription(t('The time that the entity was last edited.'));
 
     $fields['reach_through_ref'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Reach-through entity reference'))
-      ->setDescription(t('The reference to the node this is reaching through to.'))
+      ->setLabel(t('Content reference'))
+      ->setDescription(t('The content being linked to.'))
       ->setSetting('target_type', 'node')
       ->setSetting('handler', 'default')
       ->setTranslatable(FALSE)

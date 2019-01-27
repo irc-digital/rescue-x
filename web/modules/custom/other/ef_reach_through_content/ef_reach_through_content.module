@@ -54,6 +54,28 @@ function ef_reach_through_content_theme() {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+//function ef_reach_through_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//  if (strpos($form_id, 'reach_through_') === 0 && isset($form["reach_through_ref"])) {
+//
+//  }
+//}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ef_reach_through_content_form_reach_through_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $is_add_form = strpos($form_id, '_add_form') != FALSE;
+
+  if (!$is_add_form) {
+    $form['reach_through_ref']['widget'][0]['target_id']['#attributes']['disabled'] = 'disabled';
+  }
+
+  \Drupal::service('ef.reach_through_service')->alterReachThroughAddEditForm($form, $form_state, $form_id);
+}
+
+/**
 * Implements hook_theme_suggestions_HOOK().
 */
 function ef_reach_through_content_theme_suggestions_reach_through(array $variables) {

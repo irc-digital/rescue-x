@@ -12,14 +12,14 @@ dependencies:
   module:
     - entity_browser
 _core:
-  default_config_hash: zMEDvLY8Iurc9SvBTJOQYquwJppaxSSV8EPJaYxGWb0
+  default_config_hash: Z49CACUj-4ZHvhNP5KA7h8HtYK9CYMnOTwWRKc-2ZK4
 id: reach_through.curated_content_wrapper.default
 targetEntityType: reach_through
 bundle: curated_content_wrapper
 mode: default
 content:
   field_ccw_call_to_action_text:
-    weight: 8
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -28,7 +28,7 @@ content:
     region: content
   field_ccw_image:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 4
     region: content
     settings:
       entity_browser: media_entity_browser
@@ -42,7 +42,7 @@ content:
         view_mode: thumbnails
     third_party_settings: {  }
   field_ccw_slug:
-    weight: 4
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -50,7 +50,7 @@ content:
     type: string_textfield
     region: content
   field_ccw_summary:
-    weight: 9
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -58,7 +58,7 @@ content:
     type: string_textarea
     region: content
   field_ccw_title:
-    weight: 5
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -67,22 +67,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 1
+    weight: 0
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   reach_through_ref:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -94,13 +86,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true
