@@ -351,6 +351,27 @@ class ReachThroughService implements ReachThroughServiceInterface {
     return NULL;
   }
 
+  public function onPresaveReachThrough (ReachThrough $reachThrough) {
+    // ensure the title of the reach through is meaningful
+    $language_code = $reachThrough->language()->getId();
+
+    /** @var NodeInterface $wrapped_node */
+    $wrapped_node = $reachThrough->reach_through_ref->entity;
+
+    if ($wrapped_node->hasTranslation($language_code)) {
+      $wrapped_node = $wrapped_node->getTranslation($language_code);
+
+      $node_title = $wrapped_node->getTitle();
+
+      /** @var NodeTypeInterface $node_type */
+      $node_type = NodeType::load($wrapped_node->bundle());
+
+      $node_bundle_label = $node_type->label();
+
+      $reachThrough->setName(sprintf('%s: %s', $node_bundle_label, $node_title));
+    }
+  }
+
   protected function isFullyMapped (NodeTypeInterface $node_type, $reach_through_type) {
     $is_fully_mapped = FALSE;
 
@@ -479,7 +500,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
       ],
     ];
 
-    $form["reach_through_ref"]["widget"][0]["target_id"] += [
+    $form['reach_through_ref']['widget'][0]['target_id'] += [
       '#ajax' => [
         'event' => 'autocompleteclose change',
         'callback' => [ReachThroughService::class, 'ajaxFunctionAfterAutocomplete'],

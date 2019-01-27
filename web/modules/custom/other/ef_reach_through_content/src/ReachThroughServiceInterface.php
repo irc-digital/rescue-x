@@ -5,6 +5,7 @@ namespace Drupal\ef_reach_through_content;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\ef_reach_through_content\Entity\ReachThrough;
 use Drupal\node\NodeInterface;
 
 interface ReachThroughServiceInterface {
@@ -38,24 +39,42 @@ interface ReachThroughServiceInterface {
   public function getReachThoughtFieldMappings (EntityInterface $entity);
 
   /**
-   * Called when an entity is inserted
+   * Called when a node is inserted
    */
   public function onInsert(NodeInterface $parent_entity);
 
   /**
-   * @inheritdoc
+   * Called when a node is updated
+   *
+   * @param \Drupal\node\NodeInterface $parent_entity
+   * @return mixedC
    */
   public function onUpdate(NodeInterface $parent_entity);
 
   /**
-   * @inheritdoc
+   * Called when a node is being deleted
+   *
+   * @param \Drupal\node\NodeInterface $entity
+   * @return mixed
    */
   public function onDelete(NodeInterface $entity);
 
+
   /**
-   * @inheritdoc
+   * Called when a node translation is being deleted
+   *
+   * @param \Drupal\node\NodeInterface $entity
+   * @return mixed
    */
   public function onTranslationDelete(NodeInterface $entity);
+
+  /**
+   * Called when a reach through entity is about to be saved
+   *
+   * @param \Drupal\ef_reach_through_content\Entity\ReachThrough $reachThrough
+   * @return mixed
+   */
+  public function onPresaveReachThrough (ReachThrough $reachThrough);
 
   /**
    * Returns the reach-through entity for the supplied node
