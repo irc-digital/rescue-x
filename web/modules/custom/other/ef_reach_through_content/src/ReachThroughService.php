@@ -470,18 +470,27 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
     $wrapped_node = !is_null($wrapped_node) ? $wrapped_node : $reach_through_entity->reach_through_ref->entity;
 
-    $form['#attributes']['id'] = 'reach-through-form';
+    $form['field_container'] = [
+      '#type' => 'container',
+      '#weight' => 10,
+      '#attributes' => [
+        'id' => 'reach-through-form-field-container',
+        'class' => ['visually-hidden'],
+      ],
+    ];
 
     $form["reach_through_ref"]["widget"][0]["target_id"] += [
       '#ajax' => [
         'event' => 'autocompleteclose change',
         'callback' => [ReachThroughService::class, 'ajaxFunctionAfterAutocomplete'],
-        'wrapper' => 'reach-through-form',
+        'wrapper' => 'reach-through-form-field-container',
         'effect' => 'fade',
       ],
     ];
 
     if (!is_null($wrapped_node)) {
+      $form['field_container']['#attributes']['class'] = [];
+      
       /** @var \Drupal\node\NodeTypeInterface $node_type */
       $node_type = NodeType::load($wrapped_node->bundle());
 
@@ -495,18 +504,13 @@ class ReachThroughService implements ReachThroughServiceInterface {
       if ($wrapped_node->hasTranslation($entity_language)) {
         $wrapped_node = $wrapped_node->getTranslation($entity_language);
       }
-    }
 
-    foreach ($reach_through_fields as $reach_through_field_id => $reach_through_field_label) {
-      if (is_null($wrapped_node)) {
-        $form[$reach_through_field_id]['#access'] = FALSE;
-      } else {
-
+      foreach ($reach_through_fields as $reach_through_field_id => $reach_through_field_label) {
         $required = TRUE;
 
         if (!is_null($reach_through_details_for_bundle)) {
           $mapped_node_field = $reach_through_details_for_bundle[$reach_through_field_id];
-          $required = !($this->isFieldMapped ($field_definitions, $node_bundle, $mapped_node_field));
+          $required = !($this->isFieldMapped($field_definitions, $node_bundle, $mapped_node_field));
         }
 
         $form[$reach_through_field_id]['widget']['#required'] = $required;
@@ -524,10 +528,15 @@ class ReachThroughService implements ReachThroughServiceInterface {
         }
       }
     }
+
+    foreach ($reach_through_fields as $reach_through_field_id => $reach_through_field_label) {
+      $form['field_container'][$reach_through_field_id] = $form[$reach_through_field_id];
+      unset($form[$reach_through_field_id]);
+    }
   }
 
   public static function ajaxFunctionAfterAutocomplete($form, FormStateInterface $form_state) {
-    return $form;
+    return $form['field_container'];
   }
 
 }
