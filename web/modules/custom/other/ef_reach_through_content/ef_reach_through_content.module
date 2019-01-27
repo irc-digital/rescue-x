@@ -54,15 +54,6 @@ function ef_reach_through_content_theme() {
 }
 
 /**
- * Implements hook_form_alter().
- */
-//function ef_reach_through_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-//  if (strpos($form_id, 'reach_through_') === 0 && isset($form["reach_through_ref"])) {
-//
-//  }
-//}
-
-/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function ef_reach_through_content_form_reach_through_form_alter(&$form, FormStateInterface $form_state, $form_id) {

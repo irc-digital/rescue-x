@@ -475,7 +475,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
     $form["reach_through_ref"]["widget"][0]["target_id"] += [
       '#ajax' => [
         'event' => 'autocompleteclose change',
-        'callback' => [$this, 'ajaxFunctionAfterAutocomplete'],
+        'callback' => [ReachThroughService::class, 'ajaxFunctionAfterAutocomplete'],
         'wrapper' => 'reach-through-form',
         'effect' => 'fade',
       ],
@@ -526,12 +526,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
     }
   }
 
-  public function ajaxFunctionAfterAutocomplete($form, FormStateInterface $form_state) {
-//    $trigger = $form_state->getTriggeringElement();
-//    $key = array_slice($trigger['#array_parents'], 0, -1);
-//
-//    $element = NestedArray::getValue($form, $key);
-
+  public static function ajaxFunctionAfterAutocomplete($form, FormStateInterface $form_state) {
     return $form;
   }
 
