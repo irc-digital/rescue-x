@@ -6,7 +6,7 @@ dependencies:
     - user
   enforced:
     module:
-      - ef_curated_content_wrapper
+      - ef_reach_through_content
 id: reach_through_entries
 label: 'Curated content entries'
 module: views

@@ -12,6 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThrough;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
+use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeInterface;
 use Drupal\node\NodeTypeInterface;
@@ -460,20 +461,40 @@ class ReachThroughService implements ReachThroughServiceInterface {
     $reach_through_fields = $this->geReachThroughFields ($reach_through_bundle);
 
     /** @var NodeInterface $wrapped_node */
-    $wrapped_node = $reach_through_entity->reach_through_ref->entity;
+    $wrapped_node_id = $form_state->getValue(['reach_through_ref',0,'target_id']);
+    $wrapped_node = NULL;
 
-    /** @var \Drupal\node\NodeTypeInterface $node_type */
-    $node_type = NodeType::load($wrapped_node->bundle());
+    if (!is_null($wrapped_node_id)) {
+      $wrapped_node = Node::load($wrapped_node_id);
+    }
 
-    $reach_through_details_for_bundle = $this->getReachThroughDetailsForBundle($node_type, $reach_through_bundle);
-    $node_bundle = $node_type->id();
-    /** @var \Drupal\Core\Field\FieldDefinitionInterface[] $field_definitions */
-    $field_definitions = $this->entityFieldManager->getFieldDefinitions('node', $node_bundle);
+    $wrapped_node = !is_null($wrapped_node) ? $wrapped_node : $reach_through_entity->reach_through_ref->entity;
 
-    $entity_language = $reach_through_entity->language()->getId();
+    $form['#attributes']['id'] = 'reach-through-form';
 
-    if ($wrapped_node->hasTranslation($entity_language)) {
-      $wrapped_node = $wrapped_node->getTranslation($entity_language);
+    $form["reach_through_ref"]["widget"][0]["target_id"] += [
+      '#ajax' => [
+        'event' => 'autocompleteclose change',
+        'callback' => [$this, 'ajaxFunctionAfterAutocomplete'],
+        'wrapper' => 'reach-through-form',
+        'effect' => 'fade',
+      ],
+    ];
+
+    if (!is_null($wrapped_node)) {
+      /** @var \Drupal\node\NodeTypeInterface $node_type */
+      $node_type = NodeType::load($wrapped_node->bundle());
+
+      $reach_through_details_for_bundle = $this->getReachThroughDetailsForBundle($node_type, $reach_through_bundle);
+      $node_bundle = $node_type->id();
+      /** @var \Drupal\Core\Field\FieldDefinitionInterface[] $field_definitions */
+      $field_definitions = $this->entityFieldManager->getFieldDefinitions('node', $node_bundle);
+
+      $entity_language = $reach_through_entity->language()->getId();
+
+      if ($wrapped_node->hasTranslation($entity_language)) {
+        $wrapped_node = $wrapped_node->getTranslation($entity_language);
+      }
     }
 
     foreach ($reach_through_fields as $reach_through_field_id => $reach_through_field_label) {
@@ -503,6 +524,15 @@ class ReachThroughService implements ReachThroughServiceInterface {
         }
       }
     }
+  }
+
+  public function ajaxFunctionAfterAutocomplete($form, FormStateInterface $form_state) {
+//    $trigger = $form_state->getTriggeringElement();
+//    $key = array_slice($trigger['#array_parents'], 0, -1);
+//
+//    $element = NestedArray::getValue($form, $key);
+
+    return $form;
   }
 
 }
