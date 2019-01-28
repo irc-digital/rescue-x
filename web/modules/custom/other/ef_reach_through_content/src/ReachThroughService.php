@@ -12,6 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThrough;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeInterface;
@@ -250,7 +251,6 @@ class ReachThroughService implements ReachThroughServiceInterface {
         $language_code = $node->language()->getId();
 
         $reach_through_entity->addTranslation($language_code, [
-          'name' => $node->getTitle(),
           'user_id' => \Drupal::currentUser()->id(),
         ]);
         $reach_through_entity->save();
@@ -375,14 +375,26 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
   public function onPresaveReachThrough (ReachThrough $reachThrough) {
     // ensure the title of the reach through is meaningful
-    $language_code = $reachThrough->language()->getId();
+    $languages = [$reachThrough->language()->getId()];
+
+    if (!$reachThrough->id()) {
+      $other_languages = $reachThrough->getTranslationLanguages(FALSE);
+
+      /** @var \Drupal\Core\Language\LanguageInterface $other_language */
+      foreach ($other_languages as $other_language) {
+        $languages[] = $other_language->getId();
+      }
+    }
 
     /** @var NodeInterface $wrapped_node */
     $wrapped_node = $reachThrough->reach_through_ref->entity;
 
-    if ($wrapped_node->hasTranslation($language_code)) {
-      $wrapped_node = $wrapped_node->getTranslation($language_code);
-      $reachThrough->setName($this->generateTitleForReachThroughEntity($wrapped_node));
+    foreach ($languages as $language_code) {
+      if ($wrapped_node->hasTranslation($language_code)) {
+        $reachThrough = $reachThrough->getTranslation($language_code);
+        $wrapped_node = $wrapped_node->getTranslation($language_code);
+        $reachThrough->setName($this->generateTitleForReachThroughEntity($wrapped_node));
+      }
     }
   }
 
@@ -501,6 +513,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
   }
 
   public function alterReachThroughAddEditForm (&$form, FormStateInterface $form_state, $form_id) {
+
     $reach_through_entity = $form_state->getFormObject()->getEntity();
     $reach_through_bundle = $reach_through_entity->bundle();
 

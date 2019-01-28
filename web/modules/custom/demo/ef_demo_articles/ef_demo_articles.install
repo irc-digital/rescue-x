@@ -16,56 +16,56 @@ function ef_demo_articles_install () {
 //    'type' => 'pull_quote',
 //    'title' => 'Boomshanka',
 //    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Neal 1',
 //    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Rik 1',
 //    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Rik 2',
 //    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Rik 3',
 //    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Rik 4',
 //    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Neal 2',
 //    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 //
 //  Embeddable::create([
 //    'type' => 'pull_quote',
 //    'title' => 'Vyvyan 1',
 //    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
-//    'language' => 'en',
+//    'langcode' => 'en',
 //  ])->save();
 
 }
@@ -85,7 +85,7 @@ function ef_demo_add_article () {
 
   $teaser = Media::create([
     'bundle' => 'ef_image',
-    'language' => 'en',
+    'langcode' => 'en',
     'name' => 'Sample teaser image ' . $count++,
     'field_ef_image' => [
       'target_id' => $teaser_file->id(),
@@ -101,7 +101,7 @@ function ef_demo_add_article () {
 
   $hero = Media::create([
     'bundle' => 'ef_image',
-    'language' => 'en',
+    'langcode' => 'en',
     'name' => 'Sample hero image ' . $count++,
     'field_ef_image' => [
       'target_id' => $hero_file->id(),
@@ -120,7 +120,7 @@ function ef_demo_add_article () {
       'value' => ef_demo_get_random_paragraphs(),
       'summary' => ef_demo_get_random_paragraph(1,2),
     ],
-    'language' => 'en',
+    'langcode' => 'en',
     'field_teaser_image' => [
       'target_id' => $teaser->id(),
     ],
@@ -132,7 +132,7 @@ function ef_demo_add_article () {
   ]);
 
   $node->addTranslation('de', [
-    'title' => ef_demo_get_random_sentence(2, 10, false),
+    'title' => ef_demo_get_random_sentence(2, 10, false) . ' (DE)',
     'body' => [
       'format' => 'basic_html',
       'value' => ef_demo_get_random_paragraphs(),
