@@ -121,6 +121,7 @@ function ef_reach_through_content_node_delete (EntityInterface $entity) {
   }
 }
 
+
 /**
  * Implements hook_entity_translation_delete
  *

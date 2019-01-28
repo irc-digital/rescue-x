@@ -56,7 +56,10 @@ use Drupal\user\UserInterface;
  *     "collection" = "/admin/structure/reach_through",
  *   },
  *   bundle_entity_type = "reach_through_type",
- *   field_ui_base_route = "entity.reach_through_type.edit_form"
+ *   field_ui_base_route = "entity.reach_through_type.edit_form",
+ *   constraints = {
+ *     "no_duplicate_reach_through_reference_constraint" = {}
+ *   }
  * )
  */
 class ReachThrough extends ContentEntityBase implements ReachThroughInterface {

@@ -113,12 +113,20 @@ class ReachThroughService implements ReachThroughServiceInterface {
         $wrapped_entity = $wrapped_entity->getTranslation($entity_language);
 
         foreach ($reach_through_fields as $reach_through_field_id => $field_label) {
-          $value_on_node = $this->getValueOnWrappedNode($reachThroughEntity, $reach_through_field_id, $reach_through_details_for_bundle, $wrapped_entity);
+          /** @var FieldConfigInterface $field_definition */
+          $field_definition = $reachThroughEntity->getFieldDefinition($reach_through_field_id);
 
-          if (!is_null($value_on_node)) {
-            $reachThroughEntity->{$reach_through_field_id}->value = $value_on_node;
-            $render_array = $reachThroughEntity->{$reach_through_field_id}->view($view_mode);
-            $build[$reach_through_field_id] = $render_array;
+          if (in_array($field_definition->getType(), [
+              'string',
+              'string_long'
+            ]) && !isset($build[$reach_through_field_id][0]['#context']['value'])) {
+            $value_on_node = $this->getValueOnWrappedNode($reachThroughEntity, $reach_through_field_id, $reach_through_details_for_bundle, $wrapped_entity);
+
+            if (!is_null($value_on_node)) {
+              $reachThroughEntity->{$reach_through_field_id}->value = $value_on_node;
+              $render_array = $reachThroughEntity->{$reach_through_field_id}->view($view_mode);
+              $build[$reach_through_field_id] = $render_array;
+            }
           }
         }
       }
@@ -126,31 +134,25 @@ class ReachThroughService implements ReachThroughServiceInterface {
   }
 
   protected function getValueOnWrappedNode (EntityInterface $reachThroughEntity, $reach_through_field_id, $reach_through_details_for_bundle, NodeInterface $wrapped_entity) {
-    /** @var FieldConfigInterface $field_definition */
-    $field_definition = $reachThroughEntity->getFieldDefinition($reach_through_field_id);
 
     $value_on_node = NULL;
 
-    if (in_array($field_definition->getType(), [
-        'string',
-        'string_long'
-      ]) && !isset($build[$reach_through_field_id][0]['#context']['value'])) {
-      if (isset($reach_through_details_for_bundle[$reach_through_field_id]) && $reach_through_details_for_bundle[$reach_through_field_id] != 'not_mapped') {
-        $field_on_node = $reach_through_details_for_bundle[$reach_through_field_id];
-        $value_value = 'value';
+    if (isset($reach_through_details_for_bundle[$reach_through_field_id]) && $reach_through_details_for_bundle[$reach_through_field_id] != 'not_mapped') {
+      $field_on_node = $reach_through_details_for_bundle[$reach_through_field_id];
+      $value_value = 'value';
 
-        if (strpos($field_on_node, '.summary') !== FALSE) {
-          $field_on_node = str_replace('.summary', '', $field_on_node);
-          $value_value = 'summary';
-        }
+      if (strpos($field_on_node, '.summary') !== FALSE) {
+        $field_on_node = str_replace('.summary', '', $field_on_node);
+        $value_value = 'summary';
+      }
 
-        $value_on_node = $wrapped_entity->{$field_on_node}->{$value_value};
+      $value_on_node = $wrapped_entity->{$field_on_node}->{$value_value};
 
-        if (is_null($value_on_node)) {
-          $value_on_node = $this->getFieldPlaceholder($wrapped_entity->bundle(), $field_on_node);
-        }
+      if (is_null($value_on_node)) {
+        $value_on_node = $this->getFieldPlaceholder($wrapped_entity->bundle(), $field_on_node);
       }
     }
+
 
     return $value_on_node;
   }
