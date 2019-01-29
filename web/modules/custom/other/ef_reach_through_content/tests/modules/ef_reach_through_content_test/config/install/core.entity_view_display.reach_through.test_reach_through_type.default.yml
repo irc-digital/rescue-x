@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.reach_through.test_reach_through_type.field_title
+    - reach_through.type.test_reach_through_type
+  module:
+    - user
+id: reach_through.test_reach_through_type.default
+targetEntityType: reach_through
+bundle: test_reach_through_type
+mode: default
+content:
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  name: true
+  langcode: true

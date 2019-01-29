@@ -47,7 +47,7 @@ class ReachThroughServiceTest extends KernelTestBase {
 
   protected function addFullyMappedNodeMonolingual () {
     $node = Node::create([
-      'type' => 'test',
+      'type' => 'test_fully_mapped',
       'title' => 'Title for test node',
     ]);
 
@@ -76,6 +76,30 @@ class ReachThroughServiceTest extends KernelTestBase {
    */
   public function testAddingFullyMappedNodeMonolingual () {
     $this->addFullyMappedNodeMonolingual();
+  }
+
+  /**
+   * @covers ::getReachThoughtFieldMappings
+   */
+  public function testGetReachThoughtFieldMappings () {
+    $node = $this->addFullyMappedNodeMonolingual();
+
+    /** @var \Drupal\ef_reach_through_content\ReachThroughServiceInterface $reachThroughService */
+    $reachThroughService = \Drupal::service('ef.reach_through_service');
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $reach_through_storage */
+    $reach_through_storage = \Drupal::service('entity_type.manager')->getStorage('reach_through');
+
+    /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $stored_reach_through */
+    $stored_reach_through = $reach_through_storage->getQuery()
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->execute();
+
+    $stored_reach_through = ReachThrough::load(key($stored_reach_through));
+
+    $reachThroughFieldMappings = $reachThroughService->getReachThoughtFieldMappings ($stored_reach_through);
+
+    $this->assertEquals(['field_title' => 'title'], $reachThroughFieldMappings);
   }
 
   /**
@@ -125,4 +149,102 @@ class ReachThroughServiceTest extends KernelTestBase {
     $this->assertEquals(0, $count);
 
   }
+
+  protected function addNotMappedNodeMonolingual () {
+    $node = Node::create([
+      'type' => 'test_not_mapped',
+      'title' => 'Title for test node',
+    ]);
+
+    $node->save();
+
+    $stored_reach_throughs = ReachThrough::loadMultiple();
+
+    $this->assertCount(0, $stored_reach_throughs);
+
+    return $node;
+  }
+
+  /**
+   * @covers ::onInsert
+   */
+  public function testAddingNotMappedNodeMonolingual () {
+    $this->addFullyMappedNodeMonolingual();
+  }
+
+  /**
+   * @covers ::onUpdate
+   */
+  public function testUpdatingNotMappedNodeMonolingual () {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $this->addNotMappedNodeMonolingual();
+
+    $node->setTitle("Modified title");
+    $node->save();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $reach_through_storage */
+    $reach_through_storage = \Drupal::service('entity_type.manager')->getStorage('reach_through');
+
+    /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $stored_reach_through */
+    $stored_reach_through = $reach_through_storage->getQuery()
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->execute();
+
+    $this->assertCount(0, $stored_reach_through);
+  }
+
+  /**
+   * @covers ::onDelete
+   */
+  public function testDeleteNotMappedNodeMonolingual () {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $this->addNotMappedNodeMonolingual();
+
+    $node->delete();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $reach_through_storage */
+    $reach_through_storage = \Drupal::service('entity_type.manager')->getStorage('reach_through');
+
+    /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $stored_reach_through */
+    $count = $reach_through_storage->getQuery()
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->count()
+      ->execute();
+
+    $this->assertEquals(0, $count);
+
+  }
+
+  /**
+   * @covers ::viewReachThroughEntity
+   */
+  public function testViewReachThroughEntity () {
+    // test a reach-through value
+    $node = $this->addFullyMappedNodeMonolingual();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $reach_through_storage */
+    $reach_through_storage = \Drupal::service('entity_type.manager')->getStorage('reach_through');
+
+    /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $stored_reach_through */
+    $stored_reach_through = $reach_through_storage->getQuery()
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->execute();
+    $stored_reach_through = ReachThrough::load(key($stored_reach_through));
+
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('reach_through');
+    $pre_render = $view_builder->view($stored_reach_through);
+    $render_output = \Drupal::service('renderer')->renderRoot($pre_render);
+
+    $this->assertTrue(strpos($render_output, 'Title for test node') !== NULL);
+
+    // now test an overridden value
+
+    $stored_reach_through->field_title = 'Overridden';
+    $stored_reach_through->save();
+    $stored_reach_through = ReachThrough::load($stored_reach_through->id());
+    $pre_render = $view_builder->view($stored_reach_through);
+    $render_output = \Drupal::service('renderer')->renderRoot($pre_render);
+    $this->assertTrue(strpos($render_output, 'Overridden') !== NULL);
+  }
+
 }

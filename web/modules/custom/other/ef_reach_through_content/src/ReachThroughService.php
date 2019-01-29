@@ -11,6 +11,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_mandatory_field_summary\MandatoryFieldSummaryServiceInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThrough;
+use Drupal\ef_reach_through_content\Entity\ReachThroughInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThroughType;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
@@ -70,12 +71,12 @@ class ReachThroughService implements ReachThroughServiceInterface {
     }
   }
 
-  public function getReachThoughtFieldMappings (EntityInterface $entity) {
-    $bundle = $entity->bundle();
+  public function getReachThoughtFieldMappings (ReachThroughInterface $reachThrough) {
+    $bundle = $reachThrough->bundle();
     $reach_through_details_for_bundle = [];
 
     /** @var \Drupal\node\NodeInterface $wrapped_entity */
-    $wrapped_entity = $entity->reach_through_ref->entity;
+    $wrapped_entity = $reachThrough->reach_through_ref->entity;
 
     /** @var \Drupal\node\NodeTypeInterface $node_type */
     $node_type = NodeType::load($wrapped_entity->bundle());
@@ -259,7 +260,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
 
   }
 
-  public function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id) {
+  protected function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id) {
     $reach_through_entity = NULL;
 
     $result = $this->entityTypeManager->getStorage('reach_through')->getQuery()

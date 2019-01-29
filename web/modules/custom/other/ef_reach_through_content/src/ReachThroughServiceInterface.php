@@ -6,6 +6,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ef_reach_through_content\Entity\ReachThrough;
+use Drupal\ef_reach_through_content\Entity\ReachThroughInterface;
 use Drupal\node\NodeInterface;
 
 interface ReachThroughServiceInterface {
@@ -38,15 +39,23 @@ interface ReachThroughServiceInterface {
 
   /**
    *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
+   * @param ReachThroughInterface $reachThrough
    * @return mixed
    */
-  public function getReachThoughtFieldMappings (EntityInterface $entity);
+  public function getReachThoughtFieldMappings (ReachThroughInterface $reachThrough);
 
   /**
    * Called when a node is inserted
    */
   public function onInsert(NodeInterface $parent_entity);
+
+  /**
+   * Called when a translation is inserted
+   *
+   * @param \Drupal\node\NodeInterface $node
+   * @return mixed
+   */
+  public function onTranslationInsert (NodeInterface $node);
 
   /**
    * Called when a node is updated
@@ -72,14 +81,6 @@ interface ReachThroughServiceInterface {
    * @return mixed
    */
   public function onTranslationDelete(NodeInterface $entity);
-
-  /**
-   * Returns the reach-through entity for the supplied node
-   *
-   * @param \Drupal\node\NodeInterface $node
-   * @return mixed
-   */
-  public function getReachThroughEntityForNode (NodeInterface $node, $reach_though_bundle_id);
 
   /**
    * Modify the reach-through entity add or edit form to (mostly) account for
