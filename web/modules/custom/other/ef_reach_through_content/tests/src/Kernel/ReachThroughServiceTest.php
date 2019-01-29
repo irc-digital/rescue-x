@@ -103,4 +103,26 @@ class ReachThroughServiceTest extends KernelTestBase {
 
     $this->assertEquals('Test: Modified title', $stored_reach_through->getName());
   }
+
+  /**
+   * @covers ::onDelete
+   */
+  public function testDeleteFullyMappedNodeMonolingual () {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $this->addFullyMappedNodeMonolingual();
+
+    $node->delete();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $reach_through_storage */
+    $reach_through_storage = \Drupal::service('entity_type.manager')->getStorage('reach_through');
+
+    /** @var \Drupal\ef_reach_through_content\Entity\ReachThroughInterface $stored_reach_through */
+    $count = $reach_through_storage->getQuery()
+      ->condition('reach_through_ref', $node->id(), '=')
+      ->count()
+      ->execute();
+
+    $this->assertEquals(0, $count);
+
+  }
 }

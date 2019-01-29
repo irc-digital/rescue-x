@@ -73,14 +73,6 @@ interface ReachThroughServiceInterface {
    */
   public function onTranslationDelete(NodeInterface $entity);
 
-//  /**
-//   * Called when a reach through entity is about to be saved
-//   *
-//   * @param \Drupal\ef_reach_through_content\Entity\ReachThrough $reachThrough
-//   * @return mixed
-//   */
-//  public function onPresaveReachThrough (ReachThrough $reachThrough);
-
   /**
    * Returns the reach-through entity for the supplied node
    *
