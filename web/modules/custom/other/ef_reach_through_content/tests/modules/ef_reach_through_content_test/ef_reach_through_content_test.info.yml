@@ -1,0 +1,5 @@
+name: Reach-through content test
+type: module
+description: Support module for the Reach-through test suite
+core: 8.x
+package: Testing

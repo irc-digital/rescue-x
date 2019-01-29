@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_reach_through_content_test
+id: test_reach_through_type
+label: 'Test-reach through type'
