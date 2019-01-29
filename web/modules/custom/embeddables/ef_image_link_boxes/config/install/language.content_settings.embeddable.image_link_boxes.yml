@@ -14,4 +14,3 @@ id: embeddable.image_link_boxes
 target_entity_type_id: embeddable
 target_bundle: image_link_boxes
 default_langcode: site_default
-language_alterable: true

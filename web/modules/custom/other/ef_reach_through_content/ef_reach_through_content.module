@@ -53,6 +53,10 @@ function ef_reach_through_content_theme() {
   return $theme;
 }
 
+function ef_reach_through_content_entity_reference_selection_alter (&$definitions) {
+  $definitions['node_language_aware']['entity_types'][] = 'reach_through';
+}
+
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  */

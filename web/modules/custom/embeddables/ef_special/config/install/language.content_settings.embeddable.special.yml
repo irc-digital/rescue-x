@@ -14,4 +14,3 @@ id: embeddable.special
 target_entity_type_id: embeddable
 target_bundle: special
 default_langcode: site_default
-language_alterable: true

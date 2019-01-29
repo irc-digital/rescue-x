@@ -131,22 +131,24 @@ function ef_demo_add_article () {
     'status' => TRUE,
   ]);
 
-  $node->addTranslation('de', [
-    'title' => ef_demo_get_random_sentence(2, 10, false) . ' (DE)',
-    'body' => [
-      'format' => 'basic_html',
-      'value' => ef_demo_get_random_paragraphs(),
-      'summary' => ef_demo_get_random_paragraph(1,2),
-    ],
-    'field_teaser_image' => [
-      'target_id' => $teaser->id(),
-    ],
-    'field_hero_image' => [
-      'target_id' => $hero->id(),
-    ],
-    'field_slug' => ef_demo_get_random_word(),
-    'status' => TRUE,
-  ]);
+  if (rand (0, 1)) { // 50/50 chance of a german version
+    $node->addTranslation('de', [
+      'title' => ef_demo_get_random_sentence(2, 10, false) . ' (DE)',
+      'body' => [
+        'format' => 'basic_html',
+        'value' => ef_demo_get_random_paragraphs(),
+        'summary' => ef_demo_get_random_paragraph(1,2),
+      ],
+      'field_teaser_image' => [
+        'target_id' => $teaser->id(),
+      ],
+      'field_hero_image' => [
+        'target_id' => $hero->id(),
+      ],
+      'field_slug' => ef_demo_get_random_word(),
+      'status' => TRUE,
+    ]);
+  }
 
   $node->save();
 }

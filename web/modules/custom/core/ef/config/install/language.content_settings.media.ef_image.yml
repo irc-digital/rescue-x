@@ -14,4 +14,3 @@ id: media.ef_image
 target_entity_type_id: media
 target_bundle: ef_image
 default_langcode: site_default
-language_alterable: true

@@ -14,4 +14,3 @@ id: embeddable.quote
 target_entity_type_id: embeddable
 target_bundle: quote
 default_langcode: site_default
-language_alterable: true

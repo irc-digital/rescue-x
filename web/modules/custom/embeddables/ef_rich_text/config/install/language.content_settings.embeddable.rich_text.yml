@@ -14,4 +14,3 @@ id: embeddable.rich_text
 target_entity_type_id: embeddable
 target_bundle: rich_text
 default_langcode: site_default
-language_alterable: true

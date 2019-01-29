@@ -14,4 +14,3 @@ id: embeddable.pull_quote
 target_entity_type_id: embeddable
 target_bundle: pull_quote
 default_langcode: site_default
-language_alterable: true

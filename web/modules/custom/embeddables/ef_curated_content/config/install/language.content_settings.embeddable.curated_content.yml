@@ -14,4 +14,3 @@ id: embeddable.curated_content
 target_entity_type_id: embeddable
 target_bundle: curated_content
 default_langcode: site_default
-language_alterable: true

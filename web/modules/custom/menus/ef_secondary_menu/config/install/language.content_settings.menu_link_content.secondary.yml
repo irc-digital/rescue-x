@@ -14,4 +14,3 @@ id: menu_link_content.secondary
 target_entity_type_id: menu_link_content
 target_bundle: secondary
 default_langcode: site_default
-language_alterable: true

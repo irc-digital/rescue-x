@@ -14,4 +14,3 @@ id: node.topic
 target_entity_type_id: node
 target_bundle: topic
 default_langcode: site_default
-language_alterable: true

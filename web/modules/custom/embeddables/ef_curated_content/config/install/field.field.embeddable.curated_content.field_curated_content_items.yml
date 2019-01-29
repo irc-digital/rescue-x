@@ -16,7 +16,7 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:reach_through'
+  handler: 'node_language_aware'
   handler_settings:
     target_bundles:
       curated_content_wrapper: curated_content_wrapper

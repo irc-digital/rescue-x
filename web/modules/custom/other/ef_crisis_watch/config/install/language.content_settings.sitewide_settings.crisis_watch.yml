@@ -14,4 +14,3 @@ id: sitewide_settings.crisis_watch
 target_entity_type_id: sitewide_settings
 target_bundle: crisis_watch
 default_langcode: site_default
-language_alterable: true

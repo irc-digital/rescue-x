@@ -14,4 +14,3 @@ id: sitewide_settings.donation_link
 target_entity_type_id: sitewide_settings
 target_bundle: donation_link
 default_langcode: site_default
-language_alterable: true
