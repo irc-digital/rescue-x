@@ -15,7 +15,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_landing_page
+      id: pattern_hero_landing_page
       library: null
       disable_css: false
       entity_classes: no_classes
@@ -23,15 +23,15 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      hero_landing_page_headline:
+      hero_landing_page_1_headline:
         - node_title
-      hero_landing_page_slug:
+      hero_landing_page_1_slug:
         - field_slug
-      hero_landing_page_art_directed_image_alt:
+      hero_landing_page_1_art_directed_image_alt:
         - 'media_image_attributes_field:node_topic_field_hero_image_alt'
-      hero_landing_page_art_directed_image_fallback:
+      hero_landing_page_1_art_directed_image_fallback:
         - 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
-      hero_landing_page_art_directed_image_sources:
+      hero_landing_page_1_art_directed_image_sources:
         - 'media_image_attributes_field:node_topic_field_hero_image_sources'
     fields:
       'media_image_attributes_field:node_topic_field_hero_image_sources':
@@ -84,7 +84,7 @@ content:
   field_slug:
     type: string
     weight: 0
-    region: hero_landing_page_slug
+    region: hero_landing_page_1_slug
     label: hidden
     settings:
       link_to_entity: false

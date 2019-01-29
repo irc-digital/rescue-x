@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: person_english
+label: 'Person (English)'
+type: 'canonical_entities:node'
+pattern: 'person/[node:title]'
+selection_criteria:
+  2351fcfc-e459-4d56-83f6-171512a8c8ac:
+    id: node_type
+    bundles:
+      person: person
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2351fcfc-e459-4d56-83f6-171512a8c8ac
+  3037de7e-70b4-47f6-b48d-0f16bedd3acb:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 3037de7e-70b4-47f6-b48d-0f16bedd3acb
+selection_logic: and
+weight: -6
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: announcement_english
+label: 'Announcement (English)'
+type: 'canonical_entities:node'
+pattern: 'announcement/[node:title]'
+selection_criteria:
+  54f4986d-97ec-4a9c-bdb4-f00986e127da:
+    id: node_type
+    bundles:
+      announcement: announcement
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 54f4986d-97ec-4a9c-bdb4-f00986e127da
+  a39f6b8b-14bb-416c-807a-19636ece6b20:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: a39f6b8b-14bb-416c-807a-19636ece6b20
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

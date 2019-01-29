@@ -11,3 +11,4 @@ dependencies:
   - ef_ris_teasers
   - ef_ris_hero_16_9
   - ef_comms_common
+  - ef_hero_landing_page

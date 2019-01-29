@@ -1,0 +1,35 @@
+hero_landing_page:
+  label: 'Hero - landing page'
+  use: "@components/27-heroes/10-landing-page/10-landing-page-1/hero-landing-page-1.twig"
+  fields:
+    hero_landing_page_1_headline:
+      type: text
+      label: 'Headline'
+    hero_landing_page_1_slug:
+      type: text
+      label: 'Slug'
+    hero_landing_page_1_summary:
+      type: text
+      label: 'Summary'
+    hero_landing_page_1_art_directed_image_sources:
+      type: array
+      label: 'Art directed image sources'
+    hero_landing_page_1_art_directed_image_fallback:
+      type: string
+      label: 'Art directed image fallback'
+    hero_landing_page_1_art_directed_image_alt:
+      type: string
+      label: 'Art directed image alt'
+    hero_landing_page_1_social_share_sites:
+      type: array
+      label: 'Social share'
+  libraries:
+    - hero_landing_page_1_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-landing-page-1.css: {}
+    - hero_landing_page_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-landing-page.css: {}
+

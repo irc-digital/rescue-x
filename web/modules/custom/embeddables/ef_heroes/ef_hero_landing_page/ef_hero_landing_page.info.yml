@@ -1,0 +1,8 @@
+name: EF Hero (landing page)
+type: module
+description: 'Configuration for the landing page hero.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns

@@ -49,6 +49,7 @@ dependencies:
   - views
   - ds
   - ds_extras
+  - redirect
   - menu_item_extras
   - ui_patterns
   - ui_patterns_library

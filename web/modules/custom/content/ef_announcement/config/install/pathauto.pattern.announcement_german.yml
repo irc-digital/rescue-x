@@ -1,0 +1,33 @@
+uuid: 0a00306b-0c95-4a7c-956a-6144aa25a21d
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: announcement_german
+label: 'Announcement (German)'
+type: 'canonical_entities:node'
+pattern: 'announcement-de/[node:title]'
+selection_criteria:
+  384b7989-a224-41d2-b42b-efc5b96bb66e:
+    id: node_type
+    bundles:
+      announcement: announcement
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 384b7989-a224-41d2-b42b-efc5b96bb66e
+  a6b316d4-cc0d-49ec-a9c2-00e9f55b34a0:
+    id: language
+    langcodes:
+      de: de
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: a6b316d4-cc0d-49ec-a9c2-00e9f55b34a0
+selection_logic: and
+weight: -9
+relationships:
+  'node:langcode:language':
+    label: Language

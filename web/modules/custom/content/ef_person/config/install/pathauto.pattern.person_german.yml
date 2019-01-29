@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: person_german
+label: 'Person (German)'
+type: 'canonical_entities:node'
+pattern: 'person-de/[node:title]'
+selection_criteria:
+  400d9c6c-6b3e-4e0e-a415-5bc8b16e7345:
+    id: node_type
+    bundles:
+      person: person
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 400d9c6c-6b3e-4e0e-a415-5bc8b16e7345
+  4889db82-1d2d-4665-9380-63292c15be9f:
+    id: language
+    langcodes:
+      de: de
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 4889db82-1d2d-4665-9380-63292c15be9f
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language
