@@ -23,11 +23,15 @@ class LanguageAwareNodeSelection extends NodeSelection {
   protected function buildEntityQuery($match = NULL, $match_operator = 'CONTAINS') {
     $query = parent::buildEntityQuery($match, $match_operator);
 
+    $configuration = $this->getConfiguration();
+    $target_type = $configuration['target_type'];
+    $entity_type = $this->entityManager->getDefinition($target_type);
+
     $language_manager = \Drupal::languageManager();
 
     $current_language = $language_manager->getCurrentLanguage();
 
-    $query->condition('langcode', $current_language->getId(), '=');
+    $query->condition($entity_type->getKey('langcode'), $current_language->getId(), '=');
 
     return $query;
   }
