@@ -13,5 +13,5 @@ third_party_settings:
 id: embeddable.highlight
 target_entity_type_id: embeddable
 target_bundle: highlight
-default_langcode: site_default
+default_langcode: current_interface
 

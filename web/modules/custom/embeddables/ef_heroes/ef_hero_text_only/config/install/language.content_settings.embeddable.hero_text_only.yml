@@ -13,4 +13,4 @@ third_party_settings:
 id: embeddable.hero_text_only
 target_entity_type_id: embeddable
 target_bundle: hero_text_only
-default_langcode: site_default
+default_langcode: current_interface

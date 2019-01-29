@@ -13,4 +13,4 @@ third_party_settings:
 id: sitewide_settings.efficiency_graphic
 target_entity_type_id: sitewide_settings
 target_bundle: efficiency_graphic
-default_langcode: site_default
+default_langcode: current_interface

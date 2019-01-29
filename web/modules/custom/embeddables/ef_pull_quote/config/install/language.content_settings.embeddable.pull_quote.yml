@@ -13,4 +13,4 @@ third_party_settings:
 id: embeddable.pull_quote
 target_entity_type_id: embeddable
 target_bundle: pull_quote
-default_langcode: site_default
+default_langcode: current_interface

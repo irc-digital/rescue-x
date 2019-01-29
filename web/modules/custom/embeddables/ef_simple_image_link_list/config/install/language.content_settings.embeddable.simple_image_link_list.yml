@@ -13,4 +13,4 @@ third_party_settings:
 id: embeddable.simple_image_link_list
 target_entity_type_id: embeddable
 target_bundle: simple_image_link_list
-default_langcode: site_default
+default_langcode: current_interface

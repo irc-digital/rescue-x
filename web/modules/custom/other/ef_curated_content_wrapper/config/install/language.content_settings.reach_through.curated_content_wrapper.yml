@@ -15,4 +15,4 @@ _core:
 id: reach_through.curated_content_wrapper
 target_entity_type_id: reach_through
 target_bundle: curated_content_wrapper
-default_langcode: site_default
+default_langcode: current_interface

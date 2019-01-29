@@ -13,4 +13,4 @@ third_party_settings:
 id: embeddable.infographic_simple
 target_entity_type_id: embeddable
 target_bundle: infographic_simple
-default_langcode: site_default
+default_langcode: current_interface

@@ -16,4 +16,4 @@ third_party_settings:
 id: paragraph.efficiency_graphic_entry
 target_entity_type_id: paragraph
 target_bundle: efficiency_graphic_entry
-default_langcode: site_default
+default_langcode: current_interface

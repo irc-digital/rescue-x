@@ -13,5 +13,5 @@ third_party_settings:
 id: paragraph.teaser_icon_2
 target_entity_type_id: paragraph
 target_bundle: teaser_icon_2
-default_langcode: site_default
+default_langcode: current_interface
 language_alterable: false

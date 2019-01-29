@@ -13,4 +13,4 @@ third_party_settings:
 id: embeddable.call_to_action_1
 target_entity_type_id: embeddable
 target_bundle: call_to_action_1
-default_langcode: site_default
+default_langcode: current_interface
