@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_reach_through_content.reach_through_type.test_reach_through_type
+    - field.storage.reach_through.field_title
+id: reach_through.test_reach_through_type.field_title
+field_name: field_title
+entity_type: reach_through
+bundle: test_reach_through_type
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

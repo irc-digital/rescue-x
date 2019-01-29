@@ -232,7 +232,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
       $reach_through_bundle = $reach_through_type->id();
       if ($this->isFullyMapped($node_type, $reach_through_bundle)) {
         $reach_through_entity = $this->generateReachThroughEntity($reach_through_bundle, $node);
-
+        $this->setTitleOnReachThrough($reach_through_entity, $node);
         $reach_through_entity->save();
       }
     }
@@ -321,6 +321,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
         $existing_reach_through_title = $reach_through_entity->getName();
 
         if ($new_reach_through_title != $existing_reach_through_title) {
+          $this->setTitleOnReachThrough($reach_through_entity, $node);
           $reach_through_entity->save();
         }
       }
@@ -373,7 +374,7 @@ class ReachThroughService implements ReachThroughServiceInterface {
     return NULL;
   }
 
-  public function onPresaveReachThrough (ReachThrough $reachThrough) {
+  protected function setTitleOnReachThrough (ReachThrough $reachThrough, NodeInterface $wrapped_node) {
     // ensure the title of the reach through is meaningful
     $languages = [$reachThrough->language()->getId()];
 
@@ -385,9 +386,6 @@ class ReachThroughService implements ReachThroughServiceInterface {
         $languages[] = $other_language->getId();
       }
     }
-
-    /** @var NodeInterface $wrapped_node */
-    $wrapped_node = $reachThrough->reach_through_ref->entity;
 
     foreach ($languages as $language_code) {
       if ($wrapped_node->hasTranslation($language_code)) {

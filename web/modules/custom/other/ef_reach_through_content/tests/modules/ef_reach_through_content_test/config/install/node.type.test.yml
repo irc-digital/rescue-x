@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_reach_through_content_test
+third_party_settings:
+  ef_reach_through_content:
+    reach_through_details:
+      -
+        reach_through_bundle_id: test_reach_through_type
+        settings:
+          mapped_fields:
+            -
+              reach_through_bundle_field: field_title
+              node_field: title
+name: Test
+type: test
+description: 'Test node type.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

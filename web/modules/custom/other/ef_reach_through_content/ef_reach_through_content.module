@@ -87,12 +87,6 @@ function ef_reach_through_content_theme_suggestions_reach_through(array $variabl
 }
 
 /**
- * Implements hook_ENTITY_TYPE_presave().
- */
-function ef_reach_through_content_reach_through_presave(EntityInterface $entity) {
-  \Drupal::service('ef.reach_through_service')->onPresaveReachThrough($entity);
-}
-/**
  * Implements hook_entity_insert
  *
  * @param \Drupal\Core\Entity\EntityInterface $entity
