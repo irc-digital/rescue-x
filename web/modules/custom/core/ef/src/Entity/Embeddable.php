@@ -335,18 +335,7 @@ class Embeddable extends ContentEntityBase implements EmbeddableInterface {
       ->setLabel(t('Changed'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE)
-      ->setDescription(t('The time that the embeddable was last edited.'))
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'timestamp',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('view', TRUE)
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_timestamp',
-        'weight' => 10,
-      ])
-      ->setDisplayConfigurable('form', TRUE);
+      ->setDescription(t('The time that the embeddable was last edited.'));
 
     $fields['parent_type'] = BaseFieldDefinition::create('string')
       ->setRequired(FALSE)
