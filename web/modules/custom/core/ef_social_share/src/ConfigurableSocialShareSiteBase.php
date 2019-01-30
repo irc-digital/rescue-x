@@ -40,8 +40,6 @@ abstract class ConfigurableSocialShareSiteBase extends SocialShareSiteBase imple
    * @inheritdoc
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
-
     $form['icon'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Icon'),

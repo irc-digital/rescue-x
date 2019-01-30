@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @SocialShareSite(
  *   id = "facebook_social_share_site",
- *   social_share_site_label = @Translation("Facebook"),
+ *   label = @Translation("Facebook"),
  * )
  */
 class FacebookSocialShareSite extends ConfigurableSocialShareSiteBase implements ContainerFactoryPluginInterface {
