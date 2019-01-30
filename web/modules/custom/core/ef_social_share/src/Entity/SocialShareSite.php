@@ -119,19 +119,5 @@ class SocialShareSite extends ConfigEntityBase implements SocialShareSiteConfigE
   public function execute(array $entities) {
     return $this->getPlugin()->executeMultiple($entities);
   }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function sort(ConfigEntityInterface $a, ConfigEntityInterface $b) {
-    /** @var SocialShareSiteConfigEntityInterface $a */
-    /** @var SocialShareSiteConfigEntityInterface $b */
-    $a_type = $a->getType();
-    $b_type = $b->getType();
-    if ($a_type != $b_type) {
-      return strnatcasecmp($a_type, $b_type);
-    }
-    return parent::sort($a, $b);
-  }
-
+  
 }

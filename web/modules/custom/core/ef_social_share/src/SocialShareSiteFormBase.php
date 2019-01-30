@@ -130,7 +130,7 @@ abstract class SocialShareSiteFormBase extends EntityForm {
     $this->entity->save();
     $this->messenger()->addStatus($this->t('The social share site has been successfully saved.'));
 
-    $form_state->setRedirect('entity.social_share_sites.collection');
+    $form_state->setRedirect('entity.social_share_site.collection');
   }
 
   /**
