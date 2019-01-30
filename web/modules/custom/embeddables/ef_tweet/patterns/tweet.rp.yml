@@ -1,0 +1,13 @@
+tweet:
+  label: 'Tweet'
+  use: "@components/69-social/05-tweet/tweet.twig"
+  section: TRUE
+  fields:
+    tweet_tweet:
+      type: text
+      label: "Tweet content"
+  libraries:
+    - tweet_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-tweet.css: {}
