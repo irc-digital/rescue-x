@@ -1,0 +1,13 @@
+# Schema for the configuration files of the Social Share module.
+
+# social share site configuration base.
+social_share_site_configuration_default:
+  type: mapping
+  label: 'Social share site configuration'
+  mapping:
+    icon: string
+    label: 'The icon key as it is known in our icon library'
+
+social_share_site.configuration.facebook_social_share_site:
+  type: social_share_site_configuration_default
+  label: 'Facebook social share site configuration'

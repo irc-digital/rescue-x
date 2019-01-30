@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function ef_social_share_entity_type_build(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['social_share_site']
+    ->setFormClass('add', 'Drupal\ef_social_share\SocialShareSiteAddForm')
+    ->setFormClass('edit', 'Drupal\ef_social_share\SocialShareSiteEditForm')
+//    ->setFormClass('delete', 'Drupal\action\Form\ActionDeleteForm')
+    ->setListBuilderClass('Drupal\ef_social_share\SocialShareSitesListBuilder')
+//    ->setLinkTemplate('delete-form', '/admin/config/system/actions/configure/{action}/delete')
+    ->setLinkTemplate('edit-form', '/admin/config/system/social-share-sites/configure/{social_share_site}')
+    ->setLinkTemplate('collection', '/admin/config/system/social-share-sites')
+  ;
+}

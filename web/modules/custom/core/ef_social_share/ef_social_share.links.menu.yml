@@ -1,0 +1,5 @@
+social_share_site.admin:
+  title: Social share sites
+  description: 'Create social share sites that can be included in our page share social widget.'
+  route_name: entity.social_share_site.collection
+  parent: system.admin_config_system
