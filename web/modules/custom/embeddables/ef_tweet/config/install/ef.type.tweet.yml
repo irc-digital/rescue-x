@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_tweet
+id: tweet
+label: Tweet
+description: 'Use this to embed a tweet on the site.'
+exclude_from_embeddable_overview_quick_add_list: false
+dependent_embeddable: false
+only_dependent_embeddable: false

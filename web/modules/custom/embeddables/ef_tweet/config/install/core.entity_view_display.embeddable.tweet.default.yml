@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.tweet
+    - field.field.embeddable.tweet.field_tweet_tweet
+    - field.field.embeddable.tweet.field_tweet_url
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      wysiwyg: wysiwyg
+      field: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_tweet
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      tweet_tweet:
+        - field_tweet_tweet
+id: embeddable.tweet.default
+targetEntityType: embeddable
+bundle: tweet
+mode: default
+content:
+  field_tweet_tweet:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: raw_string
+    region: tweet_tweet
+hidden:
+  created: true
+  field_tweet_url: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

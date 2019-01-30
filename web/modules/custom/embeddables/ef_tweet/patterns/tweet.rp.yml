@@ -11,3 +11,5 @@ tweet:
        css:
          theme:
            dist/public/css/patterns/rplc-tweet.css: {}
+       js:
+         js/twitter.js: {}

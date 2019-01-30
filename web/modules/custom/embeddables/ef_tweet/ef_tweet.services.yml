@@ -1,0 +1,4 @@
+services:
+  ef.twitter_service:
+    class: Drupal\ef_tweet\TwitterService
+    arguments: ['@http_client']
