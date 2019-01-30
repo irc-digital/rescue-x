@@ -7,3 +7,4 @@ dependencies:
   - ef
   - ef_wysiwyg_embed
   - ef_patterns
+  - ef_twitter_base

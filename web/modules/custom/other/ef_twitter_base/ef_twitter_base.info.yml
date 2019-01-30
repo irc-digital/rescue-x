@@ -1,0 +1,5 @@
+name: EF Twitter (base)
+type: module
+description: 'Has the Javascript for the widgets.js javascript library.'
+package: EF Other
+core: 8.x
