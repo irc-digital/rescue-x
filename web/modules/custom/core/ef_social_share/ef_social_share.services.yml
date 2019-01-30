@@ -1,0 +1,4 @@
+services:
+  plugin.manager.social_share_sites:
+    class: Drupal\ef_social_share\SocialShareSitesManager
+    parent: default_plugin_manager
