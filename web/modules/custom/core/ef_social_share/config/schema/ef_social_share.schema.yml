@@ -1,13 +1,30 @@
 # Schema for the configuration files of the Social Share module.
 
+ef_social_share.social_share_site.*:
+  type: config_entity
+  label: 'Social share site'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    plugin:
+      type: string
+      label: 'Plugin'
+    configuration:
+      type: ef_social_share.configuration.[%parent.plugin]
+
 # social share site configuration base.
 social_share_site_configuration_default:
   type: mapping
   label: 'Social share site configuration'
   mapping:
-    icon: string
-    label: 'The icon key as it is known in our icon library'
-
-social_share_site.configuration.facebook_social_share_site:
+    icon:
+      type: string
+      label: 'The icon key as it is known in our icon library'
+      
+ef_social_share.configuration.facebook_social_share_site:
   type: social_share_site_configuration_default
   label: 'Facebook social share site configuration'

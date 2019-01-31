@@ -3,7 +3,6 @@
 namespace Drupal\ef_social_share\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
-use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
 use Drupal\ef_social_share\SocialShareSiteConfigEntityInterface;
 use Drupal\ef_social_share\SocialShareSitePluginCollection;
@@ -119,5 +118,5 @@ class SocialShareSite extends ConfigEntityBase implements SocialShareSiteConfigE
   public function execute(array $entities) {
     return $this->getPlugin()->executeMultiple($entities);
   }
-  
+
 }

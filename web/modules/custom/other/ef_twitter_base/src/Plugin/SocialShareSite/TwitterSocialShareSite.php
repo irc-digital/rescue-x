@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ef_social_share\Plugin\SocialShareSite;
+namespace Drupal\ef_twitter_base\Plugin\SocialShareSite;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -10,14 +10,14 @@ use Drupal\ef_social_share\SocialShareSiteBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * The Facebook social share site plugin
+ * The Twitter social share site plugin
  *
  * @SocialShareSite(
- *   id = "facebook_social_share_site",
- *   label = @Translation("Facebook"),
+ *   id = "twitter_social_share_site",
+ *   label = @Translation("Twitter"),
  * )
  */
-class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFactoryPluginInterface {
+class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFactoryPluginInterface {
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $icon_library);

@@ -99,7 +99,6 @@ abstract class SocialShareSiteFormBase extends EntityForm {
    */
   protected function actions(array $form, FormStateInterface $form_state) {
     $actions = parent::actions($form, $form_state);
-    unset($actions['delete']);
     return $actions;
   }
 

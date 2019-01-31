@@ -22,10 +22,10 @@ entity.social_share_site.edit_form:
   requirements:
     _permission: 'administer site configuration'
 
-#entity.action.delete_form:
-#  path: '/admin/config/system/actions/configure/{action}/delete'
-#  defaults:
-#    _entity_form: 'action.delete'
-#    _title: 'Delete'
-#  requirements:
-#    _permission: 'administer actions'
+entity.social_share_site.delete_form:
+  path: '/admin/config/system/social-share-site/configure/{social_share_site}/delete'
+  defaults:
+    _entity_form: 'social_share_site.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer site configuration'

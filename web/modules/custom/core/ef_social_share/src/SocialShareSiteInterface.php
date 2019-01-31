@@ -8,5 +8,6 @@ use Drupal\Core\Executable\ExecutableInterface;
 /**
  * Provides an interface for a SocialShareSite plugin.
  */
-interface SocialShareSiteInterface extends ExecutableInterface, PluginInspectionInterface {
+interface SocialShareSiteInterface extends PluginInspectionInterface {
+  public function renderSocialShareSite (array $content);
 }

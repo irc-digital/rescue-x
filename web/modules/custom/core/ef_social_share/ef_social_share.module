@@ -1,6 +1,37 @@
 <?php
 
 /**
+ * Implements hook_menu_local_actions_alter().
+ *
+ * @param $local_actions
+ */
+function ef_social_share_menu_local_actions_alter(&$local_actions) {
+  /** @var \Drupal\ef_social_share\SocialShareSitesManager $social_share_site_plugin_manager */
+  $social_share_site_plugin_manager = \Drupal::service('plugin.manager.social_share_sites');
+
+  $social_share_sites = $social_share_site_plugin_manager->getDefinitions();
+  foreach ($social_share_sites as $social_share_site_id => $social_share_site) {
+    $entryId = 'social_share_site.admin_add_' . $social_share_site_id;
+
+    if (!isset($local_actions[$entryId])) {
+      $local_actions[$entryId] = [
+        'id' => $entryId,
+        'title' => $social_share_site['label'],
+        'weight' => 0,
+        'route_name' => 'social_share_site.admin_add',
+        'route_parameters' => [
+          'social_share_site_id' => $social_share_site_id,
+        ],
+        'options' => [],
+        'appears_on' => ['entity.social_share_site.collection'],
+        'class' => 'Drupal\\Core\\Menu\\LocalActionDefault',
+        'provider' => 'ef_social_share',
+      ];
+    }
+  }
+}
+
+/**
  * Implements hook_entity_type_build().
  */
 function ef_social_share_entity_type_build(array &$entity_types) {
@@ -8,9 +39,9 @@ function ef_social_share_entity_type_build(array &$entity_types) {
   $entity_types['social_share_site']
     ->setFormClass('add', 'Drupal\ef_social_share\SocialShareSiteAddForm')
     ->setFormClass('edit', 'Drupal\ef_social_share\SocialShareSiteEditForm')
-//    ->setFormClass('delete', 'Drupal\action\Form\ActionDeleteForm')
+    ->setFormClass('delete', 'Drupal\ef_social_share\Form\SocialShareSiteDeleteForm')
     ->setListBuilderClass('Drupal\ef_social_share\SocialShareSitesListBuilder')
-//    ->setLinkTemplate('delete-form', '/admin/config/system/actions/configure/{action}/delete')
+    ->setLinkTemplate('delete-form', '/admin/config/system/social-share-sites/configure/{social_share_site}/delete')
     ->setLinkTemplate('edit-form', '/admin/config/system/social-share-sites/configure/{social_share_site}')
     ->setLinkTemplate('collection', '/admin/config/system/social-share-sites')
   ;
