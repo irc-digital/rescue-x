@@ -35,8 +35,7 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return parent::defaultConfiguration() + [
-    ];
+    return [] + parent::defaultConfiguration();
   }
 
   /**

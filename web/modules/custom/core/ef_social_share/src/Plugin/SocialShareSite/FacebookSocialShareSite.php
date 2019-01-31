@@ -35,8 +35,7 @@ class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFa
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return parent::defaultConfiguration() + [
-    ];
+    return [] + parent::defaultConfiguration();
   }
 
   /**
