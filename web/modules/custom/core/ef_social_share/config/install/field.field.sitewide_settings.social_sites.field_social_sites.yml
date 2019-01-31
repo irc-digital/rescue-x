@@ -10,8 +10,8 @@ id: sitewide_settings.social_sites.field_social_sites
 field_name: field_social_sites
 entity_type: sitewide_settings
 bundle: social_sites
-label: Sites
-description: 'The social share sites. While there is no limit to the number you can include here, you should probably keep it to four or less.'
+label: 'Social site links (menu)'
+description: 'The social share sites as used when we are just linking to the site (e.g. footer menu). While there is no limit to the number you can include here, you should probably keep it to four or less.'
 required: true
 translatable: true
 default_value: {  }

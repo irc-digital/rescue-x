@@ -6,7 +6,7 @@ dependencies:
     - ef_sitewide_settings
   enforced:
     module:
-      - ef_social_menu
+      - ef_social_share
 id: sitewide_settings.field_social_sites
 field_name: field_social_sites
 entity_type: sitewide_settings

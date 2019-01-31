@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.social_sites
+    - field.storage.sitewide_settings.field_social_sharing
+id: sitewide_settings.social_sites.field_social_sharing
+field_name: field_social_sharing
+entity_type: sitewide_settings
+bundle: social_sites
+label: 'Social sharing'
+description: 'This configuration is for social sharing (rather than just linking off to a social site, like the above). This works in conjunction with the social share site functionality, whereby you add an instance of a social share site plugin and then it is available in the list below. For example, if a typical social share widget should include Facebook then you would create a Facebook social share site configuration entity first and then add it to this list. This field is fully translatable, so if you need to be reference a different e.g. Twitter handle then you can do that - you''d create two separate instances of the Twitter plugin and then reference one from one language and one from another. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:social_share_site'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

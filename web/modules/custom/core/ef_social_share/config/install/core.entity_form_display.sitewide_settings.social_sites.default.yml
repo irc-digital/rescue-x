@@ -3,17 +3,27 @@ status: true
 dependencies:
   config:
     - ef_sitewide_settings.type.social_sites
+    - field.field.sitewide_settings.social_sites.field_social_sharing
     - field.field.sitewide_settings.social_sites.field_social_sites
     - field.field.sitewide_settings.social_sites.field_social_sites_follow_text
   module:
     - ef_icon_library
 _core:
-  default_config_hash: PNfZeYkBLXSAoyn06IodODewwOMLrOUn7LTqdjQfOtY
+  default_config_hash: Ivh5GdqT3jLJ0VOAXZwMqUoSCVudUYWPT0NHhZJPrF0
 id: sitewide_settings.social_sites.default
 targetEntityType: sitewide_settings
 bundle: social_sites
 mode: default
 content:
+  field_social_sharing:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_social_sites:
     weight: 1
     settings:
