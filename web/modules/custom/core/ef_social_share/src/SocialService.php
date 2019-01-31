@@ -85,4 +85,40 @@ class SocialService implements SocialServiceInterface {
 
     return $result;
   }
+
+  /**
+   * @inheritdoc
+   */
+  public function getSocialMenu1 () {
+    $result = [];
+
+    /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $social_sites_settings */
+    $social_sites_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('social_sites');
+
+    if ($social_sites_settings) {
+      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+
+      if ($social_sites_settings->hasTranslation($active_language)) {
+        $social_sites_settings = $social_sites_settings->getTranslation($active_language);
+        $social_sites_field = $social_sites_settings->field_social_sites;
+
+        if ($social_sites_field) {
+          foreach ($social_sites_field as $social_site) {
+            $uri = $social_site->uri;
+            $icon = $social_site->options['link_icon'];
+
+            $url = Url::fromUri($uri);
+
+            $icon_info = $this->iconLibrary->getIconInformation($icon, TRUE);
+
+            if (!is_null($icon_info)) {
+              $result[$icon_info->id] = $url->toString();
+            }
+          }
+        }
+      }
+    }
+
+    return $result;
+  }
 }

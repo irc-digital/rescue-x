@@ -12,4 +12,4 @@ dependencies:
   - ef_comms_common
   - ef_icon_library
   - ef_main_menu
-  - ef_social_menu
+  - ef_social_share

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ef_social_share\Plugin\SocialShareSite;
+namespace Drupal\ef_facebook_base\Plugin\SocialShareSite;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
