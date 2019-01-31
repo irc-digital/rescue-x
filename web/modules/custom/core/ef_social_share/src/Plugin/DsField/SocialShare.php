@@ -4,6 +4,7 @@ namespace Drupal\ef_social_share\Plugin\DsField;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ds\Plugin\DsField\DsFieldBase;
+use Drupal\ef_social_share\SocialServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -18,11 +19,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  */
 class SocialShare extends DsFieldBase {
+  /** @var \Drupal\ef_social_share\SocialServiceInterface */
+  protected $socialService;
+
   /**
    * Constructs a Display Suite field plugin.
    */
-  public function __construct($configuration, $plugin_id, $plugin_definition) {
+  public function __construct($configuration, $plugin_id, $plugin_definition, SocialServiceInterface $socialService) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->socialService = $socialService;
   }
 
   /**
@@ -32,7 +37,8 @@ class SocialShare extends DsFieldBase {
     return new static(
       $configuration,
       $plugin_id,
-      $plugin_definition
+      $plugin_definition,
+      $container->get('ef_social_service')
     );
   }
 
@@ -61,8 +67,23 @@ class SocialShare extends DsFieldBase {
    * {@inheritdoc}
    */
   public function build() {
+    /** @var \Drupal\ef_social_share\SocialShareSiteInterface[] $social_share_sites */
+    $social_share_sites = $this->socialService->getSocialShareSites();
+
+    $sites = [];
+
+    foreach ($social_share_sites as $social_share_site) {
+      $icon = $social_share_site->getIcon();
+      $sites[$icon] = '#';
+    }
+
     return [
-      '#markup' => 'Hello there',
+      '#type' => 'pattern',
+      '#id' => 'social_share',
+      '#fields' => [
+        'social_share_sites' => $sites,
+        'social_share_modifiers' => ['type-two'],
+      ],
     ];
   }
 }

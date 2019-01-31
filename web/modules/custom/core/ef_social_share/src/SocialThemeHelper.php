@@ -32,7 +32,7 @@ class SocialThemeHelper implements ContainerInjectionInterface {
   public function preprocessSocialFollow (&$variables) {
 
     $variables['social_follow'] = [
-      '#type' => "pattern",
+      '#type' => 'pattern',
       '#id' => 'social_share',
       '#fields' => [
         'social_share_sites' => $this->socialService->getSocialMenu(),
