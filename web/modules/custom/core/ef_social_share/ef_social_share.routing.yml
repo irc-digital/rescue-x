@@ -1,0 +1,31 @@
+entity.social_share_site.collection:
+  path: '/admin/config/system/social-share-sites'
+  defaults:
+    _title: 'Social share sites'
+    _entity_list: 'social_share_site'
+  requirements:
+    _permission: 'administer site configuration'
+
+social_share_site.admin_add:
+  path: '/admin/config/system/social-share-site/add/{social_share_site_id}'
+  defaults:
+    _entity_form: 'social_share_site.add'
+    _title: 'Add'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.social_share_site.edit_form:
+  path: '/admin/config/system/social-share-site/configure/{social_share_site}'
+  defaults:
+    _entity_form: 'social_share_site.edit'
+    _title: 'Edit'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.social_share_site.delete_form:
+  path: '/admin/config/system/social-share-site/configure/{social_share_site}/delete'
+  defaults:
+    _entity_form: 'social_share_site.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer site configuration'

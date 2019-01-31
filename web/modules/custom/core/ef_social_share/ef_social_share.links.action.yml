@@ -1,0 +1,5 @@
+#social_site_add.type_add:
+#  route_name: social_share_site.admin_add
+#  title: 'Add social share site'
+#  appears_on:
+#    - entity.social_share_site.collection

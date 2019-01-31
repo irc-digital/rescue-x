@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+    - ef_social_share
+  enforced:
+    module:
+      - ef_social_share
+id: sitewide_settings.field_social_sharing
+field_name: field_social_sharing
+entity_type: sitewide_settings
+type: entity_reference
+settings:
+  target_type: social_share_site
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

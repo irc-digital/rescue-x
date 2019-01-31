@@ -13,5 +13,5 @@ dependencies:
   - ef_main_menu
   - ef_utility_menu
   - ef_efficiency_graphic
-  - ef_social_menu
+  - ef_social_share
   - ef_lead_generation_form

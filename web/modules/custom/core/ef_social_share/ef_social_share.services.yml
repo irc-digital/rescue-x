@@ -2,3 +2,7 @@ services:
   plugin.manager.social_share_sites:
     class: Drupal\ef_social_share\SocialShareSitesManager
     parent: default_plugin_manager
+
+  ef_social_service:
+    class: Drupal\ef_social_share\SocialService
+    arguments: ['@ef_sitewide_settings.manager', '@ef.icon_library', '@language_manager']
