@@ -7,7 +7,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\ef_crisis_watch\CrisisWatchServiceInterface;
 use Drupal\ef_icon_library\IconLibraryInterface;
-use Drupal\ef_social_menu\SocialMenuServiceInterface;
+use Drupal\ef_social_share\SocialServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
@@ -26,11 +26,11 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
   protected $iconLibrary;
 
   /**
-   * The social menu service
+   * The social service
    *
-   * @var SocialMenuServiceInterface
+   * @var SocialServiceInterface
    */
-  protected $socialMenuService;
+  protected $socialService;
 
   /**
    * The crisis watch service
@@ -44,10 +44,10 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
    */
   protected $languageManager;
 
-  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, SocialMenuServiceInterface $socialMenuService, CrisisWatchServiceInterface $crisisWatchService, LanguageManagerInterface $languageManager) {
+  public function __construct(EntityStorageInterface $menuStorage, IconLibraryInterface $iconLibrary, SocialServiceInterface $socialService, CrisisWatchServiceInterface $crisisWatchService, LanguageManagerInterface $languageManager) {
     $this->menuStorage = $menuStorage;
     $this->iconLibrary = $iconLibrary;
-    $this->socialMenuService = $socialMenuService;
+    $this->socialService = $socialService;
     $this->crisisWatchService = $crisisWatchService;
     $this->languageManager = $languageManager;
   }
@@ -56,7 +56,7 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
     return new static(
       $container->get('entity_type.manager')->getStorage('menu_link_content'),
       $container->get('ef.icon_library'),
-      $container->get('ef_social_menu_service'),
+      $container->get('ef_social_service'),
       $container->get('ef_crisis_watch_service'),
       $container->get('language_manager')
     );
@@ -107,10 +107,10 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
   public function preprocessSecondaryMenu (&$variables) {
 
     $menu_items = $this->getSecondaryMenu();
-    $social_sites = $this->socialMenuService->getSocialSites();
+    $social_sites = $this->socialService->getSocialMenu();
 
     $variables['secondary_menu'] = [
-      '#type' => "pattern",
+      '#type' => 'pattern',
       '#id' => 'secondary_menu',
       '#fields' => [
         'secondary_menu_menu_items' => $menu_items,
@@ -126,11 +126,11 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
    */
   public function preprocessSecondaryMenuMobile (&$variables) {
     $menu_items = $this->getSecondaryMenu();
-    $social_sites = $this->socialMenuService->getSocialSites();
+    $social_sites = $this->socialService->getSocialMenu();
     $crisis_watch = $this->crisisWatchService->getCrisisWatch();
 
     $variables['secondary_menu_mobile'] = [
-      '#type' => "pattern",
+      '#type' => 'pattern',
       '#id' => 'secondary_menu_mobile',
       '#fields' => [
         'mobile_bottom_menu_crisis_watch_url' => !is_null($crisis_watch) ? $crisis_watch['title'] : NULL,

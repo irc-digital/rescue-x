@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\ef_social_menu;
+namespace Drupal\ef_social_share;
 
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
 use Drupal\ef_icon_library\IconLibraryInterface;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
 
-class SocialMenuService implements SocialMenuServiceInterface {
+class SocialService implements SocialServiceInterface {
   /** @var SitewideSettingsManagerInterface */
   protected $sitewideSettingsManager;
 
@@ -53,7 +53,7 @@ class SocialMenuService implements SocialMenuServiceInterface {
   /**
    * @inheritdoc
    */
-  public function getSocialSites () {
+  public function getSocialMenu () {
     $result = [];
 
     /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $social_sites_settings */

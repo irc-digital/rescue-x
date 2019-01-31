@@ -1,8 +1,8 @@
 <?php
 
-namespace Drupal\ef_social_menu;
+namespace Drupal\ef_social_share;
 
-interface SocialMenuServiceInterface {
+interface SocialServiceInterface {
   /**
    * Returns an ordered associative array where the key of the array is the
    * icon used for the social site and the value is the URL of the site.
@@ -12,7 +12,7 @@ interface SocialMenuServiceInterface {
    *
    * @return mixed
    */
-  public function getSocialSites ();
+  public function getSocialMenu ();
 
   /**
    * Returns the default 'follow us' type text for the social icons

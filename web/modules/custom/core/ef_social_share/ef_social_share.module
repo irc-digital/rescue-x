@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\ef_social_share\SocialThemeHelper;
+
 /**
  * Implements hook_menu_local_actions_alter().
  *
@@ -45,4 +47,24 @@ function ef_social_share_entity_type_build(array &$entity_types) {
     ->setLinkTemplate('edit-form', '/admin/config/system/social-share-sites/configure/{social_share_site}')
     ->setLinkTemplate('collection', '/admin/config/system/social-share-sites')
   ;
+}
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_social_share_theme() {
+
+  return [
+    'ef_social_follow' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+function template_preprocess_ef_social_follow (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(SocialThemeHelper::class)
+    ->preprocessSocialFollow($variables);
 }
