@@ -89,7 +89,7 @@ class SocialService implements SocialServiceInterface {
   /**
    * @inheritdoc
    */
-  public function getSocialMenu1 () {
+  public function getSocialShareSites () {
     $result = [];
 
     /** @var \Drupal\ef_sitewide_settings\SitewideSettingsInterface $social_sites_settings */
@@ -100,20 +100,17 @@ class SocialService implements SocialServiceInterface {
 
       if ($social_sites_settings->hasTranslation($active_language)) {
         $social_sites_settings = $social_sites_settings->getTranslation($active_language);
-        $social_sites_field = $social_sites_settings->field_social_sites;
+        $field_social_sharing_field = $social_sites_settings->field_social_sharing;
 
-        if ($social_sites_field) {
-          foreach ($social_sites_field as $social_site) {
-            $uri = $social_site->uri;
-            $icon = $social_site->options['link_icon'];
+        if ($field_social_sharing_field) {
+          foreach ($field_social_sharing_field as $social_sharing_site) {
+            /** @var \Drupal\ef_social_share\Entity\SocialShareSite $site_entity */
+            $site_entity = $social_sharing_site->entity;
 
-            $url = Url::fromUri($uri);
+            /** @var \Drupal\ef_social_share\SocialShareSiteInterface $site_plugin */
+            $site_plugin = $site_entity->getPlugin();
 
-            $icon_info = $this->iconLibrary->getIconInformation($icon, TRUE);
-
-            if (!is_null($icon_info)) {
-              $result[$icon_info->id] = $url->toString();
-            }
+            $result[] = $site_plugin;
           }
         }
       }

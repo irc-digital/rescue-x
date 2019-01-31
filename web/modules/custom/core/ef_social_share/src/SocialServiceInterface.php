@@ -20,4 +20,11 @@ interface SocialServiceInterface {
    * @return mixed
    */
   public function getFollowText ();
+
+  /**
+   * Returns a list of active language-based social share sites.
+   *
+   * @return An ordered array of SocialShareSiteInterface objects
+   */
+  public function getSocialShareSites ();
 }
