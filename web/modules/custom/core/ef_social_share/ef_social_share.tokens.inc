@@ -20,16 +20,16 @@ function ef_social_share_token_info() {
  * Implements hook_tokens().
  */
 function ef_social_share_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
-  $token_service = \Drupal::token();
-
   $replacements = [];
 
   if ($type == 'node' & !empty($data['node'])) {
+    /** @var \Drupal\node\NodeInterface $node */
     $node = $data['node'];
 
     foreach ($tokens as $name => $original) {
       if ($name == 'custom-social-share-title') {
-        $replacements[$original] = 'Hello world';
+        $title_replacement = token_tokens('current-page', ['title' => '[current-page:title]'], $data, $options, $bubbleable_metadata);
+        $replacements[$original] = $title_replacement['[current-page:title]'];
       }
     }
   }

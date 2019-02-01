@@ -5,5 +5,6 @@ package: EF Core
 core: 8.x
 dependencies:
   - ef
+  - token
   - ef_icon_library
   - ef_sitewide_settings

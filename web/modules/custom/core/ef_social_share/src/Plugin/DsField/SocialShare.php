@@ -74,12 +74,16 @@ class SocialShare extends DsFieldBase {
 
     $libraries = [];
 
+    $entity = $this->entity();
+
+    $context[$entity->getEntityTypeId()] = $entity;
+
     foreach ($social_share_sites as $social_share_site) {
       $sites[] = [
         'icon_name' => $social_share_site->getIcon(),
-        'url' => $social_share_site->getLink()
+        'url' => $social_share_site->getLink($context),
       ];
-      $libraries += $social_share_site->getLibraries();
+      $libraries += $social_share_site->getLibraries($context);
     }
 
     return [

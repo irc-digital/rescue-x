@@ -41,7 +41,7 @@ class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFa
   /**
    * @inheritdoc
    */
-  public function getLink(array $context = NULL) {
+  public function getLink(array $context = []) {
     return '#';
   }
 

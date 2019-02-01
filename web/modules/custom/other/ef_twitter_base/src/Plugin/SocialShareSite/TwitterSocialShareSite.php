@@ -2,6 +2,7 @@
 
 namespace Drupal\ef_twitter_base\Plugin\SocialShareSite;
 
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\ef_icon_library\IconLibraryInterface;
@@ -44,15 +45,24 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
   /**
    * @inheritdoc
    */
-  public function getLink(array $context = NULL) {
-    return '#';
+  public function getLink(array $context = []) {
+    $prefix = $this->configuration['twitter_share_prefix'];
+    $via = $this->configuration['twitter_send_via'];
+
+    $text = $prefix . ' ' . $via;
+
+    $token_service = \Drupal::token();
+
+    $text = $token_service->replace($text, $context);
+
+    return 'https://twitter.com/intent/tweet?text=' . UrlHelper::encodePath($text);
   }
 
 
   /**
    * @inheritdoc
    */
-  public function getLibraries(array $context = NULL) {
+  public function getLibraries(array $context = []) {
     return ['ef_twitter_base/twitter_widgets_js'] + parent::getLibraries($context);
   }
 

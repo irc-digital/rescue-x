@@ -15,7 +15,7 @@ interface SocialShareSiteInterface extends PluginInspectionInterface {
    * @param array $context
    * @return mixed
    */
-  public function getLink (array $context = NULL);
+  public function getLink (array $context = []);
 
-  public function getLibraries (array $context = NULL);
+  public function getLibraries (array $context = []);
 }

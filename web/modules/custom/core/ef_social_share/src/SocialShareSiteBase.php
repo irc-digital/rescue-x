@@ -81,7 +81,7 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
   /**
    * @inheritdoc
    */
-  public function getLibraries(array $context = NULL) {
+  public function getLibraries(array $context = []) {
     return [];
   }
 
