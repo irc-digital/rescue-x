@@ -31,16 +31,31 @@ class MajorlyUpdatedDate implements ContainerInjectionInterface {
    * @param $node
    */
   public function updateDate(NodeInterface $node) {
+
     if($node->major_update) {
       // editor has marked this as a major change - set the majorly_updated field
       // with the request timestamp (this will ensure it matched the changed field)
       $node->field_majorly_updated = $this->time->getRequestTime();
-    } else if (!$node->id() || is_null($node->original->field_majorly_updated->value)) {
-      // first version - because of defaulting in the timestamp area we actually
-      // want to set this to null. This makes life easier when we render
-      // on subsequent version probably the NULL will carry over, but if the admin
-      // has accidentally left the field on the form it ends up default back again
-      $node->field_majorly_updated = NULL;
+    } else {
+      $no_major_update = !$node->id();
+
+      if (!$no_major_update) {
+        // check whether this is a new language version
+        $node_lang_code = $node->language()->getId();
+
+        /** @var NodeInterface $original_node */
+        $original_node = $node->original;
+
+        // logic hears says
+        // a) if this is a new translation
+        // b) or the majorly update field has not been set
+        // then no major update
+        $no_major_update = $original_node->language()->getId() !== $node_lang_code || is_null($original_node->field_majorly_updated->value);
+      }
+
+      if ($no_major_update) {
+        $node->field_majorly_updated = NULL;
+      }
     }
   }
 
