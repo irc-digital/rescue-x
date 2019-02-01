@@ -11,5 +11,11 @@ interface SocialShareSiteInterface extends PluginInspectionInterface {
   /** Returns the icon name */
   public function getIcon();
 
-  public function renderSocialShareSite (array $content);
+  /**
+   * @param array $context
+   * @return mixed
+   */
+  public function getLink (array $context = []);
+
+  public function getLibraries (array $context = []);
 }

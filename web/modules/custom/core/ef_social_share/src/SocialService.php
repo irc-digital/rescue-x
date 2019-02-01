@@ -76,7 +76,10 @@ class SocialService implements SocialServiceInterface {
             $icon_info = $this->iconLibrary->getIconInformation($icon, TRUE);
 
             if (!is_null($icon_info)) {
-              $result[$icon_info->id] = $url->toString();
+              $result[] = [
+                'url' => $url->toString(),
+                'icon_name' => $icon_info->id,
+              ];
             }
           }
         }
