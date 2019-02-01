@@ -20,18 +20,25 @@ function ef_major_update_node_presave(NodeInterface $node) {
  */
 function ef_major_update_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Majorly updated field should always be hidden
-  if (isset($form['field_majorly_updated'])) {
+
+  /** @var NodeInterface $node */
+  $node = $form_state->getFormObject()->getEntity();
+
+  if($node->hasField('field_majorly_updated')) {
+    // just incase an admin left it being output on the form display
     $form['field_majorly_updated']['#access'] = FALSE;
 
     if ($form_state->getFormObject()->getOperation() == 'edit') {
-      $form['major_update'] = array(
+      $form['actions']['major_update'] = array(
         '#type' => 'checkbox',
         '#title' => t("Major update"),
-        '#group' => 'footer',
+        '#weight' => 10,
+        '#wrapper_attributes' => [
+          'style' => 'display: inline-block; margin-left: .5em;'
+        ],
       );
       $form['actions']['submit']['#submit'][] = "ef_major_update_submit";
     }
-
   }
 }
 
