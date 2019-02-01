@@ -29,9 +29,9 @@ function ef_major_update_form_node_form_alter(&$form, FormStateInterface $form_s
         '#title' => t("Major update"),
         '#group' => 'footer',
       );
+      $form['actions']['submit']['#submit'][] = "ef_major_update_submit";
     }
 
-    array_unshift($form['actions']['submit']['#submit'],"ef_major_update_submit");
   }
 }
 
@@ -39,7 +39,5 @@ function ef_major_update_submit (&$form, FormStateInterface $form_state) {
   $node = $form_state->getFormObject()->getEntity();
   $major_update = $form_state->getValue('major_update');
 
-  if($major_update) {
-    $node->major_update = $major_update;
-  }
+  $node->major_update = $major_update ? TRUE : FALSE;
 }
