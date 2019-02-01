@@ -1,0 +1,5 @@
+name: EF LinkedIn (base)
+type: module
+description: 'Base functionality for any LinkedIn functionality.'
+package: EF Other
+core: 8.x

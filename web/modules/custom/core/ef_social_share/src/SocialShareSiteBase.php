@@ -6,6 +6,7 @@ use Drupal\Component\Plugin\ConfigurablePluginInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Plugin\PluginFormInterface;
+use Drupal\Core\Utility\Token;
 use Drupal\ef_icon_library\IconLibraryInterface;
 
 /**
@@ -19,11 +20,17 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
   protected $iconLibrary;
 
   /**
+   * @var \Drupal\Core\Utility\Token
+   */
+  protected $tokenService;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library, Token $tokenService) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->iconLibrary = $icon_library;
+    $this->tokenService = $tokenService;
 
     $this->setConfiguration($configuration);
   }
@@ -85,6 +92,10 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
     return [];
   }
 
+  public function shouldOpenInPopup () {
+    return TRUE;
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -110,6 +121,10 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
    */
   public function calculateDependencies() {
     return [];
+  }
+
+  protected function getPageUrl ($context = []) {
+    return $this->tokenService->replace('[current-page:url]', $context);
   }
 
 }

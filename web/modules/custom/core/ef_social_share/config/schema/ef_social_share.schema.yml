@@ -24,3 +24,16 @@ social_share_site_configuration_default:
     icon:
       type: string
       label: 'The icon key as it is known in our icon library'
+
+
+# the email social site plugin config
+ef_social_share.configuration.email_social_share_site:
+  type: social_share_site_configuration_default
+  label: 'Email social share site configuration'
+  mapping:
+    email_subject:
+      type: string
+      label: 'This default subject.'
+    email_body:
+      type: string
+      label: 'The default body.'

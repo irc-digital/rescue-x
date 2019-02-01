@@ -5,6 +5,7 @@ namespace Drupal\ef_twitter_base\Plugin\SocialShareSite;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Utility\Token;
 use Drupal\ef_icon_library\IconLibraryInterface;
 use Drupal\ef_social_share\Annotation\SocialShareSite;
 use Drupal\ef_social_share\SocialShareSiteBase;
@@ -20,15 +21,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFactoryPluginInterface {
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $icon_library);
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library, Token $token_service) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $icon_library, $token_service);
   }
     /**
    * @inheritdoc
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
-      $container->get('ef.icon_library')
+      $container->get('ef.icon_library'),
+      $container->get('token')
     );
   }
 
@@ -49,12 +51,16 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
     $text = $this->configuration['twitter_share_prefix'];
     $via = $this->configuration['twitter_send_via'];
 
-    $token_service = \Drupal::token();
+    $text = $this->tokenService->replace($text, $context);
+    $url = $this->getPageUrl($context);
 
-    $text = $token_service->replace($text, $context);
-    $url = $token_service->replace('[current-page:url]', $context);
+    $args = [
+      'text' => $text,
+      'url' => $url,
+      'via' => $via,
+    ];
 
-    return sprintf('https://twitter.com/intent/tweet?text=%s&url=%s&via=%s', UrlHelper::encodePath($text),UrlHelper::encodePath($url), UrlHelper::encodePath($via));
+    return 'https://twitter.com/intent/tweet?' . http_build_query($args);
   }
 
 

@@ -82,6 +82,7 @@ class SocialShare extends DsFieldBase {
       $sites[] = [
         'icon_name' => $social_share_site->getIcon(),
         'url' => $social_share_site->getLink($context),
+        'open_in_popup' => $social_share_site->shouldOpenInPopup(),
       ];
       $libraries += $social_share_site->getLibraries($context);
     }

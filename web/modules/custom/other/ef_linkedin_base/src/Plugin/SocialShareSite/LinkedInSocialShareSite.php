@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ef_facebook_base\Plugin\SocialShareSite;
+namespace Drupal\ef_linkedin_base\Plugin\SocialShareSite;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -11,19 +11,20 @@ use Drupal\ef_social_share\SocialShareSiteBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * The Facebook social share site plugin
+ * The LinkedIn social share site plugin
  *
  * @SocialShareSite(
- *   id = "facebook_social_share_site",
- *   label = @Translation("Facebook"),
+ *   id = "linkedin_social_share_site",
+ *   label = @Translation("LinkedIn"),
  * )
  */
-class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFactoryPluginInterface {
+class LinkedInSocialShareSite extends SocialShareSiteBase implements ContainerFactoryPluginInterface {
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition, IconLibraryInterface $icon_library, Token $token_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $icon_library, $token_service);
   }
-    /**
+
+  /**
    * @inheritdoc
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -47,10 +48,10 @@ class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFa
     $url = $this->getPageUrl($context);
 
     $args = [
-      'u' => $url,
+      'url' => $url,
     ];
 
-    return "https://www.facebook.com/sharer.php?" . http_build_query($args);
+    return "https://www.linkedin.com/shareArticle?mini=true&" . http_build_query($args);
   }
 
   /**

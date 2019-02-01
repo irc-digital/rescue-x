@@ -18,4 +18,6 @@ interface SocialShareSiteInterface extends PluginInspectionInterface {
   public function getLink (array $context = []);
 
   public function getLibraries (array $context = []);
+
+  public function shouldOpenInPopup ();
 }
