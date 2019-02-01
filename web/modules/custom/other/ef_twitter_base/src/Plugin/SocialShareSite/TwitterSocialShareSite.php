@@ -44,8 +44,16 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
   /**
    * @inheritdoc
    */
-  public function renderSocialShareSite(array $context = NULL) {
-    // TODO: Implement renderSocialShareSite() method.
+  public function getLink(array $context = NULL) {
+    return '#';
+  }
+
+
+  /**
+   * @inheritdoc
+   */
+  public function getLibraries(array $context = NULL) {
+    return ['ef_twitter_base/twitter_widgets_js'] + parent::getLibraries($context);
   }
 
   /**

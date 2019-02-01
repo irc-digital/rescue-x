@@ -79,6 +79,13 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
   }
 
   /**
+   * @inheritdoc
+   */
+  public function getLibraries(array $context = NULL) {
+    return [];
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function setConfiguration(array $configuration) {
