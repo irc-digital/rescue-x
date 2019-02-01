@@ -1,7 +1,0 @@
-ef_major_update_test.field_majorly_updated:
-  type: mapping
-  label: 'Major update'
-  mapping:
-    property:
-      type: timestamp
-      label: 'Property label'
