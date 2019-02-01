@@ -5,7 +5,6 @@ namespace Drupal\Tests\ef_major_update;
 use Drupal\KernelTests\KernelTestBase;
 
 /**
- * Provide some basic tests for our FruitForm form.
  * @group ef
  */
 class MajorUpdateTest extends KernelTestBase {
