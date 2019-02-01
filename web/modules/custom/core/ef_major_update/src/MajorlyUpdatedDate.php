@@ -4,6 +4,7 @@ namespace Drupal\ef_major_update;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -39,5 +40,18 @@ class MajorlyUpdatedDate implements ContainerInjectionInterface {
       // want to set this to null. This makes life easier when we render
       $node->field_majorly_updated = NULL;
     }
+  }
+
+  /**
+   * Callback to node edit form submit
+   *
+   * @param $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  public static function formSubmit (&$form, FormStateInterface $form_state) {
+    $node = $form_state->getFormObject()->getEntity();
+    $major_update = $form_state->getValue('major_update');
+
+    $node->major_update = $major_update ? TRUE : FALSE;
   }
 }
