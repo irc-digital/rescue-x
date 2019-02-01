@@ -35,9 +35,11 @@ class MajorlyUpdatedDate implements ContainerInjectionInterface {
       // editor has marked this as a major change - set the majorly_updated field
       // with the request timestamp (this will ensure it matched the changed field)
       $node->field_majorly_updated = $this->time->getRequestTime();
-    } else if (!$node->id()) {
+    } else if (!$node->id() || is_null($node->original->field_majorly_updated->value)) {
       // first version - because of defaulting in the timestamp area we actually
       // want to set this to null. This makes life easier when we render
+      // on subsequent version probably the NULL will carry over, but if the admin
+      // has accidentally left the field on the form it ends up default back again
       $node->field_majorly_updated = NULL;
     }
   }
