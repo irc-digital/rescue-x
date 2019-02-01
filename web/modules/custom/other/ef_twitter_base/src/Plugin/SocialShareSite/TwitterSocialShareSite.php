@@ -46,17 +46,17 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
    * @inheritdoc
    */
   public function getLink(array $context = []) {
-    $prefix = $this->configuration['twitter_share_prefix'];
+    $text = $this->configuration['twitter_share_prefix'];
     $via = $this->configuration['twitter_send_via'];
-
-    $text = $prefix . ' ' . $via;
 
     $token_service = \Drupal::token();
 
     $text = $token_service->replace($text, $context);
+    $url = $token_service->replace('[current-page:url]', $context);
 
-    return 'https://twitter.com/intent/tweet?text=' . UrlHelper::encodePath($text);
+    return sprintf('https://twitter.com/intent/tweet?text=%s&url=%s&via=%s', UrlHelper::encodePath($text),UrlHelper::encodePath($url), UrlHelper::encodePath($via));
   }
+
 
 
   /**

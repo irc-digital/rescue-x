@@ -42,7 +42,8 @@ class FacebookSocialShareSite extends SocialShareSiteBase implements ContainerFa
    * @inheritdoc
    */
   public function getLink(array $context = []) {
-    return '#';
+
+    return "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.rescue.org%2Farticle%2Fmorena-baccarins-eyewitness-account-venezuelas-refugee-crisis";
   }
 
   /**
