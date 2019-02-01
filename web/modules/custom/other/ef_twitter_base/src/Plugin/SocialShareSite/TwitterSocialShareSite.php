@@ -35,7 +35,10 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return [] + parent::defaultConfiguration();
+    return [
+      'twitter_send_via' => 'via @theIRC',
+      'twitter_share_prefix' => '[node:custom-social-share-title]',
+    ] + parent::defaultConfiguration();
   }
 
   /**
@@ -51,6 +54,20 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
 
+    $form['twitter_share_prefix'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Tweet prefixed text'),
+      '#description' => $this->t('This text will appear before the URL and via.'),
+      '#default_value' => $this->configuration['twitter_share_prefix'],
+    ];
+
+    $form['twitter_send_via'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Send via'),
+      '#description' => $this->t('When sending a tweet this is the screen name of the user to attribute the Tweet to. This comes after the URL in the share.'),
+      '#default_value' => $this->configuration['twitter_send_via'],
+    ];
+
     return $form;
   }
 
@@ -58,6 +75,8 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
    * {@inheritdoc}
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    $this->configuration['twitter_send_via'] = $form_state->getValue('twitter_send_via');
+    $this->configuration['twitter_share_prefix'] = $form_state->getValue('twitter_share_prefix');
     parent::submitConfigurationForm($form, $form_state);
   }
 

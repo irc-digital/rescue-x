@@ -59,6 +59,13 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
       '#description' => $this->t('This icon for this social site, drawn from our icon library.'),
     ];
 
+    $form['token_tree'] = array(
+      '#theme' => 'token_tree_link',
+      '#token_types' => array('node'),
+      '#show_restricted' => TRUE,
+      '#weight' => 90,
+    );
+
     return $form;
   }
 
