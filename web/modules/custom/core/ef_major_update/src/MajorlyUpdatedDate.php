@@ -32,7 +32,7 @@ class MajorlyUpdatedDate implements ContainerInjectionInterface {
    */
   public function updateDate(NodeInterface $node) {
 
-    if($node->major_update) {
+    if($node->id() && $node->major_update) {
       // editor has marked this as a major change - set the majorly_updated field
       // with the request timestamp (this will ensure it matched the changed field)
       $node->field_majorly_updated = $this->time->getRequestTime();

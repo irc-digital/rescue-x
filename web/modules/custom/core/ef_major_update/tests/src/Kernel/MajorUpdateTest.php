@@ -22,16 +22,22 @@ class MajorUpdateTest extends KernelTestBase {
     $this->installEntitySchema('user');
     $this->installEntitySchema('node');
     $this->installEntitySchema('embeddable_relation');
-
   }
 
-  public function testMajorlyUpdatedFieldIsEmptyforNewNodesWithFieldOffForm() {
+
+
+  public function testMajorlyUpdatedFieldForNewNode() {
     $node = Node::create([
-      'title' => 'Sampe node',
+      'title' => 'Test node - field off form',
+      'body' => 'body text',
       'type' => 'test_field_off_form',
+      'major_update' => TRUE,
       'status' => TRUE,
     ]);
 
     $node->save();
+
+    $majorly_updated = $node->field_majorly_updated->value;
+    $this->assertNull($majorly_updated);
   }
 }
