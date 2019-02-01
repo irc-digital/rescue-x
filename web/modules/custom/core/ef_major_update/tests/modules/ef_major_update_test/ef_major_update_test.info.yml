@@ -1,0 +1,5 @@
+name: Major update test
+type: module
+description: Support module for the Major update tests.
+core: 8.x
+package: Testing

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test_field_off_form.body
+    - field.field.node.test_field_off_form.field_majorly_updated
+    - node.type.test_field_off_form
+  module:
+    - text
+    - user
+id: node.test_field_off_form.default
+targetEntityType: node
+bundle: test_field_off_form
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_majorly_updated:
+    weight: 102
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

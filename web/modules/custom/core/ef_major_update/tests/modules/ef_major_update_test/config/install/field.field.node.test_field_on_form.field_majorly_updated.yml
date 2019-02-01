@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_majorly_updated
+    - node.type.test_field_on_form
+id: node.test_field_on_form.field_majorly_updated
+field_name: field_majorly_updated
+entity_type: node
+bundle: test_field_on_form
+label: 'Major update'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1549034604
+default_value_callback: ''
+settings: {  }
+field_type: timestamp
