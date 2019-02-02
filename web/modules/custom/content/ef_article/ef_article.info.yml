@@ -15,3 +15,4 @@ dependencies:
   - ef_comms_common
   - ef_curated_content_wrapper
   - ef_social_share
+  - ef_major_update

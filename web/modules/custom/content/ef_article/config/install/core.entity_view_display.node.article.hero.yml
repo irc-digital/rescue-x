@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_hero_credit
     - field.field.node.article.field_hero_image
     - field.field.node.article.field_highlights
+    - field.field.node.article.field_majorly_updated
     - field.field.node.article.field_slug
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_teaser_image
@@ -37,7 +38,7 @@ third_party_settings:
       hero_article_published:
         - node_post_date
       hero_article_last_updated:
-        - node_changed_date
+        - field_majorly_updated
       hero_article_photographer:
         - field_hero_credit
       hero_article_art_directed_image_sources:
@@ -46,16 +47,11 @@ third_party_settings:
         - 'media_image_attributes_field:node_article_field_hero_image_fallback_uri'
       hero_article_art_directed_image_alt:
         - 'media_image_attributes_field:node_article_field_hero_image_alt'
-      hero_article_contributors:
-        - 'contributors_field:node_article_field_contributors_pattern'
       hero_article_social_share:
         - social_share
+      hero_article_contributors:
+        - 'contributors_field:node_article_field_contributors_pattern'
     fields:
-      social_share:
-        plugin_id: social_share
-        weight: 2
-        label: hidden
-        formatter: default
       'media_image_attributes_field:node_article_field_hero_image_sources':
         plugin_id: 'media_image_attributes_field:node_article_field_hero_image_sources'
         weight: 6
@@ -85,14 +81,14 @@ third_party_settings:
         formatter: default
       'contributors_field:node_article_field_contributors_pattern':
         plugin_id: 'contributors_field:node_article_field_contributors_pattern'
+        weight: 10
+        label: hidden
+        formatter: default
+      social_share:
+        plugin_id: social_share
         weight: 9
         label: hidden
         formatter: default
-      node_changed_date:
-        plugin_id: node_changed_date
-        weight: 4
-        label: hidden
-        formatter: ds_post_date_long_date_only
       node_post_date:
         plugin_id: node_post_date
         weight: 3
@@ -112,7 +108,7 @@ third_party_settings:
           settings:
             lb: ''
 _core:
-  default_config_hash: 8zySxtBIh18TBgWxAcaf3u5utqSLXQweqbZm4xbWkrY
+  default_config_hash: dUYkI5AzEC1afZwjDD7u5dQZkdoueJbMskQQLcKz4TM
 id: node.article.hero
 targetEntityType: node
 bundle: article
@@ -126,6 +122,21 @@ content:
     third_party_settings: {  }
     type: string
     region: hero_article_photographer
+  field_majorly_updated:
+    type: timestamp
+    weight: 4
+    region: hero_article_last_updated
+    label: hidden
+    settings:
+      date_format: long_date_only
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
   field_slug:
     weight: 1
     label: hidden

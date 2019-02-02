@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_majorly_updated
+    - node.type.article
+id: node.article.field_majorly_updated
+field_name: field_majorly_updated
+entity_type: node
+bundle: article
+label: 'Majorly updated'
+description: 'This field is automatically updated by the system when a major updated is set by an editor. '
+required: false
+translatable: true
+default_value: { }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp
