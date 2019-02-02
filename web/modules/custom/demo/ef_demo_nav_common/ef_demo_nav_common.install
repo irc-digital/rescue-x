@@ -12,7 +12,6 @@ function ef_demo_nav_common_install () {
 
   _ef_demo_add_main_menu();
   _ef_demo_add_crisis_watch();
-  _ef_demo_add_social_menu();
   _ef_demo_add_sitewide_donation_link();
 }
 

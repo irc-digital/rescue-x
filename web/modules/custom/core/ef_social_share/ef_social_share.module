@@ -43,9 +43,9 @@ function ef_social_share_entity_type_build(array &$entity_types) {
     ->setFormClass('edit', 'Drupal\ef_social_share\SocialShareSiteEditForm')
     ->setFormClass('delete', 'Drupal\ef_social_share\Form\SocialShareSiteDeleteForm')
     ->setListBuilderClass('Drupal\ef_social_share\SocialShareSitesListBuilder')
-    ->setLinkTemplate('delete-form', '/admin/config/system/social-share-sites/configure/{social_share_site}/delete')
-    ->setLinkTemplate('edit-form', '/admin/config/system/social-share-sites/configure/{social_share_site}')
-    ->setLinkTemplate('collection', '/admin/config/system/social-share-sites')
+    ->setLinkTemplate('delete-form', '/admin/config/services/social-share-sites/configure/{social_share_site}/delete')
+    ->setLinkTemplate('edit-form', '/admin/config/services/social-share-sites/configure/{social_share_site}')
+    ->setLinkTemplate('collection', '/admin/config/services/social-share-sites')
   ;
 }
 

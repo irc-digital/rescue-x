@@ -4,6 +4,9 @@ use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
 use Drupal\ef_social_share\Entity\SocialShareSite;
 
 function ef_demo_install () {
+  // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+
   _ef_demo_add_social_config();
 }
 
@@ -21,15 +24,12 @@ function _ef_demo_add_social_config () {
     ];
   }
 
-  $social_share_site_entities = SocialShareSite::loadMultiple();
-  $social_sharing = [];
-
-  /** @var SocialShareSite $entity */
-  foreach ($social_share_site_entities as $entity) {
-    $social_sharing[] = [
-      'target_id' => $entity->id(),
-    ];
-  }
+  $social_sharing = [
+    ['target_id' => 'twitter'],
+    ['target_id' => 'facebook'],
+    ['target_id' => 'linkedin'],
+    ['target_id' => 'email'],
+  ];
 
   /** @var SitewideSettings $testSettings */
   $settings = SitewideSettings::create([
