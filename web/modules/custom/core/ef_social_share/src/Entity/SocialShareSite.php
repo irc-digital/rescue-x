@@ -20,10 +20,23 @@ use Drupal\ef_social_share\SocialShareSitePluginCollection;
  *     singular = "@count social share site",
  *     plural = "@count social share sites",
  *   ),
+ *   handlers = {
+ *     "list_builder" = "Drupal\ef_social_share\SocialShareSitesListBuilder",
+ *     "form" = {
+ *       "add" = "Drupal\ef_social_share\SocialShareSiteAddForm",
+ *       "edit" = "Drupal\ef_social_share\SocialShareSiteEditForm",
+ *       "delete" = "Drupal\ef_social_share\Form\SocialShareSiteDeleteForm",
+ *     },
+ *   },
  *   admin_permission = "administer site configuration",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "label"
+ *   },
+ *   links = {
+ *     "edit-form" = "/admin/config/services/social-share-sites/configure/{social_share_site}",
+ *     "delete-form" = "/admin/config/services/social-share-sites/configure/{social_share_site}/delete",
+ *     "collection" = "/admin/config/services/social-share-sites",
  *   },
  *   config_export = {
  *     "id",
