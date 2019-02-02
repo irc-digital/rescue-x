@@ -50,39 +50,6 @@ function _ef_demo_add_main_menu () {
   _ef_demo_add_main_menu_items('main_de', 'de', _ef_demo_get_main_menu_de());
 }
 
-function _ef_demo_add_social_menu () {
-
-  $social_sites = [];
-
-  foreach (['twitter', 'facebook','instagram','youtube'] as $site) {
-    $social_sites[] = [
-      'uri' => 'https://bbc.co.uk/news',
-      'title' => $site,
-      'options' => [
-        'link_icon' => 'themes/x/rpl/svg/individuals/symbol-' . $site . '.svg',
-      ],
-    ];
-  }
-
-  /** @var SitewideSettings $testSettings */
-  $settings = SitewideSettings::create([
-    'type' => 'social_sites',
-    'field_social_sites' => $social_sites,
-    'field_social_sites_follow_text' => 'Follow us',
-  ]);
-
-  $social_sites = array_splice($social_sites,0,2);
-
-  // just include the first two social sites on DE, to demonstrate that
-  $settings->addTranslation('de', [
-    'field_social_sites' => $social_sites,
-    'field_social_sites_follow_text' => 'Follow us (DE)',
-  ]);
-
-  $settings->save();
-
-}
-
 function _ef_demo_add_crisis_watch () {
   $announcement = Node::create([
     'title' => 'Test announcement',
@@ -419,7 +386,6 @@ function _ef_demo_add_main_menu_items ($menu_name, $lang, $menu, $parent = NULL)
 
 function ef_demo_nav_common_uninstall () {
   ef_delete_all ('sitewide_settings', 'crisis_watch');
-  ef_delete_all ('sitewide_settings', 'social_sites');
   ef_delete_all ('sitewide_settings', 'main_menu');
   ef_delete_all ('node', 'announcement');
 

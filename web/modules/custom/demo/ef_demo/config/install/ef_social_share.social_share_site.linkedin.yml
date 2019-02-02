@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_demo
+  module:
+    - ef_linkedin_base
+id: linkedin
+label: LinkedIn
+plugin: linkedin_social_share_site
+configuration:
+  icon: themes/x/rpl/svg/individuals/symbol-linked-in.svg

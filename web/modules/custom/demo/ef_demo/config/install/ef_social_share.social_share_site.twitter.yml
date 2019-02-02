@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_demo
+  module:
+    - ef_twitter_base
+id: twitter
+label: Twitter
+plugin: twitter_social_share_site
+configuration:
+  twitter_send_via: theIRC
+  twitter_share_prefix: '[node:custom-social-share-title]'
+  icon: themes/x/rpl/svg/individuals/symbol-twitter.svg

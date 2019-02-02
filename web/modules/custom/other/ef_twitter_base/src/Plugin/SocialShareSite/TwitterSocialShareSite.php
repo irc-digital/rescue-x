@@ -39,7 +39,7 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
    */
   public function defaultConfiguration() {
     return [
-      'twitter_send_via' => 'via @theIRC',
+      'twitter_send_via' => 'theIRC',
       'twitter_share_prefix' => '[node:custom-social-share-title]',
     ] + parent::defaultConfiguration();
   }
@@ -61,15 +61,6 @@ class TwitterSocialShareSite extends SocialShareSiteBase implements ContainerFac
     ];
 
     return 'https://twitter.com/intent/tweet?' . http_build_query($args);
-  }
-
-
-
-  /**
-   * @inheritdoc
-   */
-  public function getLibraries(array $context = []) {
-    return ['ef_twitter_base/twitter_widgets_js'] + parent::getLibraries($context);
   }
 
   /**

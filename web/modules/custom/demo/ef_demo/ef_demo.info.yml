@@ -5,3 +5,8 @@ package: EF Demo
 core: 8.x
 dependencies:
   - ef
+  - ef_social_share
+  - ef_twitter_base
+  - ef_linkedin_base
+  - ef_facebook_base
+  - ef_comms_common

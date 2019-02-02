@@ -1,1 +1,57 @@
 <?php
+
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+use Drupal\ef_social_share\Entity\SocialShareSite;
+
+function ef_demo_install () {
+  _ef_demo_add_social_config();
+}
+
+function _ef_demo_add_social_config () {
+
+  $social_sites = [];
+
+  foreach (['twitter', 'facebook','instagram','youtube'] as $site) {
+    $social_sites[] = [
+      'uri' => 'https://bbc.co.uk/news',
+      'title' => $site,
+      'options' => [
+        'link_icon' => 'themes/x/rpl/svg/individuals/symbol-' . $site . '.svg',
+      ],
+    ];
+  }
+
+  $social_share_site_entities = SocialShareSite::loadMultiple();
+  $social_sharing = [];
+
+  /** @var SocialShareSite $entity */
+  foreach ($social_share_site_entities as $entity) {
+    $social_sharing[] = [
+      'target_id' => $entity->id(),
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'social_sites',
+    'langcode' => 'en',
+    'field_social_sites' => $social_sites,
+    'field_social_sharing' => $social_sharing,
+    'field_social_sites_follow_text' => 'Follow us',
+  ]);
+
+  $social_sites = array_splice($social_sites,0,2);
+
+  // just include the first two social sites on DE, to demonstrate that
+  $settings->addTranslation('de', [
+    'field_social_sites' => $social_sites,
+    'field_social_sharing' => $social_sharing,
+    'field_social_sites_follow_text' => 'Follow us (DE)',
+  ]);
+
+  $settings->save();
+}
+
+function ef_demo_uninstall () {
+  ef_delete_all ('sitewide_settings', 'social_sites');
+}

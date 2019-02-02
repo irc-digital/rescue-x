@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_demo
+id: email
+label: Email
+plugin: email_social_share_site
+configuration:
+  email_subject: '[node:custom-social-share-title]'
+  email_body: Hello
+  icon: themes/x/rpl/svg/individuals/symbol-mail.svg
