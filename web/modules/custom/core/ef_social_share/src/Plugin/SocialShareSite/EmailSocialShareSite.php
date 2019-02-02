@@ -54,11 +54,7 @@ class EmailSocialShareSite extends SocialShareSiteBase implements ContainerFacto
     $subject = $this->tokenService->replace($subject, $context);
     $body = $this->tokenService->replace($body, $context);
 
-    $args = [
-      'subject' => $subject,
-    ];
-
-    return "mailto:?" . http_build_query($args) . '&body=' . rawurlencode($body);
+    return "mailto:?subject=" . rawurlencode($subject) . '&body=' . rawurlencode($body);
   }
 
   public function shouldOpenInPopup () {
