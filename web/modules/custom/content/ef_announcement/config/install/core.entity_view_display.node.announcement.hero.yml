@@ -23,10 +23,17 @@ third_party_settings:
         - node_title
       hero_article_published:
         - node_post_date
+      hero_article_social_share:
+        - social_share
     fields:
+      social_share:
+        plugin_id: social_share
+        weight: 2
+        label: hidden
+        formatter: default
       node_post_date:
         plugin_id: node_post_date
-        weight: 0
+        weight: 1
         label: hidden
         formatter: ds_post_date_long_date_only
       node_title:
@@ -43,7 +50,7 @@ third_party_settings:
           settings:
             lb: ''
 _core:
-  default_config_hash: Q-_VysOtMRsHbDVG3lzH-uAYqC7vpI93JYcJN96P7TA
+  default_config_hash: E57Nj_I9P8UAahraEQTbobGGkhFgExDgfyS-aOSgLPQ
 id: node.announcement.hero
 targetEntityType: node
 bundle: announcement

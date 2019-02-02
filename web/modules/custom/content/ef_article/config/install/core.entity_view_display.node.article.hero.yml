@@ -48,7 +48,14 @@ third_party_settings:
         - 'media_image_attributes_field:node_article_field_hero_image_alt'
       hero_article_contributors:
         - 'contributors_field:node_article_field_contributors_pattern'
+      hero_article_social_share:
+        - social_share
     fields:
+      social_share:
+        plugin_id: social_share
+        weight: 2
+        label: hidden
+        formatter: default
       'media_image_attributes_field:node_article_field_hero_image_sources':
         plugin_id: 'media_image_attributes_field:node_article_field_hero_image_sources'
         weight: 6
@@ -105,7 +112,7 @@ third_party_settings:
           settings:
             lb: ''
 _core:
-  default_config_hash: ncQnyRUT4z2GzIeh4fMMomFU5chDC8wloz5xW1G4tKY
+  default_config_hash: 8zySxtBIh18TBgWxAcaf3u5utqSLXQweqbZm4xbWkrY
 id: node.article.hero
 targetEntityType: node
 bundle: article

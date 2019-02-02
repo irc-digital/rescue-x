@@ -9,3 +9,4 @@ dependencies:
   - ef_modifiers
   - ef_is_square
   - ef_comms_common
+  - ef_social_share

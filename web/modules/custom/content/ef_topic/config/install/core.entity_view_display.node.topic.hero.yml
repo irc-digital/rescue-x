@@ -27,16 +27,18 @@ third_party_settings:
         - node_title
       hero_landing_page_1_slug:
         - field_slug
-      hero_landing_page_1_art_directed_image_alt:
-        - 'media_image_attributes_field:node_topic_field_hero_image_alt'
-      hero_landing_page_1_art_directed_image_fallback:
-        - 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
       hero_landing_page_1_art_directed_image_sources:
         - 'media_image_attributes_field:node_topic_field_hero_image_sources'
+      hero_landing_page_1_art_directed_image_fallback:
+        - 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
+      hero_landing_page_1_art_directed_image_alt:
+        - 'media_image_attributes_field:node_topic_field_hero_image_alt'
+      hero_landing_page_1_social_share_sites:
+        - social_share
     fields:
       'media_image_attributes_field:node_topic_field_hero_image_sources':
         plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_sources'
-        weight: 0
+        weight: 2
         label: hidden
         formatter: default
         settings:
@@ -47,7 +49,7 @@ third_party_settings:
             lb: ''
       'media_image_attributes_field:node_topic_field_hero_image_fallback_uri':
         plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_fallback_uri'
-        weight: 0
+        weight: 3
         label: hidden
         formatter: default
         settings:
@@ -58,7 +60,12 @@ third_party_settings:
             lb: ''
       'media_image_attributes_field:node_topic_field_hero_image_alt':
         plugin_id: 'media_image_attributes_field:node_topic_field_hero_image_alt'
-        weight: 0
+        weight: 4
+        label: hidden
+        formatter: default
+      social_share:
+        plugin_id: social_share
+        weight: 5
         label: hidden
         formatter: default
       node_title:
@@ -75,7 +82,7 @@ third_party_settings:
           settings:
             lb: ''
 _core:
-  default_config_hash: GlwjSbxWK4qERne2f1zYgQTVJ4Vlqu31JBUzHqXubA8
+  default_config_hash: 8wH5ZusmyGgjTb76TuacIkMGgtW6cs7KLMo-k9va95E
 id: node.topic.hero
 targetEntityType: node
 bundle: topic
@@ -83,7 +90,7 @@ mode: hero
 content:
   field_slug:
     type: string
-    weight: 0
+    weight: 1
     region: hero_landing_page_1_slug
     label: hidden
     settings:

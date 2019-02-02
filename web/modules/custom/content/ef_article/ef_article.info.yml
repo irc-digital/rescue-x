@@ -14,3 +14,4 @@ dependencies:
   - ef_hero_article
   - ef_comms_common
   - ef_curated_content_wrapper
+  - ef_social_share
