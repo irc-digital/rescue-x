@@ -420,6 +420,7 @@ function ef_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state,
           '#rows'=> $rows,
           '#weight' => 100,
           '#prefix' => '<h4 class="label">' . t('Used on') . '</h4>',
+          '#suffix' => t('Note: The embeddable could be present on a translated version of the pages displayed above - if you cannot find it immediately, please check different translations.'),
         ];
         return;
       }

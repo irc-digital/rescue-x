@@ -5,6 +5,7 @@ namespace Drupal\ef;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\ef\Entity\EmbeddableRelation;
 use Drupal\ef\Plugin\EmbeddableUsagePluginManager;
 
@@ -22,9 +23,13 @@ class EmbeddableUsageService implements EmbeddableUsageServiceInterface {
   /** @var EmbeddableUsagePluginManager */
   protected $embeddableUsagePluginManager;
 
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, EmbeddableUsagePluginManager $embeddableUsagePluginManager) {
+  /** @var LanguageManagerInterface */
+  protected $languageManager;
+
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, EmbeddableUsagePluginManager $embeddableUsagePluginManager, LanguageManagerInterface $languageManager) {
     $this->entityTypeManager = $entityTypeManager;
     $this->embeddableUsagePluginManager = $embeddableUsagePluginManager;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -68,7 +73,10 @@ class EmbeddableUsageService implements EmbeddableUsageServiceInterface {
    * @inheritdoc
    */
   public function getEmbeddableUsage($embeddable_id) {
-    $relation_ids = \Drupal::entityQuery('embeddable_relation')->condition('embeddable_id', $embeddable_id, '=')->execute();
+
+    $relation_ids = $this->entityTypeManager->getStorage('embeddable_relation')->getQuery()
+      ->condition('embeddable_id', $embeddable_id, '=')
+      ->execute();
 
     /** @var EmbeddableRelation[] $relations */
     $relations = EmbeddableRelation::loadMultiple($relation_ids);
@@ -78,13 +86,19 @@ class EmbeddableUsageService implements EmbeddableUsageServiceInterface {
 
     $usages = [];
 
+    $current_language_code = $this->languageManager->getCurrentLanguage()->getId();
+
     foreach ($relations as $relation) {
       $referring_id = $relation->getReferringEntityId();
       $referring_type = $relation->getReferringEntityType();
       $field_name = $relation->getReferringEntityFieldName();
 
-      /** @var EntityInterface $referring_entity */
+      /** @var ContentEntityInterface $referring_entity */
       $referring_entity = $entityTypeManager->getStorage($referring_type)->load($referring_id);
+
+      if ($referring_entity->hasTranslation($current_language_code)) {
+        $referring_entity = $referring_entity->getTranslation($current_language_code);
+      }
 
       $field_label = $referring_entity->{$field_name}->getFieldDefinition()->getLabel();
 

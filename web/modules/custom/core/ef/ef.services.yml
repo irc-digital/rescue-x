@@ -30,7 +30,7 @@ services:
 
   ef.embeddable_usage:
     class: Drupal\ef\EmbeddableUsageService
-    arguments: ['@entity_type.manager', '@plugin.manager.embeddable_usage_plugin_manager']
+    arguments: ['@entity_type.manager', '@plugin.manager.embeddable_usage_plugin_manager', '@language_manager']
 
   ef.dependent_embeddable:
     class: Drupal\ef\DependentEmbeddableService
