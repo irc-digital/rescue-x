@@ -3,8 +3,8 @@
 namespace Drupal\ef_wysiwyg_embed\Plugin\EmbeddableUsage;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\PluginBase;
@@ -47,7 +47,7 @@ class WysiwygUsage extends PluginBase implements EmbeddableUsageInterface, Conta
   /**
    * @inheritdoc
    */
-  public function getUsedEmbeddableEntities(EntityInterface $entity) {
+  public function getUsedEmbeddableEntities(ContentEntityInterface $entity) {
     /** @var \Drupal\Core\Field\FieldDefinitionInterface[] $field_definitions */
     $result = [];
 

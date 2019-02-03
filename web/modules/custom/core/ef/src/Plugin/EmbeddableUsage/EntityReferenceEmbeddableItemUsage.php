@@ -2,6 +2,7 @@
 
 namespace Drupal\ef\Plugin\EmbeddableUsage;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -43,7 +44,7 @@ class EntityReferenceEmbeddableItemUsage extends PluginBase implements Embeddabl
   /**
    * @inheritdoc
    */
-  public function getUsedEmbeddableEntities(EntityInterface $entity) {
+  public function getUsedEmbeddableEntities(ContentEntityInterface $entity) {
     $result = [];
 
     $entity_type_id = $entity->getEntityTypeId();
@@ -54,10 +55,21 @@ class EntityReferenceEmbeddableItemUsage extends PluginBase implements Embeddabl
 
     foreach ($embeddable_reference_fields as $embeddable_reference_field) {
       $field_name = $embeddable_reference_field->getName();
-      $references = $entity->get($field_name);
-      /** @var \Drupal\ef\EmbeddableInterface $embeddable_reference */
-      foreach($references->referencedEntities() as $embeddable_reference) {
-        $result[$field_name][] = $embeddable_reference->id();
+
+      $entity_languages = $entity->getTranslationLanguages();
+
+      foreach ($entity_languages as $language) {
+        $entity = $entity->getTranslation($language->getId());
+
+        /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $references */
+        $references = $entity->get($field_name);
+
+        /** @var \Drupal\ef\EmbeddableInterface $embeddable_reference */
+        foreach($references->referencedEntities() as $embeddable_reference) {
+          if (!isset($result[$field_name]) || !in_array($embeddable_reference->id(), $result[$field_name])) {
+            $result[$field_name][] = $embeddable_reference->id();
+          }
+        }
       }
 
     }

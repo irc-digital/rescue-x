@@ -27,45 +27,10 @@ class EmbeddableUsageTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['system', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
+    $this->installConfig(['system', 'field', 'filter', 'language', 'text', 'node', 'ef', 'ef_test']);
     $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
-
-    $this->languageManager = $this->createMock('\Drupal\Core\Language\LanguageManagerInterface');
-
-    $english = $this->createMock('\Drupal\Core\Language\LanguageInterface');
-    $english->expects($this->any())
-      ->method('getId')
-      ->willReturn('en');
-
-    $german = $this->createMock('\Drupal\Core\Language\LanguageInterface');
-    $german->expects($this->any())
-      ->method('getId')
-      ->willReturn('de');
-
-    $this->languageManager = $this->createMock('\Drupal\Core\Language\LanguageManagerInterface');
-//
-//    $this->languageManager->expects($this->any())
-//      ->method('getCurrentLanguage')
-//      ->will($this->onConsecutiveCalls($english, $english, $german, $german));
-
-    $this->languageManager->expects($this->any())
-      ->method('getLanguages')
-      ->willReturn(['en' => $english, 'de' => $german]);
-
-    $this->languageManager->expects($this->any())
-      ->method('getDefaultLanguage')
-      ->will($this->returnValue($english));
-
-    $map = [
-      ['en', $english],
-      ['de', $german]
-    ];
-
-    $this->languageManager->method('getLanguage')
-      ->will($this->returnValueMap($map));
-
   }
 
   /**
@@ -379,11 +344,58 @@ class EmbeddableUsageTest extends KernelTestBase {
       ->condition('embeddable_id', $reference_1->id(), '=')
       ->execute();
 
+    $this->assertCount(1, $existing_relation_ids);
+
+    // add German translations of both the referer and the test
+    $reference_1->addTranslation('de', [
+      'title' => 'Test 1 (DE)',
+    ]);
+
+    $reference_1->save();
+
+    $referer->addTranslation('de', [
+      'title' => 'Test referer (DE)',
+      'field_embeddable_reference' => [
+        'target_id' => $reference_1->id()
+      ],
+    ]);
+
+    $referer->save();
+
+    // check we still have one reference
+    $existing_relation_ids = $relation_storage->getQuery()
+      ->condition('referring_field_name', 'field_embeddable_reference', '=')
+      ->condition('embeddable_id', $reference_1->id(), '=')
+      ->execute();
+
+    $this->assertCount(1, $existing_relation_ids);
+
+
+    // clear the original reference - the German side should still keep the
+    // relationship alive
+    $referer->field_embeddable_reference = NULL;
+    $referer->save();
+
+    $existing_relation_ids = $relation_storage->getQuery()
+      ->condition('referring_field_name', 'field_embeddable_reference', '=')
+      ->condition('embeddable_id', $reference_1->id(), '=')
+      ->execute();
+
+    $this->assertCount(1, $existing_relation_ids);
+
+    // clear german side and make sure our references go to zero
+    $german_referer = $referer->getTranslation('de');
+    $german_referer->field_embeddable_reference = NULL;
+    $german_referer->save();
+
+    $existing_relation_ids = $relation_storage->getQuery()
+      ->condition('referring_field_name', 'field_embeddable_reference', '=')
+      ->condition('embeddable_id', $reference_1->id(), '=')
+      ->execute();
+
     $relations = EmbeddableRelation::loadMultiple($existing_relation_ids);
 
-    $this->assertCount(1, $relations);
-
-
+    $this->assertCount(0, $relations);
   }
 }
 

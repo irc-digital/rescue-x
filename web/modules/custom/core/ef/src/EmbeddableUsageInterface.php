@@ -4,7 +4,7 @@
 namespace Drupal\ef;
 
 
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
 
 interface EmbeddableUsageInterface {
   /**
@@ -17,5 +17,5 @@ interface EmbeddableUsageInterface {
    * @param \Drupal\Core\Entity\EntityInterface $entity
    * @return array
    */
-  public function getUsedEmbeddableEntities (EntityInterface $entity);
+  public function getUsedEmbeddableEntities (ContentEntityInterface $entity);
 }

@@ -2,6 +2,7 @@
 
 namespace Drupal\ef_test\Plugin\EmbeddableUsage;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\ef\EmbeddableUsageInterface;
 use Drupal\ef\Entity\Embeddable;
@@ -28,7 +29,7 @@ class TestEmbeddableUsage implements EmbeddableUsageInterface {
   /**
    * @inheritdoc
    */
-  public function getUsedEmbeddableEntities(EntityInterface $entity) {
+  public function getUsedEmbeddableEntities(ContentEntityInterface $entity) {
     if ($entity->getEntityTypeId() == 'embeddable' && $entity->bundle() == 'referer') {
 
       if (is_null(self::$testEmbeddable1)) {

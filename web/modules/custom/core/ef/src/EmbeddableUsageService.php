@@ -109,6 +109,10 @@ class EmbeddableUsageService implements EmbeddableUsageServiceInterface {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   protected function onChange (ContentEntityInterface $entity, $delete = FALSE) {
+    if ($entity->getEntityTypeId() == 'embeddable_relation') {
+      return;
+    }
+
     $this->removeCurrentRelations($entity);
 
     if (!$delete) {
@@ -147,7 +151,7 @@ class EmbeddableUsageService implements EmbeddableUsageServiceInterface {
    * @throws \Drupal\Component\Plugin\Exception\PluginException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function addNewRelations (EntityInterface $entity) {
+  protected function addNewRelations (ContentEntityInterface $entity) {
     $usages = [];
     $plugin_definitions = $this->embeddableUsagePluginManager->getDefinitions();
 
