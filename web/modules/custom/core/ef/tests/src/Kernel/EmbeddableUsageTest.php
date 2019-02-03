@@ -17,6 +17,13 @@ use Drupal\KernelTests\KernelTestBase;
 class EmbeddableUsageTest extends KernelTestBase {
   public static $modules = ['system', 'field', 'image', 'media', 'file', 'text', 'language', 'content_translation', 'user', 'filter', 'crop', 'image_widget_crop', 'node', 'ds', 'paragraphs', 'ef', 'ef_test'];
 
+  /**
+   * The mocked language manager.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface|\PHPUnit_Framework_MockObject_MockObject
+   */
+  protected $languageManager;
+
   public function setUp() {
     parent::setUp();
 
@@ -24,6 +31,41 @@ class EmbeddableUsageTest extends KernelTestBase {
     $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
+
+    $this->languageManager = $this->createMock('\Drupal\Core\Language\LanguageManagerInterface');
+
+    $english = $this->createMock('\Drupal\Core\Language\LanguageInterface');
+    $english->expects($this->any())
+      ->method('getId')
+      ->willReturn('en');
+
+    $german = $this->createMock('\Drupal\Core\Language\LanguageInterface');
+    $german->expects($this->any())
+      ->method('getId')
+      ->willReturn('de');
+
+    $this->languageManager = $this->createMock('\Drupal\Core\Language\LanguageManagerInterface');
+//
+//    $this->languageManager->expects($this->any())
+//      ->method('getCurrentLanguage')
+//      ->will($this->onConsecutiveCalls($english, $english, $german, $german));
+
+    $this->languageManager->expects($this->any())
+      ->method('getLanguages')
+      ->willReturn(['en' => $english, 'de' => $german]);
+
+    $this->languageManager->expects($this->any())
+      ->method('getDefaultLanguage')
+      ->will($this->returnValue($english));
+
+    $map = [
+      ['en', $english],
+      ['de', $german]
+    ];
+
+    $this->languageManager->method('getLanguage')
+      ->will($this->returnValueMap($map));
+
   }
 
   /**
@@ -246,6 +288,102 @@ class EmbeddableUsageTest extends KernelTestBase {
     $relations = EmbeddableRelation::loadMultiple($existing_relation_ids);
 
     $this->assertCount(0, $relations);
+  }
+
+  /**
+   * Flow: create an embeddable add it to the refer single value field in non-default language
+   *
+   * @covers \Drupal\ef\Plugin\EmbeddableUsage\EntityReferenceEmbeddableItemUsage::getUsedEmbeddableEntities
+   * @covers ::onInsert
+   * @covers ::addNewRelations
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+
+  public function testUsageMultilingualSimple () {
+    $reference_1 = Embeddable::create([
+      'type' => 'test',
+      'langcode' => 'de',
+      'title' => 'Test 1',
+    ]);
+    $reference_1->save();
+
+    $referer = Embeddable::create([
+      'type' => 'referer',
+      'title' => 'Test referer',
+      'langcode' => 'de',
+      'field_embeddable_reference' => [
+        'target_id' => $reference_1->id()
+      ],
+    ]);
+
+    $referer->save();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $relation_storage */
+    $relation_storage = \Drupal::service('entity_type.manager')->getStorage('embeddable_relation');
+
+    $existing_relation_ids = $relation_storage->getQuery()
+      ->condition('referring_field_name', 'field_embeddable_reference', '=')
+      ->condition('embeddable_id', $reference_1->id(), '=')
+      ->execute();
+
+    $relations = EmbeddableRelation::loadMultiple($existing_relation_ids);
+
+    $this->assertCount(1, $relations);
+
+
+  }
+
+
+  /**
+   * Flow: create an embeddable add it to the refer single value field. Translate
+   * the embeddable and make sure only a single reference remains. Remove the reference
+   * from the 'master' and make sure it we still include a reference via the
+   * translation
+   *
+   * @covers \Drupal\ef\Plugin\EmbeddableUsage\EntityReferenceEmbeddableItemUsage::getUsedEmbeddableEntities
+   * @covers ::onInsert
+   * @covers ::onChange
+   * @covers ::onDelete
+   * @covers ::onUpdate
+   * @covers ::removeCurrentRelations
+   * @covers ::addNewRelations
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+
+  public function testUsageMultilingualRemoveReferenceOnDefaultTranslation () {
+    $reference_1 = Embeddable::create([
+      'type' => 'test',
+      'langcode' => 'en',
+      'title' => 'Test 1',
+    ]);
+    $reference_1->save();
+
+    $referer = Embeddable::create([
+      'type' => 'referer',
+      'title' => 'Test referer',
+      'langcode' => 'en',
+      'field_embeddable_reference' => [
+        'target_id' => $reference_1->id()
+      ],
+    ]);
+
+    $referer->save();
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $relation_storage */
+    $relation_storage = \Drupal::service('entity_type.manager')->getStorage('embeddable_relation');
+
+    $existing_relation_ids = $relation_storage->getQuery()
+      ->condition('referring_field_name', 'field_embeddable_reference', '=')
+      ->condition('embeddable_id', $reference_1->id(), '=')
+      ->execute();
+
+    $relations = EmbeddableRelation::loadMultiple($existing_relation_ids);
+
+    $this->assertCount(1, $relations);
+
+
   }
 }
 

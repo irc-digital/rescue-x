@@ -161,15 +161,19 @@ class EntityReferenceEmbeddableFormatter extends EntityReferenceFormatterBase  i
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
-    $elements = array();
+    $elements = [];
 
-    foreach ($this->getEntitiesToView($items, $langcode) as $delta => $embeddable) {
+    $entities_to_view = $this->getEntitiesToView($items, $langcode);
+
+    foreach ($entities_to_view as $delta => $embeddable) {
       static $depth = [];
-      if (!isset($depth[$embeddable->id()])) {
-        $depth[$embeddable->id()] = 0;
+      $embeddable_id = $embeddable->id();
+
+      if (!isset($depth[$embeddable_id])) {
+        $depth[$embeddable_id] = 0;
       }
-      $depth[$embeddable->id()]++;
-      if ($depth[$embeddable->id()] > 20) {
+      $depth[$embeddable_id]++;
+      if ($depth[$embeddable_id] > 20) {
         $this->loggerFactory->get('entity')->error('Recursive rendering detected when rendering embeddable @entity_id. Aborting rendering.', array('@entity_id' => $embeddable->id()));
         return $elements;
       }
@@ -214,9 +218,11 @@ class EntityReferenceEmbeddableFormatter extends EntityReferenceFormatterBase  i
       // entity's url. Since we don't know what the markup of the entity will
       // be, we shouldn't rely on it for structured data such as RDFa.
       if (!empty($items[$delta]->_attributes) && !$embeddable->isNew() && $embeddable->hasLinkTemplate('canonical')) {
-        $items[$delta]->_attributes += array('resource' => $embeddable->toUrl()->toString());
+        $items[$delta]->_attributes += [
+          'resource' => $embeddable->toUrl()->toString()
+        ];
       }
-      $depth = 0;
+      $depth = [];
     }
 
     return $elements;
