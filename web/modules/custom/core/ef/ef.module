@@ -545,6 +545,6 @@ function ef_theme_suggestions_page_alter(array &$suggestions, array $variables) 
   }
 }
 
-function ef_article_preprocess_page__node (&$variables) {
+function ef_preprocess_page__node (&$variables) {
   $variables['page']['modifiers'] = [];
 }
