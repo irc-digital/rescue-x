@@ -31,12 +31,14 @@ function ef_demo_get_random_paragraphs ($min_paragraphs = 4, $max_paragraphs = 1
   return implode('', $paragraph_array);
 }
 
-function ef_demo_get_random_paragraph ($min_sentences = 1, $max_sentences = 3) {
-  return _ef_demo_get_random()->sentences($min_sentences);
+function ef_demo_get_random_paragraph ($min_sentences = 2, $max_sentences = 4) {
+  $len = mt_rand ($min_sentences * 12, $max_sentences * 12);
+  return _ef_demo_get_random()->sentences($len);
 }
 
 function ef_demo_get_random_sentence($min_words = 4, $max_words = 10, $include_period = TRUE) {
-  return _ef_demo_get_random()->sentences(4, TRUE);
+  $len = mt_rand ($min_words, $max_words);
+  return ucfirst(strtolower(_ef_demo_get_random()->sentences($len, TRUE)));
 }
 
 function ef_demo_get_random_word($len = 10) {
