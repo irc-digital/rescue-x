@@ -11,3 +11,7 @@ function ef_article_dynamic_content_view_filter_bundle () {
 function ef_article_form_node_article_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['#attributes']['novalidate'] = 'novalidate';
 }
+
+function ef_article_preprocess_page__node__article (&$variables) {
+  $variables['page']['modifiers'][] = 'with-standard-separator';
+}

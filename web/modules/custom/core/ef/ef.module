@@ -532,3 +532,18 @@ function ef_toolbar() {
     ->getInstanceFromDefinition(LocalActionToToolbarHelper::class)
     ->moveLocalActionsToToolbar();
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ef_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__node';
+    $suggestions[] = 'page__node__' . $node->bundle();
+  }
+}
+
+function ef_article_preprocess_page__node (&$variables) {
+  $variables['page']['modifiers'] = [];
+}
