@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 function ef_article_dynamic_content_view_filter_bundle () {
   return 'article';
 }
@@ -8,7 +10,7 @@ function ef_article_dynamic_content_view_filter_bundle () {
  * Implements hook_form_FORM_ID_alter().
  * Ensure error messages for fields within a fieldgroup are shown
  */
-function ef_article_form_node_article_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function ef_article_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attributes']['novalidate'] = 'novalidate';
 }
 

@@ -116,6 +116,29 @@ class EmbeddableForm extends ContentEntityForm {
 
     $form['revision_information']['#open'] = TRUE;
 
+    // Node author information for administrators.
+    $form['author'] = [
+      '#type' => 'details',
+      '#title' => t('Authoring information'),
+      '#group' => 'advanced',
+      '#attributes' => [
+        'class' => ['node-form-author'],
+      ],
+      '#attached' => [
+        'library' => ['node/drupal.node'],
+      ],
+      '#weight' => 90,
+      '#optional' => TRUE,
+    ];
+
+    if (isset($form['uid'])) {
+      $form['uid']['#group'] = 'author';
+    }
+
+    if (isset($form['created'])) {
+      $form['created']['#group'] = 'author';
+    }
+
     return $form;
   }
 
