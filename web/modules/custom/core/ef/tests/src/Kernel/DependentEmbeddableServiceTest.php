@@ -29,7 +29,7 @@ class DependentEmbeddableServiceTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['system', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
+    $this->installConfig(['system', 'field', 'language', 'filter', 'text', 'node', 'ef', 'ef_test']);
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
     $this->installEntitySchema('user');
