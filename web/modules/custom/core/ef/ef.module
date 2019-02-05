@@ -109,24 +109,24 @@ function template_preprocess_media_image_thumbnails(array &$variables) {
   $variables['image_output'] = $image_output;
 }
 
-/**
- * Prepares variables for output in an embeddable content template
- *
- * These templates are the specific sub-type templates that output the specific
- * content within the embeddable, excluding the stuff outside like header titles
- * etc
- *
- * @param array $variables
- */
-function template_preprocess_embeddable_content (array &$variables) {
-  foreach (Element::children($variables['elements']) as $key) {
-    $variables['content'][$key] = $variables['elements'][$key];
-  }
-
-  if (isset($variables['elements']['#attributes'])) {
-    $variables['attributes'] = $variables['elements']['#attributes'];
-  }
-}
+///**
+// * Prepares variables for output in an embeddable content template
+// *
+// * These templates are the specific sub-type templates that output the specific
+// * content within the embeddable, excluding the stuff outside like header titles
+// * etc
+// *
+// * @param array $variables
+// */
+//function template_preprocess_embeddable_content (array &$variables) {
+//  foreach (Element::children($variables['elements']) as $key) {
+//    $variables['content'][$key] = $variables['elements'][$key];
+//  }
+//
+//  if (isset($variables['elements']['#attributes'])) {
+//    $variables['attributes'] = $variables['elements']['#attributes'];
+//  }
+//}
 
 /**
  * Prepares variables for list of available embeddable type templates.

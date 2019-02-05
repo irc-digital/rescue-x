@@ -106,8 +106,6 @@ class EmbeddableElement extends RenderElement {
 
     $element['embeddable_content'] = $view_builder->viewEmbeddable($embeddable, $embeddable_reference_build_options, $view_mode, []);
 
-    //$element['#attached']['library'][] = sprintf('ef/embeddable.%s.%s', $embeddable_bundle, $view_mode);
-
     return $element;
   }
 

@@ -61,6 +61,11 @@ class SpecialPatternFieldsManager implements  SpecialPatternFieldsManagerInterfa
       if (isset($variables['content']['#embeddable_reference_options']['view_mode_modifier_name'])) {
         $variables['content']['#context']['modifiers'][] = $variables['content']['#embeddable_reference_options']['view_mode_modifier_name'];
       }
+
+      // contextual menu
+      if (isset($variables['content']['#ef_contextual_menu'])) {
+        $variables['content']['#context']['contextual_menu'] = $variables['content']['#ef_contextual_menu'];
+      }
     }
   }
 
@@ -115,6 +120,7 @@ class SpecialPatternFieldsManager implements  SpecialPatternFieldsManagerInterfa
       'section_heading_description' => '',
       'section_heading_icon' => '',
       'modifiers' => '',
+      'contextual_menu' => '',
     ];
   }
 }

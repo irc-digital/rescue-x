@@ -23,6 +23,7 @@ class PatternDefinitionModifier {
       $this->modifyLibraryPath($pattern);
       $this->addSectionHeadingFields($pattern);
       $this->addModifierField($pattern);
+      $this->addContextualMenuField($pattern);
     }
   }
 
@@ -92,6 +93,22 @@ class PatternDefinitionModifier {
     ];
 
     $pattern->setField($pattern->id() . '_modifiers', $modifiers_definition);
+  }
 
+  /**
+   * Add a contextual menu field. This is used to pass links to the pattern so
+   * that an editor can edit it in-place
+   *
+   * @param \Drupal\ui_patterns\Definition\PatternDefinition $pattern
+   */
+  protected function addContextualMenuField (PatternDefinition $pattern) {
+    // add a modifiers field
+    $contextual_menu_definition = [
+      'label' => 'Contextual menu',
+      'description' => $pattern->getLabel() . " contextual menu",
+      'type' => 'array',
+    ];
+
+    $pattern->setField($pattern->id() . '_contextual_menu', $contextual_menu_definition);
   }
 }
