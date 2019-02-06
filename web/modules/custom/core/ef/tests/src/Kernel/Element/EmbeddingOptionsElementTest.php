@@ -19,7 +19,7 @@ class EmbeddingOptionsElementTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['ef', 'ef_test']);
+    $this->installConfig(['language','ef', 'ef_test']);
   }
 
   /**

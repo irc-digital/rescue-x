@@ -23,7 +23,7 @@ class EmbeddableReferencesTraitTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['system', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
+    $this->installConfig(['system', 'language', 'field', 'filter', 'text', 'node', 'ef', 'ef_test']);
     $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
