@@ -4,6 +4,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\ef\EmbeddableInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_entity_view_alter
@@ -34,4 +35,12 @@ function ef_image_entity_view_alter(array &$build, EntityInterface $entity, Enti
  */
 function ef_image_dependent_embeddable_presave_image_alter(EmbeddableInterface $dependent_embeddable, ContentEntityInterface $parent_entity) {
   $dependent_embeddable->setTitle($parent_entity->label());
+}
+
+/**
+ * Implements hook_embeddable_contextual_entity_BUNDLE_alter().
+ */
+function ef_image_embeddable_contextual_entity_image_alter(EmbeddableInterface &$contextual_entity, $view_mode) {
+  /** @var \Drupal\media\Entity\Media $image_media */
+  $contextual_entity = $contextual_entity->getParentEntity();
 }

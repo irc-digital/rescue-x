@@ -106,15 +106,13 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
   protected function getBuildDefaultsForEmbeddable (EmbeddableInterface $embeddable, array $embeddable_reference_options = [], $view_mode) {
     $build = parent::getBuildDefaults($embeddable, $view_mode);
 
-    //$build['#theme'] = 'embeddable_content';
-
-    $this->buildContextualMenu($build, $embeddable, $embeddable_reference_options, $view_mode);
-
     if ($build["#view_mode"] == 'entity_embed') {
       $embeddable_reference_options[] = 'entity-embed';
     }
 
     $build['#embeddable_reference_options'] = $embeddable_reference_options;
+
+    $this->buildContextualMenu($build, $embeddable, $embeddable_reference_options, $view_mode);
 
     return $build;
   }
@@ -126,16 +124,19 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
 
     $link_or_translate_link = NULL;
 
-    if ($embeddable->hasTranslation($current_language->getId())) {
-      $edit_link = $embeddable->toUrl('edit-form', ['language' => $current_language, 'query' => $destination]);
+    $contextual_entity = $embeddable;
+    $this->moduleHandler()->alter('embeddable_contextual_entity_' . $contextual_entity->bundle(), $contextual_entity, $view_mode);
+
+    if ($contextual_entity->hasTranslation($current_language->getId())) {
+      $edit_link = $contextual_entity->toUrl('edit-form', ['language' => $current_language, 'query' => $destination]);
 
       $link_or_translate_link = [
         'url' => $edit_link->toString(),
         'title' => $this->t('Edit'),
       ];
     } else {
-      $translate_link = $embeddable->toUrl('drupal:content-translation-add', ['language' => $current_language, 'query' => $destination]);
-      $translate_link->setRouteParameter('source', $embeddable->language()->getId());
+      $translate_link = $contextual_entity->toUrl('drupal:content-translation-add', ['language' => $current_language, 'query' => $destination]);
+      $translate_link->setRouteParameter('source', $contextual_entity->language()->getId());
       $translate_link->setRouteParameter('target', $current_language->getId());
 
       $link_or_translate_link = [

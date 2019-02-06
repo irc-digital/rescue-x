@@ -3,6 +3,7 @@
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\ef\EmbeddableInterface;
+use Drupal\Core\Url;
 
 /**
  * @addtogroup hooks
@@ -96,4 +97,16 @@ function hook_dependent_embeddable_presave_BUNDLE_alter (EmbeddableInterface $de
  */
 function hook_dependent_embeddable_presave_alter (EmbeddableInterface $dependent_embeddable, ContentEntityInterface $parent_entity) {
   $dependent_embeddable->setTitle(t('My new title'));
+}
+
+/**
+ * When an embeddasble is being rendered this is called as part of the custom
+ * contextual menu generation. It allows for the scenario where the form that an
+ * editor needs to change is actually on a different entity
+ *
+ * @param \Drupal\ef\EmbeddableInterface $contextual_entity
+ * @param $view_mode
+ */
+function hook_embeddable_contextual_entity_BUNDLE_alter (EmbeddableInterface &$contextual_entity, $view_mode) {
+  $contextual_entity = $contextual_entity->getParentEntity();
 }
