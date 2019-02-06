@@ -18,8 +18,13 @@ use Drupal\ef\EmbeddableInterface;
  */
 function ef_image_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
   if ($entity->getEntityTypeId() == 'embeddable' && $entity->bundle() == 'image') {
-    if (isset($build['parent_id']) && isset($build['#embeddable_reference_options'])) {
-      $build['parent_id']['#embeddable_reference_options'] = $build['#embeddable_reference_options'];
+    if (isset($build['parent_id'])) {
+      if (isset($build['#embeddable_reference_options'])) {
+        $build['parent_id']['#embeddable_reference_options'] = $build['#embeddable_reference_options'];
+      }
+      if (isset($build['#ef_contextual_menu'])) {
+        $build['parent_id']['#ef_contextual_menu'] = $build['#ef_contextual_menu'];
+      }
     }
   }
 }
