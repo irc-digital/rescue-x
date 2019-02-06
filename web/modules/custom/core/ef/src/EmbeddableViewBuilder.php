@@ -118,9 +118,12 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
   }
 
   protected function buildContextualMenu (&$build, EmbeddableInterface $embeddable, array $embeddable_reference_options = [], $view_mode) {
+
     $destination = \Drupal::destination()->getAsArray();
 
     $current_language = $this->languageManager->getCurrentLanguage();
+
+    $contextual_menu_links = [];
 
     $link_or_translate_link = NULL;
 
@@ -130,29 +133,52 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
     if ($contextual_entity->hasTranslation($current_language->getId())) {
       $edit_link = $contextual_entity->toUrl('edit-form', ['language' => $current_language, 'query' => $destination]);
 
-      $link_or_translate_link = [
-        'url' => $edit_link->toString(),
-        'title' => $this->t('Edit'),
-      ];
+      if ($edit_link->access()) {
+        $link_or_translate_link = [
+          'url' => $edit_link->toString(),
+          'title' => $this->t('Edit'),
+        ];
+
+        $contextual_menu_links[] = $link_or_translate_link;
+
+      }
     } else {
-      $translate_link = $contextual_entity->toUrl('drupal:content-translation-add', ['language' => $current_language, 'query' => $destination]);
-      $translate_link->setRouteParameter('source', $contextual_entity->language()->getId());
+      $translate_link = $contextual_entity->toUrl('drupal:content-translation-add', [
+        'language' => $current_language,
+        'query' => $destination
+      ]);
+      $translate_link->setRouteParameter('source', $contextual_entity->language()
+        ->getId());
       $translate_link->setRouteParameter('target', $current_language->getId());
 
-      $link_or_translate_link = [
-        'url' => $translate_link->toString(),
-        'title' => $this->t('Translate'),
+      if ($translate_link->access()) {
+        $link_or_translate_link = [
+          'url' => $translate_link->toString(),
+          'title' => $this->t('Translate'),
+        ];
+
+        $contextual_menu_links[] = $link_or_translate_link;
+      }
+    }
+
+    $manage_translations_link = $contextual_entity->toUrl('drupal:content-translation-overview', ['language' => $current_language, 'query' => $destination]);
+
+    if ($manage_translations_link->access()) {
+      $contextual_menu_links[] = [
+        'url' => $manage_translations_link->toString(),
+        'title' => $this->t('Manage translations'),
       ];
     }
 
-    $build['#ef_contextual_menu'] = [
-      '#type' => 'pattern',
-      '#id' => 'contextual_menu',
-      '#fields' => [
-        'contextual_menu_items' => [
-          $link_or_translate_link,
+    if (sizeof($contextual_menu_links) > 0) {
+      $build['#ef_contextual_menu'] = [
+        '#type' => 'pattern',
+        '#id' => 'contextual_menu',
+        '#fields' => [
+          'contextual_menu_items' => $contextual_menu_links,
         ],
-      ],
-    ];
+      ];
+
+    }
   }
 }
