@@ -24,7 +24,7 @@ class EmbeddableModifierOptionsTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['ef', 'ef_modifiers', 'ef_test', 'ef_modifiers_test']);
+    $this->installConfig(['language','ef', 'ef_modifiers', 'ef_test', 'ef_modifiers_test']);
   }
 
   /**

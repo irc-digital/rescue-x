@@ -22,7 +22,7 @@ class EmbeddableRelationTest extends KernelTestBase {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['ef', 'ef_test']);
+    $this->installConfig(['language','ef', 'ef_test']);
     $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');

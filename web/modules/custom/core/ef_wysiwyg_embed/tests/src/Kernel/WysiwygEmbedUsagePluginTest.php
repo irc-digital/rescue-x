@@ -18,7 +18,7 @@ class WysiwygEmbedUsagePluginTest extends KernelTestBase  {
   public function setUp() {
     parent::setUp();
 
-    $this->installConfig(['field', 'filter', 'text', 'embed', 'entity_embed', 'ef', 'ef_test', 'ef_wysiwyg_embed_test']);
+    $this->installConfig(['field', 'filter', 'language', 'text', 'embed', 'entity_embed', 'ef', 'ef_test', 'ef_wysiwyg_embed_test']);
     $this->installEntitySchema('user');
     $this->installEntitySchema('embeddable');
     $this->installEntitySchema('embeddable_relation');
