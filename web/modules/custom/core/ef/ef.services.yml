@@ -49,3 +49,7 @@ services:
   ef.theme_css_library_helper:
     class: Drupal\ef\Theme\ThemeCSSLibraryHelper
     arguments: ['@entity_display.repository', '@entity_type.bundle.info', '@theme.manager']
+
+  ef.toolbar_link_builder:
+    class: Drupal\ef\LocalActionToToolbarLinkBuilder
+    arguments: ['@current_user','@plugin.manager.menu.local_task', '@current_route_match']

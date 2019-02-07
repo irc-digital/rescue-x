@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityViewBuilder;
 use Drupal\Core\Entity\EntityViewBuilderInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Theme\Registry;
+use Drupal\Core\Theme\ThemeManagerInterface;
 use Drupal\ef\Decorator\HTMLClassDecoratorFactoryInterface;
 use Drupal\ef\Decorator\HTMLComponentDecorator;
 use Drupal\ef\Entity\EmbeddableType;
@@ -26,13 +27,13 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
   /** @var  HTMLClassDecoratorFactoryInterface $embeddableDecorator */
   protected $embeddableDecorator;
 
-  public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, LanguageManagerInterface $language_manager, Registry $theme_registry = NULL, HTMLClassDecoratorFactoryInterface $embeddableDecorator) {
-    $this->entityTypeId = $entity_type->id();
-    $this->entityType = $entity_type;
-    $this->entityManager = $entity_manager;
-    $this->languageManager = $language_manager;
-    $this->themeRegistry = $theme_registry ?: \Drupal::service('theme.registry');
+  /** @var ThemeManagerInterface */
+  protected $themeManager;
+
+  public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, LanguageManagerInterface $language_manager, Registry $theme_registry = NULL, HTMLClassDecoratorFactoryInterface $embeddableDecorator, ThemeManagerInterface $themeManager) {
+    parent::__construct($entity_type, $entity_manager, $language_manager, $theme_registry, $embeddableDecorator);
     $this->embeddableDecorator = $embeddableDecorator;
+    $this->themeManager = $themeManager;
   }
 
   /**
@@ -44,7 +45,8 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
       $container->get('entity.manager'),
       $container->get('language_manager'),
       $container->get('theme.registry'),
-      $container->get('ef.html_class_decorator.factory')
+      $container->get('ef.html_class_decorator.factory'),
+      $container->get('theme.manager')
     );
   }
 
@@ -119,6 +121,13 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
 
   protected function buildContextualMenu (&$build, EmbeddableInterface $embeddable, array $embeddable_reference_options = [], $view_mode) {
 
+    /** @var \Drupal\Core\Theme\ActiveTheme $active_theme */
+    $active_theme = $this->themeManager->getActiveTheme();
+
+    if ($active_theme->getName() == 'seven') {
+      return;
+    }
+
     $destination = \Drupal::destination()->getAsArray();
 
     $current_language = $this->languageManager->getCurrentLanguage();
@@ -176,6 +185,11 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
         '#id' => 'contextual_menu',
         '#fields' => [
           'contextual_menu_items' => $contextual_menu_links,
+        ],
+        '#cache' => [
+          'contexts' => ['user.permissions'],
+          'keys' => ['ef_contextual_menu', 'embeddable', $embeddable->id(), $view_mode],
+          'tags' => $embeddable->getCacheTags(),
         ],
       ];
 
