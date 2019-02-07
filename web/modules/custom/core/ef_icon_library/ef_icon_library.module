@@ -4,57 +4,6 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\Core\Entity\ContentEntityInterface;
 
 /**
- * Implements hook_theme().
- */
-function ef_icon_library_theme() {
-  return [
-    'icon_library_icons' => [
-      'variables' => [],
-    ],
-  ];
-}
-
-function template_preprocess_icon_library_icons(&$variables) {
-
-  /** @var \Drupal\ef_icon_library\IconLibraryInterface $iconLibrary */
-  $iconLibrary = \Drupal::service('ef.icon_library');
-
-  $icons_in_use = $iconLibrary->getInUseIcons();
-
-  $inlined_icons = '';
-
-  foreach ($icons_in_use as $in_use_icon) {
-    $file_path = $in_use_icon->uri;
-    $inlined_icons .= file_get_contents($file_path);
-  }
-
-  $variables['inlined_icons'] = $inlined_icons;
-}
-
-/**
- * Implements hook_page_bottom().
- */
-function ef_icon_library_page_bottom(array &$page_bottom) {
-  $page_bottom['inlined_svg_icons'] = [
-    '#theme' => 'icon_library_icons',
-  ];
-}
-
-function ef_icon_library_theme_registry_alter(&$theme_registry) {
-  foreach ($theme_registry as $entry_name => $entry) {
-    if (strpos($entry_name, 'pattern_') === 0) {
-      $theme_registry[$entry_name]['preprocess functions'][] = 'ef_icon_library_preprocess_icon_pattern';
-    }
-  }
-}
-
-function ef_icon_library_preprocess_icon_pattern (array &$variables) {
-  /** @var \Drupal\ef_icon_library\IconLibraryInterface $iconLibrary */
-  $iconLibrary = \Drupal::service('ef.icon_library');
-  $iconLibrary->patternIsBeingRendered ($variables);
-}
-
-/**
  * This is the callback function used by the ListIconItem field type
  *
  * @param \FieldStorageConfig $definition

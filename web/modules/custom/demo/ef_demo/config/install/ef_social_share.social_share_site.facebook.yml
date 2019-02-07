@@ -10,4 +10,4 @@ id: facebook
 label: Facebook
 plugin: facebook_social_share_site
 configuration:
-  icon: themes/x/rpl/svg/individuals/symbol-facebook.svg
+  icon: facebook

@@ -12,4 +12,4 @@ plugin: twitter_social_share_site
 configuration:
   twitter_send_via: theIRC
   twitter_share_prefix: '[node:custom-social-share-title]'
-  icon: themes/x/rpl/svg/individuals/symbol-twitter.svg
+  icon: twitter

@@ -31,7 +31,3 @@ global_navigation:
        css:
          theme:
            dist/public/css/patterns/rplc-global-navigation.css: {}
-  icons:
-    - 'search'
-    - 'heart'
-    - 'irc-arrow'

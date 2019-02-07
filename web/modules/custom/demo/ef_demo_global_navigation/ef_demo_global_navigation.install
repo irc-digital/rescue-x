@@ -28,7 +28,7 @@ function _ef_demo_global_navigation_add_secondary_menu_items () {
       'weight' => $index,
       'expanded' => TRUE,
       'field_icon' => [
-        'value' => 'themes/x/rpl/svg/individuals/symbol-' . $icon . '.svg',
+        'value' => $icon,
       ],
     ]);
 
@@ -36,7 +36,7 @@ function _ef_demo_global_navigation_add_secondary_menu_items () {
       $menu_link->addTranslation('de', [
         'title' => $title . ' (DE)',
         'field_icon' => [
-          'value' => 'themes/x/rpl/svg/individuals/symbol-' . $icon . '.svg',
+          'value' => $icon,
         ],
       ]);
     }

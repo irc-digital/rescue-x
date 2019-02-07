@@ -51,7 +51,7 @@ class ThemeIconProvider extends PluginBase implements IconProviderInterface, Con
       }
       $icon_file->display_name = str_replace($symbol_prefix, '', $icon_file->name);
       $icon_file->id = $icon_file->display_name;
-      $icons[$icon_key] = $icon_file;
+      $icons[$icon_file->id] = $icon_file;
     }
 
     return $icons;

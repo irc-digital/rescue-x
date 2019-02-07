@@ -5,7 +5,6 @@ package: EF Core
 core: 8.x
 dependencies:
   - ef
-  - ef_icon_library
   - ds
   - ui_patterns_library
   - components

@@ -13,5 +13,3 @@ efficiency_graphic:
        css:
          theme:
            dist/public/css/patterns/rplc-efficiency.css: {}
-  icons:
-    - efficiency

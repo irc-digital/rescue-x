@@ -19,7 +19,7 @@ function _ef_demo_add_social_config () {
       'uri' => 'https://bbc.co.uk/news',
       'title' => $site,
       'options' => [
-        'link_icon' => 'themes/x/rpl/svg/individuals/symbol-' . $site . '.svg',
+        'link_icon' => $site,
       ],
     ];
   }

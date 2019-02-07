@@ -80,9 +80,7 @@ abstract class SocialShareSiteBase extends PluginBase implements SocialShareSite
    * {@inheritdoc}
    */
   public function getIcon() {
-    $icon_info = $this->iconLibrary->getIconInformation($this->configuration['icon'], TRUE);
-
-    return $icon_info->id;
+    return $this->configuration['icon'];
   }
 
   /**

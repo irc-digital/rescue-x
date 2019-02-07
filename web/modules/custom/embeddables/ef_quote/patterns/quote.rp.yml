@@ -32,5 +32,3 @@ quote:
        css:
          theme:
            dist/public/css/patterns/rplc-quote.css: {}
-  icons:
-    - 'quote-mark'

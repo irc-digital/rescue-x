@@ -5,4 +5,3 @@ package: EF Core
 core: 8.x
 dependencies:
   - link
-  - ef_patterns

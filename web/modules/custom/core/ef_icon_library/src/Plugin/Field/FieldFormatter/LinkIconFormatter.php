@@ -90,11 +90,7 @@ class LinkIconFormatter extends LinkFormatter {
       $link_icon = '';
 
       if ($parent_element_item['#options']['link_icon']) {
-        $icon = $this->iconLibrary->getIconInformation($parent_element_item['#options']['link_icon']);
-
-        if (!is_null($icon)) {
-          $link_icon = $icon->id;
-        }
+        $link_icon = $parent_element_item['#options']['link_icon'];
       }
 
       /** @var \Drupal\Core\Url $url */

@@ -10,4 +10,4 @@ plugin: email_social_share_site
 configuration:
   email_subject: '[node:custom-social-share-title]'
   email_body: Hello
-  icon: themes/x/rpl/svg/individuals/symbol-mail.svg
+  icon: mail

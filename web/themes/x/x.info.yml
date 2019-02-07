@@ -32,8 +32,8 @@ component-libraries:
       - rpl/templates/10-layouts
 
 ef_icon_library:
-  symbol_path: rpl/svg/individuals
-  symbol_prefix: 'symbol-'
+  symbol_path: rpl/templates/01-atoms/06-icon-library
+  symbol_prefix: 'icon-'
   exclude:
     - map-marker.svg
     - map-marker-capital.svg

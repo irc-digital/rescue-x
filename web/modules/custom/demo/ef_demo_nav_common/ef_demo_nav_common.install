@@ -24,7 +24,7 @@ function _ef_demo_add_sitewide_donation_link () {
       'uri' => 'internal:/',
       'title' => 'Donate',
       'options' => [
-        'link_icon' => 'themes/x/rpl/svg/individuals/symbol-heart.svg',
+        'link_icon' => 'heart',
       ],
     ],
   ]);
@@ -34,7 +34,7 @@ function _ef_demo_add_sitewide_donation_link () {
       'uri' => 'internal:/',
       'title' => 'Donate (DE)',
       'options' => [
-        'link_icon' => 'themes/x/rpl/svg/individuals/symbol-heart.svg',
+        'link_icon' => 'heart',
       ],
     ],
   ]);

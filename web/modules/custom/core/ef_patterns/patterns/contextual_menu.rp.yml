@@ -10,5 +10,3 @@ contextual_menu:
        css:
          theme:
            dist/public/css/patterns/rplm-contextual-menu.css: {}
-  icons:
-    - edit
