@@ -8,6 +8,8 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityViewBuilder;
 use Drupal\Core\Entity\EntityViewBuilderInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\PrivateKey;
+use Drupal\Core\Site\Settings;
 use Drupal\Core\Theme\Registry;
 use Drupal\Core\Theme\ThemeManagerInterface;
 use Drupal\ef\Decorator\HTMLClassDecoratorFactoryInterface;
@@ -30,10 +32,14 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
   /** @var ThemeManagerInterface */
   protected $themeManager;
 
-  public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, LanguageManagerInterface $language_manager, Registry $theme_registry = NULL, HTMLClassDecoratorFactoryInterface $embeddableDecorator, ThemeManagerInterface $themeManager) {
+  /** @var \Drupal\Core\PrivateKey */
+  protected $privateKey;
+
+  public function __construct(EntityTypeInterface $entity_type, EntityManagerInterface $entity_manager, LanguageManagerInterface $language_manager, Registry $theme_registry = NULL, HTMLClassDecoratorFactoryInterface $embeddableDecorator, ThemeManagerInterface $themeManager, PrivateKey $private_key) {
     parent::__construct($entity_type, $entity_manager, $language_manager, $theme_registry, $embeddableDecorator);
     $this->embeddableDecorator = $embeddableDecorator;
     $this->themeManager = $themeManager;
+    $this->privateKey = $private_key;
   }
 
   /**
@@ -46,7 +52,8 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
       $container->get('language_manager'),
       $container->get('theme.registry'),
       $container->get('ef.html_class_decorator.factory'),
-      $container->get('theme.manager')
+      $container->get('theme.manager'),
+      $container->get('private_key')
     );
   }
 
@@ -116,7 +123,24 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
 
     $this->buildContextualMenu($build, $embeddable, $embeddable_reference_options, $view_mode);
 
+    $this->addModifierCacheKey($build, $embeddable, $embeddable_reference_options, $view_mode);
     return $build;
+  }
+
+  /**
+   * The same embeddable can be rendered with different reference options (modifiers) so we need to make sure
+   * that caching considers the reference options as key
+   *
+   * @param $build
+   * @param \Drupal\ef\EmbeddableInterface $embeddable
+   * @param array $embeddable_reference_options
+   * @param $view_mode
+   */
+  protected function addModifierCacheKey (&$build, EmbeddableInterface $embeddable, array $embeddable_reference_options = [], $view_mode) {
+    $serialized_options = serialize($embeddable_reference_options);
+    $options_hash = hash('sha256', $this->privateKey->get() . Settings::getHashSalt() . $serialized_options);
+    $build['#cache']['keys'][] = 'embeddable_modifiers_hash:' . $options_hash;
+
   }
 
   protected function buildContextualMenu (&$build, EmbeddableInterface $embeddable, array $embeddable_reference_options = [], $view_mode) {

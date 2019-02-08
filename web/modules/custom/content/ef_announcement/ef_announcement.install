@@ -5,7 +5,8 @@ use Drupal\ef\EmbeddableConfigurationHelper;
 function ef_announcement_install () {
   \Drupal::classResolver()
     ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
-    ->addContentTypeToHeroBlock('announcement');
+    ->addContentTypeToHeroBlock('announcement')
+    ->grantPermissions(['create announcement content','delete any announcement content','delete own announcement content','edit any announcement content','edit own announcement content'], ['senior_editor']);
 }
 
 function ef_announcement_uninstall () {

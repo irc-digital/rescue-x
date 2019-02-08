@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: dNmDl0eCNzSzjdmepL69JtTazmI1AfkW-QFZhAHnEQ0
 id: senior_editor
 label: 'Senior editor'
 weight: 3
@@ -17,7 +15,6 @@ permissions:
   - 'create content translations'
   - 'create url aliases'
   - 'delete all embeddable content'
-  - 'delete all embeddable revisions'
   - 'delete all revisions'
   - 'delete content translations'
   - 'edit all embeddable content'

@@ -41,6 +41,7 @@ class EmbeddableConfigurationHelper {
     $hero_block_visibility = \Drupal::configFactory()->getEditable('block.block.hero')->get('visibility');
     $hero_block_visibility['entity_bundle:node']['bundles'][$content_type] = $content_type;
     \Drupal::configFactory()->getEditable('block.block.hero')->set('visibility', $hero_block_visibility)->save(TRUE);
+    return $this;
   }
 
   public function addCropToMediaImageForm ($crop) {
@@ -49,6 +50,7 @@ class EmbeddableConfigurationHelper {
     $media_image_form_content = $editableConfig->get('content');
     $media_image_form_content['field_ef_image']['settings']['crop_list'][] = $crop;
     $editableConfig->set('content', $media_image_form_content)->save(TRUE);
+    return $this;
   }
 
   public function removeCropFromMediaImageForm ($crop) {
@@ -60,6 +62,7 @@ class EmbeddableConfigurationHelper {
       unset($media_image_form_content['field_ef_image']['settings']['crop_list'][$key]);
       $editableConfig->set('content', $media_image_form_content)->save(TRUE);
     }
+    return $this;
   }
 
   public function addTextFormatFilter($filter, $filter_id, $filter_details, $place_after = NULL) {
@@ -82,6 +85,7 @@ class EmbeddableConfigurationHelper {
 
       $filter_editable->set('filters', $filters)->save(TRUE);
     }
+    return $this;
   }
 
   public function removeTextFormatFilter($filter, $filter_id) {
@@ -91,6 +95,7 @@ class EmbeddableConfigurationHelper {
       unset ($filters[$filter_id]);
       $filter_editable->set('filters', $filters)->save(TRUE);
     }
+    return $this;
   }
 
   /**
@@ -108,6 +113,7 @@ class EmbeddableConfigurationHelper {
         $role->save();
       }
     }
+    return $this;
   }
 
   /**

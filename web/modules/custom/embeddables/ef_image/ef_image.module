@@ -4,6 +4,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\ef\EmbeddableInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
@@ -43,4 +44,42 @@ function ef_image_dependent_embeddable_presave_image_alter(EmbeddableInterface $
 function ef_image_embeddable_contextual_entity_image_alter(EmbeddableInterface &$contextual_entity, $view_mode) {
   /** @var \Drupal\media\Entity\Media $image_media */
   $contextual_entity = $contextual_entity->getParentEntity();
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter()
+ *
+ * Avoid presenting an image embeddable 'create' screen
+ */
+function ef_image_form_embeddable_form_alter(&$form, FormStateInterface $form_state) {
+
+  /** @var EmbeddableInterface $embeddable */
+  $embeddable = $form_state->getFormObject()->getEntity();
+
+  if($embeddable->bundle() == 'image') {
+    switch ($form_state->getFormObject()->getOperation()) {
+      case 'default':
+        /** @var \Drupal\Core\Url $url */
+        $url = Url::fromRoute('entity.media.add_form', ['media_type' => 'ef_image']);
+
+        // we cannot use the destination helper, as it will cause a loop
+        $destination = \Drupal::request()->query->get('destination');
+
+        if (!empty($destination)) {
+          $url->setOption('query', ['destination' => $destination]);
+        }
+
+        ef_redirect_now($url);
+        break;
+      case 'edit':
+        /** @var \Drupal\media\Entity\Media $media_entity */
+        $media_entity = $embeddable->getParentEntity();
+        $url = $media_entity->toUrl('edit-form', ['query' => \Drupal::destination()->getAsArray()]);
+
+        ef_redirect_now($url);
+        break;
+    }
+
+  }
+
 }
