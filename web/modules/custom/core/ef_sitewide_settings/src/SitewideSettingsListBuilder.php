@@ -145,7 +145,15 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
 
   public function getOperations(EntityInterface $entity) {
     if ($entity instanceof ContentEntityInterface) {
-      return parent::getOperations($entity);
+      $operations = parent::getOperations($entity);
+
+      $activeLanguageCode = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
+
+      if (!$entity->hasTranslation($activeLanguageCode)) {
+        unset($operations["edit"]);
+      }
+
+      return $operations;
     } else {
       $operations = [];
       if (\Drupal::currentUser()->hasPermission('administer sitewide settings')) {
