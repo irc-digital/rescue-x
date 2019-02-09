@@ -7,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.simple_image_link
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: kGJJU-TaaJqYc7sjTBct1tY-Dqd8KNjiXg8Yj9ueBDE
 id: embeddable.simple_image_link_list.field_sill_entries
 field_name: field_sill_entries
 entity_type: embeddable

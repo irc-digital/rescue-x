@@ -6,8 +6,6 @@ dependencies:
     - field.storage.embeddable.field_ef_highlight_link
   module:
     - link
-_core:
-  default_config_hash: AFj0fAUn7Y0rW2hwHlyg-EknGoJuL128y0BtT_4-rL0
 id: embeddable.highlight.field_ef_highlight_link
 field_name: field_ef_highlight_link
 entity_type: embeddable

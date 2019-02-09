@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - node.type.article
-_core:
-  default_config_hash: q7R1WJOani2fLAiK-NbSn7MYdU-kpnuesFBL5HgVehk
 id: node.article.title
 field_name: title
 entity_type: node

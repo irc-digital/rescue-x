@@ -6,8 +6,6 @@ dependencies:
     - field.storage.embeddable.field_hero_slug
   module:
     - ef
-_core:
-  default_config_hash: HhoDtW5kyX8v7iEWycjb1PigHoMZrvQI1lZuDCKi6eQ
 id: embeddable.hero_text_only.field_hero_slug
 field_name: field_hero_slug
 entity_type: embeddable

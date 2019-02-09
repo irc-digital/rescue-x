@@ -49,8 +49,6 @@ third_party_settings:
           id: reset
           settings:
             lb: ''
-_core:
-  default_config_hash: E57Nj_I9P8UAahraEQTbobGGkhFgExDgfyS-aOSgLPQ
 id: node.announcement.hero
 targetEntityType: node
 bundle: announcement

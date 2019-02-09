@@ -569,8 +569,8 @@ function ef_redirect_now (Url $url) {
 
 /**
  * Ensure that any views that expose the language field end up defaulting to
- * the interface language, so the user gets the content of the 'side' of the
- * site they are viewing
+ * the content language, so the user gets the content of the 'side' of the
+ * site they are viewing, but get to view it in their preferred language
  *
  * @param $form
  * @param \Drupal\Core\Form\FormStateInterface $form_state
@@ -579,7 +579,7 @@ function ef_form_views_exposed_form_alter(&$form, FormStateInterface &$form_stat
 
   if (isset($form['langcode'])) {
     $language_choices = &$form['langcode']['#options'];
-    unset ($language_choices['***LANGUAGE_site_default***'], $language_choices['und'], $language_choices['zxx']);
+    unset ($language_choices['***LANGUAGE_language_interface***'], $language_choices['***LANGUAGE_site_default***'], $language_choices['und'], $language_choices['zxx']);
 
     $view = $form_state->getStorage('view');
 
@@ -592,7 +592,7 @@ function ef_form_views_exposed_form_alter(&$form, FormStateInterface &$form_stat
     if (!isset($exposed_input['langcode'])) {
       $form_input = $form_state->getUserInput();
 
-      $form_state->setUserInput(['langcode' => '***LANGUAGE_language_interface***'] + $form_input);
+      $form_state->setUserInput(['langcode' => '***LANGUAGE_language_content***'] + $form_input);
     }
 
   }

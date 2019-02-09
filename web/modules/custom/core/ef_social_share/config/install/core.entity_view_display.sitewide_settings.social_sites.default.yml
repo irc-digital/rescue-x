@@ -8,8 +8,6 @@ dependencies:
     - field.field.sitewide_settings.social_sites.field_social_sites_follow_text
   module:
     - link
-_core:
-  default_config_hash: OIliFzzGTPPVFOhi2rXJvLaIpynYCEDWngXpp2o3lzc
 id: sitewide_settings.social_sites.default
 targetEntityType: sitewide_settings
 bundle: social_sites

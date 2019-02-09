@@ -3,8 +3,6 @@ status: true
 dependencies:
   module:
     - media
-_core:
-  default_config_hash: I2plMBk-OmApa7xQLS8uBZVwLxUj2xMBL3LBbAQ48T8
 id: media.entity_embed
 label: 'Entity embed'
 targetEntityType: media

@@ -44,8 +44,6 @@ third_party_settings:
     regions:
       ds_content:
         - field_special_embeddable_type
-_core:
-  default_config_hash: LsFxXgZByFFhAA67ywN-EtIRmqtGBq1e1zRwX2AbNig
 id: embeddable.special.default
 targetEntityType: embeddable
 bundle: special

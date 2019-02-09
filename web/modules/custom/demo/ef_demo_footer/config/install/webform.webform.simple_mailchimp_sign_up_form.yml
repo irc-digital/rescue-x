@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - ef_demo_footer
-_core:
-  default_config_hash: v7b2veFvTYsSBmXxy0czoHTGAw6-c-RR2ATGCW3nQ40
 open: null
 close: null
 weight: 0

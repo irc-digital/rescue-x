@@ -41,8 +41,6 @@ third_party_settings:
     regions:
       pull_quote_text:
         - field_ef_pull_quote_text
-_core:
-  default_config_hash: BrRqj4ZYLuLVkfgxz67EAV1bwJoe3lkpLjr84mwauBw
 id: embeddable.pull_quote.entity_embed
 targetEntityType: embeddable
 bundle: pull_quote

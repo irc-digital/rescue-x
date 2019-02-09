@@ -68,8 +68,6 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Teaser
-_core:
-  default_config_hash: MJmO9BAys_aUnTpo2Kp_VVtRt1ZBkG0ljGK6r_SFF-8
 id: node.article.default
 targetEntityType: node
 bundle: article

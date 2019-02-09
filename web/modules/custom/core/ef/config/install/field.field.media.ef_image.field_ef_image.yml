@@ -16,8 +16,6 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
-_core:
-  default_config_hash: BnR1l7eo-_j_EIQ509XZZGi9k3O7gAYQv4Ve3i9yE4Q
 id: media.ef_image.field_ef_image
 field_name: field_ef_image
 entity_type: media

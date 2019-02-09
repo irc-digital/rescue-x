@@ -10,8 +10,6 @@ dependencies:
     - ds
     - node
     - user
-_core:
-  default_config_hash: epBSJvM7pRy14WYSN3Nsjd5d8KoKPVudSdgoYP0itXY
 id: dynamic_content
 label: 'Dynamic content'
 module: views

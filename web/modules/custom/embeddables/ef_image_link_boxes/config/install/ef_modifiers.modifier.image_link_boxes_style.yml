@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - ef_image_link_boxes
-_core:
-  default_config_hash: 4JZYZVdQX3sm8QzjO_dEyJGeWLrRqxyszaNLDzw9nNk
 id: image_link_boxes_style
 label: 'Image link box style'
 weight: -9

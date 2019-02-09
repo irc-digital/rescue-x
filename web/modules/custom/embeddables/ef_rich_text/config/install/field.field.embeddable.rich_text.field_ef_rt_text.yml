@@ -6,8 +6,6 @@ dependencies:
     - field.storage.embeddable.field_ef_rt_text
   module:
     - text
-_core:
-  default_config_hash: FqkcMy_YVYZ8zd01qrsL6BzoGDnAIP4W0K0FPDbEf-s
 id: embeddable.rich_text.field_ef_rt_text
 field_name: field_ef_rt_text
 entity_type: embeddable

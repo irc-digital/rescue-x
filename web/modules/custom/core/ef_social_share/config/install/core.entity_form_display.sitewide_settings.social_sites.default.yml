@@ -8,8 +8,6 @@ dependencies:
     - field.field.sitewide_settings.social_sites.field_social_sites_follow_text
   module:
     - ef_icon_library
-_core:
-  default_config_hash: Ivh5GdqT3jLJ0VOAXZwMqUoSCVudUYWPT0NHhZJPrF0
 id: sitewide_settings.social_sites.default
 targetEntityType: sitewide_settings
 bundle: social_sites

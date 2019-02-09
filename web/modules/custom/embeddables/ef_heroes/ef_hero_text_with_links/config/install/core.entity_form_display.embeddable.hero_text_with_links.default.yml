@@ -10,8 +10,6 @@ dependencies:
   module:
     - ef_icon_library
     - text
-_core:
-  default_config_hash: ItHk5h2oLlBVy_XoOrlIP-ISwReHvDJquoiR7C3Lps0
 id: embeddable.hero_text_with_links.default
 targetEntityType: embeddable
 bundle: hero_text_with_links

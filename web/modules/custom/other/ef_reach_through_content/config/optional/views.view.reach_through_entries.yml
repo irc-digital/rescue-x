@@ -7,8 +7,6 @@ dependencies:
   module:
     - ef_reach_through_content
     - user
-_core:
-  default_config_hash: B546stu8ZVuoLgP0qM-sy6jSteRleO5lgyrsYtkF6N8
 id: reach_through_entries
 label: 'Curated content entries'
 module: views

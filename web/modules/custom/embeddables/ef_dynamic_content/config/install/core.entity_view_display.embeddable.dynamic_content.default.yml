@@ -47,8 +47,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-_core:
-  default_config_hash: VHDNWKPWngJS9inVmDAZoSCsfgNRwN3wFSTvpXMuff4
 id: embeddable.dynamic_content.default
 targetEntityType: embeddable
 bundle: dynamic_content

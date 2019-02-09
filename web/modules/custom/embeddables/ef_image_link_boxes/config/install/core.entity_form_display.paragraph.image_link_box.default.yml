@@ -11,8 +11,6 @@ dependencies:
   module:
     - entity_browser
     - link
-_core:
-  default_config_hash: uiKBMroIEs4_Nd54PxNrt0HLhpdNxcOeSNuVXLD9FQA
 id: paragraph.image_link_box.default
 targetEntityType: paragraph
 bundle: image_link_box

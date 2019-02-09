@@ -4,8 +4,6 @@ dependencies:
   config:
     - ef.type.pull_quote
     - field.field.embeddable.pull_quote.field_ef_pull_quote_text
-_core:
-  default_config_hash: 6Rl2w1GJlZTYUthWaaHnVilg8X3ANEsST4Mub68-1p0
 id: embeddable.pull_quote.default
 targetEntityType: embeddable
 bundle: pull_quote

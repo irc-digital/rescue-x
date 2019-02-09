@@ -9,8 +9,6 @@ dependencies:
       - ef_landing_page
   module:
     - ef
-_core:
-  default_config_hash: qDyUylR1kNQ6MXlaydr_xhwdHxR_ggqVkBDOAkk4ZLE
 id: node.landing_page.field_embeddables
 field_name: field_embeddables
 entity_type: node

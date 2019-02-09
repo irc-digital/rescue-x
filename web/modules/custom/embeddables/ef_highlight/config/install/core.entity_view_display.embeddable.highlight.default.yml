@@ -50,8 +50,6 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
-_core:
-  default_config_hash: LWxUnqTs3OT-1jsYzKXImpr2jvXb5FmZvfm6Jmg5vV4
 id: embeddable.highlight.default
 targetEntityType: embeddable
 bundle: highlight

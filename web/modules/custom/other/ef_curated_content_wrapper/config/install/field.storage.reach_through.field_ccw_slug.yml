@@ -6,8 +6,6 @@ dependencies:
       - ef_curated_content_wrapper
   module:
     - ef_reach_through_content
-_core:
-  default_config_hash: '-k_hgpYgSE_Du_P3aLd4AS5N2rfikdeeAHQDt36ghyY'
 id: reach_through.field_ccw_slug
 field_name: field_ccw_slug
 entity_type: reach_through

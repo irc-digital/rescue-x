@@ -6,8 +6,6 @@ dependencies:
   module:
     - ef
     - entity_browser
-_core:
-  default_config_hash: z_NCpVYPWGmvqY7X_xLyD8hu7M-u0CgTDfAcOkAPbGA
 id: embeddable_entity_browser
 label: 'Embeddable entity browser'
 module: views

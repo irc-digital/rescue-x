@@ -7,8 +7,6 @@ dependencies:
   module:
     - ef_reach_through_content
     - media
-_core:
-  default_config_hash: 6qJSfmApIdjSQzvlG5IFvU7MPLmJZ2Cm_ADeS3CvJXE
 id: reach_through.field_ccw_image
 field_name: field_ccw_image
 entity_type: reach_through

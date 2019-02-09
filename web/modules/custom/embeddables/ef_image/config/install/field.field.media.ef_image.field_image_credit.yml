@@ -3,8 +3,6 @@ dependencies:
   config:
     - field.storage.media.field_image_credit
     - media.type.ef_image
-_core:
-  default_config_hash: Own4BYuhiTa-EjxwCTZJ50AOYV4kvd3EupI_l0Po0aY
 id: media.ef_image.field_image_credit
 field_name: field_image_credit
 entity_type: media

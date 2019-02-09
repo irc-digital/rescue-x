@@ -68,8 +68,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-_core:
-  default_config_hash: zct5LAKz2Vt4pU7o5eP91Uo37rLoSUpLYMSOCDj5QXY
 id: reach_through.curated_content_wrapper.default
 targetEntityType: reach_through
 bundle: curated_content_wrapper

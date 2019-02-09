@@ -4,7 +4,5 @@ dependencies:
   enforced:
     module:
       - ef_curated_content_wrapper
-_core:
-  default_config_hash: nbDWMlXUNo5dexNndoQ-_yLv3j9XW5RD19jU2PoaMyE
 id: curated_content_wrapper
 label: 'Curated content wrapper'

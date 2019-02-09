@@ -6,8 +6,6 @@ dependencies:
   module:
     - entity_browser_entity_form
     - views
-_core:
-  default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
 name: media_entity_browser
 label: 'Image entity browser'
 display: modal

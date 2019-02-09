@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_call_to_action_text
     - node.type.topic
-_core:
-  default_config_hash: w9UxflfD6laph2Asml8QH3Z3ViOoqhxd6NrmS9BFQKw
 id: node.topic.field_call_to_action_text
 field_name: field_call_to_action_text
 entity_type: node

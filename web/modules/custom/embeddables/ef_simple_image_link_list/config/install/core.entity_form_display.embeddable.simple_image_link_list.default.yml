@@ -6,8 +6,6 @@ dependencies:
     - field.field.embeddable.simple_image_link_list.field_sill_entries
   module:
     - paragraphs
-_core:
-  default_config_hash: KEBigbWR_iHh7EmgEfIEL5VzcDho5UPaP6uTAYZuU3c
 id: embeddable.simple_image_link_list.default
 targetEntityType: embeddable
 bundle: simple_image_link_list

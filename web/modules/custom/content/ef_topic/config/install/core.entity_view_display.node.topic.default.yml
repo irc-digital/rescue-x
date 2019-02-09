@@ -31,8 +31,6 @@ third_party_settings:
     regions:
       ds_content:
         - field_news_and_features
-_core:
-  default_config_hash: IYOAwnqPrhZGVU3fqd_FE_AzmtfdnQDAVXYJHXXtbz8
 id: node.topic.default
 targetEntityType: node
 bundle: topic

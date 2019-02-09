@@ -6,8 +6,6 @@ dependencies:
     - node.type.announcement
   module:
     - text
-_core:
-  default_config_hash: V5xqeC3WqpHF4hbxGWsQv0Ae6SscIRiA7UAirXZkYeU
 id: node.announcement.body
 field_name: body
 entity_type: node

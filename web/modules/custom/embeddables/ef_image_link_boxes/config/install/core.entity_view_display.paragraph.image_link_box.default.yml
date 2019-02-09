@@ -72,8 +72,6 @@ third_party_settings:
         weight: 6
         label: hidden
         formatter: default
-_core:
-  default_config_hash: lQxNBBraEiRVyegereJxadm2jPkMpZAWysw1coWlPKM
 id: paragraph.image_link_box.default
 targetEntityType: paragraph
 bundle: image_link_box

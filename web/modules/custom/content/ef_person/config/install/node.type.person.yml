@@ -10,8 +10,6 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-_core:
-  default_config_hash: tTQNVbJyEH9fkjoIyk8vbEV0jDfR9SoGzmzDO54cWAQ
 name: Person
 type: person
 description: 'Use to create an author, contributors, thought-leaders or voices'

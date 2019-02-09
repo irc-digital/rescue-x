@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_ilbt_blurb
     - paragraphs.paragraphs_type.image_link_box
-_core:
-  default_config_hash: PlL8uCbvR5d7Kxtp2yB9aXQb8sxS6ngSu3BQQZ2Bpy4
 id: paragraph.image_link_box.field_ilbt_blurb
 field_name: field_ilbt_blurb
 entity_type: paragraph

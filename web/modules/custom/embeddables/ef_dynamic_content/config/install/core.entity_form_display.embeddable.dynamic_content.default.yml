@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - ef.type.dynamic_content
-_core:
-  default_config_hash: h52hK1GhaaxtkWZ16gO9Ln1I8kdPrQvc1DHG7wk6pCI
 id: embeddable.dynamic_content.default
 targetEntityType: embeddable
 bundle: dynamic_content

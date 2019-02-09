@@ -6,8 +6,6 @@ dependencies:
     - field.storage.embeddable.field_hero_description
   module:
     - text
-_core:
-  default_config_hash: gP8FNLxhburK0TqKTrBgawW7l_g6AGL7og-RFnw3CDg
 id: embeddable.hero_text_only.field_hero_description
 field_name: field_hero_description
 entity_type: embeddable

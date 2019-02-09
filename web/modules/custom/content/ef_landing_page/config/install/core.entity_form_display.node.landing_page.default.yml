@@ -10,8 +10,6 @@ dependencies:
     - ef
     - path
     - text
-_core:
-  default_config_hash: QNLKujXZlf7HWtO5FxI_x_elQtYYIZIZCgXGLXSrsIU
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page

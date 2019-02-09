@@ -48,8 +48,6 @@ third_party_settings:
     regions:
       simple_image_link_list_content:
         - field_sill_entries
-_core:
-  default_config_hash: _qtwWHcZnEA7FoUNksgOCofKbfDR5uNIlIy5Nablh8U
 id: embeddable.simple_image_link_list.ef_variation_1
 targetEntityType: embeddable
 bundle: simple_image_link_list

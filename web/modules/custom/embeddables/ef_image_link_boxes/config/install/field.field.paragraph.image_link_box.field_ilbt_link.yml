@@ -6,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.image_link_box
   module:
     - link
-_core:
-  default_config_hash: ApEMx9xjTsofMPZndwwyJrxpu78cvh1aPszxSAnVMv4
 id: paragraph.image_link_box.field_ilbt_link
 field_name: field_ilbt_link
 entity_type: paragraph

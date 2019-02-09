@@ -5,8 +5,6 @@ dependencies:
     - field.storage.node.field_topics
     - node.type.article
     - node.type.topic
-_core:
-  default_config_hash: ZzSRP7Y-y34vyCI2854c1RsY5b78g5csqjU-o9O27w0
 id: node.article.field_topics
 field_name: field_topics
 entity_type: node

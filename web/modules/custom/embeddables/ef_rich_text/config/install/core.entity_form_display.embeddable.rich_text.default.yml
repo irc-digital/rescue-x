@@ -6,8 +6,6 @@ dependencies:
     - field.field.embeddable.rich_text.field_ef_rt_text
   module:
     - text
-_core:
-  default_config_hash: 0K6lz54lGD_FQmRfLK9yEX2ElQw7Q49abLu_jwnJiA8
 id: embeddable.rich_text.default
 targetEntityType: embeddable
 bundle: rich_text

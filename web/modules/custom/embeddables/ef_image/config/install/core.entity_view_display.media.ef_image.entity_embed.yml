@@ -25,8 +25,6 @@ third_party_settings:
     regions:
       image_tag_source:
         - field_ef_image
-_core:
-  default_config_hash: 71Daz-8b81rI9TWLXmbq2aEMl2pZ8o5qIb1fuqi8CnQ
 id: media.ef_image.entity_embed
 targetEntityType: media
 bundle: ef_image

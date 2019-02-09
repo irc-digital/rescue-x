@@ -8,8 +8,6 @@ dependencies:
     - field.field.embeddable.hero_text_only.field_hero_slug
   module:
     - text
-_core:
-  default_config_hash: GZyVt72BYziBFva4CDeCnbnYWkhMRhyfr-kpczMiLMk
 id: embeddable.hero_text_only.default
 targetEntityType: embeddable
 bundle: hero_text_only

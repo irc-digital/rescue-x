@@ -40,8 +40,6 @@ third_party_settings:
         - field_displayed_title
       hero_text_only_description:
         - field_hero_description
-_core:
-  default_config_hash: HZEsx1xqWEDDmZmtPJQTXd9MdMoIpBLDQWqA2C9VVEU
 id: embeddable.hero_text_only.default
 targetEntityType: embeddable
 bundle: hero_text_only

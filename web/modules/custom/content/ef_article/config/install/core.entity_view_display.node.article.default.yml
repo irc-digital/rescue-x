@@ -38,8 +38,6 @@ third_party_settings:
       ds_content:
         - field_highlights
         - body
-_core:
-  default_config_hash: Abx5b2r3lgFC2jzizdC41k_J9ShMm3xcDi33f0vaFts
 id: node.article.default
 targetEntityType: node
 bundle: article

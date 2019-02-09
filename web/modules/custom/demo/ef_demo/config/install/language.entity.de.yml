@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - ef_demo
-_core:
-  default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
 id: de
 label: German
 direction: ltr

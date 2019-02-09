@@ -73,8 +73,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-_core:
-  default_config_hash: FOHebDa04jwhk-HHVcweXiU6dL6864HH5ygjRw4YS54
 id: paragraph.simple_image_link.variation_1
 targetEntityType: paragraph
 bundle: simple_image_link

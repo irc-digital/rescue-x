@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_hero_credit
     - node.type.article
-_core:
-  default_config_hash: rH7jrXKfonJeUrXY4LDeyLjrvZ0vV-H6mjK7KSzMqRs
 id: node.article.field_hero_credit
 field_name: field_hero_credit
 entity_type: node

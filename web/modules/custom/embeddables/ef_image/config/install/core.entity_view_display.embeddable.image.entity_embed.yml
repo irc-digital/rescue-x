@@ -33,8 +33,6 @@ third_party_settings:
     regions:
       ds_content:
         - parent_id
-_core:
-  default_config_hash: 68tjrQGXhRSJUGvVCgCVH5PLRgeJwEm1XqgFfLDm6PA
 id: embeddable.image.entity_embed
 targetEntityType: embeddable
 bundle: image

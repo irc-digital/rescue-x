@@ -7,8 +7,6 @@ dependencies:
     - field.field.embeddable.highlight.field_ef_highlight_list_item
   module:
     - link
-_core:
-  default_config_hash: Bk3ZG1UV1RBhsXT_BejNbOcJ6_RcC8_n6apkY_uoKu0
 id: embeddable.highlight.default
 targetEntityType: embeddable
 bundle: highlight

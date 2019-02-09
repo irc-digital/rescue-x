@@ -9,8 +9,6 @@ dependencies:
   enforced:
     module:
       - ef_simple_image_link_list
-_core:
-  default_config_hash: bBh7yQuo6WdRuDQVzvdo8a5-kery1Sa7K2DU5g8Kw8A
 id: simple_image_link_teaser_desaturated
 label: 'Simple image link teaser (desaturated)'
 image_style_mappings:

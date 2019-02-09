@@ -6,8 +6,6 @@ dependencies:
     - node.type.topic
   module:
     - text
-_core:
-  default_config_hash: byxJwKG0AyE7zhX1jtSCfED24NxDeYjJrIrgAnLU4lc
 id: node.topic.body
 field_name: body
 entity_type: node

@@ -7,8 +7,6 @@ dependencies:
     - node.type.topic
   module:
     - ef
-_core:
-  default_config_hash: '-66GxUIf0kfLgGGLeOh-xVPLYiikX-d5_l1UbIHToFo'
 id: node.topic.field_news_and_features
 field_name: field_news_and_features
 entity_type: node

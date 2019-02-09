@@ -4,8 +4,6 @@ dependencies:
   config:
     - ef.type.highlight
     - field.storage.embeddable.field_ef_highlight_list_item
-_core:
-  default_config_hash: IKTTKXuzz4dcK89Oj20-dRB7SdcOG23G8x8YzyLTmwE
 id: embeddable.highlight.field_ef_highlight_list_item
 field_name: field_ef_highlight_list_item
 entity_type: embeddable

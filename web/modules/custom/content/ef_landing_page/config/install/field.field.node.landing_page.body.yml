@@ -9,8 +9,6 @@ dependencies:
       - ef_landing_page
   module:
     - text
-_core:
-  default_config_hash: boF7Ja18DfEh7OU3S7lFuC7VlSrf0Mx8rfj67rSM4YY
 id: node.landing_page.body
 field_name: body
 entity_type: node

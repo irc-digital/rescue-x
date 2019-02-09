@@ -6,8 +6,6 @@ dependencies:
       - ef_curated_content_wrapper
   module:
     - ef_reach_through_content
-_core:
-  default_config_hash: AB2Gj6we80Y6IRNYzRahlBUT9WyXvAdfck20WeCYN4c
 id: reach_through.highlighted_teaser
 label: 'Highlighted teaser'
 targetEntityType: reach_through

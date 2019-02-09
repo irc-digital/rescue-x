@@ -57,8 +57,6 @@ third_party_settings:
         description: ''
         required_fields: false
       label: 'News and features'
-_core:
-  default_config_hash: svAeioDfhVQ3yXf4LxxrCnVAsykn-jYJIHxsU_rtXBU
 id: node.topic.default
 targetEntityType: node
 bundle: topic

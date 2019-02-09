@@ -41,8 +41,6 @@ third_party_settings:
           id: reset
           settings:
             lb: ''
-_core:
-  default_config_hash: 1t2g1NK-RR8jkN8_375RboEpcW1x7GRbaL1WGSbgCe8
 id: media.ef_image.thumbnails
 targetEntityType: media
 bundle: ef_image

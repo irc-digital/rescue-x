@@ -27,8 +27,6 @@ third_party_settings:
       ds_content:
         - name
         - field_ef_image
-_core:
-  default_config_hash: 1t2g1NK-RR8jkN8_375RboEpcW1x7GRbaL1WGSbgCe8
 id: media.ef_image.default
 targetEntityType: media
 bundle: ef_image

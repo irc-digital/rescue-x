@@ -6,8 +6,6 @@ dependencies:
     - node.type.landing_page
   module:
     - ef
-_core:
-  default_config_hash: KtXkuBSR-v0T0Jjy43XTViaBgQrDsgolYxz-LUD-mBA
 id: node.landing_page.field_hero_embeddable
 field_name: field_hero_embeddable
 entity_type: node

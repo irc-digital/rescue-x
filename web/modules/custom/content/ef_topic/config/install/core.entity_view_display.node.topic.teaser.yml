@@ -101,8 +101,6 @@ third_party_settings:
           id: reset
           settings:
             lb: ''
-_core:
-  default_config_hash: PepukOzOVerjRp7Ejb5lEiRDvbW7_mefMwjTWiTTq7k
 id: node.topic.teaser
 targetEntityType: node
 bundle: topic

@@ -44,8 +44,6 @@ third_party_settings:
         - field_hero_description
       hero_text_with_links_links:
         - field_hero_links
-_core:
-  default_config_hash: ZS-aK8W_U3dyMUL6I2slryrev5Wi_SOdejjAdOGszxw
 id: embeddable.hero_text_with_links.default
 targetEntityType: embeddable
 bundle: hero_text_with_links

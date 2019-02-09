@@ -10,8 +10,6 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '1'
-_core:
-  default_config_hash: 9hCjrhoRWK2KydAB1RMV-wpmrDn7ki4VWtDI_jCAi-Y
 id: reach_through.curated_content_wrapper
 target_entity_type_id: reach_through
 target_bundle: curated_content_wrapper

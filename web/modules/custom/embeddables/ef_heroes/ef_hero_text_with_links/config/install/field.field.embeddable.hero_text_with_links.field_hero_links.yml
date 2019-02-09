@@ -6,8 +6,6 @@ dependencies:
     - field.storage.embeddable.field_hero_links
   module:
     - ef_icon_library
-_core:
-  default_config_hash: QAFkFTTDt6ps8R7MOjCHcIYhik4lD-JVRcslv30iJ9Q
 id: embeddable.hero_text_with_links.field_hero_links
 field_name: field_hero_links
 entity_type: embeddable

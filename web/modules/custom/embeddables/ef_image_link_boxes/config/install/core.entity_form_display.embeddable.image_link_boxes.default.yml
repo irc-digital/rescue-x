@@ -6,8 +6,6 @@ dependencies:
     - field.field.embeddable.image_link_boxes.field_ilb_entries
   module:
     - paragraphs
-_core:
-  default_config_hash: r8EKO62mp73ND5yKPO8_Pjg6bfuGHcDVLabAibOvaas
 id: embeddable.image_link_boxes.default
 targetEntityType: embeddable
 bundle: image_link_boxes

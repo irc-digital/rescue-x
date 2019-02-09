@@ -74,8 +74,6 @@ third_party_settings:
         weight: 4
         label: hidden
         formatter: default
-_core:
-  default_config_hash: PNh6y_U2r-ytrgMLdXyYiWu1dgX7zNSys6ba0-30TSQ
 id: media.ef_image.image_well_width
 targetEntityType: media
 bundle: ef_image

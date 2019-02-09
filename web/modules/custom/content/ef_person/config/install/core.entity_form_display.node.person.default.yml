@@ -11,8 +11,6 @@ dependencies:
   module:
     - entity_browser
     - path
-_core:
-  default_config_hash: c4X-17UqZuM1eZZtFOW1YueMK-4qLgDxiA34nu83_d8
 id: node.person.default
 targetEntityType: node
 bundle: person

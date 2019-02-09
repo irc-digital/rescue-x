@@ -6,8 +6,6 @@ dependencies:
       - ef_pull_quote
   module:
     - ef
-_core:
-  default_config_hash: IoLlVoVo4K9TfrQ-TWIIkgINg7P8_EQBMP7b5pHS_rE
 id: embeddable.field_ef_pull_quote_text
 field_name: field_ef_pull_quote_text
 entity_type: embeddable

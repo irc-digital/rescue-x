@@ -4,8 +4,6 @@ dependencies:
   config:
     - ef.type.hero_text_only
     - field.storage.embeddable.field_displayed_title
-_core:
-  default_config_hash: 4gPxbVwMk2j8tRjtVOAkniMKsw4aguLHsE90vx-3thY
 id: embeddable.hero_text_only.field_displayed_title
 field_name: field_displayed_title
 entity_type: embeddable

@@ -53,8 +53,6 @@ third_party_settings:
     regions:
       ds_content:
         - parent_id
-_core:
-  default_config_hash: 8lOHb67WT0giMdErAaqKHb2eZLJy9YIjEtQV6gs3eRE
 id: embeddable.image.ef_variation_2
 targetEntityType: embeddable
 bundle: image

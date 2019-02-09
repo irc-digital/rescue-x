@@ -6,8 +6,6 @@ dependencies:
     - field.field.embeddable.special.field_special_embeddable_type
   module:
     - ef_special
-_core:
-  default_config_hash: qNijOfvEmRmHAe-uhI7k3AatEKuWchfbCYJRH50KPuc
 id: embeddable.special.default
 targetEntityType: embeddable
 bundle: special

@@ -6,8 +6,6 @@ dependencies:
     - node.type.topic
   module:
     - ef
-_core:
-  default_config_hash: Ytt-dHtlG7gR8zxgsSvGjbWGDI-Q11obGyzvtZM4--4
 id: node.topic.field_slug
 field_name: field_slug
 entity_type: node

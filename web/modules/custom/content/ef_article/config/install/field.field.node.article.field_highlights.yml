@@ -7,8 +7,6 @@ dependencies:
     - node.type.article
   module:
     - ef
-_core:
-  default_config_hash: eEDQMcLNjjtnrR87rW6QL5M8bFIPstaqWNUIMmxSL00
 id: node.article.field_highlights
 field_name: field_highlights
 entity_type: node
