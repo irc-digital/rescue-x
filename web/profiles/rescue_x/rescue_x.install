@@ -7,7 +7,7 @@
 
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
-use Drupal\file\FileStorage;
+use Drupal\Core\Config\FileStorage;
 
 /**
  * Implements hook_install().
