@@ -2,6 +2,7 @@
 
 namespace Drupal\ef_crisis_watch;
 
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Url;
@@ -38,7 +39,7 @@ class CrisisWatchService implements CrisisWatchServiceInterface {
     $crisis_watch_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('crisis_watch');
 
     if ($crisis_watch_settings) {
-      $current_language = $this->languageManager->getCurrentLanguage()->getId();
+      $current_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($crisis_watch_settings->hasTranslation($current_language)) {
         $crisis_watch_settings = $crisis_watch_settings->getTranslation($current_language);

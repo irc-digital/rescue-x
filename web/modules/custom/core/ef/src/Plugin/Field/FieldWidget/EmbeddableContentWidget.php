@@ -9,6 +9,7 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\ef\EmbeddableInterface;
@@ -164,12 +165,12 @@ class EmbeddableContentWidget extends EntityReferenceAutocompleteWidget implemen
       /** @var EmbeddableInterface $embeddable */
       $embeddable = $embeddables[$delta];
 
-      $lang_code = $this->languageManager->getCurrentLanguage()->getId();
+      $langcode = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       $translation_exists_access = TRUE;
 
-      if ($embeddable->hasTranslation($lang_code)) {
-        $embeddable = $embeddable->getTranslation($lang_code);
+      if ($embeddable->hasTranslation($langcode)) {
+        $embeddable = $embeddable->getTranslation($langcode);
       } else {
         $translation_exists_access = FALSE;
       }

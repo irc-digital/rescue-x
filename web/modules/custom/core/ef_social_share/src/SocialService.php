@@ -2,6 +2,7 @@
 
 namespace Drupal\ef_social_share;
 
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
 use Drupal\ef_icon_library\IconLibraryInterface;
@@ -34,7 +35,7 @@ class SocialService implements SocialServiceInterface {
     $social_sites_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('social_sites');
 
     if ($social_sites_settings) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($social_sites_settings->hasTranslation($active_language)) {
         $social_sites_settings = $social_sites_settings->getTranslation($active_language);
@@ -60,7 +61,7 @@ class SocialService implements SocialServiceInterface {
     $social_sites_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('social_sites');
 
     if ($social_sites_settings) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($social_sites_settings->hasTranslation($active_language)) {
         $social_sites_settings = $social_sites_settings->getTranslation($active_language);
@@ -95,7 +96,7 @@ class SocialService implements SocialServiceInterface {
     $social_sites_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('social_sites');
 
     if ($social_sites_settings) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($social_sites_settings->hasTranslation($active_language)) {
         $social_sites_settings = $social_sites_settings->getTranslation($active_language);

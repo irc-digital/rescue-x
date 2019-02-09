@@ -9,6 +9,7 @@ use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
@@ -108,7 +109,7 @@ class SitewideSettingsListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    $activeLanguageCode = $this->languageManager->getCurrentLanguage()->getId();
+    $activeLanguageCode = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
     if ($entity instanceof ContentEntityInterface) {
       /** @var ContentEntityInterface $content_entity */

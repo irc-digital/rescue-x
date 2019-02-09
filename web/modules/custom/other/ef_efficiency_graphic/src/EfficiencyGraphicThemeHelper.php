@@ -3,6 +3,7 @@
 namespace Drupal\ef_efficiency_graphic;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\ef_comms_common\SitewideDonationLinkServiceInterface;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
@@ -70,7 +71,7 @@ class EfficiencyGraphicThemeHelper implements ContainerInjectionInterface {
     $efficiency_graphic = $this->sitewideSettingsManager->getSitewideSettingsForType('efficiency_graphic');
 
     if ($efficiency_graphic) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($efficiency_graphic->hasTranslation($active_language)) {
         $efficiency_graphic = $efficiency_graphic->getTranslation($active_language);

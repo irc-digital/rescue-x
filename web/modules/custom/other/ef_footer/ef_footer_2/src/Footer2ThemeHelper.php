@@ -4,6 +4,7 @@ namespace Drupal\ef_footer_2;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
@@ -70,7 +71,7 @@ class Footer2ThemeHelper implements ContainerInjectionInterface {
     $footer_legal_formation_text = $this->sitewideSettingsManager->getSitewideSettingsForType('footer_legal_formation_text');
 
     if ($footer_legal_formation_text) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($footer_legal_formation_text->hasTranslation($active_language)) {
         $footer_legal_formation_text = $footer_legal_formation_text->getTranslation($active_language);
@@ -88,7 +89,7 @@ class Footer2ThemeHelper implements ContainerInjectionInterface {
     $links = $this->sitewideSettingsManager->getSitewideSettingsForType($menu_name);
 
     if ($links) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($links->hasTranslation($active_language)) {
         $links = $links->getTranslation($active_language);

@@ -3,6 +3,7 @@
 namespace Drupal\ef_lead_generation_form;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Render\Element;
 use Drupal\ef_sitewide_settings\SitewideSettingsManagerInterface;
@@ -90,7 +91,7 @@ class LeadGenerationFormThemeHelper implements ContainerInjectionInterface {
     $footer_lead_generation = $this->sitewideSettingsManager->getSitewideSettingsForType('footer_lead_generation');
 
     if ($footer_lead_generation) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($footer_lead_generation->hasTranslation($active_language)) {
         $footer_lead_generation = $footer_lead_generation->getTranslation($active_language);

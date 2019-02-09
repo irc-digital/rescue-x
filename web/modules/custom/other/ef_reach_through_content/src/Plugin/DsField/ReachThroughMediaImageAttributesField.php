@@ -3,6 +3,7 @@
 namespace Drupal\ef_reach_through_content\Plugin\DsField;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Utility\LinkGeneratorInterface;
@@ -65,7 +66,7 @@ class ReachThroughMediaImageAttributesField extends MediaImageAttributesField {
       /** @var \Drupal\node\NodeInterface $outer_entity */
       $outer_entity = $reach_through_entity->reach_through_ref->entity;
 
-      $current_language_code = $this->languageManager->getCurrentLanguage()->getId();
+      $current_language_code = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($outer_entity->hasTranslation($current_language_code)) {
         $outer_entity = $outer_entity->getTranslation($current_language_code);

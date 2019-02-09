@@ -4,6 +4,7 @@
 namespace Drupal\ef_comms_common;
 
 
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
 use Drupal\ef_icon_library\IconLibraryInterface;
@@ -39,7 +40,7 @@ class SitewideDonationLinkService implements SitewideDonationLinkServiceInterfac
     $donation_settings = $this->sitewideSettingsManager->getSitewideSettingsForType('donation_link');
 
     if ($donation_settings) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($donation_settings->hasTranslation($active_language)) {
         $donation_settings = $donation_settings->getTranslation($active_language);

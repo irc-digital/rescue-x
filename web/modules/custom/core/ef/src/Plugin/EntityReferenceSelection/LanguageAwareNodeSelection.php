@@ -3,6 +3,7 @@
 namespace Drupal\ef\Plugin\EntityReferenceSelection;
 
 use Drupal\Core\Entity\Annotation\EntityReferenceSelection;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\node\Plugin\EntityReferenceSelection\NodeSelection;
 
 /**
@@ -29,7 +30,7 @@ class LanguageAwareNodeSelection extends NodeSelection {
 
     $language_manager = \Drupal::languageManager();
 
-    $current_language = $language_manager->getCurrentLanguage();
+    $current_language = $language_manager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
 
     $query->condition($entity_type->getKey('langcode'), $current_language->getId(), '=');
 

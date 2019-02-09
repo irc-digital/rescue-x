@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityViewBuilder;
 use Drupal\Core\Entity\EntityViewBuilderInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\PrivateKey;
 use Drupal\Core\Site\Settings;
@@ -154,7 +155,7 @@ class EmbeddableViewBuilder extends EntityViewBuilder implements EmbeddableViewB
 
     $destination = \Drupal::destination()->getAsArray();
 
-    $current_language = $this->languageManager->getCurrentLanguage();
+    $current_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
 
     $contextual_menu_links = [];
 

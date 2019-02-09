@@ -4,6 +4,7 @@ namespace Drupal\ef_main_menu;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
@@ -66,7 +67,7 @@ class MainMenuThemeHelper implements ContainerInjectionInterface {
     $main_menu_info = $this->sitewideSettingsManager->getSitewideSettingsForType('main_menu');
 
     if ($main_menu_info) {
-      $active_language = $this->languageManager->getCurrentLanguage()->getId();
+      $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
       if ($main_menu_info->hasTranslation($active_language)) {
         $main_menu_info = $main_menu_info->getTranslation($active_language);

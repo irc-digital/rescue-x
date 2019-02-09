@@ -4,6 +4,7 @@ namespace Drupal\ef_secondary_menu;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\ef_crisis_watch\CrisisWatchServiceInterface;
 use Drupal\ef_icon_library\IconLibraryInterface;
@@ -72,7 +73,7 @@ class SecondaryMenuThemeHelper implements ContainerInjectionInterface {
 
     $menu_items = [];
 
-    $active_language = $this->languageManager->getCurrentLanguage()->getId();
+    $active_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
 
     /** @var \Drupal\menu_link_content\MenuLinkContentInterface $menu_link */
     foreach ($menu_links as $menu_link) {
