@@ -1,12 +1,12 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - ef
-    - user
   enforced:
     module:
       - ef
+  module:
+    - ef
+    - user
 id: embeddable_content
 label: 'Embeddable content'
 module: views
@@ -471,12 +471,13 @@ display:
             operator: langcode_op
             identifier: langcode
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+              senior_editor: '0'
             reduce: false
           is_grouped: false
           group_info:
