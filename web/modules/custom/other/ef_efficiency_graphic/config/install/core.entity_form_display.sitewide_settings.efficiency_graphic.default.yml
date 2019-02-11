@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.efficiency_graphic
+    - field.field.sitewide_settings.efficiency_graphic.field_efficiency_graphic_entries
+  module:
+    - paragraphs
+id: sitewide_settings.efficiency_graphic.default
+targetEntityType: sitewide_settings
+bundle: efficiency_graphic
+mode: default
+content:
+  field_efficiency_graphic_entries:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

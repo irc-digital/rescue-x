@@ -1,0 +1,10 @@
+name: EF Secondary menu
+type: module
+description: 'Config and function for rendering the global navigation secondary menu.'
+package: EF Menu
+core: 8.x
+dependencies:
+  - ef
+  - ef_icon_library
+  - ef_patterns
+  - ef_social_share

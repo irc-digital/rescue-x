@@ -1,0 +1,4 @@
+social_share_site.admin:
+  route_name: entity.social_share_site.collection
+  title: 'Manage social share sites'
+  base_route: entity.social_share_site.collection

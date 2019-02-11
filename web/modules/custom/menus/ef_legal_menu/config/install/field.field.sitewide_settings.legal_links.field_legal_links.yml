@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.legal_links
+    - field.storage.sitewide_settings.field_legal_links
+  module:
+    - link
+id: sitewide_settings.legal_links.field_legal_links
+field_name: field_legal_links
+entity_type: sitewide_settings
+bundle: legal_links
+label: 'Legal links'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

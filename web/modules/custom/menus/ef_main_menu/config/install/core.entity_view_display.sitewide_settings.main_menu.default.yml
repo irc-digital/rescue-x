@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.main_menu
+    - field.field.sitewide_settings.main_menu.field_main_menu
+id: sitewide_settings.main_menu.default
+targetEntityType: sitewide_settings
+bundle: main_menu
+mode: default
+content:
+  field_main_menu:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1x1_1280px_wide
+    - image.style.square_1x1_2000px_wide
+    - image.style.square_1x1_400px_wide
+    - image.style.square_1x1_640px_wide
+  module:
+    - ef_image_styles
+  enforced:
+    module:
+      - ef_quote
+id: quote_headshot
+label: 'Quote headshot'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 'Not applicable'
+      sizes_image_styles:
+        - square_1x1_1280px_wide
+        - square_1x1_2000px_wide
+        - square_1x1_400px_wide
+        - square_1x1_640px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: square_1x1_640px_wide

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.donation_link
+    - field.field.sitewide_settings.donation_link.field_donation_link_link
+  module:
+    - link
+id: sitewide_settings.donation_link.default
+targetEntityType: sitewide_settings
+bundle: donation_link
+mode: default
+content:
+  field_donation_link_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true

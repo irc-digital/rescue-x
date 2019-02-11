@@ -1,5 +1,0 @@
-header_cookie_name: 'test-header-cookie'
-header_cookie_expiry: 1
-header_content:
-  include():
-    pattern: "components-call-to-action-5"

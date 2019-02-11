@@ -107,13 +107,13 @@ jobs:
                 name: Build Drupal assets
                 command: composer -n build-assets
 
-            - run:
-                name: Install Patternlab
-                command: ./.circleci/scripts/irc/install-patternlab
-
-            - run:
-                name: Build Patternlab assets
-                command: ./.circleci/scripts/irc/build-patternlab
+#            - run:
+#                name: Install Patternlab
+#                command: ./.circleci/scripts/irc/install-patternlab
+#
+#            - run:
+#                name: Build Patternlab assets
+#                command: ./.circleci/scripts/irc/build-patternlab
 
             - run:
                 name: Push to IRC monthly branch
@@ -137,7 +137,7 @@ jobs:
 #                name: Install additional dependencies
 #                command: ./.circleci/scripts/irc/install-additional-dependencies
 #
-#            - run:
+#                  - run:
 #                name: Backstop visual regression test
 #                command: ./.circleci/scripts/irc/backstop-visual-regression-test
 #
@@ -166,6 +166,6 @@ workflows:
   build_and_test:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
-      # - build
-      # Build deploy and test on Pantheon
+      - build
+      # Build deploy and do additinoal tests on Pantheon
       - build_deploy_and_test

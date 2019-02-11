@@ -1,6 +1,0 @@
-link_icon_name: 'stethoscope'
-link_icon_text: "Faker.words(7,true)"
-link_icon_prefix_text: "Faker.words(3,true)"
-link_icon_modifiers:
-  - 'type-four'
-  - 'subtype-prefix'

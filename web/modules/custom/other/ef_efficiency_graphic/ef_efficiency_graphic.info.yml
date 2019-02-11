@@ -1,0 +1,10 @@
+name: EF Efficiency graphic
+type: module
+description: 'The site-wide efficiency graphic'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_sitewide_settings
+  - paragraphs

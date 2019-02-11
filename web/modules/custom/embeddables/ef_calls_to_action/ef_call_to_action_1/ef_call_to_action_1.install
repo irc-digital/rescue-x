@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_call_to_action_1_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('call_to_action_1');
+}
+
+function ef_call_to_action_1_uninstall () {
+  ef_delete_all ('embeddable', 'call_to_action_1');
+}

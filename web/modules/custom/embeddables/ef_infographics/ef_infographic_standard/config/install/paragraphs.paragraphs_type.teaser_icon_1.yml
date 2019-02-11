@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_infographic_standard
+id: teaser_icon_1
+label: 'infographic entry'
+icon_uuid: null
+description: 'The icon with text used by the standard infographic.'
+behavior_plugins: {  }

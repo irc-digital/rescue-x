@@ -1,0 +1,4 @@
+services:
+  ef_crisis_watch_service:
+    class: Drupal\ef_crisis_watch\CrisisWatchService
+    arguments: ['@ef_sitewide_settings.manager', '@path.alias_manager', '@language_manager']

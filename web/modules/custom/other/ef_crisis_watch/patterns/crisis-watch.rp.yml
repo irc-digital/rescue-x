@@ -1,0 +1,15 @@
+crisis_watch:
+  label: 'Crisis watch'
+  use: "@molecules/30-crisis-watch/crisis-watch.twig"
+  fields:
+    crisis_watch_text:
+      type: string
+      label: "Text"
+    crisis_watch_url:
+      type: url
+      label: "URL"
+  libraries:
+    - crisis_watch_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-crisis-watch.css: {}

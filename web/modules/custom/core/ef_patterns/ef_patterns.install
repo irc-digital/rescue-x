@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_patterns_install () {
+  ef_patterns_add_format_filter ();
+}
+
+function ef_patterns_add_format_filter() {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addTextFormatFilter (
+      'basic_html',
+      'filter_pattern_decorator',
+      [
+        'provider' => 'ef_patterns',
+        'settings' => [
+          'config' =>  'p|rpla-paragraph|body|lead',
+        ],
+      ],
+      'entity_embed'
+    );
+}
+
+
+
+

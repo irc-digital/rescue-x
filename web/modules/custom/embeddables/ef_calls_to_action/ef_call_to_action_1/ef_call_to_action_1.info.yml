@@ -1,0 +1,10 @@
+name: EF Call to action (1)
+type: module
+description: 'A simpler, stripped back CTA component with a title, description text, and button link.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_modifiers
+  - ef_icon_library

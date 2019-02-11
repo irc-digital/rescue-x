@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_main_menu
+id: main_menu
+label: 'Main menu'
+description: 'Due to the nature of Drupal''s menu translation approach it is very likely that different languages will require entirely different menus. This settings type allows us to associate a language with a menu.'

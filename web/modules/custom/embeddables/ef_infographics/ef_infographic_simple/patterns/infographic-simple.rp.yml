@@ -1,0 +1,18 @@
+infographic_simple:
+  label: "Infographic - simple"
+  use: "@components/37-infographics/04-simple/infographic-simple.twig"
+  section: TRUE
+  fields:
+    infographic_simple_content:
+      type: list
+      label: "Content"
+      unpack: TRUE
+  libraries:
+    - infographic_simple_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-infographic-simple.css: {}
+    - four_column_list_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-four-column-list.css: {}

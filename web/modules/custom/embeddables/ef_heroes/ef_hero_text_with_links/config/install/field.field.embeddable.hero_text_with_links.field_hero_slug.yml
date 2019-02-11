@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.hero_text_with_links
+    - field.storage.embeddable.field_hero_slug
+  module:
+    - ef
+id: embeddable.hero_text_with_links.field_hero_slug
+field_name: field_hero_slug
+entity_type: embeddable
+bundle: hero_text_with_links
+label: Slug
+description: 'A signpost that broadly categorizes the page. May be a keyword or phrase. Options for this hero type.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  dropdown_options: ''
+  dropdown_default: ''
+field_type: ef_string_dropdown

@@ -1,5 +1,0 @@
-stacked_headline_2_headline: "Faker.words(10,true)"
-stacked_headline_2_slug: "Faker.words(3,true)"
-stacked_headline_2_sub_slug: "Faker.words(2,true)"
-stacked_headline_2_sub_slug_url: '#'
-stacked_headline_2_summary: "Faker.sentences(3,true)"

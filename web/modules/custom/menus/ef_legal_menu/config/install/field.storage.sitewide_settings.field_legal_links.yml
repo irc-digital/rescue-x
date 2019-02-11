@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+    - link
+  enforced:
+    module:
+      - ef_legal_menu
+id: sitewide_settings.field_legal_links
+field_name: field_legal_links
+entity_type: sitewide_settings
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

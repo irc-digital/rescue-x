@@ -1,5 +1,0 @@
-<?php
-
-function ef_rich_text_uninstall () {
-  ef_delete_all ('embeddable', 'rich_text');
-}

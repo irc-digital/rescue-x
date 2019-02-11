@@ -1,8 +1,0 @@
-video_poster: "//vjs.zencdn.net/v/oceans.png"
-video_sources:
-  - source: '//vjs.zencdn.net/v/oceans.mp4'
-    type: 'video/mp4'
-  - source: '//vjs.zencdn.net/v/oceans.webm'
-    type: 'video/webm'
-  - source: '//vjs.zencdn.net/v/oceans.ogv'
-    type: 'video/ogg'

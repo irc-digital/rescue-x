@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ege_label
+    - paragraphs.paragraphs_type.efficiency_graphic_entry
+id: paragraph.efficiency_graphic_entry.field_ege_label
+field_name: field_ege_label
+entity_type: paragraph
+bundle: efficiency_graphic_entry
+label: Label
+description: 'The label for this entry on the efficiency graphic'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

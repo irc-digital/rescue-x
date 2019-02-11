@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+    - system
+  enforced:
+    module:
+      - ef_main_menu
+id: sitewide_settings.field_main_menu
+field_name: field_main_menu
+entity_type: sitewide_settings
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_secondary_menu
+id: secondary
+label: 'Secondary navigation'
+description: 'This menu contains the careers, volunteering etc type links in the global navigation'
+locked: false

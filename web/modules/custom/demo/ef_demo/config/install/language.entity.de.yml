@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_demo
+id: de
+label: German
+direction: ltr
+weight: 0
+locked: false

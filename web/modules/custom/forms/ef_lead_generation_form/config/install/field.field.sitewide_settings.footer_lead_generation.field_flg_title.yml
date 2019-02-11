@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_lead_generation
+    - field.storage.sitewide_settings.field_flg_title
+id: sitewide_settings.footer_lead_generation.field_flg_title
+field_name: field_flg_title
+entity_type: sitewide_settings
+bundle: footer_lead_generation
+label: Title
+description: 'Optional text presented above the lead generation form field. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

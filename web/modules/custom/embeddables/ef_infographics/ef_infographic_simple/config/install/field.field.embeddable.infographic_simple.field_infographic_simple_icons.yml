@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.infographic_simple
+    - field.storage.embeddable.field_infographic_simple_icons
+    - paragraphs.paragraphs_type.teaser_icon_2
+  module:
+    - entity_reference_revisions
+id: embeddable.infographic_simple.field_infographic_simple_icons
+field_name: field_infographic_simple_icons
+entity_type: embeddable
+bundle: infographic_simple
+label: Icons
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      teaser_icon_2: teaser_icon_2
+    target_bundles_drag_drop:
+      teaser_icon_1:
+        weight: 3
+        enabled: false
+      teaser_icon_2:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

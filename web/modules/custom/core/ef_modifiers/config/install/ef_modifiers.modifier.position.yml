@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
+id: position
+label: Position
+weight: 0
+class_name: position
+editorial_name: Position
+description: 'How should this layout: to the left, to the right or in the middle?'
+tooltip: 'How should this be positioned?'
+promote: false
+default_option: position.middle

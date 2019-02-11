@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ege_percentage
+    - paragraphs.paragraphs_type.efficiency_graphic_entry
+id: paragraph.efficiency_graphic_entry.field_ege_percentage
+field_name: field_ege_percentage
+entity_type: paragraph
+bundle: efficiency_graphic_entry
+label: Percentage
+description: 'The percentage for this efficiency graphic entry.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: '%'
+field_type: integer

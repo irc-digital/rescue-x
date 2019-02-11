@@ -1,0 +1,17 @@
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_image_credit
+    - media.type.ef_image
+id: media.ef_image.field_image_credit
+field_name: field_image_credit
+entity_type: media
+bundle: ef_image
+label: Credit
+description: 'Name of the person or organization associated with this photo, usually the photographer. Will be prefixed by <em>Photo: </em>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

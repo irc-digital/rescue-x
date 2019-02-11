@@ -1,0 +1,31 @@
+person_info_1:
+  label: 'Person info 1'
+  use: "@molecules/05-person-info/05-person-info-1/person-info-1.twig"
+  fields:
+    person_info_1_name:
+      type: string
+      label: 'Name'
+    person_info_1_title:
+      type: string
+      label: 'Title'
+    person_info_1_prefix:
+      type: string
+      label: 'Prefix'
+    person_info_1_social:
+      type: array
+      label: 'Social'
+    person_info_1_responsive_image_source_set:
+      type: array
+      label: 'Responsive image source'
+    person_info_1_responsive_image_fallback:
+      type: string
+      label: 'Responsive image fallback'
+    person_info_1_responsive_image_alt:
+      type: string
+      label: 'Responsive image alt'
+
+  libraries:
+    - person_info_1_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-person-info-1.css: {}

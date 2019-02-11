@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_social_share
+id: social_sites
+label: 'Social sites'
+description: 'Links to social sites - as used in the global navigation and footer - and social share side-wide settings.'

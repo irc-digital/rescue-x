@@ -1,7 +1,0 @@
-highlight_link_url: "#"
-highlight_link_text: "Faker.words(3, true)"
-highlight_list_content:
-  - "Faker.sentence(1, true)"
-  - "Faker.sentence(1, true)"
-  - "Faker.sentence(1, true)"
-  - "Faker.sentence(1, true)"

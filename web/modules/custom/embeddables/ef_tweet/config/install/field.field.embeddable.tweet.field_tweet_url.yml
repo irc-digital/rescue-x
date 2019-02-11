@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.tweet
+    - field.storage.embeddable.field_tweet_url
+id: embeddable.tweet.field_tweet_url
+field_name: field_tweet_url
+entity_type: embeddable
+bundle: tweet
+label: 'Tweet link'
+description: 'The URL of the tweet. You may get this clicking on the more (down arrow) link on a tweet and selecting ''Copy link to Tweet'''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

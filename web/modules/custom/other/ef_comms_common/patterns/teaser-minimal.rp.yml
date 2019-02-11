@@ -1,0 +1,18 @@
+teaser_minimal:
+  label: 'Teaser - minimal'
+  use: "@components/87-teasers/15-minimal/teaser-minimal.twig"
+  fields:
+    teaser_minimal_url:
+      type: url
+      label: 'URL'
+    teaser_minimal_slug:
+      type: text
+      label: 'Slug'
+    teaser_minimal_title:
+      type: text
+      label: 'Title'
+  libraries:
+    - teaser_minimal_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-minimal.css: {}

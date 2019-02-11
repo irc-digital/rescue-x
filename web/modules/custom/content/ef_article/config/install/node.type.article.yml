@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_article
+  module:
+    - ef_curated_content_wrapper
+third_party_settings:
+  ef_reach_through_content:
+    reach_through_details:
+      -
+        reach_through_bundle_id: curated_content_wrapper
+        settings:
+          mapped_fields:
+            -
+              reach_through_bundle_field: field_ccw_call_to_action_text
+              node_field: field_call_to_action_text
+            -
+              reach_through_bundle_field: field_ccw_image
+              node_field: field_teaser_image
+            -
+              reach_through_bundle_field: field_ccw_slug
+              node_field: field_slug
+            -
+              reach_through_bundle_field: field_ccw_summary
+              node_field: body.summary
+            -
+              reach_through_bundle_field: field_ccw_title
+              node_field: title
+name: Article
+type: article
+description: 'Use articles to create rich feature experiences.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

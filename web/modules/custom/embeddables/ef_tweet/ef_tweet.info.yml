@@ -1,0 +1,10 @@
+name: EF Tweet
+type: module
+description: 'Embeddable that allows an editor to embed a tweet.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_wysiwyg_embed
+  - ef_patterns
+  - ef_twitter_base

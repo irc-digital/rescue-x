@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
+id: position.middle
+label: Middle
+class_name: middle
+target_embeddable_modifier: position
+weight: -10

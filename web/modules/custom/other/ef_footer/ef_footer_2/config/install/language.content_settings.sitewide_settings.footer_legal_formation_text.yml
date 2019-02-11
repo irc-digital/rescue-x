@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.footer_legal_formation_text
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: sitewide_settings.footer_legal_formation_text
+target_entity_type_id: sitewide_settings
+target_bundle: footer_legal_formation_text
+default_langcode: current_interface

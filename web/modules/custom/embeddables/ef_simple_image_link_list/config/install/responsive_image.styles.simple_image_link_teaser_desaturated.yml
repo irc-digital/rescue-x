@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.variable_height_desaturated_150px_wide
+    - image.style.variable_height_desaturated_300px_wide
+    - image.style.variable_height_desaturated_450px_wide
+    - image.style.variable_height_desaturated_600px_wide
+  enforced:
+    module:
+      - ef_simple_image_link_list
+id: simple_image_link_teaser_desaturated
+label: 'Simple image link teaser (desaturated)'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 640px) 300px, 150px'
+      sizes_image_styles:
+        - variable_height_desaturated_150px_wide
+        - variable_height_desaturated_300px_wide
+        - variable_height_desaturated_450px_wide
+        - variable_height_desaturated_600px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: variable_height_desaturated_300px_wide

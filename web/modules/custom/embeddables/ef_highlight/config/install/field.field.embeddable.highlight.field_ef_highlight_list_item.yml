@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.highlight
+    - field.storage.embeddable.field_ef_highlight_list_item
+id: embeddable.highlight.field_ef_highlight_list_item
+field_name: field_ef_highlight_list_item
+entity_type: embeddable
+bundle: highlight
+label: 'Highlight bullet'
+description: 'Each item should contain a short one or two sentence blurb.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

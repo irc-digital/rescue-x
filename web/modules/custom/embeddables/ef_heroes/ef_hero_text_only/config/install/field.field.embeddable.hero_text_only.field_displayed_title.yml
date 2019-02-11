@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.hero_text_only
+    - field.storage.embeddable.field_displayed_title
+id: embeddable.hero_text_only.field_displayed_title
+field_name: field_displayed_title
+entity_type: embeddable
+bundle: hero_text_only
+label: Headline
+description: 'The title displayed to the visitor.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

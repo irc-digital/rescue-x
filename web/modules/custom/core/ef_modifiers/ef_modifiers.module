@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * If the embeddable being rendered is using the position modifier and has been
+ * set to use the left or right option, we wrap the embeddable in the sidebar_2 layout pattern
+ */
+function ef_modifiers_preprocess_embeddable(array &$variables) {
+  $position = null;
+
+  if (isset($variables['elements']['embeddable_content']['#embeddable_reference_options']['embeddable_modifier_options']) && is_array($variables['elements']['embeddable_content']['#embeddable_reference_options']['embeddable_modifier_options'])) {
+    foreach ($variables['elements']['embeddable_content']['#embeddable_reference_options']['embeddable_modifier_options'] as $modifier_option) {
+      if (in_array($modifier_option, ['position-right', 'position-left'])) {
+        $position = $modifier_option;
+        break;
+      }
+    }
+  }
+
+  if (!is_null($position)) {
+    $variables['content'] = [
+      '#type' => 'pattern',
+      '#id' => 'aside_2',
+      '#fields' => [
+        'aside_2_content' => $variables['content']['embeddable_content'],
+        'aside_2_modifiers' => [$position],
+      ],
+    ];
+  }
+}

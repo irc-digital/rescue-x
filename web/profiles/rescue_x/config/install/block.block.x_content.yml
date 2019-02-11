@@ -5,8 +5,6 @@ dependencies:
     - system
   theme:
     - x
-_core:
-  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
 id: x_content
 theme: x
 region: content

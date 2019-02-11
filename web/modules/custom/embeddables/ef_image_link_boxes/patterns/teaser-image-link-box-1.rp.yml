@@ -1,0 +1,27 @@
+teaser_image_link_box_1:
+  label: "Image link box"
+  use: "@components/87-teasers/20-image-link-box-1/teaser-image-link-box-1.twig"
+  fields:
+    teaser_image_link_box_1_url:
+      type: url
+      label: "URL"
+    teaser_image_link_box_1_title:
+      type: text
+      label: "Title"
+    teaser_image_link_box_1_summary:
+      type: text
+      label: "Summary"
+    teaser_image_link_box_1_image_source_set:
+       type: array
+       label: "Responsive image source set"
+    teaser_image_link_box_1_image_fallback:
+      type: url
+      label: "Responsive image fallback"
+    teaser_image_link_box_1_image_alt:
+      type: text
+      label: "Responsive image alt"
+  libraries:
+    - teaser_image_link_box_1_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-image-link-box-1.css: {}

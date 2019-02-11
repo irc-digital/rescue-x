@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_4x3_220px_wide
+    - image.style.landscape_4x3_640px_wide
+    - image.style.landscape_4x3_928px_wide
+  enforced:
+    module:
+      - ef_image_link_boxes
+id: image_link_box_teaser
+label: 'Image link box teaser'
+image_style_mappings:
+  -
+    breakpoint_id: ef_image_styles.small
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1208px) 392px, (min-width: 640px) 288px, calc(100vw - 16px)'
+      sizes_image_styles:
+        - landscape_4x3_220px_wide
+        - landscape_4x3_640px_wide
+        - landscape_4x3_928px_wide
+breakpoint_group: ef_image_styles
+fallback_image_style: landscape_4x3_640px_wide

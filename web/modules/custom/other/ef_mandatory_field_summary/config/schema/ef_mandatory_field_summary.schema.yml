@@ -1,0 +1,7 @@
+field.widget.third_party.ef_mandatory_field_summary:
+  type: mapping
+  label: 'EF third party widget settings'
+  mapping:
+    textarea_summary_required:
+      type: boolean
+      label: 'Is the summary field of the textarea a mandatory field'

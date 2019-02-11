@@ -1,0 +1,14 @@
+name: EF Global Navigation
+type: module
+description: 'Provides support for the global navigation.'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_sitewide_settings
+  - ef_comms_common
+  - ef_crisis_watch
+  - ef_icon_library
+  - ef_main_menu
+  - ef_secondary_menu

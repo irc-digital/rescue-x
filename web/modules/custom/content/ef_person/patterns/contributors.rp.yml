@@ -1,0 +1,16 @@
+contributors:
+  label: 'Contributors'
+  use: "@molecules/10-contributors/contributors.twig"
+  fields:
+    contributors_list:
+      type: array
+      label: 'Contributor list'
+  libraries:
+    - contributors_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-contributors.css: {}
+    - contributor_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-person-info-1.css: {}

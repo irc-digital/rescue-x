@@ -1,0 +1,29 @@
+image_inset:
+  label: "Image - inset"
+  use: "@components/32-images/25-image-inset/image-inset.twig"
+  section: TRUE
+  fields:
+    image_inset_responsive_image_source_set:
+      type: array
+      label: 'Responsive image source set'
+    image_inset_responsive_image_fallback:
+      type: string
+      label: "Responsive image fallback"
+    image_inset_responsive_image_alt:
+      type: string
+      label: "Responsive image alt"
+    image_inset_caption_text:
+      type: string
+      label: 'Caption text'
+    image_inset_caption_credit:
+      type: string
+      label: 'Caption credit'
+  libraries:
+    - image_inset:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-image-inset.css: {}
+    - caption:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-caption.css: {}

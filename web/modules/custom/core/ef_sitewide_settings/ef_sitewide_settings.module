@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettingsType;
+
+function ef_sitewide_settings_menu_links_discovered_alter(&$links) {
+  $entityTypeManager = \Drupal::entityTypeManager();
+
+  /** @var \Drupal\ef_sitewide_settings\Entity\SitewideSettingsType $type */
+  foreach ($entityTypeManager->getStorage('sitewide_settings_type')->loadMultiple() as $type) {
+    $key = 'entity.entity_view_display.sitewide_settings.default.' . $type->id();
+    unset($links[$key]);
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function ef_sitewide_settings_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity instanceof SitewideSettingsType) {
+    unset ($operations['manage-display']);
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function ef_sitewide_settings_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'local_tasks_alter') {
+    $group = $implementations['ef_sitewide_settings'];
+    unset($implementations['ef_sitewide_settings']);
+    $implementations['ef_sitewide_settings'] = $group;
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function ef_sitewide_settings_local_tasks_alter(&$local_tasks) {
+  unset($local_tasks['field_ui.fields:display_overview_sitewide_settings']);
+  unset($local_tasks['ds.entities:sitewide_settings.display_tab']);
+}

@@ -1,0 +1,11 @@
+name: EF Footer 2
+type: module
+description: 'The bottom footer'
+package: EF Other
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_sitewide_settings
+  - ef_legal_menu
+  - ef_affiliates_menu

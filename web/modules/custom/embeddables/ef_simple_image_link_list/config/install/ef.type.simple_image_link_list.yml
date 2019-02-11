@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_simple_image_link_list
+id: simple_image_link_list
+label: 'Simple image link list'
+description: 'Provides a list style revolving around an image. This is used for partners, among other things.'
+exclude_from_embeddable_overview_quick_add_list: false

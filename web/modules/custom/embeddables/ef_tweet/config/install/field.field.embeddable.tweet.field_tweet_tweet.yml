@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.tweet
+    - field.storage.embeddable.field_tweet_tweet
+id: embeddable.tweet.field_tweet_tweet
+field_name: field_tweet_tweet
+entity_type: embeddable
+bundle: tweet
+label: Tweet
+description: 'The full tweet details. This is retrieved from the Twitter API and is not editable by an admin or editor.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

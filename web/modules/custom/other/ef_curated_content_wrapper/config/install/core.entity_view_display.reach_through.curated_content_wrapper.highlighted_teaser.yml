@@ -1,0 +1,115 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.reach_through.highlighted_teaser
+    - ef_reach_through_content.reach_through_type.curated_content_wrapper
+    - field.field.reach_through.curated_content_wrapper.field_ccw_call_to_action_text
+    - field.field.reach_through.curated_content_wrapper.field_ccw_image
+    - field.field.reach_through.curated_content_wrapper.field_ccw_slug
+    - field.field.reach_through.curated_content_wrapper.field_ccw_summary
+    - field.field.reach_through.curated_content_wrapper.field_ccw_title
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_teaser_highlighted
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      teaser_highlighted_url:
+        - reach_through_url
+      teaser_highlighted_slug:
+        - field_ccw_slug
+      teaser_highlighted_title:
+        - field_ccw_title
+      teaser_highlighted_summary:
+        - field_ccw_summary
+      teaser_highlighted_cta:
+        - field_ccw_call_to_action_text
+      teaser_highlighted_image_source_set:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+      teaser_highlighted_image_fallback:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+      teaser_highlighted_image_alt:
+        - 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+    fields:
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_srcset'
+        weight: 5
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_highlighted
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_fallback_uri'
+        weight: 6
+        label: hidden
+        formatter: default
+        settings:
+          responsive_image_style: teaser_highlighted
+        ft:
+          id: reset
+          settings:
+            lb: ''
+      'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt':
+        plugin_id: 'reach_through_media_image_attributes_field:reach_through_curated_content_wrapper_field_ccw_image_alt'
+        weight: 7
+        label: hidden
+        formatter: default
+      reach_through_url:
+        plugin_id: reach_through_url
+        weight: 0
+        label: hidden
+        formatter: default
+id: reach_through.curated_content_wrapper.highlighted_teaser
+targetEntityType: reach_through
+bundle: curated_content_wrapper
+mode: highlighted_teaser
+content:
+  field_ccw_call_to_action_text:
+    type: string
+    weight: 4
+    region: teaser_highlighted_cta
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_ccw_slug:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: teaser_highlighted_slug
+  field_ccw_summary:
+    type: basic_string
+    weight: 3
+    region: teaser_highlighted_summary
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_ccw_title:
+    type: string
+    weight: 2
+    region: teaser_highlighted_title
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_ccw_image: true
+  langcode: true
+  name: true
+  reach_through_ref: true
+  user_id: true

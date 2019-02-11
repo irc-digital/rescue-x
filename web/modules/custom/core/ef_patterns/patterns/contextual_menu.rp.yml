@@ -1,0 +1,12 @@
+contextual_menu:
+  label: 'Contextual menu'
+  use: "@molecules/25-contextual-menu/contextual-menu.twig"
+  fields:
+    contextual_menu_items:
+      type: array
+      label: 'Menu items'
+  libraries:
+    - contextual_menu_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-contextual-menu.css: {}

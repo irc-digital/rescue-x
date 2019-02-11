@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+use Drupal\ef_crisis_watch\CrisisWatchThemeHelper;
+
+/**
+ * Implements hook_modules_installed
+ *
+ * Makes sure that any new node types added are including in the crisis watch link reference target bundle list
+ *
+ * @param $modules
+ */
+function ef_crisis_watch_modules_installed($modules) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->ensureAllTargetBundlesAreSetOnReferenceField('sitewide_settings', 'crisis_watch', 'field_crisis_watch_link');
+}
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_crisis_watch_theme() {
+
+  return [
+    'ef_crisis_watch' => [
+      'variables' => [
+        'location' => 'header',
+      ],
+    ],
+  ];
+}
+
+function template_preprocess_ef_crisis_watch (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(CrisisWatchThemeHelper::class)
+    ->preprocessCrisisWatch($variables);
+}

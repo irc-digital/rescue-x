@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.highlight
+    - field.storage.embeddable.field_ef_highlight_link
+  module:
+    - link
+id: embeddable.highlight.field_ef_highlight_link
+field_name: field_ef_highlight_link
+entity_type: embeddable
+bundle: highlight
+label: Link
+description: 'Optional link that is displayed underneath the bulleted list.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

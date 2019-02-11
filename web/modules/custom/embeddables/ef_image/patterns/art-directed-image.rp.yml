@@ -1,0 +1,13 @@
+art_directed_image:
+  label: 'Art directed image'
+  use: "@atoms/54-art-directed-image/art-directed-image.twig"
+  fields:
+    art_directed_image_sources:
+      type: array
+      label: 'Responsive image source set'
+    art_directed_image_fallback:
+      type: string
+      label: 'Responsive image fallback'
+    art_directed_image_alt:
+      type: string
+      label: 'Responsive image alt'

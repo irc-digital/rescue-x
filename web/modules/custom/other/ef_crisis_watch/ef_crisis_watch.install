@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_crisis_watch_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->grantPermissions(['edit crisis_watch sitewide settings', 'access sitewide settings overview'], ['senior_editor']);
+}
+
+function ef_crisis_watch_uninstall () {
+  ef_delete_all ('sitewide_settings', 'crisis_watch');
+}

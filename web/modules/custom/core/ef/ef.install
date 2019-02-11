@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Views.
+ */
+
+use Drupal\Core\Config\Schema\ArrayElement;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_install().
+ */
+function ef_install() {
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.main_menu
+    - field.storage.sitewide_settings.field_main_menu
+id: sitewide_settings.main_menu.field_main_menu
+field_name: field_main_menu
+entity_type: sitewide_settings
+bundle: main_menu
+label: Menu
+description: 'Which menu serves as the main menu for this language?'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

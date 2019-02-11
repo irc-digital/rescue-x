@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+id: curated_content_wrapper
+label: 'Curated content wrapper'

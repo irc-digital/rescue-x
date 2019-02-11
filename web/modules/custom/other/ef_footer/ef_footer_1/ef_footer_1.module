@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\ef_footer_1\Footer1ThemeHelper;
+
+
+/**
+ * Implements hook_theme
+ *
+ * @return array
+ */
+function ef_footer_1_theme() {
+
+  return [
+    'ef_footer_1' => [
+      'variables' => [],
+    ]
+  ];
+}
+
+function template_preprocess_ef_footer_1 (&$variables) {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(Footer1ThemeHelper::class)
+    ->preprocessFooter1($variables);
+}

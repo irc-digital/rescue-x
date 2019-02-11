@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_modifiers
+id: position.right
+label: Right
+class_name: right
+target_embeddable_modifier: position
+weight: -10

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sil_title
+    - paragraphs.paragraphs_type.simple_image_link
+id: paragraph.simple_image_link.field_sil_title
+field_name: field_sil_title
+entity_type: paragraph
+bundle: simple_image_link
+label: Title
+description: 'The title text - this is displayed below the image.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+news_and_features:
+  label: News and features
+  description:
+  use: "@components/51-news-and-features/news-and-features.twig"
+  section: TRUE
+  fields:
+    news_and_features_content:
+      type: array
+      label: 'News content'
+      unpack: TRUE
+  libraries:
+    - news_and_features_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-news-and-features.css: {}
+    - teaser_highlighted_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-highlighted.css: {}
+    - teaser_standard_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-standard.css: {}

@@ -1,0 +1,23 @@
+hero_text_with_links:
+  label: 'Hero - text with links'
+  use: "@components/27-heroes/30-text-with-links/hero-text-with-links.twig"
+  fields:
+    hero_text_with_links_headline:
+      type: text
+      label: "Headline"
+    hero_text_with_links_slug:
+      type: text
+      label: "Slug"
+    hero_text_with_links_description:
+      type: text
+      label: "Description"
+    hero_text_with_links_links:
+      type: text
+      label: "Links"
+      unpack: true
+  libraries:
+    - hero_text_with_links:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-text-with-links.css: {}
+

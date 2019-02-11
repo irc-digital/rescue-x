@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_person_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('person')
+    ->grantPermissions(['create person content','delete any person content','delete own person content','edit any person content','edit own person content'], ['senior_editor']);
+
+}
+
+function ef_person_uninstall () {
+  ef_delete_all ('node', 'person');
+}

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_demo
+id: main_de
+label: 'Main navigation (German)'
+description: 'German version of the main navigation'
+locked: false

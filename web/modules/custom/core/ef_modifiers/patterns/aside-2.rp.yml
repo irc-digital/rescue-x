@@ -1,0 +1,12 @@
+aside_2:
+  label: 'Aside 2'
+  use: "@layouts/55-aside-2/aside-2.twig"
+  fields:
+    aside_2_content:
+      type: text
+      label: 'Content'
+  libraries:
+    - aside_2_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-aside-2.css: {}

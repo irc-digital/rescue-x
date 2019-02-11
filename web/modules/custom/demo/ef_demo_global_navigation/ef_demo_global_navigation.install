@@ -1,0 +1,72 @@
+<?php
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+
+function ef_demo_global_navigation_install () {
+  // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+
+  _ef_demo_global_navigation_add_secondary_menu_items();
+}
+
+function _ef_demo_global_navigation_add_secondary_menu_items () {
+  $items = [
+    ['Log in', 'login', FALSE],
+    ['Careers', 'careers', TRUE],
+    ['Volunteering', 'volunteer', TRUE],
+  ];
+
+  $index = 0;
+
+  foreach ($items as $item) {
+    list($title, $icon, $translate) = $item;
+    $menu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'internal:/'],
+      'menu_name' => 'secondary',
+      'weight' => $index,
+      'expanded' => TRUE,
+      'field_icon' => [
+        'value' => $icon,
+      ],
+    ]);
+
+    if ($translate) {
+      $menu_link->addTranslation('de', [
+        'title' => $title . ' (DE)',
+        'field_icon' => [
+          'value' => $icon,
+        ],
+      ]);
+    }
+
+    $menu_link->save();
+    $index++;
+  }
+
+}
+
+function ef_demo_global_navigation_uninstall () {
+  ef_delete_all ('sitewide_settings', 'donation_link');
+  ef_delete_all ('sitewide_settings', 'social_sites');
+
+  foreach (['secondary', 'main', 'main_de'] as $menu) {
+    /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+    $entity_type_manager = \Drupal::service('entity_type.manager');
+
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+    $storage = $entity_type_manager->getStorage('menu_link_content');
+
+    $ids = $storage->getQuery()
+      ->condition('menu_name', $menu)
+      ->execute();
+
+    $all = $storage->loadMultiple($ids);
+
+    foreach ($all as $item) {
+      $item->delete();
+    }
+  }
+
+}

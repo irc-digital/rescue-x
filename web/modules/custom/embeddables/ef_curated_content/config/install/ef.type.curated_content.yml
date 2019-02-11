@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_curated_content
+id: curated_content
+label: 'Curated content'
+description: 'Manually selected news and features'
+exclude_from_embeddable_overview_quick_add_list: true
+dependent_embeddable: false
+only_dependent_embeddable: false

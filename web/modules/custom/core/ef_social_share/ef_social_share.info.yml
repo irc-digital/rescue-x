@@ -1,0 +1,10 @@
+name: EF Social share
+type: module
+description: 'Integrates with common social platforms to provide content sharing abilities'
+package: EF Core
+core: 8.x
+dependencies:
+  - ef
+  - token
+  - ef_icon_library
+  - ef_sitewide_settings

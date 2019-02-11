@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_reach_through_content.reach_through_type.curated_content_wrapper
+    - entity_browser.browser.media_entity_browser
+    - field.field.reach_through.curated_content_wrapper.field_ccw_call_to_action_text
+    - field.field.reach_through.curated_content_wrapper.field_ccw_image
+    - field.field.reach_through.curated_content_wrapper.field_ccw_slug
+    - field.field.reach_through.curated_content_wrapper.field_ccw_summary
+    - field.field.reach_through.curated_content_wrapper.field_ccw_title
+  module:
+    - entity_browser
+id: reach_through.curated_content_wrapper.default
+targetEntityType: reach_through
+bundle: curated_content_wrapper
+mode: default
+content:
+  field_ccw_call_to_action_text:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ccw_image:
+    type: entity_browser_entity_reference
+    weight: 4
+    region: content
+    settings:
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnails
+    third_party_settings: {  }
+  field_ccw_slug:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ccw_summary:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ccw_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  reach_through_ref:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  name: true
+  user_id: true

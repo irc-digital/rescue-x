@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser_icon_1_description
+    - paragraphs.paragraphs_type.teaser_icon_1
+id: paragraph.teaser_icon_1.field_teaser_icon_1_description
+field_name: field_teaser_icon_1_description
+entity_type: paragraph
+bundle: teaser_icon_1
+label: Description
+description: 'Some descriptive text about the infographic item.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

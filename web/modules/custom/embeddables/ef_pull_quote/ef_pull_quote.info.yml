@@ -1,0 +1,9 @@
+name: EF Pull quote
+type: module
+description: 'Provides a pull quote embeddable.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_modifiers
+  - ef_patterns

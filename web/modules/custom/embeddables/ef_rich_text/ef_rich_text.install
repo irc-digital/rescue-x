@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_rich_text_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addToEmbeddableField('rich_text');
+}
+
+function ef_rich_text_uninstall () {
+  ef_delete_all ('embeddable', 'rich_text');
+}

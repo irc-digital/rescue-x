@@ -1,0 +1,20 @@
+image_link_boxes:
+  label: "Image link boxes"
+  use: "@components/29-image-link-boxes-1/image-link-boxes-1.twig"
+  section: TRUE
+  fields:
+    image_link_boxes_1_content:
+      type: list
+      label: "Boxes"
+      unpack: TRUE
+      pass_through_modifiers:
+        - "style"
+  libraries:
+    - image_link_boxes_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-image-link-boxes-1.css: {}
+    - three_column_list_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpll-three-column-list.css: {}

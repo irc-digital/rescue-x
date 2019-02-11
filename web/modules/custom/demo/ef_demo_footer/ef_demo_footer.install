@@ -1,0 +1,195 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+use Drupal\paragraphs\Entity\Paragraph;
+
+function ef_demo_footer_install () {
+  // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+
+  _ef_demo_footer_add_affiliates_menu();
+  _ef_demo_footer_add_legal_menu();
+  _ef_demo_add_footer_legal_formation_text();
+  _ef_demo_footer_add_utility_menu();
+  _ef_demo_footer_add_efficiency_graphic();
+  _ef_demo_footer_lead_generation();
+}
+
+function _ef_demo_add_footer_legal_formation_text () {
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'footer_legal_formation_text',
+    'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization.',
+  ]);
+
+
+  $settings->addTranslation('de', [
+    'field_legal_formation_text' => 'International Rescue Committee is a 501(c)(3) not-for-profit organization. (DE)',
+  ]);
+
+  $settings->save();
+
+}
+
+function _ef_demo_footer_lead_generation () {
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'footer_lead_generation',
+    'field_flg_form' => [
+      'target_id' => 'simple_help_sign_up_form',
+    ],
+    'field_flg_placeholder_text' => 'Email address',
+    'field_flg_submit_link' => 'Subscribe',
+    'field_flg_title' => 'Join our mailing list',
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_flg_form' => [
+      'target_id' => 'simple_mailchimp_sign_up_form',
+    ],
+    'field_flg_placeholder_text' => 'Email address (DE)',
+    'field_flg_submit_link' => 'Subscribe (DE)',
+    'field_flg_title' => 'Join our mailing list (DE)',
+  ]);
+
+  $settings->save();
+}
+
+function _ef_demo_footer_add_efficiency_graphic () {
+  $entries = [
+    'Program services' => 89,
+    'Management & general' => 7,
+    'Fundraising' => 4,
+  ];
+
+  $entries_paragraph = [];
+
+  foreach ($entries as $label => $percentage) {
+    $paragraph = Paragraph::create([
+      'type' => 'efficiency_graphic_entry',
+      'field_ege_label' => $label,
+      'field_ege_percentage' => $percentage,
+    ]);
+
+    $paragraph->addTranslation('de', [
+      'field_ege_label' => $label . ' (DE)',
+    ]);
+
+    $paragraph->save();
+
+    $entries_paragraph[] = $paragraph;
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'efficiency_graphic',
+    'field_efficiency_graphic_entries' => $entries_paragraph,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_efficiency_graphic_entries' => $entries_paragraph,
+  ]);
+
+  $settings->save();
+}
+
+function _ef_demo_footer_add_affiliates_menu () {
+  $items = ['IRC US', 'Stichting Vluchteling'];
+
+  $english_links = $german_links = [];
+
+  foreach ($items as $title) {
+    $english_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title,
+    ];
+
+    $german_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title . ' (DE)',
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'affiliate_links',
+    'field_affiliate_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_affiliate_links' => $german_links,
+  ]);
+
+  $settings->save();
+}
+
+function _ef_demo_footer_add_legal_menu () {
+  $items = ['Respecting Your Privacy', 'Terms and Conditions'];
+
+  $english_links = $german_links = [];
+
+  foreach ($items as $title) {
+    $english_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title,
+    ];
+
+    $german_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title . ' (DE)',
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'legal_links',
+    'field_legal_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_legal_links' => $german_links,
+  ]);
+
+  $settings->save();
+}
+
+function _ef_demo_footer_add_utility_menu () {
+  $items = ['Careers', 'Contact Us', 'Code of Conduct', 'Ethics Hotline'];
+
+  $english_links = $german_links = [];
+
+  foreach ($items as $title) {
+    $english_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title,
+    ];
+
+    $german_links[] = [
+      'uri' => 'internal:/',
+      'title' => $title . ' (DE)',
+    ];
+  }
+
+  /** @var SitewideSettings $testSettings */
+  $settings = SitewideSettings::create([
+    'type' => 'utility_links',
+    'field_utility_links' => $english_links,
+  ]);
+
+  $settings->addTranslation('de', [
+    'field_utility_links' => $german_links,
+  ]);
+
+  $settings->save();
+}
+
+
+
+function ef_demo_footer_uninstall () {
+  ef_delete_all ('sitewide_settings', 'footer_legal_formation_text');
+  ef_delete_all ('sitewide_settings', 'legal_links');
+  ef_delete_all ('sitewide_settings', 'affiliate_links');
+  ef_delete_all ('sitewide_settings', 'utility_links');
+  ef_delete_all ('sitewide_settings', 'footer_lead_generation');
+}

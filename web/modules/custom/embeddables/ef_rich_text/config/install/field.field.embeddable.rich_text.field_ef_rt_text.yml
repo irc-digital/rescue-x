@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.rich_text
+    - field.storage.embeddable.field_ef_rt_text
+  module:
+    - text
+id: embeddable.rich_text.field_ef_rt_text
+field_name: field_ef_rt_text
+entity_type: embeddable
+bundle: rich_text
+label: Text
+description: 'The text for this rich text embeddable.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

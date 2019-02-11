@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef
+    - text
+  enforced:
+    module:
+      - ef_heroes
+id: embeddable.field_hero_description
+field_name: field_hero_description
+entity_type: embeddable
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies: {  }
+id: senior_editor
+label: 'Senior editor'
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access embeddable content overview'
+  - 'access media overview'
+  - 'access media_entity_browser entity browser pages'
+  - 'access toolbar'
+  - 'create all embeddable content'
+  - 'create content translations'
+  - 'create url aliases'
+  - 'delete all embeddable content'
+  - 'delete all revisions'
+  - 'delete content translations'
+  - 'edit all embeddable content'
+  - 'revert all embeddable revisions'
+  - 'revert all revisions'
+  - 'translate any entity'
+  - 'update content translations'
+  - 'use text format basic_html'
+  - 'view all embeddable revisions'
+  - 'view all revisions'
+  - 'view embeddable content in test mode'
+  - 'view own unpublished content'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

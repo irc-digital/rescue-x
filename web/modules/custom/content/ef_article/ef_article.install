@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_article_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('article')
+    ->grantPermissions(['create article content','delete any article content','delete own article content','edit any article content','edit own article content'], ['senior_editor']);
+
+}
+
+function ef_article_uninstall () {
+  ef_delete_all ('node', 'article');
+}

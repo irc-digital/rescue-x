@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.utility_links
+    - field.field.sitewide_settings.utility_links.field_utility_links
+  module:
+    - link
+id: sitewide_settings.utility_links.default
+targetEntityType: sitewide_settings
+bundle: utility_links
+mode: default
+content:
+  field_utility_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,5 @@
+<?php
+
+function ef_announcement_preprocess_page__node__article (&$variables) {
+  $variables['page']['modifiers'][] = 'with-standard-separator';
+}

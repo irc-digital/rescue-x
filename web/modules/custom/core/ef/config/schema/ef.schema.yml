@@ -1,0 +1,174 @@
+# Schema for the configuration files of the EF module.
+ef.settings:
+  type: config_object
+  label: 'Embeddable framework settings'
+  mapping:
+    ui:
+      type: mapping
+      label: 'UI settings'
+      mapping:
+        embeddable_content_overview_add_max:
+          type: integer
+          label: 'The maximum number of add buttons displayed until they are replaced with a single add button'
+
+ef.type.*:
+  type: config_entity
+  label: 'Embeddable type'
+  mapping:
+    label:
+      type: label
+      label: 'Name'
+    id:
+      type: string
+      label: 'Machine-readable name'
+    description:
+      type: text
+      label: 'Description'
+    exclude_from_embeddable_overview_quick_add_list:
+      type: boolean
+      label: 'Whether a button should be added to the quick links area on the embeddable overview page'
+    dependent_embeddable:
+      type: boolean
+      label: 'Should this embeddable be created when an enclosing entity is created?'
+    only_dependent_embeddable:
+      type: boolean
+      label: 'Can embeddables of this type only be created programmatically?'
+
+# config for the per-view mode embeddable settings
+core.entity_view_display.*.*.*.third_party.ef:
+  type: mapping
+  label: 'Entity View Embeddable Framework settings'
+  mapping:
+    editor_friendly_name:
+      type: text
+      label: 'Editor friendly name'
+    view_mode_modifier_name:
+      type: text
+      label: 'View mode modifier name'
+    borrowed_layout:
+      type: text
+      label: 'Borrowed layout'
+    view_mode_visibility:
+      type: sequence
+      label: 'View mode visibility'
+      sequence:
+        type: string
+        label: 'Visibility'
+    embeddable_reference_options:
+        type: sequence
+        label: 'Embeddable reference options'
+        sequence:
+          type: mapping
+          mapping:
+            enabled:
+              type: boolean
+            plugin:
+              type: string
+            configuration:
+              type: embeddable_option.configuration.[%parent.plugin]
+
+field.storage_settings.entity_reference_embeddable:
+  type: mapping
+  label: 'Entity reference field storage settings'
+  mapping:
+    target_type:
+      type: string
+      label: 'Type of item to reference'
+
+field.field_settings.entity_reference_embeddable:
+  type: mapping
+  label: 'Embeddable entity reference field settings'
+  mapping:
+    handler:
+      type: string
+      label: 'Reference method'
+    handler_settings:
+      type: entity_reference_selection.[%parent.handler]
+      label: 'Entity reference selection plugin settings'
+    default_header_title:
+      type: string
+      label: 'Default header title'
+    editable_header_title:
+      type: boolean
+      label: 'Editable header title'
+    editable_header_description:
+      type: boolean
+      label: 'Editable header description'
+    view_mode_option:
+      type: string
+      label: 'View mode option'
+    dependent_embeddable:
+      type: boolean
+      label: 'Create dependent embeddable'
+
+field.formatter.settings.embeddable_parent_entity_reference:
+  type: mapping
+  label: 'Embeddable parent entity reference'
+  mapping:
+    view_mode:
+      type: string
+      label: 'View mode'
+
+field.formatter.settings.entity_reference_embeddable_view:
+  type: mapping
+  label: 'Entity reference rendered embeddable display format settings'
+  mapping:
+    embedding_options:
+      type: mapping
+      label: 'Embedding options'
+      mapping:
+        mode:
+          type: string
+          label: 'Mode'
+        view_mode:
+          type: string
+          label: 'View mode'
+        options:
+          type: mapping
+          label: 'Options'
+
+field.widget.settings.entity_reference_embeddable_widget:
+  type: mapping
+  label: 'Entity reference embeddable widget settings'
+  mapping:
+    match_operator:
+      type: string
+      label: 'Autocomplete matching'
+    size:
+      type: integer
+      label: 'Size of textfield'
+    placeholder:
+      type: label
+      label: 'Placeholder'
+    show_edit_button:
+      type: boolean
+      label: 'Show edit button'
+
+embeddable_option.configuration.embeddable_count_option:
+  type: mapping
+  label: 'Embeddable count option configuration'
+  mapping:
+    permitted_values:
+      type: string
+      label: 'Permitted values'
+    default_value:
+      type: integer
+      label: 'Default value'
+
+embeddable_option.configuration.embeddable_sticky_option:
+  type: mapping
+  label: 'Embeddable sticky option configuration'
+  mapping:
+    entity_type:
+      type: string
+      label: 'Entity type'
+
+field.storage_settings.ef_string_dropdown:
+  type: field.storage_settings.string
+  mapping:
+    dropdown_options:
+      type: string
+      label: 'Slug options'
+    dropdown_default:
+      type: string
+      label: 'Slug default option'

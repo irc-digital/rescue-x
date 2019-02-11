@@ -7,6 +7,7 @@
 
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
+use Drupal\Core\Config\FileStorage;
 
 /**
  * Implements hook_install().
@@ -31,10 +32,15 @@ function rescue_x_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
-
   // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
 
   module_load_include('install', 'ef_patterns');
   ef_patterns_add_format_filter();
+
+  // must be a bug in core which is prevent the language type config working correctly
+  $config_path = drupal_get_path('profile', 'rescue_x') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write('language.types', $source->read('language.types'));
 }

@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.special
+    - field.field.embeddable.special.field_special_embeddable_type
+  module:
+    - ds
+    - ef
+    - ef_special
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: wysiwyg
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_special_embeddable_type
+id: embeddable.special.default
+targetEntityType: embeddable
+bundle: special
+mode: default
+content:
+  field_special_embeddable_type:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_special_embeddable_formatter
+    region: ds_content
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

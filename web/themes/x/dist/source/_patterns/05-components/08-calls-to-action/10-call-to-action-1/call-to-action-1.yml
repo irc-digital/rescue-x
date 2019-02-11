@@ -1,7 +1,0 @@
-call_to_action_1_title: "In dui *magna* posuere eget"
-call_to_action_1_subtitle: "Faker.words(25,true)"
-call_to_action_1_url: "#"
-call_to_action_1_button_text: "Faker.words(3,true)"
-call_to_action_1_button_icon: "heart"
-call_to_action_1_modifiers:
-  - 'position-middle'

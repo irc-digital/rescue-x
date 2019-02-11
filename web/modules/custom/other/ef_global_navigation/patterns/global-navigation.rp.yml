@@ -1,0 +1,33 @@
+global_navigation:
+  label: 'Global navigation'
+  use: "@components/20-global-navigation/global-navigation.twig"
+  fields:
+    global_navigation_cta_url:
+      type: string
+      label: "Call to action URL"
+    global_navigation_cta_text:
+      type: string
+      label: "Call to action text"
+    global_navigation_cta_icon_name:
+      type: string
+      label: "Call to action icon name"
+    global_navigation_crisis_watch:
+      type: pattern
+      label: "Crisis watch"
+    global_navigation_secondary_menu:
+      type: pattern
+      label: "Secondary menu"
+    global_navigation_main_menu:
+      type: pattern
+      label: "Main menu"
+    global_navigation_mobile_secondary_menu:
+      type: pattern
+      label: "Mobile secondary menu"
+    global_navigation_branding:
+      type: pattern
+      label: "Navigation branding"
+  libraries:
+    - global_navigation_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-global-navigation.css: {}

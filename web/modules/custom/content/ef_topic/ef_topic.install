@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_topic_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('topic')
+    ->grantPermissions(['create topic content','delete any topic content','delete own topic content','edit any topic content','edit own topic content'], ['senior_editor']);
+
+}
+
+function ef_topic_uninstall () {
+  ef_delete_all ('node', 'topic');
+}

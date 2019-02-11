@@ -1,0 +1,12 @@
+utility_text:
+  label: 'Utility text'
+  use: "@atoms/01-text/30-utility-text/utility-text.twig"
+  fields:
+    utility_text:
+      type: string
+      label: "Text"
+  libraries:
+    - utility_text_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpla-utility-text.css: {}

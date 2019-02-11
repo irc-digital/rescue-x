@@ -1,0 +1,7 @@
+name: EF Icon library
+type: module
+description: 'Provides a service and an extended link field to handle SVG icons efficiently.'
+package: EF Core
+core: 8.x
+dependencies:
+  - link

@@ -1,0 +1,163 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\media\Entity\Media;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\ef_sitewide_settings\Entity\SitewideSettings;
+use Drupal\node\NodeInterface;
+
+function ef_demo_articles_install () {
+  // workaround to bug https://www.drupal.org/project/drupal/issues/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+
+  ef_demo_add_articles();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Boomshanka',
+//    'field_ef_pull_quote_text' => 'May the seed of your loin be fruitful in the belly of your woman.',
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Neal 1',
+//    'field_ef_pull_quote_text' => 'It’s like the kettle killed itself rather than be used by me ...',
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 1',
+//    'field_ef_pull_quote_text' => 'Neil, the bathroom’s free. Unlike the country under the Thatcherite junta.',
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 2',
+//    'field_ef_pull_quote_text' => "Well, I’m going to tell Thatcher that we’ve got a bomb. And if she doesn’t do something to help “the kids” by this afternoon, we’re going to blow up England.",
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 3',
+//    'field_ef_pull_quote_text' => "Anyone here like the Human League?",
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Rik 4',
+//    'field_ef_pull_quote_text' => "Oh god I'm bored. Might as well be listening to Genesis.",
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Neal 2',
+//    'field_ef_pull_quote_text' => "I won’t say anything ’cause no one ever listens to me, anyway. I might as well be a Leonard Cohen album.",
+//    'langcode' => 'en',
+//  ])->save();
+//
+//  Embeddable::create([
+//    'type' => 'pull_quote',
+//    'title' => 'Vyvyan 1',
+//    'field_ef_pull_quote_text' => "This calls for a delicate blend of psychology and extreme violence.",
+//    'langcode' => 'en',
+//  ])->save();
+
+}
+
+function ef_demo_add_articles () {
+  for ($i = 0; $i < 10; $i++) {
+    ef_demo_add_article ();
+  }
+}
+
+function ef_demo_add_article () {
+  static $count = 1;
+
+  // create teaser image
+  $teaser_data = file_get_contents('https://placem.at/places?overlay_color=FFFFFFFF&txt=0&w=700&h=500&random=' . ef_demo_get_random_word());
+  $teaser_file = file_save_data($teaser_data, 'public://' . ef_demo_get_random_word() . '.jpg', FILE_EXISTS_REPLACE);
+
+  $teaser = Media::create([
+    'bundle' => 'ef_image',
+    'langcode' => 'en',
+    'name' => 'Sample teaser image ' . $count++,
+    'field_ef_image' => [
+      'target_id' => $teaser_file->id(),
+      'alt' => ef_demo_get_random_word(),
+    ],
+  ]);
+
+  $teaser->save();
+
+  // create hero image
+  $hero_data = file_get_contents('https://placem.at/places?overlay_color=FFFFFFFF&txt=0&w=1920&h=823&random=' . ef_demo_get_random_word());
+  $hero_file = file_save_data($hero_data, 'public://' . ef_demo_get_random_word() . '.jpg', FILE_EXISTS_REPLACE);
+
+  $hero = Media::create([
+    'bundle' => 'ef_image',
+    'langcode' => 'en',
+    'name' => 'Sample hero image ' . $count++,
+    'field_ef_image' => [
+      'target_id' => $hero_file->id(),
+      'alt' => ef_demo_get_random_word(),
+    ],
+  ]);
+
+  $hero->save();
+
+  // Create node object with attached file.
+  $node = Node::create([
+    'type' => 'article',
+    'title' => ef_demo_get_random_sentence(2, 10, false),
+    'body' => [
+      'format' => 'basic_html',
+      'value' => ef_demo_get_random_paragraphs(),
+      'summary' => ef_demo_get_random_paragraph(1,2),
+    ],
+    'langcode' => 'en',
+    'field_teaser_image' => [
+      'target_id' => $teaser->id(),
+    ],
+    'field_hero_image' => [
+      'target_id' => $hero->id(),
+    ],
+    'field_slug' => ef_demo_get_random_word(),
+    'status' => TRUE,
+  ]);
+
+  if (rand (0, 1)) { // 50/50 chance of a german version
+    $node->addTranslation('de', [
+      'title' => ef_demo_get_random_sentence(2, 10, false) . ' (DE)',
+      'body' => [
+        'format' => 'basic_html',
+        'value' => ef_demo_get_random_paragraphs(),
+        'summary' => ef_demo_get_random_paragraph(1,2),
+      ],
+      'field_teaser_image' => [
+        'target_id' => $teaser->id(),
+      ],
+      'field_hero_image' => [
+        'target_id' => $hero->id(),
+      ],
+      'field_slug' => ef_demo_get_random_word(),
+      'status' => TRUE,
+    ]);
+  }
+
+  $node->save();
+}
+
+function ef_demo_articles_uninstall () {
+  ef_delete_all ('node', 'article');
+  ef_delete_all ('media', 'ef_image');
+  ef_delete_all ('taxonomy_term', 'country');
+  ef_delete_all ('embeddable', 'rich_text');
+  ef_delete_all ('embeddable', 'dynamic_content');
+  ef_delete_all ('embeddable', 'pull_quote');
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+  module:
+    - ef_reach_through_content
+    - media
+id: reach_through.field_ccw_image
+field_name: field_ccw_image
+entity_type: reach_through
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

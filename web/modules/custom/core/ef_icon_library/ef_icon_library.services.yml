@@ -1,0 +1,8 @@
+services:
+  ef.icon_provider:
+    class: Drupal\ef_icon_library\IconProviderManager
+    parent: default_plugin_manager
+
+  ef.icon_library:
+    class: Drupal\ef_icon_library\IconLibrary
+    arguments: ['@ef.icon_provider', '@string_translation', '@cache.default', '@module_handler']

@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Entity\ContentEntityInterface;
+
+/**
+ * This is the callback function used by the ListIconItem field type
+ *
+ * @param \FieldStorageConfig $definition
+ * @param \ContentEntityInterface|NULL $entity
+ * @param $cacheable
+ * @return array
+ */
+function ef_icon_library_allowed_icon_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  /** @var \Drupal\ef_icon_library\IconLibraryInterface $icon_library */
+  $icon_library = \Drupal::service('ef.icon_library');
+
+  return $icon_library->getIconList();
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function ef_icon_library_field_widget_info_alter(array &$info) {
+  // Allow our icon list item to be used by any widget that supports list_string
+  foreach ($info as $widget_id => &$widget_info) {
+    if (in_array('list_string', $widget_info['field_types'])) {
+      $widget_info['field_types'][] = 'list_icon';
+    }
+  }
+}

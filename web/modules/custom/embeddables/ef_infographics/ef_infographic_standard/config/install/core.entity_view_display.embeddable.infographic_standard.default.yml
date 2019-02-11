@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.infographic_standard
+    - field.field.embeddable.infographic_standard.field_infographic_standard_icons
+  module:
+    - ds
+    - ef
+    - entity_reference_revisions
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_infographic_standard
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      infographic_standard_content:
+        - field_infographic_standard_icons
+id: embeddable.infographic_standard.default
+targetEntityType: embeddable
+bundle: infographic_standard
+mode: default
+content:
+  field_infographic_standard_icons:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: infographic_standard_content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

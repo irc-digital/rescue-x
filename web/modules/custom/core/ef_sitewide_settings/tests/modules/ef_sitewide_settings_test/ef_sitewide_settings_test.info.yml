@@ -1,0 +1,5 @@
+name: Site-wide settings test module
+type: module
+description: Support module for the ef_sitewide_settings test suite
+core: 8.x
+package: Testing

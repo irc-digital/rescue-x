@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.dynamic_content
+    - field.storage.node.field_news_and_features
+    - node.type.topic
+  module:
+    - ef
+id: node.topic.field_news_and_features
+field_name: field_news_and_features
+entity_type: node
+bundle: topic
+label: 'News and features'
+description: 'The News and Features section displays the latest content associated with this topic. To add items to this section create the appropriate content and make sure it is tagged with this topic name.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:embeddable'
+  dependent_embeddable: true
+  handler_settings:
+    target_bundles:
+      dynamic_content: dynamic_content
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  view_mode_option: default
+  default_header_title: 'News and features'
+  editable_header_title: false
+  editable_header_description: false
+field_type: entity_reference_embeddable

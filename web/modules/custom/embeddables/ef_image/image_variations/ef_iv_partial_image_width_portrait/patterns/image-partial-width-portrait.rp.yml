@@ -1,0 +1,29 @@
+image_partial_width_portrait:
+  label: "Image - partial width portrait"
+  use: "@components/32-images/15-image-partial-width-portrait/image-partial-width-portrait.twig"
+  section: TRUE
+  fields:
+    image_partial_width_portrait_responsive_image_source_set:
+      type: array
+      label: "Responsive image source set"
+    image_partial_width_portrait_responsive_image_fallback:
+      type: string
+      label: "Responsive image fallback"
+    image_partial_width_portrait_responsive_image_alt:
+      type: string
+      label: "Responsive image alt"
+    image_partial_width_portrait_caption_text:
+      type: string
+      label: 'Caption text'
+    image_partial_width_portrait_caption_credit:
+      type: string
+      label: 'Caption credit'
+  libraries:
+    - image_partial_width_portrait:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-image-partial-width-portrait.css: {}
+    - caption:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-caption.css: {}

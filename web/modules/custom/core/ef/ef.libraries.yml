@@ -1,0 +1,36 @@
+embedding-options-element:
+  version: 1.x
+  css:
+    component:
+      css/embedding-options-element.css: {}
+  js:
+    /core/assets/vendor/jquery.ui/ui/form-reset-mixin-min.js: {weight: -1}
+    /core/assets/vendor/jquery.ui/ui/escape-selector-min.js: { }
+    js/embedding-options-element.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.checkboxradio
+
+view-mode-display-embeddable-reference-fieldset:
+  version: 1.x
+  css:
+    component:
+      css/view-mode-display-embeddable-reference-fieldset.css: {}
+
+page-action-icon:
+  version: 1.x
+  css:
+    component:
+      css/page-action-icon.css: {}
+
+embeddable-entity-browser:
+  css:
+    theme:
+      css/embeddable-entity-browser.view.css: {}
+  js:
+    js/embeddable-entity-browser.view.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

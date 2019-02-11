@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\node\NodeInterface;
+use Drupal\ef_major_update\MajorlyUpdatedDate;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function ef_major_update_node_presave(NodeInterface $node) {
+  if($node->hasField('field_majorly_updated')) {
+    \Drupal::classResolver()
+      ->getInstanceFromDefinition(MajorlyUpdatedDate::class)
+      ->updateDate($node);
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ef_major_update_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Majorly updated field should always be hidden
+
+  /** @var NodeInterface $node */
+  $node = $form_state->getFormObject()->getEntity();
+
+  if($node->hasField('field_majorly_updated')) {
+    // just incase an admin left it being output on the form display
+    $form['field_majorly_updated']['#access'] = FALSE;
+
+    if ($form_state->getFormObject()->getOperation() == 'edit') {
+      $form['actions']['major_update'] = array(
+        '#type' => 'checkbox',
+        '#title' => t("Major update"),
+        '#weight' => 10,
+        '#wrapper_attributes' => [
+          'style' => 'display: inline-block; margin-left: .5em;'
+        ],
+      );
+      array_unshift($form['actions']['submit']['#submit'],[MajorlyUpdatedDate::class, 'formSubmit']);
+    }
+  }
+}

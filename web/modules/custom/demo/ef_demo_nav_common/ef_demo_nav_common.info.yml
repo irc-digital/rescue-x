@@ -1,0 +1,12 @@
+name: EF Demo (nav common)
+type: module
+description: 'Base features for the global navigation and footer demo modules.'
+package: EF Demo
+core: 8.x
+dependencies:
+  - ef
+  - ef_demo
+  - ef_announcement
+  - ef_crisis_watch
+  - ef_icon_library
+  - ef_main_menu

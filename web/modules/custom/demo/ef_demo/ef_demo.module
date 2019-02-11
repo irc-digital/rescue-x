@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\Component\Utility\Random;
+
+function _ef_demo_get_random () {
+  static $random = NULL;
+
+  if (is_null($random)) {
+    $random = new Random();
+  }
+
+  return $random;
+}
+
+function ef_demo_get_random_paragraphs ($min_paragraphs = 4, $max_paragraphs = 10) {
+  $paragraph_array = [];
+
+  $len = mt_rand ($min_paragraphs, $max_paragraphs);
+
+  for ($i = 0; $i <= $len; $i++) {
+    $para = ef_demo_get_random_paragraph();
+
+    if ($i == 0) {
+      $para = '<p class="rpla-paragraph rpla-paragraph--body rpla-paragraph--lead">' . $para . '</p>';
+    } else {
+      $para = '<p class="rpla-paragraph rpla-paragraph--body">' . $para . '</p>';
+    }
+    $paragraph_array[] = $para;
+  }
+
+  return implode('', $paragraph_array);
+}
+
+function ef_demo_get_random_paragraph ($min_sentences = 2, $max_sentences = 4) {
+  $len = mt_rand ($min_sentences * 12, $max_sentences * 12);
+  return _ef_demo_get_random()->sentences($len);
+}
+
+function ef_demo_get_random_sentence($min_words = 4, $max_words = 10, $include_period = TRUE) {
+  $len = mt_rand ($min_words, $max_words);
+  return ucfirst(strtolower(_ef_demo_get_random()->sentences($len, TRUE)));
+}
+
+function ef_demo_get_random_word($len = 10) {
+  return _ef_demo_get_random()->word($len);
+}

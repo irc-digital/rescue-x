@@ -1,0 +1,46 @@
+field.field_settings.link_icon:
+  type: field.field_settings.link
+
+field.widget.settings.link_icon_default:
+  type: field.widget.settings.link_default
+  label: 'Link icon widget settings'
+  mapping:
+    available_link_styles:
+      type: sequence
+      label: 'Available link styles'
+      sequence:
+        type: string
+        label: 'Link style'
+    available_positions:
+      type: sequence
+      label: 'Available positions'
+      sequence:
+        type: string
+        label: 'Available position'
+
+field.storage_settings.list_icon:
+  type: mapping
+  label: 'List (icon) settings'
+  mapping:
+    allowed_values:
+      type: sequence
+      label: 'Allowed values list'
+      sequence:
+        type: mapping
+        label: 'Allowed value with label'
+        mapping:
+          value:
+            type: string
+            label: 'Value'
+          label:
+            type: label
+            label: 'Label'
+    allowed_values_function:
+      type: string
+      label: 'Allowed values function'
+
+field.formatter.settings.link_icon:
+  type: field.formatter.settings.link
+
+field.storage_settings.ef_string_dropdown:
+  type: field.storage_settings.string

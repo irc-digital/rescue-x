@@ -1,0 +1,7 @@
+name: EF Webform common
+type: module
+description: 'Common configuration or helper classes that have utility across most or all webform-based EF form modules'
+package: EF Form
+core: 8.x
+dependencies:
+  - webform

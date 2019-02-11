@@ -1,0 +1,12 @@
+name: EF Person
+type: module
+description: 'Provides a person content type.'
+package: EF Content
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_modifiers
+  - ef_is_square
+  - ef_comms_common
+  - ef_social_share

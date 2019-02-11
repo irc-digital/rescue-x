@@ -1,0 +1,18 @@
+name: EF Article
+type: module
+description: 'Provides an article content type.'
+package: EF Content
+core: 8.x
+dependencies:
+  - ef_image_styles
+  - ef_ris_hero_21_9
+  - ef_is_widescreen
+  - ef_person
+  - ef_ris_teasers
+  - ef_highlight
+  - ef_topic
+  - ef_hero_article
+  - ef_comms_common
+  - ef_curated_content_wrapper
+  - ef_social_share
+  - ef_major_update

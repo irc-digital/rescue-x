@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.embeddable.ef_variation_1
+    - ef.type.call_to_action_1
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_link
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_subtitle
+    - field.field.embeddable.call_to_action_1.field_displayed_title
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: true
+        plugin: embeddable_modifier_options
+        configuration:
+          enabled_modifiers:
+            background_1: background_1
+            position: '0'
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_call_to_action_1
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      call_to_action_1_title:
+        - field_displayed_title
+      call_to_action_1_subtitle:
+        - field_call_to_action_1_subtitle
+      call_to_action_1_url:
+        - 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_url'
+      call_to_action_1_button_text:
+        - 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_text'
+      call_to_action_1_button_icon:
+        - 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_icon'
+    fields:
+      'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_icon':
+        plugin_id: 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_icon'
+        weight: 4
+        label: hidden
+        formatter: default
+      'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_url':
+        plugin_id: 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_url'
+        weight: 2
+        label: hidden
+        formatter: default
+      'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_text':
+        plugin_id: 'link_with_icon_attributes_field:embeddable_call_to_action_1_field_call_to_action_1_link_link_text'
+        weight: 3
+        label: hidden
+        formatter: default
+id: embeddable.call_to_action_1.ef_variation_1
+targetEntityType: embeddable
+bundle: call_to_action_1
+mode: ef_variation_1
+content:
+  field_call_to_action_1_subtitle:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: call_to_action_1_subtitle
+  field_displayed_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: call_to_action_1_title
+hidden:
+  changed: true
+  created: true
+  field_call_to_action_1_link: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

@@ -1,7 +1,7 @@
 {
   "patches": {
-    "drupal/ui_patterns": {
-      "Drupal UI Patterns fix.": "https://patch-diff.githubusercontent.com/raw/nuvoleweb/ui_patterns/pull/206.patch"
+    "drupal/tweetext": {
+      "Plugin fails to load if Drupal root is not in project root": "https://www.drupal.org/files/issues/2019-02-06/plugin_fails_to_load-3031028-1.patch"
     }
   }
 }

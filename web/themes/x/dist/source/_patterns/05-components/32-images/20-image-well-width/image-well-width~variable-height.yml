@@ -1,8 +1,0 @@
-image_well_width_responsive_image_source_set:
-  - "https://placem.at/places?w=640&&random=wellwidthvariableheight 640w"
-  - "https://placem.at/places?w=1280&&random=wellwidthvariableheight 1280w"
-  - "https://placem.at/places?w=1920&&random=wellwidthvariableheight 1920w"
-  - "https://placem.at/places?w=2400&&random=wellwidthvariableheight 2400w"
-image_well_width_responsive_image_fallback: "https://placem.at/places?w=640&&random=wellwidthvariableheight"
-
-

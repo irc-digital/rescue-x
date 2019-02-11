@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.special
+    - field.field.embeddable.special.field_special_embeddable_type
+  module:
+    - ef_special
+id: embeddable.special.default
+targetEntityType: embeddable
+bundle: special
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_special_embeddable_type:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: field_special_embeddable_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  used_on:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true

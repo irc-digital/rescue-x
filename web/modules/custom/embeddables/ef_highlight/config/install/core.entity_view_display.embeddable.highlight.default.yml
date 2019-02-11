@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.highlight
+    - field.field.embeddable.highlight.field_ef_highlight_link
+    - field.field.embeddable.highlight.field_ef_highlight_list_item
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      field: field
+      wysiwyg: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: false
+        plugin: embeddable_modifier_options
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_highlight
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      highlight_link_text:
+        - 'link_attributes_field:embeddable_highlight_field_ef_highlight_link_link_text'
+      highlight_link_url:
+        - 'link_attributes_field:embeddable_highlight_field_ef_highlight_link_url'
+      highlight_list_content:
+        - field_ef_highlight_list_item
+    fields:
+      'link_attributes_field:embeddable_highlight_field_ef_highlight_link_url':
+        plugin_id: 'link_attributes_field:embeddable_highlight_field_ef_highlight_link_url'
+        weight: 2
+        label: hidden
+        formatter: default
+      'link_attributes_field:embeddable_highlight_field_ef_highlight_link_link_text':
+        plugin_id: 'link_attributes_field:embeddable_highlight_field_ef_highlight_link_link_text'
+        weight: 1
+        label: hidden
+        formatter: default
+id: embeddable.highlight.default
+targetEntityType: embeddable
+bundle: highlight
+mode: default
+content:
+  field_ef_highlight_list_item:
+    type: basic_string
+    weight: 3
+    region: highlight_list_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  changed: true
+  created: true
+  field_ef_highlight_link: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

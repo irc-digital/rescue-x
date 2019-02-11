@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.call_to_action_1
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: embeddable.call_to_action_1
+target_entity_type_id: embeddable
+target_bundle: call_to_action_1
+default_langcode: current_interface

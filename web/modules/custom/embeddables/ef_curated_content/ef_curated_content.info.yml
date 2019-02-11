@@ -1,0 +1,10 @@
+name: EF Curated content
+type: module
+description: "Curated content embeddable to do hand-rolled news and features's lists"
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - ef_curated_content_wrapper
+  - ef_dynamic_content

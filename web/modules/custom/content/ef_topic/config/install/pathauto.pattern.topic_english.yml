@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: topic_english
+label: 'Topic (English)'
+type: 'canonical_entities:node'
+pattern: 'topic/[node:title]'
+selection_criteria:
+  43a8fc96-d23f-4630-a011-26fd7ec3af8b:
+    id: node_type
+    bundles:
+      topic: topic
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 43a8fc96-d23f-4630-a011-26fd7ec3af8b
+  2b9d4cfa-9abf-43b8-a6dd-ad936144c77b:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 2b9d4cfa-9abf-43b8-a6dd-ad936144c77b
+selection_logic: and
+weight: -4
+relationships:
+  'node:langcode:language':
+    label: Language

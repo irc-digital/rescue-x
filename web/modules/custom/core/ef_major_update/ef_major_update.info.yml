@@ -1,0 +1,7 @@
+name: EF Major update
+type: module
+description: 'Provides a major update field and related functionality for editors to mark significant changes to their nodes.'
+package: EF Core
+core: 8.x
+dependencies:
+  - ef

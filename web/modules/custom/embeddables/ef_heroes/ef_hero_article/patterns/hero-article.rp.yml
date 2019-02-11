@@ -1,0 +1,52 @@
+hero_article:
+  label: 'Hero - article'
+  use: "@components/27-heroes/05-article/hero-article.twig"
+  fields:
+    hero_article_headline:
+      type: text
+      label: 'Headline'
+    hero_article_slug:
+      type: text
+      label: 'Slug'
+    hero_article_summary:
+      type: text
+      label: 'Summary'
+    hero_article_published:
+      type: date
+      label: 'Published date'
+    hero_article_last_updated:
+      type: date
+      label: 'Last updated date'
+    hero_article_photographer:
+      type: text
+      label: 'Photographer'
+    hero_article_art_directed_image_sources:
+      type: array
+      label: 'Art directed image sources'
+    hero_article_art_directed_image_fallback:
+      type: string
+      label: 'Art directed image fallback'
+    hero_article_art_directed_image_alt:
+      type: string
+      label: 'Art directed image alt'
+    hero_article_social_share:
+      type: text
+      label: 'Social share'
+    hero_article_contributors:
+      type: text
+      label: 'Contributors'
+
+  libraries:
+    - hero_article_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-hero-article.css: {}
+    - contributors_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-contributors.css: {}
+    - contributor_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-person-info-1.css: {}
+

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.quote
+    - field.storage.embeddable.field_ef_quote_text
+id: embeddable.quote.field_ef_quote_text
+field_name: field_ef_quote_text
+entity_type: embeddable
+bundle: quote
+label: Text
+description: 'The actual quote should be no more than one or two sentences.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

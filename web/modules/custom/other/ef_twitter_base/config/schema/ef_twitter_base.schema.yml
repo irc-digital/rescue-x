@@ -1,0 +1,10 @@
+ef_social_share.configuration.twitter_social_share_site:
+  type: social_share_site_configuration_default
+  label: 'Twitter social share site configuration'
+  mapping:
+    twitter_share_prefix:
+      type: string
+      label: 'This text will appear before the URL and via.'
+    twitter_send_via:
+      type: string
+      label: 'When sending a tweet this is the screen name of the user to attribute the Tweet to. This comes after the URL in the share.'

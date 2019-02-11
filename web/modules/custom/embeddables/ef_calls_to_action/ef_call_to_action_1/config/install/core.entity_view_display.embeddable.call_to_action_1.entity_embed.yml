@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.embeddable.entity_embed
+    - ef.type.call_to_action_1
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_link
+    - field.field.embeddable.call_to_action_1.field_call_to_action_1_subtitle
+    - field.field.embeddable.call_to_action_1.field_displayed_title
+  module:
+    - ds
+    - ef
+third_party_settings:
+  ef:
+    view_mode_visibility:
+      wysiwyg: wysiwyg
+      field: '0'
+    editor_friendly_name: ''
+    view_mode_modifier_name: ''
+    embeddable_reference_options:
+      embeddable_sticky_option:
+        enabled: false
+        plugin: embeddable_sticky_option
+      embeddable_count_option:
+        enabled: false
+        plugin: embeddable_count_option
+      embeddable_modifier_options:
+        enabled: true
+        plugin: embeddable_modifier_options
+        configuration:
+          enabled_modifiers:
+            position: position
+    borrowed_layout: none
+  ds:
+    layout:
+      id: pattern_call_to_action_1
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      call_to_action_1_title:
+        - field_displayed_title
+id: embeddable.call_to_action_1.entity_embed
+targetEntityType: embeddable
+bundle: call_to_action_1
+mode: entity_embed
+content:
+  field_displayed_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: call_to_action_1_title
+hidden:
+  changed: true
+  created: true
+  field_call_to_action_1_link: true
+  field_call_to_action_1_subtitle: true
+  langcode: true
+  parent_id: true
+  title: true
+  uid: true

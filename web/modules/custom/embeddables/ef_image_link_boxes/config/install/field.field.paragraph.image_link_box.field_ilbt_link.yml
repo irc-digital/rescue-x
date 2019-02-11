@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ilbt_link
+    - paragraphs.paragraphs_type.image_link_box
+  module:
+    - link
+id: paragraph.image_link_box.field_ilbt_link
+field_name: field_ilbt_link
+entity_type: paragraph
+bundle: image_link_box
+label: Link
+description: 'A link that will wrap your image box. Can be internal or external.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

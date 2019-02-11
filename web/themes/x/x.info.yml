@@ -9,28 +9,31 @@ libraries:
   - x/global-styling
 base theme: stable
 regions:
-  header: Header
-  content: Content
-  sidebar_first: 'Sidebar first'
-  footer: Footer
+  header: 'Header'
+  navigation: 'Navigation'
+  hero: 'Hero'
+  content: 'Content'
+  content_footer: 'Content footer'
+  footer: 'Footer'
+  sticky_footer: 'Sticky footer'
 
 component-libraries:
   atoms:
     paths:
-      - dist/source/_patterns/01-atoms
+      - rpl/templates/01-atoms
   molecules:
     paths:
-      - dist/source/_patterns/03-molecules
+      - rpl/templates/03-molecules
   components:
     paths:
-      - dist/source/_patterns/05-components
+      - rpl/templates/05-components
   layouts:
     paths:
-      - dist/source/_patterns/10-layouts
+      - rpl/templates/10-layouts
 
 ef_icon_library:
-  symbol_path: dist/svg/individuals
-  symbol_prefix: 'symbol-'
+  symbol_path: rpl/templates/01-atoms/06-icon-library
+  symbol_prefix: 'icon-'
   exclude:
     - map-marker.svg
     - map-marker-capital.svg

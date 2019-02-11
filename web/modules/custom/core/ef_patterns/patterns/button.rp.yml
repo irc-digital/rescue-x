@@ -1,0 +1,19 @@
+button:
+  label: 'Button'
+  use: "@atoms/30-button/button.twig"
+  fields:
+    button_text:
+      type: text
+      label: 'Text'
+    button_url:
+      type: text
+      label: 'URL'
+    button_icon_name:
+      type: text
+      label: 'Icon name'
+  libraries:
+    - aside_library:
+       css:
+         theme:
+           dist/public/css/patterns/rpla-button.css: {}
+

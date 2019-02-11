@@ -1,0 +1,5 @@
+name: EF Site-wide settings
+type: module
+description: 'A mechanism to store site-wide settings that are either administratively or editorial controlled. These are used for settings like which country or topic is in crisis.'
+package: EF Core
+core: 8.x

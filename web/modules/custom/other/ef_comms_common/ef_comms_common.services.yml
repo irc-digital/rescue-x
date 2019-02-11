@@ -1,0 +1,4 @@
+services:
+  ef_sitewide_donation_link_service:
+    class: Drupal\ef_comms_common\SitewideDonationLinkService
+    arguments: ['@ef_sitewide_settings.manager', '@ef.icon_library', '@language_manager']

@@ -1,0 +1,29 @@
+image_well_width:
+  label: "Image - well width"
+  use: "@components/32-images/20-image-well-width/image-well-width.twig"
+  section: TRUE
+  fields:
+    image_well_width_responsive_image_source_set:
+      type: array
+      label: "Responsive image source set"
+    image_well_width_responsive_image_fallback:
+      type: string
+      label: "Responsive image fallback"
+    image_well_width_responsive_image_alt:
+      type: string
+      label: "Responsive image alt"
+    image_well_width_caption_text:
+      type: string
+      label: 'Caption text'
+    image_well_width_caption_credit:
+      type: string
+      label: 'Caption credit'
+  libraries:
+    - image_well_width:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-image-well-width.css: {}
+    - caption:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-caption.css: {}

@@ -1,0 +1,11 @@
+entity.reach_through.add_form:
+  route_name: entity.reach_through.add_page
+  title: 'Add Reach-through entry'
+  appears_on:
+    - entity.reach_through.collection
+entity.reach_through_type.add_form:
+  route_name: entity.reach_through_type.add_form
+  title: 'Add Reach-through entry type'
+  appears_on:
+    - entity.reach_through_type.collection
+

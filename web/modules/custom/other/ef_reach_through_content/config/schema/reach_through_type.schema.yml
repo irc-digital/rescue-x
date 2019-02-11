@@ -1,0 +1,41 @@
+ef_reach_through_content.reach_through_type.*:
+  type: config_entity
+  label: 'Reach-through entry type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+
+node.type.*.third_party.ef_reach_through_content:
+  type: mapping
+  label: 'Per-content type reach-through settings'
+  mapping:
+    reach_through_details:
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          reach_through_bundle_id:
+            type: string
+            label: 'The reach-through type'
+          settings:
+            type: mapping
+            label: 'The settings on the reach-through type'
+            mapping:
+              mapped_fields:
+                type: sequence
+                label: 'Mapped fields'
+                sequence:
+                 type: mapping
+                 mapping:
+                  reach_through_bundle_field:
+                    type: string
+                    label: 'The field name on the curated content type'
+                  node_field:
+                    type: string
+                    label: 'The mapped field name on the node type'

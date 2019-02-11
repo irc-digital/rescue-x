@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_lead_generation_form
+id: footer_lead_generation
+label: 'Footer lead generation'
+description: 'The footer lead generation is likely going to need a different implementation for different languages on the site. These settings allow an administrator to control this. '

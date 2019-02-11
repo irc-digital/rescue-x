@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef_sitewide_settings.type.donation_link
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: sitewide_settings.donation_link
+target_entity_type_id: sitewide_settings
+target_bundle: donation_link
+default_langcode: current_interface

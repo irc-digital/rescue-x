@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ef_curated_content_wrapper
+  module:
+    - ef_reach_through_content
+id: reach_through.field_ccw_slug
+field_name: field_ccw_slug
+entity_type: reach_through
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Place the highlight in an aside
+ */
+function ef_highlight_preprocess_embeddable(array &$variables) {
+  if ($variables['elements']['#embeddable']->getType() == 'highlight') {
+    /** @var \Drupal\ef\Entity\Embeddable $embeddable */
+    $embeddable = $variables["content"]["embeddable_content"]["#embeddable"];
+
+    if (isset($embeddable->field_ef_highlight_list_item) && sizeof($embeddable->field_ef_highlight_list_item) > 0) {
+      $variables['content'] = [
+        '#type' => 'pattern',
+        '#id' => 'aside',
+        '#fields' => [
+          'aside_content' => $variables['content']['embeddable_content'],
+        ],
+      ];
+    }
+
+  }
+}

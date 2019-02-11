@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.highlight
+    - field.storage.node.field_highlights
+    - node.type.article
+  module:
+    - ef
+id: node.article.field_highlights
+field_name: field_highlights
+entity_type: node
+bundle: article
+label: Highlights
+description: 'Highlights allow you to draw out the key elements of an article. They are presented at the top right hand side of the article, so you will need to make sure that no other embeddable visually clash with it (please check on tablet too). If you do not feel that an highlight section is appropriate for this article, you can set it to not be shown.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:embeddable'
+  dependent_embeddable: true
+  handler_settings:
+    target_bundles:
+      highlight: highlight
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  view_mode_option: default
+  default_header_title: ''
+  editable_header_title: false
+  editable_header_description: false
+field_type: entity_reference_embeddable

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - ef.type.call_to_action_1
+    - field.storage.embeddable.field_call_to_action_1_link
+  module:
+    - ef_icon_library
+id: embeddable.call_to_action_1.field_call_to_action_1_link
+field_name: field_call_to_action_1_link
+entity_type: embeddable
+bundle: call_to_action_1
+label: 'CTA button'
+description: 'Call to action button with icon'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link_icon

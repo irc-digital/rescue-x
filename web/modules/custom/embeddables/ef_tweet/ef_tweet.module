@@ -1,0 +1,48 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\ef_tweet\TweetHelper;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function ef_tweet_embeddable_presave(EntityInterface $embeddable) {
+  if ($embeddable->bundle() == 'tweet') {
+    return \Drupal::classResolver()
+      ->getInstanceFromDefinition(TweetHelper::class)
+      ->presaveTweet($embeddable);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ef_tweet_form_embeddable_tweet_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (Drupal::currentUser()->hasPermission('administer site configuration')) {
+    $form['field_tweet_tweet']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+  } else {
+    $form['field_tweet_tweet']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ef_tweet_form_embeddable_tweet_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['field_tweet_tweet']['#access'] = FALSE;
+}
+
+function ef_tweet_theme_registry_alter(&$theme_registry) {
+  $theme_registry['pattern_tweet']['preprocess functions'][] = 'ef_tweet_preprocess_tweet_pattern';
+}
+
+/**
+ *
+ * Preprocess tweet pattern to add Twitter library
+ *
+ * @param array $variables
+ */
+function ef_tweet_preprocess_tweet_pattern (array &$variables) {
+  $variables['#attached']['library'][] = 'ef_twitter_base/twitter_widgets_js';
+}

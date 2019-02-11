@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function ef_curated_content_wrapper_embeddable_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->bundle() == 'curated_content') {
+    $children_count = count(Element::children($build['field_curated_content_items']));
+
+    if ($children_count % 2 == 1) {
+      $build['field_curated_content_items'][0]['#view_mode'] = 'highlighted_teaser';
+    }
+  }
+
+}

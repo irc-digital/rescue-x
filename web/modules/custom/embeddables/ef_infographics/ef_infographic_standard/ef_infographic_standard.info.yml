@@ -1,0 +1,9 @@
+name: EF Infographic (standard)
+type: module
+description: 'The standard four element infographic that displays a icon with a title and some additional text.'
+package: EF Embeddable
+core: 8.x
+dependencies:
+  - ef
+  - ef_patterns
+  - paragraphs

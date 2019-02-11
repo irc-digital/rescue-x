@@ -1,0 +1,29 @@
+image_window_width:
+  label: "Image - window width"
+  use: "@components/32-images/10-image-window-width/image-window-width.twig"
+  section: TRUE
+  fields:
+    image_window_width_responsive_image_source_set:
+      type: array
+      label: "Responsive image source set"
+    image_window_width_responsive_image_fallback:
+      type: string
+      label: "Responsive image fallback"
+    image_window_width_responsive_image_alt:
+      type: string
+      label: "Responsive image alt"
+    image_window_width_caption_text:
+      type: string
+      label: 'Caption text'
+    image_window_width_caption_credit:
+      type: string
+      label: 'Caption credit'
+  libraries:
+    - image_window_width:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-image-window-width.css: {}
+    - caption:
+       css:
+         theme:
+           dist/public/css/patterns/rplm-caption.css: {}

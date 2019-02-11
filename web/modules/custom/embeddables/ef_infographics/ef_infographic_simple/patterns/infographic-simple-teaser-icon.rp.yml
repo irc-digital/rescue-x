@@ -1,0 +1,16 @@
+infographic_simple_teaser_icon:
+  use: "@components/87-teasers/60-icon/teaser-icon.twig"
+  label: "Infographic - simple teaser icon"
+  icon_library_field: "teaser_icon_icon_name"
+  fields:
+    teaser_icon_title:
+      type: text
+      label: "Title"
+    teaser_icon_icon_name:
+      type: text
+      label: "Icon name"
+  libraries:
+    - teaser_icon_library:
+       css:
+         theme:
+           dist/public/css/patterns/rplc-teaser-icon.css: {}

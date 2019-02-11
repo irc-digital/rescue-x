@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\ef\EmbeddableConfigurationHelper;
+
+function ef_landing_page_install () {
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EmbeddableConfigurationHelper::class)
+    ->addContentTypeToHeroBlock('landing_page')
+    ->grantPermissions(['create landing_page content','delete any landing_page content','delete own landing_page content','edit any landing_page content','edit own landing_page content'], ['senior_editor']);
+
+}
+
+function ef_landing_page_uninstall () {
+  ef_delete_all ('node', 'landing_page');
+}

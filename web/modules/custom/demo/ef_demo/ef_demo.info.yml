@@ -1,0 +1,12 @@
+name: EF Demo (base)
+type: module
+description: 'Base demo module that most/all full demo modules should depend on.'
+package: EF Demo
+core: 8.x
+dependencies:
+  - ef
+  - ef_social_share
+  - ef_twitter_base
+  - ef_linkedin_base
+  - ef_facebook_base
+  - ef_comms_common

@@ -1,0 +1,16 @@
+add reach-through entry entities:
+  title: 'Create new Reach-through entry entities'
+
+administer reach-through entry entities:
+  title: 'Administer Reach-through entry entities'
+  description: 'Allow to access the administration form to configure Reach-through entry entities.'
+  restrict access: true
+
+delete reach-through entry entities:
+  title: 'Delete Reach-through entry entities'
+
+edit reach-through entry entities:
+  title: 'Edit Reach-through entry entities'
+
+view reach-through entry entities:
+  title: 'View Reach-through entry entities'

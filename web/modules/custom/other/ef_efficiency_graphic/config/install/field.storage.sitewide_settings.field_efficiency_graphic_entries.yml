@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ef_sitewide_settings
+    - entity_reference_revisions
+    - paragraphs
+  enforced:
+    module:
+      - ef_efficiency_graphic
+id: sitewide_settings.field_efficiency_graphic_entries
+field_name: field_efficiency_graphic_entries
+entity_type: sitewide_settings
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

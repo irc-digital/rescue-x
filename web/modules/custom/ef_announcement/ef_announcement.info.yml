@@ -1,9 +1,0 @@
-name: EF Anouncement
-type: module
-description: 'Provides an announcement content type.'
-package: EF Content
-core: 8.x
-dependencies:
-  - ef
-  - ef_modifiers
-  - ef_patterns
